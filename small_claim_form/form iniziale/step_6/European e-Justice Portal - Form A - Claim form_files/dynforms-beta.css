@@ -1,0 +1,506 @@
+.df_validation_visible {visibility: visible; position: relative;}
+.df_validation_invisible {visibility: hidden; position: absolute;}
+/* .df_mandatory {background: rgb(254,234,226);} */
+.df_disabled{ cursor: not-allowed !important; background-color: rgb(243,243,243) !important;}
+.df_disabled_mandatory{color:rgb(170, 170, 170)!important;
+    opacity: 0.7!important;}
+.df_mandatory_filled{color:rgb(170, 170, 170)!important;
+    opacity: 0.7!important;}
+.step-title input {
+    background: none;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    display: inline;
+    font-weight: inherit;
+    cursor: pointer;
+}
+.marginleft20px label {
+    margin-left: 20px !important;
+}
+.marginleft20pxWCB label {
+    margin-left: 28px !important;
+}
+
+#choseFile{
+    word-wrap: break-word;
+}
+/*.marginleft40px label {*/
+/*    margin-left: 40px !important;*/
+/*}*/
+.marginleft40pxWCB label {
+    margin-left: 48px !important;
+}
+
+.marginleft60px label {
+    margin-left: 60px !important;
+}
+.marginleft60pxWB label {
+    margin-left: 68px !important;
+}
+
+.marginleft100px label{
+    margin-left:100px;}
+.marginleft120px label {
+    margin-left: 120px;
+}
+.marginleft80px label {
+    margin-left:80px;}
+
+.content.search .js-toggle.open .description, .content .dynamic-form .js-toggle.open .description .js-toggle.open .description {
+    display: block; }
+
+.content.search .js-toggle.open .description, .content .dynamic-form .js-toggle.open .description .js-toggle .description {
+    display: none; }
+
+.content.search .js-toggle .js-toggle-trigger:after, .content .dynamic-form .js-toggle.open .description .js-toggle .js-toggle-trigger:after {
+    font-family: FontAwesome;
+    content: '\f054';
+    float: right; }
+
+.content.search .js-toggle.open .js-toggle-trigger:after, .content .dynamic-form .js-toggle.open .description .js-toggle.open .js-toggle-trigger:after {
+    content: '\f078'; }
+
+.js-toggle .closeInput {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.4rem;
+    background-color: white;
+    border: none;
+    float:right;
+
+}
+
+/* .js-toggle .closeIcon{
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 25px;
+    color: #4a4a4a;
+    font-size: 1.5rem;
+}
+ */
+
+.fa.fa-times.closeIcon{
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 25px;
+    color: #4a4a4a;
+    font-size: 1.5rem;
+
+}
+fieldset{
+    display: contents;
+}
+button.closeInput {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.4rem;
+    background-color: white;
+    border: none;
+    padding:0;
+    /* padding-left: 20px;  conflict bug 87682 xls #29 */
+
+}
+
+div.vc1SubSection label {
+    margin-bottom: 0px;
+}
+
+.input-content textarea{
+    margin-bottom: 0rem;
+    padding: 1px;
+}
+
+div.h3Toh4 h3 {
+    font-size: 14px !important;
+}
+
+
+
+
+/* css rules to align labels according to numbering / ordering*/
+
+.marginleft20px label {
+    margin-left: 20px !important;
+}
+.marginleft20pxWCB label {
+    margin-left: 28px !important;
+}
+
+.marginleft40px label {
+    margin-left: 40px !important;
+}
+.marginleft40pxWCB label {
+    margin-left: 48px !important;
+}
+
+.marginleft60px label {
+    margin-left: 60px !important;
+}
+.marginleft60pxWB label {
+    margin-left: 68px !important;
+}
+
+
+
+/*css rules for the CDB dialog*/
+/* COURT DB FO STYLES */
+#courtDBContainer label {display:inline-block;vertical-align:middle;width:180px;}
+#courtDBContainer span.missingDataError {color:#f00;display:block;font-size:11.05px;margin-left:104px;}
+span#courtIdentifyBtn {margin-left:103px;}
+span#courtIdentifyBtn,span#courtSearchBtn .styleButton{margin-top:5px;}
+.courtDBResults {margin:20px 0;}
+.courtDBResults > hr {float:none;width:100%;}
+.divContainerAll .courtDBResponseData {font-size:1.1em;}
+.divContainerAll .courtDBResponseData p.courtDBResultsTableData {font-size:1em;padding:10px;}
+.divContainer .courtDBResponseData {font-size:1.1em;}
+.divContainer .courtDBResponseData p.courtDBResultsTableData {font-size:1em;padding:10px;}
+
+.courtDBResults .courtDBResponseData {font-size:1.1em;}
+.courtDBResults .courtDBResponseData p.courtDBResultsTableData {font-size:1em;padding:10px;}
+
+.courtDBResults .courtDBResultsTable {border:none !important;border-spacing:0 5px;width:100%;}
+.courtDBResults .courtDBResultsTable td:first-child {width: 37px;}
+.courtDBResults .courtDBResultsTable td:nth-child(2) {text-align:left;}
+.courtDBResults .courtDBResultsTable p:nth-child(1) {font-weight:bold;}
+.courtDBResults .courtDBResultsTable p.courtDBResultsTableData {padding:2px 10px;}
+.contentArea .courtDBResultsTable .divTranslationPending {font-size:1.1em;}
+.contentArea .courtDBResultsTable .divTranslationPending p {font-weight:normal !important;}
+
+
+.courtDBResults .courtDBResponseData {
+    font-size: 1.1em;
+}
+
+tr, th, td {
+    border-style: none !important;
+}
+
+.courtDBResults .courtDBResultsTable td {
+    background-color:#ffffff !important;
+    border:none !important;
+    padding-top: 0 !important;
+    text-align:center;
+}
+
+.courtDBResults .courtDBResultsTable td p {
+    padding-top: 10px !important;
+}
+
+hr {
+    display: none !important;
+    color: #fff !important;
+}
+.DataText {
+    text-align: justify;
+    clear: both;
+}
+div.courtDBTextIdContainer{clear: left; padding:10px 0px; width: 510px}
+div.courtDBTextId{-webkit-border-radius: 5px; -moz-border-radius: 5px; -moz-background-clip: border; -moz-background-inline-policy: continous; -moz-background-origin: padding; border-radius: 2px; padding: 1px; background-color: #ddecf6;}
+div.courtDBTextIdContainerNoJS{text-align:left; width: 95%}
+div.courtDBTextIdContainerNotDialog{clear: left; padding:10px 0px; width: 95%}
+
+#courtDBContainer .search-field {width: 50%;}
+
+@media print
+{
+    .ejp_cdbtag_selector {display:none;}
+    #courtDBContainer{display:none;}
+
+    span.compTypetipcontainer {display: none;}
+}
+
+
+/*style for cdb dialog box*/
+p.modalPar {
+    text-align: left;
+}
+.resetFormButton input{
+    display:none;
+}
+ 
+.actionbuttons-left {
+    display: block;
+    float: left;
+    max-width: 40%;
+
+}
+
+.actionbuttons-right {
+    display: block;
+    float: right;
+    max-width: 40%;
+}
+.resetFormButton input{
+    display:none;
+}
+ 
+.emailPdfLink{
+    font-size: 0.8em;
+    margin-bottom: 0.8em;
+    display: block;
+    float: right;
+}
+.emailPdfLink input{
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: inline-block;
+    font-size: 1em;
+    background: none;
+    cursor: pointer;
+    color: #004494;
+    text-decoration: underline;
+    padding: 0;
+}
+span.ieborder:not(.resetFormButton,.pull-left){
+    display: block;
+    clear: both;
+    margin-top: 10px;
+    max-width: 40%;
+}
+.nextPageButton{
+    display: block;
+    float: right;
+
+}
+.backPageButton{
+    display: block;
+    float: left;
+    max-width: 40%;
+}
+.pdfDownloadButton{
+    display: block;
+    float: right;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.ieborder input{
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.load-draft{
+    overflow: hidden;
+    white-space: initial;
+    width:85%;
+}
+.save-draft{
+    overflow: hidden;
+    white-space: initial;
+    width:85%;
+
+}
+.time-date-time input, .time-date-time div{
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    float: none;
+    padding: 0;
+    max-width: 2em;
+}
+.time-date-time div {
+    width: 1em;
+}
+.time-date-time{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.6rem;
+}
+.with-time .input-content{ padding: 0.1em; }
+
+/* moz only */
+@-moz-document url-prefix() {
+    .time-date-time { padding: 0.6rem 0.9rem; }
+}
+
+.linkbutton{
+    background: transparent;
+    border: none;
+    color: #004494;
+    display: inline-block;
+    padding-left: 5px;
+    text-decoration: none;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight:bold;
+
+}
+.cross {
+    font-family: FontAwesome;
+
+    line-height: 30px;
+
+    color: inherit;
+    font-size: 1.6rem;
+    text-align: center;
+    text-decoration: none;
+}
+.one-third p{
+    word-wrap: break-word;
+}
+#dynformSDC1OtherText_div div.asterisk{
+    float: right;
+}
+.noMarginLeft label{
+    margin-left:0px!important;
+}
+label.asteriskOnly {
+    position: absolute;
+    text-align: right;
+    top: -1.5rem;
+    right: 0px;
+}
+.marginBot15{
+    margin-bottom: 1.5rem;
+    font-size: 0;
+}
+.marginBot1{
+    margin-bottom: 1rem;
+}
+
+.openFile {
+    margin-bottom: 10px;
+}
+.df_description_normal input {
+    max-width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
+#courtDBContainer .df_select, #courtDBContainer .df_textbox {
+    box-sizing: border-box;
+    width: 60%;
+    display: inline-block;
+    margin-left: -3px;
+    border: 1px solid #979797;
+}
+#hidden_steps{
+    display: none;
+}
+
+
+.marginleft80px label{
+    margin-left: 80px;}
+.marginleft100px label{
+    margin-left: 100px;}
+.marginleft120px label{
+    margin-left: 120px;}
+.marginleft140px label{
+    margin-left: 140px;}
+.marginleft27px label {
+    margin-left:28px;
+}
+.marginleft47px label {
+    margin-left:48px;
+}
+.marginleft67px label {
+    margin-left:68px;
+}
+.marginleft87px label {
+    margin-left:88px;
+}
+.marginleft107px label {
+    margin-left:108px;
+}
+.marginleft127px label {
+    margin-left:128px;
+}
+.marginleft147px label {
+    margin-left:148px;
+}
+fieldset{
+    display: contents;
+}
+.nopaddingTop div {
+    padding-top: 0px !important;
+}
+#dynformSDF1OtherReasonText_div .asteriskOnly{
+    display:none;
+}
+.input-wrapper .input-content{
+    border-collapse: collapse;
+}
+.date-input .input-wrapper .input-content{
+    border-collapse: unset;
+}
+.date-input  .error{
+    clear: both;
+}
+textarea{
+    border:0px;
+}
+input[type='date']:disabled{
+    border: 1px solid #979797;
+}
+.alignEndSpanWithInput .form-row{
+    width:90%;
+    float:left;
+}
+.alignEndSpanWithInput .endText
+{
+    float: left;
+    padding-left: 5px;
+    vertical-align: baseline;
+    line-height: 110px;
+    font-weight: bold;
+}
+.nextPageButton{
+    clear: both;
+    width: 100%;
+
+}
+b {
+    font-weight: bold;
+}
+
+.esubWarning {background:url(https://e-justice.europa.eu/images/warning.png) transparent no-repeat 5px 5px;padding:0 40px;}
+.esubError {color:#f00;font-style:italic;}
+
+.full-width-block{ width:100%!important;}
+
+:not(#dynforms_banner_messages_info_div) > .dynaform_message_banner {
+    display:none;
+}
+
+.dynaform_message_banner{
+    font-weight: bold;
+}
+
+/* tinymce responsive */
+@media (max-width: 80em) {
+    .mceLayout, .mceEditor{
+        width:100% !important;
+    }
+    .mceLayout iframe{
+        height: 100%!important;
+    }
+}
+@media (max-width: 60em) {
+
+    /* make the toolbar wrap */
+    .mceToolbar td {
+        display:table-row;
+        float: left;
+    }
+    .mceToolbar td:nth-of-type(11){
+        clear: left;
+    }
+}
+@media (max-width: 34em) {
+    .mceToolbar td:nth-of-type(21){
+        clear: left;
+    }
+}

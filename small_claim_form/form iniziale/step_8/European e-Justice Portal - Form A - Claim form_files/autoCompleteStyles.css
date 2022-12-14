@@ -1,0 +1,38 @@
+.rdio{background-color:#F0F0EE;border:0px}
+
+.textfield{
+  font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;   
+  font-size:12px; 
+  width:300px;	
+}
+
+.textfile{
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	font-size:12px
+}
+
+.textbox { 
+  background: #FFF url(https://e-justice.europa.eu/scripts/jquery/plugins/ajaxautocomplete/css/images/arrow-down.gif) right center no-repeat;
+  font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;   
+	font-size:12px; 
+	width:300px;
+	cursor:pointer; 
+}
+
+.textbox2 { 
+  background: #FFF url(https://e-justice.europa.eu/scripts/jquery/plugins/ajaxautocomplete/css/images/arrow-down.gif) right center no-repeat;
+  font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;   
+  font-size:12px; 
+  width:235px;
+  cursor:pointer; 
+}
+  
+/* Autocomplete: */
+.autocomplete-w1 { background:url(https://e-justice.europa.eu/scripts/jquery/plugins/ajaxautocomplete/css/images/shadow.png) no-repeat bottom right; position:absolute; top:0px; left:0px; margin:14px 0 0 6px; /* IE6 fix:  _background:none; _margin:0;*/ }
+.autocomplete {background:#FFF; cursor:default; text-align:left; max-height:350px; overflow:auto; margin:-6px 6px 6px -6px; /* IE6 specific:  _height:350px;  _margin:0; _overflow-x:hidden;*/ }
+.autocomplete .selected { background:#F0F0F0; }
+.autocomplete div { padding:2px 5px; white-space:nowrap; color:#9b9b9b;}
+.autocomplete strong { font-weight:normal; color:#004494; }
+
+#selection { padding:5px; font-weight:bold; height:20px; }
+#selection img { vertical-align:middle; }

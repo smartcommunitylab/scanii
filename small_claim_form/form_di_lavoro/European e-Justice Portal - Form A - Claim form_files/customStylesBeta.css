@@ -1,0 +1,279 @@
+
+.bluebtn {
+    border:none !important;
+    padding:3px !important;
+}
+
+.inline_div{
+    display: inline-block !important;
+}
+
+.inline_elem{
+    display: inline-block !important;
+}
+
+.query_div_block{
+    display:block!important;
+    border-bottom:0!important
+}
+
+.query_div_hidden{
+    display:none!important;
+    border-bottom:0!important
+}
+.query_div{
+    border-bottom:0!important
+}
+
+.borderless{
+    border:none!important;
+}
+
+.errormsg{
+    color:red!important;
+    padding:4px!important;
+}
+.successmsg{
+    color:#004494!important;
+    padding:4px!important;
+}
+.btnLink{
+    background:none!important;
+    border:none!important;
+    padding:0!important;
+    color:#004494;
+    /*border is optional*/
+    border-bottom:1px solid #004494!important;
+}
+
+.my_hidden_abs{
+    display:none!important;
+}
+
+
+.form-group{
+    margin-bottom:0rem!important;
+}
+
+p.df_validation_error_visible { color:red!important; }
+p.df_validation_visible { color:red!important; }
+
+.df_collapsed {display:none; height: 0px; visibility: hidden}
+.df_expanded {display:inline; height: auto; visibility: visible}
+.beta_validation_invisible{visibility: hidden; position: absolute;}
+.df_validation_visible{visibility: visible; position: relative;}
+
+.classContentImg {
+    display: inline;
+    float: left;
+    padding: 1em 1em 0 0;
+}
+
+a.lang-warning-selection {
+    text-decoration: none;
+}
+
+a.lang-warning-selection:hover {
+    background: #004494;
+    color: #fff;
+}
+
+.lang-select-detail {
+    overflow: hidden;
+}
+
+/*EJB-9456 Pt 6*/
+
+.contentArea iframe {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    min-width: 0;
+    display:table;
+}
+
+.externaltax iframe {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+/*TEMPORARY UK TERRITORY SELECTOR CSS*/
+
+/* Dropdown Button */
+.dropbtn {
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown_territories {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    bottom: 0px;
+    right: 0px;
+}
+
+@media screen and (min-width: 480px) {
+    .dropdown-content {
+        right: -50px;
+    }
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #004494;
+    text-decoration: none;
+}
+
+.dropdown-li {
+    width: 200px !important;
+    color: #9b9b9b;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown_territories:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.df_description {
+    color: rgb(119, 119, 119);
+    font-size: 11.05px;
+    max-width: 496px;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+    /*margin-left: 284px;*/
+}
+
+.button.dark.big.next.right {
+    float: right;
+}
+
+.courtDBResults .courtDBResponseData {
+    font-size: 1.1em;
+    background-color: #ddecf6;
+}
+
+.onlyPrint.js-toggle.open {
+    display: none;
+}
+
+.missingDataError{
+    display: block;
+   /* position: absolute;*/
+    color: #d0021b;
+}
+
+.classLinkBroken{
+    color:gray !important;
+    cursor: default;
+    pointer-events: auto;
+}
+
+#courtDBTextId{
+    background-color: #ddecf6;
+    padding: 0.3em 0.4em;
+    margin-bottom: 1.1em;
+}
+#courtDBTextId p { margin: 0; }
+
+.divTranslationPending {
+    text-align: center;
+}
+
+
+label.langName {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100px;
+}
+
+.date-input .input-wrapper .input-content {
+    width: auto !important; }
+	.DataText {
+    text-align: justify;
+    clear: both;
+}
+
+/* ie11 fixes, gray country flag*/
+.pseudoBeforeHide:before{
+    opacity: 0!important;
+}
+.grayscale-replaced.ie01{
+    opacity: 0.5!important;
+    top:44%!important;
+    height:24px!important;
+}
+
+.grayscale-replaced.ie02{
+    opacity: 0.5!important;
+    top:47%!important;
+    left:47px!important;
+    height:18px!important;
+}
+
+.grayscale-replaced.ie03{
+    opacity: 0.5!important;
+    left:27px!important;
+    top:34%!important;
+    height:24px!important;
+}
+
+.grayscale-replaced.ie04{
+    opacity: 0.5!important;
+    left:27px!important;
+    top:50%!important;
+    height:17px!important;
+}
+
+.button-light {
+    color:#00387b;border: solid;background-color: white;
+}
+
+.not-found {
+    list-style-type: disc;margin-left: 18px;
+}
+
+.titContePersonalitaion{
+    font-weight: bold;
+}
+
+.rssSubscriptionTable {
+    width: 100%;
+    text-align: center;
+}
+
+.rssSubscriptionTable select{
+    max-width: 200px;
+    display: inline;
+}
+
+input[type="radio"]:focus {
+    outline: 3px solid #ffd617 !important;
+}
+
+.button.dark:focus {
+    outline: none !important;
+    border: 3px solid #ffd617 !important;
+}
