@@ -1,8 +1,8 @@
 {
-  "domain": "http://scanii.org/smallclaimform",
+  "domain": "http://scanii.org/simplification/smallclaimform",
   "concepts": [
     {
-      "id": "http://scanii.org/bankDetails",
+      "id": "http://scanii.org/domain/bankDetails",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -35,7 +35,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/certificate",
+      "id": "http://scanii.org/domain/certificate",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/claim",
+      "id": "http://scanii.org/domain/claim",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -101,7 +101,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/claim.claimCostOfProceeding",
+      "id": "http://scanii.org/domain/claim.claimCostOfProceeding",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -128,7 +128,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/claim.claimInterests",
+      "id": "http://scanii.org/domain/claim.claimInterests",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -159,7 +159,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/claim.otherClaim",
+      "id": "http://scanii.org/domain/claim.otherClaim",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -184,7 +184,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/claimDetails",
+      "id": "http://scanii.org/domain/claimDetails",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -210,7 +210,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/claimant",
+      "id": "http://scanii.org/domain/claimant",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -241,7 +241,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/claimant.otherDetails",
+      "id": "http://scanii.org/domain/claimant.otherDetails",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -266,7 +266,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/courtTribunal",
+      "id": "http://scanii.org/domain/courtTribunal",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -300,7 +300,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/crossborderNature",
+      "id": "http://scanii.org/domain/crossborderNature",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -325,7 +325,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/dateAndSignature",
+      "id": "http://scanii.org/domain/dateAndSignature",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -350,7 +350,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/defendant",
+      "id": "http://scanii.org/domain/defendant",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -376,7 +376,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/defendant.otherDetails",
+      "id": "http://scanii.org/domain/defendant.otherDetails",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -401,7 +401,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/documentAndCommunication",
+      "id": "http://scanii.org/domain/documentAndCommunication",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -435,7 +435,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/jurisdiction",
+      "id": "http://scanii.org/domain/jurisdiction",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -473,7 +473,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/oralHearing",
+      "id": "http://scanii.org/domain/oralHearing",
       "infoElements": [
         {
           "type": "DESCRIPTION",
