@@ -185,7 +185,7 @@
     <script>
         let model = null;
         let interaction = null;
-
+        let ids = [];
         let actualStep = 1;
 
         function next() {
@@ -202,7 +202,7 @@
             }
         }
 
-        
+
 
         function generateXML() {
             document.querySelectorAll('input').forEach(input => {
@@ -223,8 +223,8 @@
             box = document.getElementById(step + '-menu');
             box.setAttribute('class', 'active');
 
-            // hide pdf legal
-            divLegal = document.querySelectorAll('[scaii_pdf_step="' + step + '"]');
+            // show pdf legal
+            divLegal = document.querySelectorAll('[scaii_pdf_step*="' + step + '"]');
             divLegal.forEach(element => {
                 element.style.display = 'block';
             });
@@ -366,21 +366,29 @@
 
             divLegal = document.getElementById('legal_information');
 
-            ids = [];
+
 
             infoElement.link.forEach(link => {
-                if (link.type == 'LEGAL_LINK' && !ids.includes(link.url)) {
-                    ids.push(link.url);
-                    div = document.createElement('p');
-                    div.setAttribute('scaii_pdf_step', blockId);
-                    a = document.createElement("a");
-                    a.href = link.url;
-                    a.setAttribute('target', '_blank');
-                    a.title = link.description;
-                    a.text = link.name;
-                    div.append(a);
-                    div.setAttribute('title', link.description);
-                    divLegal.append(div);
+                if (link.type == 'LEGAL_LINK' ) {
+                    let div = document.getElementById(link.url);
+
+                    if (typeof div != 'undefined' && div !== null) {
+                        let attributeValue = div.scaii_pdf_step;
+                        div.setAttribute('scaii_pdf_step', attributeValue +"," +blockId);
+                    } else  {
+                        div = document.createElement('p');
+                        div.setAttribute('scaii_pdf_step', blockId);
+                        div.setAttribute('id', link.url);
+                        a = document.createElement("a");
+                        a.href = link.url;
+                        a.setAttribute('target', '_blank');
+                        a.title = link.description;
+                        a.text = link.name;
+                        div.append(a);
+                        div.setAttribute('title', link.description);
+                        divLegal.append(div);
+                    }
+                    
                 }
             })
         }
@@ -430,7 +438,7 @@
             infoElement.words.forEach(word => {
                 keyPos = word.position.substr(0, word.position.indexOf("-"));
                 keyLen = word.position.substr(word.position.indexOf("-") + 1);
-                keyPos = keyPos-1
+                keyPos = keyPos - 1
                 key = description.substr(keyPos, keyLen);
                 preKey = description.substr(pos, parseInt(keyPos) - parseInt(pos));
 
@@ -467,7 +475,7 @@
             // process links
             infoElement.link.forEach(link => {
                 if (typeof link.url != 'undefined' && link.url && link.url != '') {
-                    teplaceText = '';
+                    replaceText = '';
                     if (typeof link.description != 'undefined' && link.description && link.description != '')
                         replaceText = '<a target=”_blank” title="' + link.description + '" href="' + link.url + '">' + link.name + '</a>';
                     else
@@ -533,25 +541,36 @@
                     a = document.createElement("a");
                     a.href = link.url;
                     a.setAttribute('target', '_blank');
-                    a.title = link.description;
-                    a.text = link.name;
+                    //a.title = link.description;
+                    a.innerText = link.name;
+                    text = document.createElement('span');
+                    text.innerText = link.description;
                     yellowDiv.append(a);
-                    yellowDiv.setAttribute('title', link.description);
+                    yellowDiv.append(text)
+                    //yellowDiv.setAttribute('title', link.description);
                     yellowDiv.append(document.createElement('br'));
                 }
                 if (link.type == 'SERVICE_LINK') {
-                    text = document.createTextNode(link.description);
-                    yellowDiv.append(text);
+
                     if (typeof link.htmlFragment != 'undefined' && link.htmlFragment != '') {
                         divTmp = document.createElement("div");
                         divTmp.innerHTML = link.htmlFragment;
+                        text = document.createElement('span');
+                        text.innerText = link.description;
+                        yellowDiv.append(text)
                         yellowDiv.append(divTmp);
+
+                        yellowDiv.append(document.createElement('br'));
                     }
-                    if (typeof link.href != 'undefined' && link.href != '') {
+                    if (typeof link.url != 'undefined' && link.url != '') {
                         a = document.createElement("a");
                         a.href = link.url;
-                        a.text = link.name;
+                        a.setAttribute('target', '_blank');
+                        a.innerText = link.name;
+                        text = document.createElement('span');
+                        text.innerText = link.description;
                         yellowDiv.append(a);
+                        yellowDiv.append(text)
                         yellowDiv.append(document.createElement('br'));
                     }
                 }
@@ -559,15 +578,16 @@
             })
             // add yellow box end
 
+            let divToAdd = document.createElement('div');
+            divToAdd.append(descriptionDiv);
+            divToAdd.append(divSimp);
+            divToAdd.append(simplificationBox);
+            divToAdd.append(separatorBox);
+            if (yellowDiv.innerHTML != '')
+                divToAdd.append(accordionDiv);
 
             for (let i = 0; i < elements.length; i++) {
-                elements[i].append(descriptionDiv);
-                elements[i].append(divSimp);
-                elements[i].append(simplificationBox);
-                elements[i].append(separatorBox);
-
-                if (yellowDiv.innerHTML != '')
-                    elements[i].append(accordionDiv);
+                elements[i].insertBefore(divToAdd, elements[i].firstChild);
             };
 
         }
@@ -3041,7 +3061,8 @@
                                         <button class="button dark big load-draft" id="buttonLoad"
                                             data-title="If you have previously saved a draft form you can resume your work by loading that file into the system by clicking here.">Load
                                             draft </button><br>
-                                        <button class="button dark big save-draft piwik_download" type="button" id="buttonSave" onclick="generateXML()"
+                                        <button class="button dark big save-draft piwik_download" type="button"
+                                            id="buttonSave" onclick="generateXML()"
                                             data-title="If you wish to stop filling in the form now, save your draft and resume later, please click this button and save the draft file in a safe location on your computer. You can upload it later to resume from where you left off without losing any input already made.">Save
                                             draft </button>
                                     </div>
@@ -21607,8 +21628,7 @@
 
                                                 </div>
                                                 <div class="form-row full-width">
-                                                    <div class="description"
-                                                        concept="http://scanii.org/domain/oralHearing">
+                                                    <div class="description" >
 
                                                         <legend class="hidden">&nbsp;</legend>
                                                         <div class="radioButtons1">
