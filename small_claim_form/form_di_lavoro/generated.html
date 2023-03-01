@@ -187,7 +187,382 @@
         let interaction = null;
         let actualStep = 1;
 
+        function generateXML() {
+            const doc = document.implementation.createDocument("", "xml", null);
+
+            // add form element
+            const dynforms = document.createElement("dynforms");
+            doc.documentElement.appendChild(dynforms);
+
+            // popolate claimants 
+            // add pages
+            const page_dynform_sc_a_2 = document.createElement("page_dynform_sc_a_2");
+            dynforms.appendChild(page_dynform_sc_a_2);
+
+            // popolate page_dynform_sc_a_2
+            const classname = document.createElement("class-name");
+            classname.innerText = "eu.europa.ejusticeportal.dynforms.form.sc.SCA2ActionForm";
+            page_dynform_sc_a_2.appendChild(classname);
+
+
+            parties = document.createElement("parties");
+            page_dynform_sc_a_2.appendChild(parties);
+            
+            role = document.createElement("role");
+            role.innerText = "CLAIMANT";
+            parties.appendChild(role);
+
+            elements = document.querySelectorAll('[id^="parties[0].dynformSCA2Claimant"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                let value = '';
+                if (typeof element.value != 'undefined' && element.value) {
+                    value = element.value;
+                }
+                let name = generateXMLName(element.id);
+                if (isValidElement(name)) {
+                    XMLelement = document.createElement(name);
+                    XMLelement.innerText = value;
+                    page_dynform_sc_a_2.appendChild(XMLelement);
+                }
+            });
+
+            // popolate defendants 
+            // add pages
+            const page_dynform_sc_a_3 = document.createElement("page_dynform_sc_a_3");
+            dynforms.appendChild(page_dynform_sc_a_3);
+
+            parties = document.createElement("parties");
+            page_dynform_sc_a_3.appendChild(parties);
+            
+            role = document.createElement("role");
+            role.innerText = "DEFENDANT";
+            parties.appendChild(role);
+
+            elements = document.querySelectorAll('[id^="partiesDef[0].dynformSCA3Defendant"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                let value = '';
+                if (typeof element.value != 'undefined' && element.value) {
+                    value = element.value;
+                }
+                let name = generateXMLName(element.id);
+                if (isValidElement(name)) {
+                    XMLelement = document.createElement(name);
+                    XMLelement.innerText = value;
+                    page_dynform_sc_a_3.appendChild(XMLelement);
+                }
+            });
+
+            // popolate page 4 
+            // add pages
+            const page_dynform_sc_a_4 = document.createElement("page_dynform_sc_a_4");
+            dynforms.appendChild(page_dynform_sc_a_4);
+
+            elements = document.querySelectorAll('input[id^="dynformSCA4"],select[id^="dynformSCA4"],textarea[id^="dynformSCA4"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                let value = '';
+                if (typeof element.value != 'undefined' && element.value) {
+                    value = element.value;
+                }
+                let name = generateXMLName(element.id);
+                if (isValidElement(name)) {
+                    XMLelement = document.createElement(name);
+                    XMLelement.innerText = value;
+                    page_dynform_sc_a_4.appendChild(XMLelement);
+                }
+            });
+
+            // popolate page 5
+            // add pages
+            const page_dynform_sc_a_5 = document.createElement("page_dynform_sc_a_5");
+            dynforms.appendChild(page_dynform_sc_a_5);
+
+            elements = document.querySelectorAll('input[id^="dynformSCA5"],select[id^="dynformSCA5"],textarea[id^="dynformSCA5"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                let value = '';
+                if (typeof element.value != 'undefined' && element.value) {
+                    value = element.value;
+                }
+                let name = generateXMLName(element.id);
+                if (isValidElement(name)) {
+                    XMLelement = document.createElement(name);
+                    XMLelement.innerText = value;
+                    page_dynform_sc_a_5.appendChild(XMLelement);
+                }
+            });
+
+            // popolate page 6
+            // add pages
+            const page_dynform_sc_a_6 = document.createElement("page_dynform_sc_a_6");
+            dynforms.appendChild(page_dynform_sc_a_6);
+
+            elements = document.querySelectorAll('input[id^="dynformSCA6"],select[id^="dynformSCA6"],textarea[id^="dynformSCA6"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                let value = '';
+                if (typeof element.value != 'undefined' && element.value) {
+                    value = element.value;
+                }
+                let name = generateXMLName(element.id);
+                if (name.includes('_yes')) {
+                    if (element.checked) {
+                        tmp = name.substr(0, name.length-5);
+                        XMLelement = document.createElement(tmp);
+                        XMLelement.innerText = 'yes';
+                        page_dynform_sc_a_6.appendChild(XMLelement);
+                    }
+                } 
+
+                if (isValidElement(name)) {
+                    XMLelement = document.createElement(name);
+                    XMLelement.innerText = value;
+                    page_dynform_sc_a_6.appendChild(XMLelement);
+                }
+          
+            
+                
+            });
+
+            // popolate page 7
+            // add pages
+            const page_dynform_sc_a_7 = document.createElement("page_dynform_sc_a_7");
+            dynforms.appendChild(page_dynform_sc_a_7);
+
+            elements = document.querySelectorAll('input[id^="dynformSCA7"],select[id^="dynformSCA7"],textarea[id^="dynformSCA7"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                let value = '';
+                if (typeof element.value != 'undefined' && element.value) {
+                    value = element.value;
+                }
+                let name = generateXMLName(element.id);
+                if (name.includes('_yes')) {
+                    if (element.checked) {
+                        tmp = name.substr(0, name.length-5);
+                        XMLelement = document.createElement(tmp);
+                        XMLelement.innerText = 'yes';
+                        page_dynform_sc_a_7.appendChild(XMLelement);
+                    }
+                } 
+
+                if (isValidElement(name)) {
+                    XMLelement = document.createElement(name);
+                    XMLelement.innerText = value;
+                    page_dynform_sc_a_7.appendChild(XMLelement);
+                }
+          
+            
+                
+            });
+
+            // popolate page 8
+            // add pages
+            const page_dynform_sc_a_8 = document.createElement("page_dynform_sc_a_8");
+            dynforms.appendChild(page_dynform_sc_a_8);
+
+            elements = document.querySelectorAll('input[id^="dynformSCA8"],select[id^="dynformSCA8"],textarea[id^="dynformSCA8"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                let value = '';
+                if (typeof element.value != 'undefined' && element.value) {
+                    value = element.value;
+                }
+                let name = generateXMLName(element.id);
+                if (name.includes('_yes')) {
+                    if (element.checked) {
+                        tmp = name.substr(0, name.length-5);
+                        XMLelement = document.createElement(tmp);
+                        XMLelement.innerText = 'yes';
+                        page_dynform_sc_a_8.appendChild(XMLelement);
+                    }
+                } 
+
+                if (isValidElement(name)) {
+                    XMLelement = document.createElement(name);
+                    XMLelement.innerText = value;
+                    page_dynform_sc_a_8.appendChild(XMLelement);
+                }
+          
+            
+                
+            });
+
+            console.log(doc.documentElement.outerHTML);
+            
+            let blob = new Blob([doc.documentElement.outerHTML], {type: 'text/xml'});
+            let url = URL.createObjectURL(blob);
+            window.open(url);
+            URL.revokeObjectURL(url); //Releases the resources
+
+        }
+
+        function isValidElement(value) {
+            if (value.includes('_yes'))
+                return false;
+            if (value.includes('_no'))
+                return false;
+            if (value.includes('_div'))
+                return false;
+            if (value.includes('_1'))
+                return false;
+            if (value.includes('_2'))
+                return false;
+            return true;
+        }
+
+        function generateXMLName(value) {
+            
+            value = value.replaceAll('parties[0].dynformSCA2', 'dynform-sCA2-');
+            value = value.replaceAll('partiesDef[0].dynformSCA3', 'dynform-sCA3-');
+            value = value.replaceAll('dynformSCA4', 'dynform-sCA4-');
+            value = value.replaceAll('dynformSCA5', 'dynform-sCA5-');
+            value = value.replaceAll('dynformSCA7', 'dynform-sCA7-');
+            value = value.replaceAll('dynformSCA8', 'dynform-sCA8-');
+            value = value.replaceAll('dynformSCA6Claiming', 'dynform-sCA6-claiming-');
+            value = value.replaceAll('dynformSCA6Claim', 'dynform-sCA6-claim-');
+            value = value.toLowerCase();
+            value = value.replaceAll('domicile', 'domicile-');
+            value = value.replaceAll('money', 'money-');
+            value = value.replaceAll('policy', 'policyholder');
+            value = value.replaceAll('place', 'place-');
+            value = value.replaceAll('other', 'other-');
+            value = value.replaceAll('representative', 'representative-');
+            value = value.replaceAll('postalcode', 'postal-code');
+
+            value = value.replaceAll('country', 'country-');
+            value = value.replaceAll('defendant', 'defendant-');
+            value = value.replaceAll('claimant', 'claimant-');
+            value = value.replaceAll('account', 'account-');
+            value = value.replaceAll('holder', 'holder-');
+            value = value.replaceAll('expiry', 'expiry-');
+            value = value.replaceAll('payment', 'payment-');
+            value = value.replaceAll('method', 'method-');
+            value = value.replaceAll('pay', 'pay-');
+            value = value.replaceAll('bank', 'bank-');
+            value = value.replaceAll('name', 'name-');
+
+            value = value.replaceAll('interest', 'interest-');
+            value = value.replaceAll('cost', 'cost-');
+            value = value.replaceAll('contractual', 'contractual-');
+            value = value.replaceAll('date', 'date-');
+            value = value.replaceAll('statutory', 'statutory-');
+       
+            value = value.replaceAll('reasons', 'reasons-');
+            value = value.replaceAll('for', 'for-');
+            value = value.replaceAll('your', 'your-');
+            value = value.replaceAll('please', 'please-');
+            value = value.replaceAll('written', 'written-');
+            value = value.replaceAll('witnesses', 'witnesses-');
+            value = value.replaceAll('held', 'held-');
+            value = value.replaceAll('signature', 'signature-');
+            value = value.replaceAll('certificate', 'certificate-');
+            value = value.replaceAll('evidence', 'evidence-');
+            value = value.replaceAll('residence', 'residence-');
+            value = value.replaceAll('hearing', 'hearing-');
+            value = value.replaceAll('physically', 'physically-');
+            value = value.replaceAll('currency', 'currency-');
+            value = value.replaceAll('', '');
+            value = value.replaceAll('', '');
+            value = value.replaceAll('', '');
+            value = value.replaceAll('', '');
+            value = value.replaceAll('', '');
+            value = value.replaceAll('', '');
+            value = value.replaceAll('', '');
+            value = value.replaceAll('', '');
+            value = value.replaceAll('sca', 'sCA');
+            if (value.slice(-1).includes('-')) {
+                value = value.substr(0, value.length-1);
+            }
+
+
+            return value;
+        }
+
+        function validaFormValues(step) {
+
+            return true;
+        }
+
+        function saveModel() {
+            // get claimant 1 data
+            elements = document.querySelectorAll('[id^="parties[0].dynformSCA2Claimant"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                sessionStorage.setItem("claimant_1." + element.id, element.value);
+            });
+
+            // get defendat 1 data
+            elements = document.querySelectorAll('[id^="partiesDef[0].dynformSCA3Defendant"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                sessionStorage.setItem("defendat_1." + element.id, element.value);
+            });
+
+            // get dynformSCA1 data
+            elements = document.querySelectorAll('[id^="dynformSCA1"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                sessionStorage.setItem("dynformSCA1." + element.id, element.value);
+            });
+
+            // get dynformSCA2 data
+            elements = document.querySelectorAll('[id^="dynformSCA4"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                sessionStorage.setItem("dynformSCA4." + element.id, element.value);
+            });
+
+            // get dynformSCA4 data
+            elements = document.querySelectorAll('[id^="dynformSCA4"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                sessionStorage.setItem("dynformSCA4." + element.id, element.value);
+            });
+
+            // get dynformSCA5 data
+            elements = document.querySelectorAll('[id^="dynformSCA5"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                sessionStorage.setItem("dynformSCA5." + element.id, element.value);
+            });
+
+            // get dynformSCA5 data
+            elements = document.querySelectorAll('[id^="dynformSCA5"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                sessionStorage.setItem("dynformSCA5." + element.id, element.value);
+            });
+
+            // get dynformSCA6 data
+            elements = document.querySelectorAll('[id^="dynformSCA6"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                sessionStorage.setItem("dynformSCA6." + element.id, element.value);
+            });
+
+            // get dynformSCA7 data
+            elements = document.querySelectorAll('[id^="dynformSCA7"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                sessionStorage.setItem("dynformSCA7." + element.id, element.value);
+            });
+
+            // get dynformSCA8 data
+            elements = document.querySelectorAll('[id^="dynformSCA8"]');
+            elements.forEach(element => {
+                console.log(element.id + "=" + element.value);
+                sessionStorage.setItem("dynformSCA8." + element.id, element.value);
+            });
+
+
+        }
+
         function next() {
+            validaFormValues(actualStep);
+            saveModel();
             if (actualStep < 8) {
                 actualStep = actualStep + 1;
                 showStep('step' + actualStep);
@@ -195,20 +570,18 @@
         }
 
         function back() {
+            validaFormValues(actualStep);
+            saveModel();
             if (actualStep > 1) {
                 actualStep = actualStep - 1;
                 showStep('step' + actualStep);
             }
         }
 
-
-
-        function generateXML() {
-            document.querySelectorAll('input').forEach(input => {
-                name = input.name;
-                name = name.replaceAll('dynformSCA2Claimant', 'dynform-sCA2-claimant-')
-                console.log(input.name + '=' + input.value);
-            });
+        function moveToStep(step) {
+            validaFormValues(actualStep);
+            saveModel();
+            showStep(step);
         }
 
         function showStep(step) {
@@ -368,13 +741,13 @@
 
 
             infoElement.link.forEach(link => {
-                if (link.type == 'LEGAL_LINK' ) {
+                if (link.type == 'LEGAL_LINK') {
                     let div = document.getElementById(link.url);
 
                     if (typeof div != 'undefined' && div !== null) {
                         let attributeValue = div.scaii_pdf_step;
-                        div.setAttribute('scaii_pdf_step', attributeValue +"," +blockId);
-                    } else  {
+                        div.setAttribute('scaii_pdf_step', attributeValue + "," + blockId);
+                    } else {
                         div = document.createElement('p');
                         div.setAttribute('scaii_pdf_step', blockId);
                         div.setAttribute('id', link.url);
@@ -387,7 +760,7 @@
                         div.setAttribute('title', link.description);
                         divLegal.append(div);
                     }
-                    
+
                 }
             })
         }
@@ -2914,7 +3287,7 @@
                             <span class="sidebar_title step-menu-title">Form Steps</span>
                             <ul class="step-menu">
 
-                                <li class="active" onclick="showStep('step1')" id="step1-menu">
+                                <li class="active" onclick="moveToStep('step1')" id="step1-menu">
                                     <a h tabindex="-1">
                                         <div class="step-num">1.</div>
                                         <span class="truncate">
@@ -2928,7 +3301,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="showStep('step2')" id="step2-menu">
+                                <li class="incomplete" onclick="moveToStep('step2')" id="step2-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">2.</div>
                                         <span class="truncate">
@@ -2942,7 +3315,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="showStep('step3')" id="step3-menu">
+                                <li class="incomplete" onclick="moveToStep('step3')" id="step3-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">3.</div>
                                         <span class="truncate">
@@ -2956,7 +3329,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="showStep('step4')" id="step4-menu">
+                                <li class="incomplete" onclick="moveToStep('step4')" id="step4-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">4.</div>
                                         <span class="truncate">
@@ -2970,7 +3343,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="showStep('step5')" id="step5-menu">
+                                <li class="incomplete" onclick="moveToStep('step5')" id="step5-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">5.</div>
                                         <span class="truncate">
@@ -2984,7 +3357,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="showStep('step6')" id="step6-menu">
+                                <li class="incomplete" onclick="moveToStep('step6')" id="step6-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">6.</div>
                                         <span class="truncate">
@@ -2998,7 +3371,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="showStep('step7')" id="step7-menu">
+                                <li class="incomplete" onclick="moveToStep('step7')" id="step7-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">7.</div>
                                         <span class="truncate">
@@ -3012,7 +3385,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="showStep('step8')" id="step8-menu">
+                                <li class="incomplete" onclick="moveToStep('step8')" id="step8-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">8.</div>
                                         <span class="truncate">
@@ -18787,12 +19160,12 @@
                                                                                 value="contractual"
                                                                                 onclick="validateFieldOnBlur(this); showHideRadioDiv(this, 'dynformSCA6ClaimingInterestTypeContractual_div', 'contractual'); showHideRadioDiv(this, 'dynformSCA6ClaimingInterestTypeStatutory_div', 'statutory'); clearAllInputChildNodes('dynformSCA6ClaimingInterestTypeStatutory_div'); removeFieldFromValidation('dynformSCA6ClaimingStatutoryDate'); hideDiv('dynformSCA6ClaimingInterestCostContractualTo_div');hideError(this.name);"
                                                                                 class="df_input"
-                                                                                id="dynformSCA6ClaimingInterestType_Contractual?"
+                                                                                id="dynformSCA6ClaimingInterestType_Contractual"
                                                                                 data-title="">
 
 
                                                                             <label
-                                                                                for="dynformSCA6ClaimingInterestType_Contractual?">
+                                                                                for="dynformSCA6ClaimingInterestType_Contractual">
 
 
                                                                                 Contractual?
@@ -18852,12 +19225,12 @@
                                                                                 value="statutory"
                                                                                 onclick="validateFieldOnBlur(this); showHideRadioDiv(this, 'dynformSCA6ClaimingInterestTypeContractual_div', 'contractual'); showHideRadioDiv(this, 'dynformSCA6ClaimingInterestTypeStatutory_div', 'statutory'); clearAllInputChildNodes('dynformSCA6ClaimingInterestTypeContractual_div'); removeFieldFromValidation('dynformSCA6ClaimingContractualFirst','dynformSCA6ClaimingContractualSecond','dynformSCA6ClaimingContractualThird','dynformSCA6ClaimingContractualDate','dynformSCA6ClaimingStatutoryDate');hideDiv('dynformSCA6ClaimingInterestCostContractualTo_div');hideError(this.name);"
                                                                                 class="df_input"
-                                                                                id="dynformSCA6ClaimingInterestType_Statutory?"
+                                                                                id="dynformSCA6ClaimingInterestType_Statutory"
                                                                                 data-title="">
 
 
                                                                             <label
-                                                                                for="dynformSCA6ClaimingInterestType_Statutory?">
+                                                                                for="dynformSCA6ClaimingInterestType_Statutory">
 
 
                                                                                 Statutory?
@@ -21627,7 +22000,7 @@
 
                                                 </div>
                                                 <div class="form-row full-width">
-                                                    <div class="description" >
+                                                    <div class="description">
 
                                                         <legend class="hidden">&nbsp;</legend>
                                                         <div class="radioButtons1">
