@@ -162,6 +162,178 @@
             background: #d8eaf6
         }
     </style>
+    <style>
+        * {
+            font-family: helvetica, arial, sans-serif;
+            font-size: 1.5rem;
+        }
+
+        body {
+            perspective: 500px;
+        }
+
+        /* clear background */
+        h2 {
+            text-align: center;
+            padding: 16px;
+            margin: 0;
+        }
+
+        /* crops animations that exceeds one line area */
+        .line {
+            width: 100%;
+            height: 4rem;
+            overflow: hidden;
+            border: 1px solid black;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+
+        /* flipping class and key frames*/
+        .flipX {
+            animation: 1s anim-flipX ease infinite;
+        }
+
+        @keyframes anim-flipX {
+            0% {
+                opacity: 0;
+                transform: rotateX(90def);
+            }
+
+            50% {
+                opacity: 1;
+                transform: rotateX(720deg);
+            }
+
+            100% {
+                /* animate nothing to pause animation at the end */
+                opacity: 1;
+                transform: rotateX(720deg);
+            }
+        }
+
+        /* lineup class and keyframes */
+        .lineUp {
+            animation: 2s anim-lineUp ease-out infinite;
+        }
+
+        @keyframes anim-lineUp {
+            0% {
+                opacity: 0;
+                transform: translateY(80%);
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        /* flipY class and keyframes*/
+        .flipY {
+            animation-name: spin, depth;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-duration: 6s;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(-360deg);
+            }
+        }
+
+        @keyframes depth {
+            0% {
+                text-shadow: 0 0 black;
+            }
+
+            25% {
+                text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black;
+            }
+
+            50% {
+                text-shadow: 0 0 black;
+            }
+
+            75% {
+                text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black,
+                    -5px 0 black;
+            }
+
+            100% {
+                text-shadow: 0 0 black;
+            }
+        }
+
+        /* subtle zoom to attention and then back */
+        .pop-outin {
+            animation: 2s anim-popoutin ease infinite;
+        }
+
+        @keyframes anim-popoutin {
+            0% {
+                color: black;
+                transform: scale(0);
+                opacity: 0;
+                text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            }
+
+            25% {
+                color: red;
+                transform: scale(2);
+                opacity: 1;
+                text-shadow: 3px 10px 5px rgba(0, 0, 0, 0.5);
+            }
+
+            50% {
+                color: black;
+                transform: scale(1);
+                opacity: 1;
+                text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+            }
+
+            100% {
+                /* animate nothing to add pause at the end of animation */
+                transform: scale(1);
+                opacity: 1;
+                text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+            }
+        }
+
+        .fromtop {
+            animation: 2s anim-fromtop linear infinite;
+        }
+
+        @keyframes anim-fromtop {
+            0% {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+
+            25% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+
+            50% {}
+
+            100% {}
+        }
+    </style>
     <!--link type="text/css" rel="stylesheet" media="all"
         href="./European e-Justice Portal - Form A - Claim form_files/utilities.css"-->
     <link type="text/css" rel="stylesheet" media="all" href="./main.css">
@@ -207,14 +379,14 @@
 
             parties = document.createElement("parties");
             page_dynform_sc_a_2.appendChild(parties);
-            
+
             role = document.createElement("role");
             role.innerText = "CLAIMANT";
             parties.appendChild(role);
 
             elements = document.querySelectorAll('[id^="parties[0].dynformSCA2Claimant"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
+                //console.log(element.id + "=" + element.value);
                 let value = '';
                 if (typeof element.value != 'undefined' && element.value) {
                     value = element.value;
@@ -234,14 +406,14 @@
 
             parties = document.createElement("parties");
             page_dynform_sc_a_3.appendChild(parties);
-            
+
             role = document.createElement("role");
             role.innerText = "DEFENDANT";
             parties.appendChild(role);
 
             elements = document.querySelectorAll('[id^="partiesDef[0].dynformSCA3Defendant"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
+                //console.log(element.id + "=" + element.value);
                 let value = '';
                 if (typeof element.value != 'undefined' && element.value) {
                     value = element.value;
@@ -261,7 +433,7 @@
 
             elements = document.querySelectorAll('input[id^="dynformSCA4"],select[id^="dynformSCA4"],textarea[id^="dynformSCA4"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
+                //console.log(element.id + "=" + element.value);
                 let value = '';
                 if (typeof element.value != 'undefined' && element.value) {
                     value = element.value;
@@ -281,7 +453,7 @@
 
             elements = document.querySelectorAll('input[id^="dynformSCA5"],select[id^="dynformSCA5"],textarea[id^="dynformSCA5"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
+                //console.log(element.id + "=" + element.value);
                 let value = '';
                 if (typeof element.value != 'undefined' && element.value) {
                     value = element.value;
@@ -301,7 +473,7 @@
 
             elements = document.querySelectorAll('input[id^="dynformSCA6"],select[id^="dynformSCA6"],textarea[id^="dynformSCA6"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
+                //console.log(element.id + "=" + element.value);
                 let value = '';
                 if (typeof element.value != 'undefined' && element.value) {
                     value = element.value;
@@ -309,21 +481,21 @@
                 let name = generateXMLName(element.id);
                 if (name.includes('_yes')) {
                     if (element.checked) {
-                        tmp = name.substr(0, name.length-5);
+                        tmp = name.substr(0, name.length - 5);
                         XMLelement = document.createElement(tmp);
                         XMLelement.innerText = 'yes';
                         page_dynform_sc_a_6.appendChild(XMLelement);
                     }
-                } 
+                }
 
                 if (isValidElement(name)) {
                     XMLelement = document.createElement(name);
                     XMLelement.innerText = value;
                     page_dynform_sc_a_6.appendChild(XMLelement);
                 }
-          
-            
-                
+
+
+
             });
 
             // popolate page 7
@@ -333,7 +505,7 @@
 
             elements = document.querySelectorAll('input[id^="dynformSCA7"],select[id^="dynformSCA7"],textarea[id^="dynformSCA7"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
+                //console.log(element.id + "=" + element.value);
                 let value = '';
                 if (typeof element.value != 'undefined' && element.value) {
                     value = element.value;
@@ -341,21 +513,21 @@
                 let name = generateXMLName(element.id);
                 if (name.includes('_yes')) {
                     if (element.checked) {
-                        tmp = name.substr(0, name.length-5);
+                        tmp = name.substr(0, name.length - 5);
                         XMLelement = document.createElement(tmp);
                         XMLelement.innerText = 'yes';
                         page_dynform_sc_a_7.appendChild(XMLelement);
                     }
-                } 
+                }
 
                 if (isValidElement(name)) {
                     XMLelement = document.createElement(name);
                     XMLelement.innerText = value;
                     page_dynform_sc_a_7.appendChild(XMLelement);
                 }
-          
-            
-                
+
+
+
             });
 
             // popolate page 8
@@ -365,7 +537,7 @@
 
             elements = document.querySelectorAll('input[id^="dynformSCA8"],select[id^="dynformSCA8"],textarea[id^="dynformSCA8"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
+                //console.log(element.id + "=" + element.value);
                 let value = '';
                 if (typeof element.value != 'undefined' && element.value) {
                     value = element.value;
@@ -373,26 +545,26 @@
                 let name = generateXMLName(element.id);
                 if (name.includes('_yes')) {
                     if (element.checked) {
-                        tmp = name.substr(0, name.length-5);
+                        tmp = name.substr(0, name.length - 5);
                         XMLelement = document.createElement(tmp);
                         XMLelement.innerText = 'yes';
                         page_dynform_sc_a_8.appendChild(XMLelement);
                     }
-                } 
+                }
 
                 if (isValidElement(name)) {
                     XMLelement = document.createElement(name);
                     XMLelement.innerText = value;
                     page_dynform_sc_a_8.appendChild(XMLelement);
                 }
-          
-            
-                
+
+
+
             });
 
             console.log(doc.documentElement.outerHTML);
-            
-            let blob = new Blob([doc.documentElement.outerHTML], {type: 'text/xml'});
+
+            let blob = new Blob([doc.documentElement.outerHTML], { type: 'text/txt' });
             let url = URL.createObjectURL(blob);
             window.open(url);
             URL.revokeObjectURL(url); //Releases the resources
@@ -410,12 +582,12 @@
                 return false;
             if (value.includes('_2'))
                 return false;
-                
+
             return true;
         }
 
         function generateXMLName(value) {
-            
+
             value = value.replaceAll('parties[0].dynformSCA2', 'dynform-sCA2-');
             value = value.replaceAll('partiesDef[0].dynformSCA3', 'dynform-sCA3-');
             value = value.replaceAll('dynformSCA4', 'dynform-sCA4-');
@@ -450,7 +622,7 @@
             value = value.replaceAll('contractual', 'contractual-');
             value = value.replaceAll('date', 'date-');
             value = value.replaceAll('statutory', 'statutory-');
-       
+
             value = value.replaceAll('reasons', 'reasons-');
             value = value.replaceAll('for', 'for-');
             value = value.replaceAll('your', 'your-');
@@ -475,7 +647,7 @@
             value = value.replaceAll('', '');
             value = value.replaceAll('sca', 'sCA');
             if (value.slice(-1).includes('-')) {
-                value = value.substr(0, value.length-1);
+                value = value.substr(0, value.length - 1);
             }
 
 
@@ -484,105 +656,202 @@
 
         function validaFormValues(step) {
 
+            if (step.includes('step1')) {
+                let organisationName = sessionStorage.getItem('parties[0].dynformSCA2ClaimantName');
+                let claimant1Name = sessionStorage.getItem('parties[0].dynformSCA2ClaimantSurname');
+                let claimant1Surname = sessionStorage.getItem('parties[0].dynformSCA2ClaimantFirstname');
+                let postalCode = sessionStorage.getItem('parties[0].dynformSCA2ClaimantPostalCode');;
+                let street = sessionStorage.getItem('parties[0].dynformSCA2ClaimantStreet');;
+                let city = sessionStorage.getItem('parties[0].dynformSCA2ClaimantCity');;
+                let country = sessionStorage.getItem('parties[0].dynformSCA2ClaimantCountry');;
+                if (organisationName !== '' && (claimant1Surname !== '' || claimant1Name !== '')) {
+                    alert('Non puoi inserire sia i dati dell\'azienda che quelli di una persona fisica');
+                    return false;
+                }
+                if (organisationName !== '' && (claimant1Surname !== '' && claimant1Name !== '')) {
+                    alert('Devi inserire i dati dell\'azienda o quelli di una persona fisica');
+                    return false;
+                }
+                if (organisationName !== '' && (claimant1Surname !== '' && claimant1Name === '')) {
+                    alert('Devi inserire il nome della persona fisica');
+                    return false;
+                }
+                if (organisationName !== '' && (claimant1Surname === '' && claimant1Name !== '')) {
+                    alert('Devi inserire il cognome della persona fisica');
+                    return false;
+                }
+                if (postalCode === '') {
+                    alert('Devi inserire il codice postale di residenza');
+                    return false;
+                }
+
+                if (street === '') {
+                    alert('Devi inserire la via e il numero civico di residenza');
+                    return false;
+                }
+                if (city === '') {
+                    alert('Devi inserire la via e il comune di residenza');
+                    return false;
+                }
+                if (country === '') {
+                    alert('Devi inserire la via e il paese di residenza');
+                    return false;
+                }
+            }
+            if (step.includes('step2')) {
+                let defendatOrganisationName = sessionStorage.getItem('partiesDef[0].dynformSCA3DefendantName');
+                let defendantName = sessionStorage.getItem('partiesDef[0].dynformSCA3DefendantSurname');
+                let defendatSurname = sessionStorage.getItem('partiesDef[0].dynformSCA3DefendantFirstname');
+                let defendatPostalCode = sessionStorage.getItem('partiesDef[0].dynformSCA3DefendantPostalCode');;
+                let defendatStreet = sessionStorage.getItem('partiesDef[0].dynformSCA3DefendantStreet');;
+                let cdefendatCity = sessionStorage.getItem('partiesDef[0].dynformSCA3DefendantCity');;
+                let defendatCountry = sessionStorage.getItem('partiesDef[0].dynformSCA3DefendantCountry');;
+                if (organisationName !== '' && (claimant1Surname !== '' || claimant1Name !== '')) {
+                    alert('Non puoi inserire sia i dati dell\'azienda che quelli di una persona fisica');
+                    return false;
+                }
+                if (organisationName !== '' && (claimant1Surname !== '' && claimant1Name !== '')) {
+                    alert('Devi inserire i dati dell\'azienda o quelli di una persona fisica');
+                    return false;
+                }
+                if (organisationName !== '' && (claimant1Surname !== '' && claimant1Name === '')) {
+                    alert('Devi inserire il nome della persona fisica');
+                    return false;
+                }
+                if (organisationName !== '' && (claimant1Surname === '' && claimant1Name !== '')) {
+                    alert('Devi inserire il cognome della persona fisica');
+                    return false;
+                }
+                if (postalCode === '') {
+                    alert('Devi inserire il codice postale di residenza');
+                    return false;
+                }
+
+                if (street === '') {
+                    alert('Devi inserire la via e il numero civico di residenza');
+                    return false;
+                }
+                if (city === '') {
+                    alert('Devi inserire la via e il comune di residenza');
+                    return false;
+                }
+                if (country === '') {
+                    alert('Devi inserire la via e il paese di residenza');
+                    return false;
+                }
+            }
+
             return true;
         }
 
         function saveModel() {
+
             // get claimant 1 data
             elements = document.querySelectorAll('[id^="parties[0].dynformSCA2Claimant"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
-                sessionStorage.setItem("claimant_1." + element.id, element.value);
+                //console.log(element.id + "=" + element.value);
+                sessionStorage.setItem(element.id, element.value);
             });
 
             // get defendat 1 data
             elements = document.querySelectorAll('[id^="partiesDef[0].dynformSCA3Defendant"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
-                sessionStorage.setItem("defendat_1." + element.id, element.value);
+                //console.log(element.id + "=" + element.value);
+                sessionStorage.setItem(element.id, element.value);
             });
 
             // get dynformSCA1 data
             elements = document.querySelectorAll('[id^="dynformSCA1"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
-                sessionStorage.setItem("dynformSCA1." + element.id, element.value);
+                //console.log(element.id + "=" + element.value);
+                sessionStorage.setItem(element.id, element.value);
             });
 
             // get dynformSCA2 data
             elements = document.querySelectorAll('[id^="dynformSCA4"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
-                sessionStorage.setItem("dynformSCA4." + element.id, element.value);
+                //console.log(element.id + "=" + element.value);
+                sessionStorage.setItem(element.id, element.value);
             });
 
             // get dynformSCA4 data
             elements = document.querySelectorAll('[id^="dynformSCA4"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
-                sessionStorage.setItem("dynformSCA4." + element.id, element.value);
+                //console.log(element.id + "=" + element.value);
+                sessionStorage.setItem(element.id, element.value);
             });
 
             // get dynformSCA5 data
             elements = document.querySelectorAll('[id^="dynformSCA5"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
-                sessionStorage.setItem("dynformSCA5." + element.id, element.value);
+                //console.log(element.id + "=" + element.value);
+                sessionStorage.setItem(element.id, element.value);
             });
 
             // get dynformSCA5 data
             elements = document.querySelectorAll('[id^="dynformSCA5"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
-                sessionStorage.setItem("dynformSCA5." + element.id, element.value);
+                //console.log(element.id + "=" + element.value);
+                sessionStorage.setItem(element.id, element.value);
             });
 
             // get dynformSCA6 data
             elements = document.querySelectorAll('[id^="dynformSCA6"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
-                sessionStorage.setItem("dynformSCA6." + element.id, element.value);
+                //console.log(element.id + "=" + element.value);
+                sessionStorage.setItem(element.id, element.value);
             });
 
             // get dynformSCA7 data
             elements = document.querySelectorAll('[id^="dynformSCA7"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
-                sessionStorage.setItem("dynformSCA7." + element.id, element.value);
+                //console.log(element.id + "=" + element.value);
+                sessionStorage.setItem(element.id, element.value);
             });
 
             // get dynformSCA8 data
             elements = document.querySelectorAll('[id^="dynformSCA8"]');
             elements.forEach(element => {
-                console.log(element.id + "=" + element.value);
-                sessionStorage.setItem("dynformSCA8." + element.id, element.value);
+                //console.log(element.id + "=" + element.value);
+                sessionStorage.setItem(element.id, element.value);
             });
 
 
         }
 
         function next() {
-            validaFormValues(actualStep);
             saveModel();
+            if (validaFormValues('step' + actualStep)) {
+                document.activeElement.blur();
+                return;
+            }
             if (actualStep < 8) {
                 actualStep = actualStep + 1;
                 showStep('step' + actualStep);
+                document.activeElement.blur();
             }
         }
 
         function back() {
-            validaFormValues(actualStep);
             saveModel();
+
             if (actualStep > 1) {
                 actualStep = actualStep - 1;
                 showStep('step' + actualStep);
+                document.activeElement.blur();
             }
         }
 
         function moveToStep(step) {
-            validaFormValues(actualStep);
             saveModel();
+            if (validaFormValues('step' + actualStep)) {
+                document.activeElement.blur();
+                return;
+            }
+
             showStep(step);
+            document.activeElement.blur();
+
         }
 
         function showStep(step) {
@@ -599,7 +868,9 @@
             // show pdf legal
             divLegal = document.querySelectorAll('[scaii_pdf_step*="' + step + '"]');
             divLegal.forEach(element => {
-                element.style.display = 'block';
+                element.style.display = 'initial';
+
+
             });
 
         }
@@ -656,6 +927,7 @@
         }
 
         async function main() {
+            sessionStorage.clear();
             let modelRequest = await fetch('../model.json');
             model = await modelRequest.json();
 
@@ -689,30 +961,55 @@
             btn = document.getElementById('simplyfied_btn');
             if (type.includes('simplyfied')) {
                 btn.setAttribute('onClick', 'showText("original")');
-                btn.innerText = 'Original Text';
+                btn.innerText = 'Visualizza Testo origiale';
+
+                // change button icon
+                ico = document.getElementById('simplyfied_ico');
+                //ico.className = "bi bi-book-half";
+
+                const toastLiveExample = document.getElementById('liveToast');
+                const toast = new bootstrap.Toast(toastLiveExample);
+                toast.show();
+
+
+
                 // hide pdf legal
                 simplificationBoxs = document.querySelectorAll('[scanii_simplificationBox]');
                 for (i = 0; i < divLegal.length; i++) {
-                    simplificationBoxs[i].style = "background-color: #ffcc99 ; padding: 10px; border: 1px solid green";
+                    simplificationBoxs[i].style = "margin-top: 20px; background-color: #F7FAA0 ; padding: 10px; border: 0px ";
                     simplificationBoxs[i].title = 'Testo semplificato';
-                    const toastLiveExample = document.getElementById('liveToast');
-                    const toast = new bootstrap.Toast(toastLiveExample);
-                    toast.show();
+
+
+
+
 
                 }
             } else {
                 btn.setAttribute('onClick', 'showText("simplyfied")');
-                btn.innerText = 'Simplyfied Text';
+                btn.innerText = 'Visualizza Testo Semplificato';
+                // change button icon
+                ico = document.getElementById('simplyfied_ico');
+                //ico.className = "bi bi-book"
+
                 simplificationBoxs = document.querySelectorAll('[scanii_simplificationBox]');
                 for (i = 0; i < divLegal.length; i++) {
-                    simplificationBoxs[i].style = "background-color: #cce6ff ; padding: 10px; border: 1px solid green";
+                    simplificationBoxs[i].style = "margin-top: 20px; background-color: #cce6ff ; padding: 10px; border: 0px ";
                     simplificationBoxs[i].title = 'Testo originale';
-                    const toastLiveExample = document.getElementById('liveToast');
-                    const toast = new bootstrap.Toast(toastLiveExample);
-                    toast.hide();
+
 
                 }
             }
+        }
+
+        function pdfShow(pdfId) {
+            divLink = document.getElementById(pdfId);
+            divLink.classList.add("pop-outin");
+
+        }
+
+        function pdfHide(pdfId) {
+            divLink = document.getElementById(pdfId);
+            divLink.classList.remove("pop-outin");
         }
 
         function processBlock(block) {
@@ -739,19 +1036,23 @@
 
             divLegal = document.getElementById('legal_information');
 
-
+            console.log('blockId=' + blockId);
 
             infoElement.link.forEach(link => {
-                if (link.type == 'LEGAL_LINK') {
+
+                if (typeof link !== 'undefined' && link !== null && link.url !== '') {
+
+
                     let div = document.getElementById(link.url);
 
                     if (typeof div != 'undefined' && div !== null) {
-                        let attributeValue = div.scaii_pdf_step;
+                        let attributeValue = div.getAttribute("scaii_pdf_step");
                         div.setAttribute('scaii_pdf_step', attributeValue + "," + blockId);
                     } else {
-                        div = document.createElement('p');
+                        div = document.createElement('div');
                         div.setAttribute('scaii_pdf_step', blockId);
                         div.setAttribute('id', link.url);
+                        div.className = "list-item";
                         a = document.createElement("a");
                         a.href = link.url;
                         a.setAttribute('target', '_blank');
@@ -761,8 +1062,9 @@
                         div.setAttribute('title', link.description);
                         divLegal.append(div);
                     }
-
                 }
+
+
             })
         }
 
@@ -850,9 +1152,10 @@
                 if (typeof link.url != 'undefined' && link.url && link.url != '') {
                     replaceText = '';
                     if (typeof link.description != 'undefined' && link.description && link.description != '')
-                        replaceText = '<a target=”_blank” title="' + link.description + '" href="' + link.url + '">' + link.name + '</a>';
+                        //replaceText = '<a target=”_blank” title="' + link.description + '" href="' + link.url + '" onmouseover="pdfShow(\''+link.url+'"\')">' + link.name + '</a>';
+                        replaceText = '<a  target=”_blank” href="' + link.url + '" onmouseout="pdfHide(\'' + link.url + '\')"' + '" onmouseover="pdfShow(\'' + link.url + '\')">' + link.name + '</a>';
                     else
-                        replaceText = '<a  target=”_blank” href="' + link.url + '">' + link.name + '</a>';
+                        replaceText = '<a  target=”_blank” href="' + link.url + '" onmouseout="pdfHide(\'' + link.url + '\')"' + '" onmouseover="pdfShow(\'' + link.url + '\')">' + link.name + '</a>';
                     htmlFragment = htmlFragment.replaceAll(link.url, replaceText);
                 }
             });
@@ -869,7 +1172,8 @@
 
             // add simplification box
             simplificationBox = document.createElement("div");
-            simplificationBox.style = "background-color: #cce6ff ; padding: 10px; border: 1px solid green";
+            simplificationBox.style = "min-height: 1px;max-height: 3px;margin-top: 20px;background-color: #cce6ff ; padding: 10px; border: 0px";
+
             simplificationBox.title = 'Testo originale';
             simplificationBox.setAttribute('scanii_simplificationBox', '');
             simplificationBox.setAttribute('class', 'description');
@@ -892,8 +1196,9 @@
             yellowDiv = document.createElement("div");
             yellowDiv.setAttribute('class', 'accordion-body');
 
+
             accordionCnt.append(yellowDiv);
-            //accordionCnt.style = "background-color: #cfc ; padding: 10px; border: 1px solid green";
+            accordionCnt.style = "background-color: #F9E79F ; padding: 10px; border: 0px ";
             accordionBtn = document.createElement("button");
             accordionBtn.setAttribute('class', 'accordion-button collapsed ');
             accordionBtn.setAttribute('type', 'button');
@@ -3149,7 +3454,8 @@
                         <p>
 
 
-                            <i class="bi-map"></i><i></i><a id="simplyfied_btn" onClick="showText('simplyfied')">Testo
+                            <i id="simplyfied_icon" class="bi bi-book"></i><i></i><a id="simplyfied_btn"
+                                onClick="showText('simplyfied')">Visualizza Testo
                                 semplificato</a>
                         </p>
                     </div>
@@ -3163,6 +3469,21 @@
         </div>
         </div>
 
+        <div class="toast-container position-sticky top-0 end-0 p-3" style="float: right">
+            <div id="liveToast" class="toast align-items-center text-center text-bg-warning border-1" role="alert"
+                aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+                <div class="toast-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body text-center fs-4">
+                    <p><strong class="me-auto fs-4" >Attenzione!!!</strong></p>
+                    <p>Stai visualizzando il testo semplificato</p>
+                   
+                    
+                </div>
+               
+            </div>
+        </div>
 
         <div id="maincontent" class="content detail-page dynamic-forms">
 
@@ -3422,7 +3743,12 @@
 
                             <!-- End of progress bar -->
 
+                            <span class="sidebar_title step-menu-title">PDF utili</span>
 
+                            <div id="legal_information" class="list-group">
+
+
+                            </div>
 
                             <!-- Start of Load & Save buttons -->
 
@@ -3448,11 +3774,6 @@
 -->
                             </div>
 
-                            <div id="legal_information">
-                                <span class="sidebar_title step-menu-title">PDF utili</span>
-
-
-                            </div>
 
                             <script language="JavaScript">
                                 $(document).ready(function () {
@@ -3690,7 +4011,7 @@
 
 
 
-                                    <!-- begin 1-->
+                                    <!-- begin step 1-->
                                     <div id="step1">
 
                                         <div class="form-row full-width">
@@ -6208,14 +6529,13 @@
                                     <div id="step2">
 
 
-                                        <div concept="http://scanii.org/domain/defendant">
-                                            <h3>2. Defendant&nbsp;&nbsp;&nbsp;</h3>
 
-                                        </div>
                                         <div class="form-row full-width">
                                             <div class="description">
 
-                                                <p style="margin:0">&nbsp;</p>
+
+
+                                                <!-- <p style="margin:0">&nbsp;</p>
 
                                                 <div class="form-row full-width bold">
                                                     <div>
@@ -6231,7 +6551,7 @@
 
                                                     </div>
 
-                                                </div>
+                                                </div> -->
 
 
 
@@ -6273,7 +6593,8 @@
 
 
 
-                                                            <div style="width: 90%;display: inline-block;" class="">
+                                                            <div style="width: 90%;display: inline-block;" class=""
+                                                                concept="http://scanii.org/domain/defendant">
 
                                                                 <div class="js-toggle-trigger" tabindex="0"><span>
 
@@ -6287,6 +6608,21 @@
 
 
 
+                                                            <div class="form-row full-width bold">
+                                                                <div>
+
+                                                                    <label style="margin-bottom:0px">
+
+
+                                                                        2. The defendant’s details
+
+
+
+                                                                    </label>
+
+                                                                </div>
+
+                                                            </div>
 
 
 
@@ -9491,7 +9827,7 @@
 
                                         <div id="step4_1">
                                             <div>
-                                                <h3>4. Cross-border nature of the
+                                                <h3>4.1 Cross-border nature of the
                                                     case&nbsp;&nbsp;&nbsp;
                                                 </h3>
                                             </div>
@@ -9517,7 +9853,7 @@
                                                                 <label for="dynformSCA5claimantResidence">
 
 
-                                                                    4.1. Country of domicile or
+                                                                    4.1.1. Country of domicile or
                                                                     habitual residence of claimant
 
 
@@ -10468,7 +10804,7 @@
                                                                 <label for="dynformSCA5defendantResidence">
 
 
-                                                                    4.2. Country of domicile or
+                                                                    4.1.2. Country of domicile or
                                                                     habitual residence of defendant
 
 
@@ -11424,7 +11760,7 @@
                                                                 <label for="dynformSCA5countryCourt">
 
 
-                                                                    4.3. Member State of the
+                                                                    4.1.3. Member State of the
                                                                     court/tribunal
 
 
@@ -12376,7 +12712,7 @@
                                         </div>
                                         <div id="step4_1">
                                             <div concept="http://scanii.org/domain/bankDetails">
-                                                <h3>6. Bank details (optional)&nbsp;&nbsp;&nbsp;
+                                                <h3>4.2. Bank details (optional)&nbsp;&nbsp;&nbsp;
 
                                                 </h3>
                                             </div>
@@ -12397,7 +12733,7 @@
 
                                                                 <label style="margin-bottom:0px">
 
-                                                                    5.1
+                                                                    4.2.1
                                                                     . How will you pay the
                                                                     application fee?
 
@@ -13409,7 +13745,7 @@
                                                                 <label style="margin-bottom:0px">
 
 
-                                                                    5.2. To which account do you
+                                                                    4.2.2. To which account do you
                                                                     wish the defendant to pay any
                                                                     amount claimed or awarded?
 
@@ -13442,7 +13778,7 @@
                                                                     <label for="dynformSCA5AccountPayHolder">
 
 
-                                                                        5.2.1. Account holder
+                                                                        4.2.2.1. Account holder
 
 
 
@@ -13515,7 +13851,7 @@
                                                                     <label for="dynformSCA5AccountBank">
 
 
-                                                                        5.2.2. Bank name, BIC or
+                                                                        4.2.2.2 Bank name, BIC or
                                                                         other relevant bank code
 
 
@@ -13589,7 +13925,7 @@
                                                                     <label for="dynformSCA5AccountIban">
 
 
-                                                                        5.2.3. Account number/IBAN
+                                                                        4.2.2.3. Account number/IBAN
 
 
 
@@ -13671,8 +14007,10 @@
 
                                     <!------begin step 5 -->
                                     <div id="step5">
+
+
                                         <div concept="http://scanii.org/domain/claim">
-                                            <h3>6. Claim&nbsp;&nbsp;&nbsp;</h3>
+                                            <h3>5. Claim&nbsp;&nbsp;&nbsp;</h3>
                                         </div>
 
 
@@ -13687,7 +14025,7 @@
                                                             <label style="margin-bottom:0px">
 
 
-                                                                6.1. Claim for money
+                                                                5.1. Claim for money
 
                                                                 <span class="asterisk">*</span>
 
@@ -13837,7 +14175,7 @@
                                                                 <label for="dynformSCA6ClaimMoneyValue">
 
 
-                                                                    6.1.1. Amount of principal
+                                                                    5.1.1. Amount of principal
                                                                     (excluding interest and
                                                                     costs)
 
@@ -13911,7 +14249,7 @@
                                                                 <label for="dynformSCA6ClaimMoneyCurrency">
 
 
-                                                                    6.1.2. Currency
+                                                                    5.1.2. Currency
 
 
 
@@ -16186,7 +16524,7 @@
                                                             <label style="margin-bottom:0px">
 
 
-                                                                6.2. Other claim
+                                                                5.2. Other claim
 
                                                                 <span class="asterisk">*</span>
 
@@ -18757,7 +19095,7 @@
                                                             <label style="margin-bottom:0px">
 
 
-                                                                6.3. Are you claiming the costs
+                                                                5.3. Are you claiming the costs
                                                                 of proceedings?
 
                                                                 <span class="asterisk">*</span>
@@ -18904,7 +19242,7 @@
                                                                     <label for="dynformSCA6ClaimingCostsSpecify">
 
 
-                                                                        6.3.3. If yes, please
+                                                                        5.3.3. If yes, please
                                                                         specify which costs and
                                                                         indicate the amount
                                                                         claimed or incurred so
@@ -18987,7 +19325,7 @@
                                                             <label style="margin-bottom:0px">
 
 
-                                                                7.4. Are you claiming interest?
+                                                                5.4. Are you claiming interest?
 
                                                                 <span class="asterisk">*</span>
 
@@ -20434,7 +20772,7 @@
                                                         <label style="margin-bottom:0px">
 
 
-                                                            7.5. Are you claiming interest on
+                                                            5.5. Are you claiming interest on
                                                             costs?
 
                                                             <span class="asterisk">*</span>
@@ -21109,7 +21447,7 @@
                                     <!------begin step 6 -->
                                     <div id="step6">
                                         <div concept="http://scanii.org/domain/claimDetails">
-                                            <h3>7. Details of claim&nbsp;&nbsp;&nbsp;</h3>
+                                            <h3>6. Details of claim&nbsp;&nbsp;&nbsp;</h3>
                                         </div>
                                         <div class="form-row full-width">
                                             <div class="description">
@@ -21125,7 +21463,7 @@
                                                         <!-- NEW ENTRY -->
 
 
-                                                        <label>7. Details of claim</label>
+                                                        <label>6. Details of claim</label>
 
 
 
@@ -21152,7 +21490,7 @@
                                                                 <label for="dynformSCA7ReasonsForYourClaim">
 
 
-                                                                    8.1. Please give reasons for
+                                                                    6.1. Please give reasons for
                                                                     your claim, for example what
                                                                     happened, where and when.
 
@@ -21227,7 +21565,7 @@
                                                                 <label style="margin-bottom:0px">
 
 
-                                                                    8.2. Please describe the
+                                                                    6.2. Please describe the
                                                                     evidence you wish to put
                                                                     forward to support your
                                                                     claim and state which points
@@ -21260,7 +21598,7 @@
                                                                             <label style="margin-bottom:0px">
 
 
-                                                                                8.2.1. Written
+                                                                                6.2.1. Written
                                                                                 evidence
 
                                                                                 <span class="asterisk">*</span>
@@ -21505,7 +21843,7 @@
                                                                             <label style="margin-bottom:0px">
 
 
-                                                                                8.2.2. Witnesses
+                                                                                6.2.2. Witnesses
 
                                                                                 <span class="asterisk">*</span>
 
@@ -21746,7 +22084,7 @@
                                                                             <label style="margin-bottom:0px">
 
 
-                                                                                8.2.3. Other
+                                                                                6.2.3. Other
 
                                                                                 <span class="asterisk">*</span>
 
@@ -21995,7 +22333,7 @@
                                     <div id="step7">
                                         <div id="step7_1" concept="http://scanii.org/domain/oralHearing">
                                             <div>
-                                                <h3>9. Oral hearing&nbsp;&nbsp;&nbsp;</h3>
+                                                <h3>7.1. Oral hearing&nbsp;&nbsp;&nbsp;</h3>
                                                 <div class="js-toggle-trigger"
                                                     style="width: 93%;display: inline-block;">
 
@@ -22013,7 +22351,7 @@
                                                                         <label style="margin-bottom:0px">
 
 
-                                                                            9.1. Do you want an oral
+                                                                            7.1.1. Do you want an oral
                                                                             hearing to be held?
 
                                                                             <span class="asterisk">*</span>
@@ -22253,7 +22591,7 @@
                                                                         <label style="margin-bottom:0px">
 
 
-                                                                            9.2. If the court
+                                                                            7.1.2. If the court
                                                                             decides to
                                                                             hold an oral hearing, do
                                                                             you
@@ -22496,7 +22834,7 @@
                                         <div id="step7_2" concept="http://scanii.org/domain/documentAndCommunication">
 
                                             <div>
-                                                <h3>10. Service of documents and communication with the
+                                                <h3>7.2 Service of documents and communication with the
                                                     court&nbsp;&nbsp;&nbsp;</h3>
 
                                             </div>
@@ -22514,7 +22852,7 @@
                                                                     <label style="margin-bottom:0px">
 
 
-                                                                        10.1. Do you agree to the
+                                                                        7.2.1. Do you agree to the
                                                                         use of electronic means of
                                                                         communication for the
                                                                         service of the response by
@@ -22674,7 +23012,7 @@
                                                                     <label style="margin-bottom:0px">
 
 
-                                                                        10.2 Do you agree to the use
+                                                                        7.2.2. Do you agree to the use
                                                                         of electronic means of
                                                                         communication to receive
                                                                         written communications other
@@ -22826,7 +23164,7 @@
                                         </div>
                                         <div id="step7_3" concept="http://scanii.org/domain/certificate">
                                             <div>
-                                                <h3>11. Certificate&nbsp;&nbsp;&nbsp;</h3>
+                                                <h3>7.3. Certificate&nbsp;&nbsp;&nbsp;</h3>
 
 
 
@@ -22845,7 +23183,7 @@
                                                             <label style="margin-bottom:0px">
 
 
-                                                                11.1 I ask the court/tribunal to
+                                                                7.3.1. I ask the court/tribunal to
                                                                 issue a certificate concerning the
                                                                 judgment
 
@@ -22991,7 +23329,7 @@
                                                             <label for="dynformSCA8CertificateLanguage">
 
 
-                                                                11.2 I ask the court/tribunal to
+                                                                7.3.2. I ask the court/tribunal to
                                                                 issue a certificate in another
                                                                 language than the language of the
                                                                 court proceedings, in particular:
@@ -23156,7 +23494,7 @@
                                         </div>
                                         <div id="step7_4" concept="http://scanii.org/domain/dateAndSignature">
                                             <div>
-                                                <h3>12. Date and signature&nbsp;&nbsp;&nbsp;</h3>
+                                                <h3>7.4. Date and signature&nbsp;&nbsp;&nbsp;</h3>
 
                                                 <div class="js-toggle-trigger"
                                                     style="width: 93%;display: inline-block;">
@@ -23182,7 +23520,7 @@
                                                                 <label style="margin-bottom:0px">
 
 
-                                                                    12. Date and signature
+                                                                    7.4 Date and signature
 
 
 
@@ -23716,7 +24054,7 @@
                                                                 <label for="dynformSCA1CourtName">
 
 
-                                                                    1.2. Name
+                                                                    8.2. Name
 
 
 
@@ -23787,7 +24125,7 @@
                                                                 <label for="dynformSCA1CourtStreet">
 
 
-                                                                    1.3. Street and number/PO
+                                                                    8.3. Street and number/PO
                                                                     box:
 
 
@@ -23860,7 +24198,7 @@
                                                                 <label for="dynformSCA1CourtPostal">
 
 
-                                                                    1.4 Postal Code
+                                                                    8.4. Postal Code
 
 
 
@@ -23930,7 +24268,7 @@
                                                                 <label for="dynformSCA1CourtCity">
 
 
-                                                                    1.5 City
+                                                                    8.5 City
 
 
 
@@ -26091,14 +26429,16 @@
         src="./European e-Justice Portal - Form A - Claim form_files/webtools.cck.js"></script>
 
     <!-- simplified toast -->
-    <div class="toast-container position-fixed top-50 end-0 translate-middle-y" style="background-color: #ffcc99 "
+    <!-- <div class="toast-container position-fixed top-50 end-0 translate-middle-y" style="background-color: #ffcc99 "
         data-bs-delay="100000">
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-body fs-3"">
             Attenzione! Ricorda che stai visualizzando delle informazioni semplificate.
           </div>
         </div>
-      </div>
+      </div> -->
+
+
 
 </body>
 <grammarly-desktop-integration data-grammarly-shadow-root=" true"></grammarly-desktop-integration>
