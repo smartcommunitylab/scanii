@@ -655,6 +655,8 @@
         }
 
         function validaFormValues(step) {
+            if (step.includes('step'))
+                return true;
 
             if (step.includes('step1')) {
                 let organisationName = sessionStorage.getItem('parties[0].dynformSCA2ClaimantName');
@@ -821,7 +823,7 @@
 
         function next() {
             saveModel();
-            if (validaFormValues('step' + actualStep)) {
+            if (!validaFormValues('step' + actualStep)) {
                 document.activeElement.blur();
                 return;
             }
@@ -844,7 +846,7 @@
 
         function moveToStep(step) {
             saveModel();
-            if (validaFormValues('step' + actualStep)) {
+            if (!validaFormValues('step' + actualStep)) {
                 document.activeElement.blur();
                 return;
             }
