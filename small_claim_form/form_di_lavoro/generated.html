@@ -963,7 +963,7 @@
             btn = document.getElementById('simplyfied_btn');
             if (type.includes('simplyfied')) {
                 btn.setAttribute('onClick', 'showText("original")');
-                btn.innerText = 'Visualizza Testo origiale';
+                btn.innerText = 'Visualizza Testo originale';
 
                 // change button icon
                 ico = document.getElementById('simplyfied_ico');
@@ -1042,7 +1042,7 @@
 
             infoElement.link.forEach(link => {
 
-                if (typeof link !== 'undefined' && link !== null && link.url !== '') {
+                if (typeof link !== 'undefined' && link !== null && link.url !== '' && link.type === "LEGAL_LINK") {
 
 
                     let div = document.getElementById(link.url);
@@ -1098,10 +1098,24 @@
             console.log(" processing infoElement " + infoElement.type);
             if (infoElement.type == "DESCRIPTION")
                 processInfoElementDescription(concept, infoElement);
-            processLegalInfo(blockId, concept, infoElement);
+            
+                processLegalInfo(blockId, concept, infoElement);
 
             if (infoElement.type == "INFORMATION")
                 processInfoElementInformation(concept, infoElement);
+        }
+
+        function showSynonyms(synonyms) {
+           
+            let div = document.getElementById("synonyms_info");
+            div.innerHTML = synonyms;
+        }
+
+
+        function hideSynonyms(synonyms) {
+            let div = document.getElementById("synonyms_info");
+            div.innerHTML = "";
+
         }
 
         function processInfoElementDescription(concept, infoElement) {
@@ -1127,7 +1141,15 @@
                 span.setAttribute("style", "background-color: #ccc;");
                 text = word.definition;
                 if (typeof word.synonyms != 'undefined' && word.synonyms && word.synonyms.length > 0) {
-                    text = text + " [synonyms: " + JSON.stringify(word.synonyms) + "]";
+                    text = text + " sinonimi: " + JSON.stringify(word.synonyms) + "";
+                    synms = '<ul>';
+                    for (let i = 0; i < word.synonyms.length; i++) {
+                        synms += '<li>' + word.synonyms[i] + "</li>";
+                    }
+                    synms += '</ul>';
+                    span.setAttribute('onmouseover', 'showSynonyms("'+synms+'")');
+                    span.setAttribute('onmouseout', 'hideSynonyms("'+synms+'")');
+                    
                 }
                 span.title = text;
                 span.append(keyTextNode);
@@ -1159,6 +1181,15 @@
                     else
                         replaceText = '<a  target=”_blank” href="' + link.url + '" onmouseout="pdfHide(\'' + link.url + '\')"' + '" onmouseover="pdfShow(\'' + link.url + '\')">' + link.name + '</a>';
                     htmlFragment = htmlFragment.replaceAll(link.url, replaceText);
+                };
+                if (typeof link.text != 'undefined' && link.text && link.text != '') {
+                    replaceText = '';
+                    if (typeof link.description != 'undefined' && link.description && link.description != '')
+                        //replaceText = '<a target=”_blank” title="' + link.description + '" href="' + link.url + '" onmouseover="pdfShow(\''+link.url+'"\')">' + link.name + '</a>';
+                        replaceText = '<a  target=”_blank” href="' + link.url + '" onmouseout="pdfHide(\'' + link.url + '\')"' + '" onmouseover="pdfShow(\'' + link.url + '\')">' + link.text + '</a>';
+                    else
+                        replaceText = '<a  target=”_blank” href="' + link.url + '" onmouseout="pdfHide(\'' + link.url + '\')"' + '" onmouseover="pdfShow(\'' + link.url + '\')">' + link.text + '</a>';
+                    htmlFragment = htmlFragment.replaceAll(link.text, replaceText);
                 }
             });
 
@@ -3391,19 +3422,19 @@
 
                 <ul class="breadcrumb">
                     <li><a onclick="return checkOnunload();"
-                            href="https://e-justice.europa.eu/home?plang=en&amp;action=home" class="navigation">Home</a>
+                            href="https://e-justice.europa.eu/home?plang=en&amp;action=home" class="navigation">Pagina iniziale</a>
                     </li>
 
                     <li data-id=""><a onclick="return checkOnunload();"
-                            href="https://e-justice.europa.eu/511/EN/taking_legal_action">Taking legal action</a></li>
+                            href="https://e-justice.europa.eu/511/EN/taking_legal_action"> Ricorso alle vie legali</a></li>
 
                     <li data-id=""><a onclick="return checkOnunload();"
-                            href="https://e-justice.europa.eu/155/EN/online_forms">Online forms</a></li>
+                            href="https://e-justice.europa.eu/155/EN/online_forms">Moduli online</a></li>
 
                     <li data-id=""><a onclick="return checkOnunload();"
-                            href="https://e-justice.europa.eu/177/EN/small_claims_forms">Small claims forms</a></li>
+                            href="https://e-justice.europa.eu/177/EN/small_claims_forms">Moduli relativi alle controversie di modesta entità</a></li>
 
-                    <li data-id=""><a>Form A - Claim form</a></li>
+                    <li data-id=""><a>Modulo A - Modulo di domanda</a></li>
 
 
 
@@ -3438,7 +3469,7 @@
                             <div class=" title-block">
 
 
-                            <h1>Form A - Claim form</h1>
+                            <h1>Modulo A - Modulo di domanda</h1>
 
                             <div class="subtitle js-toggle">
                             </div>
@@ -3456,7 +3487,7 @@
                         <p>
 
 
-                            <i id="simplyfied_icon" class="bi bi-book"></i><i></i><a id="simplyfied_btn"
+                            <i id="simplyfied_icon" class="bi bi-book"></i><span/><a id="simplyfied_btn"
                                 onClick="showText('simplyfied')">Visualizza Testo
                                 semplificato</a>
                         </p>
@@ -3598,9 +3629,11 @@
                 <div class="esubWarningMobile">
 
                 </div>
+
+
                 <div class="sidebar">
 
-                    <div id="sticky-wrapper" class="sticky-wrapper is-sticky" style="height: 712px;">
+                    <div id="sticky-wrapper" class="sticky-wrapper is-sticky " style="height: 712px;">
 
                         <div class="sticky-sidebar" style="width: 397px; position: fixed; top: 12px; z-index: auto;">
 
@@ -3618,7 +3651,7 @@
                                             <span class="index"></span>
                                             <span class="step-title">
                                                 <input type="submit" class="submitProgressBarClass"
-                                                    name="submitProgressBar0" value="Step 1 ">
+                                                    name="submitProgressBar0" value="Fase 1 ">
                                             </span>
                                         </span>
 
@@ -3632,7 +3665,7 @@
                                             <span class="index"></span>
                                             <span class="step-title">
                                                 <input type="submit" class="submitProgressBarClass"
-                                                    name="submitProgressBar1" value="Step 2 ">
+                                                    name="submitProgressBar1" value="Fase 2 ">
                                             </span>
                                         </span>
 
@@ -3646,7 +3679,7 @@
                                             <span class="index"></span>
                                             <span class="step-title">
                                                 <input type="submit" class="submitProgressBarClass"
-                                                    name="submitProgressBar2" value="Step 3 ">
+                                                    name="submitProgressBar2" value="Fase 3 ">
                                             </span>
                                         </span>
 
@@ -3660,7 +3693,7 @@
                                             <span class="index"></span>
                                             <span class="step-title">
                                                 <input type="submit" class="submitProgressBarClass"
-                                                    name="submitProgressBar3" value="Step 4 ">
+                                                    name="submitProgressBar3" value="Fase 4 ">
                                             </span>
                                         </span>
 
@@ -3674,7 +3707,7 @@
                                             <span class="index"></span>
                                             <span class="step-title">
                                                 <input type="submit" class="submitProgressBarClass"
-                                                    name="submitProgressBar4" value="Step 5 ">
+                                                    name="submitProgressBar4" value="Fase 5 ">
                                             </span>
                                         </span>
 
@@ -3688,7 +3721,7 @@
                                             <span class="index"></span>
                                             <span class="step-title">
                                                 <input type="submit" class="submitProgressBarClass"
-                                                    name="submitProgressBar5" value="Step 6 ">
+                                                    name="submitProgressBar5" value="Fase 6 ">
                                             </span>
                                         </span>
 
@@ -3702,7 +3735,7 @@
                                             <span class="index"></span>
                                             <span class="step-title">
                                                 <input type="submit" class="submitProgressBarClass"
-                                                    name="submitProgressBar6" value="Step 7 ">
+                                                    name="submitProgressBar6" value="Fase 7 ">
                                             </span>
                                         </span>
 
@@ -3747,7 +3780,17 @@
 
                             <span class="sidebar_title step-menu-title">PDF utili</span>
 
+                           
+
+
                             <div id="legal_information" class="list-group">
+
+
+                            </div>
+
+                            <span class="sidebar_title step-menu-title">Sinonimi</span>
+
+                            <div id="synonyms_info" class="list-group">
 
 
                             </div>
@@ -3755,17 +3798,14 @@
                             <!-- Start of Load & Save buttons -->
 
                             <div class="form-sections-helper">
-                                <p>You can save a form you are working on as a draft. Load a saved form later to
-                                    complete it.</p>
+                                <p>È possibile salvare il modulo su cui si sta lavorando come bozza. Per completarlo basta caricare il modulo salvato in un secondo momento.</p>
                                 <div class="buttons">
                                     <div class="buttons">
                                         <button class="button dark big load-draft" id="buttonLoad"
-                                            data-title="If you have previously saved a draft form you can resume your work by loading that file into the system by clicking here.">Load
-                                            draft </button><br>
+                                            data-title="If you have previously saved a draft form you can resume your work by loading that file into the system by clicking here.">Carica bozza</button><br>
                                         <button class="button dark big save-draft piwik_download" type="button"
                                             id="buttonSave" onclick="generateXML()"
-                                            data-title="If you wish to stop filling in the form now, save your draft and resume later, please click this button and save the draft file in a safe location on your computer. You can upload it later to resume from where you left off without losing any input already made.">Save
-                                            draft </button>
+                                            data-title="If you wish to stop filling in the form now, save your draft and resume later, please click this button and save the draft file in a safe location on your computer. You can upload it later to resume from where you left off without losing any input already made.">Salva bozza </button>
                                     </div>
                                 </div>
                                 <!-- Error Message -->
@@ -4015,6 +4055,9 @@
 
                                     <!-- begin step 1-->
                                     <div id="step1">
+                                        <h3>1. Ricorrente </h3>
+                                        <label style="font-size: 16px;"></label>
+                                        <div concept="http://scanii.org/domain/claimant"></div>
 
                                         <div class="form-row full-width">
                                             <div class="description">
@@ -4078,13 +4121,13 @@
 
 
                                                             <div style="width: 90%;display: inline-block;" class=""
-                                                                concept="http://scanii.org/domain/claimant">
+                                                               >
 
                                                                 <div class="js-toggle-trigger" tabindex="0"><span>
 
 
 
-                                                                        Claimant
+                                                                    Ricorrente
                                                                     </span>
                                                                 </div>
                                                             </div>
@@ -4110,7 +4153,7 @@
                                                                                     <label style="margin-bottom:0px">
 
 
-                                                                                        1. <i>The claimant’s details</i>
+                                                                                        1. <i>Estremi identificativi dell’attore</i>
 
 
 
@@ -4135,8 +4178,7 @@
                                                                                             <label
                                                                                                 for="parties[0].dynformSCA2ClaimantName">
 
-                                                                                                1.1. Corporate name of
-                                                                                                company or organisation
+                                                                                                1.1. Ragione sociale o nome della società o dell'organizzazione
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_parties[0].dynformSCA2ClaimantName"></span>
@@ -4174,7 +4216,7 @@
                                                                                                         onfocus="addClassOnFocus(this)"
                                                                                                         id="parties[0].dynformSCA2ClaimantName"
                                                                                                         class="df_textbox"
-                                                                                                        data-title="1.1. Corporate name of company or organisation">
+                                                                                                        data-title="1.1. Ragione sociale o nome della società o dell'organizzazione">
 
 
                                                                                                 </div>
@@ -4220,7 +4262,7 @@
                                                                                             <label
                                                                                                 for="parties[0].dynformSCA2ClaimantSurname">
 
-                                                                                                Surname
+                                                                                                Cognome
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_parties[0].dynformSCA2ClaimantSurname"></span>
@@ -4304,7 +4346,7 @@
                                                                                             <label
                                                                                                 for="parties[0].dynformSCA2ClaimantFirstname">
 
-                                                                                                First name
+                                                                                                Nome
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_parties[0].dynformSCA2ClaimantFirstname"></span>
@@ -4389,11 +4431,7 @@
                                                                                                 for="parties[0].dynformSCA2ClaimantIdentification"
                                                                                                 concept="http://scanii.org/domain/claimant.personalIdNumber">
 
-                                                                                                1.2. Personal
-                                                                                                identification
-                                                                                                number or passport
-                                                                                                number/
-                                                                                                registration number
+                                                                                                1.2. Numero di identificazione personale o di passaporto / numero di registrazione
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_parties[0].dynformSCA2ClaimantIdentification"></span>
@@ -4432,7 +4470,7 @@
                                                                                                         onfocus="addClassOnFocus(this)"
                                                                                                         id="parties[0].dynformSCA2ClaimantIdentification"
                                                                                                         class="df_textbox  "
-                                                                                                        data-title="1.2. Personal identification number or passport number/ registration number">
+                                                                                                        data-title="1.2. Numero di identificazione personale o di passaporto / numero di registrazione">
 
 
                                                                                                 </div>
@@ -4479,9 +4517,7 @@
                                                                                             <label
                                                                                                 for="parties[0].dynformSCA2ClaimantStreet">
 
-                                                                                                1.3. Street and
-                                                                                                number/PO
-                                                                                                box
+                                                                                                1.3. Via e numero civico/casella postale
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_required_parties[0].dynformSCA2ClaimantStreet">*</span>
@@ -4518,7 +4554,7 @@
                                                                                                         onfocus="addClassOnFocus(this)"
                                                                                                         id="parties[0].dynformSCA2ClaimantStreet"
                                                                                                         class="df_textbox df_mandatory"
-                                                                                                        data-title="1.3. Street and number/PO box">
+                                                                                                        data-title="1.3. Via e numero civico/casella postale">
 
 
                                                                                                 </div>
@@ -4564,7 +4600,7 @@
                                                                                             <label
                                                                                                 for="parties[0].dynformSCA2ClaimantPostalCode">
 
-                                                                                                1.4. Postal code
+                                                                                                1.4. CAP
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_required_parties[0].dynformSCA2ClaimantPostalCode">*</span>
@@ -4601,7 +4637,7 @@
                                                                                                         onfocus="addClassOnFocus(this)"
                                                                                                         id="parties[0].dynformSCA2ClaimantPostalCode"
                                                                                                         class="df_textbox df_mandatory"
-                                                                                                        data-title="1.4. Postal code">
+                                                                                                        data-title="1.4. CAP">
 
 
                                                                                                 </div>
@@ -4647,7 +4683,7 @@
                                                                                             <label
                                                                                                 for="parties[0].dynformSCA2ClaimantCity">
 
-                                                                                                City
+                                                                                                Citta'
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_required_parties[0].dynformSCA2ClaimantCity">*</span>
@@ -4730,7 +4766,7 @@
                                                                                             <label
                                                                                                 for="parties[0].dynformSCA2ClaimantCountry">
 
-                                                                                                1.5. Country:
+                                                                                                1.5. Paese:
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_required_parties[0].dynformSCA2ClaimantCountry">*</span>
@@ -4775,8 +4811,7 @@
                                                                                                         <option value=""
                                                                                                             disabled=""
                                                                                                             selected="">
-                                                                                                            Please
-                                                                                                            select
+                                                                                                            Selezionare
                                                                                                         </option>
 
                                                                                                         <option
@@ -4948,7 +4983,7 @@
                                                                                                 <label
                                                                                                     for="parties[0].dynformSCA2ClaimantCountryOther">
 
-                                                                                                    Please specify
+                                                                                                    Specifica
 
                                                                                                     <span
                                                                                                         class="asterisk"
@@ -4990,8 +5025,7 @@
                                                                                                                 value=""
                                                                                                                 disabled=""
                                                                                                                 selected="">
-                                                                                                                Please
-                                                                                                                select
+                                                                                                                Selezionare
                                                                                                             </option>
                                                                                                             <option
                                                                                                                 value="AF">
@@ -5992,8 +6026,7 @@
                                                                                                             title="Please specify"
                                                                                                             id="parties_0__dynformSCA2ClaimantCountryOther_chosen">
                                                                                                             <a class="chosen-single"
-                                                                                                                tabindex="-1"><span>Please
-                                                                                                                    select</span>
+                                                                                                                tabindex="-1"><span>Selezionare</span>
                                                                                                                 <div>
                                                                                                                     <b></b>
                                                                                                                 </div>
@@ -6066,7 +6099,7 @@
                                                                                             <label
                                                                                                 for="parties[0].dynformSCA2ClaimantTelephone">
 
-                                                                                                1.6. Telephone
+                                                                                                1.6. Telfono
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_parties[0].dynformSCA2ClaimantTelephone"></span>
@@ -6149,7 +6182,7 @@
                                                                                             <label
                                                                                                 for="parties[0].dynformSCA2ClaimantEmail">
 
-                                                                                                1.7. E-mail
+                                                                                                1.7. Indirizzo di posta elettronica
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_parties[0].dynformSCA2ClaimantEmail"></span>
@@ -6233,10 +6266,7 @@
                                                                                             <label
                                                                                                 for="parties[0].dynformSCA2ClaimantRepresentativeTitle">
 
-                                                                                                1.8. Claimant’s
-                                                                                                representative, if any,
-                                                                                                and
-                                                                                                contact details:
+                                                                                                1.8. Eventuale rappresentante dell’attore e suoi estremi:
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_parties[0].dynformSCA2ClaimantRepresentativeTitle"></span>
@@ -6327,7 +6357,7 @@
                                                                                             <label
                                                                                                 for="parties[0].dynformSCA2ClaimantOtherDetails">
 
-                                                                                                1.9. Other details
+                                                                                                1.9. Altro
 
 
 
@@ -6391,11 +6421,11 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="grid_item one-third">
-                                                                        <a class="js-open-modal" data-modal="add-modal"
+                                                                        <a class="js-open-modal" 
                                                                             id="modal"
-                                                                            href="https://e-justice.europa.eu/dynForms.do?1665391891183&amp;introMemberState=15&amp;introTaxonomy=177&amp;form4BC=sc&amp;subform4BC=dynform_sc_a&amp;currentPage=dynform_sc_a_2&amp;selectedFormPage=dynform_sc_a_2_action&amp;redirectPath=/jsp/dynforms/sc/dynform_sc_a_2_tile.jsp#"
-                                                                            data-before="+">
-                                                                            <span>Add another claimant</span>
+                                                                            onclick="alert('Funzione non abilitata')"
+                                                                            >
+                                                                            <span>Aggiungi un altro ricorrente</span>
                                                                         </a><label
                                                                             style="margin-left: 10px;font-size: 14px; color: #9b9b9b;"></label>
                                                                     </div>
@@ -6406,109 +6436,6 @@
                                                     </div>
 
 
-
-                                                    <div class="modal small js-modal-add-modal">
-                                                        <div class="container"><a class="close js-close-modal hide-text"
-                                                                data-modal="add-modal"
-                                                                href="https://e-justice.europa.eu/dynForms.do?1665391891183&amp;introMemberState=15&amp;introTaxonomy=177&amp;form4BC=sc&amp;subform4BC=dynform_sc_a&amp;currentPage=dynform_sc_a_2&amp;selectedFormPage=dynform_sc_a_2_action&amp;redirectPath=/jsp/dynforms/sc/dynform_sc_a_2_tile.jsp">Close</a>
-                                                            <div class="modal-content"><a
-                                                                    class="close js-close-modal hide-text"
-                                                                    data-modal="add-modal"
-                                                                    href="https://e-justice.europa.eu/dynForms.do?1665391891183&amp;introMemberState=15&amp;introTaxonomy=177&amp;form4BC=sc&amp;subform4BC=dynform_sc_a&amp;currentPage=dynform_sc_a_2&amp;selectedFormPage=dynform_sc_a_2_action&amp;redirectPath=/jsp/dynforms/sc/dynform_sc_a_2_tile.jsp">Close</a>
-                                                                <h1>Add another claimant</h1>
-                                                                <h3></h3>
-
-
-
-                                                                <div class="form-row full-width bold">
-                                                                    <div>
-
-                                                                        <label style="margin-bottom:0px">
-
-
-                                                                            If you'd like to add another party and/or
-                                                                            representative, please click on the item
-                                                                            that
-                                                                            corresponds to the associated parties and/or
-                                                                            their representatives. You can add up to 20
-                                                                            parties/representatives in total.
-
-
-
-                                                                        </label>
-
-                                                                    </div>
-
-                                                                </div>
-
-
-
-                                                                <br>
-
-
-
-
-                                                                <div class="selection-items  hasGrid fullWidth">
-
-
-
-                                                                    <!-- MODAL WITH RADIO BUTTONS ADDED  -->
-                                                                    <div class="radio-wrapper">
-                                                                        <input type="radio" id="Claimant"
-                                                                            class="claimant_rep"
-                                                                            name="modal-add-claim-rep"
-                                                                            value="dynformCMD_add_Party(01)"
-                                                                            data-title="">
-                                                                        <label for="Claimant">Claimant</label>
-                                                                    </div>
-
-
-
-
-
-
-
-
-
-                                                                    <!-- MODAL WITH RADIO BUTTONS ADDED -->
-
-
-                                                                    <div class="radio-wrapper">
-                                                                        <input type="radio"
-                                                                            id="Claimant&#39;s representative"
-                                                                            class="claimant_rep"
-                                                                            name="modal-add-claim-rep"
-                                                                            value="dynformCMD_add_Party(03)"
-                                                                            data-title="">
-                                                                        <label
-                                                                            for="Claimant&#39;s representative">Claimant's
-                                                                            representative</label>
-                                                                    </div>
-
-
-
-
-                                                                </div>
-
-
-
-                                                                <br>
-                                                                <a class="button big main js-close-modal hide-text outline"
-                                                                    id="cancelModalButton"
-                                                                    style="background-color:white;"
-                                                                    data-modal="add-modal"
-                                                                    href="https://e-justice.europa.eu/dynForms.do?1665391891183&amp;introMemberState=15&amp;introTaxonomy=177&amp;form4BC=sc&amp;subform4BC=dynform_sc_a&amp;currentPage=dynform_sc_a_2&amp;selectedFormPage=dynform_sc_a_2_action&amp;redirectPath=/jsp/dynforms/sc/dynform_sc_a_2_tile.jsp">Cancel
-                                                                </a>
-
-
-                                                                <a class="button big dark main hide-text pull-right"
-                                                                    id="addModalListButton"
-                                                                    href="javascript:addActiveLink(document.querySelector(&#39;input[name=&quot;modal-add-claim-rep&quot;]:checked&#39;).value)">Add
-                                                                </a>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
 
 
@@ -6530,7 +6457,9 @@
                                     <!------begin step 2 -->
                                     <div id="step2">
 
-
+                                        <h3>2. Convenuto </h3>
+                                        <label style="font-size: 16px;"></label>
+                                        <div concept="http://scanii.org/domain/defendant"></div>
 
                                         <div class="form-row full-width">
                                             <div class="description">
@@ -6596,13 +6525,13 @@
 
 
                                                             <div style="width: 90%;display: inline-block;" class=""
-                                                                concept="http://scanii.org/domain/defendant">
+                                                                >
 
                                                                 <div class="js-toggle-trigger" tabindex="0"><span>
 
 
 
-                                                                        Defendant
+                                                                    Convenuto
                                                                     </span>
                                                                 </div>
                                                             </div>
@@ -6616,7 +6545,7 @@
                                                                     <label style="margin-bottom:0px">
 
 
-                                                                        2. The defendant’s details
+                                                                        2. Estremi identificativi del convenuto
 
 
 
@@ -6651,12 +6580,7 @@
                                                                                                 for="partiesDef[0].dynformSCA3DefendantName">
 
                                                                                                 2.1.
-                                                                                                Corporate
-                                                                                                name
-                                                                                                of
-                                                                                                company
-                                                                                                or
-                                                                                                organisation
+                                                                                                Ragione sociale o nome della società o dell'organizzazione
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_partiesDef[0].dynformSCA3DefendantName"></span>
@@ -6741,7 +6665,7 @@
                                                                                             <label
                                                                                                 for="partiesDef[0].dynformSCA3DefendantSurname">
 
-                                                                                                Surname
+                                                                                                Cognome
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_partiesDef[0].dynformSCA3DefendantSurname"></span>
@@ -6825,8 +6749,7 @@
                                                                                             <label
                                                                                                 for="partiesDef[0].dynformSCA3DefendantFirstname">
 
-                                                                                                First
-                                                                                                name
+                                                                                                Nome
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_partiesDef[0].dynformSCA3DefendantFirstname"></span>
@@ -6911,14 +6834,7 @@
                                                                                                 for="partiesDef[0].dynformSCA3DefendantIdentification">
 
                                                                                                 2.2.
-                                                                                                Personal
-                                                                                                identification
-                                                                                                number
-                                                                                                or
-                                                                                                passport
-                                                                                                number/
-                                                                                                registration
-                                                                                                number
+                                                                                                Numero di identificazione personale o di passaporto / numero di registrazione
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_partiesDef[0].dynformSCA3DefendantIdentification"></span>
@@ -7170,10 +7086,7 @@
                                                                                                 for="partiesDef[0].dynformSCA3DefendantStreet">
 
                                                                                                 2.3.
-                                                                                                Street
-                                                                                                and
-                                                                                                number/PO
-                                                                                                box
+                                                                                                Via e numero civico/casella postale
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_required_partiesDef[0].dynformSCA3DefendantStreet">*</span>
@@ -7257,8 +7170,7 @@
                                                                                                 for="partiesDef[0].dynformSCA3DefendantPostalCode">
 
                                                                                                 2.4.
-                                                                                                Postal
-                                                                                                code
+                                                                                                CAP
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_required_partiesDef[0].dynformSCA3DefendantPostalCode">*</span>
@@ -7341,7 +7253,7 @@
                                                                                             <label
                                                                                                 for="partiesDef[0].dynformSCA3DefendantCity">
 
-                                                                                                City
+                                                                                                Citta'
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_required_partiesDef[0].dynformSCA3DefendantCity">*</span>
@@ -7425,7 +7337,7 @@
                                                                                                 for="partiesDef[0].dynformSCA3DefendantCountry">
 
                                                                                                 2.5.
-                                                                                                Country:
+                                                                                                Paese:
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_required_partiesDef[0].dynformSCA3DefendantCountry">*</span>
@@ -7470,8 +7382,7 @@
                                                                                                         <option value=""
                                                                                                             disabled=""
                                                                                                             selected="">
-                                                                                                            Please
-                                                                                                            select
+                                                                                                            Selezionare
                                                                                                         </option>
 
                                                                                                         <option
@@ -8792,7 +8703,7 @@
                                                                                                 for="partiesDef[0].dynformSCA3DefendantTelephone">
 
                                                                                                 2.6.
-                                                                                                Telephone
+                                                                                                Telefono
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_partiesDef[0].dynformSCA3DefendantTelephone"></span>
@@ -8876,7 +8787,7 @@
                                                                                                 for="partiesDef[0].dynformSCA3DefendantEmail">
 
                                                                                                 2.7.
-                                                                                                E-mail
+                                                                                                Indirizzo di posta elettronica
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_partiesDef[0].dynformSCA3DefendantEmail"></span>
@@ -8961,13 +8872,7 @@
                                                                                                 for="partiesDef[0].dynformSCA3DefendantRepresentativeTitle">
 
                                                                                                 2.8.
-                                                                                                Defendant’s
-                                                                                                representative,
-                                                                                                if
-                                                                                                any,
-                                                                                                and
-                                                                                                contact
-                                                                                                details:
+                                                                                                Rappresentante del convenuto, se noto, e suoi estremi:
 
                                                                                                 <span class="asterisk"
                                                                                                     id="requiredStar_blank_partiesDef[0].dynformSCA3DefendantRepresentativeTitle"></span>
@@ -9060,8 +8965,7 @@
                                                                                                 for="partiesDef[0].dynformSCA3DefendantOtherDetails">
 
                                                                                                 2.9.
-                                                                                                Other
-                                                                                                details
+                                                                                                Altro
 
 
 
@@ -9128,11 +9032,9 @@
                                                                             &nbsp;</div>
                                                                     </div>
                                                                     <div class="grid_item one-third">
-                                                                        <a class="js-open-modal" data-modal="add-modal"
-                                                                            href="https://e-justice.europa.eu/dynForms.do?1665392065197#"
-                                                                            data-before="+">
-                                                                            <span>Add another
-                                                                                defendant
+                                                                        <a class="js-open-modal" 
+                                                                            onclick="alert('Funzione non supportata')">
+                                                                            <span>Aggiungi un altro coventuto 
                                                                             </span>
                                                                         </a><label
                                                                             style="margin-left: 10px;font-size: 14px; color: #9b9b9b;"></label>
@@ -9143,113 +9045,6 @@
                                                     </div>
 
 
-                                                    <div class="modal small js-modal-add-modal">
-                                                        <div class="container"><a class="close js-close-modal hide-text"
-                                                                data-modal="add-modal"
-                                                                href="https://e-justice.europa.eu/dynForms.do?1665392065197">Close</a>
-                                                            <div class="modal-content"><a
-                                                                    class="close js-close-modal hide-text"
-                                                                    data-modal="add-modal"
-                                                                    href="https://e-justice.europa.eu/dynForms.do?1665392065197">Close</a>
-                                                                <h1>Add another defendant</h1>
-                                                                <h3></h3>
-
-
-
-                                                                <div class="form-row full-width bold">
-                                                                    <div>
-
-                                                                        <label style="margin-bottom:0px">
-
-
-                                                                            If you'd like to add
-                                                                            another party and/or
-                                                                            representative,
-                                                                            please click on the
-                                                                            item that
-                                                                            corresponds to the
-                                                                            associated parties
-                                                                            and/or their
-                                                                            representatives. You
-                                                                            can add up to 20
-                                                                            parties/representatives
-                                                                            in total.
-
-
-
-                                                                        </label>
-
-                                                                    </div>
-
-                                                                </div>
-
-
-
-                                                                <br>
-
-
-
-
-                                                                <div class="selection-items  hasGrid fullWidth">
-
-
-
-                                                                    <!-- MODAL WITH RADIO BUTTONS ADDED  -->
-                                                                    <div class="radio-wrapper">
-                                                                        <input type="radio" id="Defendant"
-                                                                            class="claimant_rep"
-                                                                            name="modal-add-claim-rep"
-                                                                            value="dynformCMD_add_PartyDef(02)"
-                                                                            data-title="">
-                                                                        <label for="Defendant">Defendant</label>
-                                                                    </div>
-
-
-
-
-
-
-
-
-
-                                                                    <!-- MODAL WITH RADIO BUTTONS ADDED -->
-
-
-                                                                    <div class="radio-wrapper">
-                                                                        <input type="radio"
-                                                                            id="Defendant's representative"
-                                                                            class="claimant_rep"
-                                                                            name="modal-add-claim-rep"
-                                                                            value="dynformCMD_add_PartyDef(04)"
-                                                                            data-title="">
-                                                                        <label
-                                                                            for="Defendant's representative">Defendant's
-                                                                            representative</label>
-                                                                    </div>
-
-
-
-
-                                                                </div>
-
-
-                                                                <br>
-
-                                                                <a class="button big main js-close-modal hide-text outline"
-                                                                    style="background-color:white;"
-                                                                    id="cancelModalButton" data-modal="add-modal"
-                                                                    href="https://e-justice.europa.eu/dynForms.do?1665392065197">Cancel
-                                                                </a>
-
-
-                                                                <a class="button big dark main hide-text pull-right"
-                                                                    id="addModalListButton"
-                                                                    href="javascript:addActiveLink(document.querySelector('input[name=&quot;modal-add-claim-rep&quot;]:checked').value)">Add
-                                                                </a>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
 
 
@@ -9270,13 +9065,10 @@
                                     <!------begin step 3 -->
 
                                     <div id="step3">
+                                        <h3>3. Competenza giurisdizionale  </h3>
+                                        <label style="font-size: 16px;"></label>
                                         <div concept="http://scanii.org/domain/jurisdiction">
-                                            <h3>3. Jurisdiction&nbsp;&nbsp;&nbsp;</h3>
-                                            <label style="font-size: 16px;">
-
-
-
-                                            </label>
+                                            
                                         </div>
                                         <div class="form-row full-width">
                                             <div class="description">
@@ -9307,9 +9099,7 @@
                                                             <label style="margin-bottom:0px">
 
 
-                                                                3. On what ground do you
-                                                                consider the court/tribunal to
-                                                                have jurisdiction?
+                                                                3. In base a quali motivi ritiene competente l’organo giurisdizionale? 
 
                                                                 <span class="asterisk">*</span>
 
@@ -9346,8 +9136,7 @@
 
                                                                 <label for="dynformSCA4DomicileDefendant">
 
-                                                                    3.1. Domicile of the
-                                                                    defendant
+                                                                    3.1. Domicilio del convenuto
 
 
 
@@ -9397,8 +9186,7 @@
 
                                                                 <label for="dynformSCA4DomicileConsumer">
 
-                                                                    3.2. Domicile of the
-                                                                    consumer
+                                                                    3.2. Domicilio del consumatore
 
 
 
@@ -9447,11 +9235,7 @@
 
                                                                 <label for="dynformSCA4DomicilePolicyholder">
 
-                                                                    3.3. Domicile of the
-                                                                    policyholder, the insured or
-                                                                    the beneficiary in insurance
-                                                                    matters
-
+                                                                    3.3. Domicilio del contraente, dell’assicurato o del beneficiario in materia di assicurazioni
 
 
 
@@ -9500,8 +9284,7 @@
 
                                                                 <label for="dynformSCA4PlacePerformance">
 
-                                                                    3.4. Place of performance of
-                                                                    the obligation in question
+                                                                    3.4. Luogo di esecuzione dell’obbligazione dedotta in giudizio
 
 
 
@@ -9550,8 +9333,7 @@
 
                                                                 <label for="dynformSCA4PlaceHarmful">
 
-                                                                    3.5. Place of the harmful
-                                                                    event
+                                                                    3.5. Luogo in cui è avvenuto l’evento dannoso
 
 
 
@@ -9600,9 +9382,7 @@
 
                                                                 <label for="dynformSCA4PlaceImmovable">
 
-                                                                    3.6. Place where the
-                                                                    immovable property is
-                                                                    situated
+                                                                    3.6. Luogo in cui è situato il bene immobile
 
 
 
@@ -9651,9 +9431,7 @@
 
                                                                 <label for="dynformSCA4Parties">
 
-                                                                    3.7. Choice of
-                                                                    court/tribunal agreed by the
-                                                                    parties
+                                                                    3.7. Organo giurisdizionale concordato dalle parti
 
 
 
@@ -9702,7 +9480,7 @@
 
                                                                 <label for="dynformSCA4Other">
 
-                                                                    3.8. Other (please specify)
+                                                                    3.8. Altro 
 
 
 
@@ -9829,8 +9607,7 @@
 
                                         <div id="step4_1">
                                             <div>
-                                                <h3>4.1 Cross-border nature of the
-                                                    case&nbsp;&nbsp;&nbsp;
+                                                <h3>4.1 Carattere transfrontaliero della controversia   
                                                 </h3>
                                             </div>
                                             <div class="form-row full-width">
@@ -9855,8 +9632,7 @@
                                                                 <label for="dynformSCA5claimantResidence">
 
 
-                                                                    4.1.1. Country of domicile or
-                                                                    habitual residence of claimant
+                                                                    4.1.1. Paese in cui l’attore ha il domicilio o la residenza abituale
 
 
 
@@ -10806,9 +10582,7 @@
                                                                 <label for="dynformSCA5defendantResidence">
 
 
-                                                                    4.1.2. Country of domicile or
-                                                                    habitual residence of defendant
-
+                                                                    4.1.2. Paese in cui il convenuto ha il domicilio o la residenza abituale
 
 
                                                                     <span class="asterisk"
@@ -11762,8 +11536,7 @@
                                                                 <label for="dynformSCA5countryCourt">
 
 
-                                                                    4.1.3. Member State of the
-                                                                    court/tribunal
+                                                                    4.1.3. Stato membro dell’organo giurisdizionale
 
 
 
@@ -12713,11 +12486,17 @@
                                             </div>
                                         </div>
                                         <div id="step4_1">
-                                            <div concept="http://scanii.org/domain/bankDetails">
-                                                <h3>4.2. Bank details (optional)&nbsp;&nbsp;&nbsp;
+                                            <h3>4.2. Informazioni bancarie (facoltative)   
 
-                                                </h3>
+                                            </h3>
+                                            <div concept="http://scanii.org/domain/bankDetails">
+                                               
                                             </div>
+                                            
+                                            <div class="js-toggle-trigger"
+                                                    style="width: 93%;display: inline-block;">
+
+                                                </div>
                                             <div class="form-row full-width">
                                                 <div class="description">
 
@@ -12735,10 +12514,7 @@
 
                                                                 <label style="margin-bottom:0px">
 
-                                                                    4.2.1
-                                                                    . How will you pay the
-                                                                    application fee?
-
+                                                                    4.2.1. Come intende pagare le spese di domanda?
 
 
                                                                 </label>
@@ -12790,7 +12566,7 @@
                                                                             for="dynformSCA5PaymentMethodBankTransfer">
 
 
-                                                                            By bank transfer
+                                                                            Con bonifico bancario
 
 
 
@@ -12864,7 +12640,7 @@
                                                                         <label for="dynformSCA5PaymentMethodCreditCard">
 
 
-                                                                            By credit card
+                                                                            Con carta di credito
 
 
 
@@ -12920,7 +12696,7 @@
                                                                         <label for="dynformSCA5AccountHolder">
 
 
-                                                                            credit card holder
+                                                                            intestatario della carta di credito
 
 
 
@@ -12994,8 +12770,7 @@
                                                                         <label for="dynformSCA5BankName">
 
 
-                                                                            credit card company
-
+                                                                            emittente della carta di credito
 
 
                                                                             <span class="asterisk"
@@ -13068,7 +12843,7 @@
                                                                         <label for="dynformSCA5Account">
 
 
-                                                                            Credit card number
+                                                                            numero della carta di credito
 
 
 
@@ -13143,7 +12918,7 @@
                                                                         <label for="dynformSCA5ExpiryDate">
 
 
-                                                                            Expiry date
+                                                                            data di scadenza
 
 
 
@@ -13220,9 +12995,7 @@
                                                                         <label for="dynformSCA5SecurityNo">
 
 
-                                                                            Security number of
-                                                                            credit card
-
+                                                                            codice di sicurezza della carta di credito
 
 
                                                                             <span class="asterisk"
@@ -13316,8 +13089,7 @@
                                                                         <label for="dynformSCA5PaymentMethodDirect">
 
 
-                                                                            Direct debit from your
-                                                                            bank account
+                                                                            Addebito diretto sul conto corrente
 
 
 
@@ -13373,7 +13145,7 @@
                                                                         <label for="dynformSCA5AccountHolderDirect">
 
 
-                                                                            Account holder
+                                                                            titolare del conto
 
 
 
@@ -13447,8 +13219,7 @@
                                                                         <label for="dynformSCA5BankNameDirect">
 
 
-                                                                            Bank name, BIC or other
-                                                                            relevant bank code
+                                                                            denominazione della banca, BIC o altro codice bancario pertinente
 
 
 
@@ -13522,7 +13293,7 @@
                                                                         <label for="dynformSCA5AccountDirect">
 
 
-                                                                            Account number or IBAN
+                                                                            numero del conto o IBAN
 
 
 
@@ -13618,7 +13389,7 @@
                                                                         <label for="dynformSCA5PaymentMethodOther">
 
 
-                                                                            Other (please specify)
+                                                                            Altro (precisare)
 
 
 
@@ -13674,7 +13445,7 @@
                                                                         <label for="dynformSCA5OtherSpecify">
 
 
-                                                                            Please specify
+                                                                            si prega di specificare
 
 
 
@@ -13747,9 +13518,7 @@
                                                                 <label style="margin-bottom:0px">
 
 
-                                                                    4.2.2. To which account do you
-                                                                    wish the defendant to pay any
-                                                                    amount claimed or awarded?
+                                                                    4.2.2. Su quale conto desidera che il convenuto paghi l’importo richiesto o aggiudicato?
 
 
 
@@ -13780,7 +13549,7 @@
                                                                     <label for="dynformSCA5AccountPayHolder">
 
 
-                                                                        4.2.2.1. Account holder
+                                                                        4.2.2.1. Titolare del conto
 
 
 
@@ -13853,9 +13622,7 @@
                                                                     <label for="dynformSCA5AccountBank">
 
 
-                                                                        4.2.2.2 Bank name, BIC or
-                                                                        other relevant bank code
-
+                                                                        4.2.2.2 Denominazione della banca, BIC o altro codice bancario pertinente
 
 
                                                                         <span class="asterisk"
@@ -13927,8 +13694,7 @@
                                                                     <label for="dynformSCA5AccountIban">
 
 
-                                                                        4.2.2.3. Account number/IBAN
-
+                                                                        4.2.2.3. Numero del conto/IBAN
 
 
                                                                         <span class="asterisk"
@@ -14010,9 +13776,9 @@
                                     <!------begin step 5 -->
                                     <div id="step5">
 
-
+                                        <h3>5. Oggetto della controversia   </h3>
                                         <div concept="http://scanii.org/domain/claim">
-                                            <h3>5. Claim&nbsp;&nbsp;&nbsp;</h3>
+                                            
                                         </div>
 
 
@@ -14027,7 +13793,7 @@
                                                             <label style="margin-bottom:0px">
 
 
-                                                                5.1. Claim for money
+                                                                5.1. Controversia avente ad oggetto somme di denaro
 
                                                                 <span class="asterisk">*</span>
 
@@ -14058,7 +13824,7 @@
                                                                 <label for="dynformSCA6ClaimMoney_Yes">
 
 
-                                                                    Yes
+                                                                    Si'
 
 
 
@@ -14156,8 +13922,7 @@
 
 
 
-                                                    <label style="font-size:14px;font-weight:normal;color: #9b9b9b">Are
-                                                        you claiming money? If so, click "yes".
+                                                    <label style="font-size:14px;font-weight:normal;color: #9b9b9b">Controversia avente ad oggetto somme di denaro? In questo caso, cliccare "Sì".
                                                         <p></p>
                                                     </label>
 
@@ -14177,9 +13942,7 @@
                                                                 <label for="dynformSCA6ClaimMoneyValue">
 
 
-                                                                    5.1.1. Amount of principal
-                                                                    (excluding interest and
-                                                                    costs)
+                                                                    5.1.1. Capitale (esclusi interessi e spese) 
 
 
 
@@ -14251,7 +14014,7 @@
                                                                 <label for="dynformSCA6ClaimMoneyCurrency">
 
 
-                                                                    5.1.2. Currency
+                                                                    5.1.2. Valuta
 
 
 
@@ -14284,7 +14047,7 @@
                                                                             class="df_select df_mandatory"
                                                                             data-title="">
                                                                             <option value="" disabled="" selected="">
-                                                                                Please select
+                                                                                Selezionare
                                                                             </option>
                                                                             <option value="EUR">
                                                                                 Euro (EUR)
@@ -14313,10 +14076,7 @@
                                                                             <option value="SEK">
                                                                                 Swedish krona
                                                                                 (SEK)</option>
-                                                                            <option value="00">
-                                                                                Other (please
-                                                                                specify)
-                                                                            </option>
+                                                                            
                                                                         </select>
 
 
@@ -14362,7 +14122,7 @@
                                                                     <label for="dynformSCA6ClaimMoneyCurrencyOther">
 
 
-                                                                        Other (please specify)
+                                                                        Altro 
 
 
 
@@ -16526,7 +16286,7 @@
                                                             <label style="margin-bottom:0px">
 
 
-                                                                5.2. Other claim
+                                                                5.2. Controversia di altro tipo
 
                                                                 <span class="asterisk">*</span>
 
@@ -16557,7 +16317,7 @@
                                                                 <label for="dynformSCA6ClaimOther_Yes">
 
 
-                                                                    Yes
+                                                                    Si'
 
 
 
@@ -16655,9 +16415,7 @@
 
 
 
-                                                    <label style="font-size:14px;font-weight:normal;color: #9b9b9b">Is
-                                                        your claim non-monetary? If so click
-                                                        "yes".<p></p></label>
+                                                    <label style="font-size:14px;font-weight:normal;color: #9b9b9b">Controversia di altro tipo? In questo caso, cliccare "Sì".<p></p></label>
 
 
 
@@ -16676,8 +16434,7 @@
                                                                 <label for="dynformSCA6ClaimOtherSpecify">
 
 
-                                                                    6.2.1. Please specify what
-                                                                    you are claiming
+                                                                    5.2.1. Precisare cosa si richiede
 
 
 
@@ -16749,8 +16506,7 @@
                                                                 <label for="dynformSCA6ClaimOtherAmount">
 
 
-                                                                    6.2.2. Estimated value of
-                                                                    the claim
+                                                                    5.2.2. Importo stimato della controversia 
 
 
 
@@ -16822,7 +16578,7 @@
                                                                 <label for="dynformSCA6ClaimOtherCurrency">
 
 
-                                                                    Currency
+                                                                    Valuta
 
 
 
@@ -16855,7 +16611,7 @@
                                                                             class="df_select df_mandatory"
                                                                             data-title="">
                                                                             <option value="" disabled="" selected="">
-                                                                                Please select
+                                                                                Selezionare
                                                                             </option>
                                                                             <option value="EUR">
                                                                                 Euro (EUR)
@@ -16884,10 +16640,7 @@
                                                                             <option value="SEK">
                                                                                 Swedish krona
                                                                                 (SEK)</option>
-                                                                            <option value="00">
-                                                                                Other (please
-                                                                                specify)
-                                                                            </option>
+                                                                            
                                                                         </select>
 
 
@@ -19097,8 +18850,7 @@
                                                             <label style="margin-bottom:0px">
 
 
-                                                                5.3. Are you claiming the costs
-                                                                of proceedings?
+                                                                5.3. Si richiede il pagamento delle spese processuali?
 
                                                                 <span class="asterisk">*</span>
 
@@ -19129,7 +18881,7 @@
                                                                 <label for="dynformSCA6ClaimingCosts_Yes">
 
 
-                                                                    Yes
+                                                                    Si'
 
 
 
@@ -19244,11 +18996,7 @@
                                                                     <label for="dynformSCA6ClaimingCostsSpecify">
 
 
-                                                                        5.3.3. If yes, please
-                                                                        specify which costs and
-                                                                        indicate the amount
-                                                                        claimed or incurred so
-                                                                        far
+                                                                        5.3.1. In caso affermativo precisare quali spese, indicando l’importo richiesto o le spese finora sostenute
 
 
 
@@ -19327,7 +19075,7 @@
                                                             <label style="margin-bottom:0px">
 
 
-                                                                5.4. Are you claiming interest?
+                                                                5.4. Si richiede la corresponsione di interessi?
 
                                                                 <span class="asterisk">*</span>
 
@@ -19358,7 +19106,7 @@
                                                                 <label for="dynformSCA6ClaimingInterest_Yes">
 
 
-                                                                    Yes
+                                                                    Si'
 
 
 
@@ -19474,8 +19222,7 @@
                                                                         <label style="margin-bottom:0px">
 
 
-                                                                            If yes, is the
-                                                                            interest
+                                                                            In caso affermativo, si tratta di interessi
 
                                                                             <span class="asterisk">*</span>
 
@@ -19509,7 +19256,7 @@
                                                                                 for="dynformSCA6ClaimingInterestType_Contractual">
 
 
-                                                                                Contractual?
+                                                                                Contrattuali?
 
 
 
@@ -19574,7 +19321,7 @@
                                                                                 for="dynformSCA6ClaimingInterestType_Statutory">
 
 
-                                                                                Statutory?
+                                                                                Legali?
 
 
 
@@ -19630,8 +19377,7 @@
                                                                         <label style="margin-bottom:0px">
 
 
-                                                                            7.4.1. If
-                                                                            contractual
+                                                                            5.4.1. In caso di interessi contrattuali
 
 
 
@@ -19654,7 +19400,7 @@
                                                                                 for="dynformSCA6ClaimingContractualFirst">
 
 
-                                                                                (1) the rate is
+                                                                                (1) il tasso è del
 
 
 
@@ -19858,9 +19604,7 @@
 
                                                                             <label class="endText"
                                                                                 style="font-size:16px;">%
-                                                                                above the base
-                                                                                rate of the
-                                                                                ECB</label>
+                                                                                superiore al tasso base della BCE</label>
 
 
 
@@ -19892,7 +19636,7 @@
                                                                                 for="dynformSCA6ClaimingContractualThird">
 
 
-                                                                                other
+                                                                                altro
 
 
 
@@ -19977,9 +19721,7 @@
                                                                                 for="dynformSCA6ClaimingContractualDate">
 
 
-                                                                                (2) the interest
-                                                                                should run from
-                                                                                (date)
+                                                                                (2) gli interessi dovrebbero decorrere dal
 
 
 
@@ -20077,7 +19819,7 @@
                                                                                 for="dynformSCA6ClaimingInterestCostContractualTo">
 
 
-                                                                                to
+                                                                                al
 
 
 
@@ -20230,8 +19972,7 @@
                                                                                 for="dynformSCA6ClaimingInterestCostContractual">
 
 
-                                                                                to the date of
-                                                                                the judgment
+                                                                                alla data della sentenza
 
 
 
@@ -20308,10 +20049,7 @@
                                                                                 for="dynformSCA6ClaimingInterestCostContractualDatePrincipal">
 
 
-                                                                                to the date of
-                                                                                payment of
-                                                                                principal
-
+                                                                                alla data di pagamento del capitale
 
 
                                                                                 <span class="asterisk"
@@ -20375,8 +20113,7 @@
                                                                                 for="dynformSCA6ClaimingStatutoryDate">
 
 
-                                                                                the interest
-                                                                                should run from
+                                                                                gli interessi dovrebbero decorrere dal
 
 
 
@@ -20774,8 +20511,7 @@
                                                         <label style="margin-bottom:0px">
 
 
-                                                            5.5. Are you claiming interest on
-                                                            costs?
+                                                            5.5. Are you claiming interest on costs?
 
                                                             <span class="asterisk">*</span>
 
@@ -20806,7 +20542,7 @@
                                                             <label for="dynformSCA6ClaimingInterestCost_Yes">
 
 
-                                                                Yes
+                                                                Si'
 
 
 
@@ -20941,9 +20677,7 @@
                                                                 <label for="dynformSCA6ClaimingInterestCostDateRadio">
 
 
-                                                                    If yes, the interest should
-                                                                    run from
-
+                                                                    In caso affermativo, gli interessi dovrebbero decorrere dal
 
 
                                                                     <span class="asterisk"
@@ -21091,7 +20825,7 @@
                                                                 <label for="dynformSCA6ClaimingInterestCostRadio">
 
 
-                                                                    (event)
+                                                                    (evento)
 
 
 
@@ -21235,7 +20969,7 @@
                                                                 <label for="dynformSCA6ClaimingInterestCostToDateRadio">
 
 
-                                                                    to
+                                                                    al
 
 
 
@@ -21385,8 +21119,7 @@
                                                                     for="dynformSCA6ClaimingInterestOnCostContractualDatePrincipal">
 
 
-                                                                    to the date of payment of
-                                                                    costs
+                                                                    alla data di pagamento delle spese
 
 
 
@@ -21448,10 +21181,11 @@
 
                                     <!------begin step 6 -->
                                     <div id="step6">
-                                        <div concept="http://scanii.org/domain/claimDetails">
-                                            <h3>6. Details of claim&nbsp;&nbsp;&nbsp;</h3>
+                                        <div >
+                                            <h3>6. Dettagli della controversia                                              </h3>
                                         </div>
-                                        <div class="form-row full-width">
+                                        <div concept="http://scanii.org/domain/claimDetails"></div>
+                                        <div class="form-row full-width" 
                                             <div class="description">
 
 
@@ -21465,7 +21199,8 @@
                                                         <!-- NEW ENTRY -->
 
 
-                                                        <label>6. Details of claim</label>
+                                                        <label>6. Dettagli della controversia   
+                                                        </label>
 
 
 
@@ -21492,9 +21227,7 @@
                                                                 <label for="dynformSCA7ReasonsForYourClaim">
 
 
-                                                                    6.1. Please give reasons for
-                                                                    your claim, for example what
-                                                                    happened, where and when.
+                                                                    6.1. Please give reasons for your claim, for example what happened, where and when. *
 
 
 
@@ -21567,14 +21300,8 @@
                                                                 <label style="margin-bottom:0px">
 
 
-                                                                    6.2. Please describe the
-                                                                    evidence you wish to put
-                                                                    forward to support your
-                                                                    claim and state which points
-                                                                    of the claim it supports.
-                                                                    Where appropriate, you
-                                                                    should add relevant
-                                                                    supporting documents.
+                                                                    6.2. Descrivere le prove che intende presentare a sostegno della domanda e precisare a quali punti della controversia si riferiscono. Se del caso, allegare i documenti giustificativi pertinenti.
+
 
 
 
@@ -21600,8 +21327,7 @@
                                                                             <label style="margin-bottom:0px">
 
 
-                                                                                6.2.1. Written
-                                                                                evidence
+                                                                                6.2.1. Prove scritte
 
                                                                                 <span class="asterisk">*</span>
 
@@ -21635,7 +21361,7 @@
                                                                                     for="dynformSCA7WrittenEvidence_Yes">
 
 
-                                                                                    Yes
+                                                                                    Si'
 
 
 
@@ -21762,9 +21488,7 @@
                                                                                     for="dynformSCA7WrittenEvidencePleaseSpecify">
 
 
-                                                                                    Please
-                                                                                    specify
-
+                                                                                    Si prega di specificare
 
 
                                                                                     <span class="asterisk"
@@ -21845,7 +21569,7 @@
                                                                             <label style="margin-bottom:0px">
 
 
-                                                                                6.2.2. Witnesses
+                                                                                6.2.2. Prova per testimoni
 
                                                                                 <span class="asterisk">*</span>
 
@@ -21878,7 +21602,7 @@
                                                                                 <label for="dynformSCA7Witnesses_Yes">
 
 
-                                                                                    Yes
+                                                                                    Si
 
 
 
@@ -22003,9 +21727,7 @@
                                                                                     for="dynformSCA7WitnessesPleaseSpecify">
 
 
-                                                                                    Please
-                                                                                    specify
-
+                                                                                    Si prega di specificare
 
 
                                                                                     <span class="asterisk"
@@ -22086,7 +21808,7 @@
                                                                             <label style="margin-bottom:0px">
 
 
-                                                                                6.2.3. Other
+                                                                                6.2.3. Altro
 
                                                                                 <span class="asterisk">*</span>
 
@@ -22118,7 +21840,7 @@
                                                                                 <label for="dynformSCA7Other_Yes">
 
 
-                                                                                    Yes
+                                                                                    Si'
 
 
 
@@ -22242,8 +21964,7 @@
                                                                                     for="dynformSCA7OtherPleaseSpecify">
 
 
-                                                                                    Please
-                                                                                    specify
+                                                                                    Si prega di specificare
 
 
 
@@ -22333,9 +22054,10 @@
 
                                     <!------begin step 7 -->
                                     <div id="step7">
-                                        <div id="step7_1" concept="http://scanii.org/domain/oralHearing">
+                                        <div id="step7_1" >
                                             <div>
-                                                <h3>7.1. Oral hearing&nbsp;&nbsp;&nbsp;</h3>
+                                                <h3>7.1. Udienza&nbsp;&nbsp;&nbsp;</h3>
+                                                <div concept="http://scanii.org/domain/oralHearing"></div>
                                                 <div class="js-toggle-trigger"
                                                     style="width: 93%;display: inline-block;">
 
@@ -22353,8 +22075,7 @@
                                                                         <label style="margin-bottom:0px">
 
 
-                                                                            7.1.1. Do you want an oral
-                                                                            hearing to be held?
+                                                                            7.1.1.  Desidera che venga fissata un'udienza?
 
                                                                             <span class="asterisk">*</span>
 
@@ -22387,7 +22108,7 @@
                                                                             <label for="dynformSCA7OralHearingHeld_Yes">
 
 
-                                                                                Yes
+                                                                                Si'
 
 
 
@@ -22512,9 +22233,7 @@
                                                                                 for="dynformSCA7OralHearingHeldPleaseSpecify">
 
 
-                                                                                If yes, please
-                                                                                indicate
-                                                                                reasons
+                                                                                In caso affermativo, precisare il motivo
 
 
 
@@ -22593,12 +22312,7 @@
                                                                         <label style="margin-bottom:0px">
 
 
-                                                                            7.1.2. If the court
-                                                                            decides to
-                                                                            hold an oral hearing, do
-                                                                            you
-                                                                            want to be physically
-                                                                            present?
+                                                                            7.1.2. Se l’autorità giudiziaria decide di tenere un’udienza, si desidera essere fisicamente presenti? 
 
                                                                             <span class="asterisk">*</span>
 
@@ -22632,7 +22346,7 @@
                                                                                 for="dynformSCA8OralHearingPhysically_Yes">
 
 
-                                                                                Yes
+                                                                                Si
 
 
 
@@ -22757,9 +22471,7 @@
                                                                                 for="dynformSCA8OralHearingPhysicallyPleaseSpecify">
 
 
-                                                                                Please indicate
-                                                                                reasons
-
+                                                                                Precisare il motivo 
 
 
                                                                                 <span class="asterisk"
@@ -22833,14 +22545,18 @@
                                             </div>
                                         </div>
 
-                                        <div id="step7_2" concept="http://scanii.org/domain/documentAndCommunication">
+                                        <div id="step7_2" >
 
-                                            <div>
-                                                <h3>7.2 Service of documents and communication with the
-                                                    court&nbsp;&nbsp;&nbsp;</h3>
+                                            
+                                                <h3>7.2 Notifica o comunicazione degli atti e comunicazione con l’organo giurisdizionale </h3>
 
-                                            </div>
 
+                                            <div concept="http://scanii.org/domain/documentAndCommunication"></div>
+
+                                            <div class="js-toggle-trigger"
+                                                    style="width: 93%;display: inline-block;">
+
+                                                </div>
                                             <div class="form-row full-width">
                                                 <div class="description">
 
@@ -22854,13 +22570,7 @@
                                                                     <label style="margin-bottom:0px">
 
 
-                                                                        7.2.1. Do you agree to the
-                                                                        use of electronic means of
-                                                                        communication for the
-                                                                        service of the response by
-                                                                        the defendant, any
-                                                                        counterclaim and the
-                                                                        judgment?
+                                                                        7.2.1. Consente all’uso dei mezzi di comunicazione elettronici per la notifica e/o comunicazione della replica del convenuto, di eventuali domande riconvenzionali e della sentenza? 
 
                                                                         <span class="asterisk">*</span>
 
@@ -22893,7 +22603,7 @@
                                                                         <label for="dynformSCA8ServiceOfDocuments_Yes">
 
 
-                                                                            Yes
+                                                                            Si
 
 
 
@@ -23014,12 +22724,7 @@
                                                                     <label style="margin-bottom:0px">
 
 
-                                                                        7.2.2. Do you agree to the use
-                                                                        of electronic means of
-                                                                        communication to receive
-                                                                        written communications other
-                                                                        than the documents mentioned
-                                                                        in point 10.1?
+                                                                        7.2.2. Acconsente all’uso di mezzi di comunicazione elettronici per ricevere comunicazioni scritte diverse dai documenti di cui al punto 7.2.1?
 
                                                                         <span class="asterisk">*</span>
 
@@ -23052,7 +22757,7 @@
                                                                         <label for="dynformSCA8ServiceOfDocuments2_Yes">
 
 
-                                                                            Yes
+                                                                            Si'
 
 
 
@@ -23164,9 +22869,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="step7_3" concept="http://scanii.org/domain/certificate">
-                                            <div>
-                                                <h3>7.3. Certificate&nbsp;&nbsp;&nbsp;</h3>
+                                        <div id="step7_3" >
+                                            
+                                                <h3>7.3. Certificato&nbsp;&nbsp;&nbsp;</h3>
 
 
 
@@ -23174,7 +22879,11 @@
 
 
                                                 <p style="margin-bottom: 0;">&nbsp;</p>
-                                            </div>
+                                                <div concept="http://scanii.org/domain/certificate"></div>
+                                                <div class="js-toggle-trigger"
+                                                    style="width: 93%;display: inline-block;">
+
+                                                </div>
                                             <div class="form-row full-width">
                                                 <div class="description">
 
@@ -23185,9 +22894,7 @@
                                                             <label style="margin-bottom:0px">
 
 
-                                                                7.3.1. I ask the court/tribunal to
-                                                                issue a certificate concerning the
-                                                                judgment
+                                                                7.3.1. Si chiede all’organo giurisdizionale di rilasciare un certificato relativo alla sentenza?
 
                                                                 <span class="asterisk">*</span>
 
@@ -23219,7 +22926,7 @@
                                                                     <label for="dynformSCA8Certificate_Yes">
 
 
-                                                                        Yes
+                                                                        Si'
 
 
 
@@ -23331,10 +23038,7 @@
                                                             <label for="dynformSCA8CertificateLanguage">
 
 
-                                                                7.3.2. I ask the court/tribunal to
-                                                                issue a certificate in another
-                                                                language than the language of the
-                                                                court proceedings, in particular:
+                                                                7.3.2. Si chiede all’organo giurisdizionale di rilasciare un certificato in una lingua diversa dalla lingua del procedimento giurisdizionale, in particolare:
 
 
 
@@ -23412,8 +23116,7 @@
                                                                         onchange="validateFieldOnBlur(this);"
                                                                         id="dynformSCA8CertificateLanguage"
                                                                         class="df_select " data-title="">
-                                                                        <option value="" disabled="" selected="">Please
-                                                                            select</option>
+                                                                        <option value="" disabled="" selected="">Selezionare</option>
                                                                         <option value="00">Bulgarian
                                                                         </option>
                                                                         <option value="01">Czech
@@ -23458,9 +23161,7 @@
                                                                         </option>
                                                                         <option value="21">English
                                                                         </option>
-                                                                        <option value="22">Other:
-                                                                            (please specify)
-                                                                        </option>
+                                                                       
                                                                     </select>
 
 
@@ -23494,16 +23195,16 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="step7_4" concept="http://scanii.org/domain/dateAndSignature">
-                                            <div>
-                                                <h3>7.4. Date and signature&nbsp;&nbsp;&nbsp;</h3>
+                                        <div id="step7_4" >
+                                        
+                                                <h3>7.4. Data e firma   </h3>
+
+                                                <div concept="http://scanii.org/domain/dateAndSignature"></div>
 
                                                 <div class="js-toggle-trigger"
                                                     style="width: 93%;display: inline-block;">
                                                     <span>
-                                                        Please make sure that you write your name
-                                                        clearly and sign and date your application
-                                                        at the end.
+                                                        Apporre il nome in caratteri chiari, firmare e datare in calce alla domanda.
                                                     </span>
                                                 </div>
 
@@ -23511,7 +23212,7 @@
 
 
                                                 <p style="margin-bottom: 0;">&nbsp;</p>
-                                            </div>
+                                            
                                             <div class="form-row full-width">
                                                 <div class="description">
                                                     <div style="margin-top: -1.5rem;">
@@ -23522,7 +23223,7 @@
                                                                 <label style="margin-bottom:0px">
 
 
-                                                                    7.4 Date and signature
+                                                                    7.4 Data e firma
 
 
 
@@ -23540,10 +23241,7 @@
                                                                 <label style="margin-bottom:0px">
 
 
-                                                                    I hereby request that the
-                                                                    court/tribunal give a judgment
-                                                                    against the defendant on the
-                                                                    basis of my claim.
+                                                                    L’organo giurisdizionale è invitato ad emettere una sentenza contro il convenuto sulla base della presente domanda.
 
 
 
@@ -23559,9 +23257,7 @@
                                                     <div class="js-toggle-trigger"
                                                         style="width: 93%;display: inline-block;">
                                                         <span>
-                                                            I declare that the information provided
-                                                            is true to the best of my knowledge and
-                                                            is given in good faith.
+                                                            Dichiaro che le informazioni riportate sono, a mia conoscenza, veritiere e fornite in buona fede.
                                                         </span>
                                                     </div>
 
@@ -23579,8 +23275,7 @@
                                                             <label for="dynformSCA8DateSignatureDone">
 
 
-                                                                Done at
-
+                                                                Fatto a 
 
 
                                                                 <span class="asterisk"
@@ -23651,7 +23346,7 @@
                                                                 <label for="dynformSCA8DateSignatureDate">
 
 
-                                                                    Date
+                                                                    Data
 
 
 
@@ -23731,7 +23426,7 @@
                                                             <label for="dynformSCA8DateSignatureName">
 
 
-                                                                Name of the person signing the form
+                                                                Nome e firma 
 
 
 
@@ -23802,7 +23497,7 @@
                                     <!------begin 8 -->
                                     <div id="step8">
                                         <div>
-                                            <h3>Court/tribunal&nbsp;&nbsp;&nbsp;</h3>
+                                            <h3>Organo giurisdizionale   </h3>
 
                                         </div>
 
@@ -23837,8 +23532,7 @@
                                                         <!-- NEW ENTRY -->
 
 
-                                                        <label>8. Before which court/tribunal
-                                                            are you making your claim?</label>
+                                                        <label>8. Dinanzi a quale organo giurisdizionale inoltra la domanda?</label>
 
 
 
@@ -23867,7 +23561,7 @@
                                                                     <label for="dynformSCA1CourtCountry">
 
 
-                                                                        8.1. Country
+                                                                        8.1. Paese
 
 
 
@@ -23905,8 +23599,7 @@
                                                                                 data-title="">
                                                                                 <option value="" disabled=""
                                                                                     selected="">
-                                                                                    Please
-                                                                                    select
+                                                                                    Selezionare
                                                                                 </option>
                                                                                 <option value="AT">
                                                                                     Austria
@@ -24030,8 +23723,7 @@
 
                                                     <div class="js-toggle find_court" id="find_court">
                                                         <div class="js-toggle-trigger" id="js-toggle-id" tabindex="0">
-                                                            <span class="subtitle info"> Find a
-                                                                competent court/authority</span>
+                                                            <span class="subtitle info"> Dinanzi a quale organo giurisdizionale inoltra la domanda?</span>
                                                         </div>
                                                         <div class="description container">
 
@@ -24056,7 +23748,7 @@
                                                                 <label for="dynformSCA1CourtName">
 
 
-                                                                    8.2. Name
+                                                                    8.2. Denominazione
 
 
 
@@ -24127,8 +23819,7 @@
                                                                 <label for="dynformSCA1CourtStreet">
 
 
-                                                                    8.3. Street and number/PO
-                                                                    box:
+                                                                    8.3. Via e numero civico/casella postale
 
 
 
@@ -24200,7 +23891,7 @@
                                                                 <label for="dynformSCA1CourtPostal">
 
 
-                                                                    8.4. Postal Code
+                                                                    8.4. CAP
 
 
 
@@ -24270,7 +23961,7 @@
                                                                 <label for="dynformSCA1CourtCity">
 
 
-                                                                    8.5 City
+                                                                    8.5 Citta'
 
 
 
@@ -24348,7 +24039,7 @@
 
 
 
-                                                        <h4>PDF form</h4>
+                                                        <h4>Modulo PDF</h4>
 
 
 
@@ -24358,9 +24049,7 @@
 
 
                                                         <p></p>
-                                                        <label for="dynformSCA1pdfLanguage">Please
-                                                            select the language in which you
-                                                            wish to generate the pdf form:
+                                                        <label for="dynformSCA1pdfLanguage">Selezionare la lingua in cui si vuole creare il modulo pdf: 
 
 
 
@@ -24382,8 +24071,7 @@
                                                                     onfocus="addClassOnFocus(this)"
                                                                     id="dynformSCA1pdfLanguage"
                                                                     class="df_select df_mandatory" data-title="">
-                                                                    <option value="" disabled="" selected="">Please
-                                                                        select</option>
+                                                                    <option value="" disabled="" selected="">Selezionare</option>
 
 
 
@@ -24497,7 +24185,7 @@
 
                                                 <!-- next button on the first div layer -->
                                                 <span class="ieborder nextPageButton"><input onclick="back()"
-                                                        class="button big dark pull-right" Value="Back"
+                                                        class="button big dark pull-right" Value="Indietro"
                                                         name="submitNavigation1" data-title=""></span>
 
                                             </div>
@@ -24509,7 +24197,7 @@
 
                                                 <!-- next button on the first div layer -->
                                                 <span class="ieborder nextPageButton"><input onclick="next()"
-                                                        class="button big dark pull-right" Value="Next"
+                                                        class="button big dark pull-right" Value="Avanti"
                                                         name="submitNavigation1" data-title=""></span>
                                                 <!-- end of next button -->
 
