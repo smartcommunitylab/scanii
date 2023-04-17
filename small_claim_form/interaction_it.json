@@ -6,12 +6,13 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Nella sottosezione 6.1. l’attore può indicare come intende pagare la tassa di domanda. Va ricordato che presso l’organo giurisdizionale cui viene spedita la domanda potrebbero non essere disponibili tutti i metodi e si raccomanda di verificare quali siano accettati. A tal fine è possibile contattare l’organo giurisdizionale interessato o verificare le informazioni fornite dallo Stato membro interessato e pubblicate sul sito web dell’atlante giudiziario europeo in materia civile e commerciale, disponibili sul portale europeo della giustizia elettronica all'indirizzo: https://e-justice.europa.eu/content_small_claims-354-it.do?init=true. È ugualmente possibile trovare maggiori informazioni circa l’importo delle spese di giudizio che dovranno essere corrisposte. Qualora l’attore scelga il pagamento con carta di credito o autorizzi l’organo giurisdizionale a prelevare l’importo dal proprio conto corrente, è necessario che indichi le informazioni opportune relative alla carta di credito o al conto bancario nell’appendice del presente modulo. L’appendice è utilizzata solo per comunicare le informazioni necessarie all’organo giurisdizionale e non sarà trasmessa al convenuto. Nella sottosezione 6.2 l’attore ha la possibilità di indicare la modalità con cui desidera ricevere il pagamento da parte del convenuto, ad esempio qualora quest’ultimo desideri pagare immediatamente, prima ancora che sia emessa la sentenza. Se la modalità prescelta è il bonifico bancario occorre indicare le necessarie informazioni bancarie.",
+          "text": "Nella sottosezione 6.1. l’attore può indicare come intende pagare la tassa di domanda. Va ricordato che presso l’organo giurisdizionale cui viene spedita la domanda potrebbero non essere disponibili tutti i metodi e si raccomanda di verificare quali siano accettati. A tal fine è possibile contattare l’organo giurisdizionale interessato o verificare le informazioni fornite dallo Stato membro interessato e pubblicate sul sito web dell’atlante giudiziario europeo in materia civile e commerciale, disponibili sul portale europeo della giustizia elettronica. È ugualmente possibile trovare maggiori informazioni circa l’importo delle spese di giudizio che dovranno essere corrisposte. Qualora l’attore scelga il pagamento con carta di credito o autorizzi l’organo giurisdizionale a prelevare l’importo dal proprio conto corrente, è necessario che indichi le informazioni opportune relative alla carta di credito o al conto bancario nell’appendice del presente modulo. L’appendice è utilizzata solo per comunicare le informazioni necessarie all’organo giurisdizionale e non sarà trasmessa al convenuto. Nella sottosezione 6.2 l’attore ha la possibilità di indicare la modalità con cui desidera ricevere il pagamento da parte del convenuto, ad esempio qualora quest’ultimo desideri pagare immediatamente, prima ancora che sia emessa la sentenza. Se la modalità prescelta è il bonifico bancario occorre indicare le necessarie informazioni bancarie.",
           "simplifiedText": "Nella sottosezione 6.1. l’attore può indicare la modalità prescelta per il pagamento delle spese di causa. E’ possibile che alcune delle modalità di pagamento indicate nel modulo non siano accettate dall’organo giurisdizionale competente.  Maggiori informazioni possono essere reperite sul portale europeo della giustizia elettronica o contattando preventivamente l’ufficio giudiziario interessato. Nel caso in cui la causa abbia ad oggetto il pagamento di una somma da parte del convenuto, l’attore può indicare la modalità attraverso cui ricevere il pagamento nella sottosezione 6.2 fornendo le informazioni necessarie.",
           "link": [
             {
               "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true",
+              "text": "portale europeo della giustizia elettronica",
               "name": "Ricerca tribunali e autorità competenti per paese.",
               "description": "Lo strumento di ricerca permette di identificare i tribunali/le autorità competenti in ciascun paese per le controversie di modesta entità."
             }
@@ -39,25 +40,27 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Si rammenta che il procedimento europeo per le controversie di modesta entità si svolge in forma scritta. Tuttavia, l’organo giurisdizionale può decidere di procedere ad un’udienza se ritiene che non sia possibile emettere la sentenza sulla base delle prove scritte. È tuttavia possibile richiedere, con il presente modulo o in una fase successiva, un’udienza. L’organo giurisdizionale può rigettare tale richiesta se ritiene che, tenuto conto delle circostanze del caso, un’udienza sia superflua per l’equa trattazione del procedimento. L’udienza dovrebbe essere effettuata tramite opportuni mezzi di comunicazione a distanza, come la videoconferenza o teleconferenza, a condizione che siano a disposizione dell'autorità giudiziaria. Se la persona da sentire è domiciliata in uno Stato membro diverso da quello dell’organo giurisdizionale adito, è organizzata un’udienza mediante tecnologie di comunicazione a distanza, avvalendosi delle procedure di cui al regolamento (CE) n. 1206/2001 del Consiglio (https://e-justice.europa.eu/76/IT/taking_of_evidence?ITALY&member=1). Tuttavia, l’organo giurisdizionale può stabilire la necessità della presenza fisica delle persone convocate per l’udienza. È possibile indicare le proprie preferenze al giudice, tenendo presente che, se si chiede di essere fisicamente presenti all’udienza, il recupero di eventuali spese sostenute in relazione a tale presenza è soggetto alle disposizioni dell’articolo 16 del regolamento (CE) n. 861/2007, che istituisce un procedimento europeo per le controversie di modesta entità. L'articolo prevede che l’organo giurisdizionale non riconosca alla parte vincente spese superflue sostenute o spese sproporzionate rispetto al valore della controversia. Su richiesta, l'organo giurisdizionale può fornire il certificato in un’altra lingua, utilizzando i moduli dinamici disponibili attraverso il portale europeo della giustizia elettronica. Ciò può essere utile all'esecuzione della sentenza in un altro Stato membro. Si prega di notare che l'organo giurisdizionale non è tenuto a fornire una traduzione o una traslitterazione del testo inserito nei campi di testo libero del certificato.",
+          "text": "Si rammenta che il procedimento europeo per le controversie di modesta entità si svolge in forma scritta. Tuttavia, l’organo giurisdizionale può decidere di procedere ad un’udienza se ritiene che non sia possibile emettere la sentenza sulla base delle prove scritte. È tuttavia possibile richiedere, con il presente modulo o in una fase successiva, un’udienza. L’organo giurisdizionale può rigettare tale richiesta se ritiene che, tenuto conto delle circostanze del caso, un’udienza sia superflua per l’equa trattazione del procedimento. L’udienza dovrebbe essere effettuata tramite opportuni mezzi di comunicazione a distanza, come la videoconferenza o teleconferenza, a condizione che siano a disposizione dell'autorità giudiziaria. Se la persona da sentire è domiciliata in uno Stato membro diverso da quello dell’organo giurisdizionale adito, è organizzata un’udienza mediante tecnologie di comunicazione a distanza, avvalendosi delle procedure di cui al regolamento (CE) n. 1206/2001 del Consiglio. Tuttavia, l’organo giurisdizionale può stabilire la necessità della presenza fisica delle persone convocate per l’udienza. È possibile indicare le proprie preferenze al giudice, tenendo presente che, se si chiede di essere fisicamente presenti all’udienza, il recupero di eventuali spese sostenute in relazione a tale presenza è soggetto alle disposizioni dell’articolo 16 del regolamento (CE) n. 861/2007, che istituisce un procedimento europeo per le controversie di modesta entità. L'articolo prevede che l’organo giurisdizionale non riconosca alla parte vincente spese superflue sostenute o spese sproporzionate rispetto al valore della controversia. Su richiesta, l'organo giurisdizionale può fornire il certificato in un’altra lingua, utilizzando i moduli dinamici disponibili attraverso il portale europeo della giustizia elettronica. Ciò può essere utile all'esecuzione della sentenza in un altro Stato membro. Si prega di notare che l'organo giurisdizionale non è tenuto a fornire una traduzione o una traslitterazione del testo inserito nei campi di testo libero del certificato.",
           "simplifiedText": "Il procedimento europeo per le controversie di modesta entità si svolge in forma scritta. Il Giudice può decidere di procedere ad un'udienza se ritiene che non sia possibile emettere la sentenza basandosi solo sulla documentazione acquisita. Anche l’attore può chiedere la fissazione di un’udienza contestualmente alla compilazione di questo modulo o in una fase successiva, tuttavia il Giudice può respingere la richiesta se ritiene l'udienza superflua o non riconoscere il pagamento delle spese sostenute per la partecipazione all’udienza se ritenute superflue o sproporzionate. L'udienza può essere tenuta tramite mezzi di comunicazione a distanza, come videoconferenza o teleconferenza. Compilando la sezione 11 del modulo si può richiedere al Giudice l’emissione, unitamente alla sentenza, del certificato in un'altra lingua ad essa relativo, qualora l’esecuzione debba essere effettuata in un altro Stato  membro.",
           "link": [
             {
-              "type": "HOW_TO_LINK",
-              "url": "https://e-justice.europa.eu/76/IT/taking_of_evidence?ITALY&member=1",
-              "name": "Assunzione delle prove",
-              "description": "Indicazioni sulla raccolta e la valutazione delle prove."
+              "type": "",
+              "url": "",
+              "name": "",
+              "description": ""
             },
             {
               "type": "LEGAL_LINK",
               "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:02001R1206-20081204&from=DE",
               "name": "Regolamento Europeo n. 1206/2001",
+              "text": "regolamento (CE) n. 1206/2001 del Consiglio",
               "description": "Testo del Regolamento Europeo sulla cooperazione fra le autorità giudiziarie degli Stati membri nel settore dell'assunzione delle prove in materia civile o commerciale."
             },
             {
               "type": "LEGAL_LINK",
               "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
               "name": "Regolamento Europeo n. 861/2007",
+              "text": "regolamento (CE) n. 861/2007",
               "description": "Regolamento europeo che istituisce il procedimento europeo per le controversie di modesta entità."
             }
           ],
@@ -85,6 +88,7 @@
               "type": "LEGAL_LINK",
               "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
               "name": "Regolamento Europeo n. 861/2007",
+              "text": "regolamento (CE) n. 861/2007 del Parlamento europeo e del Consiglio",
               "description": "Regolamento europeo che istituisce il procedimento europeo per le controversie di modesta entità."
             }
           ],
@@ -105,13 +109,14 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Se si intende chiedere il pagamento delle spese processuali (ad esempio spese di traduzione, onorari degli avvocati, spese di notificazione e/o comunicazione degli atti, ecc.), occorre precisarlo alla sottosezione 7.3. Si noti che le norme relative alle spese che gli organi giurisdizionali possono riconoscere variano da uno Stato membro ad un altro. Per informazioni dettagliate relative alle categorie di spese nei vari Stati membri, consultare il portale europeo della giustizia elettronica all'indirizzo: https://e-justice.europa.eu/content_costs_of_proceedings-37-it.do?init=true.",
+          "text": "Se si intende chiedere il pagamento delle spese processuali (ad esempio spese di traduzione, onorari degli avvocati, spese di notificazione e/o comunicazione degli atti, ecc.), occorre precisarlo alla sottosezione 7.3. Si noti che le norme relative alle spese che gli organi giurisdizionali possono riconoscere variano da uno Stato membro ad un altro. Per informazioni dettagliate relative alle categorie di spese nei vari Stati membri, consultare il portale europeo della giustizia elettronica.",
           "simplifiedText": "La richiesta di pagamento delle spese processuali (traduzione, onorari avvocati, notificazione/comunicazione atti etc.) deve essere formulata compilando la sottosezione 7.3. Le norme relative alle spese variano da Stato a Stato. Per info dettagliate, visitare il portale europeo della giustizia elettronica https://e-justice.europa.eu/content_costs_of_proceedings-37-it.do?init=true .",
           "link": [
             {
               "type": "DESCRIPTION_LINK",
               "url": "https://e-justice.europa.eu/content_costs_of_proceedings-37-it.do?init=true",
               "name": "Costi dei processi in vari stati Membri.",
+              "text": "informazioni dettagliate relative alle categorie di spese nei vari Stati membri",
               "description": "Informazioni sulle spese processuali nei vari stati membri."
             }
           ],
@@ -267,13 +272,14 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Sezione in cui occorre fornire informazioni sull’organo giurisdizionale cui si inoltra la domanda. Nella scelta dell’organo giurisdizionale occorrere tener conto dei motivi della competenza giurisdizionale. Nella sezione 4 è riportato un elenco non esaustivo dei possibili motivi di competenza giurisdizionale. È possibile utilizzare l’apposita funzione di ricerca, disponibile sul portale europeo della giustizia elettronica, per trovare le informazioni dettagliate (indirizzo, numero di telefono ecc.) sull’organo competente: https://e-justice.europa.eu/content_small_claims-354-it.do?init=true",
+          "text": "Sezione in cui occorre fornire informazioni sull’organo giurisdizionale cui si inoltra la domanda. Nella scelta dell’organo giurisdizionale occorrere tener conto dei motivi della competenza giurisdizionale. Nella sezione 4 è riportato un elenco non esaustivo dei possibili motivi di competenza giurisdizionale. È possibile utilizzare l’apposita funzione di ricerca, disponibile sul portale europeo della giustizia elettronica, per trovare le informazioni dettagliate (indirizzo, numero di telefono ecc.) sull’organo competente.",
           "simplifiedText": "In questa sezione è necessario indicare l’autorità giudiziaria competente. Per individuare il giudice competente a ricevere la domanda in ciascuno Paese è possibile avvalersi dell’apposita funzione di ricerca disponibile sul Portale europeo della giustizia elettronica.",
           "link": [
             {
               "type": "SERVICE_LINK",
-              "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true",
+              "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true#tocHeader2",
               "name": "Ricerca tribunali e autorità competenti per paese.",
+              "text": "apposita funzione di ricerca",
               "description": "Lo strumento di ricerca permette di identificare i tribunali/le autorità competenti in ciascun paese per le controversie di modesta entità."
             }
           ],
@@ -312,7 +318,7 @@
           ],
           "words": [
             { "text": "organo giurisdizionale",
-              "position": "303-22",
+              "position": "284-22",
               "definition": "In questo caso ci si riferisce al tribunale. In generale un organo giurisdizionale è un'autorità dello stato responsabile dell'interpretazione e della applicazione delle leggi.",
               "synonyms": ["Tribunale", "Autorità giudiziaria", "Magistratura"],
               "links": []
@@ -391,13 +397,14 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Gli atti procedurali, come la domanda dell'attore, la replica del convenuto, eventuali domande riconvenzionali e la sentenza, possono essere notificati o comunicati alle parti per posta o per via elettronica, se l'organo giurisdizionale ha tecnicamente a disposizione tali mezzi e se questi sono ammissibili conformemente al diritto processuale dello Stato membro in cui si svolge il procedimento. Se gli atti devono essere notificati o comunicati in uno Stato membro diverso da quello in cui si svolge il procedimento, è necessario che siano osservate anche le norme procedurali dello Stato membro in cui è effettuata la notifica/comunicazione. I mezzi elettronici possono essere utilizzati anche per altre comunicazioni scritte (come una richiesta di partecipazione a un’udienza). I mezzi elettronici possono essere utilizzati soltanto se il destinatario ne ha espressamente autorizzato l'uso in anticipo o se egli è giuridicamente tenuto ad accettare la notifica e/o altra comunicazione scritta dell'organo giurisdizionale in forma elettronica, in conformità con le norme procedurali dello Stato membro in cui ha il domicilio. Per verificare la disponibilità e l'ammissibilità dei mezzi elettronici per la notifica e/o comunicazione negli Stati membri occorre verificare le informazioni sul portale europeo della giustizia elettronica all'indirizzo: https://e-justice.europa.eu/content_small_claims-354-it.do?init=true",
+          "text": "Gli atti procedurali, come la domanda dell'attore, la replica del convenuto, eventuali domande riconvenzionali e la sentenza, possono essere notificati o comunicati alle parti per posta o per via elettronica, se l'organo giurisdizionale ha tecnicamente a disposizione tali mezzi e se questi sono ammissibili conformemente al diritto processuale dello Stato membro in cui si svolge il procedimento. Se gli atti devono essere notificati o comunicati in uno Stato membro diverso da quello in cui si svolge il procedimento, è necessario che siano osservate anche le norme procedurali dello Stato membro in cui è effettuata la notifica/comunicazione. I mezzi elettronici possono essere utilizzati anche per altre comunicazioni scritte (come una richiesta di partecipazione a un’udienza). I mezzi elettronici possono essere utilizzati soltanto se il destinatario ne ha espressamente autorizzato l'uso in anticipo o se egli è giuridicamente tenuto ad accettare la notifica e/o altra comunicazione scritta dell'organo giurisdizionale in forma elettronica, in conformità con le norme procedurali dello Stato membro in cui ha il domicilio. Per verificare la disponibilità e l'ammissibilità dei mezzi elettronici per la notifica e/o comunicazione negli Stati membri occorre verificare le informazioni sul portale europeo della giustizia elettronica.",
           "simplifiedText": "Gli atti procedurali (domanda, replica del denunciato, sentenza) possono essere notificati o comunicati per posta o per via elettronica, se l'organo giurisdizionale è in grado tecnicamente e se è previsto dal diritto processuale dello Stato membro in cui si svolge il procedimento. Se gli atti vengono notificati/comunicati in un altro Stato membro, devono essere osservate anche le norme dello Stato membro in cui avviene la notifica/comunicazione. I mezzi elettronici, che possono essere usati anche per altre comunicazioni scritte (per esempio una richiesta di partecipazione a un'udienza), devono essere autorizzati in anticipo dal destinatario, a meno che questi non sia obbligato ad accettarli secondo la legge del paese in cui risiede. Verificare i mezzi elettronici ammissibili su https://e-justice.europa.eu/content_small_claims-354-it.do?init=true",
           "link": [
             {
               "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true",
               "name": "Ricerca tribunali e autorità competenti per paese.",
+              "text": "portale europeo della giustizia elettronica",
               "description": "Lo strumento di ricerca permette di identificare i tribunali/le autorità competenti in ciascun paese per le controversie di modesta entità."
             }
           ],
@@ -425,18 +432,20 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "La domanda deve essere presentata all’organo giurisdizionale competente. Esso dev’essere competente ai sensi del regolamento (CE) n. 1215/2012 del Parlamento europeo e del Consiglio. Nella presente sezione è riportato un elenco non esaustivo dei possibili motivi della competenza giurisdizionale. Per ulteriori informazioni in materia di norme sulla competenza, si consulti la pagina web dell’atlante giudiziario europeo al seguente indirizzo: https://e-justice.europa.eu/content_brussels_i_regulation_recast-350-it.do?init=true.",
+          "text": "La domanda deve essere presentata all’organo giurisdizionale competente. Esso dev’essere competente ai sensi del regolamento (CE) n. 1215/2012 del Parlamento europeo e del Consiglio. Nella presente sezione è riportato un elenco non esaustivo dei possibili motivi della competenza giurisdizionale. Per ulteriori informazioni in materia di norme sulla competenza, si consulti la pagina web dell’atlante giudiziario europeo.",
           "simplifiedText": "La domanda va presentata all'organo giurisdizionale che ha il potere di decidere sulla specifica controversia sulla base delle regole fissate dal regolamento (CE) n. 1215/2012.",
           "link": [
             {
               "type": "LEGAL_LINK",
               "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:32012R1215",
               "name": "Regolamento UE n. 1215/2012 del Parlamento Europeo e del Consiglio",
+              "text": "regolamento (CE) n. 1215/2012 del Parlamento europeo e del Consiglio",
               "description": "Testo del Regolamento n. 1215/2012 concernente la competenza giurisdizionale, il riconoscimento e l’esecuzione delle decisioni in materia civile e commerciale."
             },
-            {
+            { "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_brussels_i_regulation_recast-350-it.do?init=true",
               "name": "Regolamento Bruxelles I",
+              "text": "ulteriori informazioni in materia di norme sulla competenza",
               "description": "Informazioni nazionali e moduli online concernenti il regolamento n. 1215/2012 "
             }
           ],
@@ -464,31 +473,34 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Si rammenta che il procedimento europeo per le controversie di modesta entità si svolge in forma scritta. Tuttavia, l’organo giurisdizionale può decidere di procedere ad un’udienza se ritiene che non sia possibile emettere la sentenza sulla base delle prove scritte. È tuttavia possibile richiedere, con il presente modulo o in una fase successiva, un’udienza. L’organo giurisdizionale può rigettare tale richiesta se ritiene che, tenuto conto delle circostanze del caso, un’udienza sia superflua per l’equa trattazione del procedimento. L’udienza dovrebbe essere effettuata tramite opportuni mezzi di comunicazione a distanza, come la videoconferenza o teleconferenza, a condizione che siano a disposizione dell'autorità giudiziaria. Se la persona da sentire è domiciliata in uno Stato membro diverso da quello dell’organo giurisdizionale adito, è organizzata un’udienza mediante tecnologie di comunicazione a distanza, avvalendosi delle procedure di cui al regolamento (CE) n. 1206/2001 del Consiglio. (https://e-justice.europa.eu/content_taking_of_evidence-76-it.do?init=true) Tuttavia, l’organo giurisdizionale può stabilire la necessità della presenza fisica delle persone convocate per l’udienza. È possibile indicare le proprie preferenze al giudice, tenendo presente che, se si chiede di essere fisicamente presenti all’udienza, il recupero di eventuali spese sostenute in relazione a tale presenza è soggetto alle disposizioni dell’articolo 16 del regolamento (CE) n. 861/2007, che istituisce un procedimento europeo per le controversie di modesta entità. L'articolo prevede che l’organo giurisdizionale non riconosca alla parte vincente spese superflue sostenute o spese sproporzionate rispetto al valore della controversia.",
+          "text": "Si rammenta che il procedimento europeo per le controversie di modesta entità si svolge in forma scritta. Tuttavia, l’organo giurisdizionale può decidere di procedere ad un’udienza se ritiene che non sia possibile emettere la sentenza sulla base delle prove scritte. È tuttavia possibile richiedere, con il presente modulo o in una fase successiva, un’udienza. L’organo giurisdizionale può rigettare tale richiesta se ritiene che, tenuto conto delle circostanze del caso, un’udienza sia superflua per l’equa trattazione del procedimento. L’udienza dovrebbe essere effettuata tramite opportuni mezzi di comunicazione a distanza, come la videoconferenza o teleconferenza, a condizione che siano a disposizione dell'autorità giudiziaria. Se la persona da sentire è domiciliata in uno Stato membro diverso da quello dell’organo giurisdizionale adito, è organizzata un’udienza mediante tecnologie di comunicazione a distanza, avvalendosi delle procedure di cui al regolamento (CE) n. 1206/2001 del Consiglio. Tuttavia, l’organo giurisdizionale può stabilire la necessità della presenza fisica delle persone convocate per l’udienza. È possibile indicare le proprie preferenze al giudice, tenendo presente che, se si chiede di essere fisicamente presenti all’udienza, il recupero di eventuali spese sostenute in relazione a tale presenza è soggetto alle disposizioni dell’articolo 16 del regolamento (CE) n. 861/2007, che istituisce un procedimento europeo per le controversie di modesta entità. L'articolo prevede che l’organo giurisdizionale non riconosca alla parte vincente spese superflue sostenute o spese sproporzionate rispetto al valore della controversia.",
           "simplifiedText": "Il procedimento europeo per le controversie di modesta entità si svolge in forma scritta. Se necessario, il tribunale può decidere di organizzare un’udienza tramite mezzi di comunicazione a distanza, se disponibili presso l'autorità giudiziaria. È possibile richiedere un’udienza con il presente modulo o in una fase successiva. Se si richiede di essere fisicamente presenti, le spese relative saranno soggette all'articolo 16 del regolamento (CE) n. 861/2007 e potrebbero non essere rimborsate se il giudice le dovesse ritenere superflue o sproporzionate.",
           "link": [
             {
               "type": "LEGAL_LINK",
               "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
               "name": "Regolamento Europeo n. 861/2007",
+              "text": "regolamento (CE) n. 861/2007",
               "description": "Regolamento europeo che istituisce il procedimento europeo per le controversie di modesta entità."
             },
             {
               "type": "HOW_TO_LINK",
               "url": "https://e-justice.europa.eu/content_taking_of_evidence-76-it.do?init=true",
               "name": "Assunzione delle prove",
+              "text": "procedure",
               "description": "Informazioni sulle modalità di assunzione e presentazione delle prove al giudice."
             },
             {
               "type": "LEGAL_LINK",
               "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:02001R1206-20081204&from=DE",
               "name": "Regolamento Europeo n. 1206/2001",
+              "text": "regolamento (CE) n. 1206/2001 del Consiglio",
               "description": "Testo del Regolamento Europeo sulla cooperazione fra le autorità giudiziarie degli Stati membri nel settore dell'assunzione delle prove in materia civile o commerciale."
             }
           ],
           "words": [
             { "text": "organo giurisdizionale",
-              "position": "138-22",
+              "position": "119-22",
               "definition": "In questo caso ci si riferisce al tribunale. In generale un organo giurisdizionale è un'autorità dello stato responsabile dell'interpretazione e della applicazione delle leggi.",
               "synonyms": [],
               "links": []
