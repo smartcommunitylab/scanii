@@ -829,7 +829,7 @@
             }
             if (actualStep < 8) {
                 actualStep = actualStep + 1;
-                showStep('step' + actualStep);
+                showStep(actualStep);
                 document.activeElement.blur();
             }
         }
@@ -839,7 +839,7 @@
 
             if (actualStep > 1) {
                 actualStep = actualStep - 1;
-                showStep('step' + actualStep);
+                showStep(actualStep);
                 document.activeElement.blur();
             }
         }
@@ -853,6 +853,7 @@
 
             showStep(step);
             document.activeElement.blur();
+            
 
         }
 
@@ -860,20 +861,22 @@
 
             hideSteps();
             // show the selected box
-            let box = document.getElementById(step);
+            let box = document.getElementById('step'+step);
             box.style.display = 'block';
 
             // enable the correct step-menu
-            box = document.getElementById(step + '-menu');
+            box = document.getElementById('step'+step + '-menu');
             box.setAttribute('class', 'active');
 
             // show pdf legal
-            divLegal = document.querySelectorAll('[scaii_pdf_step*="' + step + '"]');
+            divLegal = document.querySelectorAll('[scaii_pdf_step*="' + 'step'+step + '"]');
             divLegal.forEach(element => {
                 element.style.display = 'initial';
 
 
             });
+
+            actualStep = step;
 
         }
 
@@ -942,7 +945,7 @@
                 processBlock(block);
             });
 
-            showStep('step1');
+            showStep(1);
 
         }
 
@@ -3487,7 +3490,7 @@
                         <p>
 
 
-                            <i id="simplyfied_icon" class="bi bi-book"></i><span/><a id="simplyfied_btn"
+                            <i id="simplyfied_icon" class="bi bi-book"></i><a id="simplyfied_btn"
                                 onClick="showText('simplyfied')">Visualizza Testo
                                 semplificato</a>
                         </p>
@@ -3644,7 +3647,7 @@
                             <span class="sidebar_title step-menu-title">Form Steps</span>
                             <ul class="step-menu">
 
-                                <li class="active" onclick="moveToStep('step1')" id="step1-menu">
+                                <li class="active" onclick="moveToStep(1)" id="step1-menu">
                                     <a h tabindex="-1">
                                         <div class="step-num">1.</div>
                                         <span class="truncate">
@@ -3658,7 +3661,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="moveToStep('step2')" id="step2-menu">
+                                <li class="incomplete" onclick="moveToStep(2)" id="step2-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">2.</div>
                                         <span class="truncate">
@@ -3672,7 +3675,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="moveToStep('step3')" id="step3-menu">
+                                <li class="incomplete" onclick="moveToStep(3)" id="step3-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">3.</div>
                                         <span class="truncate">
@@ -3686,7 +3689,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="moveToStep('step4')" id="step4-menu">
+                                <li class="incomplete" onclick="moveToStep(4)" id="step4-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">4.</div>
                                         <span class="truncate">
@@ -3700,7 +3703,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="moveToStep('step5')" id="step5-menu">
+                                <li class="incomplete" onclick="moveToStep(5)" id="step5-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">5.</div>
                                         <span class="truncate">
@@ -3714,7 +3717,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="moveToStep('step6')" id="step6-menu">
+                                <li class="incomplete" onclick="moveToStep(6)" id="step6-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">6.</div>
                                         <span class="truncate">
@@ -3728,7 +3731,7 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="moveToStep('step7')" id="step7-menu">
+                                <li class="incomplete" onclick="moveToStep(7)" id="step7-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">7.</div>
                                         <span class="truncate">
@@ -3742,14 +3745,14 @@
                                     </a>
                                 </li>
 
-                                <li class="incomplete" onclick="moveToStep('step8')" id="step8-menu">
+                                <li class="incomplete" onclick="moveToStep(8)" id="step8-menu">
                                     <a tabindex="-1">
                                         <div class="step-num">8.</div>
                                         <span class="truncate">
                                             <span class="index"></span>
                                             <span class="step-title">
                                                 <input type="submit" class="submitProgressBarClass"
-                                                    name="submitProgressBar7" value="Step 8 ">
+                                                    name="submitProgressBar7" value="Fase 8 ">
                                             </span>
                                         </span>
 
@@ -23721,15 +23724,7 @@
 
 
 
-                                                    <div class="js-toggle find_court" id="find_court">
-                                                        <div class="js-toggle-trigger" id="js-toggle-id" tabindex="0">
-                                                            <span class="subtitle info"> Dinanzi a quale organo giurisdizionale inoltra la domanda?</span>
-                                                        </div>
-                                                        <div class="description container">
-
-                                                        </div>
-                                                    </div>
-
+                                         
 
 
 
