@@ -1,0 +1,300 @@
+<div class="intro-header">
+  <div class="d-flex aligns-items-center">
+    <div class="center no-overflow">
+      <ul class="shortcut-links">
+        <li>
+          <a
+            onclick="return checkOnunload();"
+            href="https://e-justice.europa.eu/home?plang=en&amp;action=home"
+            class="navigation"
+            >Home</a
+          >
+        </li>
+        <li data-id="">
+          <a
+            onclick="return checkOnunload();"
+            href="https://e-justice.europa.eu/511/EN/taking_legal_action"
+            >Taking legal action</a
+          >
+        </li>
+
+        <li data-id="">
+          <a
+            onclick="return checkOnunload();"
+            href="https://e-justice.europa.eu/155/EN/online_forms"
+            >Online forms</a
+          >
+        </li>
+
+        <li data-id="">
+          <a
+            onclick="return checkOnunload();"
+            href="https://e-justice.europa.eu/177/EN/small_claims_forms"
+            >Small claims forms</a
+          >
+        </li>
+
+        <li data-id=""><a>Form A - Claim form</a></li>
+      </ul>
+      <div class="row">
+        <div class="col-6 text-start align-self-end">
+          <div class="title-block">
+            <h1>Form A - Claim form</h1>
+            <div class="subtitle js-toggle"></div>
+          </div>
+        </div>
+        <div class="col-3"></div>
+        <div class="col-3 text-end align-self-end">
+          <p>
+            <i id="simplyfied_icon" class="bi bi-book"></i>
+            <i>&nbsp;</i>
+            <a id="simplyfied_btn" onClick="showText('simplyfied')"
+              >Visualizza testo semplificato</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast-container position-sticky top-0 end-0 p-3" style="float: right">
+  <div id="liveToast" class="toast align-items-center text-center text-bg-warning border-1" role="alert"
+      aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+      <div class="toast-header">
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body text-center fs-4">
+          <p><strong class="me-auto fs-4">Attenzione!!!</strong></p>
+          <p>Stai visualizzando il testo semplificato</p>
+
+
+      </div>
+
+  </div>
+</div>
+<div id="maincontent" class="content detail-page dynamic-forms">
+  <div class="center clearfix">
+    <div class="sidebar">
+      <div class="sticky-wrapper is-sticky">
+        <div class="sticky-sidebar">
+          <span class="sidebar_title step-menu-title">Form Steps</span>
+          <ul class="step-menu nav" id="step-menu">
+            <li class="active" id="step1-menu" data-step="1" onclick="showPdf(1)">
+              <a tabindex="-1" class="nav-link active" data-bs-target="#step1">
+                <div class="step-num">1.</div>
+                <span class="truncate">
+                  <span class="index"></span>
+                  <span class="step-title">
+                    <input
+                      type="submit"
+                      class="submitProgressBarClass"
+                      name="submitProgressBar0"
+                      value="Step 1 "
+                    />
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="incomplete" id="step2-menu" data-step="2" onclick="showPdf(2)">
+              <a tabindex="-1" class="nav-link" data-bs-target="#step2">
+                <div class="step-num">2.</div>
+                <span class="truncate">
+                  <span class="index"></span>
+                  <span class="step-title">
+                    <input
+                      type="submit"
+                      class="submitProgressBarClass"
+                      name="submitProgressBar1"
+                      value="Step 2 "
+                    />
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="incomplete" id="step3-menu" data-step="3">
+              <a tabindex="-1" class="nav-link" data-bs-target="#step3" onclick="showPdf(3)">
+                <div class="step-num">3.</div>
+                <span class="truncate">
+                  <span class="index"></span>
+                  <span class="step-title">
+                    <input
+                      type="submit"
+                      class="submitProgressBarClass"
+                      name="submitProgressBar2"
+                      value="Step 3 "
+                    />
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="incomplete" id="step4-menu" data-step="4">
+              <a tabindex="-1" class="nav-link" data-bs-target="#step4" onclick="showPdf(4)">
+                <div class="step-num">4.</div>
+                <span class="truncate">
+                  <span class="index"></span>
+                  <span class="step-title">
+                    <input
+                      type="submit"
+                      class="submitProgressBarClass"
+                      name="submitProgressBar3"
+                      value="Step 4 "
+                    />
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="incomplete" id="step5-menu" data-step="5" onclick="showPdf(5)">
+              <a tabindex="-1" class="nav-link" data-bs-target="#step5">
+                <div class="step-num">5.</div>
+                <span class="truncate">
+                  <span class="index"></span>
+                  <span class="step-title">
+                    <input
+                      type="submit"
+                      class="submitProgressBarClass"
+                      name="submitProgressBar4"
+                      value="Step 5 "
+                    />
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="incomplete" id="step6-menu" data-step="6" onclick="showPdf(6)">
+              <a tabindex="-1" class="nav-link" data-bs-target="#step6">
+                <div class="step-num">6.</div>
+                <span class="truncate">
+                  <span class="index"></span>
+                  <span class="step-title">
+                    <input
+                      type="submit"
+                      class="submitProgressBarClass"
+                      name="submitProgressBar5"
+                      value="Step 6 "
+                    />
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="incomplete" id="step7-menu" data-step="7" onclick="showPdf(7)">
+              <a tabindex="-1" class="nav-link" data-bs-target="#step7">
+                <div class="step-num">7.</div>
+                <span class="truncate">
+                  <span class="index"></span>
+                  <span class="step-title">
+                    <input
+                      type="submit"
+                      class="submitProgressBarClass"
+                      name="submitProgressBar6"
+                      value="Step 7 "
+                    />
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="incomplete" id="step8-menu" data-step="8" onclick="showPdf(8)">
+              <a tabindex="-1" class="nav-link" data-bs-target="#step8">
+                <div class="step-num">8.</div>
+                <span class="truncate">
+                  <span class="index"></span>
+                  <span class="step-title">
+                    <input
+                      type="submit"
+                      class="submitProgressBarClass"
+                      name="submitProgressBar7"
+                      value="Step 8 "
+                    />
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <span class="sidebar_title step-menu-title">PDF utili</span>
+          <div id="legal_information" class="list-group"></div>
+          <span class="sidebar_title step-menu-title">Sinonimi</span>
+          <div id="synonyms_info" class="list-group"></div>
+          <div class="form-sections-helper">
+            <p id="form-instructions">
+              You can save a form you are working on as a draft. Load a saved
+              form later to complete it.
+            </p>
+            <div class="buttons">
+              <div class="buttons">
+                <input
+                  type="file"
+                  accept=".json"
+                  id="loadDraft"
+                  (change)="loadDraft($event.target.files)"
+                />
+                <button
+                  type="button"
+                  class="button dark big load-draft"
+                  id="buttonLoad"
+                  data-title="If you have previously saved a draft form you can resume your work by loading that file into the system by clicking here."
+                  (click)="openFileBrowser()"
+                >
+                  Load draft</button
+                ><br />
+                <button
+                  class="button dark big save-draft piwik_download"
+                  type="button"
+                  id="buttonSave"
+                  (click)="generateJson()"
+                  data-title="If you wish to stop filling in the form now, save your draft and resume later, please click this button and save the draft file in a safe location on your computer. You can upload it later to resume from where you left off without losing any input already made."
+                >
+                  Save draft
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-bar">
+      <form
+        name="dynform_sc_a_2"
+        id="myStyle"
+        method="post"
+        action="https://e-justice.europa.eu/dynform_sc_a_2_action.do"
+        class="dynamic-form"
+        enctype="multipart/form-data"
+      >
+        <div class="selection">
+          <fieldset>
+            <div
+              class="advanced-forms-step"
+              id="advanced-forms-step-1"
+              style="display: block"
+            >
+              <div class="tab-content">
+                <div class="tab-pane active" id="step1">
+                  <app-claimant></app-claimant>
+                </div>
+                <div class="tab-pane" id="step2">
+                  <app-defendant></app-defendant>
+                </div>
+                <div class="tab-pane" id="step3">
+                  <app-jurisdiction></app-jurisdiction>
+                </div>
+                <div class="tab-pane" id="step4">
+                  <app-step-four></app-step-four>
+                </div>
+                <div class="tab-pane" id="step5">
+                  <app-claim></app-claim>
+                </div>
+                <div class="tab-pane" id="step6">
+                  <app-claim-details></app-claim-details>
+                </div>
+                <div class="tab-pane" id="step7">
+                  <app-step-seven></app-step-seven>
+                </div>
+                <div class="tab-pane" id="step8">
+                  <app-court></app-court>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

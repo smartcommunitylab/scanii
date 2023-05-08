@@ -1,0 +1,3516 @@
+<div id="step1">
+  <h3 [translate]="'claimant.title'">Claimant</h3>
+  <label style="font-size: 16px"></label>
+  <div concept="http://scanii.org/domain/claimant"></div>
+  <div class="form-row full-width bold">
+    <div class="description">
+      <input type="hidden" name="partyExists" value="TRUE" data-title="" />
+      <p
+        class="error"
+        style="margin-left: 10px"
+        id="validation_error_text_partyExists"
+      ></p>
+      <input
+        type="hidden"
+        name="claimRepresentativeExists"
+        value="TRUE"
+        data-title=""
+      />
+      <p
+        class="error"
+        style="margin-left: 10px"
+        id="validation_error_text_claimRepresentativeExists"
+      ></p>
+      <form name="editForm" role="form" [formGroup]="claimantService.editForm">
+        <div
+          formArrayName="claimants"
+          *ngFor="
+            let formGroup of claimantService.editForm.get('claimants')![
+              'controls'
+            ]!;
+            let i = index
+          "
+        >
+          <div [formGroupName]="i">
+            <div
+              *ngIf="
+                !formGroup.get('isRepresentative').value;
+                else representative
+              "
+            >
+              <div class="form-row full-width toggle">
+                <div class="js-toggle open" [attr.id]="'al_block_claimant' + i">
+                  <div
+                    style="width: 90%; display: inline-block"
+                    (click)="toggleClaimantVisibility(i)"
+                  >
+                    <div class="js-toggle-trigger" tabindex="0">
+                      <span [translate]="'claimant.claimantLabel'"
+                        >Claimant</span
+                      >
+                    </div>
+                  </div>
+                  <button
+                    *ngIf="i !== 0"
+                    type="submit"
+                    class="closeInput"
+                    name="dynformCMD_del_Party(1)"
+                    aria-label="Remove from list"
+                    data-title="Remove from list"
+                    (click)="removeClaimant(i)"
+                  >
+                    <i class="fa fa-times closeIcon" aria-hidden="true"></i>
+                  </button>
+                  <div class="description">
+                    <div class="grid">
+                      <div class="grid_item two-thirds">
+                        <div [attr.id]="'parties[' + i + '].claimant_div'">
+                          <div class="form-row full-width bold">
+                            <div>
+                              <label
+                                style="margin-bottom: 0px"
+                                [innerHTML]="
+                                  'claimant.claimantDetails' | translate
+                                "
+                              >
+                                1.
+                                <i>The claimant’s details</i>
+                              </label>
+                            </div>
+                          </div>
+                          <span class="marginleft20px">
+                            <div class="form-row full-width bold">
+                              <label
+                                [attr.for]="
+                                  'parties[' + i + '].dynformSCA2ClaimantName'
+                                "
+                              >
+                                <span [translate]="'claimant.organisation'"
+                                  >1.1. Corporate name of company or
+                                  organisation</span
+                                >
+                                <span
+                                  class="asterisk"
+                                  [attr.id]="
+                                    'requiredStar_blank_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantName'
+                                  "
+                                ></span>
+                              </label>
+                              <div
+                                class="input-wrapper regular"
+                                [attr.id]="
+                                  'input-wrapper_parties[' +
+                                  i +
+                                  '].dynformSCA2ClaimantName'
+                                "
+                                [ngClass]="{
+                                  invalid:
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('organisation')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('organisation')!.dirty
+                                }"
+                              >
+                                <div class="input-content">
+                                  <input
+                                    type="text"
+                                    [attr.name]="
+                                      'parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantName'
+                                    "
+                                    maxlength="150"
+                                    value=""
+                                    [attr.id]="
+                                      'parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantName'
+                                    "
+                                    class="df_textbox"
+                                    data-title="1.1. Corporate name of company or organisation"
+                                    formControlName="organisation"
+                                    (input)="
+                                      markOrganisationSurnameFirstNameAsDirty(i)
+                                    "
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                *ngIf="
+                                  claimantService.claimants
+                                    .at(i)
+                                    .get('organisation')!.invalid &&
+                                  claimantService.claimants
+                                    .at(i)
+                                    .get('organisation')!.dirty
+                                "
+                              >
+                                <span
+                                  [attr.id]="
+                                    'validation_error_text_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantName'
+                                  "
+                                  class="error"
+                                  style="position: relative; top: 0px"
+                                  [translate]="
+                                    'errors.organisationSurnameFirstNameValidationError'
+                                  "
+                                  >Either "Corporate name of company or
+                                  organisation" field must be completed or
+                                  "Surname" and "First name" fields must be
+                                  completed.</span
+                                >
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantSurname'
+                                  "
+                                  ><span [translate]="'claimant.surname'"
+                                    >Surname</span
+                                  >
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_blank_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantSurname'
+                                    "
+                                  ></span>
+                                </label>
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantSurname'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('surname')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('surname')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <input
+                                      type="text"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantSurname'
+                                      "
+                                      maxlength="150"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantSurname'
+                                      "
+                                      class="df_textbox"
+                                      data-title="Surname"
+                                      formControlName="surname"
+                                      (input)="
+                                        markOrganisationSurnameFirstNameAsDirty(
+                                          i
+                                        )
+                                      "
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('surname')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('surname')!.dirty
+                                  "
+                                >
+                                  <span
+                                    [attr.id]="
+                                      'validation_error_text_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantSurname'
+                                    "
+                                    class="error"
+                                    style="position: relative; top: 0px"
+                                    [translate]="
+                                      'errors.organisationSurnameFirstNameValidationError'
+                                    "
+                                    >Either "Corporate name of company or
+                                    organisation" field must be completed or
+                                    "Surname" and "First name" fields must be
+                                    completed.
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantFirstname'
+                                  "
+                                >
+                                  <span [translate]="'claimant.firstName'"
+                                    >First name</span
+                                  >
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_blank_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantFirstname'
+                                    "
+                                  >
+                                  </span>
+                                </label>
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantFirstname'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('firstName')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('firstName')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <input
+                                      type="text"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantFirstname'
+                                      "
+                                      maxlength="150"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantFirstname'
+                                      "
+                                      class="df_textbox"
+                                      data-title="First name"
+                                      formControlName="firstName"
+                                      (input)="
+                                        markOrganisationSurnameFirstNameAsDirty(
+                                          i
+                                        )
+                                      "
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('firstName')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('firstName')!.dirty
+                                  "
+                                >
+                                  <span
+                                    [attr.id]="
+                                      'validation_error_text_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantFirstname'
+                                    "
+                                    class="error"
+                                    style="position: relative; top: 0px"
+                                    [translate]="
+                                      'errors.organisationSurnameFirstNameValidationError'
+                                    "
+                                    >Either "Corporate name of company or
+                                    organisation" field must be completed or
+                                    "Surname" and "First name" fields must be
+                                    completed.
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div class="labelInfo">
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantIdentification'
+                                  "
+                                  concept="http://scanii.org/domain/claimant.personalIdNumber"
+                                >
+                                  <span
+                                    [translate]="'claimant.identificationCode'"
+                                    >1.2. Personal identification number or
+                                    passport number/ registration number</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_blank_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantIdentification'
+                                    "
+                                  ></span>
+                                </label>
+                                <!-- <div class="info show-mobile">
+                                  <div class="icon">
+                                    <div class="hover">
+                                      If you have a personal identification
+                                      number given by the authorities of a
+                                      Member State it would be helpful to
+                                      provide it. If you don’t have such number,
+                                      it would be helpful to provide the number
+                                      of your passport or identification
+                                      document, if you have them. If you act on
+                                      behalf of a legal person or any entity
+                                      having legal capacity, it would be helpful
+                                      to provide a relevant registration number.
+                                    </div>
+                                  </div>
+                                </div> -->
+                                <div
+                                  class="input-wrapper regular hasinfo"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantIdentification'
+                                  "
+                                >
+                                  <div class="info hide-mobile">
+                                    <div class="icon" tabindex="0">
+                                      <div class="hover">
+                                        If you have a personal identification
+                                        number given by the authorities of a
+                                        Member State it would be helpful to
+                                        provide it. If you don’t have such
+                                        number, it would be helpful to provide
+                                        the number of your passport or
+                                        identification document, if you have
+                                        them. If you act on behalf of a legal
+                                        person or any entity having legal
+                                        capacity, it would be helpful to provide
+                                        a relevant registration number.
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantIdentification'
+                                      "
+                                      maxlength="150"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantIdentification'
+                                      "
+                                      class="df_textbox"
+                                      data-title="1.2. Personal identification number or passport number/ registration number"
+                                      formControlName="identificationCode"
+                                    />
+                                  </div>
+                                </div>
+
+                                <span
+                                  [attr.id]="
+                                    'validation_error_text_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantIdentification'
+                                  "
+                                  class="error"
+                                  style="position: relative; top: 0px"
+                                >
+                                </span>
+
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantIdentification" class="error" style="position:relative;top:0px;"> </span>-->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantStreet'
+                                  "
+                                >
+                                  <span [translate]="'claimant.street'"
+                                    >1.3. Street and number/PO box</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_required_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantStreet'
+                                    "
+                                    >*</span
+                                  >
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantStreet'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('street')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('street')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantStreet'
+                                      "
+                                      maxlength="50"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantStreet'
+                                      "
+                                      class="df_textbox df_mandatory"
+                                      data-title="1.3. Street and number/PO box"
+                                      formControlName="street"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('street')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('street')!.dirty
+                                  "
+                                >
+                                  <div
+                                    *ngIf="
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('street')?.errors?.required
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantStreet'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="'errors.required'"
+                                      >Field is required
+                                    </span>
+                                  </div>
+                                </div>
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantStreet" class="error" style="position:relative;top:0px;"> </span>-->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantPostalCode'
+                                  "
+                                >
+                                  <span [translate]="'claimant.postalCode'"
+                                    >1.4. Postal code</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_required_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantPostalCode'
+                                    "
+                                    >*</span
+                                  >
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantPostalCode'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('postalCode')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('postalCode')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantPostalCode'
+                                      "
+                                      maxlength="150"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantPostalCode'
+                                      "
+                                      class="df_textbox df_mandatory"
+                                      data-title="1.4. Postal code"
+                                      formControlName="postalCode"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('postalCode')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('postalCode')!.dirty
+                                  "
+                                >
+                                  <div
+                                    *ngIf="
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('postalCode')?.errors?.required
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantPostalCode'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="'errors.required'"
+                                      >Field is required
+                                    </span>
+                                  </div>
+                                </div>
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantPostalCode" class="error" style="position:relative;top:0px;"> </span>-->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' + i + '].dynformSCA2ClaimantCity'
+                                  "
+                                >
+                                  <span [translate]="'claimant.city'"
+                                    >City</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_required_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantCity'
+                                    "
+                                    >*</span
+                                  >
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantCity'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('city')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('city')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantCity'
+                                      "
+                                      maxlength="50"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantCity'
+                                      "
+                                      class="df_textbox df_mandatory"
+                                      data-title="City"
+                                      formControlName="city"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants.at(i).get('city')!
+                                      .invalid &&
+                                    claimantService.claimants.at(i).get('city')!
+                                      .dirty
+                                  "
+                                >
+                                  <div
+                                    *ngIf="
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('city')?.errors?.required
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantCity'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="'errors.required'"
+                                      >Field is required
+                                    </span>
+                                  </div>
+                                </div>
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantCity" class="error" style="position:relative;top:0px;"> </span>-->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantCountry'
+                                  "
+                                >
+                                  <span [translate]="'claimant.country'"
+                                    >1.5. Country:</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_required_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantCountry'
+                                    "
+                                    >*</span
+                                  >
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantCountry'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('country')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('country')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <select
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantCountry'
+                                      "
+                                      (change)="
+                                        expandWorldCountrySelect(
+                                          $event.target.value,
+                                          i,
+                                          true
+                                        )
+                                      "
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantCountry'
+                                      "
+                                      class="df_select df_mandatory"
+                                      data-title="2.5. Country:"
+                                      formControlName="country"
+                                    >
+                                      <option
+                                        value=""
+                                        disabled=""
+                                        selected=""
+                                        [translate]="'claimant.select'"
+                                      >
+                                        Please select
+                                      </option>
+                                      <option
+                                        *ngFor="
+                                          let country of europeanCountries
+                                        "
+                                        [value]="country.value"
+                                      >
+                                        {{ country.label }}
+                                      </option>
+                                      <!-- <option value="AT">Austria</option>
+                                      <option value="BE">Belgium</option>
+                                      <option value="BG">Bulgaria</option>
+                                      <option value="HR">Croatia</option>
+                                      <option value="CY">Cyprus</option>
+                                      <option value="CZ">Czech Republic</option>
+                                      <option value="DK">Denmark</option>
+                                      <option value="EE">Estonia</option>
+                                      <option value="FI">Finland</option>
+                                      <option value="FR">France</option>
+                                      <option value="DE">Germany</option>
+                                      <option value="GR">Greece</option>
+                                      <option value="HU">Hungary</option>
+                                      <option value="IE">Ireland</option>
+                                      <option value="IT">Italy</option>
+                                      <option value="LV">Latvia</option>
+                                      <option value="LT">Lithuania</option>
+                                      <option value="LU">Luxembourg</option>
+                                      <option value="MT">Malta</option>
+                                      <option value="NL">Netherlands</option>
+                                      <option value="PL">Poland</option>
+                                      <option value="PT">Portugal</option>
+                                      <option value="RO">Romania</option>
+                                      <option value="SK">Slovakia</option>
+                                      <option value="SI">Slovenia</option>
+                                      <option value="ES">Spain</option>
+                                      <option value="SE">Sweden</option>
+                                      <option value="GB">United Kingdom</option> -->
+                                      <option
+                                        value="other"
+                                        [translate]="'claimant.otherOption'"
+                                      >
+                                        Other (please specify)
+                                      </option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('country')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('country')!.dirty
+                                  "
+                                >
+                                  <div
+                                    *ngIf="
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('country')?.errors?.required
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantCountry'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="'errors.required'"
+                                      >Field is required
+                                    </span>
+                                  </div>
+                                </div>
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantCountry" class="error" style="position:relative;top:0px;"> </span>-->
+                              </div>
+                            </div>
+                            <div></div>
+                            <div [attr.id]="'claimantWorldCountrySelect' + i">
+                              <div
+                                [attr.id]="
+                                  'parties[' +
+                                  i +
+                                  '].dynformSCA2ClaimantCountry_div'
+                                "
+                                class="df_collapsed"
+                              >
+                                <div class="form-row full-width bold">
+                                  <div>
+                                    <label
+                                      [attr.for]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantCountryOther'
+                                      "
+                                    >
+                                      <span [translate]="'claimant.specify'"
+                                        >Please specify</span
+                                      >
+
+                                      <span
+                                        class="asterisk"
+                                        [attr.id]="
+                                          'requiredStar_required_parties[' +
+                                          i +
+                                          '].dynformSCA2ClaimantCountryOther'
+                                        "
+                                        >*</span
+                                      >
+                                    </label>
+
+                                    <div
+                                      class="input-wrapper regular"
+                                      [attr.id]="
+                                        'input-wrapper_parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantCountryOther'
+                                      "
+                                      [ngClass]="{
+                                        invalid:
+                                          claimantService.claimants
+                                            .at(i)
+                                            .get('countryOther')!.invalid &&
+                                          claimantService.claimants
+                                            .at(i)
+                                            .get('countryOther')!.dirty
+                                      }"
+                                    >
+                                      <div class="input-content">
+                                        <select
+                                          [attr.name]="
+                                            'parties[' +
+                                            i +
+                                            '].dynformSCA2ClaimantCountryOther'
+                                          "
+                                          [attr.id]="
+                                            'parties[' +
+                                            i +
+                                            '].dynformSCA2ClaimantCountryOther'
+                                          "
+                                          [attr.class]="
+                                            'dynformSCA2ClaimantCountryOther' +
+                                            i
+                                          "
+                                          style="width: 460px; display: none"
+                                          class="df_select df_mandatory"
+                                          data-title="Please specify"
+                                          formControlName="countryOther"
+                                        >
+                                          <option
+                                            value=""
+                                            disabled=""
+                                            selected=""
+                                            [translate]="'claimant.select'"
+                                          >
+                                            Please select
+                                          </option>
+                                          <option
+                                            *ngFor="
+                                              let country of worldCountries
+                                            "
+                                            [value]="country.value"
+                                          >
+                                            {{ country.label }}
+                                          </option>
+                                          <!-- <option value="AF">
+                                            Afghanistan
+                                          </option>
+                                          <option value="AX">
+                                            Åland Islands
+                                          </option>
+                                          <option value="AL">Albania</option>
+                                          <option value="DZ">Algeria</option>
+                                          <option value="AS">
+                                            American Samoa
+                                          </option>
+                                          <option value="AD">Andorra</option>
+                                          <option value="AO">Angola</option>
+                                          <option value="AI">Anguilla</option>
+                                          <option value="AQ">Antarctica</option>
+                                          <option value="AG">
+                                            Antigua and Barbuda
+                                          </option>
+                                          <option value="AR">Argentina</option>
+                                          <option value="AM">Armenia</option>
+                                          <option value="AW">Aruba</option>
+                                          <option value="AU">Australia</option>
+                                          <option value="AZ">Azerbaijan</option>
+                                          <option value="BS">Bahamas</option>
+                                          <option value="BH">Bahrain</option>
+                                          <option value="BD">Bangladesh</option>
+                                          <option value="BB">Barbados</option>
+                                          <option value="BY">Belarus</option>
+                                          <option value="BZ">Belize</option>
+                                          <option value="BJ">Benin</option>
+                                          <option value="BM">Bermuda</option>
+                                          <option value="BT">Bhutan</option>
+                                          <option value="BO">Bolivia</option>
+                                          <option value="BA">
+                                            Bosnia and Herzegovina
+                                          </option>
+                                          <option value="BW">Botswana</option>
+                                          <option value="BV">
+                                            Bouvet Island
+                                          </option>
+                                          <option value="BR">Brazil</option>
+                                          <option value="IO">
+                                            British Indian Ocean Territory
+                                          </option>
+                                          <option value="VG">
+                                            British Virgin Islands
+                                          </option>
+                                          <option value="BN">Brunei</option>
+                                          <option value="BF">
+                                            Burkina Faso
+                                          </option>
+                                          <option value="BI">Burundi</option>
+                                          <option value="KH">Cambodia</option>
+                                          <option value="CM">Cameroon</option>
+                                          <option value="CA">Canada</option>
+                                          <option value="CV">Cape Verde</option>
+                                          <option value="KY">
+                                            Cayman Islands
+                                          </option>
+                                          <option value="CF">
+                                            Central African Republic
+                                          </option>
+                                          <option value="TD">Chad</option>
+                                          <option value="CL">Chile</option>
+                                          <option value="CN">China</option>
+                                          <option value="CX">
+                                            Christmas Island
+                                          </option>
+                                          <option value="CC">
+                                            Cocos (Keeling) Islands
+                                          </option>
+                                          <option value="CO">Colombia</option>
+                                          <option value="KM">Comoros</option>
+                                          <option value="CG">Congo</option>
+                                          <option value="CK">
+                                            Cook Islands
+                                          </option>
+                                          <option value="CR">Costa Rica</option>
+                                          <option value="CI">
+                                            Côte d’Ivoire
+                                          </option>
+                                          <option value="CU">Cuba</option>
+                                          <option value="CW">Curaçao</option>
+                                          <option value="CD">
+                                            Democratic Republic of the Congo
+                                          </option>
+                                          <option value="DJ">Djibouti</option>
+                                          <option value="DM">Dominica</option>
+                                          <option value="DO">
+                                            Dominican Republic
+                                          </option>
+                                          <option value="EC">Ecuador</option>
+                                          <option value="EG">Egypt</option>
+                                          <option value="SV">
+                                            El Salvador
+                                          </option>
+                                          <option value="GQ">
+                                            Equatorial Guinea
+                                          </option>
+                                          <option value="ER">Eritrea</option>
+                                          <option value="ET">Ethiopia</option>
+                                          <option value="FO">
+                                            Faeroe Islands
+                                          </option>
+                                          <option value="FK">
+                                            Falkland Islands
+                                          </option>
+                                          <option value="FJ">Fiji</option>
+                                          <option value="GF">
+                                            French Guiana
+                                          </option>
+                                          <option value="PF">
+                                            French Polynesia
+                                          </option>
+                                          <option value="TF">
+                                            French Southern and Antarctic Lands
+                                          </option>
+                                          <option value="GA">Gabon</option>
+                                          <option value="GE">Georgia</option>
+                                          <option value="GH">Ghana</option>
+                                          <option value="GL">Greenland</option>
+                                          <option value="GD">Grenada</option>
+                                          <option value="GP">Guadeloupe</option>
+                                          <option value="GU">Guam</option>
+                                          <option value="GT">Guatemala</option>
+                                          <option value="GG">Guernsey</option>
+                                          <option value="GN">Guinea</option>
+                                          <option value="GW">
+                                            Guinea-Bissau
+                                          </option>
+                                          <option value="GY">Guyana</option>
+                                          <option value="HT">Haiti</option>
+                                          <option value="HM">
+                                            Heard Island and McDonald Islands
+                                          </option>
+                                          <option value="HN">Honduras</option>
+                                          <option value="HK">Hong Kong</option>
+                                          <option value="IS">Iceland</option>
+                                          <option value="IN">India</option>
+                                          <option value="ID">Indonesia</option>
+                                          <option value="IR">Iran</option>
+                                          <option value="IQ">Iraq</option>
+                                          <option value="IM">
+                                            Isle of Man
+                                          </option>
+                                          <option value="IL">Israel</option>
+                                          <option value="JM">Jamaica</option>
+                                          <option value="JP">Japan</option>
+                                          <option value="JE">Jersey</option>
+                                          <option value="JO">Jordan</option>
+                                          <option value="KZ">Kazakhstan</option>
+                                          <option value="KE">Kenya</option>
+                                          <option value="KI">Kiribati</option>
+                                          <option value="KW">Kuwait</option>
+                                          <option value="KG">Kyrgyzstan</option>
+                                          <option value="LA">Laos</option>
+                                          <option value="LB">Lebanon</option>
+                                          <option value="LS">Lesotho</option>
+                                          <option value="LR">Liberia</option>
+                                          <option value="LY">Libya</option>
+                                          <option value="LI">
+                                            Liechtenstein
+                                          </option>
+                                          <option value="MO">Macao</option>
+                                          <option value="MG">Madagascar</option>
+                                          <option value="MW">Malawi</option>
+                                          <option value="MY">Malaysia</option>
+                                          <option value="MV">Maldives</option>
+                                          <option value="ML">Mali</option>
+                                          <option value="MH">
+                                            Marshall Islands
+                                          </option>
+                                          <option value="MQ">Martinique</option>
+                                          <option value="MR">Mauritania</option>
+                                          <option value="MU">Mauritius</option>
+                                          <option value="YT">Mayotte</option>
+                                          <option value="MX">Mexico</option>
+                                          <option value="FM">Micronesia</option>
+                                          <option value="MD">Moldova</option>
+                                          <option value="MC">Monaco</option>
+                                          <option value="MN">Mongolia</option>
+                                          <option value="ME">Montenegro</option>
+                                          <option value="MS">Montserrat</option>
+                                          <option value="MA">Morocco</option>
+                                          <option value="MZ">Mozambique</option>
+                                          <option value="MM">
+                                            Myanmar/Burma
+                                          </option>
+                                          <option value="NA">Namibia</option>
+                                          <option value="NR">Nauru</option>
+                                          <option value="NP">Nepal</option>
+                                          <option value="NC">
+                                            New Caledonia
+                                          </option>
+                                          <option value="NZ">
+                                            New Zealand
+                                          </option>
+                                          <option value="NI">Nicaragua</option>
+                                          <option value="NE">Niger</option>
+                                          <option value="NG">Nigeria</option>
+                                          <option value="NU">Niue</option>
+                                          <option value="NF">
+                                            Norfolk Island
+                                          </option>
+                                          <option value="KP">
+                                            North Korea
+                                          </option>
+                                          <option value="MP">
+                                            Northern Mariana Islands
+                                          </option>
+                                          <option value="NO">Norway</option>
+                                          <option value="OM">Oman</option>
+                                          <option value="PK">Pakistan</option>
+                                          <option value="PW">Palau</option>
+                                          <option value="PA">Panama</option>
+                                          <option value="PG">
+                                            Papua New Guinea
+                                          </option>
+                                          <option value="PY">Paraguay</option>
+                                          <option value="PE">Peru</option>
+                                          <option value="PH">
+                                            Philippines
+                                          </option>
+                                          <option value="PN">
+                                            Pitcairn Islands
+                                          </option>
+                                          <option value="PR">
+                                            Puerto Rico
+                                          </option>
+                                          <option value="QA">Qatar</option>
+                                          <option value="RE">Réunion</option>
+                                          <option value="RU">Russia</option>
+                                          <option value="RW">Rwanda</option>
+                                          <option value="BL">
+                                            Saint Barthélemy
+                                          </option>
+                                          <option value="SH">
+                                            Saint Helena, Ascension and Tristan
+                                            da Cunha
+                                          </option>
+                                          <option value="KN">
+                                            Saint Kitts and Nevis
+                                          </option>
+                                          <option value="LC">
+                                            Saint Lucia
+                                          </option>
+                                          <option value="MF">
+                                            Saint Martin
+                                          </option>
+                                          <option value="PM">
+                                            Saint Pierre and Miquelon
+                                          </option>
+                                          <option value="VC">
+                                            Saint Vincent and the Grenadines
+                                          </option>
+                                          <option value="WS">Samoa</option>
+                                          <option value="SM">San Marino</option>
+                                          <option value="ST">
+                                            São Tomé and Príncipe
+                                          </option>
+                                          <option value="SA">
+                                            Saudi Arabia
+                                          </option>
+                                          <option value="SN">Senegal</option>
+                                          <option value="RS">Serbia</option>
+                                          <option value="SC">Seychelles</option>
+                                          <option value="SL">
+                                            Sierra Leone
+                                          </option>
+                                          <option value="SG">Singapore</option>
+                                          <option value="SX">
+                                            Sint Maarten
+                                          </option>
+                                          <option value="SB">
+                                            Solomon Islands
+                                          </option>
+                                          <option value="SO">Somalia</option>
+                                          <option value="ZA">
+                                            South Africa
+                                          </option>
+                                          <option value="GS">
+                                            South Georgia and the South Sandwich
+                                            Islands
+                                          </option>
+                                          <option value="KR">
+                                            South Korea
+                                          </option>
+                                          <option value="SS">
+                                            South Sudan
+                                          </option>
+                                          <option value="LK">Sri Lanka</option>
+                                          <option value="SD">Sudan</option>
+                                          <option value="SR">Suriname</option>
+                                          <option value="SJ">
+                                            Svalbard and Jan Mayen
+                                          </option>
+                                          <option value="SZ">Swaziland</option>
+                                          <option value="CH">
+                                            Switzerland
+                                          </option>
+                                          <option value="SY">Syria</option>
+                                          <option value="TW">Taiwan</option>
+                                          <option value="TJ">Tajikistan</option>
+                                          <option value="TZ">Tanzania</option>
+                                          <option value="TH">Thailand</option>
+                                          <option value="MK">
+                                            the former Yugoslav Republic of
+                                            Macedonia
+                                          </option>
+                                          <option value="GM">The Gambia</option>
+                                          <option value="VA">
+                                            the Holy See / Vatican City State
+                                          </option>
+                                          <option value="TL">
+                                            Timor-Leste
+                                          </option>
+                                          <option value="TG">Togo</option>
+                                          <option value="TK">Tokelau</option>
+                                          <option value="TO">Tonga</option>
+                                          <option value="TT">
+                                            Trinidad and Tobago
+                                          </option>
+                                          <option value="TN">Tunisia</option>
+                                          <option value="TR">Turkey</option>
+                                          <option value="TM">
+                                            Turkmenistan
+                                          </option>
+                                          <option value="TC">
+                                            Turks and Caicos Islands
+                                          </option>
+                                          <option value="TV">Tuvalu</option>
+                                          <option value="UG">Uganda</option>
+                                          <option value="UA">Ukraine</option>
+                                          <option value="AE">
+                                            United Arab Emirates
+                                          </option>
+                                          <option value="US">
+                                            United States
+                                          </option>
+                                          <option value="UM">
+                                            United States Minor Outlying Islands
+                                          </option>
+                                          <option value="UY">Uruguay</option>
+                                          <option value="VI">
+                                            US Virgin Islands
+                                          </option>
+                                          <option value="UZ">Uzbekistan</option>
+                                          <option value="VU">Vanuatu</option>
+                                          <option value="VE">Venezuela</option>
+                                          <option value="VN">Vietnam</option>
+                                          <option value="WF">
+                                            Wallis and Futuna
+                                          </option>
+                                          <option value="EH">
+                                            Western Sahara
+                                          </option>
+                                          <option value="YE">Yemen</option>
+                                          <option value="ZM">Zambia</option>
+                                          <option value="ZW">Zimbabwe</option> -->
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div
+                                      *ngIf="
+                                        claimantService.claimants
+                                          .at(i)
+                                          .get('countryOther')!.invalid &&
+                                        claimantService.claimants
+                                          .at(i)
+                                          .get('countryOther')!.dirty
+                                      "
+                                    >
+                                      <div
+                                        *ngIf="
+                                          claimantService.claimants
+                                            .at(i)
+                                            .get('countryOther')?.errors
+                                            ?.required
+                                        "
+                                      >
+                                        <span
+                                          [attr.id]="
+                                            'validation_error_text_parties[' +
+                                            i +
+                                            '].dynformSCA2ClaimantCountryOther'
+                                          "
+                                          class="error"
+                                          style="position: relative; top: 0px"
+                                          [translate]="'errors.required'"
+                                          >Field is required
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantCountryOther" class="error" style="position:relative;top:0px;"> </span>-->
+                                  </div>
+                                </div>
+
+                                <p
+                                  class="df_description"
+                                  style="
+                                    margin-left: 274px;
+                                    position: relative;
+                                    top: -10px;
+                                  "
+                                  [attr.id]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantCountryOtherFootnote'
+                                  "
+                                ></p>
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantTelephone'
+                                  "
+                                >
+                                  <span [translate]="'claimant.phoneNumber'"
+                                    >1.6. Telephone</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_blank_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantTelephone'
+                                    "
+                                  ></span>
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantTelephone'
+                                  "
+                                >
+                                  <div class="input-content">
+                                    <input
+                                      type="text"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantTelephone'
+                                      "
+                                      maxlength="20"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantTelephone'
+                                      "
+                                      class="df_textbox"
+                                      data-title="1.6. Telephone"
+                                      formControlName="phoneNumber"
+                                    />
+                                  </div>
+                                </div>
+
+                                <span
+                                  [attr.id]="
+                                    'validation_error_text_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantTelephone'
+                                  "
+                                  class="error"
+                                  style="position: relative; top: 0px"
+                                >
+                                </span>
+
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantTelephone" class="error" style="position:relative;top:0px;"> </span>-->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantEmail'
+                                  "
+                                >
+                                  <span [translate]="'claimant.email'"
+                                    >1.7. E-mail</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_blank_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantEmail'
+                                    "
+                                  ></span>
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantEmail'
+                                  "
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantEmail'
+                                      "
+                                      maxlength="320"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantEmail'
+                                      "
+                                      class="df_textbox"
+                                      data-title="1.7. E-mail"
+                                      formControlName="email"
+                                    />
+                                  </div>
+                                </div>
+
+                                <span
+                                  [attr.id]="
+                                    'validation_error_text_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantEmail'
+                                  "
+                                  class="error"
+                                  style="position: relative; top: 0px"
+                                >
+                                </span>
+
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantEmail" class="error" style="position:relative;top:0px;"> </span>-->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeTitle'
+                                  "
+                                >
+                                  <span [translate]="'claimant.representative'"
+                                    >1.8. Claimant’s representative, if any, and
+                                    contact details:</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_blank_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativeTitle'
+                                    "
+                                  ></span>
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeTitle'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('representative')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('representative')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <select
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeTitle'
+                                      "
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeTitle'
+                                      "
+                                      (change)="
+                                        onRepresentativeChange(
+                                          $event.target.value,
+                                          i
+                                        )
+                                      "
+                                      class="df_select"
+                                      data-title="1.8. Claimant’s representative, if any, and contact details:"
+                                      formControlName="representative"
+                                    >
+                                      <option
+                                        value=""
+                                        disabled=""
+                                        selected=""
+                                      ></option>
+
+                                      <option
+                                        value="dynform_add_new_representative"
+                                        [translate]="
+                                          'claimant.addRepresentative'
+                                        "
+                                      >
+                                        Add new representative
+                                      </option>
+                                      <option
+                                        *ngFor="
+                                          let representative of claimantService.representatives
+                                        "
+                                        [value]="representative.id"
+                                      >
+                                        {{ representative.label }}
+                                      </option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('representative')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('representative')!.dirty
+                                  "
+                                >
+                                  <div
+                                    *ngIf="
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('representative')?.errors?.required
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeTitle'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="'errors.required'"
+                                      >Field is required
+                                    </span>
+                                  </div>
+                                </div>
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantRepresentativeTitle" class="error" style="position:relative;top:0px;"> </span>-->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantOtherDetails'
+                                  "
+                                >
+                                  <span [translate]="'claimant.other'"
+                                    >1.9. Other details</span
+                                  >
+                                </label>
+
+                                <div
+                                  class="input-wrapper"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantOtherDetails'
+                                  "
+                                >
+                                  <div class="input-content">
+                                    <textarea
+                                      onpaste="setOnPaste()"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantOtherDetails'
+                                      "
+                                      cols="10"
+                                      rows="7"
+                                      class="df_textarea df_textboxsafarionly"
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantOtherDetails'
+                                      "
+                                      data-title="1.9. Other details"
+                                      formControlName="otherDetails"
+                                    ></textarea>
+                                  </div>
+                                </div>
+                                <span
+                                  [attr.id]="
+                                    'validation_error_text_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantOtherDetails'
+                                  "
+                                  class="error"
+                                  style="position: relative; top: 0px"
+                                >
+                                </span>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+
+                        <div class="df_active_links_bottom_line">&nbsp;</div>
+                      </div>
+                      <div class="grid_item one-third">
+                        <a
+                          class="js-open-modal"
+                          data-modal="add-modal"
+                          id="modal"
+                          data-before="+"
+                          (click)="openModal('js_modal_add_claimant')"
+                        >
+                          <span [translate]="'claimant.addAnotherClaimant'"
+                            >Add another claimant</span
+                          > </a
+                        ><label
+                          style="
+                            margin-left: 10px;
+                            font-size: 14px;
+                            color: #9b9b9b;
+                          "
+                        ></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ng-template #representative>
+              <div class="form-row full-width toggle">
+                <div class="js-toggle open" [attr.id]="'al_block_claimant' + i">
+                  <div
+                    style="width: 90%; display: inline-block"
+                    (click)="toggleClaimantVisibility(i)"
+                  >
+                    <div class="js-toggle-trigger" tabindex="0">
+                      <span [translate]="'claimant.representativeLabel'"
+                        >Claimant's representative</span
+                      >
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="closeInput"
+                    name="dynformCMD_del_Party(1)"
+                    aria-label="Remove from list"
+                    data-title="Remove from list"
+                    (click)="removeClaimant(i)"
+                  >
+                    <i class="fa fa-times closeIcon" aria-hidden="true"></i>
+                  </button>
+                  <div class="description">
+                    <div class="grid">
+                      <div class="grid_item two-thirds">
+                        <div
+                          [attr.id]="
+                            'parties[' + i + '].claimantRepresentative_div'
+                          "
+                        >
+                          <div class="marginleft20px">
+                            <div class="form-row full-width bold">
+                              <label
+                                [attr.for]="
+                                  'parties[' +
+                                  i +
+                                  '].dynformSCA2ClaimantRepresentative'
+                                "
+                              >
+                                <span
+                                  [translate]="
+                                    'claimant.representativeOrganisation'
+                                  "
+                                  >Corporate name of company or
+                                  organisation</span
+                                >
+
+                                <span
+                                  class="asterisk"
+                                  [attr.id]="
+                                    'requiredStar_blank_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentative'
+                                  "
+                                ></span>
+                              </label>
+
+                              <div
+                                class="input-wrapper regular"
+                                [attr.id]="
+                                  'input-wrapper_parties[' +
+                                  i +
+                                  '].dynformSCA2ClaimantRepresentative'
+                                "
+                                [ngClass]="{
+                                  invalid:
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('organisation')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('organisation')!.dirty
+                                }"
+                              >
+                                <div class="input-content">
+                                  <!-- </if> -->
+
+                                  <input
+                                    type="text"
+                                    title="Corporate name of company or organisation"
+                                    [attr.name]="
+                                      'parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentative'
+                                    "
+                                    maxlength="150"
+                                    value=""
+                                    (change)="
+                                      onRepresentativeOrganisationChange(
+                                        $event,
+                                        i
+                                      )
+                                    "
+                                    (input)="
+                                      markOrganisationSurnameFirstNameAsDirty(i)
+                                    "
+                                    [attr.id]="
+                                      'parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentative'
+                                    "
+                                    class="df_textbox"
+                                    formControlName="organisation"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                *ngIf="
+                                  claimantService.claimants
+                                    .at(i)
+                                    .get('organisation')!.invalid &&
+                                  claimantService.claimants
+                                    .at(i)
+                                    .get('organisation')!.dirty
+                                "
+                              >
+                                <span
+                                  [attr.id]="
+                                    'validation_error_text_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentative'
+                                  "
+                                  class="error"
+                                  style="position: relative; top: 0px"
+                                  [translate]="
+                                    'errors.organisationSurnameFirstNameValidationError'
+                                  "
+                                  >Either "Corporate name of company or
+                                  organisation" field must be completed or
+                                  "Surname" and "First name" fields must be
+                                  completed.
+                                </span>
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.id]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeSurname'
+                                  "
+                                >
+                                  <span
+                                    [translate]="
+                                      'claimant.representativeSurname'
+                                    "
+                                    >Surname</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_blank_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativeSurname'
+                                    "
+                                  ></span>
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeSurname'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('surname')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('surname')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      title="Surname"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeSurname'
+                                      "
+                                      maxlength="150"
+                                      value=""
+                                      (change)="
+                                        onRepresentativeSurnameFirstNameChange(
+                                          $event,
+                                          i,
+                                          'surname'
+                                        )
+                                      "
+                                      (input)="
+                                        markOrganisationSurnameFirstNameAsDirty(
+                                          i
+                                        )
+                                      "
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeSurname'
+                                      "
+                                      class="df_textbox"
+                                      formControlName="surname"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('surname')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('surname')!.dirty
+                                  "
+                                >
+                                  <span
+                                    [attr.id]="
+                                      'validation_error_text_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativeSurname'
+                                    "
+                                    class="error"
+                                    style="position: relative; top: 0px"
+                                    [translate]="
+                                      'errors.organisationSurnameFirstNameValidationError'
+                                    "
+                                    >Either "Corporate name of company or
+                                    organisation" field must be completed or
+                                    "Surname" and "First name" fields must be
+                                    completed.
+                                  </span>
+                                </div>
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantRepresentativeSurname" class="error" style="position:relative;top:0px;"> </span>
+                            
+                            -->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeFistname'
+                                  "
+                                >
+                                  <span
+                                    [translate]="
+                                      'claimant.representativeFirstName'
+                                    "
+                                    >First name</span
+                                  >
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_blank_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativeFistname'
+                                    "
+                                  ></span>
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeFistname'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('firstName')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('firstName')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      title="First name"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeFistname'
+                                      "
+                                      maxlength="150"
+                                      value=""
+                                      (change)="
+                                        onRepresentativeSurnameFirstNameChange(
+                                          $event,
+                                          i,
+                                          'firstName'
+                                        )
+                                      "
+                                      (input)="
+                                        markOrganisationSurnameFirstNameAsDirty(
+                                          i
+                                        )
+                                      "
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeFistname'
+                                      "
+                                      class="df_textbox"
+                                      formControlName="firstName"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('firstName')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('firstName')!.dirty
+                                  "
+                                >
+                                  <span
+                                    [attr.id]="
+                                      'validation_error_text_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativeFistname'
+                                    "
+                                    class="error"
+                                    style="position: relative; top: 0px"
+                                    [translate]="
+                                      'errors.organisationSurnameFirstNameValidationError'
+                                    "
+                                    >Either "Corporate name of company or
+                                    organisation" field must be completed or
+                                    "Surname" and "First name" fields must be
+                                    completed.
+                                  </span>
+                                </div>
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantRepresentativeFistname" class="error" style="position:relative;top:0px;"> </span>
+                            
+                            -->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div class="labelInfo">
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeIdentification'
+                                  "
+                                >
+                                  <span
+                                    [translate]="
+                                      'claimant.representativeIdentificationCode'
+                                    "
+                                    >Personal identification number or passport
+                                    number/ registration number</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_blank_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativeIdentification'
+                                    "
+                                  ></span>
+                                </label>
+
+                                <div class="info show-mobile">
+                                  <div class="icon">
+                                    <div class="hover">
+                                      If you have a personal identification
+                                      number given by the authorities of a
+                                      Member State it would be helpful to
+                                      provide it. If you don't have such number,
+                                      it would be helpful to provide the number
+                                      of your passport or identification
+                                      document, if you have them. If you act on
+                                      behalf of a legal person or any entity
+                                      having legal capacity, it would be helpful
+                                      to provide a relevant registration number.
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="input-wrapper regular hasinfo"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeIdentification'
+                                  "
+                                >
+                                  <div class="info hide-mobile">
+                                    <div class="icon" tabindex="0">
+                                      <div class="hover">
+                                        If you have a personal identification
+                                        number given by the authorities of a
+                                        Member State it would be helpful to
+                                        provide it. If you don't have such
+                                        number, it would be helpful to provide
+                                        the number of your passport or
+                                        identification document, if you have
+                                        them. If you act on behalf of a legal
+                                        person or any entity having legal
+                                        capacity, it would be helpful to provide
+                                        a relevant registration number.
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      title="Personal identification number or passport number/ registration number"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeIdentification'
+                                      "
+                                      maxlength="150"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeIdentification'
+                                      "
+                                      class="df_textbox"
+                                      formControlName="identificationCode"
+                                    />
+                                  </div>
+                                </div>
+
+                                <span
+                                  [attr.id]="
+                                    'validation_error_text_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeIdentification'
+                                  "
+                                  class="error"
+                                  style="position: relative; top: 0px"
+                                >
+                                </span>
+
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantRepresentativeIdentification" class="error" style="position:relative;top:0px;"> </span>
+                            
+                            -->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeStreet'
+                                  "
+                                >
+                                  <span
+                                    [translate]="
+                                      'claimant.representativeStreet'
+                                    "
+                                    >Street and number/PO box</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_required_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativeStreet'
+                                    "
+                                    >*</span
+                                  >
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeStreet'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('street')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('street')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      title="Street and number/PO box"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeStreet'
+                                      "
+                                      maxlength="50"
+                                      value=""
+                                      (change)="
+                                        onRepresentativeAddressChange($event, i)
+                                      "
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeStreet'
+                                      "
+                                      class="df_textbox df_mandatory"
+                                      formControlName="street"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('street')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('street')!.dirty
+                                  "
+                                >
+                                  <div
+                                    *ngIf="
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('street')?.errors?.required
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeStreet'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="'errors.required'"
+                                      >Field is required
+                                    </span>
+                                  </div>
+                                </div>
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantRepresentativeStreet" class="error" style="position:relative;top:0px;"> </span>
+                            
+                            -->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativePostalCode'
+                                  "
+                                >
+                                  <span
+                                    [translate]="
+                                      'claimant.representativePostalCode'
+                                    "
+                                    >Postal code</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_required_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativePostalCode'
+                                    "
+                                    >*</span
+                                  >
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativePostalCode'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('postalCode')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('postalCode')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      title="Postal code"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativePostalCode'
+                                      "
+                                      maxlength="150"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativePostalCode'
+                                      "
+                                      class="df_textbox df_mandatory"
+                                      formControlName="postalCode"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('postalCode')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('postalCode')!.dirty
+                                  "
+                                >
+                                  <div
+                                    *ngIf="
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('postalCode')?.errors?.required
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativePostalCode'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="'errors.required'"
+                                      >Field is required
+                                    </span>
+                                  </div>
+                                </div>
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantRepresentativePostalCode" class="error" style="position:relative;top:0px;"> </span>
+                            
+                            -->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeCity'
+                                  "
+                                >
+                                  <span
+                                    [translate]="'claimant.representativeCity'"
+                                    >City</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_required_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativeCity'
+                                    "
+                                    >*</span
+                                  >
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeCity'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('city')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('city')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      title="City"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeCity'
+                                      "
+                                      maxlength="50"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeCity'
+                                      "
+                                      class="df_textbox df_mandatory"
+                                      formControlName="city"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants.at(i).get('city')!
+                                      .invalid &&
+                                    claimantService.claimants.at(i).get('city')!
+                                      .dirty
+                                  "
+                                >
+                                  <div
+                                    *ngIf="
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('city')?.errors?.required
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeCity'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="'errors.required'"
+                                      >Field is required
+                                    </span>
+                                  </div>
+                                </div>
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantRepresentativeCity" class="error" style="position:relative;top:0px;"> </span>
+                            
+                            -->
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeCountry'
+                                  "
+                                >
+                                  <span
+                                    [translate]="
+                                      'claimant.representativeCountry'
+                                    "
+                                    >Country</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_required_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativeCountry'
+                                    "
+                                    >*</span
+                                  >
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeCountry'
+                                  "
+                                  [ngClass]="{
+                                    invalid:
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('country')!.invalid &&
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('country')!.dirty
+                                  }"
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <select
+                                      title="Country"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeCountry'
+                                      "
+                                      (change)="
+                                        expandWorldCountrySelect(
+                                          $event.target.value,
+                                          i,
+                                          false
+                                        )
+                                      "
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeCountry'
+                                      "
+                                      class="df_select df_mandatory"
+                                      formControlName="country"
+                                    >
+                                      <option
+                                        value=""
+                                        disabled
+                                        selected
+                                        [translate]="'claimant.select'"
+                                      >
+                                        Please select
+                                      </option>
+                                      <option
+                                        *ngFor="
+                                          let country of europeanCountries
+                                        "
+                                        [value]="country.value"
+                                      >
+                                        {{ country.label }}
+                                      </option>
+                                      <!-- <option value="AT">Austria</option>
+                                      <option value="BE">Belgium</option>
+                                      <option value="BG">Bulgaria</option>
+                                      <option value="HR">Croatia</option>
+                                      <option value="CY">Cyprus</option>
+                                      <option value="CZ">Czech Republic</option>
+                                      <option value="DK">Denmark</option>
+                                      <option value="EE">Estonia</option>
+                                      <option value="FI">Finland</option>
+                                      <option value="FR">France</option>
+                                      <option value="DE">Germany</option>
+                                      <option value="GR">Greece</option>
+                                      <option value="HU">Hungary</option>
+                                      <option value="IE">Ireland</option>
+                                      <option value="IT">Italy</option>
+                                      <option value="LV">Latvia</option>
+                                      <option value="LT">Lithuania</option>
+                                      <option value="LU">Luxembourg</option>
+                                      <option value="MT">Malta</option>
+                                      <option value="NL">Netherlands</option>
+                                      <option value="PL">Poland</option>
+                                      <option value="PT">Portugal</option>
+                                      <option value="RO">Romania</option>
+                                      <option value="SK">Slovakia</option>
+                                      <option value="SI">Slovenia</option>
+                                      <option value="ES">Spain</option>
+                                      <option value="SE">Sweden</option>
+                                      <option value="GB">United Kingdom</option> -->
+                                      <option
+                                        value="other"
+                                        [translate]="'claimant.otherOption'"
+                                      >
+                                        Other (please specify)
+                                      </option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div
+                                  *ngIf="
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('country')!.invalid &&
+                                    claimantService.claimants
+                                      .at(i)
+                                      .get('country')!.dirty
+                                  "
+                                >
+                                  <div
+                                    *ngIf="
+                                      claimantService.claimants
+                                        .at(i)
+                                        .get('postalCode')?.errors?.required
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeCountry'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="'errors.required'"
+                                      >Field is required
+                                    </span>
+                                  </div>
+                                </div>
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantRepresentativeCountry" class="error" style="position:relative;top:0px;"> </span>
+                            
+                            -->
+                              </div>
+                            </div>
+                            <div
+                              [attr.id]="
+                                'claimantRepresentativeWorldCountrySelect' + i
+                              "
+                            >
+                              <div
+                                [attr.id]="
+                                  'parties[' +
+                                  i +
+                                  '].dynformSCA2ClaimantRepresentativeCountry_div'
+                                "
+                                class="df_collapsed"
+                              >
+                                <div class="form-row full-width bold">
+                                  <div>
+                                    <label
+                                      [attr.for]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeCountryOther'
+                                      "
+                                    >
+                                      <span [translate]="'claimant.specify'"
+                                        >Please specify</span
+                                      >
+
+                                      <span
+                                        class="asterisk"
+                                        [attr.id]="
+                                          'requiredStar_required_parties[' +
+                                          i +
+                                          '].dynformSCA2ClaimantRepresentativeCountryOther'
+                                        "
+                                        >*</span
+                                      >
+                                    </label>
+
+                                    <div
+                                      class="input-wrapper regular"
+                                      [attr.id]="
+                                        'input-wrapper_parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeCountryOther'
+                                      "
+                                      [ngClass]="{
+                                        invalid:
+                                          claimantService.claimants
+                                            .at(i)
+                                            .get('countryOther')!.invalid &&
+                                          claimantService.claimants
+                                            .at(i)
+                                            .get('countryOther')!.dirty
+                                      }"
+                                    >
+                                      <div class="input-content">
+                                        <!-- </if> -->
+
+                                        <select
+                                          title="Please specify"
+                                          [attr.name]="
+                                            'parties[' +
+                                            i +
+                                            '].dynformSCA2ClaimantRepresentativeCountryOther'
+                                          "
+                                          [attr.id]="
+                                            'parties[' +
+                                            i +
+                                            '].dynformSCA2ClaimantRepresentativeCountryOther'
+                                          "
+                                          [attr.class]="
+                                            'dynformSCA2ClaimantRepresentativeCountryOther' +
+                                            i
+                                          "
+                                          class="df_select df_mandatory"
+                                          formControlName="countryOther"
+                                        >
+                                          <option
+                                            value=""
+                                            disabled
+                                            selected
+                                            [translate]="'claimant.select'"
+                                          >
+                                            Please select
+                                          </option>
+                                          <option
+                                            *ngFor="
+                                              let country of worldCountries
+                                            "
+                                            [value]="country.value"
+                                          >
+                                            {{ country.label }}
+                                          </option>
+                                          <!-- <option value="AF">
+                                            Afghanistan
+                                          </option>
+                                          <option value="AX">
+                                            Åland Islands
+                                          </option>
+                                          <option value="AL">Albania</option>
+                                          <option value="DZ">Algeria</option>
+                                          <option value="AS">
+                                            American Samoa
+                                          </option>
+                                          <option value="AD">Andorra</option>
+                                          <option value="AO">Angola</option>
+                                          <option value="AI">Anguilla</option>
+                                          <option value="AQ">Antarctica</option>
+                                          <option value="AG">
+                                            Antigua and Barbuda
+                                          </option>
+                                          <option value="AR">Argentina</option>
+                                          <option value="AM">Armenia</option>
+                                          <option value="AW">Aruba</option>
+                                          <option value="AU">Australia</option>
+                                          <option value="AZ">Azerbaijan</option>
+                                          <option value="BS">Bahamas</option>
+                                          <option value="BH">Bahrain</option>
+                                          <option value="BD">Bangladesh</option>
+                                          <option value="BB">Barbados</option>
+                                          <option value="BY">Belarus</option>
+                                          <option value="BZ">Belize</option>
+                                          <option value="BJ">Benin</option>
+                                          <option value="BM">Bermuda</option>
+                                          <option value="BT">Bhutan</option>
+                                          <option value="BO">Bolivia</option>
+                                          <option value="BA">
+                                            Bosnia and Herzegovina
+                                          </option>
+                                          <option value="BW">Botswana</option>
+                                          <option value="BV">
+                                            Bouvet Island
+                                          </option>
+                                          <option value="BR">Brazil</option>
+                                          <option value="IO">
+                                            British Indian Ocean Territory
+                                          </option>
+                                          <option value="VG">
+                                            British Virgin Islands
+                                          </option>
+                                          <option value="BN">Brunei</option>
+                                          <option value="BF">
+                                            Burkina Faso
+                                          </option>
+                                          <option value="BI">Burundi</option>
+                                          <option value="KH">Cambodia</option>
+                                          <option value="CM">Cameroon</option>
+                                          <option value="CA">Canada</option>
+                                          <option value="CV">Cape Verde</option>
+                                          <option value="KY">
+                                            Cayman Islands
+                                          </option>
+                                          <option value="CF">
+                                            Central African Republic
+                                          </option>
+                                          <option value="TD">Chad</option>
+                                          <option value="CL">Chile</option>
+                                          <option value="CN">China</option>
+                                          <option value="CX">
+                                            Christmas Island
+                                          </option>
+                                          <option value="CC">
+                                            Cocos (Keeling) Islands
+                                          </option>
+                                          <option value="CO">Colombia</option>
+                                          <option value="KM">Comoros</option>
+                                          <option value="CG">Congo</option>
+                                          <option value="CK">
+                                            Cook Islands
+                                          </option>
+                                          <option value="CR">Costa Rica</option>
+                                          <option value="CI">
+                                            Côte d’Ivoire
+                                          </option>
+                                          <option value="CU">Cuba</option>
+                                          <option value="CW">Curaçao</option>
+                                          <option value="CD">
+                                            Democratic Republic of the Congo
+                                          </option>
+                                          <option value="DJ">Djibouti</option>
+                                          <option value="DM">Dominica</option>
+                                          <option value="DO">
+                                            Dominican Republic
+                                          </option>
+                                          <option value="EC">Ecuador</option>
+                                          <option value="EG">Egypt</option>
+                                          <option value="SV">
+                                            El Salvador
+                                          </option>
+                                          <option value="GQ">
+                                            Equatorial Guinea
+                                          </option>
+                                          <option value="ER">Eritrea</option>
+                                          <option value="ET">Ethiopia</option>
+                                          <option value="FO">
+                                            Faeroe Islands
+                                          </option>
+                                          <option value="FK">
+                                            Falkland Islands
+                                          </option>
+                                          <option value="FJ">Fiji</option>
+                                          <option value="GF">
+                                            French Guiana
+                                          </option>
+                                          <option value="PF">
+                                            French Polynesia
+                                          </option>
+                                          <option value="TF">
+                                            French Southern and Antarctic Lands
+                                          </option>
+                                          <option value="GA">Gabon</option>
+                                          <option value="GE">Georgia</option>
+                                          <option value="GH">Ghana</option>
+                                          <option value="GL">Greenland</option>
+                                          <option value="GD">Grenada</option>
+                                          <option value="GP">Guadeloupe</option>
+                                          <option value="GU">Guam</option>
+                                          <option value="GT">Guatemala</option>
+                                          <option value="GG">Guernsey</option>
+                                          <option value="GN">Guinea</option>
+                                          <option value="GW">
+                                            Guinea-Bissau
+                                          </option>
+                                          <option value="GY">Guyana</option>
+                                          <option value="HT">Haiti</option>
+                                          <option value="HM">
+                                            Heard Island and McDonald Islands
+                                          </option>
+                                          <option value="HN">Honduras</option>
+                                          <option value="HK">Hong Kong</option>
+                                          <option value="IS">Iceland</option>
+                                          <option value="IN">India</option>
+                                          <option value="ID">Indonesia</option>
+                                          <option value="IR">Iran</option>
+                                          <option value="IQ">Iraq</option>
+                                          <option value="IM">
+                                            Isle of Man
+                                          </option>
+                                          <option value="IL">Israel</option>
+                                          <option value="JM">Jamaica</option>
+                                          <option value="JP">Japan</option>
+                                          <option value="JE">Jersey</option>
+                                          <option value="JO">Jordan</option>
+                                          <option value="KZ">Kazakhstan</option>
+                                          <option value="KE">Kenya</option>
+                                          <option value="KI">Kiribati</option>
+                                          <option value="KW">Kuwait</option>
+                                          <option value="KG">Kyrgyzstan</option>
+                                          <option value="LA">Laos</option>
+                                          <option value="LB">Lebanon</option>
+                                          <option value="LS">Lesotho</option>
+                                          <option value="LR">Liberia</option>
+                                          <option value="LY">Libya</option>
+                                          <option value="LI">
+                                            Liechtenstein
+                                          </option>
+                                          <option value="MO">Macao</option>
+                                          <option value="MG">Madagascar</option>
+                                          <option value="MW">Malawi</option>
+                                          <option value="MY">Malaysia</option>
+                                          <option value="MV">Maldives</option>
+                                          <option value="ML">Mali</option>
+                                          <option value="MH">
+                                            Marshall Islands
+                                          </option>
+                                          <option value="MQ">Martinique</option>
+                                          <option value="MR">Mauritania</option>
+                                          <option value="MU">Mauritius</option>
+                                          <option value="YT">Mayotte</option>
+                                          <option value="MX">Mexico</option>
+                                          <option value="FM">Micronesia</option>
+                                          <option value="MD">Moldova</option>
+                                          <option value="MC">Monaco</option>
+                                          <option value="MN">Mongolia</option>
+                                          <option value="ME">Montenegro</option>
+                                          <option value="MS">Montserrat</option>
+                                          <option value="MA">Morocco</option>
+                                          <option value="MZ">Mozambique</option>
+                                          <option value="MM">
+                                            Myanmar/Burma
+                                          </option>
+                                          <option value="NA">Namibia</option>
+                                          <option value="NR">Nauru</option>
+                                          <option value="NP">Nepal</option>
+                                          <option value="NC">
+                                            New Caledonia
+                                          </option>
+                                          <option value="NZ">
+                                            New Zealand
+                                          </option>
+                                          <option value="NI">Nicaragua</option>
+                                          <option value="NE">Niger</option>
+                                          <option value="NG">Nigeria</option>
+                                          <option value="NU">Niue</option>
+                                          <option value="NF">
+                                            Norfolk Island
+                                          </option>
+                                          <option value="KP">
+                                            North Korea
+                                          </option>
+                                          <option value="MP">
+                                            Northern Mariana Islands
+                                          </option>
+                                          <option value="NO">Norway</option>
+                                          <option value="OM">Oman</option>
+                                          <option value="PK">Pakistan</option>
+                                          <option value="PW">Palau</option>
+                                          <option value="PA">Panama</option>
+                                          <option value="PG">
+                                            Papua New Guinea
+                                          </option>
+                                          <option value="PY">Paraguay</option>
+                                          <option value="PE">Peru</option>
+                                          <option value="PH">
+                                            Philippines
+                                          </option>
+                                          <option value="PN">
+                                            Pitcairn Islands
+                                          </option>
+                                          <option value="PR">
+                                            Puerto Rico
+                                          </option>
+                                          <option value="QA">Qatar</option>
+                                          <option value="RE">Réunion</option>
+                                          <option value="RU">Russia</option>
+                                          <option value="RW">Rwanda</option>
+                                          <option value="BL">
+                                            Saint Barthélemy
+                                          </option>
+                                          <option value="SH">
+                                            Saint Helena, Ascension and Tristan
+                                            da Cunha
+                                          </option>
+                                          <option value="KN">
+                                            Saint Kitts and Nevis
+                                          </option>
+                                          <option value="LC">
+                                            Saint Lucia
+                                          </option>
+                                          <option value="MF">
+                                            Saint Martin
+                                          </option>
+                                          <option value="PM">
+                                            Saint Pierre and Miquelon
+                                          </option>
+                                          <option value="VC">
+                                            Saint Vincent and the Grenadines
+                                          </option>
+                                          <option value="WS">Samoa</option>
+                                          <option value="SM">San Marino</option>
+                                          <option value="ST">
+                                            São Tomé and Príncipe
+                                          </option>
+                                          <option value="SA">
+                                            Saudi Arabia
+                                          </option>
+                                          <option value="SN">Senegal</option>
+                                          <option value="RS">Serbia</option>
+                                          <option value="SC">Seychelles</option>
+                                          <option value="SL">
+                                            Sierra Leone
+                                          </option>
+                                          <option value="SG">Singapore</option>
+                                          <option value="SX">
+                                            Sint Maarten
+                                          </option>
+                                          <option value="SB">
+                                            Solomon Islands
+                                          </option>
+                                          <option value="SO">Somalia</option>
+                                          <option value="ZA">
+                                            South Africa
+                                          </option>
+                                          <option value="GS">
+                                            South Georgia and the South Sandwich
+                                            Islands
+                                          </option>
+                                          <option value="KR">
+                                            South Korea
+                                          </option>
+                                          <option value="SS">
+                                            South Sudan
+                                          </option>
+                                          <option value="LK">Sri Lanka</option>
+                                          <option value="SD">Sudan</option>
+                                          <option value="SR">Suriname</option>
+                                          <option value="SJ">
+                                            Svalbard and Jan Mayen
+                                          </option>
+                                          <option value="SZ">Swaziland</option>
+                                          <option value="CH">
+                                            Switzerland
+                                          </option>
+                                          <option value="SY">Syria</option>
+                                          <option value="TW">Taiwan</option>
+                                          <option value="TJ">Tajikistan</option>
+                                          <option value="TZ">Tanzania</option>
+                                          <option value="TH">Thailand</option>
+                                          <option value="MK">
+                                            the former Yugoslav Republic of
+                                            Macedonia
+                                          </option>
+                                          <option value="GM">The Gambia</option>
+                                          <option value="VA">
+                                            the Holy See / Vatican City State
+                                          </option>
+                                          <option value="TL">
+                                            Timor-Leste
+                                          </option>
+                                          <option value="TG">Togo</option>
+                                          <option value="TK">Tokelau</option>
+                                          <option value="TO">Tonga</option>
+                                          <option value="TT">
+                                            Trinidad and Tobago
+                                          </option>
+                                          <option value="TN">Tunisia</option>
+                                          <option value="TR">Turkey</option>
+                                          <option value="TM">
+                                            Turkmenistan
+                                          </option>
+                                          <option value="TC">
+                                            Turks and Caicos Islands
+                                          </option>
+                                          <option value="TV">Tuvalu</option>
+                                          <option value="UG">Uganda</option>
+                                          <option value="UA">Ukraine</option>
+                                          <option value="AE">
+                                            United Arab Emirates
+                                          </option>
+                                          <option value="US">
+                                            United States
+                                          </option>
+                                          <option value="UM">
+                                            United States Minor Outlying Islands
+                                          </option>
+                                          <option value="UY">Uruguay</option>
+                                          <option value="VI">
+                                            US Virgin Islands
+                                          </option>
+                                          <option value="UZ">Uzbekistan</option>
+                                          <option value="VU">Vanuatu</option>
+                                          <option value="VE">Venezuela</option>
+                                          <option value="VN">Vietnam</option>
+                                          <option value="WF">
+                                            Wallis and Futuna
+                                          </option>
+                                          <option value="EH">
+                                            Western Sahara
+                                          </option>
+                                          <option value="YE">Yemen</option>
+                                          <option value="ZM">Zambia</option>
+                                          <option value="ZW">Zimbabwe</option> -->
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div
+                                      *ngIf="
+                                        claimantService.claimants
+                                          .at(i)
+                                          .get('countryOther')!.invalid &&
+                                        claimantService.claimants
+                                          .at(i)
+                                          .get('countryOther')!.dirty
+                                      "
+                                    >
+                                      <div
+                                        *ngIf="
+                                          claimantService.claimants
+                                            .at(i)
+                                            .get('countryOther')?.errors
+                                            ?.required
+                                        "
+                                      >
+                                        <span
+                                          [attr.id]="
+                                            'validation_error_text_parties[' +
+                                            i +
+                                            '].dynformSCA2ClaimantRepresentativeCountryOther'
+                                          "
+                                          class="error"
+                                          style="position: relative; top: 0px"
+                                          [translate]="'errors.required'"
+                                          >Field is required
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <p
+                                  class="df_description"
+                                  style="
+                                    margin-left: 274px;
+                                    position: relative;
+                                    top: -10px;
+                                  "
+                                  [attr.id]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeCountryOtherFootnote'
+                                  "
+                                ></p>
+                              </div>
+                            </div>
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeCountryTelephone'
+                                  "
+                                >
+                                  <span
+                                    [translate]="
+                                      'claimant.representativePhoneNumber'
+                                    "
+                                    >Telephone</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_blank_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativeCountryTelephone'
+                                    "
+                                  ></span>
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeCountryTelephone'
+                                  "
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      title="Phone"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeCountryTelephone'
+                                      "
+                                      maxlength="20"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeCountryTelephone'
+                                      "
+                                      class="df_textbox"
+                                      formControlName="phoneNumber"
+                                    />
+                                  </div>
+                                </div>
+
+                                <span
+                                  [attr.id]="
+                                    'validation_error_text_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeCountryTelephone'
+                                  "
+                                  class="error"
+                                  style="position: relative; top: 0px"
+                                >
+                                </span>
+                              </div>
+                            </div>
+
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label
+                                  [attr.for]="
+                                    'parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeCountryEmail'
+                                  "
+                                >
+                                  <span
+                                    [translate]="'claimant.representativeEmail'"
+                                    >E-mail</span
+                                  >
+
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_blank_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativeCountryEmail'
+                                    "
+                                  ></span>
+                                </label>
+
+                                <div
+                                  class="input-wrapper regular"
+                                  [attr.id]="
+                                    'input-wrapper_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeCountryEmail'
+                                  "
+                                >
+                                  <div class="input-content">
+                                    <!-- </if> -->
+
+                                    <input
+                                      type="text"
+                                      title="e-Mail"
+                                      [attr.name]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeCountryEmail'
+                                      "
+                                      maxlength="320"
+                                      value=""
+                                      [attr.id]="
+                                        'parties[' +
+                                        i +
+                                        '].dynformSCA2ClaimantRepresentativeCountryEmail'
+                                      "
+                                      class="df_textbox"
+                                      formControlName="email"
+                                    />
+                                  </div>
+                                </div>
+
+                                <span
+                                  [attr.id]="
+                                    'validation_error_text_parties[' +
+                                    i +
+                                    '].dynformSCA2ClaimantRepresentativeCountryEmail'
+                                  "
+                                  class="error"
+                                  style="position: relative; top: 0px"
+                                >
+                                </span>
+
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2ClaimantRepresentativeCountryEmail" class="error" style="position:relative;top:0px;"> </span> -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="df_active_links_bottom_line">&nbsp;</div>
+                      </div>
+                      <div class="grid_item one-third">
+                        <a
+                          class="js-open-modal"
+                          data-modal="add-modal"
+                          id="modal"
+                          data-before="+"
+                          (click)="openModal('js_modal_add_claimant')"
+                        >
+                          <span [translate]="'claimant.addAnotherClaimant'"
+                            >Add another claimant</span
+                          > </a
+                        ><label
+                          style="
+                            margin-left: 10px;
+                            font-size: 14px;
+                            color: #9b9b9b;
+                          "
+                        ></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </form>
+      <div
+        class="modal small"
+        id="js_modal_add_claimant"
+        style="font-size: 1.6rem"
+      >
+        <div class="container">
+          <a
+            class="close js-close-modal hide-text"
+            data-modal="add-modal"
+            (click)="closeModal('js_modal_add_claimant')"
+            >Close</a
+          >
+          <div class="modal-content">
+            <a
+              class="close js-close-modal hide-text"
+              data-modal="add-modal"
+              (click)="closeModal('js_modal_add_claimant')"
+              >Close</a
+            >
+            <h1 [translate]="'claimant.addAnotherClaimant'">
+              Add another claimant
+            </h1>
+            <div class="form-row full-width bold">
+              <div>
+                <label
+                  style="margin-bottom: 0px"
+                  [translate]="'claimant.addAnotherClaimantText'"
+                >
+                  If you'd like to add another party and/or representative,
+                  please click on the item that corresponds to the associated
+                  parties and/or their representatives. You can add up to 20
+                  parties/representatives in total.
+                </label>
+              </div>
+            </div>
+            <br />
+            <div class="selection-items hasGrid fullWidth">
+              <div class="radio-wrapper">
+                <input
+                  type="radio"
+                  id="Claimant"
+                  class="claimant_rep"
+                  name="modal-add-claimant-rep"
+                  value="claimant"
+                  data-title=""
+                  [(ngModel)]="selectedOption"
+                />
+                <label
+                  class="font-weight-normal"
+                  for="Claimant"
+                  [translate]="'claimant.claimantLabel'"
+                  >Claimant</label
+                >
+              </div>
+              <div class="radio-wrapper">
+                <input
+                  type="radio"
+                  id="Claimant's representative"
+                  class="claimant_rep"
+                  name="modal-add-claimant-rep"
+                  value="representative"
+                  data-title=""
+                  [(ngModel)]="selectedOption"
+                />
+                <label
+                  class="font-weight-normal"
+                  for="Claimant's representative"
+                  [translate]="'claimant.representativeLabel'"
+                  >Claimant's representative</label
+                >
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-3">
+                <a
+                  class="button big main js-close-modal hide-text outline"
+                  id="cancelModalButton"
+                  style="background-color: white"
+                  data-modal="add-modal"
+                  (click)="closeModal('js_modal_add_claimant')"
+                  ><span [translate]="'buttons.cancel'">Cancel</span>
+                </a>
+              </div>
+              <div class="col"></div>
+              <div class="col-3">
+                <a
+                  class="button big dark main hide-text pull-right"
+                  id="addModalListButton"
+                  (click)="addAnotherClaimant()"
+                  ><span [translate]="'buttons.add'">Add</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal small" id="js_modal_form_disclaimer_claimant">
+        <div class="container">
+          <div class="modal-content">
+            <a
+              class="close js-close-modal hide-text"
+              data-modal="forms-disclaimer-modal"
+              data-module="DisclaimerModule"
+              tabindex="1"
+              data-callback="closeDialog"
+              (click)="closeModal('js_modal_form_disclaimer_claimant')"
+              >Close</a
+            >
+            <div style="padding: 1em; font-size: 1.6rem; text-align: center">
+              <span [translate]="'unitedKingdomModal'">
+                As of 1 January 2021, the United Kingdom is no longer an EU
+                Member State. However, in the field of civil justice, pending
+                procedures and proceedings initiated before the end of the
+                transition period will continue under EU law. Until the end of
+                2024, the United Kingdom can continue to be selected in online
+                (dynamic) forms for the purpose of these proceedings and
+                procedures. An exception to this rule are the Public documents
+                forms, in which the UK should not be selected.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="buttons">
+  <!-- <div style="">
+    <input
+      type="hidden"
+      id="download_token_value_id"
+      name="download_token_value_id"
+      value="4docs"
+      data-title=""
+    />
+    <div class="actionbuttons-left">
+      <span class="ieborder resetFormButton"
+        ><input
+          type="submit"
+          class="button big outline pull-left"
+          name="submitNavigation6"
+          value="Reset form"
+          onclick="if (!submitResetFormFun()) return false;"
+          data-title=""
+      /></span>
+    </div>
+
+    <div class="actionbuttons-right"></div>
+  </div> -->
+
+  <!--<br><br><br><br>-->
+  <!-- the second div layer of buttons is added when the current page is not the first page -->
+
+  <div
+    style="
+      margin-top: 10px;
+      margin-bottom: 60px;
+      display: inline-block;
+      width: 100%;
+    "
+  >
+    <!-- end of back button -->
+    <div style="float: right; width: 40%">
+      <span class="ieborder nextPageButton"
+        ><input
+          type="submit"
+          class="button big dark pull-right"
+          name="submitNavigation1"
+          value="{{ 'buttons.next' | translate }}    >"
+          data-title=""
+          (click)="changeStep('next', 'step2')"
+      /></span>
+    </div>
+  </div>
+  <!-- end of the second div layer of buttons -->
+</div>
