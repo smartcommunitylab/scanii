@@ -1,5 +1,5 @@
 <div id="step6">
-  <h3>6. Dettagli della controversia</h3>
+  <h3 [translate]="'claimDetails.title'">6. Dettagli della controversia</h3>
   <div concept="http://scanii.org/domain/claimDetails"></div>
   <div class="form-row full-width">
     <div class="description">
@@ -9,8 +9,10 @@
             <div class="form-row full-width bold">
               <div>
                 <label for="dynformSCA7ReasonsForYourClaim">
-                  6.1. Please give reasons for your claim, for example what
-                  happened, where and when.
+                  <span [translate]="'claimDetails.detailsOfClaim'">
+                    6.1. Please give reasons for your claim, for example what
+                    happened, where and when.</span
+                  >
 
                   <span
                     class="asterisk"
@@ -22,6 +24,12 @@
                 <div
                   class="input-wrapper regular"
                   id="input-wrapper_dynformSCA7ReasonsForYourClaim"
+                  [ngClass]="{
+                    invalid:
+                      claimDetailsService.editForm.get('detailsOfClaim')!
+                        .invalid &&
+                      claimDetailsService.editForm.get('detailsOfClaim')!.dirty
+                  }"
                 >
                   <div class="input-content nopaddingTop">
                     <textarea
@@ -36,23 +44,41 @@
                     ></textarea>
                   </div>
                 </div>
-
-                <span
-                  id="validation_error_text_dynformSCA7ReasonsForYourClaim"
-                  class="error"
-                  style="position: relative; top: 0px"
+                <div
+                  *ngIf="
+                    claimDetailsService.editForm.get('detailsOfClaim')!
+                      .invalid &&
+                    claimDetailsService.editForm.get('detailsOfClaim')!.dirty
+                  "
                 >
-                </span>
+                  <div
+                    *ngIf="
+                      claimDetailsService.editForm.get('detailsOfClaim')?.errors
+                        ?.required
+                    "
+                  >
+                    <span
+                      id="validation_error_text_dynformSCA7ReasonsForYourClaim"
+                      class="error"
+                      style="position: relative; top: 0px"
+                      [translate]="'errors.required'"
+                    >
+                      Field is required
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="form-row full-width bold">
               <div>
                 <label style="margin-bottom: 0px">
-                  6.2. Please describe the evidence you wish to put forward to
-                  support your claim and state which points of the claim it
-                  supports. Where appropriate, you should add relevant
-                  supporting documents.
+                  <span [translate]="'claimDetails.evidenceDescription'">
+                    6.2. Please describe the evidence you wish to put forward to
+                    support your claim and state which points of the claim it
+                    supports. Where appropriate, you should add relevant
+                    supporting documents.</span
+                  >
                 </label>
               </div>
             </div>
@@ -64,7 +90,9 @@
                   <div class="form-row full-width bold">
                     <div>
                       <label style="margin-bottom: 0px">
-                        6.2.1. Written evidence
+                        <span [translate]="'claimDetails.writtenEvidence'">
+                          6.2.1. Written evidence</span
+                        >
 
                         <span class="asterisk">*</span>
                       </label>
@@ -94,7 +122,7 @@
                         />
 
                         <label for="dynformSCA7WrittenEvidence_Yes">
-                          Yes
+                          <span [translate]="'claimDetails.yes'"> Yes</span>
 
                           <span
                             class="asterisk"
@@ -108,12 +136,30 @@
 
 </label> -->
                       </div>
-                      <span
-                        id="validation_error_text_dynformSCA7WrittenEvidence"
-                        class="error"
-                        style="position: relative; top: 0px"
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('writtenEvidence')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('writtenEvidence')!
+                            .dirty
+                        "
                       >
-                      </span>
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get('writtenEvidence')
+                              ?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7WrittenEvidence"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -140,7 +186,7 @@
                         />
 
                         <label for="dynformSCA7WrittenEvidence_No">
-                          No
+                          <span [translate]="'claimDetails.no'">No</span>
 
                           <span
                             class="asterisk"
@@ -154,12 +200,30 @@
 
 </label> -->
                       </div>
-                      <span
-                        id="validation_error_text_dynformSCA7WrittenEvidence"
-                        class="error"
-                        style="position: relative; top: 0px"
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('writtenEvidence')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('writtenEvidence')!
+                            .dirty
+                        "
                       >
-                      </span>
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get('writtenEvidence')
+                              ?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7WrittenEvidence"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -172,7 +236,9 @@
                     <div class="form-row full-width bold">
                       <div>
                         <label for="dynformSCA7WrittenEvidencePleaseSpecify">
-                          Please specify
+                          <span [translate]="'claimDetails.specify'"
+                            >Please specify</span
+                          >
 
                           <span
                             class="asterisk"
@@ -184,6 +250,15 @@
                         <div
                           class="input-wrapper regular"
                           id="input-wrapper_dynformSCA7WrittenEvidencePleaseSpecify"
+                          [ngClass]="{
+                            invalid:
+                              claimDetailsService.editForm.get(
+                                'writtenEvidenceText'
+                              )!.invalid &&
+                              claimDetailsService.editForm.get(
+                                'writtenEvidenceText'
+                              )!.dirty
+                          }"
                         >
                           <div class="input-content nopaddingTop">
                             <textarea
@@ -199,12 +274,33 @@
                           </div>
                         </div>
 
-                        <span
-                          id="validation_error_text_dynformSCA7WrittenEvidencePleaseSpecify"
-                          class="error"
-                          style="position: relative; top: 0px"
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get(
+                              'writtenEvidenceText'
+                            )!.invalid &&
+                            claimDetailsService.editForm.get(
+                              'writtenEvidenceText'
+                            )!.dirty
+                          "
                         >
-                        </span>
+                          <div
+                            *ngIf="
+                              claimDetailsService.editForm.get(
+                                'writtenEvidenceText'
+                              )?.errors?.required
+                            "
+                          >
+                            <span
+                              id="validation_error_text_dynformSCA7WrittenEvidencePleaseSpecify"
+                              class="error"
+                              style="position: relative; top: 0px"
+                              [translate]="'errors.required'"
+                            >
+                              This field is required
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </span>
@@ -217,7 +313,9 @@
                   <div class="form-row full-width bold">
                     <div>
                       <label style="margin-bottom: 0px">
-                        6.2.2. Witnesses
+                        <span [translate]="'claimDetails.witnesses'"
+                          >6.2.2. Witnesses</span
+                        >
 
                         <span class="asterisk">*</span>
                       </label>
@@ -247,7 +345,7 @@
                         />
 
                         <label for="dynformSCA7Witnesses_Yes">
-                          Yes
+                          <span [translate]="'claimDetails.yes'">Yes</span>
 
                           <span
                             class="asterisk"
@@ -261,12 +359,29 @@
 
 </label> -->
                       </div>
-                      <span
-                        id="validation_error_text_dynformSCA7Witnesses"
-                        class="error"
-                        style="position: relative; top: 0px"
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('witnesses')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('witnesses')!.dirty
+                        "
                       >
-                      </span>
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get('witnesses')
+                              ?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7Witnesses"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -293,7 +408,7 @@
                         />
 
                         <label for="dynformSCA7Witnesses_No">
-                          No
+                          <span [translate]="'claimDetails.no'">No</span>
 
                           <span
                             class="asterisk"
@@ -307,12 +422,29 @@
 
 </label> -->
                       </div>
-                      <span
-                        id="validation_error_text_dynformSCA7Witnesses"
-                        class="error"
-                        style="position: relative; top: 0px"
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('witnesses')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('witnesses')!.dirty
+                        "
                       >
-                      </span>
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get('witnesses')
+                              ?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7Witnesses"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -325,7 +457,9 @@
                     <div class="form-row full-width bold">
                       <div>
                         <label for="dynformSCA7WitnessesPleaseSpecify">
-                          Please specify
+                          <span [translate]="'claimDetails.specify'"
+                            >Please specify</span
+                          >
 
                           <span
                             class="asterisk"
@@ -337,6 +471,13 @@
                         <div
                           class="input-wrapper regular"
                           id="input-wrapper_dynformSCA7WitnessesPleaseSpecify"
+                          [ngClass]="{
+                            invalid:
+                              claimDetailsService.editForm.get('witnessesText')!
+                                .invalid &&
+                              claimDetailsService.editForm.get('witnessesText')!
+                                .dirty
+                          }"
                         >
                           <div class="input-content nopaddingTop">
                             <textarea
@@ -352,12 +493,30 @@
                           </div>
                         </div>
 
-                        <span
-                          id="validation_error_text_dynformSCA7WitnessesPleaseSpecify"
-                          class="error"
-                          style="position: relative; top: 0px"
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get('witnessesText')!
+                              .invalid &&
+                            claimDetailsService.editForm.get('witnessesText')!
+                              .dirty
+                          "
                         >
-                        </span>
+                          <div
+                            *ngIf="
+                              claimDetailsService.editForm.get('witnessesText')
+                                ?.errors?.required
+                            "
+                          >
+                            <span
+                              id="validation_error_text_dynformSCA7WitnessesPleaseSpecify"
+                              class="error"
+                              style="position: relative; top: 0px"
+                              [translate]="'errors.required'"
+                            >
+                              Field is required
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </span>
@@ -370,7 +529,9 @@
                   <div class="form-row full-width bold">
                     <div>
                       <label style="margin-bottom: 0px">
-                        6.2.3. Other
+                        <span [translate]="'claimDetails.otherClaimDetails'"
+                          >6.2.3. Other</span
+                        >
 
                         <span class="asterisk">*</span>
                       </label>
@@ -400,7 +561,7 @@
                         />
 
                         <label for="dynformSCA7Other_Yes">
-                          Yes
+                          <span [translate]="'claimDetails.yes'">Yes</span>
 
                           <span
                             class="asterisk"
@@ -414,12 +575,31 @@
 
 </label> -->
                       </div>
-                      <span
-                        id="validation_error_text_dynformSCA7Other"
-                        class="error"
-                        style="position: relative; top: 0px"
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('otherClaimDetails')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('otherClaimDetails')!
+                            .dirty
+                        "
                       >
-                      </span>
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get(
+                              'otherClaimDetails'
+                            )?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7Other"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -446,7 +626,7 @@
                         />
 
                         <label for="dynformSCA7Other_No">
-                          No
+                          <span [translate]="'claimDetails.no'">No</span>
 
                           <span
                             class="asterisk"
@@ -460,12 +640,31 @@
 
 </label> -->
                       </div>
-                      <span
-                        id="validation_error_text_dynformSCA7Other"
-                        class="error"
-                        style="position: relative; top: 0px"
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('otherClaimDetails')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('otherClaimDetails')!
+                            .dirty
+                        "
                       >
-                      </span>
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get(
+                              'otherClaimDetails'
+                            )?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7Other"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -478,7 +677,9 @@
                     <div class="form-row full-width bold">
                       <div>
                         <label for="dynformSCA7OtherPleaseSpecify">
-                          Please specify
+                          <span [translate]="'claimDetails.specify'"
+                            >Please specify</span
+                          >
 
                           <span
                             class="asterisk"
@@ -490,6 +691,15 @@
                         <div
                           class="input-wrapper regular"
                           id="input-wrapper_dynformSCA7OtherPleaseSpecify"
+                          [ngClass]="{
+                            invalid:
+                              claimDetailsService.editForm.get(
+                                'otherClaimDetailsText'
+                              )!.invalid &&
+                              claimDetailsService.editForm.get(
+                                'otherClaimDetailsText'
+                              )!.dirty
+                          }"
                         >
                           <div class="input-content nopaddingTop">
                             <textarea
@@ -505,12 +715,33 @@
                           </div>
                         </div>
 
-                        <span
-                          id="validation_error_text_dynformSCA7OtherPleaseSpecify"
-                          class="error"
-                          style="position: relative; top: 0px"
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get(
+                              'otherClaimDetailsText'
+                            )!.invalid &&
+                            claimDetailsService.editForm.get(
+                              'otherClaimDetailsText'
+                            )!.dirty
+                          "
                         >
-                        </span>
+                          <div
+                            *ngIf="
+                              claimDetailsService.editForm.get(
+                                'otherClaimDetailsText'
+                              )?.errors?.required
+                            "
+                          >
+                            <span
+                              id="validation_error_text_dynformSCA7OtherPleaseSpecify"
+                              class="error"
+                              style="position: relative; top: 0px"
+                              [translate]="'errors.required'"
+                            >
+                              Field is required
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </span>

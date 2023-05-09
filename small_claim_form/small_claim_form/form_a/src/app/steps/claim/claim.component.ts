@@ -1,6 +1,6 @@
 import { element } from 'protractor';
 import { JhiEventManager } from 'ng-jhipster';
-import { ClaimService } from './../../core/claim/claim.service';
+import { ClaimService } from '../../core/claim/claim.service';
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';
 import { Direction } from 'src/app/shared/constants/direction.constants';
@@ -81,11 +81,6 @@ export class ClaimComponent implements OnInit {
     const otherCurrencySelectFormControl = this.claimService.getFormControl(
       otherCurrencySelectFormControlName
     );
-
-    for (const id of selectIds) {
-      var $select = $('#' + id);
-      $select.val('').trigger('chosen:updated');
-    }
 
     if (value === referenceValue) {
       if (elementToExpand.classList.contains('df_collapsed')) {

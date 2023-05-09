@@ -1,5 +1,5 @@
 import { FormGroup, Validators } from '@angular/forms';
-import { StepFourService } from './../../core/step-four/step-four.service';
+import { StepFourService } from '../../core/step-four/step-four.service';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { JhiEventManager } from 'ng-jhipster';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';

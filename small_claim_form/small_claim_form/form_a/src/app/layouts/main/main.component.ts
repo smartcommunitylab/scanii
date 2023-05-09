@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
+import { IFRAME_URL } from 'src/app/app.constants';
 
 @Component({
   selector: 'app-main',
@@ -18,7 +19,7 @@ export class MainComponent {
   }
 
   private listener(event: MessageEvent) {
-    if (event.origin === 'http://localhost:3000') {
+    if (event.origin === IFRAME_URL) {
       this.language = event.data;
       this.translateService.use(this.language);
     }

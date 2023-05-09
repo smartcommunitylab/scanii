@@ -244,7 +244,9 @@
               <div class="form-row full-width bold">
                 <div>
                   <label for="dynformSCA6ClaimMoneyCurrency">
-                    <span [translate]="'claim.claimForMoneyCurrency'">5.1.2. Currency</span>
+                    <span [translate]="'claim.claimForMoneyCurrency'"
+                      >5.1.2. Currency</span
+                    >
 
                     <span
                       class="asterisk"
@@ -388,7 +390,14 @@
                           >
                             Please select
                           </option>
-
+                          <option
+                            value="null"
+                            disabled=""
+                            selected=""
+                            [translate]="'claim.select'"
+                          >
+                            Please select
+                          </option>
                           <option value="AED">UAE dirham (AED)</option>
                           <option value="AFN">afghani (AFN)</option>
                           <option value="ALL">lek (ALL)</option>
@@ -619,6 +628,14 @@
                         >
                           <option
                             value=""
+                            disabled=""
+                            selected=""
+                            [translate]="'claim.select'"
+                          >
+                            Please select
+                          </option>
+                          <option
+                            value="null"
                             disabled=""
                             selected=""
                             [translate]="'claim.select'"
@@ -962,7 +979,8 @@
                           includeHistoricalCurrencies(
                             $event.target.checked,
                             'dynformSCA6ClaimMoneyCurrencyOther',
-                            'dynformSCA6ClaimMoneyCurrencyOther_2', 'claimForMoney'
+                            'dynformSCA6ClaimMoneyCurrencyOther_2',
+                            'claimForMoney'
                           )
                         "
                         formControlName="claimForMoneyCurrencyHistoricalCheckbox"
@@ -1287,7 +1305,9 @@
               <div class="form-row full-width bold">
                 <div>
                   <label for="dynformSCA6ClaimOtherCurrency">
-                    <span [translate]="'claim.otherClaimCurrency'">5.2.3 Currency</span>
+                    <span [translate]="'claim.otherClaimCurrency'"
+                      >5.2.3 Currency</span
+                    >
 
                     <span
                       class="asterisk"
@@ -1423,6 +1443,14 @@
                         >
                           <option
                             value=""
+                            disabled=""
+                            selected=""
+                            [translate]="'claim.select'"
+                          >
+                            Please select
+                          </option>
+                          <option
+                            value="null"
                             disabled=""
                             selected=""
                             [translate]="'claim.select'"
@@ -1659,6 +1687,14 @@
                         >
                           <option
                             value=""
+                            disabled=""
+                            selected=""
+                            [translate]="'claim.select'"
+                          >
+                            Please select
+                          </option>
+                          <option
+                            value="null"
                             disabled=""
                             selected=""
                             [translate]="'claim.select'"
@@ -2003,7 +2039,8 @@
                           includeHistoricalCurrencies(
                             $event.target.checked,
                             'dynformSCA6ClaimOtherCurrencyOther',
-                            'dynformSCA6ClaimOtherCurrencyOther_2', 'otherClaim'
+                            'dynformSCA6ClaimOtherCurrencyOther_2',
+                            'otherClaim'
                           )
                         "
                         formControlName="otherClaimCurrencyHistoricalCheckbox"

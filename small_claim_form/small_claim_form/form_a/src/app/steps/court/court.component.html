@@ -1,5 +1,5 @@
 <div id="step8">
-  <h3>Court/tribunal</h3>
+  <h3 [translate]="'court.title'">Court/tribunal</h3>
   <div concept="http://scanii.org/domain/courtTribunal"></div>
   <div
     class="js-toggle-trigger"
@@ -9,29 +9,14 @@
   <div class="form-row full-width">
     <div class="description">
       <form role="form" [formGroup]="courtService.editForm">
-        <script type="text/javascript">
-          function esubSendSelectionHandler() {
-            getValuesDeleteScripts(document.dynform_sc_a_1);
-            document.dynform_sc_a_1.esubSend.value = true;
-            document.dynform_sc_a_1.postSend.value = false;
-            document.dynform_sc_a_1.postSend.checked = false;
-            document.dynform_sc_a_1.submit();
-          }
-          function postSendSelectionHandler() {
-            getValuesDeleteScripts(document.dynform_sc_a_1);
-            document.dynform_sc_a_1.esubSend.value = false;
-            document.dynform_sc_a_1.postSend.value = true;
-            document.dynform_sc_a_1.esubSend.checked = false;
-            document.dynform_sc_a_1.submit();
-          }
-        </script>
-
         <div class="form-row full-width bold">
           <div>
             <!-- NEW ENTRY -->
 
-            <label
-              >8. Before which court/tribunal are you making your claim?</label
+            <label>
+              <span [translate]="'court.question'"
+                >Before which court/tribunal are you making your claim?</span
+              ></label
             >
           </div>
         </div>
@@ -42,7 +27,7 @@
               <div class="form-row full-width bold">
                 <div>
                   <label for="dynformSCA1CourtCountry">
-                    8.1. Country
+                    <span [translate]="'court.country'">8.1. Country</span>
 
                     <span
                       class="asterisk"
@@ -54,148 +39,170 @@
                   <div
                     class="input-wrapper regular"
                     id="input-wrapper_dynformSCA1CourtCountry"
+                    [ngClass]="{
+                      invalid:
+                        courtService.editForm.get('country')!.invalid &&
+                        courtService.editForm.get('country')!.dirty
+                    }"
                   >
                     <div class="input-content nopaddingTop">
                       <select
                         name="dynformSCA1CourtCountry"
                         id="dynformSCA1CourtCountry"
-                        class="df_select df_mandatory_filled"
+                        class="df_select"
                         data-title=""
                         formControlName="country"
+                        (change)="onCountryChange()"
                       >
-                        <option value="" disabled="" selected="">
+                        <option
+                          value=""
+                          disabled=""
+                          selected=""
+                          [translate]="'court.select'"
+                        >
                           Please select
                         </option>
-                        <option value="AT">Austria</option>
-                        <option value="BE">Belgium</option>
-                        <option value="BG">Bulgaria</option>
-                        <option value="HR">Croatia</option>
-                        <option value="CY">Cyprus</option>
-                        <option value="CZ">Czech Republic</option>
-                        <option value="EE">Estonia</option>
-                        <option value="FI">Finland</option>
-                        <option value="FR">France</option>
-                        <option value="DE">Germany</option>
-                        <option value="GR">Greece</option>
-                        <option value="HU">Hungary</option>
-                        <option value="IE">Ireland</option>
-                        <option value="IT" selected="selected">Italy</option>
-                        <option value="LV">Latvia</option>
-                        <option value="LT">Lithuania</option>
-                        <option value="LU">Luxembourg</option>
-                        <option value="MT">Malta</option>
-                        <option value="NL">Netherlands</option>
-                        <option value="PL">Poland</option>
-                        <option value="PT">Portugal</option>
-                        <option value="RO">Romania</option>
-                        <option value="SK">Slovakia</option>
-                        <option value="SI">Slovenia</option>
-                        <option value="ES">Spain</option>
-                        <option value="SE">Sweden</option>
-                        <option value="GB">United Kingdom</option>
+                        <option
+                          *ngFor="let country of europeanCountries"
+                          [value]="country.value"
+                        >
+                          {{ country.label }}
+                        </option>
                       </select>
                     </div>
                   </div>
-
-                  <span
-                    id="validation_error_text_dynformSCA1CourtCountry"
-                    class="error"
-                    style="position: relative; top: 0px"
+                  <div
+                    *ngIf="
+                      courtService.editForm.get('country')!.invalid &&
+                      courtService.editForm.get('country')!.dirty
+                    "
                   >
-                  </span>
+                    <div
+                      *ngIf="
+                        courtService.editForm.get('country')?.errors?.required
+                      "
+                    >
+                      <span
+                        id="validation_error_text_dynformSCA1CourtCountry"
+                        class="error"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                      >
+                        Field is required
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </span>
           </div>
 
-          <div
-            class="js-toggle find_court"
-            id="find_court"
-            (click)="toggleFindCourt()"
-          >
-            <div class="js-toggle-trigger" id="js-toggle-id" tabindex="0">
+          <div class="js-toggle find_court" id="find_court">
+            <div
+              class="js-toggle-trigger"
+              id="js-toggle-id"
+              tabindex="0"
+              (click)="toggleFindCourt()"
+            >
               <span class="subtitle info">
-                Find a competent court/authority</span
+                <i _ngcontent-wht-c133="">&nbsp;</i
+                ><span [translate]="'court.findCourt'"
+                  >Find a competent court/authority</span
+                ></span
               >
             </div>
             <div class="description container">
-              <!-- <div id="dialog-form" data-title="Find a competent court/authority">
-              <div id="courtDBContainer">
-                <p style="clear: left">
-                  <label style="float: left" for="cdbCountry">Country:</label>
-                  <span id="countryDesc" class="textonly">Hungary</span>
-                  <input
-                    type="hidden"
-                    id="cdbCountry"
-                    name="cdbCountry"
-                    value="HU"
-                    data-title=""
-                  />
-                </p>
-                <p style="clear: left">
-                  <label style="float: left" for="cdbInstrument"
-                    >Instrument:</label
-                  >
-                  <span id="instrumentDesc" class="textonly"
-                    >European cross-border procedures - Small claims</span
-                  >
-                  <input
-                    type="hidden"
-                    id="cdbInstrument"
-                    name="cdbInstrument"
-                    value="SC"
-                    data-title=""
-                  />
-                </p>
-                <p style="clear: left">
-                  <label style="float: left" for="cdbCompType"
-                    >Competence type:</label
-                  >
-                  <span id="compTypeDesc" class="textonly"
-                    >Court with jurisdiction</span
-                  >
-                  <input
-                    type="hidden"
-                    id="cdbCompType"
-                    name="cdbCompType"
-                    value="CJ"
-                    data-title=""
-                  />
-                </p>
-                <div class="form-row courtDBReqParams">
-                  <p class="modalPar">
-                    <label for="cdbMunicipality"
-                      >City <span class="asterisk">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      class="df_textbox"
-                      id="cdbMunicipality"
-                      name="cdbMunicipality"
-                      value="Start typing..."
-                      onkeypress="return event.keyCode != 13;"
-                      onfocus="paramSearchText_onfocus(this,'Start typing...');"
-                      onblur="javascript:paramSearchText_onblur(this,'Start typing...');"
-                      autocomplete="off"
-                    />
+              <div
+                id="dialog-form"
+                data-title="Find a competent court/authority"
+              >
+                <div id="courtDBContainer">
+                  <p style="clear: left">
+                    <label style="float: left" for="cdbCountry">
+                      <span [translate]="'court.findCourtCountry'"
+                        >Country:</span
+                      ></label
+                    >
+                    <span id="countryDesc" class="textonly">{{
+                      selectedCountry
+                    }}</span>
                     <input
                       type="hidden"
-                      id="municipalityLevel"
-                      name="municipalityLevel"
-                      value="P"
+                      id="cdbCountry"
+                      name="cdbCountry"
+                      value="HU"
+                      data-title=""
                     />
                   </p>
+                  <p style="clear: left">
+                    <label style="float: left" for="cdbInstrument"
+                      ><span [translate]="'court.findCourtInstrument'"
+                        >Instrument:</span
+                      ></label
+                    >
+                    <span id="instrumentDesc" class="textonly">
+                      <span [translate]="'court.findCourtInstrumentText'"
+                        >European cross-border procedures - Small claims</span
+                      ></span
+                    >
+                    <input
+                      type="hidden"
+                      id="cdbInstrument"
+                      name="cdbInstrument"
+                      value="SC"
+                      data-title=""
+                    />
+                  </p>
+                  <p style="clear: left">
+                    <label style="float: left" for="cdbCompType"
+                      ><span [translate]="'court.findCourtCompetenceType'"
+                        >Competence type:</span
+                      ></label
+                    >
+                    <span id="compTypeDesc" class="textonly"
+                      ><span [translate]="'court.findCourtCompetenceTypeText'"
+                        >Court with jurisdiction</span
+                      ></span
+                    >
+                    <input
+                      type="hidden"
+                      id="cdbCompType"
+                      name="cdbCompType"
+                      value="CJ"
+                      data-title=""
+                    />
+                  </p>
+                  <div class="form-row courtDBReqParams">
+                    <p class="modalPar">
+                      <label for="cdbMunicipality"
+                        ><span [translate]="'court.findCourtCity'">City</span>
+                        <span class="asterisk">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        class="df_textbox"
+                        id="cdbMunicipality"
+                        name="cdbMunicipality"
+                        autocomplete="off"
+                      />
+                      <input
+                        type="hidden"
+                        id="municipalityLevel"
+                        name="municipalityLevel"
+                        value="P"
+                      />
+                    </p>
+                  </div>
                 </div>
+                <input
+                  type="button"
+                  value="Fill in the form"
+                  class="button dark"
+                  id="courtSelectBtn"
+                  style="display: none"
+                  data-title=""
+                />
               </div>
-              <input
-                type="button"
-                value="Fill in the form"
-                class="button dark"
-                id="courtSelectBtn"
-                style="display: none"
-                data-title=""
-              />
-            </div> -->
             </div>
           </div>
 
@@ -204,7 +211,7 @@
             <div class="form-row full-width bold">
               <div>
                 <label for="dynformSCA1CourtName">
-                  8.2. Name
+                  <span [translate]="'court.name'">8.2. Name</span>
 
                   <span
                     class="asterisk"
@@ -216,6 +223,11 @@
                 <div
                   class="input-wrapper regular"
                   id="input-wrapper_dynformSCA1CourtName"
+                  [ngClass]="{
+                    invalid:
+                      courtService.editForm.get('name')!.invalid &&
+                      courtService.editForm.get('name')!.dirty
+                  }"
                 >
                   <div class="input-content nopaddingTop">
                     <input
@@ -230,19 +242,34 @@
                   </div>
                 </div>
 
-                <span
-                  id="validation_error_text_dynformSCA1CourtName"
-                  class="error"
-                  style="position: relative; top: 0px"
+                <div
+                  *ngIf="
+                    courtService.editForm.get('name')!.invalid &&
+                    courtService.editForm.get('name')!.dirty
+                  "
                 >
-                </span>
+                  <div
+                    *ngIf="courtService.editForm.get('name')?.errors?.required"
+                  >
+                    <span
+                      id="validation_error_text_dynformSCA1CourtName"
+                      class="error"
+                      style="position: relative; top: 0px"
+                      [translate]="'errors.required'"
+                    >
+                      Field is required
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="form-row full-width bold">
               <div>
                 <label for="dynformSCA1CourtStreet">
-                  8.3. Street and number/PO box:
+                  <span [translate]="'court.street'"
+                    >8.3. Street and number/PO box</span
+                  >
 
                   <span
                     class="asterisk"
@@ -254,6 +281,11 @@
                 <div
                   class="input-wrapper regular"
                   id="input-wrapper_dynformSCA1CourtStreet"
+                  [ngClass]="{
+                    invalid:
+                      courtService.editForm.get('street')!.invalid &&
+                      courtService.editForm.get('street')!.dirty
+                  }"
                 >
                   <div class="input-content nopaddingTop">
                     <input
@@ -269,19 +301,34 @@
                   </div>
                 </div>
 
-                <span
-                  id="validation_error_text_dynformSCA1CourtStreet"
-                  class="error"
-                  style="position: relative; top: 0px"
+                <div
+                  *ngIf="
+                    courtService.editForm.get('street')!.invalid &&
+                    courtService.editForm.get('street')!.dirty
+                  "
                 >
-                </span>
+                  <div
+                    *ngIf="
+                      courtService.editForm.get('street')?.errors?.required
+                    "
+                  >
+                    <span
+                      id="validation_error_text_dynformSCA1CourtStreet"
+                      class="error"
+                      style="position: relative; top: 0px"
+                      [translate]="'errors.required'"
+                    >
+                      Field is required
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="form-row full-width bold">
               <div>
                 <label for="dynformSCA1CourtPostal">
-                  8.4. Postal Code
+                  <span [translate]="'court.postalCode'">8.4. Postal Code</span>
 
                   <span
                     class="asterisk"
@@ -319,7 +366,7 @@
             <div class="form-row full-width bold">
               <div>
                 <label for="dynformSCA1CourtCity">
-                  8.5 City
+                  <span [translate]="'court.city'">8.5 City</span>
 
                   <span
                     class="asterisk"
@@ -425,7 +472,7 @@
           class="button big dark pull-right piwik_download"
           name="submitNavigation3"
           id="submitNavigation3"
-          value="Generate the json file"
+          value="{{ 'buttons.generateJson' | translate }}"
           data-title=""
           (click)="generateJson()"
       /></span>

@@ -1,0 +1,464 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Scanii</title>
+    <!-- <title>European e-Justice Portal - Form A - Claim form</title> -->
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="https://e-justice.europa.eu/assets/img/favicon.ico"> -->
+    <script id="ppas_container_configuration" data-appid="f7c9a47b-a694-4597-9059-cbfb8b537954" data-host="webanalytics.europa.eu"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <style>@charset "UTF-8";:root{--bs-blue:#0d6efd;--bs-indigo:#6610f2;--bs-purple:#6f42c1;--bs-pink:#d63384;--bs-red:#dc3545;--bs-orange:#fd7e14;--bs-yellow:#ffc107;--bs-green:#198754;--bs-teal:#20c997;--bs-cyan:#0dcaf0;--bs-black:#000;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-gray-100:#f8f9fa;--bs-gray-200:#e9ecef;--bs-gray-300:#dee2e6;--bs-gray-400:#ced4da;--bs-gray-500:#adb5bd;--bs-gray-600:#6c757d;--bs-gray-700:#495057;--bs-gray-800:#343a40;--bs-gray-900:#212529;--bs-primary:#0d6efd;--bs-secondary:#6c757d;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;--bs-light:#f8f9fa;--bs-dark:#212529;--bs-primary-rgb:13,110,253;--bs-secondary-rgb:108,117,125;--bs-success-rgb:25,135,84;--bs-info-rgb:13,202,240;--bs-warning-rgb:255,193,7;--bs-danger-rgb:220,53,69;--bs-light-rgb:248,249,250;--bs-dark-rgb:33,37,41;--bs-primary-text:#0a58ca;--bs-secondary-text:#6c757d;--bs-success-text:#146c43;--bs-info-text:#087990;--bs-warning-text:#997404;--bs-danger-text:#b02a37;--bs-light-text:#6c757d;--bs-dark-text:#495057;--bs-primary-bg-subtle:#cfe2ff;--bs-secondary-bg-subtle:#f8f9fa;--bs-success-bg-subtle:#d1e7dd;--bs-info-bg-subtle:#cff4fc;--bs-warning-bg-subtle:#fff3cd;--bs-danger-bg-subtle:#f8d7da;--bs-light-bg-subtle:#fcfcfd;--bs-dark-bg-subtle:#ced4da;--bs-primary-border-subtle:#9ec5fe;--bs-secondary-border-subtle:#e9ecef;--bs-success-border-subtle:#a3cfbb;--bs-info-border-subtle:#9eeaf9;--bs-warning-border-subtle:#ffe69c;--bs-danger-border-subtle:#f1aeb5;--bs-light-border-subtle:#e9ecef;--bs-dark-border-subtle:#adb5bd;--bs-white-rgb:255,255,255;--bs-black-rgb:0,0,0;--bs-body-color-rgb:33,37,41;--bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--bs-gradient:linear-gradient(180deg,#ffffff26,#fff0);--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#212529;--bs-emphasis-color-rgb:0,0,0;--bs-secondary-color:#212529bf;--bs-secondary-color-rgb:33,37,41;--bs-secondary-bg:#e9ecef;--bs-secondary-bg-rgb:233,236,239;--bs-tertiary-color:#21252980;--bs-tertiary-color-rgb:33,37,41;--bs-tertiary-bg:#f8f9fa;--bs-tertiary-bg-rgb:248,249,250;--bs-body-bg:#fff;--bs-body-bg-rgb:255,255,255;--bs-link-color:#0d6efd;--bs-link-color-rgb:13,110,253;--bs-link-decoration:underline;--bs-link-hover-color:#0a58ca;--bs-link-hover-color-rgb:10,88,202;--bs-code-color:#d63384;--bs-border-width:1px;--bs-border-style:solid;--bs-border-color:#dee2e6;--bs-border-color-translucent:rgba(0,0,0,.175);--bs-border-radius:0.375rem;--bs-border-radius-sm:0.25rem;--bs-border-radius-lg:0.5rem;--bs-border-radius-xl:1rem;--bs-border-radius-2xl:2rem;--bs-border-radius-pill:50rem;--bs-box-shadow:0 0.5rem 1rem rgba(var(--bs-body-color-rgb),0.15);--bs-box-shadow-sm:0 0.125rem 0.25rem rgba(var(--bs-body-color-rgb),0.075);--bs-box-shadow-lg:0 1rem 3rem rgba(var(--bs-body-color-rgb),0.175);--bs-box-shadow-inset:inset 0 1px 2px rgba(var(--bs-body-color-rgb),0.075);--bs-emphasis-color:#000;--bs-form-control-bg:var(--bs-body-bg);--bs-form-control-disabled-bg:var(--bs-secondary-bg);--bs-highlight-bg:#fff3cd;--bs-breakpoint-xs:0;--bs-breakpoint-sm:576px;--bs-breakpoint-md:768px;--bs-breakpoint-lg:992px;--bs-breakpoint-xl:1200px;--bs-breakpoint-xxl:1400px}*,:after,:before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);color:var(--bs-body-color);text-align:var(--bs-body-text-align);background-color:var(--bs-body-bg);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}body,html{margin:0;padding:0;border:0;font-size:100%;font-family:inherit;vertical-align:initial}html{font-size:10px;font-size:62.5%}body{line-height:1}body{font-family:Open Sans,sans-serif;color:#4a4a4a;line-height:1.5;font-size:1.4rem}@media (min-width: 48em){body{font-size:1.6rem!important}}</style><link rel="stylesheet" href="styles.96fdaad0aa22e3a78638.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.96fdaad0aa22e3a78638.css"></noscript></head>
+  <body>
+    <script>
+      window.onload = function () {
+        let model = null;
+        let interaction = null;
+        let actualStep = 1;
+        main();
+      };
+
+      function showPdf(step) {
+        divLegal = document.querySelectorAll("[scaii_pdf_step]");
+        for (i = 0; i < divLegal.length; i++) {
+          divLegal[i].style.display = "none";
+        }
+
+        // show pdf legal
+        divLegal = document.querySelectorAll(
+          '[scaii_pdf_step*="' + "step" + step + '"]'
+        );
+        divLegal.forEach((element) => {
+          element.style.display = "initial";
+        });
+
+        document.activeElement.blur();
+      }
+
+      async function main() {
+        //sessionStorage.clear();
+        let modelRequest = await fetch("./content/json/model.json");
+        model = await modelRequest.json();
+
+        let interactionRequest = await fetch(
+          "./content/json/interaction_it.json"
+        );
+        interaction = await interactionRequest.json();
+
+        model.blocks.forEach((block) => {
+          processBlock(block);
+        });
+
+        showPdf(1);
+      }
+
+      function showText(type) {
+        divLegal = document.querySelectorAll("[simplyfied]");
+        for (i = 0; i < divLegal.length; i++) {
+          divLegal[i].style.display = "none";
+        }
+        divLegal = document.querySelectorAll("[original]");
+        for (i = 0; i < divLegal.length; i++) {
+          divLegal[i].style.display = "none";
+        }
+        divLegal = document.querySelectorAll("[" + type + "");
+        for (i = 0; i < divLegal.length; i++) {
+          divLegal[i].style.display = "block";
+        }
+
+        btn = document.getElementById("simplyfied_btn");
+        if (type.includes("simplyfied")) {
+          btn.setAttribute("onClick", 'showText("original")');
+          btn.innerText = "Visualizza Testo originale";
+
+          // change button icon
+          ico = document.getElementById("simplyfied_ico");
+          //ico.className = "bi bi-book-half";
+
+          const toastLiveExample = document.getElementById("liveToast");
+          const toast = new bootstrap.Toast(toastLiveExample);
+          toast.show();
+
+          // hide pdf legal
+          simplificationBoxs = document.querySelectorAll(
+            "[scanii_simplificationBox]"
+          );
+          for (i = 0; i < divLegal.length; i++) {
+            simplificationBoxs[i].style =
+              "margin-top: 20px; background-color: #F7FAA0 ; padding: 10px; border: 0px ";
+            simplificationBoxs[i].title = "Testo semplificato";
+          }
+        } else {
+          btn.setAttribute("onClick", 'showText("simplyfied")');
+          btn.innerText = "Visualizza Testo Semplificato";
+          // change button icon
+          ico = document.getElementById("simplyfied_ico");
+          //ico.className = "bi bi-book"
+
+          simplificationBoxs = document.querySelectorAll(
+            "[scanii_simplificationBox]"
+          );
+          for (i = 0; i < divLegal.length; i++) {
+            simplificationBoxs[i].style =
+              "margin-top: 20px; background-color: #cce6ff ; padding: 10px; border: 0px ";
+            simplificationBoxs[i].title = "Testo originale";
+          }
+        }
+      }
+
+      function pdfShow(pdfId) {
+        divLink = document.getElementById(pdfId);
+        divLink.classList.add("pop-outin");
+      }
+
+      function pdfHide(pdfId) {
+        divLink = document.getElementById(pdfId);
+        divLink.classList.remove("pop-outin");
+      }
+
+      function processBlock(block) {
+        console.log("processing block " + block.id);
+
+        if (typeof block.concept != "undefined" && block.concept) {
+          processConcept(block.id, block.concept);
+        }
+
+        if (typeof block.blocks != "undefined" && block.blocks) {
+          block.blocks.forEach((subBlock) => {
+            processBlock(subBlock);
+          });
+        }
+      }
+
+      function processLegalInfo(blockId, concept, infoElement) {
+        divLegal = document.getElementById("legal_information");
+
+        console.log("blockId=" + blockId);
+
+        infoElement.link.forEach((link) => {
+          if (
+            typeof link !== "undefined" &&
+            link !== null &&
+            link.url !== "" &&
+            link.type === "LEGAL_LINK"
+          ) {
+            let div = document.getElementById(link.url);
+
+            if (typeof div != "undefined" && div !== null) {
+              let attributeValue = div.getAttribute("scaii_pdf_step");
+              div.setAttribute(
+                "scaii_pdf_step",
+                attributeValue + "," + blockId
+              );
+            } else {
+              div = document.createElement("div");
+              div.setAttribute("scaii_pdf_step", blockId);
+              div.setAttribute("id", link.url);
+              div.className = "list-item";
+              a = document.createElement("a");
+              a.href = link.url;
+              a.setAttribute("target", "_blank");
+              a.title = link.description;
+              a.text = link.name;
+              div.append(a);
+              div.setAttribute("title", link.description);
+              divLegal.append(div);
+            }
+          }
+        });
+      }
+
+      function processConcept(blockId, concept) {
+        console.log(" processing concept " + concept);
+        if (concept.includes("ONE_OR_MANY")) {
+          let length = concept.toString().length;
+          length = length - 13;
+          concept = concept.substr(12, length);
+        }
+        console.log(" find concept " + concept);
+
+        let interactionElements = interaction.concepts.filter(
+          (element) =>
+            element.id == concept || element.id.includes(concept + ".")
+        );
+        if (typeof interactionElements != "undefined" && interactionElements) {
+          interactionElements.forEach((interactionElement) => {
+            interactionElement.infoElements.forEach((infoElement) => {
+              processInfoElement(blockId, interactionElement.id, infoElement);
+            });
+          });
+        }
+      }
+
+      function processInfoElement(blockId, concept, infoElement) {
+        console.log(" processing infoElement " + infoElement.type);
+        if (infoElement.type == "DESCRIPTION")
+          processInfoElementDescription(concept, infoElement);
+
+        processLegalInfo(blockId, concept, infoElement);
+
+        if (infoElement.type == "INFORMATION")
+          processInfoElementInformation(concept, infoElement);
+      }
+
+      function showSynonyms(synonyms) {
+        let div = document.getElementById("synonyms_info");
+        div.innerHTML = synonyms;
+      }
+
+      function hideSynonyms(synonyms) {
+        let div = document.getElementById("synonyms_info");
+        div.innerHTML = "";
+      }
+
+      function processInfoElementDescription(concept, infoElement) {
+        elements = $('[concept="' + concept + '"]');
+        let description = infoElement.text;
+
+        // process description text start
+        // process the words
+        let list = [];
+        let pos = 0;
+        infoElement.words.forEach((word) => {
+          keyPos = word.position.substr(0, word.position.indexOf("-"));
+          keyLen = word.position.substr(word.position.indexOf("-") + 1);
+          keyPos = keyPos - 1;
+          key = description.substr(keyPos, keyLen);
+          preKey = description.substr(pos, parseInt(keyPos) - parseInt(pos));
+
+          pos = parseInt(keyPos) + parseInt(keyLen);
+          list.push(document.createTextNode(preKey));
+          keyTextNode = document.createTextNode(key);
+
+          span = document.createElement("span");
+          span.setAttribute("style", "background-color: #ccc;");
+          text = word.definition;
+          if (
+            typeof word.synonyms != "undefined" &&
+            word.synonyms &&
+            word.synonyms.length > 0
+          ) {
+            text = text + " sinonimi: " + JSON.stringify(word.synonyms) + "";
+            synms = "<ul>";
+            for (let i = 0; i < word.synonyms.length; i++) {
+              synms += "<li>" + word.synonyms[i] + "</li>";
+            }
+            synms += "</ul>";
+            span.setAttribute("onmouseover", 'showSynonyms("' + synms + '")');
+            span.setAttribute("onmouseout", 'hideSynonyms("' + synms + '")');
+          }
+          span.title = text;
+          span.append(keyTextNode);
+
+          list.push(span);
+        });
+
+        value = document.createTextNode(description.substr(pos));
+        list.push(value);
+
+        descriptionDiv = document.createElement("div");
+        descriptionDiv.setAttribute("original", "");
+        descriptionDiv.setAttribute("class", "description");
+        list.forEach((tmp) => {
+          descriptionDiv.append(tmp);
+        });
+        htmlFragment = descriptionDiv.innerHTML;
+
+        // process links
+        infoElement.link.forEach((link) => {
+          if (typeof link.url != "undefined" && link.url && link.url != "") {
+            replaceText = "";
+            if (
+              typeof link.description != "undefined" &&
+              link.description &&
+              link.description != ""
+            )
+              //replaceText = '<a target=”_blank” title="' + link.description + '" href="' + link.url + '" onmouseover="pdfShow(\''+link.url+'"\')">' + link.name + '</a>';
+              replaceText =
+                '<a  target=”_blank” href="' +
+                link.url +
+                '" onmouseout="pdfHide(\'' +
+                link.url +
+                "')\"" +
+                '" onmouseover="pdfShow(\'' +
+                link.url +
+                "')\">" +
+                link.name +
+                "</a>";
+            else
+              replaceText =
+                '<a  target=”_blank” href="' +
+                link.url +
+                '" onmouseout="pdfHide(\'' +
+                link.url +
+                "')\"" +
+                '" onmouseover="pdfShow(\'' +
+                link.url +
+                "')\">" +
+                link.name +
+                "</a>";
+            htmlFragment = htmlFragment.replaceAll(link.url, replaceText);
+          }
+          if (typeof link.text != "undefined" && link.text && link.text != "") {
+            replaceText = "";
+            if (
+              typeof link.description != "undefined" &&
+              link.description &&
+              link.description != ""
+            )
+              //replaceText = '<a target=”_blank” title="' + link.description + '" href="' + link.url + '" onmouseover="pdfShow(\''+link.url+'"\')">' + link.name + '</a>';
+              replaceText =
+                '<a  target=”_blank” href="' +
+                link.url +
+                '" onmouseout="pdfHide(\'' +
+                link.url +
+                "')\"" +
+                '" onmouseover="pdfShow(\'' +
+                link.url +
+                "')\">" +
+                link.text +
+                "</a>";
+            else
+              replaceText =
+                '<a  target=”_blank” href="' +
+                link.url +
+                '" onmouseout="pdfHide(\'' +
+                link.url +
+                "')\"" +
+                '" onmouseover="pdfShow(\'' +
+                link.url +
+                "')\">" +
+                link.text +
+                "</a>";
+            htmlFragment = htmlFragment.replaceAll(link.text, replaceText);
+          }
+        });
+
+        descriptionDiv.innerHTML = htmlFragment;
+        // process description text end
+
+        //add simplyfied text
+        divSimp = document.createElement("div");
+        divSimp.setAttribute("simplyfied", "");
+        divSimp.innerText = infoElement.simplifiedText;
+        divSimp.style.display = "none";
+
+        // add simplification box
+        simplificationBox = document.createElement("div");
+        simplificationBox.style =
+          "min-height: 1px;max-height: 3px;margin-top: 20px;background-color: #cce6ff ; padding: 10px; border: 0px";
+
+        simplificationBox.title = "Testo originale";
+        simplificationBox.setAttribute("scanii_simplificationBox", "");
+        simplificationBox.setAttribute("class", "description");
+
+        //separatore div
+        separatorBox = document.createElement("span");
+        separatorBox.style = "padding: 10px; ";
+
+        // add yellow box start
+        accordionDiv = document.createElement("div");
+        accordionDiv.setAttribute("class", "accordion bs-success-rgb");
+        accordionDiv.style =
+          "background-color: #F9E79F ; padding: 10px; border: 1px solid green;";
+        accordionItm = document.createElement("div");
+        accordionItm.setAttribute("class", "accordion-item");
+        accordionCnt = document.createElement("div");
+        accordionCnt.setAttribute("id", concept);
+        accordionCnt.setAttribute("class", "accordion-collapse collapse");
+        accordionCnt.setAttribute("aria-labelledby", concept);
+
+        yellowDiv = document.createElement("div");
+        yellowDiv.setAttribute("class", "accordion-body");
+
+        accordionCnt.append(yellowDiv);
+        accordionCnt.style =
+          "background-color: #F9E79F ; padding: 10px; border: 0px ";
+        accordionBtn = document.createElement("button");
+        accordionBtn.setAttribute("class", "accordion-button collapsed ");
+        accordionBtn.setAttribute("type", "button");
+        accordionBtn.setAttribute("data-bs-toggle", "collapse");
+        accordionBtn.setAttribute("data-bs-target", "#" + concept);
+        accordionBtn.setAttribute("aria-expanded", "true");
+        accordionBtn.setAttribute("aria-controls", concept);
+        accordionBtn.style =
+          "background-color: #F9E79F; color: black; font-size:15px;";
+
+        accordionBtn.innerText = "Dettagli";
+        accordionItm.append(accordionBtn);
+        accordionItm.append(accordionCnt);
+        accordionDiv.append(accordionItm);
+        accordionDiv.style = "background-color: #F9E79F ;";
+
+        infoElement.link.forEach((link) => {
+          if (link.type == "HOW_TO_LINK" || link.type == "DESCRITPION_LINK") {
+            a = document.createElement("a");
+            a.href = link.url;
+            a.setAttribute("target", "_blank");
+            //a.title = link.description;
+            a.innerText = link.name;
+            text = document.createElement("span");
+            text.innerText = link.description;
+            yellowDiv.append(a);
+            yellowDiv.append(text);
+            //yellowDiv.setAttribute('title', link.description);
+            yellowDiv.append(document.createElement("br"));
+          }
+          if (link.type == "SERVICE_LINK") {
+            if (
+              typeof link.htmlFragment != "undefined" &&
+              link.htmlFragment != ""
+            ) {
+              divTmp = document.createElement("div");
+              divTmp.innerHTML = link.htmlFragment;
+              text = document.createElement("span");
+              text.innerText = link.description;
+              yellowDiv.append(text);
+              yellowDiv.append(divTmp);
+
+              yellowDiv.append(document.createElement("br"));
+            }
+            if (typeof link.url != "undefined" && link.url != "") {
+              a = document.createElement("a");
+              a.href = link.url;
+              a.setAttribute("target", "_blank");
+              a.innerText = link.name;
+              text = document.createElement("span");
+              text.innerText = link.description;
+              yellowDiv.append(a);
+              yellowDiv.append(text);
+              yellowDiv.append(document.createElement("br"));
+            }
+          }
+        });
+        // add yellow box end
+
+        let divToAdd = document.createElement("div");
+        divToAdd.append(descriptionDiv);
+        divToAdd.append(divSimp);
+        divToAdd.append(simplificationBox);
+        divToAdd.append(separatorBox);
+        if (yellowDiv.innerHTML != "") divToAdd.append(accordionDiv);
+
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].insertBefore(divToAdd, elements[i].firstChild);
+        }
+      }
+
+      function processInfoElementInformation(concept, infoElement) {
+        elements = $('[concept="' + concept + '"]');
+        for (let i = 0; i < elements.length; i++) {
+          value = document.createTextNode("[i]");
+          span = document.createElement("span");
+          span.title = infoElement.text;
+          span.append(value);
+          elements[i].append(span);
+        }
+      }
+    </script>
+    <app-main></app-main>
+  <script src="runtime.74f1c732e37d892f33db.js" defer></script><script src="polyfills.af17f83eafaf15683d3c.js" defer></script><script src="scripts.b7533cfe90dad08a8d96.js" defer></script><script src="main.57f10378866fb93c4f66.js" defer></script>
+
+</body></html>

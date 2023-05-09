@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="iframe.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -146,7 +146,7 @@
       window.addEventListener("message", listener, false);
 
       function listener(event) {
-        if (event.origin === "http://localhost:4200") {
+        if (event.origin === "https://yellow-coast-0c9cc7403.2.azurestaticapps.net/small_claim_form/form_a") {
           const h1 = document.createElement("h1");
           h1.innerText = "parent received message";
           document.body.insertBefore(h1, document.body.firstChild);
@@ -155,7 +155,7 @@
 
       function send(message) {
         const frame = document.getElementById("iframe");
-        frame.contentWindow.postMessage(message, "http://localhost:4200");
+        frame.contentWindow.postMessage(message, "https://yellow-coast-0c9cc7403.2.azurestaticapps.net/small_claim_form/form_a");
       }
 
       function changeLang(event) {
@@ -2704,7 +2704,7 @@
       </div>
     </header>
     <iframe
-      src="http://localhost:4200/"
+      src="https://yellow-coast-0c9cc7403.2.azurestaticapps.net/small_claim_form/form_a"
       width="100%"
       id="iframe"
     ></iframe>

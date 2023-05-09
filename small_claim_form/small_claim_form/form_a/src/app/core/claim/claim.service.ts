@@ -215,17 +215,21 @@ export class ClaimService {
           }, {});
 
         for (const key of Object.keys(filteredClaimShowHideFields)) {
-          this.triggerChangeEvent(
-            claimShowHideFields[key]['triggeringFieldId']
-          );
+          const value = this.getJsonValue(claimShowHideFields[key]['triggeringFormControlName'], claim);
+
+          if (value === claimShowHideFields[key]['triggeringValue']) {
+            this.triggerChangeEvent(
+              claimShowHideFields[key]['triggeringFieldId']
+            );
+          }
         }
 
-        this.triggerDivOpenOnRadioButtonSelect(
+        this.triggerChangeEventBasedOnValue(
           claim.claimingInterestExpansion.claimingInterestOption,
           'contractualInterest',
           'statutoryInterest'
         );
-        this.triggerDivOpenOnRadioButtonSelect(
+        this.triggerChangeEventBasedOnValue(
           claim.claimingInterestOnCostExpansion
             .claimingInterestOnCostFromOption,
           'claimingInterestOnCostFromDate',
@@ -237,7 +241,17 @@ export class ClaimService {
     });
   }
 
-  private triggerDivOpenOnRadioButtonSelect(
+  private getJsonValue(key: string, claim: any): any {
+    const formGroupNames = this.findFormGroupNames(key, this.editForm);
+    
+    let value = claim;
+    for (let i = 0; i < formGroupNames.length; i++) {
+      value = value[formGroupNames[i]];
+    }
+    return value[key];
+  }
+
+  private triggerChangeEventBasedOnValue(
     value: string,
     firstField: string,
     secondField: string

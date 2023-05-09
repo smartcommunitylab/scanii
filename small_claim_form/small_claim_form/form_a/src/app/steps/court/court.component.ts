@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { JhiEventManager } from 'ng-jhipster';
 import { Movement } from 'src/app/core/common/movement.model';
 import { CourtService } from 'src/app/core/court/court.service';
@@ -11,13 +12,26 @@ import { Direction } from 'src/app/shared/constants/direction.constants';
   styleUrls: ['./court.component.scss'],
 })
 export class CourtComponent implements OnInit {
+  europeanCountries: { value: string; label: string }[] = [];
+  selectedCountry: string;
+
   constructor(
     public courtService: CourtService,
     private eventManager: JhiEventManager,
-    private navbarService: NavbarService
+    private navbarService: NavbarService,
+    private translateService: TranslateService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //this.courtService.editForm.get('country').setValue('IT');
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.europeanCountries = event.translations.europeanCountries;
+      this.selectedCountry = this.europeanCountries.find(
+        (country) =>
+          country.value === this.courtService.editForm.get('country').value
+      ).label;
+    });
+  }
 
   toggleFindCourt() {
     document.getElementById('find_court').classList.toggle('open');
@@ -38,5 +52,15 @@ export class CourtComponent implements OnInit {
   generateJson() {
     if (!this.courtService.editForm.invalid) {
     }
+    else {
+      this.courtService.markCourtFormAsDirty();
+    }
+  }
+
+  onCountryChange() {
+    this.selectedCountry = this.europeanCountries.find(
+      (country) =>
+        country.value === this.courtService.editForm.get('country').value
+    ).label;
   }
 }

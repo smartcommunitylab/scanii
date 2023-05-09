@@ -1,326 +1,479 @@
 <div id="step7">
   <div id="step7_1">
     <div>
-      <h3>7.1. Udienza</h3>
+      <h3 [title]="'oralHearing.title'">7.1. Udienza</h3>
       <div concept="http://scanii.org/domain/oralHearing"></div>
-      <div class="js-toggle-trigger" style="width: 93%; display: inline-block"></div>
-        <div class="form-row full-width">
-          <div class="description">
-            <form role="form" [formGroup]="stepSevenService.oralHearingForm">
-              <legend class="hidden">&nbsp;</legend>
-              <div class="radioButtons1">
-                <span class="marginleft20px">
-                  <div class="form-row full-width bold">
-                    <div>
-                      <label style="margin-bottom: 0px">
+      <div
+        class="js-toggle-trigger"
+        style="width: 93%; display: inline-block"
+      ></div>
+      <div class="form-row full-width">
+        <div class="description">
+          <form role="form" [formGroup]="stepSevenService.oralHearingForm">
+            <legend class="hidden">&nbsp;</legend>
+            <div class="radioButtons1">
+              <span class="marginleft20px">
+                <div class="form-row full-width bold">
+                  <div>
+                    <label style="margin-bottom: 0px">
+                      <span [translate]="'oralHearing.oralHearingRequest'">
                         7.1.1. Do you want an oral hearing to be held?
-
-                        <span class="asterisk">*</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="form-row full-width bold">
-                    <div>
-                      <div
-                        class="radio-wrapper"
-                        id="input-wrapper_dynformSCA7OralHearingHeld"
-                      >
-                        <input
-                          type="radio"
-                          name="oralHearingRequest"
-                          value="yes"
-                          class="df_input"
-                          id="dynformSCA7OralHearingHeld_Yes"
-                          data-title=""
-                          (change)="
-                            onOralHearingChange(
-                              $event,
-                              'dynformSCA7OralHearingHeld_div'
-                            )
-                          "
-                          formControlName="oralHearingRequest"
-                        />
-
-                        <label for="dynformSCA7OralHearingHeld_Yes">
-                          Yes
-
-                          <span
-                            class="asterisk"
-                            id="requiredStar_blank_dynformSCA7OralHearingHeld"
-                          ></span>
-                        </label>
-
-                        <!-- <label>
-
-  <div class="asterisk"  id="requiredStar_blank_dynformSCA7OralHearingHeld"></div>
-
-</label> -->
-                      </div>
-                      <span
-                        id="validation_error_text_dynformSCA7OralHearingHeld"
-                        class="error"
-                        style="position: relative; top: 0px"
-                      >
                       </span>
-                    </div>
+                      <span class="asterisk">*</span>
+                    </label>
                   </div>
+                </div>
 
-                  <div class="form-row full-width bold">
-                    <div>
-                      <div
-                        class="radio-wrapper"
-                        id="input-wrapper_dynformSCA7OralHearingHeld"
-                      >
-                        <input
-                          type="radio"
-                          name="oralHearingRequest"
-                          value="no"
-                          class="df_input"
-                          id="dynformSCA7OralHearingHeld_No"
-                          data-title=""
-                          (change)="
-                            onOralHearingChange(
-                              $event,
-                              'dynformSCA7OralHearingHeld_div'
-                            )
-                          "
-                          formControlName="oralHearingRequest"
-                        />
+                <div class="form-row full-width bold">
+                  <div>
+                    <div
+                      class="radio-wrapper"
+                      id="input-wrapper_dynformSCA7OralHearingHeld"
+                    >
+                      <input
+                        type="radio"
+                        name="oralHearingRequest"
+                        value="yes"
+                        class="df_input"
+                        id="dynformSCA7OralHearingHeld_Yes"
+                        data-title=""
+                        (change)="
+                          onOralHearingChange(
+                            $event,
+                            'dynformSCA7OralHearingHeld_div'
+                          )
+                        "
+                        formControlName="oralHearingRequest"
+                      />
 
-                        <label for="dynformSCA7OralHearingHeld_No">
-                          No
-
-                          <span
-                            class="asterisk"
-                            id="requiredStar_blank_dynformSCA7OralHearingHeld"
-                          ></span>
-                        </label>
-
-                        <!-- <label>
-
-  <div class="asterisk"  id="requiredStar_blank_dynformSCA7OralHearingHeld"></div>
-
-</label> -->
-                      </div>
-                      <span
-                        id="validation_error_text_dynformSCA7OralHearingHeld"
-                        class="error"
-                        style="position: relative; top: 0px"
-                      >
-                      </span>
-                    </div>
-                  </div>
-                </span>
-              </div>
-
-              <!-- THE BLOCK OF THE SUBFIELDS -->
-              <div id="dynformSCA7OralHearingHeld_div" class="df_collapsed">
-                <div>
-                  <span class="marginleft20px">
-                    <div class="form-row full-width bold">
-                      <div>
-                        <label for="dynformSCA7OralHearingHeldPleaseSpecify">
-                          If yes, please indicate reasons
-
-                          <span
-                            class="asterisk"
-                            id="requiredStar_required_dynformSCA7OralHearingHeldPleaseSpecify"
-                            >*</span
-                          >
-                        </label>
-
-                        <div
-                          class="input-wrapper regular"
-                          id="input-wrapper_dynformSCA7OralHearingHeldPleaseSpecify"
-                        >
-                          <div class="input-content nopaddingTop">
-                            <textarea
-                              name="dynformSCA7OralHearingHeldPleaseSpecify"
-                              cols="10"
-                              rows="7"
-                              class="df_textarea df_textboxsafarionly df_mandatory"
-                              id="dynformSCA7OralHearingHeldPleaseSpecify"
-                              data-title=""
-                              formControlName="oralHearingRequestReasons"
-                            ></textarea>
-                          </div>
-                        </div>
+                      <label for="dynformSCA7OralHearingHeld_Yes">
+                        <span [translate]="'oralHearing.yes'">Yes</span>
 
                         <span
-                          id="validation_error_text_dynformSCA7OralHearingHeldPleaseSpecify"
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCA7OralHearingHeld"
+                        ></span>
+                      </label>
+
+                      <!-- <label>
+
+  <div class="asterisk"  id="requiredStar_blank_dynformSCA7OralHearingHeld"></div>
+
+</label> -->
+                    </div>
+                    <div
+                      *ngIf="
+                        stepSevenService.oralHearingForm.get(
+                          'oralHearingRequest'
+                        )!.invalid &&
+                        stepSevenService.oralHearingForm.get(
+                          'oralHearingRequest'
+                        )!.dirty
+                      "
+                    >
+                      <div
+                        *ngIf="
+                          stepSevenService.oralHearingForm.get(
+                            'oralHearingRequest'
+                          )?.errors?.required
+                        "
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA7OralHearingHeld"
                           class="error"
                           style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
                         >
+                          Field is required
                         </span>
                       </div>
                     </div>
-                  </span>
+                  </div>
                 </div>
-              </div>
 
-              <legend class="hidden">&nbsp;</legend>
-              <div class="radioButtons2">
+                <div class="form-row full-width bold">
+                  <div>
+                    <div
+                      class="radio-wrapper"
+                      id="input-wrapper_dynformSCA7OralHearingHeld"
+                    >
+                      <input
+                        type="radio"
+                        name="oralHearingRequest"
+                        value="no"
+                        class="df_input"
+                        id="dynformSCA7OralHearingHeld_No"
+                        data-title=""
+                        (change)="
+                          onOralHearingChange(
+                            $event,
+                            'dynformSCA7OralHearingHeld_div'
+                          )
+                        "
+                        formControlName="oralHearingRequest"
+                      />
+
+                      <label for="dynformSCA7OralHearingHeld_No">
+                        <span [translate]="'oralHearing.no'">No</span>
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCA7OralHearingHeld"
+                        ></span>
+                      </label>
+
+                      <!-- <label>
+
+  <div class="asterisk"  id="requiredStar_blank_dynformSCA7OralHearingHeld"></div>
+
+</label> -->
+                    </div>
+                    <div
+                      *ngIf="
+                        stepSevenService.oralHearingForm.get(
+                          'oralHearingRequest'
+                        )!.invalid &&
+                        stepSevenService.oralHearingForm.get(
+                          'oralHearingRequest'
+                        )!.dirty
+                      "
+                    >
+                      <div
+                        *ngIf="
+                          stepSevenService.oralHearingForm.get(
+                            'oralHearingRequest'
+                          )?.errors?.required
+                        "
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA7OralHearingHeld"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                        >
+                          Field is required
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+
+            <!-- THE BLOCK OF THE SUBFIELDS -->
+            <div id="dynformSCA7OralHearingHeld_div" class="df_collapsed">
+              <div>
                 <span class="marginleft20px">
                   <div class="form-row full-width bold">
                     <div>
-                      <label style="margin-bottom: 0px">
-                        7.1.2. If the court decides to hold an oral hearing, do
-                        you want to be physically present?
+                      <label for="dynformSCA7OralHearingHeldPleaseSpecify">
+                        <span
+                          [translate]="'oralHearing.oralHearingRequestReasons'"
+                          >If yes, please indicate reasons</span
+                        >
 
-                        <span class="asterisk">*</span>
+                        <span
+                          class="asterisk"
+                          id="requiredStar_required_dynformSCA7OralHearingHeldPleaseSpecify"
+                          >*</span
+                        >
                       </label>
-                    </div>
-                  </div>
 
-                  <div class="form-row full-width bold">
-                    <div>
                       <div
-                        class="radio-wrapper"
-                        id="input-wrapper_dynformSCA8OralHearingPhysically"
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCA7OralHearingHeldPleaseSpecify"
+                        [ngClass]="{
+                          invalid:
+                            stepSevenService.oralHearingForm.get(
+                              'oralHearingRequestReasons'
+                            )!.invalid &&
+                            stepSevenService.oralHearingForm.get(
+                              'oralHearingRequestReasons'
+                            )!.dirty
+                        }"
                       >
-                        <input
-                          type="radio"
-                          name="oralHearingPresence"
-                          value="yes"
-                          class="df_input"
-                          id="dynformSCA8OralHearingPhysically_Yes"
-                          data-title=""
-                          (change)="
-                            onOralHearingChange(
-                              $event,
-                              'dynformSCA8OralHearingPhysically_div'
-                            )
-                          "
-                          formControlName="oralHearingPresence"
-                        />
-
-                        <label for="dynformSCA8OralHearingPhysically_Yes">
-                          Yes
-
-                          <span
-                            class="asterisk"
-                            id="requiredStar_blank_dynformSCA8OralHearingPhysically"
-                          ></span>
-                        </label>
-
-                        <!-- <label>
-
-  <div class="asterisk"  id="requiredStar_blank_dynformSCA8OralHearingPhysically"></div>
-
-</label> -->
+                        <div class="input-content nopaddingTop">
+                          <textarea
+                            name="dynformSCA7OralHearingHeldPleaseSpecify"
+                            cols="10"
+                            rows="7"
+                            class="df_textarea df_textboxsafarionly df_mandatory"
+                            id="dynformSCA7OralHearingHeldPleaseSpecify"
+                            data-title=""
+                            formControlName="oralHearingRequestReasons"
+                          ></textarea>
+                        </div>
                       </div>
-                      <span
-                        id="validation_error_text_dynformSCA8OralHearingPhysically"
-                        class="error"
-                        style="position: relative; top: 0px"
-                      >
-                      </span>
-                    </div>
-                  </div>
 
-                  <div class="form-row full-width bold">
-                    <div>
                       <div
-                        class="radio-wrapper"
-                        id="input-wrapper_dynformSCA8OralHearingPhysically"
+                        *ngIf="
+                          stepSevenService.oralHearingForm.get(
+                            'oralHearingRequestReasons'
+                          )!.invalid &&
+                          stepSevenService.oralHearingForm.get(
+                            'oralHearingRequestReasons'
+                          )!.dirty
+                        "
                       >
-                        <input
-                          type="radio"
-                          name="oralHearingPresence"
-                          value="no"
-                          class="df_input"
-                          id="dynformSCA8OralHearingPhysically_No"
-                          data-title=""
-                          (change)="
-                            onOralHearingChange(
-                              $event,
-                              'dynformSCA8OralHearingPhysically_div'
-                            )
+                        <div
+                          *ngIf="
+                            stepSevenService.oralHearingForm.get(
+                              'oralHearingRequestReasons'
+                            )?.errors?.required
                           "
-                          formControlName="oralHearingPresence"
-                        />
-
-                        <label for="dynformSCA8OralHearingPhysically_No">
-                          No
-
+                        >
                           <span
-                            class="asterisk"
-                            id="requiredStar_blank_dynformSCA8OralHearingPhysically"
-                          ></span>
-                        </label>
-
-                        <!-- <label>
-
-  <div class="asterisk"  id="requiredStar_blank_dynformSCA8OralHearingPhysically"></div>
-
-</label> -->
+                            id="validation_error_text_dynformSCA7OralHearingHeldPleaseSpecify"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
                       </div>
-                      <span
-                        id="validation_error_text_dynformSCA8OralHearingPhysically"
-                        class="error"
-                        style="position: relative; top: 0px"
-                      >
-                      </span>
                     </div>
                   </div>
                 </span>
               </div>
-              <div
-                id="dynformSCA8OralHearingPhysically_div"
-                class="df_collapsed"
-              >
-                <div>
-                  <span class="marginleft20px">
-                    <div class="form-row full-width bold">
-                      <div>
-                        <label
-                          for="dynformSCA8OralHearingPhysicallyPleaseSpecify"
-                        >
-                          Please indicate reasons
+            </div>
 
-                          <span
-                            class="asterisk"
-                            id="requiredStar_required_dynformSCA8OralHearingPhysicallyPleaseSpecify"
-                            >*</span
-                          >
-                        </label>
+            <legend class="hidden">&nbsp;</legend>
+            <div class="radioButtons2">
+              <span class="marginleft20px">
+                <div class="form-row full-width bold">
+                  <div>
+                    <label style="margin-bottom: 0px">
+                      <span [translate]="'oralHearing.oralHearingPresence'"
+                        >7.1.2. If the court decides to hold an oral hearing, do
+                        you want to be physically present?</span
+                      >
 
-                        <div
-                          class="input-wrapper regular"
-                          id="input-wrapper_dynformSCA8OralHearingPhysicallyPleaseSpecify"
-                        >
-                          <div class="input-content nopaddingTop">
-                            <textarea
-                              name="dynformSCA8OralHearingPhysicallyPleaseSpecify"
-                              cols="10"
-                              rows="7"
-                              class="df_textarea df_textboxsafarionly df_mandatory"
-                              id="dynformSCA8OralHearingPhysicallyPleaseSpecify"
-                              data-title=""
-                              formControlName="oralHearingPresenceReasons"
-                            ></textarea>
-                          </div>
-                        </div>
+                      <span class="asterisk">*</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <div
+                      class="radio-wrapper"
+                      id="input-wrapper_dynformSCA8OralHearingPhysically"
+                    >
+                      <input
+                        type="radio"
+                        name="oralHearingPresence"
+                        value="yes"
+                        class="df_input"
+                        id="dynformSCA8OralHearingPhysically_Yes"
+                        data-title=""
+                        (change)="
+                          onOralHearingChange(
+                            $event,
+                            'dynformSCA8OralHearingPhysically_div'
+                          )
+                        "
+                        formControlName="oralHearingPresence"
+                      />
+
+                      <label for="dynformSCA8OralHearingPhysically_Yes">
+                        <span [translate]="'oralHearing.yes'">Yes</span>
 
                         <span
-                          id="validation_error_text_dynformSCA8OralHearingPhysicallyPleaseSpecify"
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCA8OralHearingPhysically"
+                        ></span>
+                      </label>
+
+                      <!-- <label>
+
+  <div class="asterisk"  id="requiredStar_blank_dynformSCA8OralHearingPhysically"></div>
+
+</label> -->
+                    </div>
+                    <div
+                      *ngIf="
+                        stepSevenService.oralHearingForm.get(
+                          'oralHearingPresence'
+                        )!.invalid &&
+                        stepSevenService.oralHearingForm.get(
+                          'oralHearingPresence'
+                        )!.dirty
+                      "
+                    >
+                      <div
+                        *ngIf="
+                          stepSevenService.oralHearingForm.get(
+                            'oralHearingPresence'
+                          )?.errors?.required
+                        "
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA8OralHearingPhysically"
                           class="error"
                           style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
                         >
+                          Field is required
                         </span>
                       </div>
                     </div>
-                  </span>
+                  </div>
                 </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <div
+                      class="radio-wrapper"
+                      id="input-wrapper_dynformSCA8OralHearingPhysically"
+                    >
+                      <input
+                        type="radio"
+                        name="oralHearingPresence"
+                        value="no"
+                        class="df_input"
+                        id="dynformSCA8OralHearingPhysically_No"
+                        data-title=""
+                        (change)="
+                          onOralHearingChange(
+                            $event,
+                            'dynformSCA8OralHearingPhysically_div'
+                          )
+                        "
+                        formControlName="oralHearingPresence"
+                      />
+
+                      <label for="dynformSCA8OralHearingPhysically_No">
+                        <span [translate]="'oralHearing.no'">No</span>
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCA8OralHearingPhysically"
+                        ></span>
+                      </label>
+
+                      <!-- <label>
+
+  <div class="asterisk"  id="requiredStar_blank_dynformSCA8OralHearingPhysically"></div>
+
+</label> -->
+                    </div>
+                    <div
+                      *ngIf="
+                        stepSevenService.oralHearingForm.get(
+                          'oralHearingPresence'
+                        )!.invalid &&
+                        stepSevenService.oralHearingForm.get(
+                          'oralHearingPresence'
+                        )!.dirty
+                      "
+                    >
+                      <div
+                        *ngIf="
+                          stepSevenService.oralHearingForm.get(
+                            'oralHearingPresence'
+                          )?.errors?.required
+                        "
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA8OralHearingPhysically"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                        >
+                          Field is required
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div id="dynformSCA8OralHearingPhysically_div" class="df_collapsed">
+              <div>
+                <span class="marginleft20px">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label
+                        for="dynformSCA8OralHearingPhysicallyPleaseSpecify"
+                      >
+                        <span
+                          [translate]="'oralHearing.oralHearingPresenceReasons'"
+                          >Please indicate reasons</span
+                        >
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_required_dynformSCA8OralHearingPhysicallyPleaseSpecify"
+                          >*</span
+                        >
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCA8OralHearingPhysicallyPleaseSpecify"
+                        [ngClass]="{
+                          invalid:
+                            stepSevenService.oralHearingForm.get(
+                              'oralHearingPresenceReasons'
+                            )!.invalid &&
+                            stepSevenService.oralHearingForm.get(
+                              'oralHearingPresenceReasons'
+                            )!.dirty
+                        }"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <textarea
+                            name="dynformSCA8OralHearingPhysicallyPleaseSpecify"
+                            cols="10"
+                            rows="7"
+                            class="df_textarea df_textboxsafarionly df_mandatory"
+                            id="dynformSCA8OralHearingPhysicallyPleaseSpecify"
+                            data-title=""
+                            formControlName="oralHearingPresenceReasons"
+                          ></textarea>
+                        </div>
+                      </div>
+
+                      <div
+                        *ngIf="
+                          stepSevenService.oralHearingForm.get(
+                            'oralHearingPresenceReasons'
+                          )!.invalid &&
+                          stepSevenService.oralHearingForm.get(
+                            'oralHearingPresenceReasons'
+                          )!.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="
+                            stepSevenService.oralHearingForm.get(
+                              'oralHearingPresenceReasons'
+                            )?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA8OralHearingPhysicallyPleaseSpecify"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </span>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
     <div id="step7_2">
-      <h3>
+      <h3 [translate]="'documentAndCommunication.title'">
         7.2 Notifica o comunicazione degli atti e comunicazione con l’organo
         giurisdizionale
       </h3>
@@ -342,9 +495,15 @@
                 <div class="form-row full-width bold">
                   <div>
                     <label style="margin-bottom: 0px">
-                      7.2.1. Do you agree to the use of electronic means of
-                      communication for the service of the response by the
-                      defendant, any counterclaim and the judgment?
+                      <span
+                        [translate]="
+                          'documentAndCommunication.electronicCommunicationWithCourtTribunal'
+                        "
+                      >
+                        7.2.1. Do you agree to the use of electronic means of
+                        communication for the service of the response by the
+                        defendant, any counterclaim and the judgment?</span
+                      >
 
                       <span class="asterisk">*</span>
                     </label>
@@ -368,7 +527,9 @@
                       />
 
                       <label for="dynformSCA8ServiceOfDocuments_Yes">
-                        Yes
+                        <span [translate]="'documentAndCommunication.yes'"
+                          >Yes</span
+                        >
 
                         <span
                           class="asterisk"
@@ -382,12 +543,33 @@
 
 </label> -->
                     </div>
-                    <span
-                      id="validation_error_text_dynformSCA8ServiceOfDocuments"
-                      class="error"
-                      style="position: relative; top: 0px"
+                    <div
+                      *ngIf="
+                        stepSevenService.documentAndCommunicationForm.get(
+                          'electronicCommunicationWithCourtTribunal'
+                        )!.invalid &&
+                        stepSevenService.documentAndCommunicationForm.get(
+                          'electronicCommunicationWithCourtTribunal'
+                        )!.dirty
+                      "
                     >
-                    </span>
+                      <div
+                        *ngIf="
+                          stepSevenService.documentAndCommunicationForm.get(
+                            'electronicCommunicationWithCourtTribunal'
+                          )?.errors?.required
+                        "
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA8ServiceOfDocuments"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                        >
+                          Field is required
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -408,7 +590,9 @@
                       />
 
                       <label for="dynformSCA8ServiceOfDocuments_No">
-                        No
+                        <span [translate]="'documentAndCommunication.no'"
+                          >No</span
+                        >
 
                         <span
                           class="asterisk"
@@ -422,12 +606,33 @@
 
 </label> -->
                     </div>
-                    <span
-                      id="validation_error_text_dynformSCA8ServiceOfDocuments"
-                      class="error"
-                      style="position: relative; top: 0px"
+                    <div
+                      *ngIf="
+                        stepSevenService.documentAndCommunicationForm.get(
+                          'electronicCommunicationWithCourtTribunal'
+                        )!.invalid &&
+                        stepSevenService.documentAndCommunicationForm.get(
+                          'electronicCommunicationWithCourtTribunal'
+                        )!.dirty
+                      "
                     >
-                    </span>
+                      <div
+                        *ngIf="
+                          stepSevenService.documentAndCommunicationForm.get(
+                            'electronicCommunicationWithCourtTribunal'
+                          )?.errors?.required
+                        "
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA8ServiceOfDocuments"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                        >
+                          Field is required
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </span>
@@ -439,9 +644,14 @@
                 <div class="form-row full-width bold">
                   <div>
                     <label style="margin-bottom: 0px">
-                      7.2.2. Do you agree to the use of electronic means of
-                      communication to receive written communications other than
-                      the documents mentioned in point 10.1?
+                      <span
+                        [translate]="
+                          'documentAndCommunication.electronicCommunicationOther'
+                        "
+                        >7.2.2. Do you agree to the use of electronic means of
+                        communication to receive written communications other
+                        than the documents mentioned in point 10.1?</span
+                      >
 
                       <span class="asterisk">*</span>
                     </label>
@@ -465,7 +675,9 @@
                       />
 
                       <label for="dynformSCA8ServiceOfDocuments2_Yes">
-                        Yes
+                        <span [translate]="'documentAndCommunication.yes'"
+                          >Yes</span
+                        >
 
                         <span
                           class="asterisk"
@@ -479,12 +691,33 @@
 
 </label> -->
                     </div>
-                    <span
-                      id="validation_error_text_dynformSCA8ServiceOfDocuments2"
-                      class="error"
-                      style="position: relative; top: 0px"
+                    <div
+                      *ngIf="
+                        stepSevenService.documentAndCommunicationForm.get(
+                          'electronicCommunicationOther'
+                        )!.invalid &&
+                        stepSevenService.documentAndCommunicationForm.get(
+                          'electronicCommunicationOther'
+                        )!.dirty
+                      "
                     >
-                    </span>
+                      <div
+                        *ngIf="
+                          stepSevenService.documentAndCommunicationForm.get(
+                            'electronicCommunicationOther'
+                          )?.errors?.required
+                        "
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA8ServiceOfDocuments2"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                        >
+                          Field is required
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -505,7 +738,9 @@
                       />
 
                       <label for="dynformSCA8ServiceOfDocuments2_No">
-                        No
+                        <span [translate]="'documentAndCommunication.no'"
+                          >No</span
+                        >
 
                         <span
                           class="asterisk"
@@ -519,12 +754,33 @@
 
 </label> -->
                     </div>
-                    <span
-                      id="validation_error_text_dynformSCA8ServiceOfDocuments2"
-                      class="error"
-                      style="position: relative; top: 0px"
+                    <div
+                      *ngIf="
+                        stepSevenService.documentAndCommunicationForm.get(
+                          'electronicCommunicationOther'
+                        )!.invalid &&
+                        stepSevenService.documentAndCommunicationForm.get(
+                          'electronicCommunicationOther'
+                        )!.dirty
+                      "
                     >
-                    </span>
+                      <div
+                        *ngIf="
+                          stepSevenService.documentAndCommunicationForm.get(
+                            'electronicCommunicationOther'
+                          )?.errors?.required
+                        "
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA8ServiceOfDocuments2"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                        >
+                          Field is required
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </span>
@@ -534,7 +790,7 @@
       </div>
     </div>
     <div id="step7_3">
-      <h3>7.3. Certificato</h3>
+      <h3 [translate]="'certificate.title'">7.3. Certificato</h3>
       <div concept="http://scanii.org/domain/certificate"></div>
       <div class="js-toggle-trigger" style="width: 93%; display: inline-block">
         <div class="form-row full-width">
@@ -543,8 +799,10 @@
               <div class="form-row full-width bold">
                 <div>
                   <label style="margin-bottom: 0px">
-                    7.3.1. I ask the court/tribunal to issue a certificate
-                    concerning the judgment
+                    <span [translate]="'certificate.certificateRequest'">
+                      7.3.1. I ask the court/tribunal to issue a certificate
+                      concerning the judgment</span
+                    >
 
                     <span class="asterisk">*</span>
                   </label>
@@ -569,7 +827,7 @@
                       />
 
                       <label for="dynformSCA8Certificate_Yes">
-                        Yes
+                        <span [translate]="'certificate.yes'">Yes</span>
 
                         <span
                           class="asterisk"
@@ -583,12 +841,33 @@
 
 </label> -->
                     </div>
-                    <span
-                      id="validation_error_text_dynformSCA8Certificate"
-                      class="error"
-                      style="position: relative; top: 0px"
+                    <div
+                      *ngIf="
+                        stepSevenService.certificateForm.get(
+                          'certificateRequest'
+                        )!.invalid &&
+                        stepSevenService.certificateForm.get(
+                          'certificateRequest'
+                        )!.dirty
+                      "
                     >
-                    </span>
+                      <div
+                        *ngIf="
+                          stepSevenService.certificateForm.get(
+                            'certificateRequest'
+                          )?.errors?.required
+                        "
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA8Certificate"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                        >
+                          Field is required
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -609,7 +888,7 @@
                       />
 
                       <label for="dynformSCA8Certificate_No">
-                        No
+                        <span [translate]="'certificate.no'">No</span>
 
                         <span
                           class="asterisk"
@@ -623,21 +902,44 @@
 
 </label> -->
                     </div>
-                    <span
-                      id="validation_error_text_dynformSCA8Certificate"
-                      class="error"
-                      style="position: relative; top: 0px"
+                    <div
+                      *ngIf="
+                        stepSevenService.certificateForm.get(
+                          'certificateRequest'
+                        )!.invalid &&
+                        stepSevenService.certificateForm.get(
+                          'certificateRequest'
+                        )!.dirty
+                      "
                     >
-                    </span>
+                      <div
+                        *ngIf="
+                          stepSevenService.certificateForm.get(
+                            'certificateRequest'
+                          )?.errors?.required
+                        "
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA8Certificate"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                        >
+                          Field is required
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="form-row full-width bold">
                 <div class="labelInfo">
                   <label for="dynformSCA8CertificateLanguage">
-                    7.3.2. I ask the court/tribunal to issue a certificate in
-                    another language than the language of the court proceedings,
-                    in particular:
+                    <span [translate]="'certificate.language'">
+                      7.3.2. I ask the court/tribunal to issue a certificate in
+                      another language than the language of the court
+                      proceedings, in particular:</span
+                    >
 
                     <span
                       class="asterisk"
@@ -685,10 +987,21 @@
                         data-title=""
                         formControlName="language"
                       >
-                        <option value="" disabled="" selected="">
+                        <option
+                          value=""
+                          disabled=""
+                          selected=""
+                          [translate]="'certificate.select'"
+                        >
                           Please select
                         </option>
-                        <option value="00">Bulgarian</option>
+                        <option
+                          *ngFor="let language of europeanLanguages"
+                          [value]="language.value"
+                        >
+                          {{ language.label }}
+                        </option>
+                        <!-- <option value="00">Bulgarian</option>
                         <option value="01">Czech</option>
                         <option value="02">German</option>
                         <option value="03">Estonian</option>
@@ -710,7 +1023,7 @@
                         <option value="19">Finnish</option>
                         <option value="20">Swedish</option>
                         <option value="21">English</option>
-                        <option value="22">Other: (please specify)</option>
+                        <option value="22">Other: (please specify)</option> -->
                       </select>
                     </div>
                   </div>
@@ -728,7 +1041,7 @@
         </div>
       </div>
       <div id="step7_4">
-        <h3>7.4. Date and signature</h3>
+        <h3 [translate]="'dateAndSignature.title'">7.4. Date and signature</h3>
         <div concept="http://scanii.org/domain/dateAndSignature"></div>
         <p style="margin-bottom: 0">&nbsp;</p>
 
@@ -739,12 +1052,13 @@
               [formGroup]="stepSevenService.dateAndSignatureForm"
             >
               <div style="margin-top: -1.5rem">
-
                 <div class="form-row full-width bold">
                   <div>
                     <label style="margin-bottom: 0px">
-                      I hereby request that the court/tribunal give a judgment
-                      against the defendant on the basis of my claim.
+                      <span [translate]="'dateAndSignature.request'">
+                        I hereby request that the court/tribunal give a judgment
+                        against the defendant on the basis of my claim.</span
+                      >
                     </label>
                   </div>
                 </div>
@@ -754,7 +1068,7 @@
                 class="js-toggle-trigger"
                 style="width: 93%; display: inline-block"
               >
-                <span>
+                <span [translate]="'dateAndSignature.declaration'">
                   I declare that the information provided is true to the best of
                   my knowledge and is given in good faith.
                 </span>
@@ -764,7 +1078,7 @@
               <div class="form-row full-width bold">
                 <div>
                   <label for="dynformSCA8DateSignatureDone">
-                    Done at
+                    <span [translate]="'dateAndSignature.city'"> Done at</span>
 
                     <span
                       class="asterisk"
@@ -776,6 +1090,12 @@
                   <div
                     class="input-wrapper regular"
                     id="input-wrapper_dynformSCA8DateSignatureDone"
+                    [ngClass]="{
+                      invalid:
+                        stepSevenService.dateAndSignatureForm.get('city')!
+                          .invalid &&
+                        stepSevenService.dateAndSignatureForm.get('city')!.dirty
+                    }"
                   >
                     <div class="input-content nopaddingTop">
                       <input
@@ -791,52 +1111,90 @@
                     </div>
                   </div>
 
-                  <span
-                    id="validation_error_text_dynformSCA8DateSignatureDone"
-                    class="error"
-                    style="position: relative; top: 0px"
+                  <div
+                    *ngIf="
+                      stepSevenService.dateAndSignatureForm.get('city')!
+                        .invalid &&
+                      stepSevenService.dateAndSignatureForm.get('city')!.dirty
+                    "
                   >
-                  </span>
+                    <div
+                      *ngIf="
+                        stepSevenService.dateAndSignatureForm.get('city')
+                          ?.errors?.required
+                      "
+                    >
+                      <span
+                        id="validation_error_text_dynformSCA8DateSignatureDone"
+                        class="error"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                      >
+                        Field is required
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div class="date-input">
                 <div class="form-row full-width bold">
-                  <div>
-                    <label for="dynformSCA8DateSignatureDate">
-                      Date
-
-                      <span
-                        class="asterisk"
-                        id="requiredStar_required_dynformSCA8DateSignatureDate"
-                        >*</span
-                      >
-                    </label>
-
-                    <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCA8DateSignatureDate"
-                    >
-                      <div class="input-content nopaddingTop no_validate">
-                        <input
-                          type="text"
-                          name="dynformSCA8DateSignatureDate"
-                          maxlength="150"
-                          class="df_textbox textDate"
-                          id="dynformSCA8DateSignatureDate"
-                          data-title=""
-                          autocomplete="off"
-                          formControlName="date"
-                        />
-                      </div>
-                    </div>
+                  <label for="dynformSCA8DateSignatureDate">
+                    <span [translate]="'dateAndSignature.date'">Date</span>
 
                     <span
-                      id="validation_error_text_dynformSCA8DateSignatureDate"
-                      class="error"
-                      style="position: relative; top: 0px"
+                      class="asterisk"
+                      id="requiredStar_required_dynformSCA8DateSignatureDate"
+                      >*</span
                     >
-                    </span>
+                  </label>
+
+                  <div
+                    class="input-wrapper regular"
+                    id="input-wrapper_dynformSCA8DateSignatureDate"
+                    [ngClass]="{
+                      invalid:
+                        stepSevenService.dateAndSignatureForm.get('date')!
+                          .invalid &&
+                        stepSevenService.dateAndSignatureForm.get('date')!.dirty
+                    }"
+                  >
+                    <div class="input-content nopaddingTop no_validate">
+                      <input
+                        type="text"
+                        name="dynformSCA8DateSignatureDate"
+                        maxlength="150"
+                        class="df_textbox textDate"
+                        id="dynformSCA8DateSignatureDate"
+                        data-title=""
+                        autocomplete="off"
+                        formControlName="date"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    *ngIf="
+                      stepSevenService.dateAndSignatureForm.get('date')!
+                        .invalid &&
+                      stepSevenService.dateAndSignatureForm.get('date')!.dirty
+                    "
+                  >
+                    <div
+                      *ngIf="
+                        stepSevenService.dateAndSignatureForm.get('date')
+                          ?.errors?.required
+                      "
+                    >
+                      <span
+                        id="validation_error_text_dynformSCA8DateSignatureDate"
+                        class="error"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                      >
+                        Field is required
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -844,7 +1202,9 @@
               <div class="form-row full-width bold">
                 <div>
                   <label for="dynformSCA8DateSignatureName">
-                    Name of the person signing the form
+                    <span [translate]="'dateAndSignature.sign'"
+                      >Name of the person signing the form</span
+                    >
 
                     <span
                       class="asterisk"
@@ -856,6 +1216,12 @@
                   <div
                     class="input-wrapper regular"
                     id="input-wrapper_dynformSCA8DateSignatureName"
+                    [ngClass]="{
+                      invalid:
+                        stepSevenService.dateAndSignatureForm.get('sign')!
+                          .invalid &&
+                        stepSevenService.dateAndSignatureForm.get('sign')!.dirty
+                    }"
                   >
                     <div class="input-content nopaddingTop">
                       <input
@@ -871,12 +1237,29 @@
                     </div>
                   </div>
 
-                  <span
-                    id="validation_error_text_dynformSCA8DateSignatureName"
-                    class="error"
-                    style="position: relative; top: 0px"
+                  <div
+                    *ngIf="
+                      stepSevenService.dateAndSignatureForm.get('sign')!
+                        .invalid &&
+                      stepSevenService.dateAndSignatureForm.get('sign')!.dirty
+                    "
                   >
-                  </span>
+                    <div
+                      *ngIf="
+                        stepSevenService.dateAndSignatureForm.get('sign')
+                          ?.errors?.required
+                      "
+                    >
+                      <span
+                        id="validation_error_text_dynformSCA8DateSignatureName"
+                        class="error"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                      >
+                        Field is required
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </form>

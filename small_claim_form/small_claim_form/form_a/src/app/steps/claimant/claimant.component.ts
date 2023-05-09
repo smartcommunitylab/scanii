@@ -1,5 +1,5 @@
-import { NavbarService } from './../../core/navbar/navbar.service';
-import { ClaimantService } from './../../core/claimant/claimant.service';
+import { NavbarService } from '../../core/navbar/navbar.service';
+import { ClaimantService } from '../../core/claimant/claimant.service';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, Validators } from '@angular/forms';
 import 'chosen-js';

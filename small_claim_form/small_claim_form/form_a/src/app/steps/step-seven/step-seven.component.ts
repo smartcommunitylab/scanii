@@ -6,6 +6,7 @@ import { NavbarService } from 'src/app/core/navbar/navbar.service';
 import { StepSevenService } from 'src/app/core/step-seven/step-seven.service';
 import { Direction } from 'src/app/shared/constants/direction.constants';
 import datepickerFactory from 'jquery-datepicker';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 declare const $: any;
 datepickerFactory($);
 @Component({
@@ -14,14 +15,22 @@ datepickerFactory($);
   styleUrls: ['./step-seven.component.scss'],
 })
 export class StepSevenComponent implements OnInit {
+  europeanLanguages: { value: string; label: string }[] = [];
+
   constructor(
     public stepSevenService: StepSevenService,
     private eventManager: JhiEventManager,
-    private navbarService: NavbarService
+    private navbarService: NavbarService,
+    private translateService: TranslateService
   ) {}
 
   ngOnInit(): void {
     this.initDatepicker('it');
+
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.europeanLanguages = event.translations.europeanLanguages;
+    });
+
     this.stepSevenService.oralHearingForm.patchValue({
       oralHearingRequest: 'no',
       oralHearingPresence: 'no',
@@ -94,7 +103,7 @@ export class StepSevenComponent implements OnInit {
           content: movement,
         });
       } else {
-        //this.defendantService.markAsDirty();
+        this.stepSevenService.markStepSevenFormsAsDirty();
       }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;

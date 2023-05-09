@@ -1,5 +1,5 @@
-import { DateAndSignature } from './../../core/step-seven/date-and-signature.model';
-import { FinalForm } from './../../core/common/final-form.model';
+import { DateAndSignature } from '../../core/step-seven/date-and-signature.model';
+import { FinalForm } from '../../core/common/final-form.model';
 import { NavbarService } from '../../core/navbar/navbar.service';
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import * as enquire from 'enquire.js';
@@ -262,15 +262,19 @@ export class NavbarComponent implements OnInit, OnDestroy, AfterViewInit {
     intermediateForm.defendants =
       this.defendantService.editForm.value.defendants;
     intermediateForm.jurisdiction = this.jurisdictionService.editForm.value;
-    
+
     this.stepFourService.crossborderNatureForm.get('courtCountry').enable();
-    this.stepFourService.crossborderNatureForm.get('courtCountryOther').enable();
+    this.stepFourService.crossborderNatureForm
+      .get('courtCountryOther')
+      .enable();
 
     intermediateForm.crossborderNature =
       this.stepFourService.crossborderNatureForm.value;
 
     this.stepFourService.crossborderNatureForm.get('courtCountry').disable();
-    this.stepFourService.crossborderNatureForm.get('courtCountryOther').disable();
+    this.stepFourService.crossborderNatureForm
+      .get('courtCountryOther')
+      .disable();
 
     intermediateForm.bankDetails = this.getBankDetailsObj();
     intermediateForm.claim = this.claimService.editForm.value;
@@ -287,10 +291,14 @@ export class NavbarComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private getBankDetailsObj() {
     const bankDetailsObj = this.stepFourService.bankDetailsForm.value;
-    if(this.stepFourService.bankTransferRadioButton) bankDetailsObj.applicationFeePayment.paymentMethod = 'bankTransfer';
-    else if(this.stepFourService.creditCardRadioButton) bankDetailsObj.applicationFeePayment.paymentMethod = 'creditCard';
-    else if(this.stepFourService.directDebitRadioButton) bankDetailsObj.applicationFeePayment.paymentMethod = 'directDebit';
-    else if(this.stepFourService.otherRadioButton) bankDetailsObj.applicationFeePayment.paymentMethod = 'other';
+    if (this.stepFourService.bankTransferRadioButton)
+      bankDetailsObj.applicationFeePayment.paymentMethod = 'bankTransfer';
+    else if (this.stepFourService.creditCardRadioButton)
+      bankDetailsObj.applicationFeePayment.paymentMethod = 'creditCard';
+    else if (this.stepFourService.directDebitRadioButton)
+      bankDetailsObj.applicationFeePayment.paymentMethod = 'directDebit';
+    else if (this.stepFourService.otherRadioButton)
+      bankDetailsObj.applicationFeePayment.paymentMethod = 'other';
     else bankDetailsObj.applicationFeePayment.paymentMethod = '';
     return bankDetailsObj;
   }
@@ -323,10 +331,24 @@ export class NavbarComponent implements OnInit, OnDestroy, AfterViewInit {
         return this.jurisdictionService.setJurisdictionForm(data.jurisdiction);
       })
       .then(() => {
-        return this.stepFourService.setStepFourForms(data.crossborderNature, data.bankDetails);
+        return this.stepFourService.setStepFourForms(
+          data.crossborderNature,
+          data.bankDetails
+        );
       })
       .then(() => {
         return this.claimService.setClaimForm(data.claim);
+      })
+      .then(() => {
+        return this.claimDetailsService.setClaimDetailsForm(data.claimDetails);
+      })
+      .then(() => {
+        return this.stepSevenService.setStepSevenForms(
+          data.oralHearing,
+          data.documentAndCommunication,
+          data.certificate,
+          data.dateAndSignature
+        );
       })
       .catch((error) => {
         // Handle any errors here

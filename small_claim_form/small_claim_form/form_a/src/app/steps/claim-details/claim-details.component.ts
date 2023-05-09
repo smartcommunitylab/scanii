@@ -54,7 +54,7 @@ export class ClaimDetailsComponent implements OnInit {
           content: movement,
         });
       } else {
-        //this.defendantService.markAsDirty();
+        this.claimDetailsService.markClaimDetailsFormAsDirty();
       }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;
