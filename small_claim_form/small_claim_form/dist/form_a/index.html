@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Scanii</title>
     <!-- <title>European e-Justice Portal - Form A - Claim form</title> -->
-    <base href="/small_claim_form/dist/claim_a" />
+    <base href="/small_claim_form/dist/form_a" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <!-- <link rel="shortcut icon" type="image/x-icon" href="https://e-justice.europa.eu/assets/img/favicon.ico"> -->
@@ -206,12 +206,12 @@
     </style>
     <link
       rel="stylesheet"
-      href="/small_claim_form/dist/claim_a/styles.96fdaad0aa22e3a78638.css"
+      href="/small_claim_form/dist/form_a/styles.96fdaad0aa22e3a78638.css"
       media="print"
       onload="this.media='all'"
     />
     <noscript
-      ><link rel="stylesheet" href="/small_claim_form/dist/claim_a/styles.96fdaad0aa22e3a78638.css"
+      ><link rel="stylesheet" href="/small_claim_form/dist/form_a/styles.96fdaad0aa22e3a78638.css"
     /></noscript>
   </head>
   <body>
@@ -242,11 +242,11 @@
 
       async function main() {
         //sessionStorage.clear();
-        let modelRequest = await fetch("/small_claim_form/dist/claim_a/content/json/model.json");
+        let modelRequest = await fetch("/small_claim_form/dist/form_a/content/json/model.json");
         model = await modelRequest.json();
 
         let interactionRequest = await fetch(
-          "/small_claim_form/dist/claim_a/content/json/interaction_it.json"
+          "/small_claim_form/dist/form_a/content/json/interaction_it.json"
         );
         interaction = await interactionRequest.json();
 
@@ -662,9 +662,9 @@
       }
     </script>
     <app-main></app-main>
-    <script src="/small_claim_form/dist/claim_a/runtime.74f1c732e37d892f33db.js" defer></script>
-    <script src="/small_claim_form/dist/claim_a/polyfills.af17f83eafaf15683d3c.js" defer></script>
-    <script src="/small_claim_form/dist/claim_a/scripts.b7533cfe90dad08a8d96.js" defer></script>
-    <script src="/small_claim_form/dist/claim_a/main.eee2f1c4d06a9950568d.js" defer></script>
+    <script src="/small_claim_form/dist/form_a/runtime.74f1c732e37d892f33db.js" defer></script>
+    <script src="/small_claim_form/dist/form_a/polyfills.af17f83eafaf15683d3c.js" defer></script>
+    <script src="/small_claim_form/dist/form_a/scripts.b7533cfe90dad08a8d96.js" defer></script>
+    <script src="/small_claim_form/dist/form_a/main.eee2f1c4d06a9950568d.js" defer></script>
   </body>
 </html>

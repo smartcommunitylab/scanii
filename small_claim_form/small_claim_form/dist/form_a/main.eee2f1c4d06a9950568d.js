@@ -59393,7 +59393,7 @@ var _ke = Object.defineProperty,
           );
         })();
       class YEe {
-        constructor(n, e = "/small_claim_form/dist/claim_a/assets/i18n/", i = ".json") {
+        constructor(n, e = "/small_claim_form/dist/form_a/assets/i18n/", i = ".json") {
           (this.http = n), (this.prefix = e), (this.suffix = i);
         }
         getTranslation(n) {
@@ -60377,7 +60377,7 @@ var _ke = Object.defineProperty,
           );
         })();
       function dke(t) {
-        return new YEe(t, "./small_claim_form/dist/claim_a/assets/i18n/", ".json");
+        return new YEe(t, "./small_claim_form/dist/form_a/assets/i18n/", ".json");
       }
       (function () {
         if (Sy)
