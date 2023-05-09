@@ -1,0 +1,132 @@
+{
+  "model": "2.0",
+  "concepts": [
+    "http://scanii.org/domain"
+  ],
+  "simplification": "http://scanii.org/simplification/smallclaimform",
+  "blocks": [
+    {
+      "id": "step1",
+      "type": "BLOCK",
+      "xpath": "//*[@id='step1']",
+      "concept": "ONE_OR_MANY(http://scanii.org/domain/claimant)",
+      "dependencies": []
+    },
+    {
+      "id": "step2",
+      "type": "BLOCK",
+      "xpath": "//*[@id='step2']",
+      "concept": "ONE_OR_MANY(http://scanii.org/domain/defendant)",
+      "dependencies": [
+        "step1"
+      ]
+    },
+    {
+      "id": "step3",
+      "type": "BLOCK",
+      "xpath": "//*[@id='step3']",
+      "concept": "http://scanii.org/domain/jurisdiction",
+      "dependencies": [
+        "step2"
+      ]
+    },
+    {
+      "id": "step4",
+      "type": "BLOCK",
+      "xpath": "//*[@id='step4']",
+      "blocks": [
+        {
+          "id": "step4_1",
+          "type": "BLOCK",
+          "xpath": "//*[@id='step4_1']",
+          "concept": "http://scanii.org/domain/crossborderNature",
+          "dependencies": []
+        },
+        {
+          "id": "step4_2",
+          "type": "BLOCK",
+          "xpath": "//*[@id='step4_2']",
+          "concept": "http://scanii.org/domain/bankDetails",
+          "dependencies": [
+            "step4_1"
+          ]
+        }
+      ],
+      "dependencies": [
+        "step3"
+      ]
+    },
+    {
+      "id": "step5",
+      "type": "BLOCK",
+      "xpath": "//*[@id='step5']",
+      "concept": "http://scanii.org/domain/claim",
+      "dependencies": [
+        "step4"
+      ]
+    },
+    {
+      "id": "step6",
+      "type": "BLOCK",
+      "xpath": "//*[@id='step6']",
+      "concept": "http://scanii.org/domain/claimDetails",
+      "dependencies": [
+        "step5"
+      ]
+    },
+    {
+      "id": "step7",
+      "type": "BLOCK",
+      "xpath": "//*[@id='step7']",
+      "blocks": [
+        {
+          "id": "step7_1",
+          "type": "BLOCK",
+          "xpath": "//*[@id='step7_1']",
+          "concept": "http://scanii.org/domain/oralHearing",
+          "dependencies": []
+        },
+        {
+          "id": "step7_2",
+          "type": "BLOCK",
+          "xpath": "//*[@id='step7_2']",
+          "concept": "http://scanii.org/domain/documentAndCommunication",
+          "dependencies": [
+            "step7_1"
+          ]
+        },
+        {
+          "id": "step7_3",
+          "type": "BLOCK",
+          "xpath": "//*[@id='step7_3']",
+          "concept": "http://scanii.org/domain/certificate",
+          "dependencies": [
+            "step7_2"
+          ]
+        },
+        {
+          "id": "step7_4",
+          "type": "BLOCK",
+          "xpath": "//*[@id='step7_4']",
+          "concept": "http://scanii.org/domain/dateAndSignature",
+          "dependencies": [
+            "step7_3"
+          ]
+        }
+      ],
+      "dependencies": [
+        "step6"
+      ]
+    },
+    {
+      "id": "step8",
+      "type": "BLOCK",
+      "xpath": "//*[@id='step8']",
+      "concept": "http://scanii.org/domain/courtTribunal",
+      "dependencies": [
+        "step7"
+      ]
+    }
+  ],
+  "fields": []
+}
