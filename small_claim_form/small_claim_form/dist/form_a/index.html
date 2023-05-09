@@ -57,11 +57,11 @@
 
       async function main() {
         //sessionStorage.clear();
-        let modelRequest = await fetch("./content/json/model.json");
+        let modelRequest = await fetch("./small_claim_form/dist/form_a/content/json/model.json");
         model = await modelRequest.json();
 
         let interactionRequest = await fetch(
-          "./content/json/interaction_it.json"
+          "./small_claim_form/dist/form_a/content/json/interaction_it.json"
         );
         interaction = await interactionRequest.json();
 
