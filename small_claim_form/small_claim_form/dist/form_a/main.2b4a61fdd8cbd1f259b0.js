@@ -40460,7 +40460,7 @@ var Bke = Object.defineProperty,
           initDatepickers(e) {
             let i = e;
             ("en" === e || "mt" === e) && (i = "en-GB"),
-              ze(7094)(`./jquery.ui.datepicker-${i}`)
+              ze(7094)(`/small_claim_form/dist/form_a/jquery.ui.datepicker-${i}`)
                 .then((a) => {
                   a.default($);
                 })
@@ -43916,7 +43916,7 @@ var Bke = Object.defineProperty,
           initDatepicker(e) {
             let i = e;
             ("en" === e || "mt" === e) && (i = "en-GB"),
-              ze(7094)(`./jquery.ui.datepicker-${i}`)
+              ze(7094)(`/small_claim_form/dist/form_a/jquery.ui.datepicker-${i}`)
                 .then((a) => {
                   a.default($);
                 })
@@ -49874,7 +49874,7 @@ var Bke = Object.defineProperty,
           initDatepicker(e) {
             let i = e;
             ("en" === e || "mt" === e) && (i = "en-GB"),
-              ze(7094)(`./jquery.ui.datepicker-${i}`)
+              ze(7094)(`/small_claim_form/dist/form_a/jquery.ui.datepicker-${i}`)
                 .then((a) => {
                   a.default($);
                 })
