@@ -10,7 +10,42 @@
     "required": "Campo obbligatorio",
     "organisationSurnameFirstNameValidationError": "Occorre completare la casella \"Ragione sociale\" oppure le caselle \"Cognome\" e \"Nome\"",
     "jurisdictionValidationError": "Selezionare almeno una delle voci da 3.1 a 3.8",
-    "crossborderNatureValidationError": "Almeno due elenchi devono riferirsi a Stati diversi"
+    "crossborderNatureValidationError": "Almeno due elenchi devono riferirsi a Stati diversi",
+    "IBANValidationError": "Errore di convalida dell'IBAN. È necessario includere anche il codice paese (prime 2 lettere della sequenza)",
+    "amountValidationError": "Elemento non valido. Utilizzare il formato XXX.XXX,XX quando si indica un importo",
+    "dateValidationError": "La data finale è anteriore a quella iniziale. Riformula il criterio"
+  },
+  "menu": {
+    "title": "Modulo A - Modulo di domanda",
+    "home": "Pagina iniziale",
+    "takingLegalAction": "Ricorso alle vie legali",
+    "onlineForms": "Moduli online",
+    "smallClaimsForms": "Moduli relativi alle controversie di modesta entità",
+    "formA": "Modulo A - Modulo di domanda",
+    "completeVersion": "Versione completa",
+    "formSteps": "Fasi del modulo",
+    "step1": "Fase 1",
+    "step2": "Fase 2",
+    "step3": "Fase 3",
+    "step4": "Fase 4",
+    "step5": "Fase 5",
+    "step6": "Fase 6",
+    "step7": "Fase 7",
+    "step8": "Fase 8",
+    "usefulPDFs": "PDF utili",
+    "synonyms": "Sinonimi",
+    "loadSaveDraftExplanation": "È possibile salvare il modulo su cui si sta lavorando come bozza. Per completarlo basta caricare il modulo salvato in un secondo momento.",
+    "loadDraft": "Carica bozza",
+    "saveDraft": "Salva bozza"
+  },
+  "footer": {
+    "reportAProblem": "Segnala un problema tecnico o di contenuto o lascia un commento su questa pagina",
+    "cookies": "Cookies",
+    "legalNotice": "Avviso legale",
+    "privacyPolicy": "Politica in materia di privacy",
+    "brexitNotice": "Avvisi sulla Brexit",
+    "contact": "Contatti",
+    "sitemap": "Mappa del sito"
   },
   "europeanCountries": [
     { "value": "AT", "label": "Austria" },
