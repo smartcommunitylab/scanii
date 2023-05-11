@@ -1,0 +1,266 @@
+{
+  "form_a": {
+    "claimants": [
+      {
+        "claimant": {
+          "name": "string",
+          "surname": "string",
+          "identificationCode": "string",
+          "address": {
+            "street": "string",
+            "street_number": "string",
+            "post_code": "string",
+            "city": "string",
+            "country": "string"
+          },
+          "contacts": {
+            "phone_number": "string",
+            "email": "string"
+          }
+        },
+        "representative": {
+          "name": "string",
+          "surname": "string",
+          "identificationCode": "string",
+          "address": {
+            "street": "string",
+            "street_number": "string",
+            "post_code": "string",
+            "city": "string",
+            "country": "string"
+          },
+          "contacts": {
+            "phone_number": "string",
+            "email": "string"
+          }
+        },
+        "otherDetails": "string"
+      },
+      {
+        "claimant": {
+          "name": "string",
+          "identificationCode": "string",
+          "address": {
+            "street": "string",
+            "street_number": "string",
+            "post_code": "string",
+            "city": "string",
+            "country": "string"
+          },
+          "contacts": {
+            "phone_number": "string",
+            "email": "string"
+          }
+        },
+        "representative": {
+          "name": "string",
+          "identificationCode": "string",
+          "address": {
+            "street": "string",
+            "street_number": "string",
+            "post_code": "string",
+            "city": "string",
+            "country": "string"
+          },
+          "contacts": {
+            "phone_number": "string",
+            "email": "string"
+          }
+        },
+        "otherDetails": "string"
+      }
+    ],
+    "defendants": [
+      {
+        "defendant": {
+          "name": "string",
+          "surname": "string",
+          "identificationCode": "string",
+          "address": {
+            "street": "string",
+            "street_number": "string",
+            "post_code": "string",
+            "city": "string",
+            "country": "string"
+          },
+          "contacts": {
+            "phone_number": "string",
+            "email": "string"
+          }
+        },
+        "representative": {
+          "name": "string",
+          "surname": "string",
+          "identificationCode": "string",
+          "address": {
+            "street": "string",
+            "post_code": "string",
+            "city": "string",
+            "country": "string"
+          },
+          "contacts": {
+            "phone_number": "string",
+            "email": "string"
+          }
+        },
+        "otherDetails": "string"
+      },
+      {
+        "defendant": {
+          "name": "string",
+          "identificationCode": "string",
+          "address": {
+            "street": "string",
+            "street_number": "string",
+            "post_code": "string",
+            "city": "string",
+            "country": "string"
+          },
+          "contacts": {
+            "phone_number": "string",
+            "email": "string"
+          }
+        },
+        "representative": {
+          "name": "string",
+          "identificationCode": "string",
+          "address": {
+            "street": "string",
+            "street_number": "string",
+            "post_code": "string",
+            "city": "string",
+            "country": "string"
+          },
+          "contacts": {
+            "phone_number": "string",
+            "email": "string"
+          }
+        },
+        "otherDetails": "string"
+      }
+    ],
+    "jurisdiction": {
+      "defendantDomicile": "boolean",
+      "customerDomicile": "boolean",
+      "policyholderDomicilie": "boolean",
+      "placePerformanceObbligation": "boolean",
+      "placeHarmfulEvent": "boolean",
+      "placeImmovableProperty": "boolean",
+      "choiceCourtTribunal": "boolean",
+      "other": {
+        "isChecked": "boolean",
+        "note": "string"
+      }
+    },
+    "crossborderNature": {
+      "claimantCountry": "string",
+      "defendantCountry": "string",
+      "courtCountry": "string"
+    },
+    "bankDetails": {
+      "applicationFeePayment": {
+        "paymentMethod": "string",
+        "creditCard": {
+          "cardHolder": "string",
+          "cardCompany": "string",
+          "cardNumber": "string",
+          "cardExpireDate": "string",
+          "cardSecurityNumber": "string"
+        }
+      },
+      "claimantBankAccount": {
+        "accountHolder": "string",
+        "bicOrBankName": "string",
+        "accountNumberOrIBAN": "string"
+      }
+    },
+    "claim": {
+      "claimForMoney": {
+        "isYes": "boolean",
+        "principalAmount": "float",
+        "currency": "string"
+      },
+      "otherClaim": {
+        "isYes": "boolean",
+        "description": "string",
+        "value": "float",
+        "currency": "string"
+      },
+      "claimingCostProceedings": {
+        "isYes": "boolean",
+        "costDetails": "string"
+      },
+      "claimingInterest": {
+        "isYes": "boolean",
+        "interestType": "string",
+        "contractualInterest": {
+          "interestPercentage": "float",
+          "percentagePointsAboveECB": "float",
+          "other": "string",
+          "fromDate": "Date",
+          "to": {
+            "toOption": "string",
+            "toDate": "Date"
+          }
+        }
+      },
+      "claimingInterestOnCost": {
+        "isYes": "boolean",
+        "from": {
+          "fromOption": "string",
+          "fromDate": "Date"
+        },
+        "to": {
+          "toOption": "string",
+          "toDate": "Date"
+        }
+      }
+    },
+    "claimDetails": {
+      "detailsOfClaim": "string",
+      "writtenEvidence": {
+        "isYes": "boolean",
+        "note": "string"
+      },
+      "witnesses": {
+        "isYes": "boolean",
+        "note": "string"
+      },
+      "otherClaimDetails": {
+        "isYes": "boolean",
+        "note": "string"
+      }
+    },
+    "oralHearing": {
+      "oralHearingRequest": {
+        "isYes": "boolean",
+        "reasons": "string"
+      },
+      "oralHearingPresence": {
+        "isYes": "boolean",
+        "reasons": "string"
+      }
+    },
+    "documentAndCommunication": {
+      "electronicCommunicationWithCourtTribunal": "boolean",
+      "electronicCommunicationOther": "boolean"
+    },
+    "certificate": {
+      "certificateRequest": "boolean",
+      "language": "string"
+    },
+    "dateAndSignature": {
+      "city": "string",
+      "date": "Date",
+      "sign": "string"
+    },
+    "court": {
+        "country": "string",
+        "name": "string",
+        "street": "string",
+        "street_number": "string",
+        "post_code": "string",
+        "city": "string"
+    }
+  }
+}

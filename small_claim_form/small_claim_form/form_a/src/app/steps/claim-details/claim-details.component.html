@@ -1,0 +1,816 @@
+<div id="step6">
+  <h3 [translate]="'claimDetails.title'">6. Dettagli della controversia</h3>
+  <div concept="http://scanii.org/domain/claimDetails"></div>
+  <div class="form-row full-width">
+    <div class="description">
+      <form role="form" [formGroup]="claimDetailsService.editForm">
+        <div class="form-row full-width bold">
+          <span class="marginleft20px">
+            <div class="form-row full-width bold">
+              <div>
+                <label for="dynformSCA7ReasonsForYourClaim">
+                  <span [translate]="'claimDetails.detailsOfClaim'">
+                    6.1. Please give reasons for your claim, for example what
+                    happened, where and when.</span
+                  >
+
+                  <span
+                    class="asterisk"
+                    id="requiredStar_required_dynformSCA7ReasonsForYourClaim"
+                    >*</span
+                  >
+                </label>
+
+                <div
+                  class="input-wrapper regular"
+                  id="input-wrapper_dynformSCA7ReasonsForYourClaim"
+                  [ngClass]="{
+                    invalid:
+                      claimDetailsService.editForm.get('detailsOfClaim')!
+                        .invalid &&
+                      claimDetailsService.editForm.get('detailsOfClaim')!.dirty
+                  }"
+                >
+                  <div class="input-content nopaddingTop">
+                    <textarea
+                      onpaste="setOnPaste()"
+                      name="dynformSCA7ReasonsForYourClaim"
+                      cols="10"
+                      rows="7"
+                      class="df_textarea df_textboxsafarionly df_mandatory"
+                      id="dynformSCA7ReasonsForYourClaim"
+                      data-title=""
+                      formControlName="detailsOfClaim"
+                    ></textarea>
+                  </div>
+                </div>
+                <div
+                  *ngIf="
+                    claimDetailsService.editForm.get('detailsOfClaim')!
+                      .invalid &&
+                    claimDetailsService.editForm.get('detailsOfClaim')!.dirty
+                  "
+                >
+                  <div
+                    *ngIf="
+                      claimDetailsService.editForm.get('detailsOfClaim')?.errors
+                        ?.required
+                    "
+                  >
+                    <span
+                      id="validation_error_text_dynformSCA7ReasonsForYourClaim"
+                      class="error"
+                      style="position: relative; top: 0px"
+                      [translate]="'errors.required'"
+                    >
+                      Field is required
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row full-width bold">
+              <div>
+                <label style="margin-bottom: 0px">
+                  <span [translate]="'claimDetails.evidenceDescription'">
+                    6.2. Please describe the evidence you wish to put forward to
+                    support your claim and state which points of the claim it
+                    supports. Where appropriate, you should add relevant
+                    supporting documents.</span
+                  >
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <legend class="hidden">&nbsp;</legend>
+              <div class="radioButtons1">
+                <span class="marginleft40px">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label style="margin-bottom: 0px">
+                        <span [translate]="'claimDetails.writtenEvidence'">
+                          6.2.1. Written evidence</span
+                        >
+
+                        <span class="asterisk">*</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <div
+                        class="radio-wrapper"
+                        id="input-wrapper_dynformSCA7WrittenEvidence"
+                      >
+                        <input
+                          type="radio"
+                          name="writtenEvidence"
+                          value="yes"
+                          class="df_input"
+                          id="dynformSCA7WrittenEvidence_Yes"
+                          data-title=""
+                          (change)="
+                            onClaimDetailsRadioButtonChange(
+                              $event,
+                              'dynformSCA7WrittenEvidence_div'
+                            )
+                          "
+                          formControlName="writtenEvidence"
+                        />
+
+                        <label for="dynformSCA7WrittenEvidence_Yes">
+                          <span [translate]="'claimDetails.yes'"> Yes</span>
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformSCA7WrittenEvidence"
+                          ></span>
+                        </label>
+
+                        <!-- <label>
+
+<div class="asterisk"  id="requiredStar_blank_dynformSCA7WrittenEvidence"></div>
+
+</label> -->
+                      </div>
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('writtenEvidence')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('writtenEvidence')!
+                            .dirty
+                        "
+                      >
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get('writtenEvidence')
+                              ?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7WrittenEvidence"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <div
+                        class="radio-wrapper"
+                        id="input-wrapper_dynformSCA7WrittenEvidence"
+                      >
+                        <input
+                          type="radio"
+                          name="writtenEvidence"
+                          value="no"
+                          class="df_input"
+                          id="dynformSCA7WrittenEvidence_No"
+                          data-title=""
+                          (change)="
+                            onClaimDetailsRadioButtonChange(
+                              $event,
+                              'dynformSCA7WrittenEvidence_div'
+                            )
+                          "
+                          formControlName="writtenEvidence"
+                        />
+
+                        <label for="dynformSCA7WrittenEvidence_No">
+                          <span [translate]="'claimDetails.no'">No</span>
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformSCA7WrittenEvidence"
+                          ></span>
+                        </label>
+
+                        <!-- <label>
+
+<div class="asterisk"  id="requiredStar_blank_dynformSCA7WrittenEvidence"></div>
+
+</label> -->
+                      </div>
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('writtenEvidence')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('writtenEvidence')!
+                            .dirty
+                        "
+                      >
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get('writtenEvidence')
+                              ?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7WrittenEvidence"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </div>
+
+              <!-- THE BLOCK OF THE SUBFIELDS -->
+              <div id="dynformSCA7WrittenEvidence_div" class="df_collapsed">
+                <div>
+                  <span class="marginleft40px">
+                    <div class="form-row full-width bold">
+                      <div>
+                        <label for="dynformSCA7WrittenEvidencePleaseSpecify">
+                          <span [translate]="'claimDetails.specify'"
+                            >Please specify</span
+                          >
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_required_dynformSCA7WrittenEvidencePleaseSpecify"
+                            >*</span
+                          >
+                        </label>
+
+                        <div
+                          class="input-wrapper regular"
+                          id="input-wrapper_dynformSCA7WrittenEvidencePleaseSpecify"
+                          [ngClass]="{
+                            invalid:
+                              claimDetailsService.editForm.get(
+                                'writtenEvidenceText'
+                              )!.invalid &&
+                              claimDetailsService.editForm.get(
+                                'writtenEvidenceText'
+                              )!.dirty
+                          }"
+                        >
+                          <div class="input-content nopaddingTop">
+                            <textarea
+                              onpaste="setOnPaste()"
+                              name="dynformSCA7WrittenEvidencePleaseSpecify"
+                              cols="10"
+                              rows="7"
+                              class="df_textarea df_textboxsafarionly df_mandatory"
+                              id="dynformSCA7WrittenEvidencePleaseSpecify"
+                              data-title=""
+                              formControlName="writtenEvidenceText"
+                            ></textarea>
+                          </div>
+                        </div>
+
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get(
+                              'writtenEvidenceText'
+                            )!.invalid &&
+                            claimDetailsService.editForm.get(
+                              'writtenEvidenceText'
+                            )!.dirty
+                          "
+                        >
+                          <div
+                            *ngIf="
+                              claimDetailsService.editForm.get(
+                                'writtenEvidenceText'
+                              )?.errors?.required
+                            "
+                          >
+                            <span
+                              id="validation_error_text_dynformSCA7WrittenEvidencePleaseSpecify"
+                              class="error"
+                              style="position: relative; top: 0px"
+                              [translate]="'errors.required'"
+                            >
+                              This field is required
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+
+              <legend class="hidden">&nbsp;</legend>
+              <div class="radioButtons2">
+                <span class="marginleft40px">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label style="margin-bottom: 0px">
+                        <span [translate]="'claimDetails.witnesses'"
+                          >6.2.2. Witnesses</span
+                        >
+
+                        <span class="asterisk">*</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <div
+                        class="radio-wrapper"
+                        id="input-wrapper_dynformSCA7Witnesses"
+                      >
+                        <input
+                          type="radio"
+                          name="witnesses"
+                          value="yes"
+                          class="df_input"
+                          id="dynformSCA7Witnesses_Yes"
+                          data-title=""
+                          (change)="
+                            onClaimDetailsRadioButtonChange(
+                              $event,
+                              'dynformSCA7Witnesses_div'
+                            )
+                          "
+                          formControlName="witnesses"
+                        />
+
+                        <label for="dynformSCA7Witnesses_Yes">
+                          <span [translate]="'claimDetails.yes'">Yes</span>
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformSCA7Witnesses"
+                          ></span>
+                        </label>
+
+                        <!-- <label>
+
+<div class="asterisk"  id="requiredStar_blank_dynformSCA7Witnesses"></div>
+
+</label> -->
+                      </div>
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('witnesses')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('witnesses')!.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get('witnesses')
+                              ?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7Witnesses"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <div
+                        class="radio-wrapper"
+                        id="input-wrapper_dynformSCA7Witnesses"
+                      >
+                        <input
+                          type="radio"
+                          name="witnesses"
+                          value="no"
+                          class="df_input"
+                          id="dynformSCA7Witnesses_No"
+                          data-title=""
+                          (change)="
+                            onClaimDetailsRadioButtonChange(
+                              $event,
+                              'dynformSCA7Witnesses_div'
+                            )
+                          "
+                          formControlName="witnesses"
+                        />
+
+                        <label for="dynformSCA7Witnesses_No">
+                          <span [translate]="'claimDetails.no'">No</span>
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformSCA7Witnesses"
+                          ></span>
+                        </label>
+
+                        <!-- <label>
+
+<div class="asterisk"  id="requiredStar_blank_dynformSCA7Witnesses"></div>
+
+</label> -->
+                      </div>
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('witnesses')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('witnesses')!.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get('witnesses')
+                              ?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7Witnesses"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </div>
+
+              <!-- THE BLOCK OF THE SUBFIELDS -->
+              <div id="dynformSCA7Witnesses_div" class="df_collapsed">
+                <div>
+                  <span class="marginleft40px">
+                    <div class="form-row full-width bold">
+                      <div>
+                        <label for="dynformSCA7WitnessesPleaseSpecify">
+                          <span [translate]="'claimDetails.specify'"
+                            >Please specify</span
+                          >
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_required_dynformSCA7WitnessesPleaseSpecify"
+                            >*</span
+                          >
+                        </label>
+
+                        <div
+                          class="input-wrapper regular"
+                          id="input-wrapper_dynformSCA7WitnessesPleaseSpecify"
+                          [ngClass]="{
+                            invalid:
+                              claimDetailsService.editForm.get('witnessesText')!
+                                .invalid &&
+                              claimDetailsService.editForm.get('witnessesText')!
+                                .dirty
+                          }"
+                        >
+                          <div class="input-content nopaddingTop">
+                            <textarea
+                              onpaste="setOnPaste()"
+                              name="dynformSCA7WitnessesPleaseSpecify"
+                              cols="10"
+                              rows="7"
+                              class="df_textarea df_textboxsafarionly df_mandatory"
+                              id="dynformSCA7WitnessesPleaseSpecify"
+                              data-title=""
+                              formControlName="witnessesText"
+                            ></textarea>
+                          </div>
+                        </div>
+
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get('witnessesText')!
+                              .invalid &&
+                            claimDetailsService.editForm.get('witnessesText')!
+                              .dirty
+                          "
+                        >
+                          <div
+                            *ngIf="
+                              claimDetailsService.editForm.get('witnessesText')
+                                ?.errors?.required
+                            "
+                          >
+                            <span
+                              id="validation_error_text_dynformSCA7WitnessesPleaseSpecify"
+                              class="error"
+                              style="position: relative; top: 0px"
+                              [translate]="'errors.required'"
+                            >
+                              Field is required
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+
+              <legend class="hidden">&nbsp;</legend>
+              <div class="radioButtons3">
+                <span class="marginleft40px">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label style="margin-bottom: 0px">
+                        <span [translate]="'claimDetails.otherClaimDetails'"
+                          >6.2.3. Other</span
+                        >
+
+                        <span class="asterisk">*</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <div
+                        class="radio-wrapper"
+                        id="input-wrapper_dynformSCA7Other"
+                      >
+                        <input
+                          type="radio"
+                          name="otherClaimDetails"
+                          value="yes"
+                          class="df_input"
+                          id="dynformSCA7Other_Yes"
+                          data-title=""
+                          (change)="
+                            onClaimDetailsRadioButtonChange(
+                              $event,
+                              'dynformSCA7Other_div'
+                            )
+                          "
+                          formControlName="otherClaimDetails"
+                        />
+
+                        <label for="dynformSCA7Other_Yes">
+                          <span [translate]="'claimDetails.yes'">Yes</span>
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformSCA7Other"
+                          ></span>
+                        </label>
+
+                        <!-- <label>
+
+<div class="asterisk"  id="requiredStar_blank_dynformSCA7Other"></div>
+
+</label> -->
+                      </div>
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('otherClaimDetails')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('otherClaimDetails')!
+                            .dirty
+                        "
+                      >
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get(
+                              'otherClaimDetails'
+                            )?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7Other"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <div
+                        class="radio-wrapper"
+                        id="input-wrapper_dynformSCA7Other"
+                      >
+                        <input
+                          type="radio"
+                          name="otherClaimDetails"
+                          value="no"
+                          class="df_input"
+                          id="dynformSCA7Other_No"
+                          data-title=""
+                          (change)="
+                            onClaimDetailsRadioButtonChange(
+                              $event,
+                              'dynformSCA7Other_div'
+                            )
+                          "
+                          formControlName="otherClaimDetails"
+                        />
+
+                        <label for="dynformSCA7Other_No">
+                          <span [translate]="'claimDetails.no'">No</span>
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformSCA7Other"
+                          ></span>
+                        </label>
+
+                        <!-- <label>
+
+<div class="asterisk"  id="requiredStar_blank_dynformSCA7Other"></div>
+
+</label> -->
+                      </div>
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('otherClaimDetails')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('otherClaimDetails')!
+                            .dirty
+                        "
+                      >
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get(
+                              'otherClaimDetails'
+                            )?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7Other"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </div>
+
+              <!-- THE BLOCK OF THE SUBFIELDS -->
+              <div id="dynformSCA7Other_div" class="df_collapsed">
+                <div>
+                  <span class="marginleft40px">
+                    <div class="form-row full-width bold">
+                      <div>
+                        <label for="dynformSCA7OtherPleaseSpecify">
+                          <span [translate]="'claimDetails.specify'"
+                            >Please specify</span
+                          >
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_required_dynformSCA7OtherPleaseSpecify"
+                            >*</span
+                          >
+                        </label>
+
+                        <div
+                          class="input-wrapper regular"
+                          id="input-wrapper_dynformSCA7OtherPleaseSpecify"
+                          [ngClass]="{
+                            invalid:
+                              claimDetailsService.editForm.get(
+                                'otherClaimDetailsText'
+                              )!.invalid &&
+                              claimDetailsService.editForm.get(
+                                'otherClaimDetailsText'
+                              )!.dirty
+                          }"
+                        >
+                          <div class="input-content nopaddingTop">
+                            <textarea
+                              onpaste="setOnPaste()"
+                              name="dynformSCA7OtherPleaseSpecify"
+                              cols="10"
+                              rows="7"
+                              class="df_textarea df_textboxsafarionly df_mandatory"
+                              id="dynformSCA7OtherPleaseSpecify"
+                              data-title=""
+                              formControlName="otherClaimDetailsText"
+                            ></textarea>
+                          </div>
+                        </div>
+
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get(
+                              'otherClaimDetailsText'
+                            )!.invalid &&
+                            claimDetailsService.editForm.get(
+                              'otherClaimDetailsText'
+                            )!.dirty
+                          "
+                        >
+                          <div
+                            *ngIf="
+                              claimDetailsService.editForm.get(
+                                'otherClaimDetailsText'
+                              )?.errors?.required
+                            "
+                          >
+                            <span
+                              id="validation_error_text_dynformSCA7OtherPleaseSpecify"
+                              class="error"
+                              style="position: relative; top: 0px"
+                              [translate]="'errors.required'"
+                            >
+                              Field is required
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="buttons">
+  <!-- <div style="">
+      <input
+        type="hidden"
+        id="download_token_value_id"
+        name="download_token_value_id"
+        value="4docs"
+        data-title=""
+      />
+      <div class="actionbuttons-left">
+        <span class="ieborder resetFormButton"
+          ><input
+            type="submit"
+            class="button big outline pull-left"
+            name="submitNavigation6"
+            value="Reset form"
+            onclick="if (!submitResetFormFun()) return false;"
+            data-title=""
+        /></span>
+      </div>
+  
+      <div class="actionbuttons-right"></div>
+    </div> -->
+
+  <!--<br><br><br><br>-->
+  <!-- the second div layer of buttons is added when the current page is not the first page -->
+
+  <div
+    style="
+      margin-top: 10px;
+      margin-bottom: 60px;
+      display: inline-block;
+      width: 100%;
+    "
+  >
+    <!-- the back button is added always on the left of the 2nd div layer -->
+    <span class="ieborder backPageButton"
+      ><input
+        type="submit"
+        class="button big outline pull-left"
+        name="submitNavigation2"
+        value="<    {{ 'buttons.back' | translate }}"
+        data-title=""
+        (click)="changeStep('back', 'step5')"
+    /></span>
+    <!-- end of back button -->
+    <div style="float: right; width: 40%">
+      <span class="ieborder nextPageButton"
+        ><input
+          type="submit"
+          class="button big dark pull-right"
+          name="submitNavigation1"
+          value="{{ 'buttons.next' | translate }}    >"
+          data-title=""
+          (click)="changeStep('next', 'step7')"
+      /></span>
+    </div>
+  </div>
+  <!-- end of the second div layer of buttons -->
+</div>
