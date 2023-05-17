@@ -79,6 +79,35 @@
                             </div>
                           </div>
                           <span class="marginleft20px">
+                            <div
+                              class="pb-3"
+                              style="margin-left: 20px"
+                              *ngIf="
+                                claimantService.claimants
+                                  .at(i)
+                                  .get('organisation')!.invalid &&
+                                claimantService.claimants
+                                  .at(i)
+                                  .get('organisation')!.dirty
+                              "
+                            >
+                              <span
+                                [attr.id]="
+                                  'validation_error_text_parties[' +
+                                  i +
+                                  '].dynformSCA2ClaimantOrganisationSurnameFirstName'
+                                "
+                                class="error"
+                                style="position: relative; top: 0px"
+                                [translate]="
+                                  'errors.organisationSurnameFirstNameValidationError'
+                                "
+                                >Either "Corporate name of company or
+                                organisation" field must be completed or
+                                "Surname" and "First name" fields must be
+                                completed.</span
+                              >
+                            </div>
                             <div class="form-row full-width bold">
                               <label
                                 [attr.for]="
@@ -98,6 +127,7 @@
                                   "
                                 ></span>
                               </label>
+
                               <div
                                 class="input-wrapper regular"
                                 [attr.id]="
@@ -138,33 +168,6 @@
                                     "
                                   />
                                 </div>
-                              </div>
-                              <div
-                                *ngIf="
-                                  claimantService.claimants
-                                    .at(i)
-                                    .get('organisation')!.invalid &&
-                                  claimantService.claimants
-                                    .at(i)
-                                    .get('organisation')!.dirty
-                                "
-                              >
-                                <span
-                                  [attr.id]="
-                                    'validation_error_text_parties[' +
-                                    i +
-                                    '].dynformSCA2ClaimantName'
-                                  "
-                                  class="error"
-                                  style="position: relative; top: 0px"
-                                  [translate]="
-                                    'errors.organisationSurnameFirstNameValidationError'
-                                  "
-                                  >Either "Corporate name of company or
-                                  organisation" field must be completed or
-                                  "Surname" and "First name" fields must be
-                                  completed.</span
-                                >
                               </div>
                             </div>
                             <div class="form-row full-width bold">
@@ -229,33 +232,6 @@
                                       "
                                     />
                                   </div>
-                                </div>
-                                <div
-                                  *ngIf="
-                                    claimantService.claimants
-                                      .at(i)
-                                      .get('surname')!.invalid &&
-                                    claimantService.claimants
-                                      .at(i)
-                                      .get('surname')!.dirty
-                                  "
-                                >
-                                  <span
-                                    [attr.id]="
-                                      'validation_error_text_parties[' +
-                                      i +
-                                      '].dynformSCA2ClaimantSurname'
-                                    "
-                                    class="error"
-                                    style="position: relative; top: 0px"
-                                    [translate]="
-                                      'errors.organisationSurnameFirstNameValidationError'
-                                    "
-                                    >Either "Corporate name of company or
-                                    organisation" field must be completed or
-                                    "Surname" and "First name" fields must be
-                                    completed.
-                                  </span>
                                 </div>
                               </div>
                             </div>
@@ -324,33 +300,6 @@
                                     />
                                   </div>
                                 </div>
-                                <div
-                                  *ngIf="
-                                    claimantService.claimants
-                                      .at(i)
-                                      .get('firstName')!.invalid &&
-                                    claimantService.claimants
-                                      .at(i)
-                                      .get('firstName')!.dirty
-                                  "
-                                >
-                                  <span
-                                    [attr.id]="
-                                      'validation_error_text_parties[' +
-                                      i +
-                                      '].dynformSCA2ClaimantFirstname'
-                                    "
-                                    class="error"
-                                    style="position: relative; top: 0px"
-                                    [translate]="
-                                      'errors.organisationSurnameFirstNameValidationError'
-                                    "
-                                    >Either "Corporate name of company or
-                                    organisation" field must be completed or
-                                    "Surname" and "First name" fields must be
-                                    completed.
-                                  </span>
-                                </div>
                               </div>
                             </div>
                             <div class="form-row full-width bold">
@@ -380,7 +329,7 @@
                                 </label>
                                 <!-- <div class="info show-mobile">
                                   <div class="icon">
-                                    <div class="hover">
+                                    <div class="hover" [translate]="'claimant.identificationCodeInfo'">
                                       If you have a personal identification
                                       number given by the authorities of a
                                       Member State it would be helpful to
@@ -404,7 +353,12 @@
                                 >
                                   <div class="info hide-mobile">
                                     <div class="icon" tabindex="0">
-                                      <div class="hover">
+                                      <div
+                                        class="hover"
+                                        [translate]="
+                                          'claimant.identificationCodeInfo'
+                                        "
+                                      >
                                         If you have a personal identification
                                         number given by the authorities of a
                                         Member State it would be helpful to
@@ -2118,9 +2072,9 @@
                                   ></span>
                                 </label>
 
-                                <div class="info show-mobile">
+                                <!-- <div class="info show-mobile">
                                   <div class="icon">
-                                    <div class="hover">
+                                    <div class="hover" [translate]="'claimant.identificationCodeInfo'">
                                       If you have a personal identification
                                       number given by the authorities of a
                                       Member State it would be helpful to
@@ -2133,7 +2087,7 @@
                                       to provide a relevant registration number.
                                     </div>
                                   </div>
-                                </div>
+                                </div> -->
                                 <div
                                   class="input-wrapper regular hasinfo"
                                   [attr.id]="
@@ -2144,7 +2098,12 @@
                                 >
                                   <div class="info hide-mobile">
                                     <div class="icon" tabindex="0">
-                                      <div class="hover">
+                                      <div
+                                        class="hover"
+                                        [translate]="
+                                          'claimant.identificationCodeInfo'
+                                        "
+                                      >
                                         If you have a personal identification
                                         number given by the authorities of a
                                         Member State it would be helpful to

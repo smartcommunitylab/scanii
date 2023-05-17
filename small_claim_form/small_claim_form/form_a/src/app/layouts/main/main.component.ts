@@ -8,7 +8,7 @@ import { IFRAME_URL, ORIGIN_URL } from 'src/app/app.constants';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
-  language: string = 'en';
+  language: string = 'it';
 
   constructor(
     private translateService: TranslateService

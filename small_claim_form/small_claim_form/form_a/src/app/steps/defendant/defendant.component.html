@@ -76,6 +76,35 @@
                             </div>
                           </div>
                           <span class="marginleft20px">
+                            <div
+                              class="pb-3"
+                              style="margin-left: 20px"
+                              *ngIf="
+                                defendantService.defendants
+                                  .at(i)
+                                  .get('organisation')!.invalid &&
+                                defendantService.defendants
+                                  .at(i)
+                                  .get('organisation')!.dirty
+                              "
+                            >
+                              <span
+                                [attr.id]="
+                                  'validation_error_text_parties[' +
+                                  i +
+                                  '].dynformSCA2DefendantOrganisationSurnameFirstName'
+                                "
+                                class="error"
+                                style="position: relative; top: 0px"
+                                [translate]="
+                                  'errors.organisationSurnameFirstNameValidationError'
+                                "
+                                >Either "Corporate name of company or
+                                organisation" field must be completed or
+                                "Surname" and "First name" fields must be
+                                completed.</span
+                              >
+                            </div>
                             <div class="form-row full-width bold">
                               <label
                                 [attr.for]="
@@ -135,33 +164,6 @@
                                     "
                                   />
                                 </div>
-                              </div>
-                              <div
-                                *ngIf="
-                                  defendantService.defendants
-                                    .at(i)
-                                    .get('organisation')!.invalid &&
-                                  defendantService.defendants
-                                    .at(i)
-                                    .get('organisation')!.dirty
-                                "
-                              >
-                                <span
-                                  [attr.id]="
-                                    'validation_error_text_parties[' +
-                                    i +
-                                    '].dynformSCA2DefendantName'
-                                  "
-                                  class="error"
-                                  style="position: relative; top: 0px"
-                                  [translate]="
-                                    'errors.organisationSurnameFirstNameValidationError'
-                                  "
-                                  >Either "Corporate name of company or
-                                  organisation" field must be completed or
-                                  "Surname" and "First name" fields must be
-                                  completed.</span
-                                >
                               </div>
                             </div>
                             <div class="form-row full-width bold">
@@ -226,33 +228,6 @@
                                       "
                                     />
                                   </div>
-                                </div>
-                                <div
-                                  *ngIf="
-                                    defendantService.defendants
-                                      .at(i)
-                                      .get('surname')!.invalid &&
-                                    defendantService.defendants
-                                      .at(i)
-                                      .get('surname')!.dirty
-                                  "
-                                >
-                                  <span
-                                    [attr.id]="
-                                      'validation_error_text_parties[' +
-                                      i +
-                                      '].dynformSCA2DefendantSurname'
-                                    "
-                                    class="error"
-                                    style="position: relative; top: 0px"
-                                    [translate]="
-                                      'errors.organisationSurnameFirstNameValidationError'
-                                    "
-                                    >Either "Corporate name of company or
-                                    organisation" field must be completed or
-                                    "Surname" and "First name" fields must be
-                                    completed.
-                                  </span>
                                 </div>
                               </div>
                             </div>
@@ -321,33 +296,6 @@
                                     />
                                   </div>
                                 </div>
-                                <div
-                                  *ngIf="
-                                    defendantService.defendants
-                                      .at(i)
-                                      .get('firstName')!.invalid &&
-                                    defendantService.defendants
-                                      .at(i)
-                                      .get('firstName')!.dirty
-                                  "
-                                >
-                                  <span
-                                    [attr.id]="
-                                      'validation_error_text_parties[' +
-                                      i +
-                                      '].dynformSCA2DefendantFirstname'
-                                    "
-                                    class="error"
-                                    style="position: relative; top: 0px"
-                                    [translate]="
-                                      'errors.organisationSurnameFirstNameValidationError'
-                                    "
-                                    >Either "Corporate name of company or
-                                    organisation" field must be completed or
-                                    "Surname" and "First name" fields must be
-                                    completed.
-                                  </span>
-                                </div>
                               </div>
                             </div>
                             <div class="form-row full-width bold">
@@ -378,7 +326,7 @@
 
                                 <!-- <div class="info show-mobile">
                                   <div class="icon">
-                                    <div class="hover">
+                                    <div class="hover" [translate]="'defendant.identificationCodeInfo'">
                                       If you know a personal identification
                                       number given to a defendant by authorities
                                       of a Member State it would be helpful to
@@ -403,7 +351,12 @@
                                 >
                                   <div class="info hide-mobile">
                                     <div class="icon" tabindex="0">
-                                      <div class="hover">
+                                      <div
+                                        class="hover"
+                                        [translate]="
+                                          'defendant.identificationCodeInfo'
+                                        "
+                                      >
                                         If you know a personal identification
                                         number given to a defendant by
                                         authorities of a Member State it would
@@ -2125,22 +2078,24 @@
                                   ></span>
                                 </label>
 
-                                <div class="info show-mobile">
+                                <!-- <div class="info show-mobile">
                                   <div class="icon">
-                                    <div class="hover">
-                                      If you have a personal identification
-                                      number given by the authorities of a
-                                      Member State it would be helpful to
-                                      provide it. If you don't have such number,
-                                      it would be helpful to provide the number
-                                      of your passport or identification
-                                      document, if you have them. If you act on
-                                      behalf of a legal person or any entity
-                                      having legal capacity, it would be helpful
-                                      to provide a relevant registration number.
+                                    <div class="hover" [translate]="'defendant.identificationCodeInfo'">
+                                      If you know a personal identification
+                                        number given to a defendant by
+                                        authorities of a Member State it would
+                                        be helpful to provide it. Alternatively
+                                        or additionally it would be helpful to
+                                        provide a number of the defendant's
+                                        passport or identification document, if
+                                        you have them. If the defendant is a
+                                        legal person or any entity having legal
+                                        capacity, it would be helpful to provide
+                                        a relevant registration number for the
+                                        defendant if you know it.
                                     </div>
                                   </div>
-                                </div>
+                                </div> -->
                                 <div
                                   class="input-wrapper regular hasinfo"
                                   [attr.id]="
@@ -2150,19 +2105,31 @@
                                   "
                                 >
                                   <div class="info hide-mobile">
-                                    <div class="icon" tabindex="0">
-                                      <div class="hover">
-                                        If you have a personal identification
-                                        number given by the authorities of a
-                                        Member State it would be helpful to
-                                        provide it. If you don't have such
-                                        number, it would be helpful to provide
-                                        the number of your passport or
-                                        identification document, if you have
-                                        them. If you act on behalf of a legal
-                                        person or any entity having legal
+                                    <div
+                                      class="icon"
+                                      tabindex="0"
+                                      [translate]="
+                                        'defendant.identificationCodeInfo'
+                                      "
+                                    >
+                                      <div
+                                        class="hover"
+                                        [translate]="
+                                          'defendant.identificationCodeInfo'
+                                        "
+                                      >
+                                        If you know a personal identification
+                                        number given to a defendant by
+                                        authorities of a Member State it would
+                                        be helpful to provide it. Alternatively
+                                        or additionally it would be helpful to
+                                        provide a number of the defendant's
+                                        passport or identification document, if
+                                        you have them. If the defendant is a
+                                        legal person or any entity having legal
                                         capacity, it would be helpful to provide
-                                        a relevant registration number.
+                                        a relevant registration number for the
+                                        defendant if you know it.
                                       </div>
                                     </div>
                                   </div>

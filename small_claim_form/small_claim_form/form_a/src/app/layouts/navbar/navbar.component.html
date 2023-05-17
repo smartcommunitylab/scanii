@@ -79,12 +79,10 @@
     </div>
   </div>
 </div>
-<div
-  class="toast-container position-sticky top-0 end-0 p-3"
-  style="float: right"
->
+
+<div class="toast-container position-fixed end-0 p-3 pt-5">
   <div
-    id="liveToast"
+    id="toast"
     class="toast align-items-center text-center text-bg-warning border-1"
     role="alert"
     aria-live="assertive"
@@ -100,11 +98,12 @@
       ></button>
     </div>
     <div class="toast-body text-center fs-4">
-      <p><strong class="me-auto fs-4">Attenzione!!!</strong></p>
+      <p><strong class="me-auto fs-4">Attenzione!</strong></p>
       <p>Stai visualizzando il testo semplificato</p>
     </div>
   </div>
 </div>
+
 <div id="maincontent" class="content detail-page dynamic-forms">
   <div class="center clearfix">
     <div class="sidebar">
@@ -253,18 +252,21 @@
               </a>
             </li>
           </ul>
-          <span
-            class="sidebar_title step-menu-title"
-            [translate]="'menu.usefulPDFs'"
-            >PDF utili</span
-          >
-          <div id="legal_information" class="list-group"></div>
-          <span
-            class="sidebar_title step-menu-title"
-            [translate]="'menu.synonyms'"
-            >Sinonimi</span
-          >
-          <div id="synonyms_info" class="list-group"></div>
+          <div class="step-info">
+            <span
+              class="sidebar_title step-menu-title"
+              [translate]="'menu.usefulPDFs'"
+              >PDF utili</span
+            >
+            <div id="legal_information" class="list-group"></div>
+            <span
+              class="sidebar_title step-menu-title mb-5"
+              id="synonyms_title"
+              [translate]="'menu.synonyms'"
+              >Sinonimi</span
+            >
+            <div id="synonyms_info" class="list-group"></div>
+          </div>
           <div class="form-sections-helper">
             <p
               id="form-instructions"
@@ -297,7 +299,7 @@
                   (click)="navbarService.generateJson()"
                   data-title="If you wish to stop filling in the form now, save your draft and resume later, please click this button and save the draft file in a safe location on your computer. You can upload it later to resume from where you left off without losing any input already made."
                 >
-                <span [translate]="'menu.saveDraft'">Save draft</span>
+                  <span [translate]="'menu.saveDraft'">Save draft</span>
                 </button>
               </div>
             </div>

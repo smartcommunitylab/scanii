@@ -1,12 +1,12 @@
-var Bke = Object.defineProperty,
-  jke = Object.defineProperties,
-  qke = Object.getOwnPropertyDescriptors,
+var Ike = Object.defineProperty,
+  Oke = Object.defineProperties,
+  Pke = Object.getOwnPropertyDescriptors,
   lF = Object.getOwnPropertySymbols,
-  Uke = Object.prototype.hasOwnProperty,
-  $ke = Object.prototype.propertyIsEnumerable,
+  Rke = Object.prototype.hasOwnProperty,
+  Bke = Object.prototype.propertyIsEnumerable,
   uF = (Ie, gt, ze) =>
     gt in Ie
-      ? Bke(Ie, gt, {
+      ? Ike(Ie, gt, {
           enumerable: !0,
           configurable: !0,
           writable: !0,
@@ -14,11 +14,11 @@ var Bke = Object.defineProperty,
         })
       : (Ie[gt] = ze),
   ri = (Ie, gt) => {
-    for (var ze in gt || (gt = {})) Uke.call(gt, ze) && uF(Ie, ze, gt[ze]);
-    if (lF) for (var ze of lF(gt)) $ke.call(gt, ze) && uF(Ie, ze, gt[ze]);
+    for (var ze in gt || (gt = {})) Rke.call(gt, ze) && uF(Ie, ze, gt[ze]);
+    if (lF) for (var ze of lF(gt)) Bke.call(gt, ze) && uF(Ie, ze, gt[ze]);
     return Ie;
   },
-  y8 = (Ie, gt) => jke(Ie, qke(gt));
+  y8 = (Ie, gt) => Oke(Ie, Pke(gt));
 (self.webpackChunkscanii = self.webpackChunkscanii || []).push([
   [179],
   {
@@ -3341,14 +3341,14 @@ var Bke = Object.defineProperty,
                     V1,
                     Ei,
                     ea,
-                    Yi,
+                    Ki,
                     Br,
                     Ut,
                     _2,
                     Ua,
                     C2,
                     Kn,
-                    Ki,
+                    Qi,
                     un = new Date(),
                     Be = this._daylightSavingAdjust(
                       new Date(un.getFullYear(), un.getMonth(), un.getDate())
@@ -3557,9 +3557,9 @@ var Bke = Object.defineProperty,
                             Jt === b.selectedMonth &&
                             (b.selectedDay = Math.min(b.selectedDay, Ei)),
                           ea = (this._getFirstDayOfMonth(Qn, Jt) - lt + 7) % 7,
-                          Yi = Math.ceil((ea + Ei) / 7),
+                          Ki = Math.ceil((ea + Ei) / 7),
                           this.maxRows = Br =
-                            yi && this.maxRows > Yi ? this.maxRows : Yi,
+                            yi && this.maxRows > Ki ? this.maxRows : Ki,
                           Ut = this._daylightSavingAdjust(
                             new Date(Qn, Jt, 1 - ea)
                           ),
@@ -3581,7 +3581,7 @@ var Bke = Object.defineProperty,
                           (C2 = xn
                             ? xn.apply(b.input ? b.input[0] : null, [Ut])
                             : [!0, ""]),
-                            (Ki =
+                            (Qi =
                               ((Kn = Ut.getMonth() !== Jt) && !bn) ||
                               !C2[0] ||
                               (o1 && Ut < o1) ||
@@ -3599,7 +3599,7 @@ var Bke = Object.defineProperty,
                                 ln.getTime() === Ti.getTime())
                                 ? " " + this._dayOverClass
                                 : "") +
-                              (Ki
+                              (Qi
                                 ? " " +
                                   this._unselectableClass +
                                   " ui-state-disabled"
@@ -3620,7 +3620,7 @@ var Bke = Object.defineProperty,
                                 : " title='" +
                                   C2[2].replace(/'/g, "&#39;") +
                                   "'") +
-                              (Ki
+                              (Qi
                                 ? ""
                                 : " data-handler='selectDay' data-event='click' data-month='" +
                                   Ut.getMonth() +
@@ -3630,7 +3630,7 @@ var Bke = Object.defineProperty,
                               ">" +
                               (Kn && !Qe
                                 ? "&#xa0;"
-                                : Ki
+                                : Qi
                                 ? "<span class='ui-state-default'>" +
                                   Ut.getDate() +
                                   "</span>"
@@ -6341,7 +6341,7 @@ var Bke = Object.defineProperty,
               throw f;
             });
           });
-        var Yi = M.Deferred();
+        var Ki = M.Deferred();
         function Br() {
           re.removeEventListener("DOMContentLoaded", Br),
             He.removeEventListener("load", Br),
@@ -6349,7 +6349,7 @@ var Bke = Object.defineProperty,
         }
         (M.fn.ready = function (f) {
           return (
-            Yi.then(f).catch(function (p) {
+            Ki.then(f).catch(function (p) {
               M.readyException(p);
             }),
             this
@@ -6361,10 +6361,10 @@ var Bke = Object.defineProperty,
             ready: function (f) {
               (!0 === f ? --M.readyWait : M.isReady) ||
                 ((M.isReady = !0),
-                !(!0 !== f && --M.readyWait > 0) && Yi.resolveWith(re, [M]));
+                !(!0 !== f && --M.readyWait > 0) && Ki.resolveWith(re, [M]));
             },
           }),
-          (M.ready.then = Yi.then),
+          (M.ready.then = Ki.then),
           "complete" === re.readyState ||
           ("loading" !== re.readyState && !re.documentElement.doScroll)
             ? He.setTimeout(M.ready)
@@ -6401,7 +6401,7 @@ var Bke = Object.defineProperty,
         function Kn(f) {
           return f.replace(_2, "ms-").replace(Ua, C2);
         }
-        var Ki = function (f) {
+        var Qi = function (f) {
           return 1 === f.nodeType || 9 === f.nodeType || !+f.nodeType;
         };
         function un() {
@@ -6414,7 +6414,7 @@ var Bke = Object.defineProperty,
               return (
                 p ||
                   ((p = {}),
-                  Ki(f) &&
+                  Qi(f) &&
                     (f.nodeType
                       ? (f[this.expando] = p)
                       : Object.defineProperty(f, this.expando, {
@@ -6944,7 +6944,7 @@ var Bke = Object.defineProperty,
               je,
               it,
               Ne = Be.get(f);
-            if (Ki(f))
+            if (Qi(f))
               for (
                 _.handler && ((_ = (H = _).handler), (D = H.selector)),
                   D && M.find.matchesSelector(x1, D),
@@ -7486,7 +7486,7 @@ var Bke = Object.defineProperty,
               void 0 !== (_ = f[H]);
               H++
             )
-              if (Ki(_)) {
+              if (Qi(_)) {
                 if ((p = _[Be.expando])) {
                   if (p.events)
                     for (y in p.events)
@@ -8907,7 +8907,7 @@ var Bke = Object.defineProperty,
                     Be.get(H, "handle")) && ee.apply(H, p),
                   (ee = B && H[B]) &&
                     ee.apply &&
-                    Ki(H) &&
+                    Qi(H) &&
                     ((f.result = ee.apply(H, p)),
                     !1 === f.result && f.preventDefault());
               return (
@@ -8915,7 +8915,7 @@ var Bke = Object.defineProperty,
                 !y &&
                   !f.isDefaultPrevented() &&
                   (!se._default || !1 === se._default.apply(ae.pop(), p)) &&
-                  Ki(_) &&
+                  Qi(_) &&
                   B &&
                   I(_[ce]) &&
                   !K(_) &&
@@ -9669,7 +9669,7 @@ var Bke = Object.defineProperty,
           });
         var f,
           c1 = [],
-          Qi = /(=)\?(?=&|$)|\?\?/;
+          Xi = /(=)\?(?=&|$)|\?\?/;
         M.ajaxSetup({
           jsonp: "callback",
           jsonpCallback: function () {
@@ -9683,21 +9683,21 @@ var Bke = Object.defineProperty,
               H,
               x =
                 !1 !== f.jsonp &&
-                (Qi.test(f.url)
+                (Xi.test(f.url)
                   ? "url"
                   : "string" == typeof f.data &&
                     0 ===
                       (f.contentType || "").indexOf(
                         "application/x-www-form-urlencoded"
                       ) &&
-                    Qi.test(f.data) &&
+                    Xi.test(f.data) &&
                     "data");
             if (x || "jsonp" === f.dataTypes[0])
               return (
                 (y = f.jsonpCallback =
                   I(f.jsonpCallback) ? f.jsonpCallback() : f.jsonpCallback),
                 x
-                  ? (f[x] = f[x].replace(Qi, "$1" + y))
+                  ? (f[x] = f[x].replace(Xi, "$1" + y))
                   : !1 !== f.jsonp &&
                     (f.url += (Tl.test(f.url) ? "&" : "?") + f.jsonp + "=" + y),
                 (f.converters["script json"] = function () {
@@ -10679,7 +10679,7 @@ var Bke = Object.defineProperty,
           !!t && "function" != typeof t.subscribe && "function" == typeof t.then
         );
       }
-      const Yi = (t) => {
+      const Ki = (t) => {
         if (t && "function" == typeof t[_e])
           return ((t) => (n) => {
             const e = t[_e]();
@@ -10857,7 +10857,7 @@ var Bke = Object.defineProperty,
             })(t, n)
           : t instanceof M
           ? t
-          : new M(Yi(t));
+          : new M(Ki(t));
       }
       class Be extends j {
         constructor(n) {
@@ -10889,7 +10889,7 @@ var Bke = Object.defineProperty,
         if (t instanceof M) return t.subscribe(n);
         let e;
         try {
-          e = Yi(t)(n);
+          e = Ki(t)(n);
         } catch (i) {
           n.error(i);
         }
@@ -16440,7 +16440,7 @@ var Bke = Object.defineProperty,
           t
         );
       })();
-      const ir = new _t("LocaleId"),
+      const rr = new _t("LocaleId"),
         My = new _t("DefaultCurrencyCode");
       class xU {
         constructor(n, e) {
@@ -16964,7 +16964,7 @@ var Bke = Object.defineProperty,
                     S.runInitializers(),
                     S.donePromise.then(
                       () => (
-                        pf(g.injector.get(ir, V0) || V0),
+                        pf(g.injector.get(rr, V0) || V0),
                         this._moduleDoBootstrap(g),
                         g
                       )
@@ -17270,7 +17270,7 @@ var Bke = Object.defineProperty,
             deps: [],
           },
           {
-            provide: ir,
+            provide: rr,
             useFactory: function (t) {
               return (
                 pf(
@@ -17282,7 +17282,7 @@ var Bke = Object.defineProperty,
                 t
               );
             },
-            deps: [[new wo(ir), new Di(), new ua()]],
+            deps: [[new wo(rr), new Di(), new ua()]],
           },
           { provide: My, useValue: "USD" },
         ];
@@ -17719,7 +17719,7 @@ var Bke = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(ne(ir));
+            return new (e || t)(ne(rr));
           }),
           (t.ɵprov = he({ token: t, factory: t.ɵfac })),
           t
@@ -18850,7 +18850,7 @@ var Bke = Object.defineProperty,
       function o2(t) {
         return t ? (t.nodeName || "").toLowerCase() : null;
       }
-      function sr(t) {
+      function $i(t) {
         if (null == t) return window;
         if ("[object Window]" !== t.toString()) {
           var n = t.ownerDocument;
@@ -18859,15 +18859,15 @@ var Bke = Object.defineProperty,
         return t;
       }
       function bs(t) {
-        return t instanceof sr(t).Element || t instanceof Element;
+        return t instanceof $i(t).Element || t instanceof Element;
       }
       function or(t) {
-        return t instanceof sr(t).HTMLElement || t instanceof HTMLElement;
+        return t instanceof $i(t).HTMLElement || t instanceof HTMLElement;
       }
       function W5(t) {
         return (
           "undefined" != typeof ShadowRoot &&
-          (t instanceof sr(t).ShadowRoot || t instanceof ShadowRoot)
+          (t instanceof $i(t).ShadowRoot || t instanceof ShadowRoot)
         );
       }
       const G5 = {
@@ -18936,7 +18936,7 @@ var Bke = Object.defineProperty,
         fc = Math.round;
       function J5() {
         var t = navigator.userAgentData;
-        return null != t && t.brands
+        return null != t && t.brands && Array.isArray(t.brands)
           ? t.brands
               .map(function (n) {
                 return n.brand + "/" + n.version;
@@ -18956,7 +18956,7 @@ var Bke = Object.defineProperty,
           or(t) &&
           ((r = (t.offsetWidth > 0 && fc(i.width) / t.offsetWidth) || 1),
           (a = (t.offsetHeight > 0 && fc(i.height) / t.offsetHeight) || 1));
-        var l = (bs(t) ? sr(t) : window).visualViewport,
+        var l = (bs(t) ? $i(t) : window).visualViewport,
           u = !sM() && e,
           h = (i.left + (u && l ? l.offsetLeft : 0)) / r,
           g = (i.top + (u && l ? l.offsetTop : 0)) / a,
@@ -18996,7 +18996,7 @@ var Bke = Object.defineProperty,
         return !1;
       }
       function F2(t) {
-        return sr(t).getComputedStyle(t);
+        return $i(t).getComputedStyle(t);
       }
       function kJ(t) {
         return ["table", "td", "th"].indexOf(o2(t)) >= 0;
@@ -19015,7 +19015,7 @@ var Bke = Object.defineProperty,
       }
       function d4(t) {
         for (
-          var n = sr(t), e = cM(t);
+          var n = $i(t), e = cM(t);
           e && kJ(e) && "static" === F2(e).position;
 
         )
@@ -19164,7 +19164,7 @@ var Bke = Object.defineProperty,
           var Te = d4(e),
             ht = "clientHeight",
             Xt = "clientWidth";
-          Te === sr(e) &&
+          Te === $i(e) &&
             "static" !== F2((Te = va(e))).position &&
             "absolute" === l &&
             ((ht = "scrollHeight"), (Xt = "scrollWidth")),
@@ -19187,11 +19187,11 @@ var Bke = Object.defineProperty,
           Zt = Object.assign({ position: l }, h && PJ),
           q1 =
             !0 === g
-              ? (function (t) {
-                  var e = t.y,
-                    r = window.devicePixelRatio || 1;
-                  return { x: fc(t.x * r) / r || 0, y: fc(e * r) / r || 0 };
-                })({ x: w, y: P })
+              ? (function (t, n) {
+                  var i = t.y,
+                    r = n.devicePixelRatio || 1;
+                  return { x: fc(t.x * r) / r || 0, y: fc(i * r) / r || 0 };
+                })({ x: w, y: P }, $i(e))
               : { x: w, y: P };
         return (
           (w = q1.x),
@@ -19281,7 +19281,7 @@ var Bke = Object.defineProperty,
             a = void 0 === r || r,
             s = i.resize,
             l = void 0 === s || s,
-            u = sr(n.elements.popper),
+            u = $i(n.elements.popper),
             h = [].concat(n.scrollParents.reference, n.scrollParents.popper);
           return (
             a &&
@@ -19313,7 +19313,7 @@ var Bke = Object.defineProperty,
         });
       }
       function Z5(t) {
-        var n = sr(t);
+        var n = $i(t);
         return { scrollLeft: n.pageXOffset, scrollTop: n.pageYOffset };
       }
       function e7(t) {
@@ -19337,7 +19337,7 @@ var Bke = Object.defineProperty,
         void 0 === n && (n = []);
         var i = mM(t),
           r = i === (null == (e = t.ownerDocument) ? void 0 : e.body),
-          a = sr(i),
+          a = $i(i),
           s = r ? [a].concat(a.visualViewport || [], t7(i) ? i : []) : i,
           l = n.concat(s);
         return r ? l : l.concat(h4(_6(s)));
@@ -19354,7 +19354,7 @@ var Bke = Object.defineProperty,
         return n === q5
           ? n7(
               (function (t, n) {
-                var e = sr(t),
+                var e = $i(t),
                   i = va(t),
                   r = e.visualViewport,
                   a = i.clientWidth,
@@ -19840,12 +19840,12 @@ var Bke = Object.defineProperty,
                   k9 = ue
                     ? ht[$1] / 2 - g8 - Qs - _l - Pt.mainAxis
                     : E9 - Qs - _l - Pt.mainAxis,
-                  Lke = ue
+                  Tke = ue
                     ? -ht[$1] / 2 + g8 + Qs + _8 + Pt.mainAxis
                     : vl + Qs + _8 + Pt.mainAxis,
                   z9 = n.elements.arrow && d4(n.elements.arrow),
                   eF = null != (Wn = null == Zt ? void 0 : Zt[fe]) ? Wn : 0,
-                  Oke = Rr + Lke - eF,
+                  zke = Rr + Tke - eF,
                   tF = f4(
                     w
                       ? v6(
@@ -19861,7 +19861,7 @@ var Bke = Object.defineProperty,
                         )
                       : m8,
                     Rr,
-                    w ? Ms(Ks, Oke) : Ks
+                    w ? Ms(Ks, zke) : Ks
                   );
                 (Te[fe] = tF), (q1[fe] = tF - Rr);
               }
@@ -19908,7 +19908,7 @@ var Bke = Object.defineProperty,
           (i || (!i && !e)) &&
             (("body" !== o2(n) || t7(a)) &&
               (l = (function (t) {
-                return t !== sr(t) && or(t)
+                return t !== $i(t) && or(t)
                   ? (function (t) {
                       return {
                         scrollLeft: t.scrollLeft,
@@ -26563,7 +26563,7 @@ var Bke = Object.defineProperty,
               });
           },
         },
-        $i = {
+        Wi = {
           noAuto: function () {
             (qe.autoReplaceSvg = !1), (qe.observeMutations = !1), zs("noAuto");
           },
@@ -26612,7 +26612,7 @@ var Bke = Object.defineProperty,
           (Object.keys(Or.styles).length > 0 || qe.autoFetchSvg) &&
             j2 &&
             qe.autoReplaceSvg &&
-            $i.dom.i2svg({ node: i });
+            Wi.dom.i2svg({ node: i });
         };
       function Hu(t, n) {
         return (
@@ -28164,7 +28164,7 @@ var Bke = Object.defineProperty,
             },
           },
         ],
-        { mixoutsTo: $i }
+        { mixoutsTo: Wi }
       );
       class xCe {
         constructor(n, e) {
@@ -28344,7 +28344,7 @@ var Bke = Object.defineProperty,
         }
       }
       function pp(t, n, e, i, r = new FCe(t, e, i)) {
-        if (!r.closed) return n instanceof M ? n.subscribe(r) : Yi(n)(r);
+        if (!r.closed) return n instanceof M ? n.subscribe(r) : Ki(n)(r);
       }
       class v1 extends Qe {
         constructor(n) {
@@ -28460,11 +28460,11 @@ var Bke = Object.defineProperty,
             i === e && (this.destination.complete(), this.unsubscribe()));
         }
       }
-      function Wi(t, n) {
+      function Gi(t, n) {
         return "function" == typeof n
           ? (e) =>
               e.pipe(
-                Wi((i, r) => un(t(i, r)).pipe(Fe((a, s) => n(i, a, r, s))))
+                Gi((i, r) => un(t(i, r)).pipe(Fe((a, s) => n(i, a, r, s))))
               )
           : (e) => e.lift(new XCe(t));
       }
@@ -29058,7 +29058,7 @@ var Bke = Object.defineProperty,
         }
         return !1;
       }
-      function Gi(t) {
+      function Ji(t) {
         return null != t;
       }
       function Ip(t) {
@@ -29103,7 +29103,7 @@ var Bke = Object.defineProperty,
             i = "";
             do {
               (i += r.shift()),
-                !Gi(e) || !Gi(e[i]) || ("object" != typeof e[i] && r.length)
+                !Ji(e) || !Ji(e[i]) || ("object" != typeof e[i] && r.length)
                   ? r.length
                     ? (i += ".")
                     : (e = void 0)
@@ -29118,7 +29118,7 @@ var Bke = Object.defineProperty,
             return i
               ? e.replace(this.templateMatcher, (r, a) => {
                   let s = this.getValue(i, a);
-                  return Gi(s) ? s : r;
+                  return Ji(s) ? s : r;
                 })
               : e;
           }
@@ -29365,7 +29365,7 @@ var Bke = Object.defineProperty,
               return void 0 !== a ? a : i;
             }
             get(e, i) {
-              if (!Gi(e) || !e.length)
+              if (!Ji(e) || !e.length)
                 throw new Error('Parameter "key" required');
               if (this.pending)
                 return this.loadingTranslations.pipe(
@@ -29383,12 +29383,12 @@ var Bke = Object.defineProperty,
               }
             }
             getStreamOnTranslationChange(e, i) {
-              if (!Gi(e) || !e.length)
+              if (!Ji(e) || !e.length)
                 throw new Error('Parameter "key" required');
               return Ec(
                 Uu(() => this.get(e, i)),
                 this.onTranslationChange.pipe(
-                  Wi((r) => {
+                  Gi((r) => {
                     const a = this.getParsedResult(r.translations, e, i);
                     return "function" == typeof a.subscribe ? a : Ge(a);
                   })
@@ -29396,12 +29396,12 @@ var Bke = Object.defineProperty,
               );
             }
             stream(e, i) {
-              if (!Gi(e) || !e.length)
+              if (!Ji(e) || !e.length)
                 throw new Error('Parameter "key" required');
               return Ec(
                 Uu(() => this.get(e, i)),
                 this.onLangChange.pipe(
-                  Wi((r) => {
+                  Gi((r) => {
                     const a = this.getParsedResult(r.translations, e, i);
                     return Ia(a) ? a : Ge(a);
                   })
@@ -29409,7 +29409,7 @@ var Bke = Object.defineProperty,
               );
             }
             instant(e, i) {
-              if (!Gi(e) || !e.length)
+              if (!Ji(e) || !e.length)
                 throw new Error('Parameter "key" required');
               let r = this.getParsedResult(
                 this.translations[this.currentLang],
@@ -29555,7 +29555,7 @@ var Bke = Object.defineProperty,
                 let s = r[a];
                 if (3 === s.nodeType) {
                   let l;
-                  if ((e && (s.lastKey = null), Gi(s.lookupKey)))
+                  if ((e && (s.lastKey = null), Ji(s.lookupKey)))
                     l = s.lookupKey;
                   else if (this.key) l = this.key;
                   else {
@@ -29585,7 +29585,7 @@ var Bke = Object.defineProperty,
                   s !== e && (i.lastKey = e),
                     i.originalContent ||
                       (i.originalContent = this.getContent(i)),
-                    (i.currentValue = Gi(s) ? s : i.originalContent || e),
+                    (i.currentValue = Ji(s) ? s : i.originalContent || e),
                     this.setContent(
                       i,
                       this.key
@@ -29594,7 +29594,7 @@ var Bke = Object.defineProperty,
                     ),
                     this._ref.markForCheck();
                 };
-                if (Gi(r)) {
+                if (Ji(r)) {
                   let s = this.translateService.getParsedResult(
                     r,
                     e,
@@ -29606,10 +29606,10 @@ var Bke = Object.defineProperty,
               }
             }
             getContent(e) {
-              return Gi(e.textContent) ? e.textContent : e.data;
+              return Ji(e.textContent) ? e.textContent : e.data;
             }
             setContent(e, i) {
-              Gi(e.textContent) ? (e.textContent = i) : (e.data = i);
+              Ji(e.textContent) ? (e.textContent = i) : (e.data = i);
             }
             ngOnDestroy() {
               this.onLangChangeSub && this.onLangChangeSub.unsubscribe(),
@@ -29659,7 +29659,7 @@ var Bke = Object.defineProperty,
               if (el(e, this.lastKey) && el(i, this.lastParams))
                 return this.value;
               let r;
-              if (Gi(i[0]) && i.length)
+              if (Ji(i[0]) && i.length)
                 if ("string" == typeof i[0] && i[0].length) {
                   let a = i[0]
                     .replace(/(\')?([a-zA-Z0-9_]+)(\')?(\s)?:/g, '"$2":')
@@ -31329,7 +31329,7 @@ var Bke = Object.defineProperty,
             t
           );
         })();
-      const Ji = {
+      const Yi = {
         claimForMoneyExpansion: {
           triggeringFormControlName: "claimForMoney",
           triggeringValue: "yes",
@@ -31541,15 +31541,15 @@ var Bke = Object.defineProperty,
               const r = e.get(i);
               r instanceof In
                 ? this.getTriggeringFormControlValue(i) ===
-                    Ji[i].triggeringValue && this.markClaimFormAsDirty(r)
-                : i in Ji
+                    Yi[i].triggeringValue && this.markClaimFormAsDirty(r)
+                : i in Yi
                 ? this.getTriggeringFormControlValue(i) ===
-                    Ji[i].triggeringValue && this.markAsDirty(r)
+                    Yi[i].triggeringValue && this.markAsDirty(r)
                 : this.markAsDirty(r);
             }
           }
           getTriggeringFormControlValue(e) {
-            return this.getFormControl(Ji[e].triggeringFormControlName).value;
+            return this.getFormControl(Yi[e].triggeringFormControlName).value;
           }
           markAsDirty(e) {
             if (e instanceof In)
@@ -31594,7 +31594,7 @@ var Bke = Object.defineProperty,
               this.onStableSubscription = this.zone.onStable.subscribe(() => {
                 this.onStableSubscription &&
                   this.onStableSubscription.unsubscribe();
-                const r = Object.keys(Ji)
+                const r = Object.keys(Yi)
                   .filter(
                     (a) =>
                       "contractualInterest" !== a &&
@@ -31602,11 +31602,11 @@ var Bke = Object.defineProperty,
                       "claimingInterestOnCostFromDate" !== a &&
                       "claimingInterestOnCostFromEvent" !== a
                   )
-                  .reduce((a, s) => ((a[s] = Ji[s]), a), {});
+                  .reduce((a, s) => ((a[s] = Yi[s]), a), {});
                 for (const a of Object.keys(r))
-                  this.getJsonValue(Ji[a].triggeringFormControlName, e) ===
-                    Ji[a].triggeringValue &&
-                    this.triggerChangeEvent(Ji[a].triggeringFieldId);
+                  this.getJsonValue(Yi[a].triggeringFormControlName, e) ===
+                    Yi[a].triggeringValue &&
+                    this.triggerChangeEvent(Yi[a].triggeringFieldId);
                 this.triggerChangeEventBasedOnValue(
                   e.claimingInterestExpansion.claimingInterestOption,
                   "contractualInterest",
@@ -31629,10 +31629,10 @@ var Bke = Object.defineProperty,
             return a[e];
           }
           triggerChangeEventBasedOnValue(e, i, r) {
-            e === Ji[i].triggeringValue
-              ? this.triggerChangeEvent(Ji[i].triggeringFieldId)
-              : e === Ji[r].triggeringValue &&
-                this.triggerChangeEvent(Ji[r].triggeringFieldId);
+            e === Yi[i].triggeringValue
+              ? this.triggerChangeEvent(Yi[i].triggeringFieldId)
+              : e === Yi[r].triggeringValue &&
+                this.triggerChangeEvent(Yi[r].triggeringFieldId);
           }
           resetAll() {
             this.editForm.reset(),
@@ -32109,21 +32109,21 @@ var Bke = Object.defineProperty,
       function DDe(t, n) {
         if (1 & t) {
           const e = Kt();
-          o(0, "button", 86),
+          o(0, "button", 87),
             Z("click", function () {
               Ee(e);
               const r = N(2).index;
               return N().removeClaimant(r);
             }),
-            k(1, "i", 87),
+            k(1, "i", 88),
             c();
         }
       }
       function HDe(t, n) {
         if (
           (1 & t &&
-            (o(0, "div"),
-            o(1, "span", 88),
+            (o(0, "div", 89),
+            o(1, "span", 90),
             v(
               2,
               'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed.'
@@ -32140,7 +32140,9 @@ var Bke = Object.defineProperty,
             ),
             F(
               "id",
-              "validation_error_text_parties[" + e + "].dynformSCA2ClaimantName"
+              "validation_error_text_parties[" +
+                e +
+                "].dynformSCA2ClaimantOrganisationSurnameFirstName"
             );
         }
       }
@@ -32148,61 +32150,7 @@ var Bke = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
-            v(
-              2,
-              'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed. '
-            ),
-            c(),
-            c()),
-          2 & t)
-        ) {
-          const e = N(2).index;
-          d(1),
-            m(
-              "translate",
-              "errors.organisationSurnameFirstNameValidationError"
-            ),
-            F(
-              "id",
-              "validation_error_text_parties[" +
-                e +
-                "].dynformSCA2ClaimantSurname"
-            );
-        }
-      }
-      function xDe(t, n) {
-        if (
-          (1 & t &&
-            (o(0, "div"),
-            o(1, "span", 88),
-            v(
-              2,
-              'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed. '
-            ),
-            c(),
-            c()),
-          2 & t)
-        ) {
-          const e = N(2).index;
-          d(1),
-            m(
-              "translate",
-              "errors.organisationSurnameFirstNameValidationError"
-            ),
-            F(
-              "id",
-              "validation_error_text_parties[" +
-                e +
-                "].dynformSCA2ClaimantFirstname"
-            );
-        }
-      }
-      function NDe(t, n) {
-        if (
-          (1 & t &&
-            (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(2, "Field is required "),
             c(),
             c()),
@@ -32219,8 +32167,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function ADe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, NDe, 3, 2, "div", 53), c()), 2 & t)) {
+      function xDe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, VDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -32234,11 +32182,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function TDe(t, n) {
+      function NDe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(2, "Field is required "),
             c(),
             c()),
@@ -32255,8 +32203,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function EDe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, TDe, 3, 2, "div", 53), c()), 2 & t)) {
+      function ADe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, NDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -32271,11 +32219,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function kDe(t, n) {
+      function TDe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(2, "Field is required "),
             c(),
             c()),
@@ -32290,8 +32238,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function zDe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, kDe, 3, 2, "div", 53), c()), 2 & t)) {
+      function EDe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, TDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -32305,17 +32253,17 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function LDe(t, n) {
-        if ((1 & t && (o(0, "option", 89), v(1), c()), 2 & t)) {
+      function kDe(t, n) {
+        if ((1 & t && (o(0, "option", 91), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function FDe(t, n) {
+      function zDe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(2, "Field is required "),
             c(),
             c()),
@@ -32332,8 +32280,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function IDe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, FDe, 3, 2, "div", 53), c()), 2 & t)) {
+      function LDe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, zDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -32347,17 +32295,17 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function ODe(t, n) {
-        if ((1 & t && (o(0, "option", 89), v(1), c()), 2 & t)) {
+      function FDe(t, n) {
+        if ((1 & t && (o(0, "option", 91), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function PDe(t, n) {
+      function IDe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(2, "Field is required "),
             c(),
             c()),
@@ -32374,8 +32322,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function RDe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, PDe, 3, 2, "div", 53), c()), 2 & t)) {
+      function ODe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, IDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -32390,17 +32338,17 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function BDe(t, n) {
-        if ((1 & t && (o(0, "option", 89), v(1), c()), 2 & t)) {
+      function PDe(t, n) {
+        if ((1 & t && (o(0, "option", 91), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.id), d(1), rt(" ", e.label, " ");
         }
       }
-      function jDe(t, n) {
+      function RDe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(2, "Field is required "),
             c(),
             c()),
@@ -32417,8 +32365,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function qDe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, jDe, 3, 2, "div", 53), c()), 2 & t)) {
+      function BDe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, RDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -32436,7 +32384,7 @@ var Bke = Object.defineProperty,
       const R1 = function (t) {
         return { invalid: t };
       };
-      function UDe(t, n) {
+      function jDe(t, n) {
         if (1 & t) {
           const e = Kt();
           o(0, "div"),
@@ -32471,16 +32419,17 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             o(19, "span", 48),
-            o(20, "div", 4),
-            o(21, "label"),
-            o(22, "span", 1),
-            v(23, "1.1. Corporate name of company or organisation"),
+            V(20, HDe, 3, 2, "div", 49),
+            o(21, "div", 4),
+            o(22, "label"),
+            o(23, "span", 1),
+            v(24, "1.1. Corporate name of company or organisation"),
             c(),
-            k(24, "span", 49),
+            k(25, "span", 50),
             c(),
-            o(25, "div", 50),
             o(26, "div", 51),
-            o(27, "input", 52),
+            o(27, "div", 52),
+            o(28, "input", 53),
             Z("input", function () {
               Ee(e);
               const r = N().index;
@@ -32489,7 +32438,6 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(28, HDe, 3, 2, "div", 53),
             c(),
             o(29, "div", 4),
             o(30, "div"),
@@ -32497,10 +32445,10 @@ var Bke = Object.defineProperty,
             o(32, "span", 1),
             v(33, "Surname"),
             c(),
-            k(34, "span", 49),
+            k(34, "span", 50),
             c(),
-            o(35, "div", 50),
-            o(36, "div", 51),
+            o(35, "div", 51),
+            o(36, "div", 52),
             o(37, "input", 54),
             Z("input", function () {
               Ee(e);
@@ -32510,20 +32458,19 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(38, VDe, 3, 2, "div", 53),
             c(),
             c(),
-            o(39, "div", 4),
-            o(40, "div"),
-            o(41, "label"),
-            o(42, "span", 1),
-            v(43, "First name"),
+            o(38, "div", 4),
+            o(39, "div"),
+            o(40, "label"),
+            o(41, "span", 1),
+            v(42, "First name"),
             c(),
-            k(44, "span", 49),
+            k(43, "span", 50),
             c(),
-            o(45, "div", 50),
-            o(46, "div", 51),
-            o(47, "input", 55),
+            o(44, "div", 51),
+            o(45, "div", 52),
+            o(46, "input", 55),
             Z("input", function () {
               Ee(e);
               const r = N().index;
@@ -32532,245 +32479,244 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(48, xDe, 3, 2, "div", 53),
             c(),
             c(),
-            o(49, "div", 4),
-            o(50, "div", 56),
-            o(51, "label", 57),
-            o(52, "span", 1),
+            o(47, "div", 4),
+            o(48, "div", 56),
+            o(49, "label", 57),
+            o(50, "span", 1),
             v(
-              53,
+              51,
               "1.2. Personal identification number or passport number/ registration number"
             ),
             c(),
-            k(54, "span", 49),
+            k(52, "span", 50),
             c(),
-            o(55, "div", 58),
-            o(56, "div", 59),
-            o(57, "div", 60),
-            o(58, "div", 61),
+            o(53, "div", 58),
+            o(54, "div", 59),
+            o(55, "div", 60),
+            o(56, "div", 61),
             v(
-              59,
+              57,
               " If you have a personal identification number given by the authorities of a Member State it would be helpful to provide it. If you don\u2019t have such number, it would be helpful to provide the number of your passport or identification document, if you have them. If you act on behalf of a legal person or any entity having legal capacity, it would be helpful to provide a relevant registration number. "
             ),
             c(),
             c(),
             c(),
-            o(60, "div", 51),
-            k(61, "input", 62),
+            o(58, "div", 52),
+            k(59, "input", 62),
             c(),
             c(),
-            k(62, "span", 63),
+            k(60, "span", 63),
             c(),
             c(),
-            o(63, "div", 4),
-            o(64, "div"),
-            o(65, "label"),
-            o(66, "span", 1),
-            v(67, "1.3. Street and number/PO box"),
+            o(61, "div", 4),
+            o(62, "div"),
+            o(63, "label"),
+            o(64, "span", 1),
+            v(65, "1.3. Street and number/PO box"),
             c(),
-            o(68, "span", 49),
-            v(69, "*"),
-            c(),
-            c(),
-            o(70, "div", 50),
-            o(71, "div", 51),
-            k(72, "input", 64),
+            o(66, "span", 50),
+            v(67, "*"),
             c(),
             c(),
-            V(73, ADe, 2, 1, "div", 53),
+            o(68, "div", 51),
+            o(69, "div", 52),
+            k(70, "input", 64),
             c(),
             c(),
-            o(74, "div", 4),
-            o(75, "div"),
-            o(76, "label"),
-            o(77, "span", 1),
-            v(78, "1.4. Postal code"),
-            c(),
-            o(79, "span", 49),
-            v(80, "*"),
+            V(71, xDe, 2, 1, "div", 65),
             c(),
             c(),
-            o(81, "div", 50),
-            o(82, "div", 51),
-            k(83, "input", 65),
+            o(72, "div", 4),
+            o(73, "div"),
+            o(74, "label"),
+            o(75, "span", 1),
+            v(76, "1.4. Postal code"),
+            c(),
+            o(77, "span", 50),
+            v(78, "*"),
             c(),
             c(),
-            V(84, EDe, 2, 1, "div", 53),
+            o(79, "div", 51),
+            o(80, "div", 52),
+            k(81, "input", 66),
             c(),
             c(),
-            o(85, "div", 4),
-            o(86, "div"),
-            o(87, "label"),
-            o(88, "span", 1),
-            v(89, "City"),
-            c(),
-            o(90, "span", 49),
-            v(91, "*"),
+            V(82, ADe, 2, 1, "div", 65),
             c(),
             c(),
-            o(92, "div", 50),
-            o(93, "div", 51),
-            k(94, "input", 66),
+            o(83, "div", 4),
+            o(84, "div"),
+            o(85, "label"),
+            o(86, "span", 1),
+            v(87, "City"),
+            c(),
+            o(88, "span", 50),
+            v(89, "*"),
             c(),
             c(),
-            V(95, zDe, 2, 1, "div", 53),
+            o(90, "div", 51),
+            o(91, "div", 52),
+            k(92, "input", 67),
             c(),
             c(),
-            o(96, "div", 4),
-            o(97, "div"),
-            o(98, "label"),
-            o(99, "span", 1),
-            v(100, "1.5. Country:"),
-            c(),
-            o(101, "span", 49),
-            v(102, "*"),
+            V(93, EDe, 2, 1, "div", 65),
             c(),
             c(),
-            o(103, "div", 50),
-            o(104, "div", 51),
-            o(105, "select", 67),
+            o(94, "div", 4),
+            o(95, "div"),
+            o(96, "label"),
+            o(97, "span", 1),
+            v(98, "1.5. Country:"),
+            c(),
+            o(99, "span", 50),
+            v(100, "*"),
+            c(),
+            c(),
+            o(101, "div", 51),
+            o(102, "div", 52),
+            o(103, "select", 68),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
               return N().expandWorldCountrySelect(r.target.value, a, !0);
             }),
-            o(106, "option", 68),
-            v(107, " Please select "),
+            o(104, "option", 69),
+            v(105, " Please select "),
             c(),
-            V(108, LDe, 2, 2, "option", 69),
-            o(109, "option", 70),
-            v(110, " Other (please specify) "),
-            c(),
-            c(),
-            c(),
-            c(),
-            V(111, IDe, 2, 1, "div", 53),
-            c(),
-            c(),
-            k(112, "div"),
-            o(113, "div"),
-            o(114, "div", 71),
-            o(115, "div", 4),
-            o(116, "div"),
-            o(117, "label"),
-            o(118, "span", 1),
-            v(119, "Please specify"),
-            c(),
-            o(120, "span", 49),
-            v(121, "*"),
-            c(),
-            c(),
-            o(122, "div", 50),
-            o(123, "div", 51),
-            o(124, "select", 72),
-            o(125, "option", 68),
-            v(126, " Please select "),
-            c(),
-            V(127, ODe, 2, 2, "option", 69),
+            V(106, kDe, 2, 2, "option", 70),
+            o(107, "option", 71),
+            v(108, " Other (please specify) "),
             c(),
             c(),
             c(),
-            V(128, RDe, 2, 1, "div", 53),
+            c(),
+            V(109, LDe, 2, 1, "div", 65),
             c(),
             c(),
-            k(129, "p", 73),
+            k(110, "div"),
+            o(111, "div"),
+            o(112, "div", 72),
+            o(113, "div", 4),
+            o(114, "div"),
+            o(115, "label"),
+            o(116, "span", 1),
+            v(117, "Please specify"),
+            c(),
+            o(118, "span", 50),
+            v(119, "*"),
             c(),
             c(),
-            o(130, "div", 4),
-            o(131, "div"),
-            o(132, "label"),
-            o(133, "span", 1),
-            v(134, "1.6. Telephone"),
+            o(120, "div", 51),
+            o(121, "div", 52),
+            o(122, "select", 73),
+            o(123, "option", 69),
+            v(124, " Please select "),
             c(),
-            k(135, "span", 49),
-            c(),
-            o(136, "div", 74),
-            o(137, "div", 51),
-            k(138, "input", 75),
+            V(125, FDe, 2, 2, "option", 70),
             c(),
             c(),
-            k(139, "span", 63),
+            c(),
+            V(126, ODe, 2, 1, "div", 65),
             c(),
             c(),
-            o(140, "div", 4),
-            o(141, "div"),
-            o(142, "label"),
-            o(143, "span", 1),
-            v(144, "1.7. E-mail"),
-            c(),
-            k(145, "span", 49),
-            c(),
-            o(146, "div", 74),
-            o(147, "div", 51),
-            k(148, "input", 76),
+            k(127, "p", 74),
             c(),
             c(),
-            k(149, "span", 63),
+            o(128, "div", 4),
+            o(129, "div"),
+            o(130, "label"),
+            o(131, "span", 1),
+            v(132, "1.6. Telephone"),
+            c(),
+            k(133, "span", 50),
+            c(),
+            o(134, "div", 75),
+            o(135, "div", 52),
+            k(136, "input", 76),
             c(),
             c(),
-            o(150, "div", 4),
-            o(151, "div"),
-            o(152, "label"),
-            o(153, "span", 1),
+            k(137, "span", 63),
+            c(),
+            c(),
+            o(138, "div", 4),
+            o(139, "div"),
+            o(140, "label"),
+            o(141, "span", 1),
+            v(142, "1.7. E-mail"),
+            c(),
+            k(143, "span", 50),
+            c(),
+            o(144, "div", 75),
+            o(145, "div", 52),
+            k(146, "input", 77),
+            c(),
+            c(),
+            k(147, "span", 63),
+            c(),
+            c(),
+            o(148, "div", 4),
+            o(149, "div"),
+            o(150, "label"),
+            o(151, "span", 1),
             v(
-              154,
+              152,
               "1.8. Claimant\u2019s representative, if any, and contact details:"
             ),
             c(),
-            k(155, "span", 49),
+            k(153, "span", 50),
             c(),
-            o(156, "div", 50),
-            o(157, "div", 51),
-            o(158, "select", 77),
+            o(154, "div", 51),
+            o(155, "div", 52),
+            o(156, "select", 78),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
               return N().onRepresentativeChange(r.target.value, a);
             }),
-            k(159, "option", 78),
-            o(160, "option", 79),
-            v(161, " Add new representative "),
+            k(157, "option", 79),
+            o(158, "option", 80),
+            v(159, " Add new representative "),
             c(),
-            V(162, BDe, 2, 2, "option", 69),
-            c(),
-            c(),
-            c(),
-            V(163, qDe, 2, 1, "div", 53),
-            c(),
-            c(),
-            o(164, "div", 4),
-            o(165, "div"),
-            o(166, "label"),
-            o(167, "span", 1),
-            v(168, "1.9. Other details"),
-            c(),
-            c(),
-            o(169, "div", 80),
-            o(170, "div", 51),
-            k(171, "textarea", 81),
-            c(),
-            c(),
-            k(172, "span", 63),
+            V(160, PDe, 2, 2, "option", 70),
             c(),
             c(),
             c(),
-            c(),
-            o(173, "div", 82),
-            v(174, "\xa0"),
+            V(161, BDe, 2, 1, "div", 65),
             c(),
             c(),
-            o(175, "div", 83),
-            o(176, "a", 84),
+            o(162, "div", 4),
+            o(163, "div"),
+            o(164, "label"),
+            o(165, "span", 1),
+            v(166, "1.9. Other details"),
+            c(),
+            c(),
+            o(167, "div", 81),
+            o(168, "div", 52),
+            k(169, "textarea", 82),
+            c(),
+            c(),
+            k(170, "span", 63),
+            c(),
+            c(),
+            c(),
+            c(),
+            o(171, "div", 83),
+            v(172, "\xa0"),
+            c(),
+            c(),
+            o(173, "div", 84),
+            o(174, "a", 85),
             Z("click", function () {
               return Ee(e), N(2).openModal("js_modal_add_claimant");
             }),
-            o(177, "span", 1),
-            v(178, "Add another claimant"),
+            o(175, "span", 1),
+            v(176, "Add another claimant"),
             c(),
             c(),
-            k(179, "label", 85),
+            k(177, "label", 86),
             c(),
             c(),
             c(),
@@ -32790,8 +32736,14 @@ var Bke = Object.defineProperty,
             d(4),
             F("id", "parties[" + e + "].claimant_div"),
             d(3),
-            m("innerHTML", jt(15, 116, "claimant.claimantDetails"), ls),
-            d(7),
+            m("innerHTML", jt(15, 115, "claimant.claimantDetails"), ls),
+            d(6),
+            m(
+              "ngIf",
+              i.claimantService.claimants.at(e).get("organisation").invalid &&
+                i.claimantService.claimants.at(e).get("organisation").dirty
+            ),
+            d(2),
             F("for", "parties[" + e + "].dynformSCA2ClaimantName"),
             d(1),
             m("translate", "claimant.organisation"),
@@ -32804,7 +32756,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                118,
+                117,
                 R1,
                 i.claimantService.claimants.at(e).get("organisation").invalid &&
                   i.claimantService.claimants.at(e).get("organisation").dirty
@@ -32815,12 +32767,6 @@ var Bke = Object.defineProperty,
             F("name", "parties[" + e + "].dynformSCA2ClaimantName")(
               "id",
               "parties[" + e + "].dynformSCA2ClaimantName"
-            ),
-            d(1),
-            m(
-              "ngIf",
-              i.claimantService.claimants.at(e).get("organisation").invalid &&
-                i.claimantService.claimants.at(e).get("organisation").dirty
             ),
             d(3),
             F("for", "parties[" + e + "].dynformSCA2ClaimantSurname"),
@@ -32835,7 +32781,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                120,
+                119,
                 R1,
                 i.claimantService.claimants.at(e).get("surname").invalid &&
                   i.claimantService.claimants.at(e).get("surname").dirty
@@ -32849,12 +32795,6 @@ var Bke = Object.defineProperty,
             F("name", "parties[" + e + "].dynformSCA2ClaimantSurname")(
               "id",
               "parties[" + e + "].dynformSCA2ClaimantSurname"
-            ),
-            d(1),
-            m(
-              "ngIf",
-              i.claimantService.claimants.at(e).get("surname").invalid &&
-                i.claimantService.claimants.at(e).get("surname").dirty
             ),
             d(3),
             F("for", "parties[" + e + "].dynformSCA2ClaimantFirstname"),
@@ -32871,7 +32811,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                122,
+                121,
                 R1,
                 i.claimantService.claimants.at(e).get("firstName").invalid &&
                   i.claimantService.claimants.at(e).get("firstName").dirty
@@ -32885,12 +32825,6 @@ var Bke = Object.defineProperty,
             F("name", "parties[" + e + "].dynformSCA2ClaimantFirstname")(
               "id",
               "parties[" + e + "].dynformSCA2ClaimantFirstname"
-            ),
-            d(1),
-            m(
-              "ngIf",
-              i.claimantService.claimants.at(e).get("firstName").invalid &&
-                i.claimantService.claimants.at(e).get("firstName").dirty
             ),
             d(3),
             F("for", "parties[" + e + "].dynformSCA2ClaimantIdentification"),
@@ -32910,7 +32844,9 @@ var Bke = Object.defineProperty,
                 e +
                 "].dynformSCA2ClaimantIdentification"
             ),
-            d(6),
+            d(3),
+            m("translate", "claimant.identificationCodeInfo"),
+            d(3),
             F("name", "parties[" + e + "].dynformSCA2ClaimantIdentification")(
               "id",
               "parties[" + e + "].dynformSCA2ClaimantIdentification"
@@ -32937,7 +32873,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                124,
+                123,
                 R1,
                 i.claimantService.claimants.at(e).get("street").invalid &&
                   i.claimantService.claimants.at(e).get("street").dirty
@@ -32973,7 +32909,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                126,
+                125,
                 R1,
                 i.claimantService.claimants.at(e).get("postalCode").invalid &&
                   i.claimantService.claimants.at(e).get("postalCode").dirty
@@ -33007,7 +32943,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                128,
+                127,
                 R1,
                 i.claimantService.claimants.at(e).get("city").invalid &&
                   i.claimantService.claimants.at(e).get("city").dirty
@@ -33040,7 +32976,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                130,
+                129,
                 R1,
                 i.claimantService.claimants.at(e).get("country").invalid &&
                   i.claimantService.claimants.at(e).get("country").dirty
@@ -33086,7 +33022,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                132,
+                131,
                 R1,
                 i.claimantService.claimants.at(e).get("countryOther").invalid &&
                   i.claimantService.claimants.at(e).get("countryOther").dirty
@@ -33188,7 +33124,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                134,
+                133,
                 R1,
                 i.claimantService.claimants.at(e).get("representative")
                   .invalid &&
@@ -33244,11 +33180,11 @@ var Bke = Object.defineProperty,
             m("translate", "claimant.addAnotherClaimant");
         }
       }
-      function $De(t, n) {
+      function qDe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(
               2,
               'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed. '
@@ -33271,11 +33207,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function WDe(t, n) {
+      function UDe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(
               2,
               'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed. '
@@ -33298,11 +33234,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function GDe(t, n) {
+      function $De(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(
               2,
               'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed. '
@@ -33325,11 +33261,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function JDe(t, n) {
+      function WDe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(2, "Field is required "),
             c(),
             c()),
@@ -33346,8 +33282,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function YDe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, JDe, 3, 2, "div", 53), c()), 2 & t)) {
+      function GDe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, WDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -33361,11 +33297,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function KDe(t, n) {
+      function JDe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(2, "Field is required "),
             c(),
             c()),
@@ -33382,8 +33318,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function QDe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, KDe, 3, 2, "div", 53), c()), 2 & t)) {
+      function YDe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, JDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -33398,11 +33334,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function XDe(t, n) {
+      function KDe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(2, "Field is required "),
             c(),
             c()),
@@ -33419,8 +33355,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function ZDe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, XDe, 3, 2, "div", 53), c()), 2 & t)) {
+      function QDe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, KDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -33434,17 +33370,17 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function eHe(t, n) {
-        if ((1 & t && (o(0, "option", 89), v(1), c()), 2 & t)) {
+      function XDe(t, n) {
+        if ((1 & t && (o(0, "option", 91), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function tHe(t, n) {
+      function ZDe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(2, "Field is required "),
             c(),
             c()),
@@ -33461,8 +33397,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function nHe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, tHe, 3, 2, "div", 53), c()), 2 & t)) {
+      function eHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, ZDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -33477,17 +33413,17 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function iHe(t, n) {
-        if ((1 & t && (o(0, "option", 89), v(1), c()), 2 & t)) {
+      function tHe(t, n) {
+        if ((1 & t && (o(0, "option", 91), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function rHe(t, n) {
+      function nHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 88),
+            o(1, "span", 90),
             v(2, "Field is required "),
             c(),
             c()),
@@ -33504,8 +33440,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function aHe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, rHe, 3, 2, "div", 53), c()), 2 & t)) {
+      function iHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, nHe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -33520,7 +33456,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function sHe(t, n) {
+      function rHe(t, n) {
         if (1 & t) {
           const e = Kt();
           o(0, "div", 40),
@@ -33537,13 +33473,13 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            o(6, "button", 86),
+            o(6, "button", 87),
             Z("click", function () {
               Ee(e);
               const r = N().index;
               return N().removeClaimant(r);
             }),
-            k(7, "i", 87),
+            k(7, "i", 88),
             c(),
             o(8, "div", 5),
             o(9, "div", 45),
@@ -33555,11 +33491,11 @@ var Bke = Object.defineProperty,
             o(15, "span", 1),
             v(16, "Corporate name of company or organisation"),
             c(),
-            k(17, "span", 49),
+            k(17, "span", 50),
             c(),
-            o(18, "div", 50),
-            o(19, "div", 51),
-            o(20, "input", 90),
+            o(18, "div", 51),
+            o(19, "div", 52),
+            o(20, "input", 92),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
@@ -33572,7 +33508,7 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(21, $De, 3, 2, "div", 53),
+            V(21, qDe, 3, 2, "div", 65),
             c(),
             o(22, "div", 4),
             o(23, "div"),
@@ -33580,11 +33516,11 @@ var Bke = Object.defineProperty,
             o(25, "span", 1),
             v(26, "Surname"),
             c(),
-            k(27, "span", 49),
+            k(27, "span", 50),
             c(),
-            o(28, "div", 50),
-            o(29, "div", 51),
-            o(30, "input", 91),
+            o(28, "div", 51),
+            o(29, "div", 52),
+            o(30, "input", 93),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
@@ -33601,7 +33537,7 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(31, WDe, 3, 2, "div", 53),
+            V(31, UDe, 3, 2, "div", 65),
             c(),
             c(),
             o(32, "div", 4),
@@ -33610,11 +33546,11 @@ var Bke = Object.defineProperty,
             o(35, "span", 1),
             v(36, "First name"),
             c(),
-            k(37, "span", 49),
+            k(37, "span", 50),
             c(),
-            o(38, "div", 50),
-            o(39, "div", 51),
-            o(40, "input", 92),
+            o(38, "div", 51),
+            o(39, "div", 52),
+            o(40, "input", 94),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
@@ -33631,7 +33567,7 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(41, GDe, 3, 2, "div", 53),
+            V(41, $De, 3, 2, "div", 65),
             c(),
             c(),
             o(42, "div", 4),
@@ -33643,49 +33579,39 @@ var Bke = Object.defineProperty,
               "Personal identification number or passport number/ registration number"
             ),
             c(),
-            k(47, "span", 49),
+            k(47, "span", 50),
             c(),
-            o(48, "div", 93),
-            o(49, "div", 94),
-            o(50, "div", 61),
+            o(48, "div", 58),
+            o(49, "div", 59),
+            o(50, "div", 60),
+            o(51, "div", 61),
             v(
-              51,
+              52,
               " If you have a personal identification number given by the authorities of a Member State it would be helpful to provide it. If you don't have such number, it would be helpful to provide the number of your passport or identification document, if you have them. If you act on behalf of a legal person or any entity having legal capacity, it would be helpful to provide a relevant registration number. "
             ),
             c(),
             c(),
             c(),
-            o(52, "div", 58),
-            o(53, "div", 59),
-            o(54, "div", 60),
-            o(55, "div", 61),
-            v(
-              56,
-              " If you have a personal identification number given by the authorities of a Member State it would be helpful to provide it. If you don't have such number, it would be helpful to provide the number of your passport or identification document, if you have them. If you act on behalf of a legal person or any entity having legal capacity, it would be helpful to provide a relevant registration number. "
-            ),
+            o(53, "div", 52),
+            k(54, "input", 95),
             c(),
             c(),
-            c(),
-            o(57, "div", 51),
-            k(58, "input", 95),
+            k(55, "span", 63),
             c(),
             c(),
-            k(59, "span", 63),
+            o(56, "div", 4),
+            o(57, "div"),
+            o(58, "label"),
+            o(59, "span", 1),
+            v(60, "Street and number/PO box"),
+            c(),
+            o(61, "span", 50),
+            v(62, "*"),
             c(),
             c(),
-            o(60, "div", 4),
-            o(61, "div"),
-            o(62, "label"),
-            o(63, "span", 1),
-            v(64, "Street and number/PO box"),
-            c(),
-            o(65, "span", 49),
-            v(66, "*"),
-            c(),
-            c(),
-            o(67, "div", 50),
-            o(68, "div", 51),
-            o(69, "input", 96),
+            o(63, "div", 51),
+            o(64, "div", 52),
+            o(65, "input", 96),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
@@ -33694,152 +33620,152 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(70, YDe, 2, 1, "div", 53),
+            V(66, GDe, 2, 1, "div", 65),
             c(),
             c(),
-            o(71, "div", 4),
-            o(72, "div"),
-            o(73, "label"),
-            o(74, "span", 1),
-            v(75, "Postal code"),
+            o(67, "div", 4),
+            o(68, "div"),
+            o(69, "label"),
+            o(70, "span", 1),
+            v(71, "Postal code"),
             c(),
-            o(76, "span", 49),
-            v(77, "*"),
-            c(),
-            c(),
-            o(78, "div", 50),
-            o(79, "div", 51),
-            k(80, "input", 97),
+            o(72, "span", 50),
+            v(73, "*"),
             c(),
             c(),
-            V(81, QDe, 2, 1, "div", 53),
+            o(74, "div", 51),
+            o(75, "div", 52),
+            k(76, "input", 97),
             c(),
             c(),
-            o(82, "div", 4),
-            o(83, "div"),
-            o(84, "label"),
-            o(85, "span", 1),
-            v(86, "City"),
-            c(),
-            o(87, "span", 49),
-            v(88, "*"),
+            V(77, YDe, 2, 1, "div", 65),
             c(),
             c(),
-            o(89, "div", 50),
-            o(90, "div", 51),
-            k(91, "input", 98),
+            o(78, "div", 4),
+            o(79, "div"),
+            o(80, "label"),
+            o(81, "span", 1),
+            v(82, "City"),
+            c(),
+            o(83, "span", 50),
+            v(84, "*"),
             c(),
             c(),
-            V(92, ZDe, 2, 1, "div", 53),
+            o(85, "div", 51),
+            o(86, "div", 52),
+            k(87, "input", 98),
             c(),
             c(),
-            o(93, "div", 4),
-            o(94, "div"),
-            o(95, "label"),
-            o(96, "span", 1),
-            v(97, "Country"),
-            c(),
-            o(98, "span", 49),
-            v(99, "*"),
+            V(88, QDe, 2, 1, "div", 65),
             c(),
             c(),
-            o(100, "div", 50),
-            o(101, "div", 51),
-            o(102, "select", 99),
+            o(89, "div", 4),
+            o(90, "div"),
+            o(91, "label"),
+            o(92, "span", 1),
+            v(93, "Country"),
+            c(),
+            o(94, "span", 50),
+            v(95, "*"),
+            c(),
+            c(),
+            o(96, "div", 51),
+            o(97, "div", 52),
+            o(98, "select", 99),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
               return N().expandWorldCountrySelect(r.target.value, a, !1);
             }),
-            o(103, "option", 68),
-            v(104, " Please select "),
+            o(99, "option", 69),
+            v(100, " Please select "),
             c(),
-            V(105, eHe, 2, 2, "option", 69),
-            o(106, "option", 70),
-            v(107, " Other (please specify) "),
-            c(),
-            c(),
-            c(),
-            c(),
-            V(108, nHe, 2, 1, "div", 53),
-            c(),
-            c(),
-            o(109, "div"),
-            o(110, "div", 71),
-            o(111, "div", 4),
-            o(112, "div"),
-            o(113, "label"),
-            o(114, "span", 1),
-            v(115, "Please specify"),
-            c(),
-            o(116, "span", 49),
-            v(117, "*"),
-            c(),
-            c(),
-            o(118, "div", 50),
-            o(119, "div", 51),
-            o(120, "select", 100),
-            o(121, "option", 68),
-            v(122, " Please select "),
-            c(),
-            V(123, iHe, 2, 2, "option", 69),
-            c(),
-            c(),
-            c(),
-            V(124, aHe, 2, 1, "div", 53),
-            c(),
-            c(),
-            k(125, "p", 73),
-            c(),
-            c(),
-            o(126, "div", 4),
-            o(127, "div"),
-            o(128, "label"),
-            o(129, "span", 1),
-            v(130, "Telephone"),
-            c(),
-            k(131, "span", 49),
-            c(),
-            o(132, "div", 74),
-            o(133, "div", 51),
-            k(134, "input", 101),
-            c(),
-            c(),
-            k(135, "span", 63),
-            c(),
-            c(),
-            o(136, "div", 4),
-            o(137, "div"),
-            o(138, "label"),
-            o(139, "span", 1),
-            v(140, "E-mail"),
-            c(),
-            k(141, "span", 49),
-            c(),
-            o(142, "div", 74),
-            o(143, "div", 51),
-            k(144, "input", 102),
-            c(),
-            c(),
-            k(145, "span", 63),
+            V(101, XDe, 2, 2, "option", 70),
+            o(102, "option", 71),
+            v(103, " Other (please specify) "),
             c(),
             c(),
             c(),
             c(),
-            o(146, "div", 82),
-            v(147, "\xa0"),
+            V(104, eHe, 2, 1, "div", 65),
             c(),
             c(),
-            o(148, "div", 83),
-            o(149, "a", 84),
+            o(105, "div"),
+            o(106, "div", 72),
+            o(107, "div", 4),
+            o(108, "div"),
+            o(109, "label"),
+            o(110, "span", 1),
+            v(111, "Please specify"),
+            c(),
+            o(112, "span", 50),
+            v(113, "*"),
+            c(),
+            c(),
+            o(114, "div", 51),
+            o(115, "div", 52),
+            o(116, "select", 100),
+            o(117, "option", 69),
+            v(118, " Please select "),
+            c(),
+            V(119, tHe, 2, 2, "option", 70),
+            c(),
+            c(),
+            c(),
+            V(120, iHe, 2, 1, "div", 65),
+            c(),
+            c(),
+            k(121, "p", 74),
+            c(),
+            c(),
+            o(122, "div", 4),
+            o(123, "div"),
+            o(124, "label"),
+            o(125, "span", 1),
+            v(126, "Telephone"),
+            c(),
+            k(127, "span", 50),
+            c(),
+            o(128, "div", 75),
+            o(129, "div", 52),
+            k(130, "input", 101),
+            c(),
+            c(),
+            k(131, "span", 63),
+            c(),
+            c(),
+            o(132, "div", 4),
+            o(133, "div"),
+            o(134, "label"),
+            o(135, "span", 1),
+            v(136, "E-mail"),
+            c(),
+            k(137, "span", 50),
+            c(),
+            o(138, "div", 75),
+            o(139, "div", 52),
+            k(140, "input", 102),
+            c(),
+            c(),
+            k(141, "span", 63),
+            c(),
+            c(),
+            c(),
+            c(),
+            o(142, "div", 83),
+            v(143, "\xa0"),
+            c(),
+            c(),
+            o(144, "div", 84),
+            o(145, "a", 85),
             Z("click", function () {
               return Ee(e), N(2).openModal("js_modal_add_claimant");
             }),
-            o(150, "span", 1),
-            v(151, "Add another claimant"),
+            o(146, "span", 1),
+            v(147, "Add another claimant"),
             c(),
             c(),
-            k(152, "label", 85),
+            k(148, "label", 86),
             c(),
             c(),
             c(),
@@ -33870,7 +33796,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                98,
+                99,
                 R1,
                 i.claimantService.claimants.at(e).get("organisation").invalid &&
                   i.claimantService.claimants.at(e).get("organisation").dirty
@@ -33911,7 +33837,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                100,
+                101,
                 R1,
                 i.claimantService.claimants.at(e).get("surname").invalid &&
                   i.claimantService.claimants.at(e).get("surname").dirty
@@ -33955,7 +33881,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                102,
+                103,
                 R1,
                 i.claimantService.claimants.at(e).get("firstName").invalid &&
                   i.claimantService.claimants.at(e).get("firstName").dirty
@@ -33997,14 +33923,16 @@ var Bke = Object.defineProperty,
                 e +
                 "].dynformSCA2ClaimantRepresentativeIdentification"
             ),
-            d(5),
+            d(1),
             F(
               "id",
               "input-wrapper_parties[" +
                 e +
                 "].dynformSCA2ClaimantRepresentativeIdentification"
             ),
-            d(6),
+            d(3),
+            m("translate", "claimant.identificationCodeInfo"),
+            d(3),
             F(
               "name",
               "parties[" +
@@ -34041,7 +33969,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                104,
+                105,
                 R1,
                 i.claimantService.claimants.at(e).get("street").invalid &&
                   i.claimantService.claimants.at(e).get("street").dirty
@@ -34085,7 +34013,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                106,
+                107,
                 R1,
                 i.claimantService.claimants.at(e).get("postalCode").invalid &&
                   i.claimantService.claimants.at(e).get("postalCode").dirty
@@ -34129,7 +34057,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                108,
+                109,
                 R1,
                 i.claimantService.claimants.at(e).get("city").invalid &&
                   i.claimantService.claimants.at(e).get("city").dirty
@@ -34170,7 +34098,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                110,
+                111,
                 R1,
                 i.claimantService.claimants.at(e).get("country").invalid &&
                   i.claimantService.claimants.at(e).get("country").dirty
@@ -34227,7 +34155,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                112,
+                113,
                 R1,
                 i.claimantService.claimants.at(e).get("countryOther").invalid &&
                   i.claimantService.claimants.at(e).get("countryOther").dirty
@@ -34346,13 +34274,13 @@ var Bke = Object.defineProperty,
             m("translate", "claimant.addAnotherClaimant");
         }
       }
-      function oHe(t, n) {
+      function aHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div", 36),
             o(1, "div", 37),
-            V(2, UDe, 180, 136, "div", 38),
-            V(3, sHe, 153, 114, "ng-template", null, 39, Cn),
+            V(2, jDe, 178, 135, "div", 38),
+            V(3, rHe, 149, 115, "ng-template", null, 39, Cn),
             c(),
             c()),
           2 & t)
@@ -34366,7 +34294,7 @@ var Bke = Object.defineProperty,
             m("ngIf", !e.get("isRepresentative").value)("ngIfElse", r);
         }
       }
-      let cHe = (() => {
+      let sHe = (() => {
         class t {
           constructor(e, i, r, a) {
             (this.claimantService = e),
@@ -34816,6 +34744,7 @@ var Bke = Object.defineProperty,
               [1, "grid_item", "two-thirds"],
               [2, "margin-bottom", "0px", 3, "innerHTML"],
               [1, "marginleft20px"],
+              ["class", "pb-3", "style", "margin-left: 20px", 4, "ngIf"],
               [1, "asterisk"],
               [1, "input-wrapper", "regular", 3, "ngClass"],
               [1, "input-content"],
@@ -34835,7 +34764,6 @@ var Bke = Object.defineProperty,
                 3,
                 "input",
               ],
-              [4, "ngIf"],
               [
                 "type",
                 "text",
@@ -34873,7 +34801,7 @@ var Bke = Object.defineProperty,
               [1, "input-wrapper", "regular", "hasinfo"],
               [1, "info", "hide-mobile"],
               ["tabindex", "0", 1, "icon"],
-              [1, "hover"],
+              [1, "hover", 3, "translate"],
               [
                 "type",
                 "text",
@@ -34904,6 +34832,7 @@ var Bke = Object.defineProperty,
                 "df_textbox",
                 "df_mandatory",
               ],
+              [4, "ngIf"],
               [
                 "type",
                 "text",
@@ -35069,6 +34998,7 @@ var Bke = Object.defineProperty,
                 "click",
               ],
               ["aria-hidden", "true", 1, "fa", "fa-times", "closeIcon"],
+              [1, "pb-3", 2, "margin-left", "20px"],
               [
                 1,
                 "error",
@@ -35132,8 +35062,6 @@ var Bke = Object.defineProperty,
                 "change",
                 "input",
               ],
-              [1, "info", "show-mobile"],
-              [1, "icon"],
               [
                 "type",
                 "text",
@@ -35259,7 +35187,7 @@ var Bke = Object.defineProperty,
                 k(9, "input", 8),
                 k(10, "p", 9),
                 o(11, "form", 10),
-                V(12, oHe, 5, 3, "div", 11),
+                V(12, aHe, 5, 3, "div", 11),
                 c(),
                 o(13, "div", 12),
                 o(14, "div", 13),
@@ -35433,24 +35361,24 @@ var Bke = Object.defineProperty,
           t
         );
       })();
-      function lHe(t, n) {
+      function oHe(t, n) {
         if (1 & t) {
           const e = Kt();
-          o(0, "button", 88),
+          o(0, "button", 89),
             Z("click", function () {
               Ee(e);
               const r = N(2).index;
               return N().removeDefendant(r);
             }),
-            k(1, "i", 89),
+            k(1, "i", 90),
             c();
         }
       }
-      function uHe(t, n) {
+      function cHe(t, n) {
         if (
           (1 & t &&
-            (o(0, "div"),
-            o(1, "span", 90),
+            (o(0, "div", 91),
+            o(1, "span", 92),
             v(
               2,
               'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed.'
@@ -35469,69 +35397,15 @@ var Bke = Object.defineProperty,
               "id",
               "validation_error_text_parties[" +
                 e +
-                "].dynformSCA2DefendantName"
+                "].dynformSCA2DefendantOrganisationSurnameFirstName"
             );
         }
       }
-      function dHe(t, n) {
+      function lHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
-            v(
-              2,
-              'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed. '
-            ),
-            c(),
-            c()),
-          2 & t)
-        ) {
-          const e = N(2).index;
-          d(1),
-            m(
-              "translate",
-              "errors.organisationSurnameFirstNameValidationError"
-            ),
-            F(
-              "id",
-              "validation_error_text_parties[" +
-                e +
-                "].dynformSCA2DefendantSurname"
-            );
-        }
-      }
-      function fHe(t, n) {
-        if (
-          (1 & t &&
-            (o(0, "div"),
-            o(1, "span", 90),
-            v(
-              2,
-              'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed. '
-            ),
-            c(),
-            c()),
-          2 & t)
-        ) {
-          const e = N(2).index;
-          d(1),
-            m(
-              "translate",
-              "errors.organisationSurnameFirstNameValidationError"
-            ),
-            F(
-              "id",
-              "validation_error_text_parties[" +
-                e +
-                "].dynformSCA2DefendantFirstname"
-            );
-        }
-      }
-      function hHe(t, n) {
-        if (
-          (1 & t &&
-            (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(2, "Field is required "),
             c(),
             c()),
@@ -35548,8 +35422,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function pHe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, hHe, 3, 2, "div", 55), c()), 2 & t)) {
+      function uHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, lHe, 3, 2, "div", 67), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -35563,11 +35437,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function mHe(t, n) {
+      function dHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(2, "Field is required "),
             c(),
             c()),
@@ -35584,8 +35458,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function gHe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, mHe, 3, 2, "div", 55), c()), 2 & t)) {
+      function fHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, dHe, 3, 2, "div", 67), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -35600,11 +35474,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function vHe(t, n) {
+      function hHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(2, "Field is required "),
             c(),
             c()),
@@ -35621,8 +35495,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function _He(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, vHe, 3, 2, "div", 55), c()), 2 & t)) {
+      function pHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, hHe, 3, 2, "div", 67), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -35636,17 +35510,17 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function CHe(t, n) {
-        if ((1 & t && (o(0, "option", 91), v(1), c()), 2 & t)) {
+      function mHe(t, n) {
+        if ((1 & t && (o(0, "option", 93), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function yHe(t, n) {
+      function gHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(2, "Field is required "),
             c(),
             c()),
@@ -35663,8 +35537,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function bHe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, yHe, 3, 2, "div", 55), c()), 2 & t)) {
+      function vHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, gHe, 3, 2, "div", 67), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -35679,17 +35553,17 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function MHe(t, n) {
-        if ((1 & t && (o(0, "option", 91), v(1), c()), 2 & t)) {
+      function _He(t, n) {
+        if ((1 & t && (o(0, "option", 93), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function SHe(t, n) {
+      function CHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(2, "Field is required "),
             c(),
             c()),
@@ -35706,8 +35580,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function wHe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, SHe, 3, 2, "div", 55), c()), 2 & t)) {
+      function yHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, CHe, 3, 2, "div", 67), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -35722,17 +35596,17 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function DHe(t, n) {
-        if ((1 & t && (o(0, "option", 91), v(1), c()), 2 & t)) {
+      function bHe(t, n) {
+        if ((1 & t && (o(0, "option", 93), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.id), d(1), rt(" ", e.label, " ");
         }
       }
-      function HHe(t, n) {
+      function MHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(2, "Field is required "),
             c(),
             c()),
@@ -35749,8 +35623,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function VHe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, HHe, 3, 2, "div", 55), c()), 2 & t)) {
+      function SHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, MHe, 3, 2, "div", 67), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -35769,7 +35643,7 @@ var Bke = Object.defineProperty,
       const B1 = function (t) {
         return { invalid: t };
       };
-      function xHe(t, n) {
+      function wHe(t, n) {
         if (1 & t) {
           const e = Kt();
           o(0, "div"),
@@ -35787,7 +35661,7 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(7, lHe, 2, 0, "button", 46),
+            V(7, oHe, 2, 0, "button", 46),
             o(8, "div", 5),
             o(9, "div", 47),
             o(10, "div", 48),
@@ -35804,16 +35678,17 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             o(19, "span", 50),
-            o(20, "div", 4),
-            o(21, "label"),
-            o(22, "span", 1),
-            v(23, "2.1. Corporate name of company or organisation"),
+            V(20, cHe, 3, 2, "div", 51),
+            o(21, "div", 4),
+            o(22, "label"),
+            o(23, "span", 1),
+            v(24, "2.1. Corporate name of company or organisation"),
             c(),
-            k(24, "span", 51),
+            k(25, "span", 52),
             c(),
-            o(25, "div", 52),
             o(26, "div", 53),
-            o(27, "input", 54),
+            o(27, "div", 54),
+            o(28, "input", 55),
             Z("input", function () {
               Ee(e);
               const r = N().index;
@@ -35822,7 +35697,6 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(28, uHe, 3, 2, "div", 55),
             c(),
             o(29, "div", 4),
             o(30, "div"),
@@ -35830,10 +35704,10 @@ var Bke = Object.defineProperty,
             o(32, "span", 1),
             v(33, "Surname"),
             c(),
-            k(34, "span", 51),
+            k(34, "span", 52),
             c(),
-            o(35, "div", 52),
-            o(36, "div", 53),
+            o(35, "div", 53),
+            o(36, "div", 54),
             o(37, "input", 56),
             Z("input", function () {
               Ee(e);
@@ -35843,20 +35717,19 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(38, dHe, 3, 2, "div", 55),
             c(),
             c(),
-            o(39, "div", 4),
-            o(40, "div"),
-            o(41, "label"),
-            o(42, "span", 1),
-            v(43, "First name"),
+            o(38, "div", 4),
+            o(39, "div"),
+            o(40, "label"),
+            o(41, "span", 1),
+            v(42, "First name"),
             c(),
-            k(44, "span", 51),
+            k(43, "span", 52),
             c(),
-            o(45, "div", 52),
-            o(46, "div", 53),
-            o(47, "input", 57),
+            o(44, "div", 53),
+            o(45, "div", 54),
+            o(46, "input", 57),
             Z("input", function () {
               Ee(e);
               const r = N().index;
@@ -35865,245 +35738,244 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(48, fHe, 3, 2, "div", 55),
             c(),
             c(),
-            o(49, "div", 4),
-            o(50, "div", 58),
-            o(51, "label", 59),
-            o(52, "span", 1),
+            o(47, "div", 4),
+            o(48, "div", 58),
+            o(49, "label", 59),
+            o(50, "span", 1),
             v(
-              53,
+              51,
               "2.2. Personal identification number or passport number/ registration number"
             ),
             c(),
-            k(54, "span", 51),
+            k(52, "span", 52),
             c(),
-            o(55, "div", 60),
-            o(56, "div", 61),
-            o(57, "div", 62),
-            o(58, "div", 63),
+            o(53, "div", 60),
+            o(54, "div", 61),
+            o(55, "div", 62),
+            o(56, "div", 63),
             v(
-              59,
+              57,
               " If you know a personal identification number given to a defendant by authorities of a Member State it would be helpful to provide it. Alternatively or additionally it would be helpful to provide a number of the defendant's passport or identification document, if you have them. If the defendant is a legal person or any entity having legal capacity, it would be helpful to provide a relevant registration number for the defendant if you know it. "
             ),
             c(),
             c(),
             c(),
-            o(60, "div", 53),
-            k(61, "input", 64),
+            o(58, "div", 54),
+            k(59, "input", 64),
             c(),
             c(),
-            k(62, "span", 65),
+            k(60, "span", 65),
             c(),
             c(),
-            o(63, "div", 4),
-            o(64, "div"),
-            o(65, "label"),
-            o(66, "span", 1),
-            v(67, "2.3. Street and number/PO box"),
+            o(61, "div", 4),
+            o(62, "div"),
+            o(63, "label"),
+            o(64, "span", 1),
+            v(65, "2.3. Street and number/PO box"),
             c(),
-            o(68, "span", 51),
-            v(69, "*"),
-            c(),
-            c(),
-            o(70, "div", 52),
-            o(71, "div", 53),
-            k(72, "input", 66),
+            o(66, "span", 52),
+            v(67, "*"),
             c(),
             c(),
-            V(73, pHe, 2, 1, "div", 55),
+            o(68, "div", 53),
+            o(69, "div", 54),
+            k(70, "input", 66),
             c(),
             c(),
-            o(74, "div", 4),
-            o(75, "div"),
-            o(76, "label"),
-            o(77, "span", 1),
-            v(78, "2.4. Postal code"),
-            c(),
-            o(79, "span", 51),
-            v(80, "*"),
+            V(71, uHe, 2, 1, "div", 67),
             c(),
             c(),
-            o(81, "div", 52),
-            o(82, "div", 53),
-            k(83, "input", 67),
+            o(72, "div", 4),
+            o(73, "div"),
+            o(74, "label"),
+            o(75, "span", 1),
+            v(76, "2.4. Postal code"),
+            c(),
+            o(77, "span", 52),
+            v(78, "*"),
             c(),
             c(),
-            V(84, gHe, 2, 1, "div", 55),
+            o(79, "div", 53),
+            o(80, "div", 54),
+            k(81, "input", 68),
             c(),
             c(),
-            o(85, "div", 4),
-            o(86, "div"),
-            o(87, "label"),
-            o(88, "span", 1),
-            v(89, "City"),
-            c(),
-            o(90, "span", 51),
-            v(91, "*"),
+            V(82, fHe, 2, 1, "div", 67),
             c(),
             c(),
-            o(92, "div", 52),
-            o(93, "div", 53),
-            k(94, "input", 68),
+            o(83, "div", 4),
+            o(84, "div"),
+            o(85, "label"),
+            o(86, "span", 1),
+            v(87, "City"),
+            c(),
+            o(88, "span", 52),
+            v(89, "*"),
             c(),
             c(),
-            V(95, _He, 2, 1, "div", 55),
+            o(90, "div", 53),
+            o(91, "div", 54),
+            k(92, "input", 69),
             c(),
             c(),
-            o(96, "div", 4),
-            o(97, "div"),
-            o(98, "label"),
-            o(99, "span", 1),
-            v(100, "2.5. Country:"),
-            c(),
-            o(101, "span", 51),
-            v(102, "*"),
+            V(93, pHe, 2, 1, "div", 67),
             c(),
             c(),
-            o(103, "div", 52),
-            o(104, "div", 53),
-            o(105, "select", 69),
+            o(94, "div", 4),
+            o(95, "div"),
+            o(96, "label"),
+            o(97, "span", 1),
+            v(98, "2.5. Country:"),
+            c(),
+            o(99, "span", 52),
+            v(100, "*"),
+            c(),
+            c(),
+            o(101, "div", 53),
+            o(102, "div", 54),
+            o(103, "select", 70),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
               return N().expandWorldCountrySelect(r.target.value, a, !0);
             }),
-            o(106, "option", 70),
-            v(107, " Please select "),
+            o(104, "option", 71),
+            v(105, " Please select "),
             c(),
-            V(108, CHe, 2, 2, "option", 71),
-            o(109, "option", 72),
-            v(110, " Other (please specify) "),
-            c(),
-            c(),
-            c(),
-            c(),
-            V(111, bHe, 2, 1, "div", 55),
-            c(),
-            c(),
-            k(112, "div"),
-            o(113, "div"),
-            o(114, "div", 73),
-            o(115, "div", 4),
-            o(116, "div"),
-            o(117, "label"),
-            o(118, "span", 1),
-            v(119, "Please specify"),
-            c(),
-            o(120, "span", 51),
-            v(121, "*"),
-            c(),
-            c(),
-            o(122, "div", 52),
-            o(123, "div", 53),
-            o(124, "select", 74),
-            o(125, "option", 70),
-            v(126, " Please select "),
-            c(),
-            V(127, MHe, 2, 2, "option", 71),
+            V(106, mHe, 2, 2, "option", 72),
+            o(107, "option", 73),
+            v(108, " Other (please specify) "),
             c(),
             c(),
             c(),
-            V(128, wHe, 2, 1, "div", 55),
+            c(),
+            V(109, vHe, 2, 1, "div", 67),
             c(),
             c(),
-            k(129, "p", 75),
+            k(110, "div"),
+            o(111, "div"),
+            o(112, "div", 74),
+            o(113, "div", 4),
+            o(114, "div"),
+            o(115, "label"),
+            o(116, "span", 1),
+            v(117, "Please specify"),
+            c(),
+            o(118, "span", 52),
+            v(119, "*"),
             c(),
             c(),
-            o(130, "div", 4),
-            o(131, "div"),
-            o(132, "label"),
-            o(133, "span", 1),
-            v(134, "2.6. Telephone"),
+            o(120, "div", 53),
+            o(121, "div", 54),
+            o(122, "select", 75),
+            o(123, "option", 71),
+            v(124, " Please select "),
             c(),
-            k(135, "span", 51),
-            c(),
-            o(136, "div", 76),
-            o(137, "div", 53),
-            k(138, "input", 77),
+            V(125, _He, 2, 2, "option", 72),
             c(),
             c(),
-            k(139, "span", 65),
+            c(),
+            V(126, yHe, 2, 1, "div", 67),
             c(),
             c(),
-            o(140, "div", 4),
-            o(141, "div"),
-            o(142, "label"),
-            o(143, "span", 1),
-            v(144, "2.7. E-mail"),
-            c(),
-            k(145, "span", 51),
-            c(),
-            o(146, "div", 76),
-            o(147, "div", 53),
-            k(148, "input", 78),
+            k(127, "p", 76),
             c(),
             c(),
-            k(149, "span", 65),
+            o(128, "div", 4),
+            o(129, "div"),
+            o(130, "label"),
+            o(131, "span", 1),
+            v(132, "2.6. Telephone"),
+            c(),
+            k(133, "span", 52),
+            c(),
+            o(134, "div", 77),
+            o(135, "div", 54),
+            k(136, "input", 78),
             c(),
             c(),
-            o(150, "div", 4),
-            o(151, "div"),
-            o(152, "label"),
-            o(153, "span", 1),
+            k(137, "span", 65),
+            c(),
+            c(),
+            o(138, "div", 4),
+            o(139, "div"),
+            o(140, "label"),
+            o(141, "span", 1),
+            v(142, "2.7. E-mail"),
+            c(),
+            k(143, "span", 52),
+            c(),
+            o(144, "div", 77),
+            o(145, "div", 54),
+            k(146, "input", 79),
+            c(),
+            c(),
+            k(147, "span", 65),
+            c(),
+            c(),
+            o(148, "div", 4),
+            o(149, "div"),
+            o(150, "label"),
+            o(151, "span", 1),
             v(
-              154,
+              152,
               "2.8. Defendant\u2019s representative, if any, and contact details:"
             ),
             c(),
-            k(155, "span", 51),
+            k(153, "span", 52),
             c(),
-            o(156, "div", 52),
-            o(157, "div", 53),
-            o(158, "select", 79),
+            o(154, "div", 53),
+            o(155, "div", 54),
+            o(156, "select", 80),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
               return N().onRepresentativeChange(r.target.value, a);
             }),
-            k(159, "option", 80),
-            o(160, "option", 81),
-            v(161, " Add new representative "),
+            k(157, "option", 81),
+            o(158, "option", 82),
+            v(159, " Add new representative "),
             c(),
-            V(162, DHe, 2, 2, "option", 71),
-            c(),
-            c(),
-            c(),
-            V(163, VHe, 2, 1, "div", 55),
-            c(),
-            c(),
-            o(164, "div", 4),
-            o(165, "div"),
-            o(166, "label"),
-            o(167, "span", 1),
-            v(168, " 2.9. Other details"),
-            c(),
-            c(),
-            o(169, "div", 82),
-            o(170, "div", 53),
-            k(171, "textarea", 83),
-            c(),
-            c(),
-            k(172, "span", 65),
+            V(160, bHe, 2, 2, "option", 72),
             c(),
             c(),
             c(),
-            c(),
-            o(173, "div", 84),
-            v(174, "\xa0"),
+            V(161, SHe, 2, 1, "div", 67),
             c(),
             c(),
-            o(175, "div", 85),
-            o(176, "a", 86),
+            o(162, "div", 4),
+            o(163, "div"),
+            o(164, "label"),
+            o(165, "span", 1),
+            v(166, " 2.9. Other details"),
+            c(),
+            c(),
+            o(167, "div", 83),
+            o(168, "div", 54),
+            k(169, "textarea", 84),
+            c(),
+            c(),
+            k(170, "span", 65),
+            c(),
+            c(),
+            c(),
+            c(),
+            o(171, "div", 85),
+            v(172, "\xa0"),
+            c(),
+            c(),
+            o(173, "div", 86),
+            o(174, "a", 87),
             Z("click", function () {
               return Ee(e), N(2).openModal("js_modal_add_defendant");
             }),
-            o(177, "span", 1),
-            v(178, "Add another defendant"),
+            o(175, "span", 1),
+            v(176, "Add another defendant"),
             c(),
             c(),
-            k(179, "label", 87),
+            k(177, "label", 88),
             c(),
             c(),
             c(),
@@ -36123,8 +35995,14 @@ var Bke = Object.defineProperty,
             d(4),
             F("id", "parties[" + e + "].defendant_div"),
             d(3),
-            m("innerHTML", jt(15, 116, "defendant.defendantDetails"), ls),
-            d(7),
+            m("innerHTML", jt(15, 115, "defendant.defendantDetails"), ls),
+            d(6),
+            m(
+              "ngIf",
+              i.defendantService.defendants.at(e).get("organisation").invalid &&
+                i.defendantService.defendants.at(e).get("organisation").dirty
+            ),
+            d(2),
             F("for", "parties[" + e + "].dynformSCA2DefendantName"),
             d(1),
             m("translate", "defendant.organisation"),
@@ -36137,7 +36015,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                118,
+                117,
                 B1,
                 i.defendantService.defendants.at(e).get("organisation")
                   .invalid &&
@@ -36152,12 +36030,6 @@ var Bke = Object.defineProperty,
             F("name", "parties[" + e + "].dynformSCA2DefendantName")(
               "id",
               "parties[" + e + "].dynformSCA2DefendantName"
-            ),
-            d(1),
-            m(
-              "ngIf",
-              i.defendantService.defendants.at(e).get("organisation").invalid &&
-                i.defendantService.defendants.at(e).get("organisation").dirty
             ),
             d(3),
             F("for", "parties[" + e + "].dynformSCA2DefendantSurname"),
@@ -36174,7 +36046,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                120,
+                119,
                 B1,
                 i.defendantService.defendants.at(e).get("surname").invalid &&
                   i.defendantService.defendants.at(e).get("surname").dirty
@@ -36188,12 +36060,6 @@ var Bke = Object.defineProperty,
             F("name", "parties[" + e + "].dynformSCA2DefendantSurname")(
               "id",
               "parties[" + e + "].dynformSCA2DefendantSurname"
-            ),
-            d(1),
-            m(
-              "ngIf",
-              i.defendantService.defendants.at(e).get("surname").invalid &&
-                i.defendantService.defendants.at(e).get("surname").dirty
             ),
             d(3),
             F("for", "parties[" + e + "].dynformSCA2DefendantFirstname"),
@@ -36210,7 +36076,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                122,
+                121,
                 B1,
                 i.defendantService.defendants.at(e).get("firstName").invalid &&
                   i.defendantService.defendants.at(e).get("firstName").dirty
@@ -36224,12 +36090,6 @@ var Bke = Object.defineProperty,
             F("name", "parties[" + e + "].dynformSCA2DefendantFirstname")(
               "id",
               "parties[" + e + "].dynformSCA2DefendantFirstname"
-            ),
-            d(1),
-            m(
-              "ngIf",
-              i.defendantService.defendants.at(e).get("firstName").invalid &&
-                i.defendantService.defendants.at(e).get("firstName").dirty
             ),
             d(3),
             F("for", "parties[" + e + "].dynformSCA2DefendantIdentification"),
@@ -36249,7 +36109,9 @@ var Bke = Object.defineProperty,
                 e +
                 "].dynformSCA2DefendantIdentification"
             ),
-            d(6),
+            d(3),
+            m("translate", "defendant.identificationCodeInfo"),
+            d(3),
             F("name", "parties[" + e + "].dynformSCA2DefendantIdentification")(
               "id",
               "parties[" + e + "].dynformSCA2DefendantIdentification"
@@ -36276,7 +36138,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                124,
+                123,
                 B1,
                 i.defendantService.defendants.at(e).get("street").invalid &&
                   i.defendantService.defendants.at(e).get("street").dirty
@@ -36312,7 +36174,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                126,
+                125,
                 B1,
                 i.defendantService.defendants.at(e).get("postalCode").invalid &&
                   i.defendantService.defendants.at(e).get("postalCode").dirty
@@ -36348,7 +36210,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                128,
+                127,
                 B1,
                 i.defendantService.defendants.at(e).get("city").invalid &&
                   i.defendantService.defendants.at(e).get("city").dirty
@@ -36384,7 +36246,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                130,
+                129,
                 B1,
                 i.defendantService.defendants.at(e).get("country").invalid &&
                   i.defendantService.defendants.at(e).get("country").dirty
@@ -36430,7 +36292,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                132,
+                131,
                 B1,
                 i.defendantService.defendants.at(e).get("countryOther")
                   .invalid &&
@@ -36535,7 +36397,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                134,
+                133,
                 B1,
                 i.defendantService.defendants.at(e).get("representative")
                   .invalid &&
@@ -36595,11 +36457,11 @@ var Bke = Object.defineProperty,
             m("translate", "defendant.addAnotherDefendant");
         }
       }
-      function NHe(t, n) {
+      function DHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(
               2,
               'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed. '
@@ -36622,11 +36484,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function AHe(t, n) {
+      function HHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(
               2,
               'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed. '
@@ -36649,11 +36511,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function THe(t, n) {
+      function VHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(
               2,
               'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed. '
@@ -36676,11 +36538,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function EHe(t, n) {
+      function xHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(2, "Field is required "),
             c(),
             c()),
@@ -36697,8 +36559,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function kHe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, EHe, 3, 2, "div", 55), c()), 2 & t)) {
+      function NHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, xHe, 3, 2, "div", 67), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -36712,11 +36574,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function zHe(t, n) {
+      function AHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(2, "Field is required "),
             c(),
             c()),
@@ -36733,8 +36595,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function LHe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, zHe, 3, 2, "div", 55), c()), 2 & t)) {
+      function THe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, AHe, 3, 2, "div", 67), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -36749,11 +36611,11 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function FHe(t, n) {
+      function EHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(2, "Field is required "),
             c(),
             c()),
@@ -36770,8 +36632,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function IHe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, FHe, 3, 2, "div", 55), c()), 2 & t)) {
+      function kHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, EHe, 3, 2, "div", 67), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -36785,17 +36647,17 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function OHe(t, n) {
-        if ((1 & t && (o(0, "option", 91), v(1), c()), 2 & t)) {
+      function zHe(t, n) {
+        if ((1 & t && (o(0, "option", 93), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function PHe(t, n) {
+      function LHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(2, "Field is required "),
             c(),
             c()),
@@ -36812,8 +36674,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function RHe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, PHe, 3, 2, "div", 55), c()), 2 & t)) {
+      function FHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, LHe, 3, 2, "div", 67), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -36828,17 +36690,17 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function BHe(t, n) {
-        if ((1 & t && (o(0, "option", 91), v(1), c()), 2 & t)) {
+      function IHe(t, n) {
+        if ((1 & t && (o(0, "option", 93), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function jHe(t, n) {
+      function OHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 90),
+            o(1, "span", 92),
             v(2, "Field is required "),
             c(),
             c()),
@@ -36855,8 +36717,8 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function qHe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, jHe, 3, 2, "div", 55), c()), 2 & t)) {
+      function PHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, OHe, 3, 2, "div", 67), c()), 2 & t)) {
           const e = N(2).index,
             i = N();
           let r;
@@ -36871,7 +36733,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function UHe(t, n) {
+      function RHe(t, n) {
         if (1 & t) {
           const e = Kt();
           o(0, "div", 42),
@@ -36888,13 +36750,13 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            o(6, "button", 88),
+            o(6, "button", 89),
             Z("click", function () {
               Ee(e);
               const r = N().index;
               return N().removeDefendant(r);
             }),
-            k(7, "i", 89),
+            k(7, "i", 90),
             c(),
             o(8, "div", 5),
             o(9, "div", 47),
@@ -36906,11 +36768,11 @@ var Bke = Object.defineProperty,
             o(15, "span", 1),
             v(16, "Corporate name of company or organisation"),
             c(),
-            k(17, "span", 51),
+            k(17, "span", 52),
             c(),
-            o(18, "div", 52),
-            o(19, "div", 53),
-            o(20, "input", 92),
+            o(18, "div", 53),
+            o(19, "div", 54),
+            o(20, "input", 94),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
@@ -36923,7 +36785,7 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(21, NHe, 3, 2, "div", 55),
+            V(21, DHe, 3, 2, "div", 67),
             c(),
             o(22, "div", 4),
             o(23, "div"),
@@ -36931,11 +36793,11 @@ var Bke = Object.defineProperty,
             o(25, "span", 1),
             v(26, "Surname"),
             c(),
-            k(27, "span", 51),
+            k(27, "span", 52),
             c(),
-            o(28, "div", 52),
-            o(29, "div", 53),
-            o(30, "input", 93),
+            o(28, "div", 53),
+            o(29, "div", 54),
+            o(30, "input", 95),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
@@ -36952,7 +36814,7 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(31, AHe, 3, 2, "div", 55),
+            V(31, HHe, 3, 2, "div", 67),
             c(),
             c(),
             o(32, "div", 4),
@@ -36961,11 +36823,11 @@ var Bke = Object.defineProperty,
             o(35, "span", 1),
             v(36, "First name"),
             c(),
-            k(37, "span", 51),
+            k(37, "span", 52),
             c(),
-            o(38, "div", 52),
-            o(39, "div", 53),
-            o(40, "input", 94),
+            o(38, "div", 53),
+            o(39, "div", 54),
+            o(40, "input", 96),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
@@ -36982,7 +36844,7 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(41, THe, 3, 2, "div", 55),
+            V(41, VHe, 3, 2, "div", 67),
             c(),
             c(),
             o(42, "div", 4),
@@ -36994,49 +36856,39 @@ var Bke = Object.defineProperty,
               "Personal identification number or passport number/ registration number"
             ),
             c(),
-            k(47, "span", 51),
+            k(47, "span", 52),
             c(),
-            o(48, "div", 95),
-            o(49, "div", 96),
-            o(50, "div", 63),
+            o(48, "div", 60),
+            o(49, "div", 61),
+            o(50, "div", 97),
+            o(51, "div", 63),
             v(
-              51,
-              " If you have a personal identification number given by the authorities of a Member State it would be helpful to provide it. If you don't have such number, it would be helpful to provide the number of your passport or identification document, if you have them. If you act on behalf of a legal person or any entity having legal capacity, it would be helpful to provide a relevant registration number. "
+              52,
+              " If you know a personal identification number given to a defendant by authorities of a Member State it would be helpful to provide it. Alternatively or additionally it would be helpful to provide a number of the defendant's passport or identification document, if you have them. If the defendant is a legal person or any entity having legal capacity, it would be helpful to provide a relevant registration number for the defendant if you know it. "
             ),
             c(),
             c(),
             c(),
-            o(52, "div", 60),
-            o(53, "div", 61),
-            o(54, "div", 62),
-            o(55, "div", 63),
-            v(
-              56,
-              " If you have a personal identification number given by the authorities of a Member State it would be helpful to provide it. If you don't have such number, it would be helpful to provide the number of your passport or identification document, if you have them. If you act on behalf of a legal person or any entity having legal capacity, it would be helpful to provide a relevant registration number. "
-            ),
+            o(53, "div", 54),
+            k(54, "input", 98),
             c(),
             c(),
-            c(),
-            o(57, "div", 53),
-            k(58, "input", 97),
+            k(55, "span", 65),
             c(),
             c(),
-            k(59, "span", 65),
+            o(56, "div", 4),
+            o(57, "div"),
+            o(58, "label"),
+            o(59, "span", 1),
+            v(60, "Street and number/PO box"),
+            c(),
+            o(61, "span", 52),
+            v(62, "*"),
             c(),
             c(),
-            o(60, "div", 4),
-            o(61, "div"),
-            o(62, "label"),
-            o(63, "span", 1),
-            v(64, "Street and number/PO box"),
-            c(),
-            o(65, "span", 51),
-            v(66, "*"),
-            c(),
-            c(),
-            o(67, "div", 52),
-            o(68, "div", 53),
-            o(69, "input", 98),
+            o(63, "div", 53),
+            o(64, "div", 54),
+            o(65, "input", 99),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
@@ -37045,152 +36897,152 @@ var Bke = Object.defineProperty,
             c(),
             c(),
             c(),
-            V(70, kHe, 2, 1, "div", 55),
+            V(66, NHe, 2, 1, "div", 67),
             c(),
             c(),
-            o(71, "div", 4),
-            o(72, "div"),
-            o(73, "label"),
-            o(74, "span", 1),
-            v(75, "Postal code"),
+            o(67, "div", 4),
+            o(68, "div"),
+            o(69, "label"),
+            o(70, "span", 1),
+            v(71, "Postal code"),
             c(),
-            o(76, "span", 51),
-            v(77, "*"),
-            c(),
-            c(),
-            o(78, "div", 52),
-            o(79, "div", 53),
-            k(80, "input", 99),
+            o(72, "span", 52),
+            v(73, "*"),
             c(),
             c(),
-            V(81, LHe, 2, 1, "div", 55),
+            o(74, "div", 53),
+            o(75, "div", 54),
+            k(76, "input", 100),
             c(),
             c(),
-            o(82, "div", 4),
-            o(83, "div"),
-            o(84, "label"),
-            o(85, "span", 1),
-            v(86, "City"),
-            c(),
-            o(87, "span", 51),
-            v(88, "*"),
+            V(77, THe, 2, 1, "div", 67),
             c(),
             c(),
-            o(89, "div", 52),
-            o(90, "div", 53),
-            k(91, "input", 100),
+            o(78, "div", 4),
+            o(79, "div"),
+            o(80, "label"),
+            o(81, "span", 1),
+            v(82, "City"),
+            c(),
+            o(83, "span", 52),
+            v(84, "*"),
             c(),
             c(),
-            V(92, IHe, 2, 1, "div", 55),
+            o(85, "div", 53),
+            o(86, "div", 54),
+            k(87, "input", 101),
             c(),
             c(),
-            o(93, "div", 4),
-            o(94, "div"),
-            o(95, "label"),
-            o(96, "span", 1),
-            v(97, "Country"),
-            c(),
-            o(98, "span", 51),
-            v(99, "*"),
+            V(88, kHe, 2, 1, "div", 67),
             c(),
             c(),
-            o(100, "div", 52),
-            o(101, "div", 53),
-            o(102, "select", 101),
+            o(89, "div", 4),
+            o(90, "div"),
+            o(91, "label"),
+            o(92, "span", 1),
+            v(93, "Country"),
+            c(),
+            o(94, "span", 52),
+            v(95, "*"),
+            c(),
+            c(),
+            o(96, "div", 53),
+            o(97, "div", 54),
+            o(98, "select", 102),
             Z("change", function (r) {
               Ee(e);
               const a = N().index;
               return N().expandWorldCountrySelect(r.target.value, a, !1);
             }),
-            o(103, "option", 70),
-            v(104, " Please select "),
+            o(99, "option", 71),
+            v(100, " Please select "),
             c(),
-            V(105, OHe, 2, 2, "option", 71),
-            o(106, "option", 72),
-            v(107, " Other (please specify) "),
-            c(),
-            c(),
-            c(),
-            c(),
-            V(108, RHe, 2, 1, "div", 55),
-            c(),
-            c(),
-            o(109, "div"),
-            o(110, "div", 73),
-            o(111, "div", 4),
-            o(112, "div"),
-            o(113, "label"),
-            o(114, "span", 1),
-            v(115, "Please specify"),
-            c(),
-            o(116, "span", 51),
-            v(117, "*"),
-            c(),
-            c(),
-            o(118, "div", 52),
-            o(119, "div", 53),
-            o(120, "select", 102),
-            o(121, "option", 70),
-            v(122, " Please select "),
-            c(),
-            V(123, BHe, 2, 2, "option", 71),
-            c(),
-            c(),
-            c(),
-            V(124, qHe, 2, 1, "div", 55),
-            c(),
-            c(),
-            k(125, "p", 75),
-            c(),
-            c(),
-            o(126, "div", 4),
-            o(127, "div"),
-            o(128, "label"),
-            o(129, "span", 1),
-            v(130, "Telephone"),
-            c(),
-            k(131, "span", 51),
-            c(),
-            o(132, "div", 76),
-            o(133, "div", 53),
-            k(134, "input", 103),
-            c(),
-            c(),
-            k(135, "span", 65),
-            c(),
-            c(),
-            o(136, "div", 4),
-            o(137, "div"),
-            o(138, "label"),
-            o(139, "span", 1),
-            v(140, "E-mail"),
-            c(),
-            k(141, "span", 51),
-            c(),
-            o(142, "div", 76),
-            o(143, "div", 53),
-            k(144, "input", 104),
-            c(),
-            c(),
-            k(145, "span", 65),
+            V(101, zHe, 2, 2, "option", 72),
+            o(102, "option", 73),
+            v(103, " Other (please specify) "),
             c(),
             c(),
             c(),
             c(),
-            o(146, "div", 84),
-            v(147, "\xa0"),
+            V(104, FHe, 2, 1, "div", 67),
             c(),
             c(),
-            o(148, "div", 85),
-            o(149, "a", 86),
+            o(105, "div"),
+            o(106, "div", 74),
+            o(107, "div", 4),
+            o(108, "div"),
+            o(109, "label"),
+            o(110, "span", 1),
+            v(111, "Please specify"),
+            c(),
+            o(112, "span", 52),
+            v(113, "*"),
+            c(),
+            c(),
+            o(114, "div", 53),
+            o(115, "div", 54),
+            o(116, "select", 103),
+            o(117, "option", 71),
+            v(118, " Please select "),
+            c(),
+            V(119, IHe, 2, 2, "option", 72),
+            c(),
+            c(),
+            c(),
+            V(120, PHe, 2, 1, "div", 67),
+            c(),
+            c(),
+            k(121, "p", 76),
+            c(),
+            c(),
+            o(122, "div", 4),
+            o(123, "div"),
+            o(124, "label"),
+            o(125, "span", 1),
+            v(126, "Telephone"),
+            c(),
+            k(127, "span", 52),
+            c(),
+            o(128, "div", 77),
+            o(129, "div", 54),
+            k(130, "input", 104),
+            c(),
+            c(),
+            k(131, "span", 65),
+            c(),
+            c(),
+            o(132, "div", 4),
+            o(133, "div"),
+            o(134, "label"),
+            o(135, "span", 1),
+            v(136, "E-mail"),
+            c(),
+            k(137, "span", 52),
+            c(),
+            o(138, "div", 77),
+            o(139, "div", 54),
+            k(140, "input", 105),
+            c(),
+            c(),
+            k(141, "span", 65),
+            c(),
+            c(),
+            c(),
+            c(),
+            o(142, "div", 85),
+            v(143, "\xa0"),
+            c(),
+            c(),
+            o(144, "div", 86),
+            o(145, "a", 87),
             Z("click", function () {
               return Ee(e), N(2).openModal("js_modal_add_defendant");
             }),
-            o(150, "span", 1),
-            v(151, "Add another defendant"),
+            o(146, "span", 1),
+            v(147, "Add another defendant"),
             c(),
             c(),
-            k(152, "label", 87),
+            k(148, "label", 88),
             c(),
             c(),
             c(),
@@ -37221,7 +37073,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                98,
+                100,
                 B1,
                 i.defendantService.defendants.at(e).get("organisation")
                   .invalid &&
@@ -37263,7 +37115,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                100,
+                102,
                 B1,
                 i.defendantService.defendants.at(e).get("surname").invalid &&
                   i.defendantService.defendants.at(e).get("surname").dirty
@@ -37307,7 +37159,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                102,
+                104,
                 B1,
                 i.defendantService.defendants.at(e).get("firstName").invalid &&
                   i.defendantService.defendants.at(e).get("firstName").dirty
@@ -37349,14 +37201,18 @@ var Bke = Object.defineProperty,
                 e +
                 "].dynformSCA2DefendantRepresentativeIdentification"
             ),
-            d(5),
+            d(1),
             F(
               "id",
               "input-wrapper_parties[" +
                 e +
                 "].dynformSCA2DefendantRepresentativeIdentification"
             ),
-            d(6),
+            d(2),
+            m("translate", "defendant.identificationCodeInfo"),
+            d(1),
+            m("translate", "defendant.identificationCodeInfo"),
+            d(3),
             F(
               "name",
               "parties[" +
@@ -37393,7 +37249,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                104,
+                106,
                 B1,
                 i.defendantService.defendants.at(e).get("street").invalid &&
                   i.defendantService.defendants.at(e).get("street").dirty
@@ -37437,7 +37293,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                106,
+                108,
                 B1,
                 i.defendantService.defendants.at(e).get("postalCode").invalid &&
                   i.defendantService.defendants.at(e).get("postalCode").dirty
@@ -37481,7 +37337,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                108,
+                110,
                 B1,
                 i.defendantService.defendants.at(e).get("city").invalid &&
                   i.defendantService.defendants.at(e).get("city").dirty
@@ -37525,7 +37381,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                110,
+                112,
                 B1,
                 i.defendantService.defendants.at(e).get("country").invalid &&
                   i.defendantService.defendants.at(e).get("country").dirty
@@ -37584,7 +37440,7 @@ var Bke = Object.defineProperty,
             m(
               "ngClass",
               De(
-                112,
+                114,
                 B1,
                 i.defendantService.defendants.at(e).get("countryOther")
                   .invalid &&
@@ -37714,13 +37570,13 @@ var Bke = Object.defineProperty,
             m("translate", "defendant.addAnotherDefendant");
         }
       }
-      function $He(t, n) {
+      function BHe(t, n) {
         if (
           (1 & t &&
             (o(0, "div", 38),
             o(1, "div", 39),
-            V(2, xHe, 180, 136, "div", 40),
-            V(3, UHe, 153, 114, "ng-template", null, 41, Cn),
+            V(2, wHe, 178, 135, "div", 40),
+            V(3, RHe, 149, 116, "ng-template", null, 41, Cn),
             c(),
             c()),
           2 & t)
@@ -37734,7 +37590,7 @@ var Bke = Object.defineProperty,
             m("ngIf", !e.get("isRepresentative").value)("ngIfElse", r);
         }
       }
-      let WHe = (() => {
+      let jHe = (() => {
         class t {
           constructor(e, i, r, a) {
             (this.defendantService = e),
@@ -38211,6 +38067,7 @@ var Bke = Object.defineProperty,
               [1, "grid_item", "two-thirds"],
               [2, "margin-bottom", "0px", 3, "innerHTML"],
               [1, "marginleft20px"],
+              ["class", "pb-3", "style", "margin-left: 20px", 4, "ngIf"],
               [1, "asterisk"],
               [1, "input-wrapper", "regular", 3, "ngClass"],
               [1, "input-content"],
@@ -38230,7 +38087,6 @@ var Bke = Object.defineProperty,
                 3,
                 "input",
               ],
-              [4, "ngIf"],
               [
                 "type",
                 "text",
@@ -38271,7 +38127,7 @@ var Bke = Object.defineProperty,
               [1, "input-wrapper", "regular", "hasinfo"],
               [1, "info", "hide-mobile"],
               ["tabindex", "0", 1, "icon"],
-              [1, "hover"],
+              [1, "hover", 3, "translate"],
               [
                 "type",
                 "text",
@@ -38302,6 +38158,7 @@ var Bke = Object.defineProperty,
                 "df_textbox",
                 "df_mandatory",
               ],
+              [4, "ngIf"],
               [
                 "type",
                 "text",
@@ -38467,6 +38324,7 @@ var Bke = Object.defineProperty,
                 "click",
               ],
               ["aria-hidden", "true", 1, "fa", "fa-times", "closeIcon"],
+              [1, "pb-3", 2, "margin-left", "20px"],
               [
                 1,
                 "error",
@@ -38530,8 +38388,7 @@ var Bke = Object.defineProperty,
                 "change",
                 "input",
               ],
-              [1, "info", "show-mobile"],
-              [1, "icon"],
+              ["tabindex", "0", 1, "icon", 3, "translate"],
               [
                 "type",
                 "text",
@@ -38657,7 +38514,7 @@ var Bke = Object.defineProperty,
                 k(9, "input", 8),
                 k(10, "p", 9),
                 o(11, "form", 10),
-                V(12, $He, 5, 3, "div", 11),
+                V(12, BHe, 5, 3, "div", 11),
                 c(),
                 o(13, "div", 12),
                 o(14, "div", 13),
@@ -38837,7 +38694,7 @@ var Bke = Object.defineProperty,
           t
         );
       })();
-      function GHe(t, n) {
+      function qHe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 52),
@@ -38846,7 +38703,7 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.jurisdictionValidationError"));
       }
-      function JHe(t, n) {
+      function UHe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 53),
@@ -38855,7 +38712,7 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.jurisdictionValidationError"));
       }
-      function YHe(t, n) {
+      function $He(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 54),
@@ -38864,7 +38721,7 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.jurisdictionValidationError"));
       }
-      function KHe(t, n) {
+      function WHe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 55),
@@ -38873,7 +38730,7 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.jurisdictionValidationError"));
       }
-      function QHe(t, n) {
+      function GHe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 56),
@@ -38882,7 +38739,7 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.jurisdictionValidationError"));
       }
-      function XHe(t, n) {
+      function JHe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 57),
@@ -38891,7 +38748,7 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.jurisdictionValidationError"));
       }
-      function ZHe(t, n) {
+      function YHe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 58),
@@ -38900,7 +38757,7 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.jurisdictionValidationError"));
       }
-      function eVe(t, n) {
+      function KHe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 59),
@@ -38909,13 +38766,13 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.jurisdictionValidationError"));
       }
-      function tVe(t, n) {
+      function QHe(t, n) {
         1 & t &&
           (o(0, "div"), o(1, "span", 60), v(2, "Field is required "), c(), c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function nVe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, tVe, 3, 1, "div", 17), c()), 2 & t)) {
+      function XHe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, QHe, 3, 1, "div", 17), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -38928,10 +38785,10 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      const iVe = function (t) {
+      const ZHe = function (t) {
         return { invalid: t };
       };
-      let rVe = (() => {
+      let eVe = (() => {
         class t {
           constructor(e, i, r) {
             (this.jurisdictionService = e),
@@ -39450,7 +39307,7 @@ var Bke = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                V(27, GHe, 3, 1, "div", 17),
+                V(27, qHe, 3, 1, "div", 17),
                 c(),
                 c(),
                 o(28, "div", 9),
@@ -39467,7 +39324,7 @@ var Bke = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                V(35, JHe, 3, 1, "div", 17),
+                V(35, UHe, 3, 1, "div", 17),
                 c(),
                 c(),
                 o(36, "div", 9),
@@ -39487,7 +39344,7 @@ var Bke = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                V(43, YHe, 3, 1, "div", 17),
+                V(43, $He, 3, 1, "div", 17),
                 c(),
                 c(),
                 o(44, "div", 9),
@@ -39507,7 +39364,7 @@ var Bke = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                V(51, KHe, 3, 1, "div", 17),
+                V(51, WHe, 3, 1, "div", 17),
                 c(),
                 c(),
                 o(52, "div", 9),
@@ -39524,7 +39381,7 @@ var Bke = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                V(59, QHe, 3, 1, "div", 17),
+                V(59, GHe, 3, 1, "div", 17),
                 c(),
                 c(),
                 o(60, "div", 9),
@@ -39541,7 +39398,7 @@ var Bke = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                V(67, XHe, 3, 1, "div", 17),
+                V(67, JHe, 3, 1, "div", 17),
                 c(),
                 c(),
                 o(68, "div", 9),
@@ -39558,7 +39415,7 @@ var Bke = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                V(75, ZHe, 3, 1, "div", 17),
+                V(75, YHe, 3, 1, "div", 17),
                 c(),
                 c(),
                 o(76, "div", 9),
@@ -39577,7 +39434,7 @@ var Bke = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                V(83, eVe, 3, 1, "div", 17),
+                V(83, KHe, 3, 1, "div", 17),
                 c(),
                 c(),
                 o(84, "div", 39),
@@ -39597,7 +39454,7 @@ var Bke = Object.defineProperty,
                 k(95, "input", 44),
                 c(),
                 c(),
-                V(96, nVe, 2, 1, "div", 17),
+                V(96, XHe, 2, 1, "div", 17),
                 c(),
                 c(),
                 c(),
@@ -39726,7 +39583,7 @@ var Bke = Object.defineProperty,
                     "ngClass",
                     De(
                       28,
-                      iVe,
+                      ZHe,
                       i.jurisdictionService.editForm.get("otherText").invalid &&
                         i.jurisdictionService.editForm.get("otherText").dirty
                     )
@@ -39749,15 +39606,15 @@ var Bke = Object.defineProperty,
           t
         );
       })();
-      var aVe = ze(6350),
-        t9 = ze.n(aVe);
-      function sVe(t, n) {
+      var tVe = ze(6350),
+        t9 = ze.n(tVe);
+      function nVe(t, n) {
         if ((1 & t && (o(0, "option", 127), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function oVe(t, n) {
+      function iVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 128),
@@ -39766,8 +39623,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function cVe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, oVe, 3, 1, "div", 17), c()), 2 & t)) {
+      function rVe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, iVe, 3, 1, "div", 17), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -39783,10 +39640,51 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function lVe(t, n) {
+      function aVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 128),
+          v(2, "At least two of the lists must refer to different States. "),
+          c(),
+          c()),
+          2 & t &&
+            (d(1), m("translate", "errors.crossborderNatureValidationError"));
+      }
+      function sVe(t, n) {
+        if ((1 & t && (o(0, "option", 127), v(1), c()), 2 & t)) {
+          const e = n.$implicit;
+          m("value", e.value), d(1), rt(" ", e.label, " ");
+        }
+      }
+      function oVe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 129),
+          v(2, "Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function cVe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, oVe, 3, 1, "div", 17), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.stepFourService.crossborderNatureForm.get(
+                  "claimantCountryOther"
+                )) || null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function lVe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 129),
           v(2, "At least two of the lists must refer to different States. "),
           c(),
           c()),
@@ -39802,7 +39700,7 @@ var Bke = Object.defineProperty,
       function dVe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 129),
+          o(1, "span", 130),
           v(2, "Field is required "),
           c(),
           c()),
@@ -39810,47 +39708,6 @@ var Bke = Object.defineProperty,
       }
       function fVe(t, n) {
         if ((1 & t && (o(0, "div"), V(1, dVe, 3, 1, "div", 17), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.stepFourService.crossborderNatureForm.get(
-                  "claimantCountryOther"
-                )) || null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function hVe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 129),
-          v(2, "At least two of the lists must refer to different States. "),
-          c(),
-          c()),
-          2 & t &&
-            (d(1), m("translate", "errors.crossborderNatureValidationError"));
-      }
-      function pVe(t, n) {
-        if ((1 & t && (o(0, "option", 127), v(1), c()), 2 & t)) {
-          const e = n.$implicit;
-          m("value", e.value), d(1), rt(" ", e.label, " ");
-        }
-      }
-      function mVe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 130),
-          v(2, "Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function gVe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, mVe, 3, 1, "div", 17), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -39866,10 +39723,51 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function vVe(t, n) {
+      function hVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 130),
+          v(2, "At least two of the lists must refer to different States. "),
+          c(),
+          c()),
+          2 & t &&
+            (d(1), m("translate", "errors.crossborderNatureValidationError"));
+      }
+      function pVe(t, n) {
+        if ((1 & t && (o(0, "option", 127), v(1), c()), 2 & t)) {
+          const e = n.$implicit;
+          m("value", e.value), d(1), rt(" ", e.label, " ");
+        }
+      }
+      function mVe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 131),
+          v(2, "Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function gVe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, mVe, 3, 1, "div", 17), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.stepFourService.crossborderNatureForm.get(
+                  "defendantCountryOther"
+                )) || null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function vVe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 131),
           v(2, "At least two of the lists must refer to different States. "),
           c(),
           c()),
@@ -39885,55 +39783,14 @@ var Bke = Object.defineProperty,
       function CVe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 131),
-          v(2, "Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function yVe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, CVe, 3, 1, "div", 17), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.stepFourService.crossborderNatureForm.get(
-                  "defendantCountryOther"
-                )) || null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function bVe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 131),
-          v(2, "At least two of the lists must refer to different States. "),
-          c(),
-          c()),
-          2 & t &&
-            (d(1), m("translate", "errors.crossborderNatureValidationError"));
-      }
-      function MVe(t, n) {
-        if ((1 & t && (o(0, "option", 127), v(1), c()), 2 & t)) {
-          const e = n.$implicit;
-          m("value", e.value), d(1), rt(" ", e.label, " ");
-        }
-      }
-      function SVe(t, n) {
-        1 & t &&
-          (o(0, "div"),
           o(1, "span", 132),
           v(2, " Field is required "),
           c(),
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function wVe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, SVe, 3, 1, "div", 17), c()), 2 & t)) {
+      function yVe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, CVe, 3, 1, "div", 17), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -39949,7 +39806,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function DVe(t, n) {
+      function bVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 132),
@@ -39959,13 +39816,13 @@ var Bke = Object.defineProperty,
           2 & t &&
             (d(1), m("translate", "errors.crossborderNatureValidationError"));
       }
-      function HVe(t, n) {
+      function MVe(t, n) {
         if ((1 & t && (o(0, "option", 127), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function VVe(t, n) {
+      function SVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 133),
@@ -39974,8 +39831,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function xVe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, VVe, 3, 1, "div", 17), c()), 2 & t)) {
+      function wVe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, SVe, 3, 1, "div", 17), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -39991,7 +39848,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function NVe(t, n) {
+      function DVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 133),
@@ -40001,7 +39858,7 @@ var Bke = Object.defineProperty,
           2 & t &&
             (d(1), m("translate", "errors.crossborderNatureValidationError"));
       }
-      function AVe(t, n) {
+      function HVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 134),
@@ -40010,8 +39867,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function TVe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, AVe, 3, 1, "div", 17), c()), 2 & t)) {
+      function VVe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, HVe, 3, 1, "div", 17), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -40027,7 +39884,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function EVe(t, n) {
+      function xVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 135),
@@ -40036,8 +39893,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function kVe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, EVe, 3, 1, "div", 17), c()), 2 & t)) {
+      function NVe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, xVe, 3, 1, "div", 17), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -40053,10 +39910,62 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function zVe(t, n) {
+      function AVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 136),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function TVe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, AVe, 3, 1, "div", 17), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.stepFourService.bankDetailsForm
+                  .get("applicationFeePayment")
+                  .get("creditCard")
+                  .get("cardNumber")) || null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function EVe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 137),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function kVe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, EVe, 3, 1, "div", 17), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.stepFourService.bankDetailsForm
+                  .get("applicationFeePayment")
+                  .get("creditCard")
+                  .get("cardExpireDate")) || null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function zVe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 138),
           v(2, " Field is required "),
           c(),
           c()),
@@ -40073,7 +39982,7 @@ var Bke = Object.defineProperty,
                 (i = e.stepFourService.bankDetailsForm
                   .get("applicationFeePayment")
                   .get("creditCard")
-                  .get("cardNumber")) || null == i.errors
+                  .get("cardSecurityNumber")) || null == i.errors
                 ? null
                 : i.errors.required
             );
@@ -40082,7 +39991,7 @@ var Bke = Object.defineProperty,
       function FVe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 137),
+          o(1, "span", 139),
           v(2, " Field is required "),
           c(),
           c()),
@@ -40098,8 +40007,8 @@ var Bke = Object.defineProperty,
               null ==
                 (i = e.stepFourService.bankDetailsForm
                   .get("applicationFeePayment")
-                  .get("creditCard")
-                  .get("cardExpireDate")) || null == i.errors
+                  .get("directDebit")
+                  .get("accountHolder")) || null == i.errors
                 ? null
                 : i.errors.required
             );
@@ -40108,7 +40017,7 @@ var Bke = Object.defineProperty,
       function OVe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 138),
+          o(1, "span", 140),
           v(2, " Field is required "),
           c(),
           c()),
@@ -40124,8 +40033,8 @@ var Bke = Object.defineProperty,
               null ==
                 (i = e.stepFourService.bankDetailsForm
                   .get("applicationFeePayment")
-                  .get("creditCard")
-                  .get("cardSecurityNumber")) || null == i.errors
+                  .get("directDebit")
+                  .get("bicOrBankName")) || null == i.errors
                 ? null
                 : i.errors.required
             );
@@ -40134,7 +40043,7 @@ var Bke = Object.defineProperty,
       function RVe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 139),
+          o(1, "span", 141),
           v(2, " Field is required "),
           c(),
           c()),
@@ -40151,7 +40060,7 @@ var Bke = Object.defineProperty,
                 (i = e.stepFourService.bankDetailsForm
                   .get("applicationFeePayment")
                   .get("directDebit")
-                  .get("accountHolder")) || null == i.errors
+                  .get("accountNumberOrIBAN")) || null == i.errors
                 ? null
                 : i.errors.required
             );
@@ -40160,7 +40069,7 @@ var Bke = Object.defineProperty,
       function jVe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 140),
+          o(1, "span", 142),
           v(2, " Field is required "),
           c(),
           c()),
@@ -40176,58 +40085,6 @@ var Bke = Object.defineProperty,
               null ==
                 (i = e.stepFourService.bankDetailsForm
                   .get("applicationFeePayment")
-                  .get("directDebit")
-                  .get("bicOrBankName")) || null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function UVe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 141),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function $Ve(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, UVe, 3, 1, "div", 17), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.stepFourService.bankDetailsForm
-                  .get("applicationFeePayment")
-                  .get("directDebit")
-                  .get("accountNumberOrIBAN")) || null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function WVe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 142),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function GVe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, WVe, 3, 1, "div", 17), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.stepFourService.bankDetailsForm
-                  .get("applicationFeePayment")
                   .get("other")
                   .get("other")) || null == i.errors
                 ? null
@@ -40235,7 +40092,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function JVe(t, n) {
+      function UVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 143),
@@ -40247,8 +40104,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.IBANValidationError"));
       }
-      function YVe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, JVe, 3, 1, "div", 17), c()), 2 & t)) {
+      function $Ve(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, UVe, 3, 1, "div", 17), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -40267,7 +40124,7 @@ var Bke = Object.defineProperty,
         return { invalid: t };
       };
       t9()($);
-      let KVe = (() => {
+      let WVe = (() => {
         class t {
           constructor(e, i, r, a) {
             (this.stepFourService = e),
@@ -41576,15 +41433,15 @@ var Bke = Object.defineProperty,
                 o(21, "option", 14),
                 v(22, " Please select "),
                 c(),
-                V(23, sVe, 2, 2, "option", 15),
+                V(23, nVe, 2, 2, "option", 15),
                 o(24, "option", 16),
                 v(25, " Other (please specify) "),
                 c(),
                 c(),
                 c(),
                 c(),
-                V(26, cVe, 2, 1, "div", 17),
-                V(27, lVe, 3, 1, "div", 17),
+                V(26, rVe, 2, 1, "div", 17),
+                V(27, aVe, 3, 1, "div", 17),
                 c(),
                 c(),
                 o(28, "div", 18),
@@ -41605,12 +41462,12 @@ var Bke = Object.defineProperty,
                 o(40, "option", 14),
                 v(41, " Please select "),
                 c(),
-                V(42, uVe, 2, 2, "option", 15),
+                V(42, sVe, 2, 2, "option", 15),
                 c(),
                 c(),
                 c(),
-                V(43, fVe, 2, 1, "div", 17),
-                V(44, hVe, 3, 1, "div", 17),
+                V(43, cVe, 2, 1, "div", 17),
+                V(44, lVe, 3, 1, "div", 17),
                 c(),
                 c(),
                 k(45, "p", 23),
@@ -41641,15 +41498,15 @@ var Bke = Object.defineProperty,
                 o(56, "option", 14),
                 v(57, " Please select "),
                 c(),
-                V(58, pVe, 2, 2, "option", 15),
+                V(58, uVe, 2, 2, "option", 15),
                 o(59, "option", 16),
                 v(60, " Other (please specify) "),
                 c(),
                 c(),
                 c(),
                 c(),
-                V(61, gVe, 2, 1, "div", 17),
-                V(62, vVe, 3, 1, "div", 17),
+                V(61, fVe, 2, 1, "div", 17),
+                V(62, hVe, 3, 1, "div", 17),
                 c(),
                 c(),
                 o(63, "div", 28),
@@ -41670,12 +41527,12 @@ var Bke = Object.defineProperty,
                 o(75, "option", 14),
                 v(76, " Please select "),
                 c(),
-                V(77, _Ve, 2, 2, "option", 15),
+                V(77, pVe, 2, 2, "option", 15),
                 c(),
                 c(),
                 c(),
-                V(78, yVe, 2, 1, "div", 17),
-                V(79, bVe, 3, 1, "div", 17),
+                V(78, gVe, 2, 1, "div", 17),
+                V(79, vVe, 3, 1, "div", 17),
                 c(),
                 c(),
                 k(80, "p", 33),
@@ -41703,15 +41560,15 @@ var Bke = Object.defineProperty,
                 o(91, "option", 14),
                 v(92, " Please select "),
                 c(),
-                V(93, MVe, 2, 2, "option", 15),
+                V(93, _Ve, 2, 2, "option", 15),
                 o(94, "option", 16),
                 v(95, " Other (please specify) "),
                 c(),
                 c(),
                 c(),
                 c(),
-                V(96, wVe, 2, 1, "div", 17),
-                V(97, DVe, 3, 1, "div", 17),
+                V(96, yVe, 2, 1, "div", 17),
+                V(97, bVe, 3, 1, "div", 17),
                 c(),
                 c(),
                 o(98, "div", 38),
@@ -41732,12 +41589,12 @@ var Bke = Object.defineProperty,
                 o(110, "option", 14),
                 v(111, " Please select "),
                 c(),
-                V(112, HVe, 2, 2, "option", 15),
+                V(112, MVe, 2, 2, "option", 15),
                 c(),
                 c(),
                 c(),
-                V(113, xVe, 2, 1, "div", 17),
-                V(114, NVe, 3, 1, "div", 17),
+                V(113, wVe, 2, 1, "div", 17),
+                V(114, DVe, 3, 1, "div", 17),
                 c(),
                 c(),
                 k(115, "p", 43),
@@ -41833,7 +41690,7 @@ var Bke = Object.defineProperty,
                 k(166, "input", 63),
                 c(),
                 c(),
-                V(167, TVe, 2, 1, "div", 17),
+                V(167, VVe, 2, 1, "div", 17),
                 c(),
                 c(),
                 o(168, "div", 8),
@@ -41851,7 +41708,7 @@ var Bke = Object.defineProperty,
                 k(177, "input", 67),
                 c(),
                 c(),
-                V(178, kVe, 2, 1, "div", 17),
+                V(178, NVe, 2, 1, "div", 17),
                 c(),
                 c(),
                 o(179, "div", 8),
@@ -41869,7 +41726,7 @@ var Bke = Object.defineProperty,
                 k(188, "input", 71),
                 c(),
                 c(),
-                V(189, LVe, 2, 1, "div", 17),
+                V(189, TVe, 2, 1, "div", 17),
                 c(),
                 c(),
                 o(190, "div", 8),
@@ -41887,7 +41744,7 @@ var Bke = Object.defineProperty,
                 k(199, "input", 75),
                 c(),
                 c(),
-                V(200, IVe, 2, 1, "div", 17),
+                V(200, kVe, 2, 1, "div", 17),
                 c(),
                 c(),
                 o(201, "div", 8),
@@ -41905,7 +41762,7 @@ var Bke = Object.defineProperty,
                 k(210, "input", 79),
                 c(),
                 c(),
-                V(211, PVe, 2, 1, "div", 17),
+                V(211, LVe, 2, 1, "div", 17),
                 c(),
                 c(),
                 c(),
@@ -41948,7 +41805,7 @@ var Bke = Object.defineProperty,
                 k(232, "input", 87),
                 c(),
                 c(),
-                V(233, BVe, 2, 1, "div", 17),
+                V(233, IVe, 2, 1, "div", 17),
                 c(),
                 c(),
                 o(234, "div", 8),
@@ -41966,7 +41823,7 @@ var Bke = Object.defineProperty,
                 k(243, "input", 91),
                 c(),
                 c(),
-                V(244, qVe, 2, 1, "div", 17),
+                V(244, PVe, 2, 1, "div", 17),
                 c(),
                 c(),
                 o(245, "div", 8),
@@ -41984,7 +41841,7 @@ var Bke = Object.defineProperty,
                 k(254, "input", 95),
                 c(),
                 c(),
-                V(255, $Ve, 2, 1, "div", 17),
+                V(255, BVe, 2, 1, "div", 17),
                 c(),
                 c(),
                 c(),
@@ -42027,7 +41884,7 @@ var Bke = Object.defineProperty,
                 k(276, "input", 103),
                 c(),
                 c(),
-                V(277, GVe, 2, 1, "div", 17),
+                V(277, qVe, 2, 1, "div", 17),
                 c(),
                 c(),
                 c(),
@@ -42096,7 +41953,7 @@ var Bke = Object.defineProperty,
                 k(315, "input", 119),
                 c(),
                 c(),
-                V(316, YVe, 2, 1, "div", 17),
+                V(316, $Ve, 2, 1, "div", 17),
                 c(),
                 c(),
                 c(),
@@ -42791,7 +42648,7 @@ var Bke = Object.defineProperty,
           t
         );
       })();
-      function QVe(t, n) {
+      function GVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 226),
@@ -42800,8 +42657,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function XVe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, QVe, 3, 1, "div", 14), c()), 2 & t)) {
+      function JVe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, GVe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -42814,7 +42671,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function ZVe(t, n) {
+      function YVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 226),
@@ -42823,8 +42680,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function exe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, ZVe, 3, 1, "div", 14), c()), 2 & t)) {
+      function KVe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, YVe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -42837,7 +42694,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function txe(t, n) {
+      function QVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 227),
@@ -42846,7 +42703,7 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function nxe(t, n) {
+      function XVe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 227),
@@ -42858,12 +42715,12 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.amountValidationError"));
       }
-      function ixe(t, n) {
+      function ZVe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            V(1, txe, 3, 1, "div", 14),
-            V(2, nxe, 3, 1, "div", 14),
+            V(1, QVe, 3, 1, "div", 14),
+            V(2, XVe, 3, 1, "div", 14),
             c()),
           2 & t)
         ) {
@@ -42891,13 +42748,13 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function rxe(t, n) {
+      function exe(t, n) {
         if ((1 & t && (o(0, "option", 228), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function axe(t, n) {
+      function txe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 229),
@@ -42906,8 +42763,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function sxe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, axe, 3, 1, "div", 14), c()), 2 & t)) {
+      function nxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, txe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -42922,13 +42779,13 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function oxe(t, n) {
+      function ixe(t, n) {
         if ((1 & t && (o(0, "option", 228), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function cxe(t, n) {
+      function rxe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 230),
@@ -42937,8 +42794,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function lxe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, cxe, 3, 1, "div", 14), c()), 2 & t)) {
+      function axe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, rxe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -42953,13 +42810,13 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function uxe(t, n) {
+      function sxe(t, n) {
         if ((1 & t && (o(0, "option", 228), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function dxe(t, n) {
+      function oxe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 230),
@@ -42968,8 +42825,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function fxe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, dxe, 3, 1, "div", 14), c()), 2 & t)) {
+      function cxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, oxe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -42984,53 +42841,53 @@ var Bke = Object.defineProperty,
             );
         }
       }
+      function lxe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 231),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function uxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, lxe, 3, 1, "div", 14), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null == (i = e.claimService.editForm.get("otherClaim")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function dxe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 231),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function fxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, dxe, 3, 1, "div", 14), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null == (i = e.claimService.editForm.get("otherClaim")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
       function hxe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 231),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function pxe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, hxe, 3, 1, "div", 14), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null == (i = e.claimService.editForm.get("otherClaim")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function mxe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 231),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function gxe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, mxe, 3, 1, "div", 14), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null == (i = e.claimService.editForm.get("otherClaim")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function vxe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 232),
@@ -43039,8 +42896,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function _xe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, vxe, 3, 1, "div", 14), c()), 2 & t)) {
+      function pxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, hxe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43055,7 +42912,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function Cxe(t, n) {
+      function mxe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 233),
@@ -43064,7 +42921,7 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function yxe(t, n) {
+      function gxe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 233),
@@ -43076,12 +42933,12 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.amountValidationError"));
       }
-      function bxe(t, n) {
+      function vxe(t, n) {
         if (
           (1 & t &&
             (o(0, "div"),
-            V(1, Cxe, 3, 1, "div", 14),
-            V(2, yxe, 3, 1, "div", 14),
+            V(1, mxe, 3, 1, "div", 14),
+            V(2, gxe, 3, 1, "div", 14),
             c()),
           2 & t)
         ) {
@@ -43109,7 +42966,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function Mxe(t, n) {
+      function _xe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 234),
@@ -43118,8 +42975,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function Sxe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, Mxe, 3, 1, "div", 14), c()), 2 & t)) {
+      function Cxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, _xe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43134,13 +42991,13 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function wxe(t, n) {
+      function yxe(t, n) {
         if ((1 & t && (o(0, "option", 228), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function Dxe(t, n) {
+      function bxe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 235),
@@ -43149,8 +43006,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function Hxe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, Dxe, 3, 1, "div", 14), c()), 2 & t)) {
+      function Mxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, bxe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43165,13 +43022,13 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function Vxe(t, n) {
+      function Sxe(t, n) {
         if ((1 & t && (o(0, "option", 228), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function xxe(t, n) {
+      function wxe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 235),
@@ -43180,8 +43037,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function Nxe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, xxe, 3, 1, "div", 14), c()), 2 & t)) {
+      function Dxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, wxe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43196,55 +43053,55 @@ var Bke = Object.defineProperty,
             );
         }
       }
+      function Hxe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 236),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function Vxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, Hxe, 3, 1, "div", 14), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.claimService.editForm.get("claimingCostProceedings")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function xxe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 236),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function Nxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, xxe, 3, 1, "div", 14), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.claimService.editForm.get("claimingCostProceedings")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
       function Axe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 236),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function Txe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, Axe, 3, 1, "div", 14), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.claimService.editForm.get("claimingCostProceedings")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function Exe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 236),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function kxe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, Exe, 3, 1, "div", 14), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.claimService.editForm.get("claimingCostProceedings")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function zxe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 237),
@@ -43253,8 +43110,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function Lxe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, zxe, 3, 1, "div", 14), c()), 2 & t)) {
+      function Txe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, Axe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43269,10 +43126,56 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function Fxe(t, n) {
+      function Exe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 238),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function kxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, Exe, 3, 1, "div", 14), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null == (i = e.claimService.editForm.get("claimingInterest")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function zxe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 238),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function Lxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, zxe, 3, 1, "div", 14), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null == (i = e.claimService.editForm.get("claimingInterest")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function Fxe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 239),
           v(2, " Field is required "),
           c(),
           c()),
@@ -43285,8 +43188,10 @@ var Bke = Object.defineProperty,
           d(1),
             m(
               "ngIf",
-              null == (i = e.claimService.editForm.get("claimingInterest")) ||
-                null == i.errors
+              null ==
+                (i = e.claimService.editForm
+                  .get("claimingInterestExpansion")
+                  .get("claimingInterestOption")) || null == i.errors
                 ? null
                 : i.errors.required
             );
@@ -43295,7 +43200,7 @@ var Bke = Object.defineProperty,
       function Oxe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 238),
+          o(1, "span", 239),
           v(2, " Field is required "),
           c(),
           c()),
@@ -43308,8 +43213,10 @@ var Bke = Object.defineProperty,
           d(1),
             m(
               "ngIf",
-              null == (i = e.claimService.editForm.get("claimingInterest")) ||
-                null == i.errors
+              null ==
+                (i = e.claimService.editForm
+                  .get("claimingInterestExpansion")
+                  .get("claimingInterestOption")) || null == i.errors
                 ? null
                 : i.errors.required
             );
@@ -43318,7 +43225,7 @@ var Bke = Object.defineProperty,
       function Rxe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 239),
+          o(1, "span", 240),
           v(2, " Field is required "),
           c(),
           c()),
@@ -43334,41 +43241,23 @@ var Bke = Object.defineProperty,
               null ==
                 (i = e.claimService.editForm
                   .get("claimingInterestExpansion")
-                  .get("claimingInterestOption")) || null == i.errors
+                  .get("contractualInterest")
+                  .get("contractualInterestFromDate")) || null == i.errors
                 ? null
                 : i.errors.required
             );
         }
       }
       function jxe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 239),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
+        1 & t && k(0, "span", 241);
       }
       function qxe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, jxe, 3, 1, "div", 14), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.claimService.editForm
-                  .get("claimingInterestExpansion")
-                  .get("claimingInterestOption")) || null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
+        1 & t && (o(0, "span", 242), v(1, "*"), c());
       }
       function Uxe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 240),
+          o(1, "span", 243),
           v(2, " Field is required "),
           c(),
           c()),
@@ -43385,29 +43274,23 @@ var Bke = Object.defineProperty,
                 (i = e.claimService.editForm
                   .get("claimingInterestExpansion")
                   .get("contractualInterest")
-                  .get("contractualInterestFromDate")) || null == i.errors
+                  .get("contractualInterestTo")) || null == i.errors
                 ? null
                 : i.errors.required
             );
         }
       }
       function Wxe(t, n) {
-        1 & t && k(0, "span", 241);
-      }
-      function Gxe(t, n) {
-        1 & t && (o(0, "span", 242), v(1, "*"), c());
-      }
-      function Jxe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 243),
+          o(1, "span", 244),
           v(2, " Field is required "),
           c(),
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function Yxe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, Jxe, 3, 1, "div", 14), c()), 2 & t)) {
+      function Gxe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, Wxe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43417,16 +43300,31 @@ var Bke = Object.defineProperty,
                 (i = e.claimService.editForm
                   .get("claimingInterestExpansion")
                   .get("contractualInterest")
-                  .get("contractualInterestTo")) || null == i.errors
+                  .get("contractualInterestToDate")) || null == i.errors
                 ? null
                 : i.errors.required
             );
         }
       }
+      function Jxe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 245),
+          v(
+            2,
+            " You have provided an end date that is before a start date. Please review your criterion. "
+          ),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.dateValidationError"));
+      }
+      function Yxe(t, n) {
+        1 & t && k(0, "span", 241);
+      }
       function Kxe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 244),
+          o(1, "span", 246),
           v(2, " Field is required "),
           c(),
           c()),
@@ -43443,7 +43341,7 @@ var Bke = Object.defineProperty,
                 (i = e.claimService.editForm
                   .get("claimingInterestExpansion")
                   .get("contractualInterest")
-                  .get("contractualInterestToDate")) || null == i.errors
+                  .get("contractualInterestTo")) || null == i.errors
                 ? null
                 : i.errors.required
             );
@@ -43452,22 +43350,33 @@ var Bke = Object.defineProperty,
       function Xxe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 245),
-          v(
-            2,
-            " You have provided an end date that is before a start date. Please review your criterion. "
-          ),
+          o(1, "span", 247),
+          v(2, " Field is required "),
           c(),
           c()),
-          2 & t && (d(1), m("translate", "errors.dateValidationError"));
+          2 & t && (d(1), m("translate", "errors.required"));
       }
       function Zxe(t, n) {
-        1 & t && k(0, "span", 241);
+        if ((1 & t && (o(0, "div"), V(1, Xxe, 3, 1, "div", 14), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.claimService.editForm
+                  .get("claimingInterestExpansion")
+                  .get("contractualInterest")
+                  .get("contractualInterestTo")) || null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
       }
       function eNe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 246),
+          o(1, "span", 248),
           v(2, " Field is required "),
           c(),
           c()),
@@ -43483,43 +43392,23 @@ var Bke = Object.defineProperty,
               null ==
                 (i = e.claimService.editForm
                   .get("claimingInterestExpansion")
-                  .get("contractualInterest")
-                  .get("contractualInterestTo")) || null == i.errors
+                  .get("statutoryInterest")
+                  .get("statutoryInterestFromDate")) || null == i.errors
                 ? null
                 : i.errors.required
             );
         }
       }
       function nNe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 247),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
+        1 & t && k(0, "span", 241);
       }
       function iNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, nNe, 3, 1, "div", 14), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.claimService.editForm
-                  .get("claimingInterestExpansion")
-                  .get("contractualInterest")
-                  .get("contractualInterestTo")) || null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
+        1 & t && (o(0, "span", 249), v(1, "*"), c());
       }
       function rNe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 248),
+          o(1, "span", 250),
           v(2, " Field is required "),
           c(),
           c()),
@@ -43536,29 +43425,23 @@ var Bke = Object.defineProperty,
                 (i = e.claimService.editForm
                   .get("claimingInterestExpansion")
                   .get("statutoryInterest")
-                  .get("statutoryInterestFromDate")) || null == i.errors
+                  .get("statutoryInterestTo")) || null == i.errors
                 ? null
                 : i.errors.required
             );
         }
       }
       function sNe(t, n) {
-        1 & t && k(0, "span", 241);
-      }
-      function oNe(t, n) {
-        1 & t && (o(0, "span", 249), v(1, "*"), c());
-      }
-      function cNe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 250),
+          o(1, "span", 251),
           v(2, " Field is required "),
           c(),
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function lNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, cNe, 3, 1, "div", 14), c()), 2 & t)) {
+      function oNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, sNe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43568,16 +43451,31 @@ var Bke = Object.defineProperty,
                 (i = e.claimService.editForm
                   .get("claimingInterestExpansion")
                   .get("statutoryInterest")
-                  .get("statutoryInterestTo")) || null == i.errors
+                  .get("statutoryInterestToDate")) || null == i.errors
                 ? null
                 : i.errors.required
             );
         }
       }
+      function cNe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 245),
+          v(
+            2,
+            " You have provided an end date that is before a start date. Please review your criterion. "
+          ),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.dateValidationError"));
+      }
+      function lNe(t, n) {
+        1 & t && k(0, "span", 241);
+      }
       function uNe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 251),
+          o(1, "span", 252),
           v(2, " Field is required "),
           c(),
           c()),
@@ -43594,7 +43492,7 @@ var Bke = Object.defineProperty,
                 (i = e.claimService.editForm
                   .get("claimingInterestExpansion")
                   .get("statutoryInterest")
-                  .get("statutoryInterestToDate")) || null == i.errors
+                  .get("statutoryInterestTo")) || null == i.errors
                 ? null
                 : i.errors.required
             );
@@ -43603,22 +43501,33 @@ var Bke = Object.defineProperty,
       function fNe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 245),
-          v(
-            2,
-            " You have provided an end date that is before a start date. Please review your criterion. "
-          ),
+          o(1, "span", 253),
+          v(2, " Field is required "),
           c(),
           c()),
-          2 & t && (d(1), m("translate", "errors.dateValidationError"));
+          2 & t && (d(1), m("translate", "errors.required"));
       }
       function hNe(t, n) {
-        1 & t && k(0, "span", 241);
+        if ((1 & t && (o(0, "div"), V(1, fNe, 3, 1, "div", 14), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.claimService.editForm
+                  .get("claimingInterestExpansion")
+                  .get("statutoryInterest")
+                  .get("statutoryInterestTo")) || null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
       }
       function pNe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 252),
+          o(1, "span", 254),
           v(2, " Field is required "),
           c(),
           c()),
@@ -43632,10 +43541,8 @@ var Bke = Object.defineProperty,
             m(
               "ngIf",
               null ==
-                (i = e.claimService.editForm
-                  .get("claimingInterestExpansion")
-                  .get("statutoryInterest")
-                  .get("statutoryInterestTo")) || null == i.errors
+                (i = e.claimService.editForm.get("claimingInterestOnCost")) ||
+                null == i.errors
                 ? null
                 : i.errors.required
             );
@@ -43644,7 +43551,7 @@ var Bke = Object.defineProperty,
       function gNe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 253),
+          o(1, "span", 254),
           v(2, " Field is required "),
           c(),
           c()),
@@ -43658,67 +43565,17 @@ var Bke = Object.defineProperty,
             m(
               "ngIf",
               null ==
-                (i = e.claimService.editForm
-                  .get("claimingInterestExpansion")
-                  .get("statutoryInterest")
-                  .get("statutoryInterestTo")) || null == i.errors
+                (i = e.claimService.editForm.get("claimingInterestOnCost")) ||
+                null == i.errors
                 ? null
                 : i.errors.required
             );
         }
       }
       function _Ne(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 254),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function CNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, _Ne, 3, 1, "div", 14), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.claimService.editForm.get("claimingInterestOnCost")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function yNe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 254),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function bNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, yNe, 3, 1, "div", 14), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.claimService.editForm.get("claimingInterestOnCost")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function MNe(t, n) {
         1 & t && (o(0, "span", 255), v(1, "*"), c());
       }
-      function SNe(t, n) {
+      function CNe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 256),
@@ -43727,8 +43584,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function wNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, SNe, 3, 1, "div", 14), c()), 2 & t)) {
+      function yNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, CNe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43743,7 +43600,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function DNe(t, n) {
+      function bNe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 257),
@@ -43752,8 +43609,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function HNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, DNe, 3, 1, "div", 14), c()), 2 & t)) {
+      function MNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, bNe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43768,10 +43625,10 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function VNe(t, n) {
+      function SNe(t, n) {
         1 & t && k(0, "span", 241);
       }
-      function xNe(t, n) {
+      function wNe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 258),
@@ -43780,8 +43637,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function NNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, xNe, 3, 1, "div", 14), c()), 2 & t)) {
+      function DNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, wNe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43796,10 +43653,10 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function ANe(t, n) {
+      function HNe(t, n) {
         1 & t && (o(0, "span", 259), v(1, "*"), c());
       }
-      function TNe(t, n) {
+      function VNe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 260),
@@ -43808,8 +43665,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function ENe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, TNe, 3, 1, "div", 14), c()), 2 & t)) {
+      function xNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, VNe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43824,7 +43681,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function kNe(t, n) {
+      function NNe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 245),
@@ -43833,8 +43690,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function zNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, kNe, 3, 1, "div", 14), c()), 2 & t)) {
+      function ANe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, NNe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43849,7 +43706,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function LNe(t, n) {
+      function TNe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 245),
@@ -43861,10 +43718,10 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.dateValidationError"));
       }
-      function FNe(t, n) {
+      function ENe(t, n) {
         1 & t && k(0, "span", 241);
       }
-      function INe(t, n) {
+      function kNe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 261),
@@ -43873,8 +43730,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function ONe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, INe, 3, 1, "div", 14), c()), 2 & t)) {
+      function zNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, kNe, 3, 1, "div", 14), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -43893,7 +43750,7 @@ var Bke = Object.defineProperty,
         return { invalid: t };
       };
       t9()($);
-      let PNe = (() => {
+      let LNe = (() => {
         class t {
           constructor(e, i, r, a) {
             (this.claimService = e),
@@ -44143,7 +44000,7 @@ var Bke = Object.defineProperty,
             type: t,
             selectors: [["app-claim"]],
             decls: 608,
-            vars: 177,
+            vars: 178,
             consts: [
               ["id", "step5"],
               [3, "translate"],
@@ -44824,7 +44681,7 @@ var Bke = Object.defineProperty,
                 "hasinfo",
               ],
               ["tabindex", "0", 1, "icon"],
-              [1, "hover"],
+              [1, "hover", 3, "translate"],
               [
                 "type",
                 "text",
@@ -46080,7 +45937,7 @@ var Bke = Object.defineProperty,
                   k(22, "span", 13),
                   c(),
                   c(),
-                  V(23, XVe, 2, 1, "div", 14),
+                  V(23, JVe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(24, "div", 7),
@@ -46111,7 +45968,7 @@ var Bke = Object.defineProperty,
                   k(31, "span", 13),
                   c(),
                   c(),
-                  V(32, exe, 2, 1, "div", 14),
+                  V(32, KVe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(33, "label", 17),
@@ -46142,7 +45999,7 @@ var Bke = Object.defineProperty,
                   k(49, "input", 25),
                   c(),
                   c(),
-                  V(50, ixe, 3, 2, "div", 14),
+                  V(50, ZVe, 3, 2, "div", 14),
                   c(),
                   c(),
                   o(51, "div", 7),
@@ -46173,14 +46030,14 @@ var Bke = Object.defineProperty,
                   o(61, "option", 30),
                   v(62, " Please select "),
                   c(),
-                  V(63, rxe, 2, 2, "option", 31),
+                  V(63, exe, 2, 2, "option", 31),
                   o(64, "option", 32),
                   v(65, " Other (please specify) "),
                   c(),
                   c(),
                   c(),
                   c(),
-                  V(66, sxe, 2, 1, "div", 14),
+                  V(66, nxe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(67, "div", 33),
@@ -46203,11 +46060,11 @@ var Bke = Object.defineProperty,
                   o(80, "option", 30),
                   v(81, " Please select "),
                   c(),
-                  V(82, oxe, 2, 2, "option", 31),
+                  V(82, ixe, 2, 2, "option", 31),
                   c(),
                   c(),
                   c(),
-                  V(83, lxe, 2, 1, "div", 14),
+                  V(83, axe, 2, 1, "div", 14),
                   o(84, "div", 37),
                   o(85, "div", 24),
                   o(86, "select", 40),
@@ -46217,11 +46074,11 @@ var Bke = Object.defineProperty,
                   o(89, "option", 30),
                   v(90, " Please select "),
                   c(),
-                  V(91, uxe, 2, 2, "option", 31),
+                  V(91, sxe, 2, 2, "option", 31),
                   c(),
                   c(),
                   c(),
-                  V(92, fxe, 2, 1, "div", 14),
+                  V(92, cxe, 2, 1, "div", 14),
                   o(93, "span", 41),
                   o(94, "input", 42),
                   Z("change", function (a) {
@@ -46287,7 +46144,7 @@ var Bke = Object.defineProperty,
                   k(114, "span", 48),
                   c(),
                   c(),
-                  V(115, pxe, 2, 1, "div", 14),
+                  V(115, uxe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(116, "div", 7),
@@ -46318,7 +46175,7 @@ var Bke = Object.defineProperty,
                   k(123, "span", 48),
                   c(),
                   c(),
-                  V(124, gxe, 2, 1, "div", 14),
+                  V(124, fxe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(125, "label", 17),
@@ -46346,7 +46203,7 @@ var Bke = Object.defineProperty,
                   k(141, "input", 56),
                   c(),
                   c(),
-                  V(142, _xe, 2, 1, "div", 14),
+                  V(142, pxe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(143, "div", 7),
@@ -46364,7 +46221,7 @@ var Bke = Object.defineProperty,
                   k(152, "input", 60),
                   c(),
                   c(),
-                  V(153, bxe, 3, 2, "div", 14),
+                  V(153, vxe, 3, 2, "div", 14),
                   c(),
                   c(),
                   o(154, "div", 7),
@@ -46428,7 +46285,7 @@ var Bke = Object.defineProperty,
                   c(),
                   c(),
                   c(),
-                  V(186, Sxe, 2, 1, "div", 14),
+                  V(186, Cxe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(187, "div", 74),
@@ -46451,11 +46308,11 @@ var Bke = Object.defineProperty,
                   o(200, "option", 30),
                   v(201, " Please select "),
                   c(),
-                  V(202, wxe, 2, 2, "option", 31),
+                  V(202, yxe, 2, 2, "option", 31),
                   c(),
                   c(),
                   c(),
-                  V(203, Hxe, 2, 1, "div", 14),
+                  V(203, Mxe, 2, 1, "div", 14),
                   o(204, "div", 77),
                   o(205, "div", 24),
                   o(206, "select", 79),
@@ -46465,11 +46322,11 @@ var Bke = Object.defineProperty,
                   o(209, "option", 30),
                   v(210, " Please select "),
                   c(),
-                  V(211, Vxe, 2, 2, "option", 31),
+                  V(211, Sxe, 2, 2, "option", 31),
                   c(),
                   c(),
                   c(),
-                  V(212, Nxe, 2, 1, "div", 14),
+                  V(212, Dxe, 2, 1, "div", 14),
                   o(213, "span", 41),
                   o(214, "input", 80),
                   Z("change", function (a) {
@@ -46527,7 +46384,7 @@ var Bke = Object.defineProperty,
                   k(234, "span", 85),
                   c(),
                   c(),
-                  V(235, Txe, 2, 1, "div", 14),
+                  V(235, Vxe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(236, "div", 7),
@@ -46550,7 +46407,7 @@ var Bke = Object.defineProperty,
                   k(243, "span", 85),
                   c(),
                   c(),
-                  V(244, kxe, 2, 1, "div", 14),
+                  V(244, Nxe, 2, 1, "div", 14),
                   c(),
                   c(),
                   c(),
@@ -46575,7 +46432,7 @@ var Bke = Object.defineProperty,
                   k(257, "textarea", 93),
                   c(),
                   c(),
-                  V(258, Lxe, 2, 1, "div", 14),
+                  V(258, Txe, 2, 1, "div", 14),
                   c(),
                   c(),
                   c(),
@@ -46624,7 +46481,7 @@ var Bke = Object.defineProperty,
                   k(276, "span", 98),
                   c(),
                   c(),
-                  V(277, Ixe, 2, 1, "div", 14),
+                  V(277, kxe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(278, "div", 7),
@@ -46654,7 +46511,7 @@ var Bke = Object.defineProperty,
                   k(285, "span", 98),
                   c(),
                   c(),
-                  V(286, Pxe, 2, 1, "div", 14),
+                  V(286, Lxe, 2, 1, "div", 14),
                   c(),
                   c(),
                   c(),
@@ -46706,7 +46563,7 @@ var Bke = Object.defineProperty,
                   k(307, "span", 107),
                   c(),
                   c(),
-                  V(308, Bxe, 2, 1, "div", 14),
+                  V(308, Ixe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(309, "div", 7),
@@ -46733,7 +46590,7 @@ var Bke = Object.defineProperty,
                   k(316, "span", 107),
                   c(),
                   c(),
-                  V(317, qxe, 2, 1, "div", 14),
+                  V(317, Pxe, 2, 1, "div", 14),
                   c(),
                   c(),
                   c(),
@@ -46840,8 +46697,8 @@ var Bke = Object.defineProperty,
                   k(380, "input", 139),
                   c(),
                   c(),
-                  V(381, $xe, 2, 1, "div", 140),
-                  V(382, Wxe, 1, 0, "ng-template", null, 141, Cn),
+                  V(381, Bxe, 2, 1, "div", 140),
+                  V(382, jxe, 1, 0, "ng-template", null, 141, Cn),
                   c(),
                   c(),
                   c(),
@@ -46862,10 +46719,10 @@ var Bke = Object.defineProperty,
                   o(389, "span", 1),
                   v(390, "to"),
                   c(),
-                  V(391, Gxe, 2, 0, "span", 145),
+                  V(391, qxe, 2, 0, "span", 145),
                   c(),
                   c(),
-                  V(392, Yxe, 2, 1, "div", 14),
+                  V(392, $xe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(393, "div", 146),
@@ -46880,9 +46737,9 @@ var Bke = Object.defineProperty,
                   k(401, "input", 149),
                   c(),
                   c(),
-                  V(402, Qxe, 2, 1, "div", 140),
-                  V(403, Xxe, 3, 1, "div", 140),
-                  V(404, Zxe, 1, 0, "ng-template", null, 141, Cn),
+                  V(402, Gxe, 2, 1, "div", 140),
+                  V(403, Jxe, 3, 1, "div", 140),
+                  V(404, Yxe, 1, 0, "ng-template", null, 141, Cn),
                   c(),
                   c(),
                   c(),
@@ -46907,7 +46764,7 @@ var Bke = Object.defineProperty,
                   k(413, "span", 153),
                   c(),
                   c(),
-                  V(414, tNe, 2, 1, "div", 14),
+                  V(414, Qxe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(415, "legend", 43),
@@ -46933,7 +46790,7 @@ var Bke = Object.defineProperty,
                   k(424, "span", 157),
                   c(),
                   c(),
-                  V(425, iNe, 2, 1, "div", 14),
+                  V(425, Zxe, 2, 1, "div", 14),
                   c(),
                   c(),
                   c(),
@@ -46962,8 +46819,8 @@ var Bke = Object.defineProperty,
                   k(439, "input", 163),
                   c(),
                   c(),
-                  V(440, aNe, 2, 1, "div", 140),
-                  V(441, sNe, 1, 0, "ng-template", null, 141, Cn),
+                  V(440, tNe, 2, 1, "div", 140),
+                  V(441, nNe, 1, 0, "ng-template", null, 141, Cn),
                   c(),
                   c(),
                   c(),
@@ -46987,10 +46844,10 @@ var Bke = Object.defineProperty,
                   o(450, "span", 1),
                   v(451, "to"),
                   c(),
-                  V(452, oNe, 2, 0, "span", 167),
+                  V(452, iNe, 2, 0, "span", 167),
                   c(),
                   c(),
-                  V(453, lNe, 2, 1, "div", 14),
+                  V(453, aNe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(454, "div", 168),
@@ -47005,9 +46862,9 @@ var Bke = Object.defineProperty,
                   k(462, "input", 171),
                   c(),
                   c(),
-                  V(463, dNe, 2, 1, "div", 140),
-                  V(464, fNe, 3, 1, "div", 140),
-                  V(465, hNe, 1, 0, "ng-template", null, 141, Cn),
+                  V(463, oNe, 2, 1, "div", 140),
+                  V(464, cNe, 3, 1, "div", 140),
+                  V(465, lNe, 1, 0, "ng-template", null, 141, Cn),
                   c(),
                   c(),
                   c(),
@@ -47036,7 +46893,7 @@ var Bke = Object.defineProperty,
                   k(476, "span", 175),
                   c(),
                   c(),
-                  V(477, mNe, 2, 1, "div", 14),
+                  V(477, dNe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(478, "legend", 43),
@@ -47062,7 +46919,7 @@ var Bke = Object.defineProperty,
                   k(487, "span", 179),
                   c(),
                   c(),
-                  V(488, vNe, 2, 1, "div", 14),
+                  V(488, hNe, 2, 1, "div", 14),
                   c(),
                   c(),
                   c(),
@@ -47115,7 +46972,7 @@ var Bke = Object.defineProperty,
                   k(506, "span", 184),
                   c(),
                   c(),
-                  V(507, CNe, 2, 1, "div", 14),
+                  V(507, mNe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(508, "div", 7),
@@ -47148,7 +47005,7 @@ var Bke = Object.defineProperty,
                   k(515, "span", 184),
                   c(),
                   c(),
-                  V(516, bNe, 2, 1, "div", 14),
+                  V(516, vNe, 2, 1, "div", 14),
                   c(),
                   c(),
                   c(),
@@ -47175,10 +47032,10 @@ var Bke = Object.defineProperty,
                   o(527, "span", 1),
                   v(528, "If yes, the interest should run from"),
                   c(),
-                  V(529, MNe, 2, 0, "span", 193),
+                  V(529, _Ne, 2, 0, "span", 193),
                   c(),
                   c(),
-                  V(530, wNe, 2, 1, "div", 14),
+                  V(530, yNe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(531, "div", 194),
@@ -47193,8 +47050,8 @@ var Bke = Object.defineProperty,
                   k(539, "input", 197),
                   c(),
                   c(),
-                  V(540, HNe, 2, 1, "div", 140),
-                  V(541, VNe, 1, 0, "ng-template", null, 141, Cn),
+                  V(540, MNe, 2, 1, "div", 140),
+                  V(541, SNe, 1, 0, "ng-template", null, 141, Cn),
                   c(),
                   c(),
                   c(),
@@ -47222,7 +47079,7 @@ var Bke = Object.defineProperty,
                   k(552, "span", 201),
                   c(),
                   c(),
-                  V(553, NNe, 2, 1, "div", 14),
+                  V(553, DNe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(554, "div", 202),
@@ -47260,10 +47117,10 @@ var Bke = Object.defineProperty,
                   o(570, "span", 1),
                   v(571, "to"),
                   c(),
-                  V(572, ANe, 2, 0, "span", 210),
+                  V(572, HNe, 2, 0, "span", 210),
                   c(),
                   c(),
-                  V(573, ENe, 2, 1, "div", 14),
+                  V(573, xNe, 2, 1, "div", 14),
                   c(),
                   c(),
                   o(574, "div", 211),
@@ -47279,9 +47136,9 @@ var Bke = Object.defineProperty,
                   k(583, "input", 214),
                   c(),
                   c(),
-                  V(584, zNe, 2, 1, "div", 140),
-                  V(585, LNe, 3, 1, "div", 140),
-                  V(586, FNe, 1, 0, "ng-template", null, 141, Cn),
+                  V(584, ANe, 2, 1, "div", 140),
+                  V(585, TNe, 3, 1, "div", 140),
+                  V(586, ENe, 1, 0, "ng-template", null, 141, Cn),
                   c(),
                   c(),
                   c(),
@@ -47310,7 +47167,7 @@ var Bke = Object.defineProperty,
                   k(597, "span", 218),
                   c(),
                   c(),
-                  V(598, ONe, 2, 1, "div", 14),
+                  V(598, zNe, 2, 1, "div", 14),
                   c(),
                   c(),
                   c(),
@@ -47376,7 +47233,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      145,
+                      146,
                       ii,
                       i.claimService.editForm
                         .get("claimForMoneyExpansion")
@@ -47402,7 +47259,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      147,
+                      148,
                       ii,
                       i.claimService.editForm
                         .get("claimForMoneyExpansion")
@@ -47434,7 +47291,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      149,
+                      150,
                       ii,
                       i.claimService.editForm
                         .get("claimForMoneyExpansion")
@@ -47467,7 +47324,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      151,
+                      152,
                       ii,
                       i.claimService.editForm
                         .get("claimForMoneyExpansion")
@@ -47524,7 +47381,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      153,
+                      154,
                       ii,
                       i.claimService.editForm
                         .get("otherClaimExpansion")
@@ -47550,7 +47407,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      155,
+                      156,
                       ii,
                       i.claimService.editForm
                         .get("otherClaimExpansion")
@@ -47576,7 +47433,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      157,
+                      158,
                       ii,
                       i.claimService.editForm
                         .get("otherClaimExpansion")
@@ -47606,7 +47463,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      159,
+                      160,
                       ii,
                       i.claimService.editForm
                         .get("otherClaimExpansion")
@@ -47639,7 +47496,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      161,
+                      162,
                       ii,
                       i.claimService.editForm
                         .get("otherClaimExpansion")
@@ -47698,7 +47555,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      163,
+                      164,
                       ii,
                       i.claimService.editForm
                         .get("claimingCostProceedingsExpansion")
@@ -47766,7 +47623,9 @@ var Bke = Object.defineProperty,
                   m("translate", "claim.ifContractual"),
                   d(6),
                   m("translate", "claim.theRateIs"),
-                  d(27),
+                  d(20),
+                  m("translate", "claim.percentagePointsAboveECBInfo"),
+                  d(7),
                   m("translate", "claim.aboveTheBaseRate"),
                   d(5),
                   m("translate", "claim.other"),
@@ -47776,7 +47635,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      165,
+                      166,
                       ii,
                       i.claimService.editForm
                         .get("claimingInterestExpansion")
@@ -47829,7 +47688,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      167,
+                      168,
                       ii,
                       (i.claimService.editForm
                         .get("claimingInterestExpansion")
@@ -47911,7 +47770,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      169,
+                      170,
                       ii,
                       i.claimService.editForm
                         .get("claimingInterestExpansion")
@@ -47964,7 +47823,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      171,
+                      172,
                       ii,
                       (i.claimService.editForm
                         .get("claimingInterestExpansion")
@@ -48089,7 +47948,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      173,
+                      174,
                       ii,
                       i.claimService.editForm
                         .get("claimingInterestOnCostExpansion")
@@ -48148,7 +48007,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      175,
+                      176,
                       ii,
                       (i.claimService.editForm
                         .get("claimingInterestOnCostExpansion")
@@ -48203,9 +48062,9 @@ var Bke = Object.defineProperty,
                         .get("claimingInterestOnCostToOption").dirty
                   ),
                   d(4),
-                  _1("value", "<    ", jt(603, 141, "buttons.back"), ""),
+                  _1("value", "<    ", jt(603, 142, "buttons.back"), ""),
                   d(4),
-                  _1("value", "", jt(607, 143, "buttons.next"), "    >");
+                  _1("value", "", jt(607, 144, "buttons.next"), "    >");
               }
             },
             directives: [
@@ -48233,7 +48092,7 @@ var Bke = Object.defineProperty,
           t
         );
       })();
-      function RNe(t, n) {
+      function FNe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 61),
@@ -48242,8 +48101,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function BNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, RNe, 3, 1, "div", 13), c()), 2 & t)) {
+      function INe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, FNe, 3, 1, "div", 13), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -48257,55 +48116,55 @@ var Bke = Object.defineProperty,
             );
         }
       }
+      function ONe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 62),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function PNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, ONe, 3, 1, "div", 13), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.claimDetailsService.editForm.get("writtenEvidence")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function RNe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 62),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function BNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, RNe, 3, 1, "div", 13), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.claimDetailsService.editForm.get("writtenEvidence")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
       function jNe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 62),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function qNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, jNe, 3, 1, "div", 13), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.claimDetailsService.editForm.get("writtenEvidence")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function UNe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 62),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function $Ne(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, UNe, 3, 1, "div", 13), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.claimDetailsService.editForm.get("writtenEvidence")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function WNe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 63),
@@ -48314,8 +48173,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function GNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, WNe, 3, 1, "div", 13), c()), 2 & t)) {
+      function qNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, jNe, 3, 1, "div", 13), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -48330,53 +48189,53 @@ var Bke = Object.defineProperty,
             );
         }
       }
+      function UNe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 64),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function $Ne(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, UNe, 3, 1, "div", 13), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null == (i = e.claimDetailsService.editForm.get("witnesses")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function WNe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 64),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function GNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, WNe, 3, 1, "div", 13), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null == (i = e.claimDetailsService.editForm.get("witnesses")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
       function JNe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 64),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function YNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, JNe, 3, 1, "div", 13), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null == (i = e.claimDetailsService.editForm.get("witnesses")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function KNe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 64),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function QNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, KNe, 3, 1, "div", 13), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null == (i = e.claimDetailsService.editForm.get("witnesses")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function XNe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 65),
@@ -48385,8 +48244,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function ZNe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, XNe, 3, 1, "div", 13), c()), 2 & t)) {
+      function YNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, JNe, 3, 1, "div", 13), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -48400,55 +48259,55 @@ var Bke = Object.defineProperty,
             );
         }
       }
+      function KNe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 66),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function QNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, KNe, 3, 1, "div", 13), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.claimDetailsService.editForm.get("otherClaimDetails")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function XNe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 66),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function ZNe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, XNe, 3, 1, "div", 13), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.claimDetailsService.editForm.get("otherClaimDetails")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
       function eAe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 66),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function tAe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, eAe, 3, 1, "div", 13), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.claimDetailsService.editForm.get("otherClaimDetails")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function nAe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 66),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function iAe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, nAe, 3, 1, "div", 13), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.claimDetailsService.editForm.get("otherClaimDetails")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function rAe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 67),
@@ -48457,8 +48316,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function aAe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, rAe, 3, 1, "div", 13), c()), 2 & t)) {
+      function tAe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, eAe, 3, 1, "div", 13), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -48476,7 +48335,7 @@ var Bke = Object.defineProperty,
       const Ku = function (t) {
         return { invalid: t };
       };
-      let sAe = (() => {
+      let nAe = (() => {
         class t {
           constructor(e, i, r) {
             (this.claimDetailsService = e),
@@ -48999,7 +48858,7 @@ var Bke = Object.defineProperty,
                 k(18, "textarea", 12),
                 c(),
                 c(),
-                V(19, BNe, 2, 1, "div", 13),
+                V(19, INe, 2, 1, "div", 13),
                 c(),
                 c(),
                 o(20, "div", 6),
@@ -49050,7 +48909,7 @@ var Bke = Object.defineProperty,
                 k(44, "span", 22),
                 c(),
                 c(),
-                V(45, qNe, 2, 1, "div", 13),
+                V(45, PNe, 2, 1, "div", 13),
                 c(),
                 c(),
                 o(46, "div", 6),
@@ -49071,7 +48930,7 @@ var Bke = Object.defineProperty,
                 k(53, "span", 22),
                 c(),
                 c(),
-                V(54, $Ne, 2, 1, "div", 13),
+                V(54, BNe, 2, 1, "div", 13),
                 c(),
                 c(),
                 c(),
@@ -49094,7 +48953,7 @@ var Bke = Object.defineProperty,
                 k(67, "textarea", 29),
                 c(),
                 c(),
-                V(68, GNe, 2, 1, "div", 13),
+                V(68, qNe, 2, 1, "div", 13),
                 c(),
                 c(),
                 c(),
@@ -49135,7 +48994,7 @@ var Bke = Object.defineProperty,
                 k(87, "span", 34),
                 c(),
                 c(),
-                V(88, YNe, 2, 1, "div", 13),
+                V(88, $Ne, 2, 1, "div", 13),
                 c(),
                 c(),
                 o(89, "div", 6),
@@ -49156,7 +49015,7 @@ var Bke = Object.defineProperty,
                 k(96, "span", 34),
                 c(),
                 c(),
-                V(97, QNe, 2, 1, "div", 13),
+                V(97, GNe, 2, 1, "div", 13),
                 c(),
                 c(),
                 c(),
@@ -49179,7 +49038,7 @@ var Bke = Object.defineProperty,
                 k(110, "textarea", 41),
                 c(),
                 c(),
-                V(111, ZNe, 2, 1, "div", 13),
+                V(111, YNe, 2, 1, "div", 13),
                 c(),
                 c(),
                 c(),
@@ -49220,7 +49079,7 @@ var Bke = Object.defineProperty,
                 k(130, "span", 46),
                 c(),
                 c(),
-                V(131, tAe, 2, 1, "div", 13),
+                V(131, QNe, 2, 1, "div", 13),
                 c(),
                 c(),
                 o(132, "div", 6),
@@ -49241,7 +49100,7 @@ var Bke = Object.defineProperty,
                 k(139, "span", 46),
                 c(),
                 c(),
-                V(140, iAe, 2, 1, "div", 13),
+                V(140, ZNe, 2, 1, "div", 13),
                 c(),
                 c(),
                 c(),
@@ -49264,7 +49123,7 @@ var Bke = Object.defineProperty,
                 k(153, "textarea", 53),
                 c(),
                 c(),
-                V(154, aAe, 2, 1, "div", 13),
+                V(154, tAe, 2, 1, "div", 13),
                 c(),
                 c(),
                 c(),
@@ -49470,10 +49329,62 @@ var Bke = Object.defineProperty,
           t
         );
       })();
+      function iAe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 102),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function rAe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, iAe, 3, 1, "div", 19), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i =
+                  e.stepSevenService.oralHearingForm.get(
+                    "oralHearingRequest"
+                  )) || null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function aAe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 102),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function sAe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, aAe, 3, 1, "div", 19), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i =
+                  e.stepSevenService.oralHearingForm.get(
+                    "oralHearingRequest"
+                  )) || null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
       function oAe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 104),
+          o(1, "span", 103),
           v(2, " Field is required "),
           c(),
           c()),
@@ -49487,10 +49398,9 @@ var Bke = Object.defineProperty,
             m(
               "ngIf",
               null ==
-                (i =
-                  e.stepSevenService.oralHearingForm.get(
-                    "oralHearingRequest"
-                  )) || null == i.errors
+                (i = e.stepSevenService.oralHearingForm.get(
+                  "oralHearingRequestReasons"
+                )) || null == i.errors
                 ? null
                 : i.errors.required
             );
@@ -49513,10 +49423,9 @@ var Bke = Object.defineProperty,
             m(
               "ngIf",
               null ==
-                (i =
-                  e.stepSevenService.oralHearingForm.get(
-                    "oralHearingRequest"
-                  )) || null == i.errors
+                (i = e.stepSevenService.oralHearingForm.get(
+                  "oralHearingPresence"
+                )) || null == i.errors
                 ? null
                 : i.errors.required
             );
@@ -49525,7 +49434,7 @@ var Bke = Object.defineProperty,
       function dAe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 105),
+          o(1, "span", 104),
           v(2, " Field is required "),
           c(),
           c()),
@@ -49540,7 +49449,7 @@ var Bke = Object.defineProperty,
               "ngIf",
               null ==
                 (i = e.stepSevenService.oralHearingForm.get(
-                  "oralHearingRequestReasons"
+                  "oralHearingPresence"
                 )) || null == i.errors
                 ? null
                 : i.errors.required
@@ -49550,7 +49459,7 @@ var Bke = Object.defineProperty,
       function hAe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 106),
+          o(1, "span", 105),
           v(2, " Field is required "),
           c(),
           c()),
@@ -49565,7 +49474,7 @@ var Bke = Object.defineProperty,
               "ngIf",
               null ==
                 (i = e.stepSevenService.oralHearingForm.get(
-                  "oralHearingPresence"
+                  "oralHearingPresenceReasons"
                 )) || null == i.errors
                 ? null
                 : i.errors.required
@@ -49589,8 +49498,8 @@ var Bke = Object.defineProperty,
             m(
               "ngIf",
               null ==
-                (i = e.stepSevenService.oralHearingForm.get(
-                  "oralHearingPresence"
+                (i = e.stepSevenService.documentAndCommunicationForm.get(
+                  "electronicCommunicationWithCourtTribunal"
                 )) || null == i.errors
                 ? null
                 : i.errors.required
@@ -49600,7 +49509,7 @@ var Bke = Object.defineProperty,
       function vAe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 107),
+          o(1, "span", 106),
           v(2, " Field is required "),
           c(),
           c()),
@@ -49614,8 +49523,8 @@ var Bke = Object.defineProperty,
             m(
               "ngIf",
               null ==
-                (i = e.stepSevenService.oralHearingForm.get(
-                  "oralHearingPresenceReasons"
+                (i = e.stepSevenService.documentAndCommunicationForm.get(
+                  "electronicCommunicationWithCourtTribunal"
                 )) || null == i.errors
                 ? null
                 : i.errors.required
@@ -49625,7 +49534,7 @@ var Bke = Object.defineProperty,
       function CAe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 108),
+          o(1, "span", 107),
           v(2, " Field is required "),
           c(),
           c()),
@@ -49640,7 +49549,7 @@ var Bke = Object.defineProperty,
               "ngIf",
               null ==
                 (i = e.stepSevenService.documentAndCommunicationForm.get(
-                  "electronicCommunicationWithCourtTribunal"
+                  "electronicCommunicationOther"
                 )) || null == i.errors
                 ? null
                 : i.errors.required
@@ -49650,7 +49559,7 @@ var Bke = Object.defineProperty,
       function bAe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 108),
+          o(1, "span", 107),
           v(2, " Field is required "),
           c(),
           c()),
@@ -49665,7 +49574,7 @@ var Bke = Object.defineProperty,
               "ngIf",
               null ==
                 (i = e.stepSevenService.documentAndCommunicationForm.get(
-                  "electronicCommunicationWithCourtTribunal"
+                  "electronicCommunicationOther"
                 )) || null == i.errors
                 ? null
                 : i.errors.required
@@ -49675,7 +49584,7 @@ var Bke = Object.defineProperty,
       function SAe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 109),
+          o(1, "span", 108),
           v(2, " Field is required "),
           c(),
           c()),
@@ -49689,9 +49598,10 @@ var Bke = Object.defineProperty,
             m(
               "ngIf",
               null ==
-                (i = e.stepSevenService.documentAndCommunicationForm.get(
-                  "electronicCommunicationOther"
-                )) || null == i.errors
+                (i =
+                  e.stepSevenService.certificateForm.get(
+                    "certificateRequest"
+                  )) || null == i.errors
                 ? null
                 : i.errors.required
             );
@@ -49700,7 +49610,7 @@ var Bke = Object.defineProperty,
       function DAe(t, n) {
         1 & t &&
           (o(0, "div"),
-          o(1, "span", 109),
+          o(1, "span", 108),
           v(2, " Field is required "),
           c(),
           c()),
@@ -49714,70 +49624,67 @@ var Bke = Object.defineProperty,
             m(
               "ngIf",
               null ==
-                (i = e.stepSevenService.documentAndCommunicationForm.get(
-                  "electronicCommunicationOther"
-                )) || null == i.errors
+                (i =
+                  e.stepSevenService.certificateForm.get(
+                    "certificateRequest"
+                  )) || null == i.errors
                 ? null
                 : i.errors.required
             );
         }
       }
       function VAe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 110),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function xAe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, VAe, 3, 1, "div", 19), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i =
-                  e.stepSevenService.certificateForm.get(
-                    "certificateRequest"
-                  )) || null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function NAe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 110),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function AAe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, NAe, 3, 1, "div", 19), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i =
-                  e.stepSevenService.certificateForm.get(
-                    "certificateRequest"
-                  )) || null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function TAe(t, n) {
-        if ((1 & t && (o(0, "option", 111), v(1), c()), 2 & t)) {
+        if ((1 & t && (o(0, "option", 109), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
+        }
+      }
+      function xAe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 110),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function NAe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, xAe, 3, 1, "div", 19), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.stepSevenService.dateAndSignatureForm.get("city")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
+        }
+      }
+      function AAe(t, n) {
+        1 & t &&
+          (o(0, "div"),
+          o(1, "span", 111),
+          v(2, " Field is required "),
+          c(),
+          c()),
+          2 & t && (d(1), m("translate", "errors.required"));
+      }
+      function TAe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, AAe, 3, 1, "div", 19), c()), 2 & t)) {
+          const e = N();
+          let i;
+          d(1),
+            m(
+              "ngIf",
+              null ==
+                (i = e.stepSevenService.dateAndSignatureForm.get("date")) ||
+                null == i.errors
+                ? null
+                : i.errors.required
+            );
         }
       }
       function EAe(t, n) {
@@ -49797,54 +49704,6 @@ var Bke = Object.defineProperty,
             m(
               "ngIf",
               null ==
-                (i = e.stepSevenService.dateAndSignatureForm.get("city")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function zAe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 113),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function LAe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, zAe, 3, 1, "div", 19), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
-                (i = e.stepSevenService.dateAndSignatureForm.get("date")) ||
-                null == i.errors
-                ? null
-                : i.errors.required
-            );
-        }
-      }
-      function FAe(t, n) {
-        1 & t &&
-          (o(0, "div"),
-          o(1, "span", 114),
-          v(2, " Field is required "),
-          c(),
-          c()),
-          2 & t && (d(1), m("translate", "errors.required"));
-      }
-      function IAe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, FAe, 3, 1, "div", 19), c()), 2 & t)) {
-          const e = N();
-          let i;
-          d(1),
-            m(
-              "ngIf",
-              null ==
                 (i = e.stepSevenService.dateAndSignatureForm.get("sign")) ||
                 null == i.errors
                 ? null
@@ -49856,7 +49715,7 @@ var Bke = Object.defineProperty,
         return { invalid: t };
       };
       t9()($);
-      let OAe = (() => {
+      let zAe = (() => {
         class t {
           constructor(e, i, r, a) {
             (this.stepSevenService = e),
@@ -49944,8 +49803,8 @@ var Bke = Object.defineProperty,
           (t.ɵcmp = Je({
             type: t,
             selectors: [["app-step-seven"]],
-            decls: 279,
-            vars: 69,
+            decls: 275,
+            vars: 70,
             consts: [
               ["id", "step7"],
               ["id", "step7_1"],
@@ -50296,9 +50155,6 @@ var Bke = Object.defineProperty,
                 1,
                 "asterisk",
               ],
-              [1, "info", "show-mobile"],
-              [1, "icon"],
-              [1, "hover"],
               [
                 "id",
                 "input-wrapper_dynformSCA8CertificateLanguage",
@@ -50309,6 +50165,7 @@ var Bke = Object.defineProperty,
               ],
               [1, "info", "hide-mobile"],
               ["tabindex", "0", 1, "icon"],
+              [1, "hover", 3, "translate"],
               [1, "input-content"],
               [
                 "name",
@@ -50673,7 +50530,7 @@ var Bke = Object.defineProperty,
                 k(28, "span", 18),
                 c(),
                 c(),
-                V(29, cAe, 2, 1, "div", 19),
+                V(29, rAe, 2, 1, "div", 19),
                 c(),
                 c(),
                 o(30, "div", 11),
@@ -50694,7 +50551,7 @@ var Bke = Object.defineProperty,
                 k(37, "span", 18),
                 c(),
                 c(),
-                V(38, uAe, 2, 1, "div", 19),
+                V(38, sAe, 2, 1, "div", 19),
                 c(),
                 c(),
                 c(),
@@ -50717,7 +50574,7 @@ var Bke = Object.defineProperty,
                 k(51, "textarea", 27),
                 c(),
                 c(),
-                V(52, fAe, 2, 1, "div", 19),
+                V(52, cAe, 2, 1, "div", 19),
                 c(),
                 c(),
                 c(),
@@ -50761,7 +50618,7 @@ var Bke = Object.defineProperty,
                 k(71, "span", 32),
                 c(),
                 c(),
-                V(72, pAe, 2, 1, "div", 19),
+                V(72, uAe, 2, 1, "div", 19),
                 c(),
                 c(),
                 o(73, "div", 11),
@@ -50782,7 +50639,7 @@ var Bke = Object.defineProperty,
                 k(80, "span", 32),
                 c(),
                 c(),
-                V(81, gAe, 2, 1, "div", 19),
+                V(81, fAe, 2, 1, "div", 19),
                 c(),
                 c(),
                 c(),
@@ -50805,7 +50662,7 @@ var Bke = Object.defineProperty,
                 k(94, "textarea", 39),
                 c(),
                 c(),
-                V(95, _Ae, 2, 1, "div", 19),
+                V(95, pAe, 2, 1, "div", 19),
                 c(),
                 c(),
                 c(),
@@ -50858,7 +50715,7 @@ var Bke = Object.defineProperty,
                 k(122, "span", 46),
                 c(),
                 c(),
-                V(123, yAe, 2, 1, "div", 19),
+                V(123, gAe, 2, 1, "div", 19),
                 c(),
                 c(),
                 o(124, "div", 11),
@@ -50872,7 +50729,7 @@ var Bke = Object.defineProperty,
                 k(131, "span", 46),
                 c(),
                 c(),
-                V(132, MAe, 2, 1, "div", 19),
+                V(132, _Ae, 2, 1, "div", 19),
                 c(),
                 c(),
                 c(),
@@ -50908,7 +50765,7 @@ var Bke = Object.defineProperty,
                 k(151, "span", 53),
                 c(),
                 c(),
-                V(152, wAe, 2, 1, "div", 19),
+                V(152, yAe, 2, 1, "div", 19),
                 c(),
                 c(),
                 o(153, "div", 11),
@@ -50922,7 +50779,7 @@ var Bke = Object.defineProperty,
                 k(160, "span", 53),
                 c(),
                 c(),
-                V(161, HAe, 2, 1, "div", 19),
+                V(161, MAe, 2, 1, "div", 19),
                 c(),
                 c(),
                 c(),
@@ -50967,7 +50824,7 @@ var Bke = Object.defineProperty,
                 k(185, "span", 62),
                 c(),
                 c(),
-                V(186, xAe, 2, 1, "div", 19),
+                V(186, wAe, 2, 1, "div", 19),
                 c(),
                 c(),
                 o(187, "div", 11),
@@ -50981,7 +50838,7 @@ var Bke = Object.defineProperty,
                 k(194, "span", 62),
                 c(),
                 c(),
-                V(195, AAe, 2, 1, "div", 19),
+                V(195, HAe, 2, 1, "div", 19),
                 c(),
                 c(),
                 c(),
@@ -50999,58 +50856,48 @@ var Bke = Object.defineProperty,
                 o(202, "div", 68),
                 o(203, "div", 69),
                 o(204, "div", 70),
+                o(205, "div", 71),
                 v(
-                  205,
+                  206,
                   " Upon your request the court may provide you with the certificate in another language, by making use of the dynamic forms available through the European e-Justice Portal. This may be helpful in enforcement of the judgment in another Member State. Please note, that the court is not obliged to provide any translation or transliteration of a text entered in the free-text fields of the certificate. "
                 ),
                 c(),
                 c(),
                 c(),
-                o(206, "div", 71),
                 o(207, "div", 72),
-                o(208, "div", 73),
-                o(209, "div", 70),
+                o(208, "select", 73),
+                o(209, "option", 74),
+                v(210, " Please select "),
+                c(),
+                V(211, VAe, 2, 2, "option", 75),
+                c(),
+                c(),
+                c(),
+                k(212, "span", 76),
+                c(),
+                c(),
+                c(),
+                c(),
+                c(),
+                c(),
+                o(213, "div", 77),
+                o(214, "h3", 13),
+                v(215, "7.4. Date and signature"),
+                c(),
+                k(216, "div", 78),
+                o(217, "p", 79),
+                v(218, "\xa0"),
+                c(),
+                o(219, "div", 5),
+                o(220, "div", 6),
+                o(221, "form", 7),
+                o(222, "div", 80),
+                o(223, "div", 11),
+                o(224, "div"),
+                o(225, "label", 12),
+                o(226, "span", 13),
                 v(
-                  210,
-                  " Upon your request the court may provide you with the certificate in another language, by making use of the dynamic forms available through the European e-Justice Portal. This may be helpful in enforcement of the judgment in another Member State. Please note, that the court is not obliged to provide any translation or transliteration of a text entered in the free-text fields of the certificate. "
-                ),
-                c(),
-                c(),
-                c(),
-                o(211, "div", 74),
-                o(212, "select", 75),
-                o(213, "option", 76),
-                v(214, " Please select "),
-                c(),
-                V(215, TAe, 2, 2, "option", 77),
-                c(),
-                c(),
-                c(),
-                k(216, "span", 78),
-                c(),
-                c(),
-                c(),
-                c(),
-                c(),
-                c(),
-                o(217, "div", 79),
-                o(218, "h3", 13),
-                v(219, "7.4. Date and signature"),
-                c(),
-                k(220, "div", 80),
-                o(221, "p", 81),
-                v(222, "\xa0"),
-                c(),
-                o(223, "div", 5),
-                o(224, "div", 6),
-                o(225, "form", 7),
-                o(226, "div", 82),
-                o(227, "div", 11),
-                o(228, "div"),
-                o(229, "label", 12),
-                o(230, "span", 13),
-                v(
-                  231,
+                  227,
                   " I hereby request that the court/tribunal give a judgment against the defendant on the basis of my claim."
                 ),
                 c(),
@@ -51058,93 +50905,93 @@ var Bke = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                o(232, "div", 4),
-                o(233, "span", 13),
+                o(228, "div", 4),
+                o(229, "span", 13),
                 v(
-                  234,
+                  230,
                   " I declare that the information provided is true to the best of my knowledge and is given in good faith. "
                 ),
                 c(),
                 c(),
-                o(235, "p", 81),
-                v(236, "\xa0"),
+                o(231, "p", 79),
+                v(232, "\xa0"),
                 c(),
-                o(237, "div", 11),
-                o(238, "div"),
-                o(239, "label", 83),
-                o(240, "span", 13),
-                v(241, " Done at"),
+                o(233, "div", 11),
+                o(234, "div"),
+                o(235, "label", 81),
+                o(236, "span", 13),
+                v(237, " Done at"),
                 c(),
-                o(242, "span", 84),
-                v(243, "*"),
+                o(238, "span", 82),
+                v(239, "*"),
+                c(),
+                c(),
+                o(240, "div", 83),
+                o(241, "div", 26),
+                k(242, "input", 84),
+                c(),
+                c(),
+                V(243, NAe, 2, 1, "div", 19),
                 c(),
                 c(),
                 o(244, "div", 85),
-                o(245, "div", 26),
-                k(246, "input", 86),
+                o(245, "div", 11),
+                o(246, "label", 86),
+                o(247, "span", 13),
+                v(248, "Date"),
+                c(),
+                o(249, "span", 87),
+                v(250, "*"),
                 c(),
                 c(),
-                V(247, kAe, 2, 1, "div", 19),
+                o(251, "div", 88),
+                o(252, "div", 89),
+                k(253, "input", 90),
                 c(),
                 c(),
-                o(248, "div", 87),
-                o(249, "div", 11),
-                o(250, "label", 88),
-                o(251, "span", 13),
-                v(252, "Date"),
-                c(),
-                o(253, "span", 89),
-                v(254, "*"),
+                V(254, TAe, 2, 1, "div", 19),
                 c(),
                 c(),
-                o(255, "div", 90),
-                o(256, "div", 91),
-                k(257, "input", 92),
+                o(255, "div", 11),
+                o(256, "div"),
+                o(257, "label", 91),
+                o(258, "span", 13),
+                v(259, "Name of the person signing the form"),
+                c(),
+                o(260, "span", 92),
+                v(261, "*"),
                 c(),
                 c(),
-                V(258, LAe, 2, 1, "div", 19),
+                o(262, "div", 93),
+                o(263, "div", 26),
+                k(264, "input", 94),
                 c(),
                 c(),
-                o(259, "div", 11),
-                o(260, "div"),
-                o(261, "label", 93),
-                o(262, "span", 13),
-                v(263, "Name of the person signing the form"),
+                V(265, kAe, 2, 1, "div", 19),
                 c(),
-                o(264, "span", 94),
-                v(265, "*"),
+                c(),
+                c(),
+                c(),
+                c(),
                 c(),
                 c(),
                 o(266, "div", 95),
-                o(267, "div", 26),
-                k(268, "input", 96),
-                c(),
-                c(),
-                V(269, IAe, 2, 1, "div", 19),
-                c(),
-                c(),
-                c(),
-                c(),
-                c(),
-                c(),
-                c(),
-                o(270, "div", 97),
-                o(271, "div", 98),
-                o(272, "span", 99),
-                o(273, "input", 100),
+                o(267, "div", 96),
+                o(268, "span", 97),
+                o(269, "input", 98),
                 Z("click", function () {
                   return i.changeStep("back", "step6");
                 }),
-                ye(274, "translate"),
+                ye(270, "translate"),
                 c(),
                 c(),
-                o(275, "div", 101),
-                o(276, "span", 102),
-                o(277, "input", 103),
+                o(271, "div", 99),
+                o(272, "span", 100),
+                o(273, "input", 101),
                 Z("click", function () {
                   return i.changeStep("next", "step8");
                 }),
-                ye(278, "translate"),
+                ye(274, "translate"),
                 c(),
                 c(),
                 c(),
@@ -51187,7 +51034,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      59,
+                      60,
                       al,
                       i.stepSevenService.oralHearingForm.get(
                         "oralHearingRequestReasons"
@@ -51239,7 +51086,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      61,
+                      62,
                       al,
                       i.stepSevenService.oralHearingForm.get(
                         "oralHearingPresenceReasons"
@@ -51354,7 +51201,9 @@ var Bke = Object.defineProperty,
                   ),
                   d(4),
                   m("translate", "certificate.language"),
-                  d(14),
+                  d(6),
+                  m("translate", "certificate.languageInfo"),
+                  d(4),
                   m("translate", "certificate.select"),
                   d(2),
                   m("ngForOf", i.europeanLanguages),
@@ -51372,7 +51221,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      63,
+                      64,
                       al,
                       i.stepSevenService.dateAndSignatureForm.get("city")
                         .invalid &&
@@ -51393,7 +51242,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      65,
+                      66,
                       al,
                       i.stepSevenService.dateAndSignatureForm.get("date")
                         .invalid &&
@@ -51414,7 +51263,7 @@ var Bke = Object.defineProperty,
                   m(
                     "ngClass",
                     De(
-                      67,
+                      68,
                       al,
                       i.stepSevenService.dateAndSignatureForm.get("sign")
                         .invalid &&
@@ -51430,9 +51279,9 @@ var Bke = Object.defineProperty,
                       i.stepSevenService.dateAndSignatureForm.get("sign").dirty
                   ),
                   d(4),
-                  _1("value", "<    ", jt(274, 55, "buttons.back"), ""),
+                  _1("value", "<    ", jt(270, 56, "buttons.back"), ""),
                   d(4),
-                  _1("value", "", jt(278, 57, "buttons.next"), "    >"));
+                  _1("value", "", jt(274, 58, "buttons.next"), "    >"));
             },
             directives: [
               f2,
@@ -51457,13 +51306,13 @@ var Bke = Object.defineProperty,
           t
         );
       })();
-      function PAe(t, n) {
+      function LAe(t, n) {
         if ((1 & t && (o(0, "option", 70), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), d(1), rt(" ", e.label, " ");
         }
       }
-      function RAe(t, n) {
+      function FAe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 71),
@@ -51472,8 +51321,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function BAe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, RAe, 3, 1, "div", 17), c()), 2 & t)) {
+      function IAe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, FAe, 3, 1, "div", 17), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -51486,7 +51335,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function jAe(t, n) {
+      function OAe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 72),
@@ -51495,8 +51344,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function qAe(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, jAe, 3, 1, "div", 17), c()), 2 & t)) {
+      function PAe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, OAe, 3, 1, "div", 17), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -51509,7 +51358,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      function UAe(t, n) {
+      function RAe(t, n) {
         1 & t &&
           (o(0, "div"),
           o(1, "span", 73),
@@ -51518,8 +51367,8 @@ var Bke = Object.defineProperty,
           c()),
           2 & t && (d(1), m("translate", "errors.required"));
       }
-      function $Ae(t, n) {
-        if ((1 & t && (o(0, "div"), V(1, UAe, 3, 1, "div", 17), c()), 2 & t)) {
+      function BAe(t, n) {
+        if ((1 & t && (o(0, "div"), V(1, RAe, 3, 1, "div", 17), c()), 2 & t)) {
           const e = N();
           let i;
           d(1),
@@ -51535,7 +51384,7 @@ var Bke = Object.defineProperty,
       const n9 = function (t) {
         return { invalid: t };
       };
-      let WAe = (() => {
+      let jAe = (() => {
         class t {
           constructor(e, i, r, a) {
             (this.courtService = e),
@@ -52026,11 +51875,11 @@ var Bke = Object.defineProperty,
                 o(26, "option", 15),
                 v(27, " Please select "),
                 c(),
-                V(28, PAe, 2, 2, "option", 16),
+                V(28, LAe, 2, 2, "option", 16),
                 c(),
                 c(),
                 c(),
-                V(29, BAe, 2, 1, "div", 17),
+                V(29, IAe, 2, 1, "div", 17),
                 c(),
                 c(),
                 c(),
@@ -52127,7 +51976,7 @@ var Bke = Object.defineProperty,
                 k(85, "input", 46),
                 c(),
                 c(),
-                V(86, qAe, 2, 1, "div", 17),
+                V(86, PAe, 2, 1, "div", 17),
                 c(),
                 c(),
                 o(87, "div", 7),
@@ -52145,7 +51994,7 @@ var Bke = Object.defineProperty,
                 k(96, "input", 50),
                 c(),
                 c(),
-                V(97, $Ae, 2, 1, "div", 17),
+                V(97, BAe, 2, 1, "div", 17),
                 c(),
                 c(),
                 o(98, "div", 7),
@@ -52325,7 +52174,7 @@ var Bke = Object.defineProperty,
           t
         );
       })();
-      const GAe = {
+      const qAe = {
           path: "",
           component: (() => {
             class t {
@@ -52342,10 +52191,26 @@ var Bke = Object.defineProperty,
                   (this.courtService = C);
               }
               ngOnInit() {
-                (this.changeStepSubscription = this.eventManager.subscribe(
-                  "changeStep",
-                  (e) => this.manageNavigation(e)
-                )),
+                document.addEventListener("click", () => {
+                  document.querySelector(".sticky-sidebar") &&
+                    document
+                      .querySelectorAll(".sticky-wrapper div ul li a")
+                      .forEach((r) => {
+                        this.blurChildren(r);
+                      });
+                }),
+                  document.addEventListener("drag", () => {
+                    document.querySelector(".sticky-sidebar") &&
+                      document
+                        .querySelectorAll(".sticky-wrapper div ul li a")
+                        .forEach((r) => {
+                          this.blurChildren(r);
+                        });
+                  }),
+                  (this.changeStepSubscription = this.eventManager.subscribe(
+                    "changeStep",
+                    (e) => this.manageNavigation(e)
+                  )),
                   (this.triggerTabList = [].slice.call(
                     document.querySelectorAll("#step-menu a")
                   )),
@@ -52353,61 +52218,70 @@ var Bke = Object.defineProperty,
                     var i = new Vs(e);
                     e.addEventListener("click", (r) => {
                       r.preventDefault();
-                      let a = r.target;
+                      let a = r.target,
+                        s = r.target;
                       for (; "LI" !== a.tagName; ) a = a.parentElement;
-                      const s = a.id.split("-")[0];
-                      if (s !== this.navbarService.currentStepId) {
-                        const l = this.getStepNumber(
+                      for (; "A" !== s.tagName; ) s = s.parentElement;
+                      const l = a.id.split("-")[0];
+                      if (l !== this.navbarService.currentStepId) {
+                        const u = this.getStepNumber(
                             this.navbarService.currentStepId
                           ),
-                          u = this.getStepNumber(s);
-                        if (u > l) {
-                          const h = [];
-                          for (let g = l; g < u; g++)
-                            h.push(this.navbarService.isStepValid("step" + g));
-                          Promise.all(h).then((g) => {
-                            if (g.every((C) => C.isValid))
+                          h = this.getStepNumber(l);
+                        if (h > u) {
+                          const g = [];
+                          for (let C = u; C < h; C++)
+                            g.push(this.navbarService.isStepValid("step" + C));
+                          Promise.all(g).then((C) => {
+                            if (C.every((S) => S.isValid))
                               (this.navbarService.previousStepId =
                                 this.navbarService.currentStepId),
-                                (this.navbarService.currentStepId = s),
+                                (this.navbarService.currentStepId = l),
                                 this.setActive(a),
                                 i.show(),
-                                window.showPdf(u),
-                                this.addRemoveValidatedClass(g);
+                                s.setAttribute("tabindex", "-1"),
+                                window.showPdf(h),
+                                this.addRemoveValidatedClass(C);
                             else {
-                              const C = g.find((E) => !E.isValid);
+                              const S = C.find((P) => !P.isValid);
                               this.navigateForward(
                                 this.navbarService.currentStepId,
-                                C.stepId
+                                S.stepId
                               ),
                                 (this.navbarService.previousStepId =
                                   this.navbarService.currentStepId),
-                                (this.navbarService.currentStepId = C.stepId);
-                              const S = this.getStepNumber(C.stepId);
-                              window.showPdf(S);
-                              const w = g.findIndex(
-                                (E) => E.stepId === C.stepId
+                                (this.navbarService.currentStepId = S.stepId);
+                              const w = this.getStepNumber(S.stepId);
+                              window.showPdf(w);
+                              const E = C.findIndex(
+                                (P) => P.stepId === S.stepId
                               );
-                              this.addRemoveValidatedClass(g.slice(0, w));
+                              this.addRemoveValidatedClass(C.slice(0, E));
                             }
                           });
                         } else {
-                          const h = [];
-                          for (let g = u; g <= l; g++)
-                            h.push(this.navbarService.isStepValid("step" + g));
-                          Promise.all(h).then((g) => {
-                            this.addRemoveValidatedClass(g),
+                          const g = [];
+                          for (let C = h; C <= u; C++)
+                            g.push(this.navbarService.isStepValid("step" + C));
+                          Promise.all(g).then((C) => {
+                            this.addRemoveValidatedClass(C),
                               (this.navbarService.previousStepId =
                                 this.navbarService.currentStepId),
-                              (this.navbarService.currentStepId = s),
+                              (this.navbarService.currentStepId = l),
                               this.setActive(a),
                               i.show(),
-                              window.showPdf(u);
+                              s.setAttribute("tabindex", "-1"),
+                              window.showPdf(h);
                           });
                         }
                       }
                     });
                   });
+              }
+              blurChildren(e) {
+                if ((e.blur(), e.children.length > 0))
+                  for (let i = 0; i < e.children.length; i++)
+                    this.blurChildren(e.children[i]);
               }
               addRemoveValidatedClass(e) {
                 e.forEach((i) => {
@@ -52615,7 +52489,7 @@ var Bke = Object.defineProperty,
               (t.ɵcmp = Je({
                 type: t,
                 selectors: [["app-navbar"]],
-                decls: 175,
+                decls: 176,
                 vars: 37,
                 consts: [
                   [1, "intro-header"],
@@ -52691,17 +52565,14 @@ var Bke = Object.defineProperty,
                   [
                     1,
                     "toast-container",
-                    "position-sticky",
-                    "top-0",
+                    "position-fixed",
                     "end-0",
                     "p-3",
-                    2,
-                    "float",
-                    "right",
+                    "pt-5",
                   ],
                   [
                     "id",
-                    "liveToast",
+                    "toast",
                     "role",
                     "alert",
                     "aria-live",
@@ -52853,7 +52724,18 @@ var Bke = Object.defineProperty,
                     3,
                     "value",
                   ],
+                  [1, "step-info"],
                   ["id", "legal_information", 1, "list-group"],
+                  [
+                    "id",
+                    "synonyms_title",
+                    1,
+                    "sidebar_title",
+                    "step-menu-title",
+                    "mb-5",
+                    3,
+                    "translate",
+                  ],
                   ["id", "synonyms_info", 1, "list-group"],
                   [1, "form-sections-helper"],
                   ["id", "form-instructions", 3, "translate"],
@@ -53007,7 +52889,7 @@ var Bke = Object.defineProperty,
                     o(40, "div", 25),
                     o(41, "p"),
                     o(42, "strong", 26),
-                    v(43, "Attenzione!!!"),
+                    v(43, "Attenzione!"),
                     c(),
                     c(),
                     o(44, "p"),
@@ -53146,43 +53028,45 @@ var Bke = Object.defineProperty,
                     c(),
                     c(),
                     c(),
-                    o(134, "span", 32),
-                    v(135, "PDF utili"),
+                    o(134, "div", 63),
+                    o(135, "span", 32),
+                    v(136, "PDF utili"),
                     c(),
-                    k(136, "div", 63),
-                    o(137, "span", 32),
-                    v(138, "Sinonimi"),
+                    k(137, "div", 64),
+                    o(138, "span", 65),
+                    v(139, "Sinonimi"),
                     c(),
-                    k(139, "div", 64),
-                    o(140, "div", 65),
-                    o(141, "p", 66),
+                    k(140, "div", 66),
+                    c(),
+                    o(141, "div", 67),
+                    o(142, "p", 68),
                     v(
-                      142,
+                      143,
                       " You can save a form you are working on as a draft. Load a saved form later to complete it. "
                     ),
                     c(),
-                    o(143, "div", 67),
-                    o(144, "div", 67),
-                    o(145, "input", 68),
+                    o(144, "div", 69),
+                    o(145, "div", 69),
+                    o(146, "input", 70),
                     Z("change", function (a) {
                       return i.loadDraft(a.target.files);
                     }),
                     c(),
-                    o(146, "button", 69),
+                    o(147, "button", 71),
                     Z("click", function () {
                       return i.openFileBrowser();
                     }),
-                    o(147, "span", 9),
-                    v(148, "Load draft"),
+                    o(148, "span", 9),
+                    v(149, "Load draft"),
                     c(),
                     c(),
-                    k(149, "br"),
-                    o(150, "button", 70),
+                    k(150, "br"),
+                    o(151, "button", 72),
                     Z("click", function () {
                       return i.navbarService.generateJson();
                     }),
-                    o(151, "span", 9),
-                    v(152, "Save draft"),
+                    o(152, "span", 9),
+                    v(153, "Save draft"),
                     c(),
                     c(),
                     c(),
@@ -53191,35 +53075,35 @@ var Bke = Object.defineProperty,
                     c(),
                     c(),
                     c(),
-                    o(153, "div", 71),
-                    o(154, "form", 72),
-                    o(155, "div", 73),
-                    o(156, "fieldset"),
-                    o(157, "div", 74),
-                    o(158, "div", 75),
-                    o(159, "div", 76),
-                    k(160, "app-claimant"),
+                    o(154, "div", 73),
+                    o(155, "form", 74),
+                    o(156, "div", 75),
+                    o(157, "fieldset"),
+                    o(158, "div", 76),
+                    o(159, "div", 77),
+                    o(160, "div", 78),
+                    k(161, "app-claimant"),
                     c(),
-                    o(161, "div", 77),
-                    k(162, "app-defendant"),
+                    o(162, "div", 79),
+                    k(163, "app-defendant"),
                     c(),
-                    o(163, "div", 78),
-                    k(164, "app-jurisdiction"),
+                    o(164, "div", 80),
+                    k(165, "app-jurisdiction"),
                     c(),
-                    o(165, "div", 79),
-                    k(166, "app-step-four"),
+                    o(166, "div", 81),
+                    k(167, "app-step-four"),
                     c(),
-                    o(167, "div", 80),
-                    k(168, "app-claim"),
+                    o(168, "div", 82),
+                    k(169, "app-claim"),
                     c(),
-                    o(169, "div", 81),
-                    k(170, "app-claim-details"),
+                    o(170, "div", 83),
+                    k(171, "app-claim-details"),
                     c(),
-                    o(171, "div", 82),
-                    k(172, "app-step-seven"),
+                    o(172, "div", 84),
+                    k(173, "app-step-seven"),
                     c(),
-                    o(173, "div", 83),
-                    k(174, "app-court"),
+                    o(174, "div", 85),
+                    k(175, "app-court"),
                     c(),
                     c(),
                     c(),
@@ -53262,7 +53146,7 @@ var Bke = Object.defineProperty,
                       Bi("value", jt(122, 33, "menu.step7")),
                       d(10),
                       Bi("value", jt(132, 35, "menu.step8")),
-                      d(3),
+                      d(4),
                       m("translate", "menu.usefulPDFs"),
                       d(3),
                       m("translate", "menu.synonyms"),
@@ -53278,14 +53162,14 @@ var Bke = Object.defineProperty,
                   f2,
                   d2,
                   uu,
-                  cHe,
-                  WHe,
-                  rVe,
-                  KVe,
-                  PNe,
-                  sAe,
-                  OAe,
-                  WAe,
+                  sHe,
+                  jHe,
+                  eVe,
+                  WVe,
+                  LNe,
+                  nAe,
+                  zAe,
+                  jAe,
                 ],
                 pipes: [J2],
                 styles: [
@@ -53313,21 +53197,21 @@ var Bke = Object.defineProperty,
         return (
           arguments.length >= 2 && (e = !0),
           function (r) {
-            return r.lift(new JAe(t, n, e));
+            return r.lift(new UAe(t, n, e));
           }
         );
       }
-      class JAe {
+      class UAe {
         constructor(n, e, i = !1) {
           (this.accumulator = n), (this.seed = e), (this.hasSeed = i);
         }
         call(n, e) {
           return e.subscribe(
-            new YAe(n, this.accumulator, this.seed, this.hasSeed)
+            new $Ae(n, this.accumulator, this.seed, this.hasSeed)
           );
         }
       }
-      class YAe extends j {
+      class $Ae extends j {
         constructor(n, e, i, r) {
           super(n),
             (this.accumulator = e),
@@ -53358,20 +53242,20 @@ var Bke = Object.defineProperty,
       }
       function $s(t) {
         return function (e) {
-          const i = new KAe(t),
+          const i = new WAe(t),
             r = e.lift(i);
           return (i.caught = r);
         };
       }
-      class KAe {
+      class WAe {
         constructor(n) {
           this.selector = n;
         }
         call(n, e) {
-          return e.subscribe(new QAe(n, this.selector, this.caught));
+          return e.subscribe(new GAe(n, this.selector, this.caught));
         }
       }
-      class QAe extends y2 {
+      class GAe extends y2 {
         constructor(n, e, i) {
           super(n), (this.selector = e), (this.caught = i);
         }
@@ -53393,18 +53277,18 @@ var Bke = Object.defineProperty,
       }
       function i9(t) {
         return function (e) {
-          return 0 === t ? Au() : e.lift(new XAe(t));
+          return 0 === t ? Au() : e.lift(new JAe(t));
         };
       }
-      class XAe {
+      class JAe {
         constructor(n) {
           if (((this.total = n), this.total < 0)) throw new ak();
         }
         call(n, e) {
-          return e.subscribe(new ZAe(n, this.total));
+          return e.subscribe(new YAe(n, this.total));
         }
       }
-      class ZAe extends j {
+      class YAe extends j {
         constructor(n, e) {
           super(n),
             (this.total = e),
@@ -53431,18 +53315,18 @@ var Bke = Object.defineProperty,
           n.complete();
         }
       }
-      function Pz(t = nTe) {
-        return (n) => n.lift(new eTe(t));
+      function Pz(t = XAe) {
+        return (n) => n.lift(new KAe(t));
       }
-      class eTe {
+      class KAe {
         constructor(n) {
           this.errorFactory = n;
         }
         call(n, e) {
-          return e.subscribe(new tTe(n, this.errorFactory));
+          return e.subscribe(new QAe(n, this.errorFactory));
         }
       }
-      class tTe extends j {
+      class QAe extends j {
         constructor(n, e) {
           super(n), (this.errorFactory = e), (this.hasValue = !1);
         }
@@ -53462,21 +53346,21 @@ var Bke = Object.defineProperty,
           }
         }
       }
-      function nTe() {
+      function XAe() {
         return new Qu();
       }
       function Rz(t = null) {
-        return (n) => n.lift(new iTe(t));
+        return (n) => n.lift(new ZAe(t));
       }
-      class iTe {
+      class ZAe {
         constructor(n) {
           this.defaultValue = n;
         }
         call(n, e) {
-          return e.subscribe(new rTe(n, this.defaultValue));
+          return e.subscribe(new eTe(n, this.defaultValue));
         }
       }
-      class rTe extends j {
+      class eTe extends j {
         constructor(n, e) {
           super(n), (this.defaultValue = e), (this.isEmpty = !0);
         }
@@ -53497,15 +53381,15 @@ var Bke = Object.defineProperty,
             e ? Rz(n) : Pz(() => new Qu())
           );
       }
-      class oTe {
+      class iTe {
         constructor(n) {
           this.callback = n;
         }
         call(n, e) {
-          return e.subscribe(new cTe(n, this.callback));
+          return e.subscribe(new rTe(n, this.callback));
         }
       }
-      class cTe extends j {
+      class rTe extends j {
         constructor(n, e) {
           super(n), this.add(new we(e));
         }
@@ -53539,7 +53423,7 @@ var Bke = Object.defineProperty,
           return `NavigationCancel(id: ${this.id}, url: '${this.url}')`;
         }
       }
-      class lTe extends Q2 {
+      class aTe extends Q2 {
         constructor(n, e, i) {
           super(n, e), (this.error = i);
         }
@@ -53547,7 +53431,7 @@ var Bke = Object.defineProperty,
           return `NavigationError(id: ${this.id}, url: '${this.url}', error: ${this.error})`;
         }
       }
-      class uTe extends Q2 {
+      class sTe extends Q2 {
         constructor(n, e, i, r) {
           super(n, e), (this.urlAfterRedirects = i), (this.state = r);
         }
@@ -53555,7 +53439,7 @@ var Bke = Object.defineProperty,
           return `RoutesRecognized(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state})`;
         }
       }
-      class dTe extends Q2 {
+      class oTe extends Q2 {
         constructor(n, e, i, r) {
           super(n, e), (this.urlAfterRedirects = i), (this.state = r);
         }
@@ -53563,7 +53447,7 @@ var Bke = Object.defineProperty,
           return `GuardsCheckStart(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state})`;
         }
       }
-      class fTe extends Q2 {
+      class cTe extends Q2 {
         constructor(n, e, i, r, a) {
           super(n, e),
             (this.urlAfterRedirects = i),
@@ -53574,7 +53458,7 @@ var Bke = Object.defineProperty,
           return `GuardsCheckEnd(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state}, shouldActivate: ${this.shouldActivate})`;
         }
       }
-      class hTe extends Q2 {
+      class lTe extends Q2 {
         constructor(n, e, i, r) {
           super(n, e), (this.urlAfterRedirects = i), (this.state = r);
         }
@@ -53582,7 +53466,7 @@ var Bke = Object.defineProperty,
           return `ResolveStart(id: ${this.id}, url: '${this.url}', urlAfterRedirects: '${this.urlAfterRedirects}', state: ${this.state})`;
         }
       }
-      class pTe extends Q2 {
+      class uTe extends Q2 {
         constructor(n, e, i, r) {
           super(n, e), (this.urlAfterRedirects = i), (this.state = r);
         }
@@ -53606,7 +53490,7 @@ var Bke = Object.defineProperty,
           return `RouteConfigLoadEnd(path: ${this.route.path})`;
         }
       }
-      class mTe {
+      class dTe {
         constructor(n) {
           this.snapshot = n;
         }
@@ -53616,7 +53500,7 @@ var Bke = Object.defineProperty,
           }')`;
         }
       }
-      class gTe {
+      class fTe {
         constructor(n) {
           this.snapshot = n;
         }
@@ -53626,7 +53510,7 @@ var Bke = Object.defineProperty,
           }')`;
         }
       }
-      class vTe {
+      class hTe {
         constructor(n) {
           this.snapshot = n;
         }
@@ -53636,7 +53520,7 @@ var Bke = Object.defineProperty,
           }')`;
         }
       }
-      class _Te {
+      class pTe {
         constructor(n) {
           this.snapshot = n;
         }
@@ -53657,7 +53541,7 @@ var Bke = Object.defineProperty,
         }
       }
       const zt = "primary";
-      class CTe {
+      class mTe {
         constructor(n) {
           this.params = n || {};
         }
@@ -53683,14 +53567,14 @@ var Bke = Object.defineProperty,
         }
       }
       function Bc(t) {
-        return new CTe(t);
+        return new mTe(t);
       }
       const $z = "ngNavigationCancelingError";
       function a9(t) {
         const n = Error("NavigationCancelingError: " + t);
         return (n[$z] = !0), n;
       }
-      function bTe(t, n, e) {
+      function vTe(t, n, e) {
         const i = e.path.split("/");
         if (
           i.length > t.length ||
@@ -53736,7 +53620,7 @@ var Bke = Object.defineProperty,
       function v2(t) {
         return D0(t) ? t : T3(t) ? un(Promise.resolve(t)) : Ge(t);
       }
-      const wTe = {
+      const yTe = {
           exact: function Qz(t, n, e) {
             if (
               !Gs(t.segments, n.segments) ||
@@ -53765,7 +53649,7 @@ var Bke = Object.defineProperty,
         };
       function Kz(t, n, e) {
         return (
-          wTe[e.paths](t.root, n.root, e.matrixParams) &&
+          yTe[e.paths](t.root, n.root, e.matrixParams) &&
           Yz[e.queryParams](t.queryParams, n.queryParams) &&
           !("exact" === e.fragment && t.fragment !== n.fragment)
         );
@@ -53808,7 +53692,7 @@ var Bke = Object.defineProperty,
           );
         }
         toString() {
-          return NTe.serialize(this);
+          return DTe.serialize(this);
         }
       }
       class Ot {
@@ -53848,7 +53732,7 @@ var Bke = Object.defineProperty,
       class s9 {}
       class eL {
         parse(n) {
-          const e = new OTe(n);
+          const e = new zTe(n);
           return new Ws(
             e.parseRootSegment(),
             e.parseQueryParams(),
@@ -53877,7 +53761,7 @@ var Bke = Object.defineProperty,
           return `${e}${i}${r}`;
         }
       }
-      const NTe = new eL();
+      const DTe = new eL();
       function Zu(t) {
         return t.segments.map((n) => iL(n)).join("/");
       }
@@ -53942,14 +53826,14 @@ var Bke = Object.defineProperty,
             .join("");
         })(t.parameters)}`;
       }
-      const kTe = /^[^\/()?;=#]+/;
+      const NTe = /^[^\/()?;=#]+/;
       function n8(t) {
-        const n = t.match(kTe);
+        const n = t.match(NTe);
         return n ? n[0] : "";
       }
-      const zTe = /^[^=?&#]+/,
-        FTe = /^[^?&#]+/;
-      class OTe {
+      const ATe = /^[^=?&#]+/,
+        ETe = /^[^?&#]+/;
+      class zTe {
         constructor(n) {
           (this.url = n), (this.remaining = n);
         }
@@ -54025,7 +53909,7 @@ var Bke = Object.defineProperty,
         }
         parseQueryParam(n) {
           const e = (function (t) {
-            const n = t.match(zTe);
+            const n = t.match(ATe);
             return n ? n[0] : "";
           })(this.remaining);
           if (!e) return;
@@ -54033,7 +53917,7 @@ var Bke = Object.defineProperty,
           let i = "";
           if (this.consumeOptional("=")) {
             const s = (function (t) {
-              const n = t.match(FTe);
+              const n = t.match(ETe);
               return n ? n[0] : "";
             })(this.remaining);
             s && ((i = s), this.capture(i));
@@ -54510,7 +54394,7 @@ var Bke = Object.defineProperty,
         for (; r < e.length; ) {
           const a = e[r];
           if (ul(a)) {
-            const u = KTe(a.outlets);
+            const u = WTe(a.outlets);
             return new Ot(i, u);
           }
           if (0 === r && a8(e[0])) {
@@ -54525,7 +54409,7 @@ var Bke = Object.defineProperty,
         }
         return new Ot(i, {});
       }
-      function KTe(t) {
+      function WTe(t) {
         const n = {};
         return (
           j1(t, (e, i) => {
@@ -54542,7 +54426,7 @@ var Bke = Object.defineProperty,
       function mL(t, n, e) {
         return t == e.path && g2(n, e.parameters);
       }
-      class XTe {
+      class JTe {
         constructor(n, e, i, r) {
           (this.routeReuseStrategy = n),
             (this.futureState = e),
@@ -54611,9 +54495,9 @@ var Bke = Object.defineProperty,
           const r = ll(e);
           n.children.forEach((a) => {
             this.activateRoutes(a, r[a.value.outlet], i),
-              this.forwardEvent(new _Te(a.value.snapshot));
+              this.forwardEvent(new pTe(a.value.snapshot));
           }),
-            n.children.length && this.forwardEvent(new gTe(n.value.snapshot));
+            n.children.length && this.forwardEvent(new fTe(n.value.snapshot));
         }
         activateRoutes(n, e, i) {
           const r = n.value,
@@ -54668,7 +54552,7 @@ var Bke = Object.defineProperty,
       }
       const dl = Symbol("INITIAL_VALUE");
       function fl() {
-        return Wi((t) =>
+        return Gi((t) =>
           (function (...t) {
             let n, e;
             return (
@@ -54732,13 +54616,13 @@ var Bke = Object.defineProperty,
       function _L(t, n = "") {
         for (let e = 0; e < t.length; e++) {
           const i = t[e];
-          aEe(i, sEe(n, i));
+          tEe(i, nEe(n, i));
         }
       }
-      function aEe(t, n) {
+      function tEe(t, n) {
         t.children && _L(t.children, n);
       }
-      function sEe(t, n) {
+      function nEe(t, n) {
         return n
           ? t || n.path
             ? t && !n.path
@@ -54789,7 +54673,7 @@ var Bke = Object.defineProperty,
                 parameters: {},
                 positionalParamSegments: {},
               };
-        const a = (n.matcher || bTe)(e, t, n);
+        const a = (n.matcher || vTe)(e, t, n);
         if (!a) return Object.assign({}, yL);
         const s = {};
         j1(a.posParams, (u, h) => {
@@ -54906,7 +54790,7 @@ var Bke = Object.defineProperty,
       function wL(t) {
         return new M((n) => n.error(new SL(t)));
       }
-      function dEe(t) {
+      function oEe(t) {
         return new M((n) =>
           n.error(
             new Error(
@@ -54915,7 +54799,7 @@ var Bke = Object.defineProperty,
           )
         );
       }
-      class pEe {
+      class uEe {
         constructor(n, e, i, r, a) {
           (this.configLoader = e),
             (this.urlSerializer = i),
@@ -55154,7 +55038,7 @@ var Bke = Object.defineProperty,
             if (((i = i.concat(r.segments)), 0 === r.numberOfChildren))
               return Ge(i);
             if (r.numberOfChildren > 1 || !r.children[zt])
-              return dEe(n.redirectTo);
+              return oEe(n.redirectTo);
             r = r.children[zt];
           }
         }
@@ -55244,7 +55128,7 @@ var Bke = Object.defineProperty,
           (this.component = n), (this.route = e);
         }
       }
-      function vEe(t, n, e) {
+      function hEe(t, n, e) {
         const i = t._root;
         return pl(i, n ? n._root : null, e, [i.value]);
       }
@@ -55332,11 +55216,11 @@ var Bke = Object.defineProperty,
             )
           );
       }
-      class AEe {}
+      class HEe {}
       function HL(t) {
         return new M((n) => n.error(t));
       }
-      class EEe {
+      class xEe {
         constructor(n, e, i, r, a, s) {
           (this.rootComponentType = n),
             (this.config = e),
@@ -55477,7 +55361,7 @@ var Bke = Object.defineProperty,
           return null === S ? null : [new X2(a, S)];
         }
       }
-      function LEe(t) {
+      function TEe(t) {
         const n = t.value.routeConfig;
         return n && "" === n.path && void 0 === n.redirectTo;
       }
@@ -55485,7 +55369,7 @@ var Bke = Object.defineProperty,
         const n = [],
           e = new Set();
         for (const i of t) {
-          if (!LEe(i)) {
+          if (!TEe(i)) {
             n.push(i);
             continue;
           }
@@ -55518,12 +55402,12 @@ var Bke = Object.defineProperty,
         return t.resolve || {};
       }
       function C9(t) {
-        return Wi((n) => {
+        return Gi((n) => {
           const e = t(n);
           return e ? un(e).pipe(Fe(() => n)) : Ge(n);
         });
       }
-      class qEe extends class {
+      class PEe extends class {
         shouldDetach(n) {
           return !1;
         }
@@ -55578,7 +55462,7 @@ var Bke = Object.defineProperty,
               );
         }
       }
-      class UEe {
+      class REe {
         constructor() {
           (this.outlet = null),
             (this.route = null),
@@ -55608,13 +55492,13 @@ var Bke = Object.defineProperty,
         }
         getOrCreateContext(n) {
           let e = this.getContext(n);
-          return e || ((e = new UEe()), this.contexts.set(n, e)), e;
+          return e || ((e = new REe()), this.contexts.set(n, e)), e;
         }
         getContext(n) {
           return this.contexts.get(n) || null;
         }
       }
-      class WEe {
+      class jEe {
         shouldProcessUrl(n) {
           return !0;
         }
@@ -55625,22 +55509,22 @@ var Bke = Object.defineProperty,
           return n;
         }
       }
-      function GEe(t) {
+      function qEe(t) {
         throw t;
       }
-      function JEe(t, n, e) {
+      function UEe(t, n, e) {
         return n.parse("/");
       }
       function kL(t, n) {
         return Ge(null);
       }
-      const YEe = {
+      const $Ee = {
           paths: "exact",
           fragment: "ignored",
           matrixParams: "ignored",
           queryParams: "exact",
         },
-        KEe = {
+        WEe = {
           paths: "subset",
           fragment: "ignored",
           matrixParams: "ignored",
@@ -55662,16 +55546,16 @@ var Bke = Object.defineProperty,
               (this.currentPageId = 0),
               (this.isNgZoneEnabled = !1),
               (this.events = new Qe()),
-              (this.errorHandler = GEe),
-              (this.malformedUriErrorHandler = JEe),
+              (this.errorHandler = qEe),
+              (this.malformedUriErrorHandler = UEe),
               (this.navigated = !1),
               (this.lastSuccessfulId = -1),
               (this.hooks = {
                 beforePreactivation: kL,
                 afterPreactivation: kL,
               }),
-              (this.urlHandlingStrategy = new WEe()),
-              (this.routeReuseStrategy = new qEe()),
+              (this.urlHandlingStrategy = new jEe()),
+              (this.routeReuseStrategy = new PEe()),
               (this.onSameUrlNavigation = "ignore"),
               (this.paramsInheritanceStrategy = "emptyOnly"),
               (this.urlUpdateStrategy = "deferred"),
@@ -55738,7 +55622,7 @@ var Bke = Object.defineProperty,
                   extractedUrl: this.urlHandlingStrategy.extract(r.rawUrl),
                 })
               ),
-              Wi((r) => {
+              Gi((r) => {
                 let a = !1,
                   s = !1;
                 return Ge(r).pipe(
@@ -55757,7 +55641,7 @@ var Bke = Object.defineProperty,
                         : null,
                     };
                   }),
-                  Wi((l) => {
+                  Gi((l) => {
                     const u = this.browserUrlTree.toString(),
                       h =
                         !this.navigated ||
@@ -55770,7 +55654,7 @@ var Bke = Object.defineProperty,
                       return (
                         h8(l.source) && (this.browserUrlTree = l.extractedUrl),
                         Ge(l).pipe(
-                          Wi((C) => {
+                          Gi((C) => {
                             const S = this.transitions.getValue();
                             return (
                               i.next(
@@ -55787,9 +55671,9 @@ var Bke = Object.defineProperty,
                             );
                           }),
                           (function (t, n, e, i) {
-                            return Wi((r) =>
+                            return Gi((r) =>
                               (function (t, n, e, i, r) {
-                                return new pEe(t, n, e, i, r).apply();
+                                return new uEe(t, n, e, i, r).apply();
                               })(t, n, e, r.extractedUrl, i).pipe(
                                 Fe((a) =>
                                   Object.assign(Object.assign({}, r), {
@@ -55821,7 +55705,7 @@ var Bke = Object.defineProperty,
                                 a = "legacy"
                               ) {
                                 try {
-                                  const s = new EEe(
+                                  const s = new xEe(
                                     t,
                                     n,
                                     e,
@@ -55829,7 +55713,7 @@ var Bke = Object.defineProperty,
                                     r,
                                     a
                                   ).recognize();
-                                  return null === s ? HL(new AEe()) : Ge(s);
+                                  return null === s ? HL(new HEe()) : Ge(s);
                                 } catch (s) {
                                   return HL(s);
                                 }
@@ -55860,7 +55744,7 @@ var Bke = Object.defineProperty,
                               (C.extras.skipLocationChange ||
                                 this.setBrowserUrl(C.urlAfterRedirects, C),
                               (this.browserUrlTree = C.urlAfterRedirects));
-                            const S = new uTe(
+                            const S = new sTe(
                               C.id,
                               this.serializeUrl(C.extractedUrl),
                               this.serializeUrl(C.urlAfterRedirects),
@@ -55920,7 +55804,7 @@ var Bke = Object.defineProperty,
                     });
                   }),
                   I1((l) => {
-                    const u = new dTe(
+                    const u = new oTe(
                       l.id,
                       this.serializeUrl(l.extractedUrl),
                       this.serializeUrl(l.urlAfterRedirects),
@@ -55930,7 +55814,7 @@ var Bke = Object.defineProperty,
                   }),
                   Fe((l) =>
                     Object.assign(Object.assign({}, l), {
-                      guards: vEe(
+                      guards: hEe(
                         l.targetSnapshot,
                         l.currentSnapshot,
                         this.rootContexts
@@ -55999,13 +55883,13 @@ var Bke = Object.defineProperty,
                                         Ec(
                                           (function (t, n) {
                                             return (
-                                              null !== t && n && n(new mTe(t)),
+                                              null !== t && n && n(new dTe(t)),
                                               Ge(!0)
                                             );
                                           })(r.route.parent, i),
                                           (function (t, n) {
                                             return (
-                                              null !== t && n && n(new vTe(t)),
+                                              null !== t && n && n(new hTe(t)),
                                               Ge(!0)
                                             );
                                           })(r.route, i),
@@ -56118,7 +56002,7 @@ var Bke = Object.defineProperty,
                       );
                       throw ((h.url = l.guardsResult), h);
                     }
-                    const u = new fTe(
+                    const u = new cTe(
                       l.id,
                       this.serializeUrl(l.extractedUrl),
                       this.serializeUrl(l.urlAfterRedirects),
@@ -56138,7 +56022,7 @@ var Bke = Object.defineProperty,
                     if (l.guards.canActivateChecks.length)
                       return Ge(l).pipe(
                         I1((u) => {
-                          const h = new hTe(
+                          const h = new lTe(
                             u.id,
                             this.serializeUrl(u.extractedUrl),
                             this.serializeUrl(u.urlAfterRedirects),
@@ -56146,7 +56030,7 @@ var Bke = Object.defineProperty,
                           );
                           this.triggerEvent(h);
                         }),
-                        Wi((u) => {
+                        Gi((u) => {
                           let h = !1;
                           return Ge(u).pipe(
                             (function (t, n) {
@@ -56223,7 +56107,7 @@ var Bke = Object.defineProperty,
                           );
                         }),
                         I1((u) => {
-                          const h = new pTe(
+                          const h = new uTe(
                             u.id,
                             this.serializeUrl(u.extractedUrl),
                             this.serializeUrl(u.urlAfterRedirects),
@@ -56277,7 +56161,7 @@ var Bke = Object.defineProperty,
                   ((t, n, e) =>
                     Fe(
                       (i) => (
-                        new XTe(
+                        new JTe(
                           n,
                           i.targetRouterState,
                           i.currentRouterState,
@@ -56297,7 +56181,7 @@ var Bke = Object.defineProperty,
                     },
                   }),
                   (function (t) {
-                    return (n) => n.lift(new oTe(t));
+                    return (n) => n.lift(new iTe(t));
                   })(() => {
                     var l;
                     if (!a && !s) {
@@ -56354,7 +56238,7 @@ var Bke = Object.defineProperty,
                           : r.resolve(!1);
                     } else {
                       this.restoreHistory(r, !0);
-                      const u = new lTe(
+                      const u = new aTe(
                         r.id,
                         this.serializeUrl(r.extractedUrl),
                         l
@@ -56588,9 +56472,9 @@ var Bke = Object.defineProperty,
             if (
               ((r =
                 !0 === i
-                  ? Object.assign({}, YEe)
+                  ? Object.assign({}, $Ee)
                   : !1 === i
-                  ? Object.assign({}, KEe)
+                  ? Object.assign({}, WEe)
                   : i),
               Js(e))
             )
@@ -56829,7 +56713,7 @@ var Bke = Object.defineProperty,
                 e._futureSnapshot.routeConfig.component
               ),
               l = this.parentContexts.getOrCreateContext(this.name).children,
-              u = new eke(e, l, this.location.injector);
+              u = new KEe(e, l, this.location.injector);
             (this.activated = this.location.createComponent(
               s,
               this.location.length,
@@ -56883,7 +56767,7 @@ var Bke = Object.defineProperty,
           t
         );
       })();
-      class eke {
+      class KEe {
         constructor(n, e, i) {
           (this.route = n), (this.childContexts = e), (this.parent = i);
         }
@@ -57047,7 +56931,7 @@ var Bke = Object.defineProperty,
         })();
       const Ys = new _t("ROUTER_CONFIGURATION"),
         IL = new _t("ROUTER_FORROOT_GUARD"),
-        nke = [
+        XEe = [
           t6,
           { provide: s9, useClass: eL },
           {
@@ -57117,7 +57001,7 @@ var Bke = Object.defineProperty,
           },
           { provide: Ys, useValue: { enableTracing: !1 } },
         ];
-      function ike() {
+      function ZEe() {
         return new n5("Router", Ai);
       }
       let OL = (() => {
@@ -57127,30 +57011,30 @@ var Bke = Object.defineProperty,
             return {
               ngModule: t,
               providers: [
-                nke,
+                XEe,
                 PL(e),
                 {
                   provide: IL,
-                  useFactory: ske,
+                  useFactory: nke,
                   deps: [[Ai, new Di(), new ua()]],
                 },
                 { provide: Ys, useValue: i || {} },
                 {
                   provide: oc,
-                  useFactory: ake,
+                  useFactory: tke,
                   deps: [Cs, [new wo(C5), new Di()], Ys],
                 },
-                { provide: w9, useFactory: rke, deps: [Ai, Eb, Ys] },
+                { provide: w9, useFactory: eke, deps: [Ai, Eb, Ys] },
                 {
                   provide: zL,
                   useExisting:
                     i && i.preloadingStrategy ? i.preloadingStrategy : LL,
                 },
-                { provide: n5, multi: !0, useFactory: ike },
+                { provide: n5, multi: !0, useFactory: ZEe },
                 [
                   D9,
-                  { provide: Z3, multi: !0, useFactory: uke, deps: [D9] },
-                  { provide: RL, useFactory: dke, deps: [D9] },
+                  { provide: Z3, multi: !0, useFactory: ske, deps: [D9] },
+                  { provide: RL, useFactory: oke, deps: [D9] },
                   { provide: by, multi: !0, useExisting: RL },
                 ],
               ],
@@ -57169,13 +57053,13 @@ var Bke = Object.defineProperty,
           t
         );
       })();
-      function rke(t, n, e) {
+      function eke(t, n, e) {
         return e.scrollOffset && n.setOffset(e.scrollOffset), new w9(t, n, e);
       }
-      function ake(t, n, e = {}) {
+      function tke(t, n, e = {}) {
         return e.useHash ? new wW(t, n) : new db(t, n);
       }
-      function ske(t) {
+      function nke(t) {
         return "guarded";
       }
       function PL(t) {
@@ -57244,26 +57128,26 @@ var Bke = Object.defineProperty,
           t
         );
       })();
-      function uke(t) {
+      function ske(t) {
         return t.appInitializer.bind(t);
       }
-      function dke(t) {
+      function oke(t) {
         return t.bootstrapListener.bind(t);
       }
       const RL = new _t("Router Initializer"),
-        hke = [GAe];
-      let pke = (() => {
+        lke = [qAe];
+      let uke = (() => {
           class t {}
           return (
             (t.ɵfac = function (e) {
               return new (e || t)();
             }),
             (t.ɵmod = Tt({ type: t })),
-            (t.ɵinj = tt({ imports: [[OL.forRoot(hke)], OL] })),
+            (t.ɵinj = tt({ imports: [[OL.forRoot(lke)], OL] })),
             t
           );
         })(),
-        gke = (() => {
+        fke = (() => {
           class t {
             constructor() {}
             ngOnInit() {}
@@ -57368,11 +57252,11 @@ var Bke = Object.defineProperty,
             t
           );
         })(),
-        vke = (() => {
+        hke = (() => {
           class t {
             constructor(e) {
               (this.translateService = e),
-                (this.language = "en"),
+                (this.language = "it"),
                 this.translateService.use(this.language),
                 window.addEventListener(
                   "message",
@@ -57404,13 +57288,13 @@ var Bke = Object.defineProperty,
                   c(),
                   k(2, "app-footer"));
               },
-              directives: [S9, gke],
+              directives: [S9, fke],
               styles: [""],
             })),
             t
           );
         })();
-      class _ke {
+      class pke {
         constructor(n, e = "/small_claim_form/dist/form_a/assets/i18n/", i = ".json") {
           (this.http = n), (this.prefix = e), (this.suffix = i);
         }
@@ -57539,7 +57423,7 @@ var Bke = Object.defineProperty,
             );
         }
       }
-      class Cke {
+      class mke {
         encodeKey(n) {
           return qL(n);
         }
@@ -57553,8 +57437,8 @@ var Bke = Object.defineProperty,
           return decodeURIComponent(n);
         }
       }
-      const bke = /%(\d[a-f0-9])/gi,
-        Mke = {
+      const vke = /%(\d[a-f0-9])/gi,
+        _ke = {
           40: "@",
           "3A": ":",
           24: "$",
@@ -57566,9 +57450,9 @@ var Bke = Object.defineProperty,
           "2F": "/",
         };
       function qL(t) {
-        return encodeURIComponent(t).replace(bke, (n, e) => {
+        return encodeURIComponent(t).replace(vke, (n, e) => {
           var i;
-          return null !== (i = Mke[e]) && void 0 !== i ? i : n;
+          return null !== (i = _ke[e]) && void 0 !== i ? i : n;
         });
       }
       function UL(t) {
@@ -57579,7 +57463,7 @@ var Bke = Object.defineProperty,
           if (
             ((this.updates = null),
             (this.cloneFrom = null),
-            (this.encoder = n.encoder || new Cke()),
+            (this.encoder = n.encoder || new mke()),
             n.fromString)
           ) {
             if (n.fromObject)
@@ -57708,7 +57592,7 @@ var Bke = Object.defineProperty,
               (this.cloneFrom = this.updates = null));
         }
       }
-      class Ske {
+      class Cke {
         constructor() {
           this.map = new Map();
         }
@@ -57769,7 +57653,7 @@ var Bke = Object.defineProperty,
               a.context && (this.context = a.context),
               a.params && (this.params = a.params)),
             this.headers || (this.headers = new Z2()),
-            this.context || (this.context = new Ske()),
+            this.context || (this.context = new Cke()),
             this.params)
           ) {
             const s = this.params.toString();
@@ -58044,7 +57928,7 @@ var Bke = Object.defineProperty,
         }
       }
       const QL = new _t("HTTP_INTERCEPTORS");
-      let Hke = (() => {
+      let Mke = (() => {
         class t {
           intercept(e, i) {
             return i.handle(e);
@@ -58058,7 +57942,7 @@ var Bke = Object.defineProperty,
           t
         );
       })();
-      const Vke = /^\)\]\}',?\n/;
+      const Ske = /^\)\]\}',?\n/;
       let XL = (() => {
         class t {
           constructor(e) {
@@ -58123,7 +58007,7 @@ var Bke = Object.defineProperty,
                   let X = E >= 200 && E < 300;
                   if ("json" === e.responseType && "string" == typeof te) {
                     const ue = te;
-                    te = te.replace(Vke, "");
+                    te = te.replace(Ske, "");
                     try {
                       te = "" !== te ? JSON.parse(te) : null;
                     } catch (fe) {
@@ -58215,7 +58099,7 @@ var Bke = Object.defineProperty,
       const N9 = new _t("XSRF_COOKIE_NAME"),
         A9 = new _t("XSRF_HEADER_NAME");
       class ZL {}
-      let Nke = (() => {
+      let Dke = (() => {
           class t {
             constructor(e, i, r) {
               (this.doc = e),
@@ -58276,7 +58160,7 @@ var Bke = Object.defineProperty,
             t
           );
         })(),
-        Ake = (() => {
+        Hke = (() => {
           class t {
             constructor(e, i) {
               (this.backend = e), (this.injector = i), (this.chain = null);
@@ -58300,12 +58184,12 @@ var Bke = Object.defineProperty,
             t
           );
         })(),
-        Tke = (() => {
+        Vke = (() => {
           class t {
             static disable() {
               return {
                 ngModule: t,
-                providers: [{ provide: T9, useClass: Hke }],
+                providers: [{ provide: T9, useClass: Mke }],
               };
             }
             static withOptions(e = {}) {
@@ -58327,7 +58211,7 @@ var Bke = Object.defineProperty,
               providers: [
                 T9,
                 { provide: QL, useExisting: T9, multi: !0 },
-                { provide: ZL, useClass: Nke },
+                { provide: ZL, useClass: Dke },
                 { provide: N9, useValue: "XSRF-TOKEN" },
                 { provide: A9, useValue: "X-XSRF-TOKEN" },
               ],
@@ -58335,7 +58219,7 @@ var Bke = Object.defineProperty,
             t
           );
         })(),
-        Eke = (() => {
+        xke = (() => {
           class t {}
           return (
             (t.ɵfac = function (e) {
@@ -58345,13 +58229,13 @@ var Bke = Object.defineProperty,
             (t.ɵinj = tt({
               providers: [
                 YL,
-                { provide: BL, useClass: Ake },
+                { provide: BL, useClass: Hke },
                 XL,
                 { provide: jL, useExisting: XL },
               ],
               imports: [
                 [
-                  Tke.withOptions({
+                  Vke.withOptions({
                     cookieName: "XSRF-TOKEN",
                     headerName: "X-XSRF-TOKEN",
                   }),
@@ -58361,27 +58245,27 @@ var Bke = Object.defineProperty,
             t
           );
         })(),
-        kke = (() => {
+        Nke = (() => {
           class t {}
           return (
             (t.ɵfac = function (e) {
               return new (e || t)();
             }),
-            (t.ɵmod = Tt({ type: t, bootstrap: [vke] })),
+            (t.ɵmod = Tt({ type: t, bootstrap: [hke] })),
             (t.ɵinj = tt({
               providers: [],
               imports: [
                 [
                   SJ,
-                  pke,
+                  uke,
                   Oh,
                   wDe,
                   $T,
                   ti,
-                  Eke,
+                  xke,
                   Hz.forRoot({
                     defaultLanguage: "en",
-                    loader: { provide: Z4, useFactory: zke, deps: [YL] },
+                    loader: { provide: Z4, useFactory: Ake, deps: [YL] },
                     missingTranslationHandler: {
                       provide: Wu,
                       useFactory: Zwe,
@@ -58395,8 +58279,8 @@ var Bke = Object.defineProperty,
             t
           );
         })();
-      function zke(t) {
-        return new _ke(t, "/small_claim_form/dist/form_a/assets/i18n/", ".json");
+      function Ake(t) {
+        return new pke(t, "/small_claim_form/dist/form_a/assets/i18n/", ".json");
       }
       (function () {
         if (xy)
@@ -58404,7 +58288,7 @@ var Bke = Object.defineProperty,
         Vy = !1;
       })(),
         bJ()
-          .bootstrapModule(kke)
+          .bootstrapModule(Nke)
           .catch((t) => console.error(t));
     },
     7094: (Ie, gt, ze) => {

@@ -1,5 +1,5 @@
 import { NavbarService } from '../../core/navbar/navbar.service';
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import * as enquire from 'enquire.js';
 import * as $ from 'jquery';
 import 'jquery-sticky';
@@ -18,14 +18,13 @@ import { StepFourService } from 'src/app/core/step-four/step-four.service';
 import { IntermediateForm } from 'src/app/core/common/intermediate-form.model';
 import exportFromJSON from 'export-from-json';
 import { CourtService } from 'src/app/core/court/court.service';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements OnInit, OnDestroy, AfterViewInit {
+export class NavbarComponent implements OnInit, OnDestroy {
   triggerTabList: any;
   changeStepSubscription: Subscription;
   file?: File;
@@ -40,10 +39,32 @@ export class NavbarComponent implements OnInit, OnDestroy, AfterViewInit {
     private claimService: ClaimService,
     private claimDetailsService: ClaimDetailsService,
     private stepSevenService: StepSevenService,
-    private courtService: CourtService,
+    private courtService: CourtService
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    document.addEventListener('click', () => {
+      const stickySidebar = document.querySelector('.sticky-sidebar');
+      if (stickySidebar) {
+        const steps = document.querySelectorAll('.sticky-wrapper div ul li a');
+
+        steps.forEach((step) => {
+          this.blurChildren(step);
+        });
+      }
+    });
+
+    document.addEventListener('drag', () => {
+      const stickySidebar = document.querySelector('.sticky-sidebar');
+      if (stickySidebar) {
+        const steps = document.querySelectorAll('.sticky-wrapper div ul li a');
+
+        steps.forEach((step) => {
+          this.blurChildren(step);
+        });
+      }
+    });
+
     this.changeStepSubscription = this.eventManager.subscribe(
       'changeStep',
       (event: any) => this.manageNavigation(event)
@@ -59,9 +80,14 @@ export class NavbarComponent implements OnInit, OnDestroy, AfterViewInit {
         event.preventDefault();
 
         let element = event.target;
+        let a = event.target;
 
         while (element.tagName !== 'LI') {
           element = element.parentElement;
+        }
+
+        while (a.tagName !== 'A') {
+          a = a.parentElement;
         }
 
         const stepId = element.id.split('-')[0];
@@ -89,6 +115,7 @@ export class NavbarComponent implements OnInit, OnDestroy, AfterViewInit {
                 this.setActive(element);
 
                 tabTrigger.show();
+                a.setAttribute('tabindex', '-1');
 
                 window['showPdf'](currentStepNumber);
 
@@ -135,6 +162,7 @@ export class NavbarComponent implements OnInit, OnDestroy, AfterViewInit {
 
               this.setActive(element);
               tabTrigger.show();
+              a.setAttribute('tabindex', '-1');
 
               window['showPdf'](currentStepNumber);
             });
@@ -142,6 +170,16 @@ export class NavbarComponent implements OnInit, OnDestroy, AfterViewInit {
         }
       });
     });
+  }
+
+  blurChildren(element) {
+    element.blur();
+
+    if (element.children.length > 0) {
+      for (let i = 0; i < element.children.length; i++) {
+        this.blurChildren(element.children[i]);
+      }
+    }
   }
 
   addRemoveValidatedClass(array: PromiseContent[]) {

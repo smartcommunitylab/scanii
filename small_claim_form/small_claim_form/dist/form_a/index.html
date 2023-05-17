@@ -204,12 +204,12 @@
     </style>
     <link
       rel="stylesheet"
-      href="/small_claim_form/dist/form_a/styles.96fdaad0aa22e3a78638.css"
+      href="/small_claim_form/dist/form_a/styles.3ac1956411c49716ee2a.css"
       media="print"
       onload="this.media='all'"
     />
     <noscript
-      ><link rel="stylesheet" href="/small_claim_form/dist/form_a/styles.96fdaad0aa22e3a78638.css"
+      ><link rel="stylesheet" href="/small_claim_form/dist/form_a/styles.3ac1956411c49716ee2a.css"
     /></noscript>
   </head>
   <body>
@@ -274,9 +274,26 @@
         divLegal = document.querySelectorAll(
           '[scaii_pdf_step*="' + "step" + step + '"]'
         );
-        divLegal.forEach((element) => {
-          element.style.display = "initial";
-        });
+
+        let span = document.getElementById("no_pdf_label");
+
+        if (divLegal.length > 0) {
+          span.style.display = "none";
+          divLegal.forEach((element) => {
+            element.style.display = "initial";
+          });
+        } else {
+          if (typeof span !== "undefined" && span !== null) {
+            span.style.display = "contents";
+          } else {
+            span = document.createElement("span");
+            span.setAttribute("id", "no_pdf_label");
+            span.setAttribute("style", "display: contents;");
+            const div = document.getElementById("legal_information");
+            span.innerText = "Non sono presenti pdf utili per la sezione";
+            div.append(span);
+          }
+        }
 
         document.activeElement.blur();
       }
@@ -317,6 +334,10 @@
         }
 
         btn = document.getElementById("simplyfied_btn");
+
+        const toastElement = document.getElementById("toast");
+        const toast = new bootstrap.Toast(toastElement);
+
         if (type.includes("simplyfied")) {
           btn.setAttribute("onClick", 'showText("original")');
           btn.innerHTML =
@@ -326,8 +347,6 @@
           ico = document.getElementById("simplyfied_ico");
           //ico.className = "bi bi-book-half";
 
-          const toastLiveExample = document.getElementById("liveToast");
-          const toast = new bootstrap.Toast(toastLiveExample);
           toast.show();
 
           // hide pdf legal
@@ -346,6 +365,8 @@
           // change button icon
           ico = document.getElementById("simplyfied_ico");
           //ico.className = "bi bi-book"
+
+          toast.hide();
 
           simplificationBoxs = document.querySelectorAll(
             "[scanii_simplificationBox]"
@@ -499,7 +520,8 @@
             span.setAttribute("onmouseover", 'showSynonyms("' + synms + '")');
             span.setAttribute("onmouseout", 'hideSynonyms("' + synms + '")');
           }
-          span.title = text;
+          span.setAttribute("data-tooltip", text);
+          span.setAttribute("data-tooltip-position", "left");
           span.append(keyTextNode);
 
           list.push(span);
@@ -711,9 +733,9 @@
       }
     </script>
     <app-main></app-main>
-    <script src="/small_claim_form/dist/form_a/runtime.74f1c732e37d892f33db.js" defer></script>
+    <script src="/small_claim_form/dist/form_a/runtime.a8a5c0f45e13c9dd2b09.js" defer></script>
     <script src="/small_claim_form/dist/form_a/polyfills.af17f83eafaf15683d3c.js" defer></script>
-    <script src="/small_claim_form/dist/form_a/scripts.b7533cfe90dad08a8d96.js" defer></script>
-    <script src="/small_claim_form/dist/form_a/main.2b4a61fdd8cbd1f259b0.js" defer></script>
+    <script src="/small_claim_form/dist/form_a/scripts.f303be6d82e6e7e18178.js" defer></script>
+    <script src="/small_claim_form/dist/form_a/main.11bf8e75ce4d50d75d1e.js" defer></script>
   </body>
 </html>
