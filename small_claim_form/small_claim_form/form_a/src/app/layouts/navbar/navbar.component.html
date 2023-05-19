@@ -83,23 +83,23 @@
 <div class="toast-container position-fixed end-0 p-3 pt-5">
   <div
     id="toast"
-    class="toast align-items-center text-center text-bg-warning border-1"
+    class="toast align-items-center text-center border-1"
     role="alert"
     aria-live="assertive"
     aria-atomic="true"
     data-bs-autohide="false"
   >
-    <div class="toast-header">
+    <div class="toast-body">
       <button
         type="button"
         class="btn-close"
         data-bs-dismiss="toast"
         aria-label="Close"
       ></button>
-    </div>
-    <div class="toast-body text-center fs-4">
-      <p><strong class="me-auto fs-4">Attenzione!</strong></p>
-      <p>Stai visualizzando il testo semplificato</p>
+      <p [innerHTML]="'menu.toast' | translate">
+        Attenzione, ricorda che stai visualizzando delle
+        informazioni semplficate
+      </p>
     </div>
   </div>
 </div>
@@ -265,7 +265,9 @@
               [translate]="'menu.synonyms'"
               >Sinonimi</span
             >
-            <div id="synonyms_info" class="list-group"></div>
+            <div id="synonyms_info" class="list-group">
+              <ul></ul>
+            </div>
           </div>
           <div class="form-sections-helper">
             <p

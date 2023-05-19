@@ -38,10 +38,12 @@ export class DefendantComponent implements OnInit {
   }
 
   openModal(id: string) {
+    document.body.style.overflow = 'hidden';
     document.getElementById(id).classList.add('active');
   }
 
   closeModal(id: string) {
+    document.body.style.overflow = 'auto';
     document.getElementById(id).classList.remove('active');
   }
 

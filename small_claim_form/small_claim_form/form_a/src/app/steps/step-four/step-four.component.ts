@@ -59,7 +59,7 @@ export class StepFourComponent implements OnInit {
           .setValue('');
         this.removeRequiredValidator(formControl);
       }
-      //if (value === 'GB') this.openModal('js_modal_form_disclaimer_claimant');
+      if (value === 'GB') this.openModal('js_modal_form_disclaimer_step_four');
     }
   }
 
@@ -259,7 +259,7 @@ export class StepFourComponent implements OnInit {
 
   private initDatepickers(language: string) {
     let languageToUse = language;
-    
+
     if (language === 'en') {
       languageToUse = 'en-GB';
     } else if (language === 'mt') {
@@ -293,5 +293,15 @@ export class StepFourComponent implements OnInit {
     );
 
     $('#dynformSCA5ExpiryDate').datepicker(options);
+  }
+
+  openModal(id: string) {
+    document.body.style.overflow = 'hidden';
+    document.getElementById(id).classList.add('active');
+  }
+
+  closeModal(id: string) {
+    document.body.style.overflow = 'auto';
+    document.getElementById(id).classList.remove('active');
   }
 }

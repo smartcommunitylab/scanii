@@ -60,5 +60,16 @@ export class CourtComponent implements OnInit {
     if (country) {
       this.selectedCountry = country.label;
     }
+    if (this.courtService.editForm.get('country').value === 'GB') this.openModal('js_modal_form_disclaimer_court');
+  }
+
+  openModal(id: string) {
+    document.body.style.overflow = 'hidden';
+    document.getElementById(id).classList.add('active');
+  }
+
+  closeModal(id: string) {
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow = 'auto';
   }
 }

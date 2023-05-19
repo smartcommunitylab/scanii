@@ -117,7 +117,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
                 tabTrigger.show();
                 a.setAttribute('tabindex', '-1');
 
-                window['showPdf'](currentStepNumber);
+                window['showInfo'](currentStepNumber);
 
                 this.addRemoveValidatedClass(array);
               } else {
@@ -137,7 +137,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
                 const invalidStepNumber = this.getStepNumber(
                   invalidStep.stepId
                 );
-                window['showPdf'](invalidStepNumber);
+                window['showInfo'](invalidStepNumber);
 
                 const invalidStepIndex = array.findIndex(
                   (item: PromiseContent) => item.stepId === invalidStep.stepId
@@ -164,7 +164,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
               tabTrigger.show();
               a.setAttribute('tabindex', '-1');
 
-              window['showPdf'](currentStepNumber);
+              window['showInfo'](currentStepNumber);
             });
           }
         }
@@ -294,6 +294,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     destinationMenu.firstElementChild.classList.add('active');
     destinationMenu.firstElementChild.setAttribute('aria-selected', 'true');
     destinationTab.classList.add('active');
+
+    window['showInfo'](this.getStepNumber(movement.destinationStepId));
 
     if (movement.direction === 'NEXT') {
       const id =

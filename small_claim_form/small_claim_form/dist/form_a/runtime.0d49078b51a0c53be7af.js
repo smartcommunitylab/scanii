@@ -152,7 +152,7 @@
         9369: "8089536e3b382a28cd26",
       }[e] +
       ".js"),
-    (f.miniCssF = (e) => "styles.3ac1956411c49716ee2a.css"),
+    (f.miniCssF = (e) => "styles.96845e9d72df967b777c.css"),
     (f.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
     (() => {
       var e = {},

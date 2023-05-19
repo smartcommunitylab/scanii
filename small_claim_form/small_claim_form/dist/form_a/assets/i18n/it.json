@@ -36,7 +36,8 @@
     "synonyms": "Sinonimi",
     "loadSaveDraftExplanation": "È possibile salvare il modulo su cui si sta lavorando come bozza. Per completarlo basta caricare il modulo salvato in un secondo momento.",
     "loadDraft": "Carica bozza",
-    "saveDraft": "Salva bozza"
+    "saveDraft": "Salva bozza",
+    "toast": "<strong>Attenzione</strong>, ricorda che stai visualizzando delle informazioni semplficate"
   },
   "footer": {
     "reportAProblem": "Segnala un problema tecnico o di contenuto o lascia un commento su questa pagina",
