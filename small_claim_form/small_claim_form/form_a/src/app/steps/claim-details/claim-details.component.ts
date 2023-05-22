@@ -18,7 +18,14 @@ export class ClaimDetailsComponent implements OnInit {
     private navbarService: NavbarService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.claimDetailsService.editForm.patchValue({
+      detailsOfClaim: 'Crime',
+      writtenEvidence: 'no',
+      witnesses: 'no',
+      otherClaimDetails: 'no',
+    });
+  }
 
   onClaimDetailsRadioButtonChange(event: any, divIdToExpand: string) {
     const value = event.target.value;

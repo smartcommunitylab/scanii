@@ -27,6 +27,11 @@ export class StepFourComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.stepFourService.crossborderNatureForm.patchValue({
+      claimantCountry: 'IT',
+      defendantCountry: 'ES',
+      courtCountry: 'IT',
+    });
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.europeanCountries = event.translations.europeanCountries;
       this.worldCountries = event.translations.worldCountries;

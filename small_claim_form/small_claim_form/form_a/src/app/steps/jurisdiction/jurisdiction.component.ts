@@ -17,7 +17,9 @@ export class JurisdictionComponent implements OnInit, AfterViewInit {
     private navbarService: NavbarService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.jurisdictionService.editForm.get('defendantDomicile').setValue(true);
+  }
 
   ngAfterViewInit(): void {}
 

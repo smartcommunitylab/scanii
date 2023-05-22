@@ -10,7 +10,11 @@
     <title>European e-Justice Portal - Form A - Claim form</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="https://e-justice.europa.eu/assets/img/favicon.ico">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://e-justice.europa.eu/assets/img/favicon.ico"
+    />
   </head>
   <body>
     <link
@@ -144,7 +148,10 @@
       window.addEventListener("message", listener, false);
 
       function listener(event) {
-        if (event.origin === "https://yellow-coast-0c9cc7403.2.azurestaticapps.net") {
+        if (
+          event.origin ===
+          "https://yellow-coast-0c9cc7403.2.azurestaticapps.net"
+        ) {
           const h1 = document.createElement("h1");
           h1.innerText = "parent received message";
           document.body.insertBefore(h1, document.body.firstChild);
@@ -153,7 +160,10 @@
 
       function send(message) {
         const frame = document.getElementById("iframe");
-        frame.contentWindow.postMessage(message, "https://yellow-coast-0c9cc7403.2.azurestaticapps.net");
+        frame.contentWindow.postMessage(
+          message,
+          "https://yellow-coast-0c9cc7403.2.azurestaticapps.net"
+        );
       }
 
       function changeLang(event) {

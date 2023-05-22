@@ -29,6 +29,13 @@ export class ClaimComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.claimService.editForm.patchValue({
+      claimForMoney: 'no',
+      otherClaim: 'no',
+      claimingCostProceedings: 'no',
+      claimingInterest: 'no',
+      claimingInterestOnCost: 'no',
+    });
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.initDatepicker(event.lang);
       this.europeanCurrencies = event.translations.europeanCurrencies;

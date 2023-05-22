@@ -1037,11 +1037,11 @@
             <div>
               <label style="margin-bottom: 0px">
                 <span [translate]="'claim.otherClaim'">5.2. Other claim</span>
-
                 <span class="asterisk">*</span>
               </label>
             </div>
           </div>
+          <div class="sub-concept" concept="http://scanii.org/domain/claim.otherClaim"></div>
 
           <div class="form-row full-width bold">
             <div>
@@ -2143,6 +2143,7 @@
               </label>
             </div>
           </div>
+          <div class="sub-concept" concept="http://scanii.org/domain/claim.claimCostOfProceeding"></div>
 
           <div class="form-row full-width bold">
             <div>
@@ -2363,6 +2364,7 @@
               </label>
             </div>
           </div>
+          <div class="sub-concept" concept="http://scanii.org/domain/claim.claimInterests"></div>
 
           <div class="form-row full-width bold">
             <div>
@@ -2766,7 +2768,12 @@
                         >
                           <div class="info hide-mobile">
                             <div class="icon" tabindex="0">
-                              <div class="hover" [translate]="'claim.percentagePointsAboveECBInfo'">
+                              <div
+                                class="hover"
+                                [translate]="
+                                  'claim.percentagePointsAboveECBInfo'
+                                "
+                              >
                                 Please provide the number of the percentage
                                 points above ECB interest rate: e.g. when ECB
                                 rate is 4% and you claim 5 % interest – insert

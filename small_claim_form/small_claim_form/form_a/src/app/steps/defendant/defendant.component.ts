@@ -30,7 +30,14 @@ export class DefendantComponent implements OnInit {
     this.defendantService.defendants = this.defendantService.editForm.get(
       'defendants'
     ) as FormArray;
-
+    this.defendantService.defendants.controls[0].patchValue({
+      firstName: 'John',
+      surname: 'Doe',
+      street: '123 Main Street',
+      postalCode: '12345',
+      city: 'New York',
+      country: 'IT',
+    });
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.europeanCountries = event.translations.europeanCountries;
       this.worldCountries = event.translations.worldCountries;

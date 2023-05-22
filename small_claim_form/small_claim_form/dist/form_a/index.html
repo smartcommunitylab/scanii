@@ -5,7 +5,11 @@
     <title>European e-Justice Portal - Form A - Claim form</title>
     <base href="/small_claim_form/dist/form_a" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="https://e-justice.europa.eu/assets/img/favicon.ico">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://e-justice.europa.eu/assets/img/favicon.ico"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
       id="ppas_container_configuration"
@@ -204,26 +208,15 @@
     </style>
     <link
       rel="stylesheet"
-      href="/small_claim_form/dist/form_a/styles.96845e9d72df967b777c.css"
+      href="/small_claim_form/dist/form_a/styles.d7758463604e6682fc47.css"
       media="print"
       onload="this.media='all'"
     />
     <noscript
-      ><link rel="stylesheet" href="/small_claim_form/dist/form_a/styles.96845e9d72df967b777c.css"
+      ><link rel="stylesheet" href="/small_claim_form/dist/form_a/styles.d7758463604e6682fc47.css"
     /></noscript>
   </head>
   <body>
-    <style>
-      .collapsing {
-        transition: height 0s ease !important;
-      }
-      .accordion-button::after {
-        transition: transform 0s ease-in-out !important;
-      }
-      .accordion-button:focus {
-        z-index: 1;
-      }
-    </style>
     <script>
       window.onload = function () {
         let model = null;
@@ -373,6 +366,7 @@
         divLegal = document.querySelectorAll("[" + type + "");
         for (i = 0; i < divLegal.length; i++) {
           divLegal[i].style.display = "block";
+          divLegal[i].classList.add("simplified_description");
         }
 
         btn = document.getElementById("simplyfied_btn");
@@ -740,7 +734,7 @@
             //a.title = link.description;
             a.innerText = link.name;
             text = document.createElement("span");
-            text.innerText = link.description;
+            text.innerText = " " + link.description;
             yellowDiv.append(a);
             yellowDiv.append(text);
             //yellowDiv.setAttribute('title', link.description);
@@ -754,7 +748,7 @@
               divTmp = document.createElement("div");
               divTmp.innerHTML = link.htmlFragment;
               text = document.createElement("span");
-              text.innerText = link.description;
+              text.innerText = " " + link.description;
               yellowDiv.append(text);
               yellowDiv.append(divTmp);
 
@@ -766,7 +760,7 @@
               a.setAttribute("target", "_blank");
               a.innerText = link.name;
               text = document.createElement("span");
-              text.innerText = link.description;
+              text.innerText = " " + link.description;
               yellowDiv.append(a);
               yellowDiv.append(text);
               yellowDiv.append(document.createElement("br"));
@@ -841,9 +835,9 @@
       }
     </script>
     <app-main></app-main>
-    <script src="/small_claim_form/dist/form_a/runtime.0d49078b51a0c53be7af.js" defer></script>
+    <script src="/small_claim_form/dist/form_a/runtime.9b5b2c783c588aabf4a2.js" defer></script>
     <script src="/small_claim_form/dist/form_a/polyfills.af17f83eafaf15683d3c.js" defer></script>
     <script src="/small_claim_form/dist/form_a/scripts.6c2e76d7c0794e9d85c0.js" defer></script>
-    <script src="/small_claim_form/dist/form_a/main.fada8bbf16232960a783.js" defer></script>
+    <script src="/small_claim_form/dist/form_a/main.5b99b584f0377bbdf374.js" defer></script>
   </body>
 </html>
