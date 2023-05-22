@@ -32264,14 +32264,6 @@ var ize = Object.defineProperty,
           ngOnInit() {
             (this.claimantService.claimants =
               this.claimantService.editForm.get("claimants")),
-              this.claimantService.claimants.controls[0].patchValue({
-                firstName: "John",
-                surname: "Doe",
-                street: "123 Main Street",
-                postalCode: "12345",
-                city: "New York",
-                country: "IT",
-              }),
               this.translateService.onLangChange.subscribe((e) => {
                 (this.europeanCountries = e.translations.europeanCountries),
                   (this.worldCountries = e.translations.worldCountries);
@@ -35557,14 +35549,6 @@ var ize = Object.defineProperty,
           ngOnInit() {
             (this.defendantService.defendants =
               this.defendantService.editForm.get("defendants")),
-              this.defendantService.defendants.controls[0].patchValue({
-                firstName: "John",
-                surname: "Doe",
-                street: "123 Main Street",
-                postalCode: "12345",
-                city: "New York",
-                country: "IT",
-              }),
               this.translateService.onLangChange.subscribe((e) => {
                 (this.europeanCountries = e.translations.europeanCountries),
                   (this.worldCountries = e.translations.worldCountries);
@@ -36770,11 +36754,7 @@ var ize = Object.defineProperty,
               (this.eventManager = i),
               (this.navbarService = r);
           }
-          ngOnInit() {
-            this.jurisdictionService.editForm
-              .get("defendantDomicile")
-              .setValue(!0);
-          }
+          ngOnInit() {}
           ngAfterViewInit() {}
           expandOther(e) {
             e.target.checked
@@ -38114,15 +38094,10 @@ var ize = Object.defineProperty,
               (this.worldCountries = []);
           }
           ngOnInit() {
-            this.stepFourService.crossborderNatureForm.patchValue({
-              claimantCountry: "IT",
-              defendantCountry: "ES",
-              courtCountry: "IT",
-            }),
-              this.translateService.onLangChange.subscribe((e) => {
-                (this.europeanCountries = e.translations.europeanCountries),
-                  (this.worldCountries = e.translations.worldCountries);
-              });
+            this.translateService.onLangChange.subscribe((e) => {
+              (this.europeanCountries = e.translations.europeanCountries),
+                (this.worldCountries = e.translations.worldCountries);
+            });
           }
           expandWorldCountrySelect(e, i) {
             this.markClaimantCountryAndDefendantCountryAsDirty();
@@ -41808,20 +41783,13 @@ var ize = Object.defineProperty,
               (this.worldAndHistoricalCurrencies = []);
           }
           ngOnInit() {
-            this.claimService.editForm.patchValue({
-              claimForMoney: "no",
-              otherClaim: "no",
-              claimingCostProceedings: "no",
-              claimingInterest: "no",
-              claimingInterestOnCost: "no",
-            }),
-              this.translateService.onLangChange.subscribe((e) => {
-                this.initDatepicker(e.lang),
-                  (this.europeanCurrencies = e.translations.europeanCurrencies),
-                  (this.worldCurrencies = e.translations.worldCurrencies),
-                  (this.worldAndHistoricalCurrencies =
-                    e.translations.worldAndHistoricalCurrencies);
-              });
+            this.translateService.onLangChange.subscribe((e) => {
+              this.initDatepicker(e.lang),
+                (this.europeanCurrencies = e.translations.europeanCurrencies),
+                (this.worldCurrencies = e.translations.worldCurrencies),
+                (this.worldAndHistoricalCurrencies =
+                  e.translations.worldAndHistoricalCurrencies);
+            });
           }
           initDatepicker(e) {
             let i = e;
@@ -46416,14 +46384,7 @@ var ize = Object.defineProperty,
               (this.eventManager = i),
               (this.navbarService = r);
           }
-          ngOnInit() {
-            this.claimDetailsService.editForm.patchValue({
-              detailsOfClaim: "Crime",
-              writtenEvidence: "no",
-              witnesses: "no",
-              otherClaimDetails: "no",
-            });
-          }
+          ngOnInit() {}
           onClaimDetailsRadioButtonChange(e, i) {
             const r = e.target.value,
               a = document.getElementById(i),
@@ -47809,23 +47770,7 @@ var ize = Object.defineProperty,
             this.translateService.onLangChange.subscribe((e) => {
               this.initDatepicker(e.lang),
                 (this.europeanLanguages = e.translations.europeanLanguages);
-            }),
-              this.stepSevenService.oralHearingForm.patchValue({
-                oralHearingRequest: "no",
-                oralHearingPresence: "no",
-              }),
-              this.stepSevenService.documentAndCommunicationForm.patchValue({
-                electronicCommunicationWithCourtTribunal: "no",
-                electronicCommunicationOther: "no",
-              }),
-              this.stepSevenService.certificateForm.patchValue({
-                certificateRequest: "no",
-              }),
-              this.stepSevenService.dateAndSignatureForm.patchValue({
-                city: "Roma",
-                date: "01/01/2021",
-                sign: "Mario Rossi",
-              });
+            });
           }
           initDatepicker(e) {
             let i = e;

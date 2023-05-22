@@ -19,12 +19,12 @@ export class ClaimDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.claimDetailsService.editForm.patchValue({
-      detailsOfClaim: 'Crime',
-      writtenEvidence: 'no',
-      witnesses: 'no',
-      otherClaimDetails: 'no',
-    });
+    // this.claimDetailsService.editForm.patchValue({
+    //   detailsOfClaim: 'Crime',
+    //   writtenEvidence: 'no',
+    //   witnesses: 'no',
+    //   otherClaimDetails: 'no',
+    // });
   }
 
   onClaimDetailsRadioButtonChange(event: any, divIdToExpand: string) {

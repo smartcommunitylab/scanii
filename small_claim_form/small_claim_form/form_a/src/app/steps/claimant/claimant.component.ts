@@ -30,14 +30,14 @@ export class ClaimantComponent implements OnInit {
     this.claimantService.claimants = this.claimantService.editForm.get(
       'claimants'
     ) as FormArray;
-    this.claimantService.claimants.controls[0].patchValue({
-      firstName: 'John',
-      surname: 'Doe',
-      street: '123 Main Street',
-      postalCode: '12345',
-      city: 'New York',
-      country: 'IT',
-    });
+    // this.claimantService.claimants.controls[0].patchValue({
+    //   firstName: 'John',
+    //   surname: 'Doe',
+    //   street: '123 Main Street',
+    //   postalCode: '12345',
+    //   city: 'New York',
+    //   country: 'IT',
+    // });
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.europeanCountries = event.translations.europeanCountries;
       this.worldCountries = event.translations.worldCountries;

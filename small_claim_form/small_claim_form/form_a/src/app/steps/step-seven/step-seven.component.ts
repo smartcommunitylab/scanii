@@ -29,22 +29,22 @@ export class StepSevenComponent implements OnInit {
       this.initDatepicker(event.lang);
       this.europeanLanguages = event.translations.europeanLanguages;
     });
-    this.stepSevenService.oralHearingForm.patchValue({
-      oralHearingRequest: 'no',
-      oralHearingPresence: 'no',
-    });
-    this.stepSevenService.documentAndCommunicationForm.patchValue({
-      electronicCommunicationWithCourtTribunal: 'no',
-      electronicCommunicationOther: 'no',
-    });
-    this.stepSevenService.certificateForm.patchValue({
-      certificateRequest: 'no',
-    });
-    this.stepSevenService.dateAndSignatureForm.patchValue({
-      city: 'Roma',
-      date: '01/01/2021',
-      sign: 'Mario Rossi',
-    });
+    // this.stepSevenService.oralHearingForm.patchValue({
+    //   oralHearingRequest: 'no',
+    //   oralHearingPresence: 'no',
+    // });
+    // this.stepSevenService.documentAndCommunicationForm.patchValue({
+    //   electronicCommunicationWithCourtTribunal: 'no',
+    //   electronicCommunicationOther: 'no',
+    // });
+    // this.stepSevenService.certificateForm.patchValue({
+    //   certificateRequest: 'no',
+    // });
+    // this.stepSevenService.dateAndSignatureForm.patchValue({
+    //   city: 'Roma',
+    //   date: '01/01/2021',
+    //   sign: 'Mario Rossi',
+    // });
   }
 
   initDatepicker(language: string) {
