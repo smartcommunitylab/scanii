@@ -1,38 +1,33 @@
-<div id="step4">
+<div id="step4" class="step-width">
   <div id="step4_1">
-    <div>
-      <h3 [translate]="'crossborderNature.title'">
-        4.1 Cross-border nature of the case
-      </h3>
-    </div>
-    <form role="form" [formGroup]="stepFourService.crossborderNatureForm">
-      <div class="form-row full-width">
-        <div
-          class="description"
-          concept="http://scanii.org/domain/crossborderNature"
-        >
-          <p style="margin: 0">&nbsp;</p>
+    <h3 [translate]="'crossborderNature.title'">
+      4.1 Cross-border nature of the case
+    </h3>
+    <label style="font-size: 16px"> </label>
+    <div concept="http://scanii.org/domain/crossborderNature">
+      <form role="form" [formGroup]="stepFourService.crossborderNatureForm">
+        <div class="form-row full-width">
+          <div class="description">
+            <span class="marginleft20px">
+              <div class="form-row full-width bold">
+                <div>
+                  <label for="dynformSCA5claimantResidence">
+                    <span [translate]="'crossborderNature.claimantCountry'">
+                      4.1.1. Country of domicile or habitual residence of
+                      claimant</span
+                    >
 
-          <span class="marginleft20px">
-            <div class="form-row full-width bold">
-              <div>
-                <label for="dynformSCA5claimantResidence">
-                  <span [translate]="'crossborderNature.claimantCountry'">
-                    4.1.1. Country of domicile or habitual residence of
-                    claimant</span
-                  >
+                    <span
+                      class="asterisk"
+                      id="requiredStar_required_dynformSCA5claimantResidence"
+                      >*</span
+                    >
+                  </label>
 
-                  <span
-                    class="asterisk"
-                    id="requiredStar_required_dynformSCA5claimantResidence"
-                    >*</span
-                  >
-                </label>
-
-                <div
-                  class="input-wrapper regular"
-                  id="input-wrapper_dynformSCA5claimantResidence"
-                  [ngClass]="{
+                  <div
+                    class="input-wrapper regular"
+                    id="input-wrapper_dynformSCA5claimantResidence"
+                    [ngClass]="{
                     invalid:
                       (stepFourService.crossborderNatureForm.get(
                         'claimantCountry'
@@ -45,36 +40,36 @@
                           'claimantCountry'
                         )!.dirty)
                   }"
-                >
-                  <div class="input-content nopaddingTop">
-                    <select
-                      name="dynformSCA5claimantResidence"
-                      id="dynformSCA5claimantResidence"
-                      class="df_select df_mandatory"
-                      data-title=""
-                      formControlName="claimantCountry"
-                      (change)="
-                        expandWorldCountrySelect(
-                          $event,
-                          'dynformSCA5claimantResidence_div'
-                        )
-                      "
-                    >
-                      <option
-                        value=""
-                        disabled=""
-                        selected=""
-                        [translate]="'crossborderNature.select'"
+                  >
+                    <div class="input-content nopaddingTop">
+                      <select
+                        name="dynformSCA5claimantResidence"
+                        id="dynformSCA5claimantResidence"
+                        class="df_select df_mandatory"
+                        data-title=""
+                        formControlName="claimantCountry"
+                        (change)="
+                          expandWorldCountrySelect(
+                            $event,
+                            'dynformSCA5claimantResidence_div'
+                          )
+                        "
                       >
-                        Please select
-                      </option>
-                      <option
-                        *ngFor="let country of europeanCountries"
-                        [value]="country.value"
-                      >
-                        {{ country.label }}
-                      </option>
-                      <!-- <option value="AT">Austria</option>
+                        <option
+                          value=""
+                          disabled=""
+                          selected=""
+                          [translate]="'crossborderNature.select'"
+                        >
+                          Please select
+                        </option>
+                        <option
+                          *ngFor="let country of europeanCountries"
+                          [value]="country.value"
+                        >
+                          {{ country.label }}
+                        </option>
+                        <!-- <option value="AT">Austria</option>
                       <option value="BE">Belgium</option>
                       <option value="BG">Bulgaria</option>
                       <option value="HR">Croatia</option>
@@ -102,80 +97,80 @@
                       <option value="ES">Spain</option>
                       <option value="SE">Sweden</option>
                       <option value="GB">United Kingdom</option> -->
-                      <option
-                        value="other"
-                        [translate]="'crossborderNature.otherOption'"
-                      >
-                        Other (please specify)
-                      </option>
-                    </select>
+                        <option
+                          value="other"
+                          [translate]="'crossborderNature.otherOption'"
+                        >
+                          Other (please specify)
+                        </option>
+                      </select>
+                    </div>
                   </div>
-                </div>
-                <div
-                  *ngIf="
-                    stepFourService.crossborderNatureForm.get(
-                      'claimantCountry'
-                    )!.invalid &&
-                    stepFourService.crossborderNatureForm.get(
-                      'claimantCountry'
-                    )!.dirty
-                  "
-                >
                   <div
                     *ngIf="
                       stepFourService.crossborderNatureForm.get(
                         'claimantCountry'
-                      )?.errors?.required
+                      )!.invalid &&
+                      stepFourService.crossborderNatureForm.get(
+                        'claimantCountry'
+                      )!.dirty
                     "
                   >
-                    <span
-                      id="validation_error_text_dynformSCA5claimantResidence"
-                      class="error"
-                      style="position: relative; top: 0px"
-                      [translate]="'errors.required'"
-                      >Field is required
-                    </span>
+                    <div
+                      *ngIf="
+                        stepFourService.crossborderNatureForm.get(
+                          'claimantCountry'
+                        )?.errors?.required
+                      "
+                    >
+                      <span
+                        id="validation_error_text_dynformSCA5claimantResidence"
+                        class="error"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                        >Field is required
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div
-                  *ngIf="
+                  <div
+                    *ngIf="
                     stepFourService.crossborderNatureForm?.errors?.['invalidEuropeanCountriesCombination'] &&
                     stepFourService.crossborderNatureForm.get(
                       'claimantCountry'
                     )!.dirty
                   "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA5claimantResidence"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.crossborderNatureValidationError'"
-                    >At least two of the lists must refer to different States.
-                  </span>
+                  >
+                    <span
+                      id="validation_error_text_dynformSCA5claimantResidence"
+                      class="error"
+                      style="position: relative; top: 0px"
+                      [translate]="'errors.crossborderNatureValidationError'"
+                      >At least two of the lists must refer to different States.
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div id="dynformSCA5claimantResidence_div" class="df_collapsed">
-              <div>
-                <div class="form-row full-width bold">
-                  <div>
-                    <label for="dynformSCA5claimantResidenceOtherSpecify">
-                      <span [translate]="'crossborderNature.specify'">
-                        Please specify</span
-                      >
+              <div id="dynformSCA5claimantResidence_div" class="df_collapsed">
+                <div>
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCA5claimantResidenceOtherSpecify">
+                        <span [translate]="'crossborderNature.specify'">
+                          Please specify</span
+                        >
 
-                      <span
-                        class="asterisk"
-                        id="requiredStar_required_dynformSCA5claimantResidenceOtherSpecify"
-                        >*</span
-                      >
-                    </label>
+                        <span
+                          class="asterisk"
+                          id="requiredStar_required_dynformSCA5claimantResidenceOtherSpecify"
+                          >*</span
+                        >
+                      </label>
 
-                    <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCA5claimantResidenceOtherSpecify"
-                      [ngClass]="{
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCA5claimantResidenceOtherSpecify"
+                        [ngClass]="{
                         invalid:
                           (stepFourService.crossborderNatureForm.get(
                             'claimantCountryOther'
@@ -188,30 +183,30 @@
                               'claimantCountryOther'
                             )!.dirty)
                       }"
-                    >
-                      <div class="input-content nopaddingTop">
-                        <select
-                          name="dynformSCA5claimantResidenceOtherSpecify"
-                          id="dynformSCA5claimantResidenceOtherSpecify"
-                          class="df_select df_mandatory"
-                          data-title=""
-                          formControlName="claimantCountryOther"
-                        >
-                          <option
-                            value=""
-                            disabled=""
-                            selected=""
-                            [translate]="'crossborderNature.select'"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <select
+                            name="dynformSCA5claimantResidenceOtherSpecify"
+                            id="dynformSCA5claimantResidenceOtherSpecify"
+                            class="df_select df_mandatory"
+                            data-title=""
+                            formControlName="claimantCountryOther"
                           >
-                            Please select
-                          </option>
-                          <option
-                            *ngFor="let country of worldCountries"
-                            [value]="country.value"
-                          >
-                            {{ country.label }}
-                          </option>
-                          <!-- <option value="AF">Afghanistan</option>
+                            <option
+                              value=""
+                              disabled=""
+                              selected=""
+                              [translate]="'crossborderNature.select'"
+                            >
+                              Please select
+                            </option>
+                            <option
+                              *ngFor="let country of worldCountries"
+                              [value]="country.value"
+                            >
+                              {{ country.label }}
+                            </option>
+                            <!-- <option value="AF">Afghanistan</option>
                           <option value="AX">Åland Islands</option>
                           <option value="AL">Albania</option>
                           <option value="DZ">Algeria</option>
@@ -449,82 +444,84 @@
                           <option value="YE">Yemen</option>
                           <option value="ZM">Zambia</option>
                           <option value="ZW">Zimbabwe</option> -->
-                        </select>
+                          </select>
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      *ngIf="
-                        stepFourService.crossborderNatureForm.get(
-                          'claimantCountryOther'
-                        )!.invalid &&
-                        stepFourService.crossborderNatureForm.get(
-                          'claimantCountryOther'
-                        )!.dirty
-                      "
-                    >
                       <div
                         *ngIf="
                           stepFourService.crossborderNatureForm.get(
                             'claimantCountryOther'
-                          )?.errors?.required
+                          )!.invalid &&
+                          stepFourService.crossborderNatureForm.get(
+                            'claimantCountryOther'
+                          )!.dirty
                         "
                       >
-                        <span
-                          id="validation_error_text_dynformSCA5claimantResidenceOtherSpecify"
-                          class="error"
-                          style="position: relative; top: 0px"
-                          [translate]="'errors.required'"
-                          >Field is required
-                        </span>
+                        <div
+                          *ngIf="
+                            stepFourService.crossborderNatureForm.get(
+                              'claimantCountryOther'
+                            )?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA5claimantResidenceOtherSpecify"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                            >Field is required
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      *ngIf="
+                      <div
+                        *ngIf="
                     stepFourService.crossborderNatureForm?.errors?.['invalidWorldCountriesCombination'] &&
                     stepFourService.crossborderNatureForm.get(
                       'claimantCountryOther'
                     )!.dirty
                   "
-                    >
-                      <span
-                        id="validation_error_text_dynformSCA5claimantResidenceOtherSpecify"
-                        class="error"
-                        style="position: relative; top: 0px"
-                        [translate]="'errors.crossborderNatureValidationError'"
-                        >At least two of the lists must refer to different
-                        States.
-                      </span>
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA5claimantResidenceOtherSpecify"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="
+                            'errors.crossborderNatureValidationError'
+                          "
+                          >At least two of the lists must refer to different
+                          States.
+                        </span>
+                      </div>
                     </div>
                   </div>
+
+                  <p
+                    class="df_description"
+                    style="margin-left: 300px; position: relative; top: -10px"
+                    id="dynformSCA5claimantResidenceOtherSpecifyFootnote"
+                  ></p>
                 </div>
-
-                <p
-                  class="df_description"
-                  style="margin-left: 300px; position: relative; top: -10px"
-                  id="dynformSCA5claimantResidenceOtherSpecifyFootnote"
-                ></p>
               </div>
-            </div>
 
-            <div class="form-row full-width bold">
-              <div>
-                <label for="dynformSCA5defendantResidence">
-                  <span [translate]="'crossborderNature.defendantCountry'">
-                    4.1.2. Country of domicile or habitual residence of
-                    defendant</span
-                  >
+              <div class="form-row full-width bold">
+                <div>
+                  <label for="dynformSCA5defendantResidence">
+                    <span [translate]="'crossborderNature.defendantCountry'">
+                      4.1.2. Country of domicile or habitual residence of
+                      defendant</span
+                    >
 
-                  <span
-                    class="asterisk"
-                    id="requiredStar_required_dynformSCA5defendantResidence"
-                    >*</span
-                  >
-                </label>
+                    <span
+                      class="asterisk"
+                      id="requiredStar_required_dynformSCA5defendantResidence"
+                      >*</span
+                    >
+                  </label>
 
-                <div
-                  class="input-wrapper regular"
-                  id="input-wrapper_dynformSCA5defendantResidence"
-                  [ngClass]="{
+                  <div
+                    class="input-wrapper regular"
+                    id="input-wrapper_dynformSCA5defendantResidence"
+                    [ngClass]="{
                     invalid:
                       (stepFourService.crossborderNatureForm.get(
                         'defendantCountry'
@@ -537,36 +534,36 @@
                           'defendantCountry'
                         )!.dirty)
                   }"
-                >
-                  <div class="input-content nopaddingTop">
-                    <select
-                      name="dynformSCA5defendantResidence"
-                      id="dynformSCA5defendantResidence"
-                      class="df_select df_mandatory"
-                      data-title=""
-                      formControlName="defendantCountry"
-                      (change)="
-                        expandWorldCountrySelect(
-                          $event,
-                          'dynformSCA5defendantResidence_div'
-                        )
-                      "
-                    >
-                      <option
-                        value=""
-                        disabled=""
-                        selected=""
-                        [translate]="'crossborderNature.select'"
+                  >
+                    <div class="input-content nopaddingTop">
+                      <select
+                        name="dynformSCA5defendantResidence"
+                        id="dynformSCA5defendantResidence"
+                        class="df_select df_mandatory"
+                        data-title=""
+                        formControlName="defendantCountry"
+                        (change)="
+                          expandWorldCountrySelect(
+                            $event,
+                            'dynformSCA5defendantResidence_div'
+                          )
+                        "
                       >
-                        Please select
-                      </option>
-                      <option
-                        *ngFor="let country of europeanCountries"
-                        [value]="country.value"
-                      >
-                        {{ country.label }}
-                      </option>
-                      <!-- <option value="AT">Austria</option>
+                        <option
+                          value=""
+                          disabled=""
+                          selected=""
+                          [translate]="'crossborderNature.select'"
+                        >
+                          Please select
+                        </option>
+                        <option
+                          *ngFor="let country of europeanCountries"
+                          [value]="country.value"
+                        >
+                          {{ country.label }}
+                        </option>
+                        <!-- <option value="AT">Austria</option>
                       <option value="BE">Belgium</option>
                       <option value="BG">Bulgaria</option>
                       <option value="HR">Croatia</option>
@@ -594,80 +591,80 @@
                       <option value="ES">Spain</option>
                       <option value="SE">Sweden</option>
                       <option value="GB">United Kingdom</option> -->
-                      <option
-                        value="other"
-                        [translate]="'crossborderNature.otherOption'"
-                      >
-                        Other (please specify)
-                      </option>
-                    </select>
+                        <option
+                          value="other"
+                          [translate]="'crossborderNature.otherOption'"
+                        >
+                          Other (please specify)
+                        </option>
+                      </select>
+                    </div>
                   </div>
-                </div>
-                <div
-                  *ngIf="
-                    stepFourService.crossborderNatureForm.get(
-                      'defendantCountry'
-                    )!.invalid &&
-                    stepFourService.crossborderNatureForm.get(
-                      'defendantCountry'
-                    )!.dirty
-                  "
-                >
                   <div
                     *ngIf="
                       stepFourService.crossborderNatureForm.get(
                         'defendantCountry'
-                      )?.errors?.required
+                      )!.invalid &&
+                      stepFourService.crossborderNatureForm.get(
+                        'defendantCountry'
+                      )!.dirty
                     "
                   >
-                    <span
-                      id="validation_error_text_dynformSCA5defendantResidence"
-                      class="error"
-                      style="position: relative; top: 0px"
-                      [translate]="'errors.required'"
-                      >Field is required
-                    </span>
+                    <div
+                      *ngIf="
+                        stepFourService.crossborderNatureForm.get(
+                          'defendantCountry'
+                        )?.errors?.required
+                      "
+                    >
+                      <span
+                        id="validation_error_text_dynformSCA5defendantResidence"
+                        class="error"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                        >Field is required
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div
-                  *ngIf="
+                  <div
+                    *ngIf="
                     stepFourService.crossborderNatureForm?.errors?.['invalidEuropeanCountriesCombination'] &&
                     stepFourService.crossborderNatureForm.get(
                       'defendantCountry'
                     )!.dirty
                   "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA5defendantResidence"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.crossborderNatureValidationError'"
-                    >At least two of the lists must refer to different States.
-                  </span>
+                  >
+                    <span
+                      id="validation_error_text_dynformSCA5defendantResidence"
+                      class="error"
+                      style="position: relative; top: 0px"
+                      [translate]="'errors.crossborderNatureValidationError'"
+                      >At least two of the lists must refer to different States.
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div id="dynformSCA5defendantResidence_div" class="df_collapsed">
-              <div>
-                <div class="form-row full-width bold">
-                  <div>
-                    <label for="dynformSCA5defendantResidenceOtherSpecify">
-                      <span [translate]="'crossborderNature.specify'">
-                        Please specify</span
-                      >
+              <div id="dynformSCA5defendantResidence_div" class="df_collapsed">
+                <div>
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCA5defendantResidenceOtherSpecify">
+                        <span [translate]="'crossborderNature.specify'">
+                          Please specify</span
+                        >
 
-                      <span
-                        class="asterisk"
-                        id="requiredStar_required_dynformSCA5defendantResidenceOtherSpecify"
-                        >*</span
-                      >
-                    </label>
+                        <span
+                          class="asterisk"
+                          id="requiredStar_required_dynformSCA5defendantResidenceOtherSpecify"
+                          >*</span
+                        >
+                      </label>
 
-                    <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCA5defendantResidenceOtherSpecify"
-                      [ngClass]="{
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCA5defendantResidenceOtherSpecify"
+                        [ngClass]="{
                         invalid:
                           (stepFourService.crossborderNatureForm.get(
                             'defendantCountryOther'
@@ -680,30 +677,30 @@
                               'defendantCountryOther'
                             )!.dirty)
                       }"
-                    >
-                      <div class="input-content nopaddingTop">
-                        <select
-                          name="dynformSCA5defendantResidenceOtherSpecify"
-                          id="dynformSCA5defendantResidenceOtherSpecify"
-                          class="df_select df_mandatory"
-                          data-title=""
-                          formControlName="defendantCountryOther"
-                        >
-                          <option
-                            value=""
-                            disabled=""
-                            selected=""
-                            [translate]="'crossborderNature.select'"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <select
+                            name="dynformSCA5defendantResidenceOtherSpecify"
+                            id="dynformSCA5defendantResidenceOtherSpecify"
+                            class="df_select df_mandatory"
+                            data-title=""
+                            formControlName="defendantCountryOther"
                           >
-                            Please select
-                          </option>
-                          <option
-                            *ngFor="let country of worldCountries"
-                            [value]="country.value"
-                          >
-                            {{ country.label }}
-                          </option>
-                          <!-- <option value="AF">Afghanistan</option>
+                            <option
+                              value=""
+                              disabled=""
+                              selected=""
+                              [translate]="'crossborderNature.select'"
+                            >
+                              Please select
+                            </option>
+                            <option
+                              *ngFor="let country of worldCountries"
+                              [value]="country.value"
+                            >
+                              {{ country.label }}
+                            </option>
+                            <!-- <option value="AF">Afghanistan</option>
                           <option value="AX">Åland Islands</option>
                           <option value="AL">Albania</option>
                           <option value="DZ">Algeria</option>
@@ -941,81 +938,83 @@
                           <option value="YE">Yemen</option>
                           <option value="ZM">Zambia</option>
                           <option value="ZW">Zimbabwe</option> -->
-                        </select>
+                          </select>
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      *ngIf="
-                        stepFourService.crossborderNatureForm.get(
-                          'defendantCountryOther'
-                        )!.invalid &&
-                        stepFourService.crossborderNatureForm.get(
-                          'defendantCountryOther'
-                        )!.dirty
-                      "
-                    >
                       <div
                         *ngIf="
                           stepFourService.crossborderNatureForm.get(
                             'defendantCountryOther'
-                          )?.errors?.required
+                          )!.invalid &&
+                          stepFourService.crossborderNatureForm.get(
+                            'defendantCountryOther'
+                          )!.dirty
                         "
                       >
-                        <span
-                          id="validation_error_text_dynformSCA5defendantResidenceOtherSpecify"
-                          class="error"
-                          style="position: relative; top: 0px"
-                          [translate]="'errors.required'"
-                          >Field is required
-                        </span>
+                        <div
+                          *ngIf="
+                            stepFourService.crossborderNatureForm.get(
+                              'defendantCountryOther'
+                            )?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA5defendantResidenceOtherSpecify"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                            >Field is required
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      *ngIf="
+                      <div
+                        *ngIf="
                     stepFourService.crossborderNatureForm?.errors?.['invalidWorldCountriesCombination'] &&
                     stepFourService.crossborderNatureForm.get(
                       'defendantCountryOther'
                     )!.dirty
                   "
-                    >
-                      <span
-                        id="validation_error_text_dynformSCA5defendantResidenceOtherSpecify"
-                        class="error"
-                        style="position: relative; top: 0px"
-                        [translate]="'errors.crossborderNatureValidationError'"
-                        >At least two of the lists must refer to different
-                        States.
-                      </span>
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA5defendantResidenceOtherSpecify"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="
+                            'errors.crossborderNatureValidationError'
+                          "
+                          >At least two of the lists must refer to different
+                          States.
+                        </span>
+                      </div>
                     </div>
                   </div>
+
+                  <p
+                    class="df_description"
+                    style="margin-left: 300px; position: relative; top: -10px"
+                    id="dynformSCA5defendantResidenceOtherSpecifyFootnote"
+                  ></p>
                 </div>
-
-                <p
-                  class="df_description"
-                  style="margin-left: 300px; position: relative; top: -10px"
-                  id="dynformSCA5defendantResidenceOtherSpecifyFootnote"
-                ></p>
               </div>
-            </div>
 
-            <div class="form-row full-width bold">
-              <div>
-                <label for="dynformSCA5countryCourt">
-                  <span [translate]="'crossborderNature.courtCountry'"
-                    >4.1.3. Member State of the court/tribunal</span
-                  >
+              <div class="form-row full-width bold">
+                <div>
+                  <label for="dynformSCA5countryCourt">
+                    <span [translate]="'crossborderNature.courtCountry'"
+                      >4.1.3. Member State of the court/tribunal</span
+                    >
 
-                  <span
-                    class="asterisk"
-                    id="requiredStar_required_dynformSCA5countryCourt"
-                    >*</span
-                  >
-                </label>
+                    <span
+                      class="asterisk"
+                      id="requiredStar_required_dynformSCA5countryCourt"
+                      >*</span
+                    >
+                  </label>
 
-                <div
-                  class="input-wrapper regular"
-                  id="input-wrapper_dynformSCA5countryCourt"
-                  [ngClass]="{
+                  <div
+                    class="input-wrapper regular"
+                    id="input-wrapper_dynformSCA5countryCourt"
+                    [ngClass]="{
                     invalid:
                       (stepFourService.crossborderNatureForm.get(
                         'courtCountry'
@@ -1028,36 +1027,36 @@
                           'courtCountry'
                         )!.dirty)
                   }"
-                >
-                  <div class="input-content nopaddingTop">
-                    <select
-                      name="dynformSCA5countryCourt"
-                      id="dynformSCA5countryCourt"
-                      class="df_select df_mandatory"
-                      data-title=""
-                      formControlName="courtCountry"
-                      (change)="
-                        expandWorldCountrySelect(
-                          $event,
-                          'dynformSCA5countryCourt_div'
-                        )
-                      "
-                    >
-                      <option
-                        value=""
-                        disabled=""
-                        selected=""
-                        [translate]="'crossborderNature.select'"
+                  >
+                    <div class="input-content nopaddingTop">
+                      <select
+                        name="dynformSCA5countryCourt"
+                        id="dynformSCA5countryCourt"
+                        class="df_select df_mandatory"
+                        data-title=""
+                        formControlName="courtCountry"
+                        (change)="
+                          expandWorldCountrySelect(
+                            $event,
+                            'dynformSCA5countryCourt_div'
+                          )
+                        "
                       >
-                        Please select
-                      </option>
-                      <option
-                        *ngFor="let country of europeanCountries"
-                        [value]="country.value"
-                      >
-                        {{ country.label }}
-                      </option>
-                      <!-- <option value="BE">Belgium</option>
+                        <option
+                          value=""
+                          disabled=""
+                          selected=""
+                          [translate]="'crossborderNature.select'"
+                        >
+                          Please select
+                        </option>
+                        <option
+                          *ngFor="let country of europeanCountries"
+                          [value]="country.value"
+                        >
+                          {{ country.label }}
+                        </option>
+                        <!-- <option value="BE">Belgium</option>
                       <option value="BG">Bulgaria</option>
                       <option value="CZ">Czech Republic</option>
                       <option value="DK">Denmark</option>
@@ -1085,78 +1084,79 @@
                       <option value="FI">Finland</option>
                       <option value="SE">Sweden</option>
                       <option value="GB">United Kingdom</option> -->
-                      <option
-                        value="other"
-                        [translate]="'crossborderNature.otherOption'"
-                      >
-                        Other (please specify)
-                      </option>
-                    </select>
+                        <option
+                          value="other"
+                          [translate]="'crossborderNature.otherOption'"
+                        >
+                          Other (please specify)
+                        </option>
+                      </select>
+                    </div>
                   </div>
-                </div>
-                <div
-                  *ngIf="
-                    stepFourService.crossborderNatureForm.get('courtCountry')!
-                      .invalid &&
-                    stepFourService.crossborderNatureForm.get('courtCountry')!
-                      .dirty
-                  "
-                >
                   <div
                     *ngIf="
-                      stepFourService.crossborderNatureForm.get('courtCountry')
-                        ?.errors?.required
+                      stepFourService.crossborderNatureForm.get('courtCountry')!
+                        .invalid &&
+                      stepFourService.crossborderNatureForm.get('courtCountry')!
+                        .dirty
                     "
                   >
-                    <span
-                      id="validation_error_text_dynformSCA5countryCourt"
-                      class="error"
-                      style="position: relative; top: 0px"
-                      [translate]="'errors.required'"
+                    <div
+                      *ngIf="
+                        stepFourService.crossborderNatureForm.get(
+                          'courtCountry'
+                        )?.errors?.required
+                      "
                     >
-                      Field is required
-                    </span>
+                      <span
+                        id="validation_error_text_dynformSCA5countryCourt"
+                        class="error"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                      >
+                        Field is required
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <div
-                  *ngIf="
+                  <div
+                    *ngIf="
                     stepFourService.crossborderNatureForm?.errors?.['invalidEuropeanCountriesCombination'] &&
                     stepFourService.crossborderNatureForm.get(
                       'courtCountry'
                     )!.dirty
                   "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA5countryCourt"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.crossborderNatureValidationError'"
-                    >At least two of the lists must refer to different States.
-                  </span>
+                  >
+                    <span
+                      id="validation_error_text_dynformSCA5countryCourt"
+                      class="error"
+                      style="position: relative; top: 0px"
+                      [translate]="'errors.crossborderNatureValidationError'"
+                      >At least two of the lists must refer to different States.
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div id="dynformSCA5countryCourt_div" class="df_collapsed">
-              <div>
-                <div class="form-row full-width bold">
-                  <div>
-                    <label for="dynformSCA5countryCourtOtherSpecify">
-                      <span [translate]="'crossborderNature.specify'">
-                        Please specify</span
-                      >
+              <div id="dynformSCA5countryCourt_div" class="df_collapsed">
+                <div>
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCA5countryCourtOtherSpecify">
+                        <span [translate]="'crossborderNature.specify'">
+                          Please specify</span
+                        >
 
-                      <span
-                        class="asterisk"
-                        id="requiredStar_required_dynformSCA5countryCourtOtherSpecify"
-                        >*</span
-                      >
-                    </label>
+                        <span
+                          class="asterisk"
+                          id="requiredStar_required_dynformSCA5countryCourtOtherSpecify"
+                          >*</span
+                        >
+                      </label>
 
-                    <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCA5countryCourtOtherSpecify"
-                      [ngClass]="{
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCA5countryCourtOtherSpecify"
+                        [ngClass]="{
                         invalid:
                           (stepFourService.crossborderNatureForm.get(
                             'courtCountryOther'
@@ -1169,30 +1169,30 @@
                               'courtCountryOther'
                             )!.dirty)
                       }"
-                    >
-                      <div class="input-content nopaddingTop">
-                        <select
-                          name="dynformSCA5countryCourtOtherSpecify"
-                          id="dynformSCA5countryCourtOtherSpecify"
-                          class="df_select df_mandatory"
-                          data-title=""
-                          formControlName="courtCountryOther"
-                        >
-                          <option
-                            value=""
-                            disabled=""
-                            selected=""
-                            [translate]="'crossborderNature.select'"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <select
+                            name="dynformSCA5countryCourtOtherSpecify"
+                            id="dynformSCA5countryCourtOtherSpecify"
+                            class="df_select df_mandatory"
+                            data-title=""
+                            formControlName="courtCountryOther"
                           >
-                            Please select
-                          </option>
-                          <option
-                            *ngFor="let country of worldCountries"
-                            [value]="country.value"
-                          >
-                            {{ country.label }}
-                          </option>
-                          <!-- <option value="AF">Afghanistan</option>
+                            <option
+                              value=""
+                              disabled=""
+                              selected=""
+                              [translate]="'crossborderNature.select'"
+                            >
+                              Please select
+                            </option>
+                            <option
+                              *ngFor="let country of worldCountries"
+                              [value]="country.value"
+                            >
+                              {{ country.label }}
+                            </option>
+                            <!-- <option value="AF">Afghanistan</option>
                           <option value="AX">Åland Islands</option>
                           <option value="AL">Albania</option>
                           <option value="DZ">Algeria</option>
@@ -1430,99 +1430,102 @@
                           <option value="YE">Yemen</option>
                           <option value="ZM">Zambia</option>
                           <option value="ZW">Zimbabwe</option> -->
-                        </select>
+                          </select>
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      *ngIf="
-                        stepFourService.crossborderNatureForm.get(
-                          'courtCountryOther'
-                        )!.invalid &&
-                        stepFourService.crossborderNatureForm.get(
-                          'courtCountryOther'
-                        )!.dirty
-                      "
-                    >
                       <div
                         *ngIf="
                           stepFourService.crossborderNatureForm.get(
                             'courtCountryOther'
-                          )?.errors?.required
+                          )!.invalid &&
+                          stepFourService.crossborderNatureForm.get(
+                            'courtCountryOther'
+                          )!.dirty
                         "
                       >
-                        <span
-                          id="validation_error_text_dynformSCA5countryCourtOtherSpecify"
-                          class="error"
-                          style="position: relative; top: 0px"
-                          [translate]="'errors.required'"
+                        <div
+                          *ngIf="
+                            stepFourService.crossborderNatureForm.get(
+                              'courtCountryOther'
+                            )?.errors?.required
+                          "
                         >
-                          Field is required
-                        </span>
+                          <span
+                            id="validation_error_text_dynformSCA5countryCourtOtherSpecify"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      *ngIf="
+                      <div
+                        *ngIf="
                     stepFourService.crossborderNatureForm?.errors?.['invalidWorldCountriesCombination'] &&
                     stepFourService.crossborderNatureForm.get(
                       'courtCountryOther'
                     )!.dirty
                   "
-                    >
-                      <span
-                        id="validation_error_text_dynformSCA5countryCourtOtherSpecify"
-                        class="error"
-                        style="position: relative; top: 0px"
-                        [translate]="'errors.crossborderNatureValidationError'"
-                        >At least two of the lists must refer to different
-                        States.
-                      </span>
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA5countryCourtOtherSpecify"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="
+                            'errors.crossborderNatureValidationError'
+                          "
+                          >At least two of the lists must refer to different
+                          States.
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <p
-                  class="df_description"
-                  style="margin-left: 300px; position: relative; top: -10px"
-                  id="dynformSCA5countryCourtOtherSpecifyFootnote"
-                ></p>
+                  <p
+                    class="df_description"
+                    style="margin-left: 300px; position: relative; top: -10px"
+                    id="dynformSCA5countryCourtOtherSpecifyFootnote"
+                  ></p>
+                </div>
               </div>
-            </div>
-          </span>
-          <div class="modal small" id="js_modal_form_disclaimer_step_four">
-            <div class="container">
-              <div class="modal-content">
-                <a
-                  class="close js-close-modal hide-text"
-                  data-modal="forms-disclaimer-modal"
-                  data-module="DisclaimerModule"
-                  tabindex="1"
-                  data-callback="closeDialog"
-                  (click)="closeModal('js_modal_form_disclaimer_step_four')"
-                  >Close</a
-                >
-                <div
-                  style="padding: 1em; font-size: 1.6rem; text-align: center"
-                >
-                  <span [translate]="'unitedKingdomModal'">
-                    As of 1 January 2021, the United Kingdom is no longer an EU
-                    Member State. However, in the field of civil justice,
-                    pending procedures and proceedings initiated before the end
-                    of the transition period will continue under EU law. Until
-                    the end of 2024, the United Kingdom can continue to be
-                    selected in online (dynamic) forms for the purpose of these
-                    proceedings and procedures. An exception to this rule are
-                    the Public documents forms, in which the UK should not be
-                    selected.</span
+            </span>
+            <div class="modal small" id="js_modal_form_disclaimer_step_four">
+              <div class="container">
+                <div class="modal-content">
+                  <a
+                    class="close js-close-modal hide-text"
+                    data-modal="forms-disclaimer-modal"
+                    data-module="DisclaimerModule"
+                    tabindex="1"
+                    data-callback="closeDialog"
+                    (click)="closeModal('js_modal_form_disclaimer_step_four')"
+                    >Close</a
                   >
+                  <div
+                    style="padding: 1em; font-size: 1.6rem; text-align: center"
+                  >
+                    <span [translate]="'unitedKingdomModal'">
+                      As of 1 January 2021, the United Kingdom is no longer an
+                      EU Member State. However, in the field of civil justice,
+                      pending procedures and proceedings initiated before the
+                      end of the transition period will continue under EU law.
+                      Until the end of 2024, the United Kingdom can continue to
+                      be selected in online (dynamic) forms for the purpose of
+                      these proceedings and procedures. An exception to this
+                      rule are the Public documents forms, in which the UK
+                      should not be selected.</span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
-  <div id="step4_1">
+  <div id="step4_2">
     <h3 [translate]="'bankDetails.title'">4.2. Bank details (optional)</h3>
     <div concept="http://scanii.org/domain/bankDetails"></div>
     <div
