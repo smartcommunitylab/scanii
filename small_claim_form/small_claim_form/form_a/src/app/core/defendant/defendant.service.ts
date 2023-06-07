@@ -69,7 +69,7 @@ export class DefendantService {
           country: ['', [Validators.required]],
           countryOther: [''],
           phoneNumber: [''],
-          email: [''],
+          email: ['', [Validators.email]],
           representative: [''],
           otherDetails: [''],
           isRepresentative: [false],
@@ -90,7 +90,7 @@ export class DefendantService {
           country: ['', [Validators.required]],
           countryOther: [''],
           phoneNumber: [''],
-          email: [''],
+          email: ['', [Validators.email]],
           isRepresentative: [true],
         },
         { validator: this.validateOrganisationSurnameFirstName }

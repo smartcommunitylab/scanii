@@ -1,5 +1,11 @@
 import { NavbarService } from '../../core/navbar/navbar.service';
-import { AfterViewInit, Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import * as enquire from 'enquire.js';
 import * as $ from 'jquery';
 import 'jquery-sticky';
@@ -18,6 +24,12 @@ import { StepFourService } from 'src/app/core/step-four/step-four.service';
 import { IntermediateForm } from 'src/app/core/common/intermediate-form.model';
 import exportFromJSON from 'export-from-json';
 import { CourtService } from 'src/app/core/court/court.service';
+import {
+  TemporaryStorageFacet,
+  TemporaryStorageService,
+} from 'src/app/shared/services/temporary-storage.service';
+import { TranslateConfigService } from 'src/app/shared/services/translate-config.service';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-navbar',
@@ -39,10 +51,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private claimService: ClaimService,
     private claimDetailsService: ClaimDetailsService,
     private stepSevenService: StepSevenService,
-    private courtService: CourtService
+    private courtService: CourtService,
+    private temporaryStorageService: TemporaryStorageService,
+    private translateConfigService: TranslateConfigService,
+    private toastService: ToastService
   ) {}
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     document.addEventListener('click', () => {
       const stickySidebar = document.querySelector('.sticky-sidebar');
       if (stickySidebar) {
@@ -77,98 +92,120 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.triggerTabList.forEach((triggerEl: any) => {
       var tabTrigger = new bootstrap.Tab(triggerEl);
       triggerEl.addEventListener('click', (event: any) => {
-        event.preventDefault();
+        if (this.toastService.isSidebarActive) {
+          event.preventDefault();
 
-        let element = event.target;
-        let a = event.target;
+          let element = event.target;
+          let a = event.target;
 
-        while (element.tagName !== 'LI') {
-          element = element.parentElement;
-        }
+          while (element.tagName !== 'LI') {
+            element = element.parentElement;
+          }
 
-        while (a.tagName !== 'A') {
-          a = a.parentElement;
-        }
+          while (a.tagName !== 'A') {
+            a = a.parentElement;
+          }
 
-        const stepId = element.id.split('-')[0];
+          const stepId = element.id.split('-')[0];
 
-        if (stepId !== this.navbarService.currentStepId) {
-          const previousStepNumber = this.getStepNumber(
-            this.navbarService.currentStepId
-          );
-          const currentStepNumber = this.getStepNumber(stepId);
+          if (stepId !== this.navbarService.currentStepId) {
+            const previousStepNumber = this.getStepNumber(
+              this.navbarService.currentStepId
+            );
+            const currentStepNumber = this.getStepNumber(stepId);
 
-          if (currentStepNumber > previousStepNumber) {
-            const promises = [];
+            if (currentStepNumber > previousStepNumber) {
+              const promises = [];
 
-            for (let i = previousStepNumber; i < currentStepNumber; i++) {
-              const stepId = 'step' + i;
-              promises.push(this.navbarService.isStepValid(stepId));
-            }
+              for (let i = previousStepNumber; i < currentStepNumber; i++) {
+                const stepId = 'step' + i;
+                promises.push(this.navbarService.isStepValid(stepId));
+              }
 
-            Promise.all(promises).then((array: PromiseContent[]) => {
-              if (array.every((item: PromiseContent) => item.isValid)) {
+              Promise.all(promises).then((array: PromiseContent[]) => {
+                if (array.every((item: PromiseContent) => item.isValid)) {
+                  this.navbarService.previousStepId =
+                    this.navbarService.currentStepId;
+                  this.navbarService.currentStepId = stepId;
+
+                  this.toastService.hideErrorToast();
+                  this.setActive(element);
+                  tabTrigger.show();
+                  this.scrollToTop();
+                  a.setAttribute('tabindex', '-1');
+
+                  window['showInfo'](currentStepNumber);
+
+                  this.addRemoveValidatedClass(array);
+                } else {
+                  this.toastService.showErrorToast();
+
+                  const invalidStep = array.find(
+                    (item: PromiseContent) => !item.isValid
+                  );
+                  this.navigateForward(
+                    this.navbarService.currentStepId,
+                    invalidStep.stepId
+                  );
+
+                  this.navbarService.previousStepId =
+                    this.navbarService.currentStepId;
+                  this.navbarService.currentStepId = invalidStep.stepId;
+
+                  this.scrollToTop();
+
+                  const invalidStepNumber = this.getStepNumber(
+                    invalidStep.stepId
+                  );
+                  window['showInfo'](invalidStepNumber);
+
+                  const invalidStepIndex = array.findIndex(
+                    (item: PromiseContent) => item.stepId === invalidStep.stepId
+                  );
+                  this.addRemoveValidatedClass(
+                    array.slice(0, invalidStepIndex)
+                  );
+                }
+              });
+            } else {
+              const promises = [];
+
+              for (let i = currentStepNumber; i <= previousStepNumber; i++) {
+                const stepId = 'step' + i;
+                promises.push(this.navbarService.isStepValid(stepId));
+              }
+
+              Promise.all(promises).then((array: PromiseContent[]) => {
+                this.addRemoveValidatedClass(array);
+
                 this.navbarService.previousStepId =
                   this.navbarService.currentStepId;
                 this.navbarService.currentStepId = stepId;
 
+                this.toastService.hideErrorToast();
                 this.setActive(element);
-
                 tabTrigger.show();
+                this.scrollToTop();
                 a.setAttribute('tabindex', '-1');
 
                 window['showInfo'](currentStepNumber);
-
-                this.addRemoveValidatedClass(array);
-              } else {
-                const invalidStep = array.find(
-                  (item: PromiseContent) => !item.isValid
-                );
-
-                this.navigateForward(
-                  this.navbarService.currentStepId,
-                  invalidStep.stepId
-                );
-
-                this.navbarService.previousStepId =
-                  this.navbarService.currentStepId;
-                this.navbarService.currentStepId = invalidStep.stepId;
-
-                const invalidStepNumber = this.getStepNumber(
-                  invalidStep.stepId
-                );
-                window['showInfo'](invalidStepNumber);
-
-                const invalidStepIndex = array.findIndex(
-                  (item: PromiseContent) => item.stepId === invalidStep.stepId
-                );
-                this.addRemoveValidatedClass(array.slice(0, invalidStepIndex));
-              }
-            });
-          } else {
-            const promises = [];
-
-            for (let i = currentStepNumber; i <= previousStepNumber; i++) {
-              const stepId = 'step' + i;
-              promises.push(this.navbarService.isStepValid(stepId));
+              });
             }
-
-            Promise.all(promises).then((array: PromiseContent[]) => {
-              this.addRemoveValidatedClass(array);
-
-              this.navbarService.previousStepId =
-                this.navbarService.currentStepId;
-              this.navbarService.currentStepId = stepId;
-
-              this.setActive(element);
-              tabTrigger.show();
-              a.setAttribute('tabindex', '-1');
-
-              window['showInfo'](currentStepNumber);
-            });
           }
         }
       });
+    });
+
+    this.setClaimant();
+  }
+
+  setClaimant() {
+    const temporaryStorage: TemporaryStorageFacet =
+      this.temporaryStorageService.forKey('claimant');
+    temporaryStorage.get().then((data: any) => {
+      if (data && data.claimants.length > 0) {
+        this.claimantService.setClaimantForm(data.claimants);
+      }
     });
   }
 
@@ -268,6 +305,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   manageNavigation(event: any): void {
+    this.toastService.hideErrorToast();
+
     const movement = event.content as Movement;
 
     const destinationMenu = document.getElementById(
@@ -295,6 +334,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     destinationMenu.firstElementChild.setAttribute('aria-selected', 'true');
     destinationTab.classList.add('active');
 
+    this.scrollToTop();
     window['showInfo'](this.getStepNumber(movement.destinationStepId));
 
     if (movement.direction === 'NEXT') {
@@ -404,9 +444,18 @@ export class NavbarComponent implements OnInit, OnDestroy {
         console.log(error);
       });
   }
+
   private moveToFirstStep() {
     const element = this.triggerTabList[0];
     const event = new Event('click');
     element.dispatchEvent(event);
+  }
+
+  private scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto',
+    });
   }
 }

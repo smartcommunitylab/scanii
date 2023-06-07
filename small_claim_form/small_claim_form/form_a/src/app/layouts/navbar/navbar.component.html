@@ -43,15 +43,15 @@
         </li>
       </ul>
       <div class="row">
-        <div class="col-6 text-start align-self-end">
+        <div class="col-xl-6 col-md-8 col-12 text-start align-self-end">
           <div class="title-block" style="padding-right: 0 !important">
-            <h1 [translate]="'menu.title'">Form A - Claim form</h1>
+            <h1 [translate]="'menu.title'" id="title">Form A - Claim form</h1>
             <div class="subtitle js-toggle"></div>
           </div>
         </div>
-        <div class="col-3"></div>
-        <div class="col-3 text-end align-self-end">
-          <div style="cursor: pointer; margin-bottom: 1.5rem">
+        <div class="d-none d-xl-block col-3"></div>
+        <div class="col-xl-3 col-md-4 col-12 text-end align-self-end">
+          <div style="margin-bottom: 1.5rem">
             <a id="simplyfied_btn" onClick="showText('simplyfied')">
               <span id="initial_icon">
                 <svg
@@ -68,9 +68,9 @@
                   />
                 </svg>
               </span>
-              <i>&nbsp;</i>
-              <span [translate]="'menu.completeVersion'"
-                >Versione completa</span
+              <i style="cursor: default">&nbsp;</i>
+              <span [translate]="'menu.completeVersion'" id="version-label"
+                >Passa a versione semplificata</span
               ></a
             >
           </div>
@@ -81,27 +81,8 @@
 </div>
 
 <div class="toast-container position-fixed end-0 p-3">
-  <div
-    id="toast"
-    class="toast align-items-center text-center border-1"
-    role="alert"
-    aria-live="assertive"
-    aria-atomic="true"
-    data-bs-autohide="false"
-  >
-    <div class="toast-body">
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="toast"
-        aria-label="Close"
-      ></button>
-      <p [innerHTML]="'menu.toast' | translate">
-        Attenzione, ricorda che stai visualizzando delle informazioni
-        semplficate
-      </p>
-    </div>
-  </div>
+  <app-warning-toast></app-warning-toast>
+  <app-error-toast></app-error-toast>
 </div>
 
 <div id="maincontent" class="content detail-page dynamic-forms">
@@ -121,12 +102,7 @@
                 <span class="truncate">
                   <span class="index"></span>
                   <span class="step-title">
-                    <!-- <input
-                      type="submit"
-                      name="submitProgressBar0"
-                      value="{{ 'menu.step1' | translate }}"
-                    /> -->
-                    <p>{{ 'menu.step1' | translate }}</p>
+                    <p>{{ "menu.step1" | translate }}</p>
                   </span>
                 </span>
                 <div class="validation-icon"></div>
@@ -138,13 +114,7 @@
                 <span class="truncate">
                   <span class="index"></span>
                   <span class="step-title">
-                    <!-- <input
-                      type="submit"
-                      class="submitProgressBarClass"
-                      name="submitProgressBar1"
-                      value="{{ 'menu.step2' | translate }}"
-                    /> -->
-                    <p>{{ 'menu.step2' | translate }}</p>
+                    <p>{{ "menu.step2" | translate }}</p>
                   </span>
                 </span>
                 <div class="validation-icon"></div>
@@ -156,13 +126,7 @@
                 <span class="truncate">
                   <span class="index"></span>
                   <span class="step-title">
-                    <!-- <input
-                      type="submit"
-                      class="submitProgressBarClass"
-                      name="submitProgressBar2"
-                      value="{{ 'menu.step3' | translate }}"
-                    /> -->
-                    <p>{{ 'menu.step3' | translate }}</p>
+                    <p>{{ "menu.step3" | translate }}</p>
                   </span>
                 </span>
                 <div class="validation-icon"></div>
@@ -174,13 +138,7 @@
                 <span class="truncate">
                   <span class="index"></span>
                   <span class="step-title">
-                    <!-- <input
-                      type="submit"
-                      class="submitProgressBarClass"
-                      name="submitProgressBar3"
-                      value="{{ 'menu.step4' | translate }}"
-                    /> -->
-                    <p>{{ 'menu.step4' | translate }}</p>
+                    <p>{{ "menu.step4" | translate }}</p>
                   </span>
                 </span>
                 <div class="validation-icon"></div>
@@ -192,13 +150,7 @@
                 <span class="truncate">
                   <span class="index"></span>
                   <span class="step-title">
-                    <!-- <input
-                      type="submit"
-                      class="submitProgressBarClass"
-                      name="submitProgressBar4"
-                      value="{{ 'menu.step5' | translate }}"
-                    /> -->
-                    <p>{{ 'menu.step5' | translate }}</p>
+                    <p>{{ "menu.step5" | translate }}</p>
                   </span>
                 </span>
                 <div class="validation-icon"></div>
@@ -210,13 +162,7 @@
                 <span class="truncate">
                   <span class="index"></span>
                   <span class="step-title">
-                    <!-- <input
-                      type="submit"
-                      class="submitProgressBarClass"
-                      name="submitProgressBar5"
-                      value="{{ 'menu.step6' | translate }}"
-                    /> -->
-                    <p>{{ 'menu.step6' | translate }}</p>
+                    <p>{{ "menu.step6" | translate }}</p>
                   </span>
                 </span>
                 <div class="validation-icon"></div>
@@ -228,13 +174,7 @@
                 <span class="truncate">
                   <span class="index"></span>
                   <span class="step-title">
-                    <!-- <input
-                      type="submit"
-                      class="submitProgressBarClass"
-                      name="submitProgressBar6"
-                      value="{{ 'menu.step7' | translate }}"
-                    /> -->
-                    <p>{{ 'menu.step7' | translate }}</p>
+                    <p>{{ "menu.step7" | translate }}</p>
                   </span>
                 </span>
                 <div class="validation-icon"></div>
@@ -246,13 +186,7 @@
                 <span class="truncate">
                   <span class="index"></span>
                   <span class="step-title">
-                    <!-- <input
-                      type="submit"
-                      class="submitProgressBarClass"
-                      name="submitProgressBar7"
-                      value="{{ 'menu.step8' | translate }}"
-                    /> -->
-                    <p>{{ 'menu.step8' | translate }}</p>
+                    <p>{{ "menu.step8" | translate }}</p>
                   </span>
                 </span>
                 <div class="validation-icon"></div>

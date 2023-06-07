@@ -5,6 +5,7 @@ import { ClaimDetailsService } from 'src/app/core/claim-details/claim-details.se
 import { Movement } from 'src/app/core/common/movement.model';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';
 import { Direction } from 'src/app/shared/constants/direction.constants';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-claim-details',
@@ -15,7 +16,8 @@ export class ClaimDetailsComponent implements OnInit {
   constructor(
     public claimDetailsService: ClaimDetailsService,
     private eventManager: JhiEventManager,
-    private navbarService: NavbarService
+    private navbarService: NavbarService,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -55,6 +57,12 @@ export class ClaimDetailsComponent implements OnInit {
         });
       } else {
         this.claimDetailsService.markClaimDetailsFormAsDirty();
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'auto',
+        });
+        this.toastService.showErrorToast();
       }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;

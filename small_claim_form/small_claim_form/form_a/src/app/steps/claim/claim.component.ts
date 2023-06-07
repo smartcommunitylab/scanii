@@ -11,6 +11,7 @@ declare const $: any;
 datepickerFactory($);
 import 'chosen-js';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { ToastService } from 'src/app/shared/services/toast.service';
 @Component({
   selector: 'app-claim',
   templateUrl: './claim.component.html',
@@ -25,7 +26,8 @@ export class ClaimComponent implements OnInit {
     public claimService: ClaimService,
     private eventManager: JhiEventManager,
     private navbarService: NavbarService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -36,6 +38,7 @@ export class ClaimComponent implements OnInit {
     //   claimingInterest: 'no',
     //   claimingInterestOnCost: 'no',
     // });
+    
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.initDatepicker(event.lang);
       this.europeanCurrencies = event.translations.europeanCurrencies;
@@ -379,6 +382,12 @@ export class ClaimComponent implements OnInit {
         });
       } else {
         this.claimService.markClaimFormAsDirty(this.claimService.editForm);
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'auto',
+        });
+        this.toastService.showErrorToast();
       }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;

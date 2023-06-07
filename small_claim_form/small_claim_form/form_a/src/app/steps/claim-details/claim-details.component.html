@@ -34,7 +34,6 @@
                 >
                   <div class="input-content nopaddingTop">
                     <textarea
-                      onpaste="setOnPaste()"
                       name="dynformSCA7ReasonsForYourClaim"
                       cols="10"
                       rows="7"
@@ -97,6 +96,30 @@
 
                         <span class="asterisk">*</span>
                       </label>
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('writtenEvidence')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('writtenEvidence')!
+                            .dirty
+                        "
+                      >
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get('writtenEvidence')
+                              ?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7WrittenEvidence"
+                            class="error pt-3"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -136,30 +159,6 @@
 <div class="asterisk"  id="requiredStar_blank_dynformSCA7WrittenEvidence"></div>
 
 </label> -->
-                      </div>
-                      <div
-                        *ngIf="
-                          claimDetailsService.editForm.get('writtenEvidence')!
-                            .invalid &&
-                          claimDetailsService.editForm.get('writtenEvidence')!
-                            .dirty
-                        "
-                      >
-                        <div
-                          *ngIf="
-                            claimDetailsService.editForm.get('writtenEvidence')
-                              ?.errors?.required
-                          "
-                        >
-                          <span
-                            id="validation_error_text_dynformSCA7WrittenEvidence"
-                            class="error"
-                            style="position: relative; top: 0px"
-                            [translate]="'errors.required'"
-                          >
-                            Field is required
-                          </span>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -201,30 +200,6 @@
 
 </label> -->
                       </div>
-                      <div
-                        *ngIf="
-                          claimDetailsService.editForm.get('writtenEvidence')!
-                            .invalid &&
-                          claimDetailsService.editForm.get('writtenEvidence')!
-                            .dirty
-                        "
-                      >
-                        <div
-                          *ngIf="
-                            claimDetailsService.editForm.get('writtenEvidence')
-                              ?.errors?.required
-                          "
-                        >
-                          <span
-                            id="validation_error_text_dynformSCA7WrittenEvidence"
-                            class="error"
-                            style="position: relative; top: 0px"
-                            [translate]="'errors.required'"
-                          >
-                            Field is required
-                          </span>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </span>
@@ -263,7 +238,6 @@
                         >
                           <div class="input-content nopaddingTop">
                             <textarea
-                              onpaste="setOnPaste()"
                               name="dynformSCA7WrittenEvidencePleaseSpecify"
                               cols="10"
                               rows="7"
@@ -320,6 +294,29 @@
 
                         <span class="asterisk">*</span>
                       </label>
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('witnesses')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('witnesses')!.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get('witnesses')
+                              ?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7Witnesses"
+                            class="error pt-3"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -359,29 +356,6 @@
 <div class="asterisk"  id="requiredStar_blank_dynformSCA7Witnesses"></div>
 
 </label> -->
-                      </div>
-                      <div
-                        *ngIf="
-                          claimDetailsService.editForm.get('witnesses')!
-                            .invalid &&
-                          claimDetailsService.editForm.get('witnesses')!.dirty
-                        "
-                      >
-                        <div
-                          *ngIf="
-                            claimDetailsService.editForm.get('witnesses')
-                              ?.errors?.required
-                          "
-                        >
-                          <span
-                            id="validation_error_text_dynformSCA7Witnesses"
-                            class="error"
-                            style="position: relative; top: 0px"
-                            [translate]="'errors.required'"
-                          >
-                            Field is required
-                          </span>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -423,29 +397,6 @@
 
 </label> -->
                       </div>
-                      <div
-                        *ngIf="
-                          claimDetailsService.editForm.get('witnesses')!
-                            .invalid &&
-                          claimDetailsService.editForm.get('witnesses')!.dirty
-                        "
-                      >
-                        <div
-                          *ngIf="
-                            claimDetailsService.editForm.get('witnesses')
-                              ?.errors?.required
-                          "
-                        >
-                          <span
-                            id="validation_error_text_dynformSCA7Witnesses"
-                            class="error"
-                            style="position: relative; top: 0px"
-                            [translate]="'errors.required'"
-                          >
-                            Field is required
-                          </span>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </span>
@@ -482,7 +433,6 @@
                         >
                           <div class="input-content nopaddingTop">
                             <textarea
-                              onpaste="setOnPaste()"
                               name="dynformSCA7WitnessesPleaseSpecify"
                               cols="10"
                               rows="7"
@@ -536,6 +486,31 @@
 
                         <span class="asterisk">*</span>
                       </label>
+                      <div
+                        *ngIf="
+                          claimDetailsService.editForm.get('otherClaimDetails')!
+                            .invalid &&
+                          claimDetailsService.editForm.get('otherClaimDetails')!
+                            .dirty
+                        "
+                      >
+                        <div
+                          *ngIf="
+                            claimDetailsService.editForm.get(
+                              'otherClaimDetails'
+                            )?.errors?.required
+                          "
+                        >
+                          <span
+                            id="validation_error_text_dynformSCA7Other"
+                            class="error pt-3"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -575,31 +550,6 @@
 <div class="asterisk"  id="requiredStar_blank_dynformSCA7Other"></div>
 
 </label> -->
-                      </div>
-                      <div
-                        *ngIf="
-                          claimDetailsService.editForm.get('otherClaimDetails')!
-                            .invalid &&
-                          claimDetailsService.editForm.get('otherClaimDetails')!
-                            .dirty
-                        "
-                      >
-                        <div
-                          *ngIf="
-                            claimDetailsService.editForm.get(
-                              'otherClaimDetails'
-                            )?.errors?.required
-                          "
-                        >
-                          <span
-                            id="validation_error_text_dynformSCA7Other"
-                            class="error"
-                            style="position: relative; top: 0px"
-                            [translate]="'errors.required'"
-                          >
-                            Field is required
-                          </span>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -641,31 +591,6 @@
 
 </label> -->
                       </div>
-                      <div
-                        *ngIf="
-                          claimDetailsService.editForm.get('otherClaimDetails')!
-                            .invalid &&
-                          claimDetailsService.editForm.get('otherClaimDetails')!
-                            .dirty
-                        "
-                      >
-                        <div
-                          *ngIf="
-                            claimDetailsService.editForm.get(
-                              'otherClaimDetails'
-                            )?.errors?.required
-                          "
-                        >
-                          <span
-                            id="validation_error_text_dynformSCA7Other"
-                            class="error"
-                            style="position: relative; top: 0px"
-                            [translate]="'errors.required'"
-                          >
-                            Field is required
-                          </span>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </span>
@@ -704,7 +629,6 @@
                         >
                           <div class="input-content nopaddingTop">
                             <textarea
-                              onpaste="setOnPaste()"
                               name="dynformSCA7OtherPleaseSpecify"
                               cols="10"
                               rows="7"

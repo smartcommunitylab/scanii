@@ -4,6 +4,7 @@ import { Movement } from 'src/app/core/common/movement.model';
 import { JurisdictionService } from 'src/app/core/jurisdiction/jurisdiction.service';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';
 import { Direction } from 'src/app/shared/constants/direction.constants';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-jurisdiction',
@@ -14,7 +15,8 @@ export class JurisdictionComponent implements OnInit, AfterViewInit {
   constructor(
     public jurisdictionService: JurisdictionService,
     private eventManager: JhiEventManager,
-    private navbarService: NavbarService
+    private navbarService: NavbarService,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -66,6 +68,12 @@ export class JurisdictionComponent implements OnInit, AfterViewInit {
         if (this.jurisdictionService.editForm.get('otherCheckbox').value)
           this.jurisdictionService.markOtherTextAsDirty();
         else this.jurisdictionService.markCheckboxesAsDirty();
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'auto',
+        });
+        this.toastService.showErrorToast();
       }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;

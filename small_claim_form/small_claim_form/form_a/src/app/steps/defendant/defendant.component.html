@@ -65,13 +65,23 @@
                         <div [attr.id]="'parties[' + i + '].defendant_div'">
                           <div class="form-row full-width bold">
                             <div>
-                              <label
-                                style="margin-bottom: 0px"
-                                [innerHTML]="
-                                  'defendant.defendantDetails' | translate
-                                "
-                              >
-                                2. <i>The defendant’s details</i>
+                              <label style="margin-bottom: 0px">
+                                <span
+                                  [innerHTML]="
+                                    'defendant.defendantDetails' | translate
+                                  "
+                                >
+                                  2. <i>The defendant’s details</i>
+                                </span>
+                                <span
+                                  class="asterisk"
+                                  [attr.id]="
+                                    'requiredStar_required_parties[' +
+                                    i +
+                                    '].dynformSCA2DefendantTitle'
+                                  "
+                                  >*</span
+                                >
                               </label>
                             </div>
                           </div>
@@ -323,24 +333,11 @@
                                     "
                                   ></span>
                                 </label>
+                                <div
+                                  class="sub-concept concept-margin"
+                                  concept="http://scanii.org/domain/defendant.personalIdNumber"
+                                ></div>
 
-                                <!-- <div class="info show-mobile">
-                                  <div class="icon">
-                                    <div class="hover" [translate]="'defendant.identificationCodeInfo'">
-                                      If you know a personal identification
-                                      number given to a defendant by authorities
-                                      of a Member State it would be helpful to
-                                      provide it. Alternatively or additionally
-                                      it would be helpful to provide a number of
-                                      the defendant's passport or identification
-                                      document, if you have them. If the
-                                      defendant is a legal person or any entity
-                                      having legal capacity, it would be helpful
-                                      to provide a relevant registration number
-                                      for the defendant if you know it.
-                                    </div>
-                                  </div>
-                                </div> -->
                                 <div
                                   class="input-wrapper regular hasinfo"
                                   [attr.id]="
@@ -348,34 +345,9 @@
                                     i +
                                     '].dynformSCA2DefendantIdentification'
                                   "
-                                  style="padding-right: 0;"
+                                  style="padding-right: 0"
                                 >
-                                  <!-- <div class="info hide-mobile">
-                                    <div class="icon" tabindex="0">
-                                      <div
-                                        class="hover"
-                                        [translate]="
-                                          'defendant.identificationCodeInfo'
-                                        "
-                                      >
-                                        If you know a personal identification
-                                        number given to a defendant by
-                                        authorities of a Member State it would
-                                        be helpful to provide it. Alternatively
-                                        or additionally it would be helpful to
-                                        provide a number of the defendant's
-                                        passport or identification document, if
-                                        you have them. If the defendant is a
-                                        legal person or any entity having legal
-                                        capacity, it would be helpful to provide
-                                        a relevant registration number for the
-                                        defendant if you know it.
-                                      </div>
-                                    </div>
-                                  </div> -->
                                   <div class="input-content">
-                                    <!-- </if> -->
-
                                     <input
                                       type="text"
                                       [attr.name]="
@@ -1451,6 +1423,15 @@
                                     i +
                                     '].dynformSCA2DefendantEmail'
                                   "
+                                  [ngClass]="{
+                                    invalid:
+                                      defendantService.defendants
+                                        .at(i)
+                                        .get('email')!.invalid &&
+                                      defendantService.defendants
+                                        .at(i)
+                                        .get('email')!.dirty
+                                  }"
                                 >
                                   <div class="input-content">
                                     <!-- </if> -->
@@ -1476,16 +1457,38 @@
                                   </div>
                                 </div>
 
-                                <span
-                                  [attr.id]="
-                                    'validation_error_text_parties[' +
-                                    i +
-                                    '].dynformSCA2DefendantEmail'
+                                <div
+                                  *ngIf="
+                                    defendantService.defendants
+                                      .at(i)
+                                      .get('email')!.invalid &&
+                                    defendantService.defendants
+                                      .at(i)
+                                      .get('email')!.dirty
                                   "
-                                  class="error"
-                                  style="position: relative; top: 0px"
                                 >
-                                </span>
+                                  <div
+                                    *ngIf="
+                                      defendantService.defendants
+                                        .at(i)
+                                        .get('email')?.errors?.email
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2DefendantEmail'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="
+                                        'errors.emailValidationError'
+                                      "
+                                      >Field has an invalid e-mail address
+                                    </span>
+                                  </div>
+                                </div>
 
                                 <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2DefendantEmail" class="error" style="position:relative;top:0px;"> </span>-->
                               </div>
@@ -1496,7 +1499,7 @@
                                   [attr.for]="
                                     'parties[' +
                                     i +
-                                    '].dynformSCA2DefendantRepresentativeTitle'
+                                    '].dynformSCA2DefendantRepresentativeReference'
                                   "
                                 >
                                   <span [translate]="'defendant.representative'"
@@ -1509,7 +1512,7 @@
                                     [attr.id]="
                                       'requiredStar_blank_parties[' +
                                       i +
-                                      '].dynformSCA2DefendantRepresentativeTitle'
+                                      '].dynformSCA2DefendantRepresentativeReference'
                                     "
                                   ></span>
                                 </label>
@@ -1519,7 +1522,7 @@
                                   [attr.id]="
                                     'input-wrapper_parties[' +
                                     i +
-                                    '].dynformSCA2DefendantRepresentativeTitle'
+                                    '].dynformSCA2DefendantRepresentativeReference'
                                   "
                                   [ngClass]="{
                                     invalid:
@@ -1536,12 +1539,12 @@
                                       [attr.name]="
                                         'parties[' +
                                         i +
-                                        '].dynformSCA2DefendantRepresentativeTitle'
+                                        '].dynformSCA2DefendantRepresentativeReference'
                                       "
                                       [attr.id]="
                                         'parties[' +
                                         i +
-                                        '].dynformSCA2DefendantRepresentativeTitle'
+                                        '].dynformSCA2DefendantRepresentativeReference'
                                       "
                                       (change)="
                                         onRepresentativeChange(
@@ -1599,7 +1602,7 @@
                                       [attr.id]="
                                         'validation_error_text_parties[' +
                                         i +
-                                        '].dynformSCA2DefendantRepresentativeTitle'
+                                        '].dynformSCA2DefendantRepresentativeReference'
                                       "
                                       class="error"
                                       style="position: relative; top: 0px"
@@ -1608,7 +1611,7 @@
                                     </span>
                                   </div>
                                 </div>
-                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2DefendantRepresentativeTitle" class="error" style="position:relative;top:0px;"> </span>-->
+                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2DefendantRepresentativeReference" class="error" style="position:relative;top:0px;"> </span>-->
                               </div>
                             </div>
                             <div class="form-row full-width bold">
@@ -1624,7 +1627,10 @@
                                     2.9. Other details</span
                                   >
                                 </label>
-                                <div class="sub-concept other-concept" concept="http://scanii.org/domain/defendant.otherDetails"></div>
+                                <div
+                                  class="sub-concept concept-margin"
+                                  concept="http://scanii.org/domain/defendant.otherDetails"
+                                ></div>
 
                                 <div
                                   class="input-wrapper"
@@ -1636,7 +1642,6 @@
                                 >
                                   <div class="input-content">
                                     <textarea
-                                      onpaste="setOnPaste()"
                                       [attr.name]="
                                         'parties[' +
                                         i +
@@ -1730,7 +1735,60 @@
                             'parties[' + i + '].defendantRepresentative_div'
                           "
                         >
+                          <div class="form-row full-width bold">
+                            <div>
+                              <label style="margin-bottom: 0px">
+                                <span
+                                  [innerHTML]="
+                                    'defendant.representativeDefendantDetails'
+                                      | translate
+                                  "
+                                >
+                                  <i>The representative defendant’s details</i>
+                                </span>
+                                <span
+                                  class="asterisk"
+                                  [attr.id]="
+                                    'requiredStar_required_parties[' +
+                                    i +
+                                    '].dynformSCA2DefendantRepresentativeTitle'
+                                  "
+                                  >*</span
+                                >
+                              </label>
+                            </div>
+                          </div>
                           <div class="marginleft20px">
+                            <div
+                              class="pb-3"
+                              style="margin-left: 20px"
+                              *ngIf="
+                                defendantService.defendants
+                                  .at(i)
+                                  .get('organisation')!.invalid &&
+                                defendantService.defendants
+                                  .at(i)
+                                  .get('organisation')!.dirty
+                              "
+                            >
+                              <span
+                                [attr.id]="
+                                  'validation_error_text_parties[' +
+                                  i +
+                                  '].dynformSCA2DefendantRepresentativeOrganisationSurnameFirstName'
+                                "
+                                class="error"
+                                style="position: relative; top: 0px"
+                                [translate]="
+                                  'errors.organisationSurnameFirstNameValidationError'
+                                "
+                                >Either "Corporate name of company or
+                                organisation" field must be completed or
+                                "Surname" and "First name" fields must be
+                                completed.
+                              </span>
+                            </div>
+
                             <div class="form-row full-width bold">
                               <label
                                 [attr.for]="
@@ -1806,7 +1864,7 @@
                                   />
                                 </div>
                               </div>
-                              <div
+                              <!-- <div
                                 *ngIf="
                                   defendantService.defendants
                                     .at(i)
@@ -1832,7 +1890,7 @@
                                   "Surname" and "First name" fields must be
                                   completed.
                                 </span>
-                              </div>
+                              </div> -->
                             </div>
                             <div class="form-row full-width bold">
                               <div>
@@ -1912,7 +1970,7 @@
                                     />
                                   </div>
                                 </div>
-                                <div
+                                <!-- <div
                                   *ngIf="
                                     defendantService.defendants
                                       .at(i)
@@ -1938,10 +1996,7 @@
                                     "Surname" and "First name" fields must be
                                     completed.
                                   </span>
-                                </div>
-                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2DefendantRepresentativeSurname" class="error" style="position:relative;top:0px;"> </span>
-                            
-                            -->
+                                </div> -->
                               </div>
                             </div>
                             <div class="form-row full-width bold">
@@ -2021,7 +2076,7 @@
                                     />
                                   </div>
                                 </div>
-                                <div
+                                <!-- <div
                                   *ngIf="
                                     defendantService.defendants
                                       .at(i)
@@ -2047,10 +2102,7 @@
                                     "Surname" and "First name" fields must be
                                     completed.
                                   </span>
-                                </div>
-                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2DefendantRepresentativeFistname" class="error" style="position:relative;top:0px;"> </span>
-                            
-                            -->
+                                </div> -->
                               </div>
                             </div>
                             <div class="form-row full-width bold">
@@ -2079,25 +2131,11 @@
                                     "
                                   ></span>
                                 </label>
+                                <div
+                                  class="sub-concept concept-margin"
+                                  concept="http://scanii.org/domain/defendant.personalIdNumber"
+                                ></div>
 
-                                <!-- <div class="info show-mobile">
-                                  <div class="icon">
-                                    <div class="hover" [translate]="'defendant.identificationCodeInfo'">
-                                      If you know a personal identification
-                                        number given to a defendant by
-                                        authorities of a Member State it would
-                                        be helpful to provide it. Alternatively
-                                        or additionally it would be helpful to
-                                        provide a number of the defendant's
-                                        passport or identification document, if
-                                        you have them. If the defendant is a
-                                        legal person or any entity having legal
-                                        capacity, it would be helpful to provide
-                                        a relevant registration number for the
-                                        defendant if you know it.
-                                    </div>
-                                  </div>
-                                </div> -->
                                 <div
                                   class="input-wrapper regular hasinfo"
                                   [attr.id]="
@@ -2105,40 +2143,9 @@
                                     i +
                                     '].dynformSCA2DefendantRepresentativeIdentification'
                                   "
-                                  style="padding-right: 0;"
+                                  style="padding-right: 0"
                                 >
-                                  <!-- <div class="info hide-mobile">
-                                    <div
-                                      class="icon"
-                                      tabindex="0"
-                                      [translate]="
-                                        'defendant.identificationCodeInfo'
-                                      "
-                                    >
-                                      <div
-                                        class="hover"
-                                        [translate]="
-                                          'defendant.identificationCodeInfo'
-                                        "
-                                      >
-                                        If you know a personal identification
-                                        number given to a defendant by
-                                        authorities of a Member State it would
-                                        be helpful to provide it. Alternatively
-                                        or additionally it would be helpful to
-                                        provide a number of the defendant's
-                                        passport or identification document, if
-                                        you have them. If the defendant is a
-                                        legal person or any entity having legal
-                                        capacity, it would be helpful to provide
-                                        a relevant registration number for the
-                                        defendant if you know it.
-                                      </div>
-                                    </div>
-                                  </div> -->
                                   <div class="input-content">
-                                    <!-- </if> -->
-
                                     <input
                                       type="text"
                                       title="Personal identification number or passport number/ registration number"
@@ -3247,6 +3254,15 @@
                                     i +
                                     '].dynformSCA2DefendantRepresentativeCountryEmail'
                                   "
+                                  [ngClass]="{
+                                    invalid:
+                                      defendantService.defendants
+                                        .at(i)
+                                        .get('email')!.invalid &&
+                                      defendantService.defendants
+                                        .at(i)
+                                        .get('email')!.dirty
+                                  }"
                                 >
                                   <div class="input-content">
                                     <!-- </if> -->
@@ -3272,16 +3288,38 @@
                                   </div>
                                 </div>
 
-                                <span
-                                  [attr.id]="
-                                    'validation_error_text_parties[' +
-                                    i +
-                                    '].dynformSCA2DefendantRepresentativeCountryEmail'
+                                <div
+                                  *ngIf="
+                                    defendantService.defendants
+                                      .at(i)
+                                      .get('email')!.invalid &&
+                                    defendantService.defendants
+                                      .at(i)
+                                      .get('email')!.dirty
                                   "
-                                  class="error"
-                                  style="position: relative; top: 0px"
                                 >
-                                </span>
+                                  <div
+                                    *ngIf="
+                                      defendantService.defendants
+                                        .at(i)
+                                        .get('email')?.errors?.email
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2DefendantRepresentativeCountryEmail'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="
+                                        'errors.emailValidationError'
+                                      "
+                                      >Field has an invalid e-mail address
+                                    </span>
+                                  </div>
+                                </div>
 
                                 <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2DefendantRepresentativeCountryEmail" class="error" style="position:relative;top:0px;"> </span> -->
                               </div>

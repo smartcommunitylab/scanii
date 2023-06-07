@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, OnInit } from '@angular/core';
 import { IFRAME_URL, ORIGIN_URL } from 'src/app/app.constants';
+import { TranslateConfigService } from 'src/app/shared/services/translate-config.service';
 
 @Component({
   selector: 'app-main',
@@ -8,12 +8,11 @@ import { IFRAME_URL, ORIGIN_URL } from 'src/app/app.constants';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
-  language: string = 'it';
+  language: string;
 
-  constructor(
-    private translateService: TranslateService
-  ) {
-    this.translateService.use(this.language);
+  constructor(private translateConfigService: TranslateConfigService) {
+    this.translateConfigService.getDefaultLanguage();
+    this.translateConfigService.setLanguage('it');
 
     window.addEventListener('message', this.listener.bind(this), false);
   }
@@ -21,12 +20,11 @@ export class MainComponent {
   private listener(event: MessageEvent) {
     if (event.origin === ORIGIN_URL) {
       this.language = event.data;
-      this.translateService.use(this.language);
+      this.translateConfigService.setLanguage(this.language);
     }
   }
 
   // send() {
-  //   window.parent.postMessage('hello', IFRAME_URL);
+  //   window.parent.postMessage('', IFRAME_URL);
   // }
-
 }

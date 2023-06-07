@@ -7,12 +7,15 @@ import { StepSevenService } from 'src/app/core/step-seven/step-seven.service';
 import { Direction } from 'src/app/shared/constants/direction.constants';
 import datepickerFactory from 'jquery-datepicker';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { ToastService } from 'src/app/shared/services/toast.service';
+import { DatePipe } from '@angular/common';
 declare const $: any;
 datepickerFactory($);
 @Component({
   selector: 'app-step-seven',
   templateUrl: './step-seven.component.html',
   styleUrls: ['./step-seven.component.scss'],
+  providers: [DatePipe],
 })
 export class StepSevenComponent implements OnInit {
   europeanLanguages: { value: string; label: string }[] = [];
@@ -21,14 +24,21 @@ export class StepSevenComponent implements OnInit {
     public stepSevenService: StepSevenService,
     private eventManager: JhiEventManager,
     private navbarService: NavbarService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private toastService: ToastService,
+    private datePipe: DatePipe
   ) {}
 
   ngOnInit(): void {
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      const currentDate = this.datePipe.transform(new Date(), 'dd/MM/yyyy');
+      this.stepSevenService.dateAndSignatureForm.patchValue({
+        date: currentDate,
+      });
       this.initDatepicker(event.lang);
       this.europeanLanguages = event.translations.europeanLanguages;
     });
+
     // this.stepSevenService.oralHearingForm.patchValue({
     //   oralHearingRequest: 'no',
     //   oralHearingPresence: 'no',
@@ -42,7 +52,6 @@ export class StepSevenComponent implements OnInit {
     // });
     // this.stepSevenService.dateAndSignatureForm.patchValue({
     //   city: 'Roma',
-    //   date: '01/01/2021',
     //   sign: 'Mario Rossi',
     // });
   }
@@ -110,6 +119,12 @@ export class StepSevenComponent implements OnInit {
         });
       } else {
         this.stepSevenService.markStepSevenFormsAsDirty();
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'auto',
+        });
+        this.toastService.showErrorToast();
       }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;

@@ -21,6 +21,33 @@
                     </span>
                     <span class="asterisk">*</span>
                   </label>
+                  <div
+                    *ngIf="
+                      stepSevenService.oralHearingForm.get(
+                        'oralHearingRequest'
+                      )!.invalid &&
+                      stepSevenService.oralHearingForm.get(
+                        'oralHearingRequest'
+                      )!.dirty
+                    "
+                  >
+                    <div
+                      *ngIf="
+                        stepSevenService.oralHearingForm.get(
+                          'oralHearingRequest'
+                        )?.errors?.required
+                      "
+                    >
+                      <span
+                        id="validation_error_text_dynformSCA7OralHearingHeld"
+                        class="error pt-3"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                      >
+                        Field is required
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -61,33 +88,6 @@
 
 </label> -->
                   </div>
-                  <div
-                    *ngIf="
-                      stepSevenService.oralHearingForm.get(
-                        'oralHearingRequest'
-                      )!.invalid &&
-                      stepSevenService.oralHearingForm.get(
-                        'oralHearingRequest'
-                      )!.dirty
-                    "
-                  >
-                    <div
-                      *ngIf="
-                        stepSevenService.oralHearingForm.get(
-                          'oralHearingRequest'
-                        )?.errors?.required
-                      "
-                    >
-                      <span
-                        id="validation_error_text_dynformSCA7OralHearingHeld"
-                        class="error"
-                        style="position: relative; top: 0px"
-                        [translate]="'errors.required'"
-                      >
-                        Field is required
-                      </span>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -127,33 +127,6 @@
   <div class="asterisk"  id="requiredStar_blank_dynformSCA7OralHearingHeld"></div>
 
 </label> -->
-                  </div>
-                  <div
-                    *ngIf="
-                      stepSevenService.oralHearingForm.get(
-                        'oralHearingRequest'
-                      )!.invalid &&
-                      stepSevenService.oralHearingForm.get(
-                        'oralHearingRequest'
-                      )!.dirty
-                    "
-                  >
-                    <div
-                      *ngIf="
-                        stepSevenService.oralHearingForm.get(
-                          'oralHearingRequest'
-                        )?.errors?.required
-                      "
-                    >
-                      <span
-                        id="validation_error_text_dynformSCA7OralHearingHeld"
-                        class="error"
-                        style="position: relative; top: 0px"
-                        [translate]="'errors.required'"
-                      >
-                        Field is required
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -251,6 +224,33 @@
 
                     <span class="asterisk">*</span>
                   </label>
+                  <div
+                    *ngIf="
+                      stepSevenService.oralHearingForm.get(
+                        'oralHearingPresence'
+                      )!.invalid &&
+                      stepSevenService.oralHearingForm.get(
+                        'oralHearingPresence'
+                      )!.dirty
+                    "
+                  >
+                    <div
+                      *ngIf="
+                        stepSevenService.oralHearingForm.get(
+                          'oralHearingPresence'
+                        )?.errors?.required
+                      "
+                    >
+                      <span
+                        id="validation_error_text_dynformSCA8OralHearingPhysically"
+                        class="error pt-3"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                      >
+                        Field is required
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -291,33 +291,6 @@
 
 </label> -->
                   </div>
-                  <div
-                    *ngIf="
-                      stepSevenService.oralHearingForm.get(
-                        'oralHearingPresence'
-                      )!.invalid &&
-                      stepSevenService.oralHearingForm.get(
-                        'oralHearingPresence'
-                      )!.dirty
-                    "
-                  >
-                    <div
-                      *ngIf="
-                        stepSevenService.oralHearingForm.get(
-                          'oralHearingPresence'
-                        )?.errors?.required
-                      "
-                    >
-                      <span
-                        id="validation_error_text_dynformSCA8OralHearingPhysically"
-                        class="error"
-                        style="position: relative; top: 0px"
-                        [translate]="'errors.required'"
-                      >
-                        Field is required
-                      </span>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -357,33 +330,6 @@
   <div class="asterisk"  id="requiredStar_blank_dynformSCA8OralHearingPhysically"></div>
 
 </label> -->
-                  </div>
-                  <div
-                    *ngIf="
-                      stepSevenService.oralHearingForm.get(
-                        'oralHearingPresence'
-                      )!.invalid &&
-                      stepSevenService.oralHearingForm.get(
-                        'oralHearingPresence'
-                      )!.dirty
-                    "
-                  >
-                    <div
-                      *ngIf="
-                        stepSevenService.oralHearingForm.get(
-                          'oralHearingPresence'
-                        )?.errors?.required
-                      "
-                    >
-                      <span
-                        id="validation_error_text_dynformSCA8OralHearingPhysically"
-                        class="error"
-                        style="position: relative; top: 0px"
-                        [translate]="'errors.required'"
-                      >
-                        Field is required
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -504,6 +450,33 @@
 
                     <span class="asterisk">*</span>
                   </label>
+                  <div
+                    *ngIf="
+                      stepSevenService.documentAndCommunicationForm.get(
+                        'electronicCommunicationWithCourtTribunal'
+                      )!.invalid &&
+                      stepSevenService.documentAndCommunicationForm.get(
+                        'electronicCommunicationWithCourtTribunal'
+                      )!.dirty
+                    "
+                  >
+                    <div
+                      *ngIf="
+                        stepSevenService.documentAndCommunicationForm.get(
+                          'electronicCommunicationWithCourtTribunal'
+                        )?.errors?.required
+                      "
+                    >
+                      <span
+                        id="validation_error_text_dynformSCA8ServiceOfDocuments"
+                        class="error pt-3"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                      >
+                        Field is required
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -539,33 +512,6 @@
   <div class="asterisk"  id="requiredStar_blank_dynformSCA8ServiceOfDocuments"></div>
 
 </label> -->
-                  </div>
-                  <div
-                    *ngIf="
-                      stepSevenService.documentAndCommunicationForm.get(
-                        'electronicCommunicationWithCourtTribunal'
-                      )!.invalid &&
-                      stepSevenService.documentAndCommunicationForm.get(
-                        'electronicCommunicationWithCourtTribunal'
-                      )!.dirty
-                    "
-                  >
-                    <div
-                      *ngIf="
-                        stepSevenService.documentAndCommunicationForm.get(
-                          'electronicCommunicationWithCourtTribunal'
-                        )?.errors?.required
-                      "
-                    >
-                      <span
-                        id="validation_error_text_dynformSCA8ServiceOfDocuments"
-                        class="error"
-                        style="position: relative; top: 0px"
-                        [translate]="'errors.required'"
-                      >
-                        Field is required
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -603,33 +549,6 @@
 
 </label> -->
                   </div>
-                  <div
-                    *ngIf="
-                      stepSevenService.documentAndCommunicationForm.get(
-                        'electronicCommunicationWithCourtTribunal'
-                      )!.invalid &&
-                      stepSevenService.documentAndCommunicationForm.get(
-                        'electronicCommunicationWithCourtTribunal'
-                      )!.dirty
-                    "
-                  >
-                    <div
-                      *ngIf="
-                        stepSevenService.documentAndCommunicationForm.get(
-                          'electronicCommunicationWithCourtTribunal'
-                        )?.errors?.required
-                      "
-                    >
-                      <span
-                        id="validation_error_text_dynformSCA8ServiceOfDocuments"
-                        class="error"
-                        style="position: relative; top: 0px"
-                        [translate]="'errors.required'"
-                      >
-                        Field is required
-                      </span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </span>
@@ -652,6 +571,33 @@
 
                     <span class="asterisk">*</span>
                   </label>
+                  <div
+                    *ngIf="
+                      stepSevenService.documentAndCommunicationForm.get(
+                        'electronicCommunicationOther'
+                      )!.invalid &&
+                      stepSevenService.documentAndCommunicationForm.get(
+                        'electronicCommunicationOther'
+                      )!.dirty
+                    "
+                  >
+                    <div
+                      *ngIf="
+                        stepSevenService.documentAndCommunicationForm.get(
+                          'electronicCommunicationOther'
+                        )?.errors?.required
+                      "
+                    >
+                      <span
+                        id="validation_error_text_dynformSCA8ServiceOfDocuments2"
+                        class="error pt-3"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                      >
+                        Field is required
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -687,33 +633,6 @@
   <div class="asterisk"  id="requiredStar_blank_dynformSCA8ServiceOfDocuments2"></div>
 
 </label> -->
-                  </div>
-                  <div
-                    *ngIf="
-                      stepSevenService.documentAndCommunicationForm.get(
-                        'electronicCommunicationOther'
-                      )!.invalid &&
-                      stepSevenService.documentAndCommunicationForm.get(
-                        'electronicCommunicationOther'
-                      )!.dirty
-                    "
-                  >
-                    <div
-                      *ngIf="
-                        stepSevenService.documentAndCommunicationForm.get(
-                          'electronicCommunicationOther'
-                        )?.errors?.required
-                      "
-                    >
-                      <span
-                        id="validation_error_text_dynformSCA8ServiceOfDocuments2"
-                        class="error"
-                        style="position: relative; top: 0px"
-                        [translate]="'errors.required'"
-                      >
-                        Field is required
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -751,33 +670,6 @@
 
 </label> -->
                   </div>
-                  <div
-                    *ngIf="
-                      stepSevenService.documentAndCommunicationForm.get(
-                        'electronicCommunicationOther'
-                      )!.invalid &&
-                      stepSevenService.documentAndCommunicationForm.get(
-                        'electronicCommunicationOther'
-                      )!.dirty
-                    "
-                  >
-                    <div
-                      *ngIf="
-                        stepSevenService.documentAndCommunicationForm.get(
-                          'electronicCommunicationOther'
-                        )?.errors?.required
-                      "
-                    >
-                      <span
-                        id="validation_error_text_dynformSCA8ServiceOfDocuments2"
-                        class="error"
-                        style="position: relative; top: 0px"
-                        [translate]="'errors.required'"
-                      >
-                        Field is required
-                      </span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </span>
@@ -803,6 +695,30 @@
 
                 <span class="asterisk">*</span>
               </label>
+              <div
+                *ngIf="
+                  stepSevenService.certificateForm.get('certificateRequest')!
+                    .invalid &&
+                  stepSevenService.certificateForm.get('certificateRequest')!
+                    .dirty
+                "
+              >
+                <div
+                  *ngIf="
+                    stepSevenService.certificateForm.get('certificateRequest')
+                      ?.errors?.required
+                  "
+                >
+                  <span
+                    id="validation_error_text_dynformSCA8Certificate"
+                    class="error pt-3"
+                    style="position: relative; top: 0px"
+                    [translate]="'errors.required'"
+                  >
+                    Field is required
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -832,30 +748,6 @@
                     ></span>
                   </label>
                 </div>
-                <div
-                  *ngIf="
-                    stepSevenService.certificateForm.get('certificateRequest')!
-                      .invalid &&
-                    stepSevenService.certificateForm.get('certificateRequest')!
-                      .dirty
-                  "
-                >
-                  <div
-                    *ngIf="
-                      stepSevenService.certificateForm.get('certificateRequest')
-                        ?.errors?.required
-                    "
-                  >
-                    <span
-                      id="validation_error_text_dynformSCA8Certificate"
-                      class="error"
-                      style="position: relative; top: 0px"
-                      [translate]="'errors.required'"
-                    >
-                      Field is required
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -883,30 +775,6 @@
                       id="requiredStar_blank_dynformSCA8Certificate"
                     ></span>
                   </label>
-                </div>
-                <div
-                  *ngIf="
-                    stepSevenService.certificateForm.get('certificateRequest')!
-                      .invalid &&
-                    stepSevenService.certificateForm.get('certificateRequest')!
-                      .dirty
-                  "
-                >
-                  <div
-                    *ngIf="
-                      stepSevenService.certificateForm.get('certificateRequest')
-                        ?.errors?.required
-                    "
-                  >
-                    <span
-                      id="validation_error_text_dynformSCA8Certificate"
-                      class="error"
-                      style="position: relative; top: 0px"
-                      [translate]="'errors.required'"
-                    >
-                      Field is required
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>

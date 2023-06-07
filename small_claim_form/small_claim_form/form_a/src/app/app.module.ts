@@ -21,6 +21,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { JhiConfigService, missingTranslationHandler } from 'ng-jhipster';
 import { AngularIbanModule } from 'angular-iban';
+import { CustomModule } from './shared/custom.module';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { AngularIbanModule } from 'angular-iban';
     ReactiveFormsModule,
     CommonModule,
     HttpClientModule,
+    CustomModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
@@ -56,7 +58,7 @@ import { AngularIbanModule } from 'angular-iban';
         useFactory: missingTranslationHandler,
         deps: [JhiConfigService]
       }
-    }),
+    })
   ],
   providers: [],
   bootstrap: [MainComponent],

@@ -7,6 +7,7 @@ import { Movement } from 'src/app/core/common/movement.model';
 import { Direction } from 'src/app/shared/constants/direction.constants';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import datepickerFactory from 'jquery-datepicker';
+import { ToastService } from 'src/app/shared/services/toast.service';
 declare const $: any;
 datepickerFactory($);
 
@@ -23,7 +24,8 @@ export class StepFourComponent implements OnInit {
     public stepFourService: StepFourService,
     private eventManager: JhiEventManager,
     private navbarService: NavbarService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -250,7 +252,15 @@ export class StepFourComponent implements OnInit {
           name: 'changeStep',
           content: movement,
         });
-      } else this.stepFourService.markStepFourFormsAsDirty();
+      } else {
+        this.stepFourService.markStepFourFormsAsDirty();
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'auto',
+        });
+        this.toastService.showErrorToast();
+      }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;
       this.navbarService.currentStepId = destinationStepId;

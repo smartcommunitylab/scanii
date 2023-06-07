@@ -15,6 +15,26 @@
 
                 <span class="asterisk">*</span>
               </label>
+              <div
+                *ngIf="
+                  claimService.editForm.get('claimForMoney')!.invalid &&
+                  claimService.editForm.get('claimForMoney')!.dirty
+                "
+              >
+                <div
+                  *ngIf="
+                    claimService.editForm.get('claimForMoney')?.errors?.required
+                  "
+                >
+                  <span
+                    id="validation_error_text_dynformSCA6ClaimMoney"
+                    class="error pt-3"
+                    style="position: relative; top: 0px"
+                    [translate]="'errors.required'"
+                    >Field is required
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -65,26 +85,6 @@
 
 </label> -->
               </div>
-              <div
-                *ngIf="
-                  claimService.editForm.get('claimForMoney')!.invalid &&
-                  claimService.editForm.get('claimForMoney')!.dirty
-                "
-              >
-                <div
-                  *ngIf="
-                    claimService.editForm.get('claimForMoney')?.errors?.required
-                  "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA6ClaimMoney"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.required'"
-                    >Field is required
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -134,27 +134,6 @@
   <div class="asterisk"  id="requiredStar_blank_dynformSCA6ClaimMoney"></div>
 
 </label> -->
-              </div>
-              <div
-                *ngIf="
-                  claimService.editForm.get('claimForMoney')!.invalid &&
-                  claimService.editForm.get('claimForMoney')!.dirty
-                "
-              >
-                <div
-                  *ngIf="
-                    claimService.editForm.get('claimForMoney')?.errors?.required
-                  "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA6ClaimMoney"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.required'"
-                  >
-                    Field is required
-                  </span>
-                </div>
               </div>
             </div>
           </div>
@@ -1039,9 +1018,33 @@
                 <span [translate]="'claim.otherClaim'">5.2. Other claim</span>
                 <span class="asterisk">*</span>
               </label>
+              <div
+                *ngIf="
+                  claimService.editForm.get('otherClaim')!.invalid &&
+                  claimService.editForm.get('otherClaim')!.dirty
+                "
+              >
+                <div
+                  *ngIf="
+                    claimService.editForm.get('otherClaim')?.errors?.required
+                  "
+                >
+                  <span
+                    id="validation_error_text_dynformSCA6ClaimOther"
+                    class="error pt-3"
+                    style="position: relative; top: 0px"
+                    [translate]="'errors.required'"
+                  >
+                    Field is required
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="sub-concept" concept="http://scanii.org/domain/claim.otherClaim"></div>
+          <div
+            class="sub-concept"
+            concept="http://scanii.org/domain/claim.otherClaim"
+          ></div>
 
           <div class="form-row full-width bold">
             <div>
@@ -1089,27 +1092,6 @@
   <div class="asterisk"  id="requiredStar_blank_dynformSCA6ClaimOther"></div>
 
 </label> -->
-              </div>
-              <div
-                *ngIf="
-                  claimService.editForm.get('otherClaim')!.invalid &&
-                  claimService.editForm.get('otherClaim')!.dirty
-                "
-              >
-                <div
-                  *ngIf="
-                    claimService.editForm.get('otherClaim')?.errors?.required
-                  "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA6ClaimOther"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.required'"
-                  >
-                    Field is required
-                  </span>
-                </div>
               </div>
             </div>
           </div>
@@ -1160,27 +1142,6 @@
   <div class="asterisk"  id="requiredStar_blank_dynformSCA6ClaimOther"></div>
 
 </label> -->
-              </div>
-              <div
-                *ngIf="
-                  claimService.editForm.get('otherClaim')!.invalid &&
-                  claimService.editForm.get('otherClaim')!.dirty
-                "
-              >
-                <div
-                  *ngIf="
-                    claimService.editForm.get('otherClaim')?.errors?.required
-                  "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA6ClaimOther"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.required'"
-                  >
-                    Field is required
-                  </span>
-                </div>
               </div>
             </div>
           </div>
@@ -2141,9 +2102,35 @@
 
                 <span class="asterisk">*</span>
               </label>
+              <div
+                *ngIf="
+                  claimService.editForm.get('claimingCostProceedings')!
+                    .invalid &&
+                  claimService.editForm.get('claimingCostProceedings')!.dirty
+                "
+              >
+                <div
+                  *ngIf="
+                    claimService.editForm.get('claimingCostProceedings')?.errors
+                      ?.required
+                  "
+                >
+                  <span
+                    id="validation_error_text_dynformSCA6ClaimingCosts"
+                    class="error pt-3"
+                    style="position: relative; top: 0px"
+                    [translate]="'errors.required'"
+                  >
+                    Field is required
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="sub-concept" concept="http://scanii.org/domain/claim.claimCostOfProceeding"></div>
+          <div
+            class="sub-concept"
+            concept="http://scanii.org/domain/claim.claimCostOfProceeding"
+          ></div>
 
           <div class="form-row full-width bold">
             <div>
@@ -2183,29 +2170,6 @@
   <div class="asterisk"  id="requiredStar_blank_dynformSCA6ClaimingCosts"></div>
 
 </label> -->
-              </div>
-              <div
-                *ngIf="
-                  claimService.editForm.get('claimingCostProceedings')!
-                    .invalid &&
-                  claimService.editForm.get('claimingCostProceedings')!.dirty
-                "
-              >
-                <div
-                  *ngIf="
-                    claimService.editForm.get('claimingCostProceedings')?.errors
-                      ?.required
-                  "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA6ClaimingCosts"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.required'"
-                  >
-                    Field is required
-                  </span>
-                </div>
               </div>
             </div>
           </div>
@@ -2248,29 +2212,6 @@
   <div class="asterisk"  id="requiredStar_blank_dynformSCA6ClaimingCosts"></div>
 
 </label> -->
-              </div>
-              <div
-                *ngIf="
-                  claimService.editForm.get('claimingCostProceedings')!
-                    .invalid &&
-                  claimService.editForm.get('claimingCostProceedings')!.dirty
-                "
-              >
-                <div
-                  *ngIf="
-                    claimService.editForm.get('claimingCostProceedings')?.errors
-                      ?.required
-                  "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA6ClaimingCosts"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.required'"
-                  >
-                    Field is required
-                  </span>
-                </div>
               </div>
             </div>
           </div>
@@ -2362,9 +2303,34 @@
 
                 <span class="asterisk">*</span>
               </label>
+              <div
+                *ngIf="
+                  claimService.editForm.get('claimingInterest')!.invalid &&
+                  claimService.editForm.get('claimingInterest')!.dirty
+                "
+              >
+                <div
+                  *ngIf="
+                    claimService.editForm.get('claimingInterest')?.errors
+                      ?.required
+                  "
+                >
+                  <span
+                    id="validation_error_text_dynformSCA6ClaimingInterest"
+                    class="error pt-3"
+                    style="position: relative; top: 0px"
+                    [translate]="'errors.required'"
+                  >
+                    Field is required
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="sub-concept" concept="http://scanii.org/domain/claim.claimInterests"></div>
+          <div
+            class="sub-concept"
+            concept="http://scanii.org/domain/claim.claimInterests"
+          ></div>
 
           <div class="form-row full-width bold">
             <div>
@@ -2411,28 +2377,6 @@
   <div class="asterisk"  id="requiredStar_blank_dynformSCA6ClaimingInterest"></div>
 
 </label> -->
-              </div>
-              <div
-                *ngIf="
-                  claimService.editForm.get('claimingInterest')!.invalid &&
-                  claimService.editForm.get('claimingInterest')!.dirty
-                "
-              >
-                <div
-                  *ngIf="
-                    claimService.editForm.get('claimingInterest')?.errors
-                      ?.required
-                  "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA6ClaimingInterest"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.required'"
-                  >
-                    Field is required
-                  </span>
-                </div>
               </div>
             </div>
           </div>
@@ -2483,28 +2427,6 @@
 
 </label> -->
               </div>
-              <div
-                *ngIf="
-                  claimService.editForm.get('claimingInterest')!.invalid &&
-                  claimService.editForm.get('claimingInterest')!.dirty
-                "
-              >
-                <div
-                  *ngIf="
-                    claimService.editForm.get('claimingInterest')?.errors
-                      ?.required
-                  "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA6ClaimingInterest"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.required'"
-                  >
-                    Field is required
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -2523,6 +2445,33 @@
 
                       <span class="asterisk">*</span>
                     </label>
+                    <div
+                      *ngIf="
+                        claimService.editForm
+                          .get('claimingInterestExpansion')
+                          .get('claimingInterestOption')!.invalid &&
+                        claimService.editForm
+                          .get('claimingInterestExpansion')
+                          .get('claimingInterestOption')!.dirty
+                      "
+                    >
+                      <div
+                        *ngIf="
+                          claimService.editForm
+                            .get('claimingInterestExpansion')
+                            .get('claimingInterestOption')?.errors?.required
+                        "
+                      >
+                        <span
+                          id="validation_error_text_dynformSCA6ClaimingInterestType"
+                          class="error pt-3"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                        >
+                          Field is required
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -2576,33 +2525,6 @@
 
 </label> -->
                     </div>
-                    <div
-                      *ngIf="
-                        claimService.editForm
-                          .get('claimingInterestExpansion')
-                          .get('claimingInterestOption')!.invalid &&
-                        claimService.editForm
-                          .get('claimingInterestExpansion')
-                          .get('claimingInterestOption')!.dirty
-                      "
-                    >
-                      <div
-                        *ngIf="
-                          claimService.editForm
-                            .get('claimingInterestExpansion')
-                            .get('claimingInterestOption')?.errors?.required
-                        "
-                      >
-                        <span
-                          id="validation_error_text_dynformSCA6ClaimingInterestType"
-                          class="error"
-                          style="position: relative; top: 0px"
-                          [translate]="'errors.required'"
-                        >
-                          Field is required
-                        </span>
-                      </div>
-                    </div>
                   </div>
                 </div>
 
@@ -2648,33 +2570,6 @@
   <div class="asterisk"  id="requiredStar_blank_dynformSCA6ClaimingInterestType"></div>
 
 </label> -->
-                    </div>
-                    <div
-                      *ngIf="
-                        claimService.editForm
-                          .get('claimingInterestExpansion')
-                          .get('claimingInterestOption')!.invalid &&
-                        claimService.editForm
-                          .get('claimingInterestExpansion')
-                          .get('claimingInterestOption')!.dirty
-                      "
-                    >
-                      <div
-                        *ngIf="
-                          claimService.editForm
-                            .get('claimingInterestExpansion')
-                            .get('claimingInterestOption')?.errors?.required
-                        "
-                      >
-                        <span
-                          id="validation_error_text_dynformSCA6ClaimingInterestType"
-                          class="error"
-                          style="position: relative; top: 0px"
-                          [translate]="'errors.required'"
-                        >
-                          Field is required
-                        </span>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -3747,6 +3642,29 @@
 
                 <span class="asterisk">*</span>
               </label>
+              <div
+                *ngIf="
+                  claimService.editForm.get('claimingInterestOnCost')!
+                    .invalid &&
+                  claimService.editForm.get('claimingInterestOnCost')!.dirty
+                "
+              >
+                <div
+                  *ngIf="
+                    claimService.editForm.get('claimingInterestOnCost')?.errors
+                      ?.required
+                  "
+                >
+                  <span
+                    id="validation_error_text_dynformSCA6ClaimingInterestCost"
+                    class="error pt-3"
+                    style="position: relative; top: 0px"
+                    [translate]="'errors.required'"
+                  >
+                    Field is required
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -3799,29 +3717,6 @@
 
 </label> -->
               </div>
-              <div
-                *ngIf="
-                  claimService.editForm.get('claimingInterestOnCost')!
-                    .invalid &&
-                  claimService.editForm.get('claimingInterestOnCost')!.dirty
-                "
-              >
-                <div
-                  *ngIf="
-                    claimService.editForm.get('claimingInterestOnCost')?.errors
-                      ?.required
-                  "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA6ClaimingInterestCost"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.required'"
-                  >
-                    Field is required
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -3873,29 +3768,6 @@
   <div class="asterisk"  id="requiredStar_blank_dynformSCA6ClaimingInterestCost"></div>
 
 </label> -->
-              </div>
-              <div
-                *ngIf="
-                  claimService.editForm.get('claimingInterestOnCost')!
-                    .invalid &&
-                  claimService.editForm.get('claimingInterestOnCost')!.dirty
-                "
-              >
-                <div
-                  *ngIf="
-                    claimService.editForm.get('claimingInterestOnCost')?.errors
-                      ?.required
-                  "
-                >
-                  <span
-                    id="validation_error_text_dynformSCA6ClaimingInterestCost"
-                    class="error"
-                    style="position: relative; top: 0px"
-                    [translate]="'errors.required'"
-                  >
-                    Field is required
-                  </span>
-                </div>
               </div>
             </div>
           </div>

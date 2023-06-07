@@ -36,6 +36,8 @@ export class ClaimantService {
   }[] = [];
   onStableSubscription: Subscription;
   representativeOptionLabel: string;
+  europeanCountries: { value: string; label: string }[] = [];
+  worldCountries: { value: string; label: string }[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -74,7 +76,7 @@ export class ClaimantService {
           country: ['', [Validators.required]],
           countryOther: [''],
           phoneNumber: [''],
-          email: [''],
+          email: ['', [Validators.email]],
           representative: [''],
           otherDetails: [''],
           isRepresentative: [false],
@@ -95,7 +97,7 @@ export class ClaimantService {
           country: ['', [Validators.required]],
           countryOther: [''],
           phoneNumber: [''],
-          email: [''],
+          email: ['', [Validators.email]],
           isRepresentative: [true],
         },
         { validator: this.validateOrganisationSurnameFirstName }
@@ -280,21 +282,38 @@ export class ClaimantService {
   }
 
   setClaimantForm(claimants: any[]): Promise<void> {
-    this.resetAll();
-    for (let i = 0; i < claimants.length; i++) {
-      const claimant = claimants[i];
+    return new Promise<void>((resolve) => {
+      this.resetAll();
+      this.translateService
+        .get(['europeanCountries', 'worldCountries'])
+        .subscribe((res) => {
+          this.europeanCountries = res.europeanCountries;
+          this.worldCountries = res.worldCountries;
 
-      if (!claimant.isRepresentative) {
-        this.claimants.push(this.createFormGroup('claimant'));
-        this.editForm.get('claimants').get(i.toString()).setValue(claimant);
-      } else {
-        this.claimants.push(this.createFormGroup('representative'));
-        this.addRepresentative(i);
-        this.editForm.get('claimants').get(i.toString()).setValue(claimant);
-      }
-    }
+          for (let i = 0; i < claimants.length; i++) {
+            const claimant = claimants[i];
 
-    return this.handleStableEvent(claimants);
+            if (!claimant.isRepresentative) {
+              this.claimants.push(this.createFormGroup('claimant'));
+              this.editForm
+                .get('claimants')
+                .get(i.toString())
+                .setValue(claimant);
+            } else {
+              this.claimants.push(this.createFormGroup('representative'));
+              this.addRepresentative(i);
+              this.editForm
+                .get('claimants')
+                .get(i.toString())
+                .setValue(claimant);
+            }
+          }
+
+          this.handleStableEvent(claimants).then(() => {
+            resolve();
+          });
+        });
+    });
   }
 
   private handleStableEvent(claimants: any[]): Promise<void> {

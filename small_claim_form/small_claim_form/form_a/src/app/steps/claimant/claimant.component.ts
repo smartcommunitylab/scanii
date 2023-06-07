@@ -1,13 +1,19 @@
 import { NavbarService } from '../../core/navbar/navbar.service';
 import { ClaimantService } from '../../core/claimant/claimant.service';
-import { Component, OnInit } from '@angular/core';
-import { FormArray, Validators } from '@angular/forms';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { FormArray } from '@angular/forms';
 import 'chosen-js';
 import { LabelType } from '../../shared/constants/claimant.constants';
 import { Direction } from 'src/app/shared/constants/direction.constants';
 import { Movement } from 'src/app/core/common/movement.model';
 import { JhiEventManager } from 'ng-jhipster';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+import {
+  TemporaryStorageFacet,
+  TemporaryStorageService,
+} from 'src/app/shared/services/temporary-storage.service';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-claimant',
@@ -16,20 +22,26 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 })
 export class ClaimantComponent implements OnInit {
   selectedOption: string;
-  europeanCountries: { value: string; label: string }[] = [];
-  worldCountries: { value: string; label: string }[] = [];
+  onStableSubscription: Subscription;
+  temporaryStorage: TemporaryStorageFacet;
 
   constructor(
     public claimantService: ClaimantService,
     private eventManager: JhiEventManager,
     private navbarService: NavbarService,
-    private translateService: TranslateService
-  ) {}
+    private translateService: TranslateService,
+    private zone: NgZone,
+    private temporaryStorageService: TemporaryStorageService,
+    private toastService: ToastService
+  ) {
+    this.temporaryStorage = temporaryStorageService.forKey('claimant');
+  }
 
   ngOnInit(): void {
     this.claimantService.claimants = this.claimantService.editForm.get(
       'claimants'
     ) as FormArray;
+
     // this.claimantService.claimants.controls[0].patchValue({
     //   firstName: 'John',
     //   surname: 'Doe',
@@ -38,9 +50,15 @@ export class ClaimantComponent implements OnInit {
     //   city: 'New York',
     //   country: 'IT',
     // });
+
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.europeanCountries = event.translations.europeanCountries;
-      this.worldCountries = event.translations.worldCountries;
+      this.claimantService.europeanCountries =
+        event.translations.europeanCountries;
+      this.claimantService.worldCountries = event.translations.worldCountries;
+    });
+
+    this.claimantService.editForm.valueChanges.subscribe((value) => {
+      this.temporaryStorage.set(value);
     });
   }
 
@@ -87,7 +105,24 @@ export class ClaimantComponent implements OnInit {
       if (element.classList.contains('open')) element.classList.remove('open');
     }
 
-    this.selectedOption = undefined;
+    this.onStableSubscription = this.zone.onStable.subscribe(() => {
+      if (this.onStableSubscription) {
+        this.onStableSubscription.unsubscribe();
+      }
+      window['processClaimantDefendantRepresentativeConcept'](
+        'step1',
+        'http://scanii.org/domain/claimant.personalIdNumber'
+      );
+
+      if (this.selectedOption === 'claimant') {
+        window['processClaimantDefendantRepresentativeConcept'](
+          'step1',
+          'http://scanii.org/domain/claimant.otherDetails'
+        );
+      }
+
+      this.selectedOption = undefined;
+    });
   }
 
   private addRequiredValidator(formControl: any) {
@@ -300,6 +335,12 @@ export class ClaimantComponent implements OnInit {
       }
     } else {
       this.claimantService.markAsDirty();
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'auto',
+      });
+      this.toastService.showErrorToast();
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { FormArray } from '@angular/forms';
 import 'chosen-js';
 import { LabelType } from '../../shared/constants/defendant.constants';
@@ -8,6 +8,8 @@ import { JhiEventManager } from 'ng-jhipster';
 import { DefendantService } from 'src/app/core/defendant/defendant.service';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-defendant',
@@ -18,18 +20,22 @@ export class DefendantComponent implements OnInit {
   selectedOption: string;
   europeanCountries: { value: string; label: string }[] = [];
   worldCountries: { value: string; label: string }[] = [];
+  onStableSubscription: Subscription;
 
   constructor(
     public defendantService: DefendantService,
     private eventManager: JhiEventManager,
     private navbarService: NavbarService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private zone: NgZone,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
     this.defendantService.defendants = this.defendantService.editForm.get(
       'defendants'
     ) as FormArray;
+
     // this.defendantService.defendants.controls[0].patchValue({
     //   firstName: 'John',
     //   surname: 'Doe',
@@ -38,6 +44,7 @@ export class DefendantComponent implements OnInit {
     //   city: 'New York',
     //   country: 'IT',
     // });
+
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.europeanCountries = event.translations.europeanCountries;
       this.worldCountries = event.translations.worldCountries;
@@ -87,7 +94,24 @@ export class DefendantComponent implements OnInit {
       if (element.classList.contains('open')) element.classList.remove('open');
     }
 
-    this.selectedOption = undefined;
+    this.onStableSubscription = this.zone.onStable.subscribe(() => {
+      if (this.onStableSubscription) {
+        this.onStableSubscription.unsubscribe();
+      }
+      window['processClaimantDefendantRepresentativeConcept'](
+        'step2',
+        'http://scanii.org/domain/defendant.personalIdNumber'
+      );
+
+      if (this.selectedOption === 'defendant') {
+        window['processClaimantDefendantRepresentativeConcept'](
+          'step2',
+          'http://scanii.org/domain/defendant.otherDetails'
+        );
+      }
+
+      this.selectedOption = undefined;
+    });
   }
 
   private addRequiredValidator(formControl: any) {
@@ -299,7 +323,15 @@ export class DefendantComponent implements OnInit {
           name: 'changeStep',
           content: movement,
         });
-      } else this.defendantService.markAsDirty();
+      } else {
+        this.defendantService.markAsDirty();
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'auto',
+        });
+        this.toastService.showErrorToast();
+      }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;
       this.navbarService.currentStepId = destinationStepId;

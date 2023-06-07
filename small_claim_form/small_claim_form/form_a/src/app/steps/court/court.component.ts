@@ -5,6 +5,7 @@ import { Movement } from 'src/app/core/common/movement.model';
 import { CourtService } from 'src/app/core/court/court.service';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';
 import { Direction } from 'src/app/shared/constants/direction.constants';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-court',
@@ -19,7 +20,8 @@ export class CourtComponent implements OnInit {
     public courtService: CourtService,
     private eventManager: JhiEventManager,
     public navbarService: NavbarService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -47,8 +49,15 @@ export class CourtComponent implements OnInit {
 
   generateJson() {
     if (!this.courtService.editForm.invalid) {
+      this.navbarService.generateJson();
     } else {
       this.courtService.markCourtFormAsDirty();
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'auto',
+      });
+      this.toastService.showErrorToast();
     }
   }
 
@@ -60,7 +69,8 @@ export class CourtComponent implements OnInit {
     if (country) {
       this.selectedCountry = country.label;
     }
-    if (this.courtService.editForm.get('country').value === 'GB') this.openModal('js_modal_form_disclaimer_court');
+    if (this.courtService.editForm.get('country').value === 'GB')
+      this.openModal('js_modal_form_disclaimer_court');
   }
 
   openModal(id: string) {
