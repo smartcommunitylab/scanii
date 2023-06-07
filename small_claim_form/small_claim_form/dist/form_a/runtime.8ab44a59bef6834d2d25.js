@@ -73,7 +73,7 @@
     (f.e = (e) =>
       Promise.all(Object.keys(f.f).reduce((t, a) => (f.f[a](e, t), t), []))),
     (f.u = (e) =>
-      "form_a" +
+      "form_a/" +
       e +
       "." +
       {
@@ -152,7 +152,7 @@
         9369: "8089536e3b382a28cd26",
       }[e] +
       ".js"),
-    (f.miniCssF = (e) => "styles.af4b2cc702f9fb1f1a8c.css"),
+    (f.miniCssF = (e) => "styles.bee657191c4f76127548.css"),
     (f.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
     (() => {
       var e = {},
