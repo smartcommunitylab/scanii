@@ -57,9 +57,9 @@ export class ClaimantComponent implements OnInit {
       this.claimantService.worldCountries = event.translations.worldCountries;
     });
 
-    this.claimantService.editForm.valueChanges.subscribe((value) => {
-      this.temporaryStorage.set(value);
-    });
+    // this.claimantService.editForm.valueChanges.subscribe((value) => {
+    //   this.temporaryStorage.set(value);
+    // });
   }
 
   openModal(id: string) {
@@ -111,13 +111,15 @@ export class ClaimantComponent implements OnInit {
       }
       window['processClaimantDefendantRepresentativeConcept'](
         'step1',
-        'http://scanii.org/domain/claimant.personalIdNumber'
+        'http://scanii.org/domain/claimant.personalIdNumber',
+        true
       );
 
       if (this.selectedOption === 'claimant') {
         window['processClaimantDefendantRepresentativeConcept'](
           'step1',
-          'http://scanii.org/domain/claimant.otherDetails'
+          'http://scanii.org/domain/claimant.otherDetails',
+          true
         );
       }
 

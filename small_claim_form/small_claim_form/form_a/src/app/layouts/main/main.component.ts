@@ -8,23 +8,22 @@ import { TranslateConfigService } from 'src/app/shared/services/translate-config
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
-  language: string;
 
   constructor(private translateConfigService: TranslateConfigService) {
-    this.translateConfigService.getDefaultLanguage();
-    this.translateConfigService.setLanguage('it');
+    const currentLang = this.translateConfigService.getDefaultLanguage();
+    this.translateConfigService.setLanguage(currentLang);
 
     window.addEventListener('message', this.listener.bind(this), false);
   }
 
   private listener(event: MessageEvent) {
     if (event.origin === ORIGIN_URL) {
-      this.language = event.data;
-      this.translateConfigService.setLanguage(this.language);
+      this.translateConfigService.setLanguage(event.data);
     }
   }
 
-  // send() {
-  //   window.parent.postMessage('', IFRAME_URL);
-  // }
+  send() {
+    // TODO
+    //window.parent.postMessage('', IFRAME_URL);
+  }
 }

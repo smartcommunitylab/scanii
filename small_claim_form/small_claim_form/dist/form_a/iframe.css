@@ -15987,7 +15987,7 @@ html {
 #globan.dark .globan-content a:active:after,
 #globan .globan-content a[aria-expanded="true"]:after,
 #globan.dark .globan-content a[aria-expanded="true"]:after {
-  background: center center / 12px auto no-repeat transparent url("https://europa.eu/webtools/services/globan/images/chevron-blue.svg");
+  background: center center / 12px auto no-repeat transparent url("https://europa.eu/webtools/images/chevron-blue.svg?t=1686143960");
 }
 
 #globan.dark {
@@ -16009,7 +16009,7 @@ html {
   -ms-transition: all 0.3s;
   transition: all 0.3s;
   margin-left: 2px;
-  background: center center / 12px auto no-repeat transparent url("https://europa.eu/webtools/services/globan/images/chevron-grey.svg");
+  background: center center / 12px auto no-repeat transparent url("https://europa.eu/webtools/images/chevron-grey.svg?t=1686143960");
 }
 
 #globan.dark .globan-content a:after {
@@ -16025,7 +16025,7 @@ html {
   display: inline-block;
   width: 24px;
   height: 16px;
-  background: center center / 110% auto no-repeat #004494 url("https://europa.eu/webtools/services/globan/images/flag.svg");
+  background: center center / 110% auto no-repeat #004494 url("https://europa.eu/webtools/images/flag.svg?t=1686143960");
   float: left;
   margin: 5.5px 8px 0 0;
   border: 1px solid #004494;
@@ -16151,8 +16151,6 @@ html {
   #globan .globan-content a:focus,
   #globan .globan-content a:active {
     display: inline-block;
-    width: 30px;
-    padding: 0;
     position: relative;
     white-space: nowrap;
     float: right;
@@ -16161,9 +16159,6 @@ html {
   }
 
   #globan .globan-content a:after {
-    position: absolute;
-    left: -3px;
-    top: 0;
     margin: 0;
     width: 30px;
   }

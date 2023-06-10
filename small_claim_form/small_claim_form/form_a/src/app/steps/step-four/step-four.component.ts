@@ -34,6 +34,7 @@ export class StepFourComponent implements OnInit {
     //   defendantCountry: 'ES',
     //   courtCountry: 'IT',
     // });
+    
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.europeanCountries = event.translations.europeanCountries;
       this.worldCountries = event.translations.worldCountries;

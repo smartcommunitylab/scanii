@@ -196,7 +196,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
       });
     });
 
-    this.setClaimant();
+    //this.setClaimant();
   }
 
   setClaimant() {
@@ -204,7 +204,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
       this.temporaryStorageService.forKey('claimant');
     temporaryStorage.get().then((data: any) => {
       if (data && data.claimants.length > 0) {
-        this.claimantService.setClaimantForm(data.claimants);
+        this.claimantService.setClaimantForm(data.claimants, false);
       }
     });
   }
@@ -399,13 +399,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
     reader.onload = () => {
       const fileContent = reader.result as string;
       const jsonData = JSON.parse(fileContent);
-      this.setClaimForm(jsonData.form_A);
+      this.setFormA(jsonData.form_A);
     };
 
     if (this.file) reader.readAsText(this.file);
   }
 
-  private setClaimForm(data: IntermediateForm) {
+  private setFormA(data: IntermediateForm) {
     this.claimantService
       .setClaimantForm(data.claimants)
       .then(() => {

@@ -211,7 +211,7 @@ export class DefendantService {
     return this.representativeOptionLabel + ' ' + number;
   }
 
-  setDefendantForm(defendants: any[]): Promise<void> {
+  setDefendantForm(defendants: any[], addInformation: boolean = true): Promise<void> {
     this.resetAll();
     for (let i = 0; i < defendants.length; i++) {
       const defendant = defendants[i];
@@ -226,15 +226,27 @@ export class DefendantService {
       }
     }
 
-    return this.handleStableEvent(defendants);
+    return this.handleStableEvent(defendants, addInformation);
   }
 
-  private handleStableEvent(defendants: any[]): Promise<void> {
+  private handleStableEvent(defendants: any[], addInformation: boolean): Promise<void> {
     return new Promise<void>((resolve) => {
       this.onStableSubscription = this.zone.onStable.subscribe(() => {
         if (this.onStableSubscription) {
           this.onStableSubscription.unsubscribe();
         }
+
+        if (addInformation) {
+          window['processClaimantDefendantRepresentativeConcept'](
+            'step2',
+            'http://scanii.org/domain/defendant.personalIdNumber'
+          );
+          window['processClaimantDefendantRepresentativeConcept'](
+            'step2',
+            'http://scanii.org/domain/defendant.otherDetails'
+          );
+        }
+
         for (let i = 0; i < defendants.length; i++) {
           const obj = new CountryIdGenerator(i);
           let id = '';

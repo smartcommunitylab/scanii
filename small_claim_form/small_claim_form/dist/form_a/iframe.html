@@ -19,34 +19,7 @@
   <body>
     <link
       rel="stylesheet"
-      type="text/css"
-      href="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/libs.css"
-    />
-    <link
-      rel="stylesheet"
       href="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/main.css"
-      type="text/css"
-    />
-    <link
-      href="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/chosen.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/libs.min.css"> -->
-    <!-- <link rel="stylesheet" href="assets/css/main.min.css" type="text/css"> -->
-    <link
-      rel="stylesheet"
-      href="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/customStylesBeta.css"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/customFlagsCss.do"
-      type="text/css"
-    />
-    <link
-      href="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/dynforms-beta.css"
-      rel="stylesheet"
       type="text/css"
     />
     <script
@@ -54,23 +27,6 @@
       src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/load.js"
       type="text/javascript"
     ></script>
-    <div data-nosnippet="true" class="cck wt wt-cck"></div>
-    <script type="application/json" data-process="true">
-      { "utility": "cck" }
-    </script>
-    <script
-      type="text/javascript"
-      src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/checkEnter.js"
-    ></script>
-    <div class="analytics wt wt-analytics"></div>
-    <script type="application/json" data-process="true">
-      {
-        "utility": "piwik",
-        "siteID": 55,
-        "sitePath": ["e-justice.europa.eu"],
-        "instance": "europa.eu"
-      }
-    </script>
     <script
       type="text/javascript"
       src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/vendor.min.js"
@@ -83,68 +39,62 @@
       src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/jquery-ui-1.9.2.min.js"
       type="text/javascript"
     ></script>
-    <!-- will import locally -->
-    <link
-      rel="stylesheet"
-      href="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/jquery-ui-1.9.1.custom.css"
-    />
-    <link
-      href="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/dynforms-jqui-datepicker.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script
-      src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/datepicker-i18n.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/jquery.cookie.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/chosen.jquery.js"
-      type="text/javascript"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/util.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/validation.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/ajax.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/form.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/textarea.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/upload.js"
-    ></script>
-
-    <script
-      type="text/javascript"
-      src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/blockUI.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/checkEnter.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/form_di_lavoro/European e-Justice Portal - Form A - Claim form_files/gotocontent.css"
-    />
 
     <script>
+      const translations = {
+        it: {
+          search: "Ricerca",
+          advancedSearch: "Ricerca avanzata",
+          menu: "Menu",
+          rss: "RSS",
+          recentUpdates: "Ultimi aggiornamenti",
+          register: "Iscriviti",
+          or: "o",
+          signIn: "Accedi",
+          officialWebsite: "Un sito ufficiale dell'Unione europea",
+          officialWebsiteMobile: "Un sito ufficiale dell’UE",
+          howDoYouKnow: "Come esserne sicuri?",
+          europeanUnionWebsite:
+            "Tutti i siti ufficiali dell'UE appartengono al dominio <b>europa.eu</b>.",
+          seeEUInstitutions: "Vedi tutte le istituzioni e gli organi dell'UE",
+        },
+        en: {
+          search: "Search",
+          advancedSearch: "Advanced search",
+          menu: "Menu",
+          rss: "RSS",
+          recentUpdates: "Recent updates",
+          register: "Register",
+          or: "or",
+          signIn: "Sign in",
+          officialWebsite: "An official website of the European Union",
+          officialWebsiteMobile: "An official EU website",
+          howDoYouKnow: "How do you know?",
+          europeanUnionWebsite:
+            "All official European Union website addresses are in the <b>europa.eu</b> domain.",
+          seeEUInstitutions: "See all EU institutions and bodies",
+        },
+        de: {
+          search: "Suche",
+          advancedSearch: "Erweiterte Suche",
+          menu: "Menü",
+          rss: "RSS",
+          recentUpdates: "Aktualisierungen",
+          register: "Registrieren",
+          or: "oder",
+          signIn: "Anmelden",
+          officialWebsite: "Eine offizielle Website der Europäischen Union",
+          officialWebsiteMobile: "Offizielle Website der EU",
+          howDoYouKnow: "Woran ist das zu erkennen?",
+          europeanUnionWebsite:
+            "Alle offiziellen Websites der EU befinden sich in der Domäne <b>europa.eu</b>.",
+          seeEUInstitutions:
+            "Alle Institutionen und Einrichtungen der EU anzeigen",
+        },
+      };
+      let currentLang;
+      let mustProceed;
+      initializeLanguage();
       window.addEventListener("message", listener, false);
 
       function listener(event) {
@@ -152,9 +102,7 @@
           event.origin ===
           "https://yellow-coast-0c9cc7403.2.azurestaticapps.net"
         ) {
-          const h1 = document.createElement("h1");
-          h1.innerText = "parent received message";
-          document.body.insertBefore(h1, document.body.firstChild);
+          // TODO
         }
       }
 
@@ -166,7 +114,35 @@
         );
       }
 
-      function changeLang(event) {
+      function initializeLanguage() {
+        currentLang = localStorage.getItem("lang");
+        if (!currentLang) {
+          currentLang = "en";
+          localStorage.setItem("lang", currentLang);
+        }
+        mustProceed = false;
+
+        document.addEventListener("DOMContentLoaded", () => {
+          translatePage();
+          document
+            .querySelector(`.lang_list li a[lang="${currentLang}"]`)
+            .click();
+        });
+      }
+
+      function translatePage() {
+        document.querySelectorAll("[data-i18n-key]").forEach((element) => {
+          translateElement(element);
+        });
+      }
+
+      function translateElement(element) {
+        const key = element.getAttribute("data-i18n-key");
+        const text = translations[currentLang][key];
+        element.innerHTML = text;
+      }
+
+      function handleLanguageSelection(event) {
         event.preventDefault();
 
         const selectedRemoved = removeSelected(
@@ -190,8 +166,21 @@
           .toUpperCase();
 
         document.querySelector(".lang-menu").classList.remove("active");
+      }
 
-        send(event.target.getAttribute("lang"));
+      function changeLang(event) {
+        handleLanguageSelection(event);
+
+        if (mustProceed) {
+          currentLang = event.target.getAttribute("lang");
+          localStorage.setItem("lang", currentLang);
+
+          translatePage();
+
+          send(event.target.getAttribute("lang"));
+        }
+
+        mustProceed = true;
       }
 
       function removeSelected(lang_list) {
@@ -214,14 +203,19 @@
     >
       <div class="globan-center">
         <div class="globan-content">
-          <span>An official website of the European Union</span
-          ><span>An official EU website</span
-          ><a class="wt-link" aria-controls="globan-dropdown-nc4wfvvh9h8"
+          <span data-i18n-key="officialWebsite"
+            >An official website of the European Union</span
+          ><span data-i18n-key="officialWebsiteMobile"
+            >An official EU website</span
+          ><a
+            class="wt-link"
+            aria-controls="globan-dropdown-nc4wfvvh9h8"
+            data-i18n-key="howDoYouKnow"
             >How do you know?</a
           >
         </div>
         <div id="globan-dropdown-nc4wfvvh9h8" class="globan-dropdown" hidden>
-          <p class="wt-paragraph">
+          <p class="wt-paragraph" data-i18n-key="europeanUnionWebsite">
             All official European Union website addresses are in the
             <b>europa.eu</b> domain.
           </p>
@@ -229,6 +223,7 @@
             <a
               class="wt-link"
               href="https://europa.eu/european-union/contact/institutions-bodies_en"
+              data-i18n-key="seeEUInstitutions"
               >See all EU institutions and bodies</a
             >
           </p>
@@ -344,7 +339,7 @@
             >
           </li>
 
-          <li class="lang" onclick="changeLang(event)">
+          <li class="lang selected" onclick="changeLang(event)">
             <a
               onclick="isMyUnload=true;"
               href="https://e-justice.europa.eu/dynform_sc_a_1_action.do?init=true&amp;1682516411787&amp;plang=en"
@@ -380,7 +375,7 @@
             >
           </li>
 
-          <li class="lang selected" onclick="changeLang(event)">
+          <li class="lang" onclick="changeLang(event)">
             <a
               onclick="isMyUnload=true;"
               href="https://e-justice.europa.eu/dynform_sc_a_1_action.do?init=true&amp;1682516411787&amp;plang=it"
@@ -548,6 +543,7 @@
               class="dark"
               href="https://e-justice.europa.eu/rssManagement.do?plang=en"
               title="RSS"
+              data-i18n-key="rss"
               >RSS</a
             >
             &nbsp;|&nbsp;
@@ -556,6 +552,7 @@
               class="dark"
               href="https://e-justice.europa.eu/updatesManagement.do?plang=en"
               title="Recent updates"
+              data-i18n-key="recentUpdates"
               >Recent updates</a
             >
             &nbsp;|&nbsp;
@@ -564,15 +561,17 @@
               class="dark"
               onclick="isMyUnload=true;"
               title="Register page"
+              data-i18n-key="register"
               >Register</a
             >
-            &nbsp;or&nbsp;
+            &nbsp;<span data-i18n-key="or">or</span>&nbsp;
             <a
               tabindex="0"
               class="dark"
               onclick="isMyUnload=true;"
               href="https://e-justice.europa.eu/movetopage.do?&amp;login=dHJ1ZQ=="
               title="Sign In"
+              data-i18n-key="signIn"
               >Sign in</a
             >
           </li>
@@ -599,8 +598,8 @@
             href="https://e-justice.europa.eu/dynForms.do?1665391891183&amp;introMemberState=15&amp;introTaxonomy=177&amp;form4BC=sc&amp;subform4BC=dynform_sc_a&amp;currentPage=dynform_sc_a_2&amp;selectedFormPage=dynform_sc_a_2_action&amp;redirectPath=/jsp/dynforms/sc/dynform_sc_a_2_tile.jsp"
             data-modal="lang"
           >
-            <span class="lang-name">italiano</span>&nbsp;
-            <span class="lang-shortcode">IT</span>
+            <span class="lang-name">English</span>&nbsp;
+            <span class="lang-shortcode">EN</span>
           </a>
           <div class="header_wrapper">
             <div class="search-bar">
@@ -621,6 +620,7 @@
                     id="simpleSearchTextLabel"
                     class="hidden"
                     for="simpleSearchText"
+                    data-i18n-key="search"
                     >Search</label
                   >
                   <input
@@ -633,7 +633,7 @@
                     aria-labelledby="simpleSearchTextLabel"
                   />
                   <button class="button" onclick="return checkOnunload();">
-                    <span>Search</span>
+                    <span data-i18n-key="search">Search</span>
                   </button>
                   <p class="hidden">
                     <input type="hidden" name="plang" value="" />
@@ -644,11 +644,14 @@
                 class="advanced-search"
                 href="https://e-justice.europa.eu/advancedSearchManagement?action=advancedSearch"
                 onclick="return checkOnunload();"
+                data-i18n-key="advancedSearch"
                 >Advanced search</a
               >
             </div>
             <div class="button_wrapper">
-              <button class="button dark menu-btn">Menu</button>
+              <button class="button dark menu-btn" data-i18n-key="menu">
+                Menu
+              </button>
             </div>
           </div>
         </div>

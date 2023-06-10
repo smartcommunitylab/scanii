@@ -281,7 +281,10 @@ export class ClaimantService {
     return new Contacts(obj.phoneNumber, obj.email);
   }
 
-  setClaimantForm(claimants: any[]): Promise<void> {
+  setClaimantForm(
+    claimants: any[],
+    addInformation: boolean = true
+  ): Promise<void> {
     return new Promise<void>((resolve) => {
       this.resetAll();
       this.translateService
@@ -309,19 +312,31 @@ export class ClaimantService {
             }
           }
 
-          this.handleStableEvent(claimants).then(() => {
+          this.handleStableEvent(claimants, addInformation).then(() => {
             resolve();
           });
         });
     });
   }
 
-  private handleStableEvent(claimants: any[]): Promise<void> {
+  private handleStableEvent(claimants: any[], addInformation: boolean): Promise<void> {
     return new Promise<void>((resolve) => {
       this.onStableSubscription = this.zone.onStable.subscribe(() => {
         if (this.onStableSubscription) {
           this.onStableSubscription.unsubscribe();
         }
+
+        if (addInformation) {
+          window['processClaimantDefendantRepresentativeConcept'](
+            'step1',
+            'http://scanii.org/domain/claimant.personalIdNumber'
+          );
+          window['processClaimantDefendantRepresentativeConcept'](
+            'step1',
+            'http://scanii.org/domain/claimant.otherDetails'
+          );
+        }
+
         for (let i = 0; i < claimants.length; i++) {
           const obj = new CountryIdGenerator(i);
           let id = '';

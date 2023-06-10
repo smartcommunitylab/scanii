@@ -14236,7 +14236,7 @@ var UEe = Object.defineProperty,
       function Xn(t) {
         return be(Fe.lFrame.contextLView, 20 + t);
       }
-      function z(t, n = Qe.Default) {
+      function k(t, n = Qe.Default) {
         const e = pe();
         return null === e ? ne(t, n) : tm(c1(), e, je(t), n);
       }
@@ -14308,7 +14308,7 @@ var UEe = Object.defineProperty,
             })(n) &&
             Wd(e, n, pe(), n.stylesWithoutHost, !1);
       }
-      function k(t, n, e, i) {
+      function z(t, n, e, i) {
         o(t, n, e, i), c();
       }
       function Yt() {
@@ -14842,7 +14842,7 @@ var UEe = Object.defineProperty,
             C = h.directiveStart,
             S = h.providerIndexes >> 20;
           if (wo(t) || !t.multi) {
-            const w = new Xc(u, r, z),
+            const w = new Xc(u, r, k),
               x = n5(l, n, r ? g : g + S, C);
             -1 === x
               ? (Rl(e3(h, s), a, l),
@@ -14862,7 +14862,7 @@ var UEe = Object.defineProperty,
             if ((r && !F) || (!r && !O)) {
               Rl(e3(h, s), a, l);
               const ee = (function (t, n, e, i, r) {
-                const a = new Xc(t, e, z);
+                const a = new Xc(t, e, k);
                 return (
                   (a.multi = []),
                   (a.index = n),
@@ -16302,7 +16302,7 @@ var UEe = Object.defineProperty,
               (e.destroyHooks || (e.destroyHooks = [])).push(r, i.onDestroy))
           : (i = e.data[r]);
         const a = i.factory || (i.factory = $r(i.type)),
-          s = Ci(z);
+          s = Ci(k);
         try {
           const l = Fl(!1),
             u = a();
@@ -18439,7 +18439,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(T3), z(qo), z(vt), z(d1));
+            return new (e || t)(k(T3), k(qo), k(vt), k(d1));
           }),
           (t.ɵdir = Ce({
             type: t,
@@ -18559,7 +18559,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(li), z(_n), z(T3));
+            return new (e || t)(k(li), k(_n), k(T3));
           }),
           (t.ɵdir = Ce({
             type: t,
@@ -18630,7 +18630,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(li), z(_n));
+            return new (e || t)(k(li), k(_n));
           }),
           (t.ɵdir = Ce({
             type: t,
@@ -18675,7 +18675,7 @@ var UEe = Object.defineProperty,
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(er, 16));
+              return new (e || t)(k(er, 16));
             }),
             (t.ɵpipe = sn({ name: "date", type: t, pure: !0 })),
             t
@@ -23791,7 +23791,7 @@ var UEe = Object.defineProperty,
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(d1), z(vt));
+              return new (e || t)(k(d1), k(vt));
             }),
             (t.ɵdir = Ce({ type: t })),
             t
@@ -23876,7 +23876,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(d1), z(vt), z(kge, 8));
+            return new (e || t)(k(d1), k(vt), k(kge, 8));
           }),
           (t.ɵdir = Ce({
             type: t,
@@ -24236,7 +24236,7 @@ var UEe = Object.defineProperty,
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(Da, 2));
+              return new (e || t)(k(Da, 2));
             }),
             (t.ɵdir = Ce({
               type: t,
@@ -24272,7 +24272,7 @@ var UEe = Object.defineProperty,
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(pi, 10));
+              return new (e || t)(k(pi, 10));
             }),
             (t.ɵdir = Ce({
               type: t,
@@ -25205,7 +25205,7 @@ var UEe = Object.defineProperty,
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(Bn, 10), z(Sa, 10));
+              return new (e || t)(k(Bn, 10), k(Sa, 10));
             }),
             (t.ɵdir = Ce({
               type: t,
@@ -25346,7 +25346,7 @@ var UEe = Object.defineProperty,
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(pi, 9), z(Bn, 10), z(Sa, 10), z(L1, 10));
+              return new (e || t)(k(pi, 9), k(Bn, 10), k(Sa, 10), k(L1, 10));
             }),
             (t.ɵdir = Ce({
               type: t,
@@ -25483,7 +25483,7 @@ var UEe = Object.defineProperty,
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(d1), z(vt), z(Zge), z(It));
+              return new (e || t)(k(d1), k(vt), k(Zge), k(It));
             }),
             (t.ɵdir = Ce({
               type: t,
@@ -25635,7 +25635,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(Bn, 10), z(Sa, 10));
+            return new (e || t)(k(Bn, 10), k(Sa, 10));
           }),
           (t.ɵdir = Ce({
             type: t,
@@ -25671,7 +25671,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(pi, 13), z(Bn, 10), z(Sa, 10));
+            return new (e || t)(k(pi, 13), k(Bn, 10), k(Sa, 10));
           }),
           (t.ɵdir = Ce({
             type: t,
@@ -25715,7 +25715,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(pi, 13), z(Bn, 10), z(Sa, 10));
+            return new (e || t)(k(pi, 13), k(Bn, 10), k(Sa, 10));
           }),
           (t.ɵdir = Ce({
             type: t,
@@ -25778,11 +25778,11 @@ var UEe = Object.defineProperty,
         return (
           (t.ɵfac = function (e) {
             return new (e || t)(
-              z(pi, 13),
-              z(Bn, 10),
-              z(Sa, 10),
-              z(L1, 10),
-              z(Ch, 8)
+              k(pi, 13),
+              k(Bn, 10),
+              k(Sa, 10),
+              k(L1, 10),
+              k(Ch, 8)
             );
           }),
           (t.ɵdir = Ce({
@@ -25906,7 +25906,7 @@ var UEe = Object.defineProperty,
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(vt), z(d1), z(R2, 9));
+              return new (e || t)(k(vt), k(d1), k(R2, 9));
             }),
             (t.ɵdir = Ce({
               type: t,
@@ -26059,7 +26059,7 @@ var UEe = Object.defineProperty,
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(vt), z(d1), z(yh, 9));
+              return new (e || t)(k(vt), k(d1), k(yh, 9));
             }),
             (t.ɵdir = Ce({
               type: t,
@@ -28245,7 +28245,7 @@ var UEe = Object.defineProperty,
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(mi), z(vt), z(f1));
+              return new (e || t)(k(mi), k(vt), k(f1));
             }),
             (t.ɵdir = Ce({
               type: t,
@@ -28344,7 +28344,7 @@ var UEe = Object.defineProperty,
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(mi, 16), z(f1, 16));
+              return new (e || t)(k(mi, 16), k(f1, 16));
             }),
             (t.ɵpipe = sn({ name: "translate", type: t, pure: !1 })),
             (t.ɵprov = de({ token: t, factory: t.ɵfac })),
@@ -29320,53 +29320,62 @@ var UEe = Object.defineProperty,
           getContacts(e) {
             return new Qwe(e.phoneNumber, e.email);
           }
-          setClaimantForm(e) {
-            return new Promise((i) => {
+          setClaimantForm(e, i = !0) {
+            return new Promise((r) => {
               this.resetAll(),
                 this.translateService
                   .get(["europeanCountries", "worldCountries"])
-                  .subscribe((r) => {
-                    (this.europeanCountries = r.europeanCountries),
-                      (this.worldCountries = r.worldCountries);
-                    for (let a = 0; a < e.length; a++) {
-                      const s = e[a];
-                      s.isRepresentative
+                  .subscribe((a) => {
+                    (this.europeanCountries = a.europeanCountries),
+                      (this.worldCountries = a.worldCountries);
+                    for (let s = 0; s < e.length; s++) {
+                      const l = e[s];
+                      l.isRepresentative
                         ? (this.claimants.push(
                             this.createFormGroup("representative")
                           ),
-                          this.addRepresentative(a),
+                          this.addRepresentative(s),
                           this.editForm
                             .get("claimants")
-                            .get(a.toString())
-                            .setValue(s))
+                            .get(s.toString())
+                            .setValue(l))
                         : (this.claimants.push(
                             this.createFormGroup("claimant")
                           ),
                           this.editForm
                             .get("claimants")
-                            .get(a.toString())
-                            .setValue(s));
+                            .get(s.toString())
+                            .setValue(l));
                     }
-                    this.handleStableEvent(e).then(() => {
-                      i();
+                    this.handleStableEvent(e, i).then(() => {
+                      r();
                     });
                   });
             });
           }
-          handleStableEvent(e) {
-            return new Promise((i) => {
+          handleStableEvent(e, i) {
+            return new Promise((r) => {
               this.onStableSubscription = this.zone.onStable.subscribe(() => {
                 this.onStableSubscription &&
-                  this.onStableSubscription.unsubscribe();
-                for (let r = 0; r < e.length; r++) {
-                  const a = new Xwe(r);
-                  let s = "";
-                  (s = e[r].isRepresentative
-                    ? a.claimantRepresentativeCountryId
-                    : a.claimantCountryId),
-                    this.triggerChangeEvent(s);
+                  this.onStableSubscription.unsubscribe(),
+                  i &&
+                    (window.processClaimantDefendantRepresentativeConcept(
+                      "step1",
+                      "http://scanii.org/domain/claimant.personalIdNumber"
+                    ),
+                    window.processClaimantDefendantRepresentativeConcept(
+                      "step1",
+                      "http://scanii.org/domain/claimant.otherDetails"
+                    ));
+                for (let a = 0; a < e.length; a++) {
+                  const s = new Xwe(a);
+                  let l = "";
+                  (l = e[a].isRepresentative
+                    ? s.claimantRepresentativeCountryId
+                    : s.claimantCountryId),
+                    this.triggerChangeEvent(l);
                 }
-                i();
+                r();
               });
             });
           }
@@ -29569,41 +29578,50 @@ var UEe = Object.defineProperty,
               const i = e < 10 ? "0" + e : e.toString();
               return this.representativeOptionLabel + " " + i;
             }
-            setDefendantForm(e) {
+            setDefendantForm(e, i = !0) {
               this.resetAll();
-              for (let i = 0; i < e.length; i++) {
-                const r = e[i];
-                r.isRepresentative
+              for (let r = 0; r < e.length; r++) {
+                const a = e[r];
+                a.isRepresentative
                   ? (this.defendants.push(
                       this.createFormGroup("representative")
                     ),
-                    this.addRepresentative(i),
+                    this.addRepresentative(r),
                     this.editForm
                       .get("defendants")
-                      .get(i.toString())
-                      .setValue(r))
+                      .get(r.toString())
+                      .setValue(a))
                   : (this.defendants.push(this.createFormGroup("defendant")),
                     this.editForm
                       .get("defendants")
-                      .get(i.toString())
-                      .setValue(r));
+                      .get(r.toString())
+                      .setValue(a));
               }
-              return this.handleStableEvent(e);
+              return this.handleStableEvent(e, i);
             }
-            handleStableEvent(e) {
-              return new Promise((i) => {
+            handleStableEvent(e, i) {
+              return new Promise((r) => {
                 this.onStableSubscription = this.zone.onStable.subscribe(() => {
                   this.onStableSubscription &&
-                    this.onStableSubscription.unsubscribe();
-                  for (let r = 0; r < e.length; r++) {
-                    const a = new Zwe(r);
-                    let s = "";
-                    (s = e[r].isRepresentative
-                      ? a.defendantRepresentativeCountryId
-                      : a.defendantCountryId),
-                      this.triggerChangeEvent(s);
+                    this.onStableSubscription.unsubscribe(),
+                    i &&
+                      (window.processClaimantDefendantRepresentativeConcept(
+                        "step2",
+                        "http://scanii.org/domain/defendant.personalIdNumber"
+                      ),
+                      window.processClaimantDefendantRepresentativeConcept(
+                        "step2",
+                        "http://scanii.org/domain/defendant.otherDetails"
+                      ));
+                  for (let a = 0; a < e.length; a++) {
+                    const s = new Zwe(a);
+                    let l = "";
+                    (l = e[a].isRepresentative
+                      ? s.defendantRepresentativeCountryId
+                      : s.defendantCountryId),
+                      this.triggerChangeEvent(l);
                   }
-                  i();
+                  r();
                 });
               });
             }
@@ -30893,11 +30911,8 @@ var UEe = Object.defineProperty,
             getDefaultLanguage() {
               return (
                 this.currentLang ||
-                  (localStorage.setItem(
-                    "lang",
-                    this.translate.getBrowserLang()
-                  ),
-                  (this.currentLang = this.translate.getBrowserLang())),
+                  ((this.currentLang = "en"),
+                  localStorage.setItem("lang", this.currentLang)),
                 this.translate.setDefaultLang(this.currentLang),
                 this.currentLang
               );
@@ -31008,7 +31023,7 @@ var UEe = Object.defineProperty,
                 1 & e &&
                   (o(0, "div", 0),
                   o(1, "div", 1),
-                  k(2, "button", 2),
+                  z(2, "button", 2),
                   o(3, "p", 3),
                   ye(4, "translate"),
                   v(
@@ -31047,7 +31062,7 @@ var UEe = Object.defineProperty,
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(p2));
+              return new (e || t)(k(p2));
             }),
             (t.ɵcmp = qe({
               type: t,
@@ -31092,7 +31107,7 @@ var UEe = Object.defineProperty,
                 1 & e &&
                   (o(0, "div", 0),
                   o(1, "div", 1),
-                  k(2, "button", 2),
+                  z(2, "button", 2),
                   o(3, "p", 3),
                   ye(4, "translate"),
                   o(5, "strong"),
@@ -31132,7 +31147,7 @@ var UEe = Object.defineProperty,
               const r = E(2).index;
               return E().removeClaimant(r);
             }),
-            k(1, "i", 87),
+            z(1, "i", 87),
             c();
         }
       }
@@ -31483,7 +31498,7 @@ var UEe = Object.defineProperty,
             o(26, "span", 1),
             v(27, "1.1. Corporate name of company or organisation"),
             c(),
-            k(28, "span", 49),
+            z(28, "span", 49),
             c(),
             o(29, "div", 52),
             o(30, "div", 53),
@@ -31503,7 +31518,7 @@ var UEe = Object.defineProperty,
             o(35, "span", 1),
             v(36, "Surname"),
             c(),
-            k(37, "span", 49),
+            z(37, "span", 49),
             c(),
             o(38, "div", 52),
             o(39, "div", 53),
@@ -31524,7 +31539,7 @@ var UEe = Object.defineProperty,
             o(44, "span", 1),
             v(45, "First name"),
             c(),
-            k(46, "span", 49),
+            z(46, "span", 49),
             c(),
             o(47, "div", 52),
             o(48, "div", 53),
@@ -31548,15 +31563,15 @@ var UEe = Object.defineProperty,
               "1.2. Personal identification number or passport number/ registration number"
             ),
             c(),
-            k(55, "span", 49),
+            z(55, "span", 49),
             c(),
-            k(56, "div", 58),
+            z(56, "div", 58),
             o(57, "div", 59),
             o(58, "div", 53),
-            k(59, "input", 60),
+            z(59, "input", 60),
             c(),
             c(),
-            k(60, "span", 61),
+            z(60, "span", 61),
             c(),
             c(),
             o(61, "div", 4),
@@ -31571,7 +31586,7 @@ var UEe = Object.defineProperty,
             c(),
             o(68, "div", 52),
             o(69, "div", 53),
-            k(70, "input", 62),
+            z(70, "input", 62),
             c(),
             c(),
             N(71, fDe, 2, 1, "div", 63),
@@ -31589,7 +31604,7 @@ var UEe = Object.defineProperty,
             c(),
             o(79, "div", 52),
             o(80, "div", 53),
-            k(81, "input", 64),
+            z(81, "input", 64),
             c(),
             c(),
             N(82, pDe, 2, 1, "div", 63),
@@ -31607,7 +31622,7 @@ var UEe = Object.defineProperty,
             c(),
             o(90, "div", 52),
             o(91, "div", 53),
-            k(92, "input", 65),
+            z(92, "input", 65),
             c(),
             c(),
             N(93, gDe, 2, 1, "div", 63),
@@ -31644,7 +31659,7 @@ var UEe = Object.defineProperty,
             N(109, CDe, 2, 1, "div", 63),
             c(),
             c(),
-            k(110, "div"),
+            z(110, "div"),
             o(111, "div"),
             o(112, "div", 70),
             o(113, "div", 4),
@@ -31670,7 +31685,7 @@ var UEe = Object.defineProperty,
             N(126, MDe, 2, 1, "div", 63),
             c(),
             c(),
-            k(127, "p", 72),
+            z(127, "p", 72),
             c(),
             c(),
             o(128, "div", 4),
@@ -31679,14 +31694,14 @@ var UEe = Object.defineProperty,
             o(131, "span", 1),
             v(132, "1.6. Telephone"),
             c(),
-            k(133, "span", 49),
+            z(133, "span", 49),
             c(),
             o(134, "div", 73),
             o(135, "div", 53),
-            k(136, "input", 74),
+            z(136, "input", 74),
             c(),
             c(),
-            k(137, "span", 61),
+            z(137, "span", 61),
             c(),
             c(),
             o(138, "div", 4),
@@ -31695,11 +31710,11 @@ var UEe = Object.defineProperty,
             o(141, "span", 1),
             v(142, "1.7. E-mail"),
             c(),
-            k(143, "span", 49),
+            z(143, "span", 49),
             c(),
             o(144, "div", 52),
             o(145, "div", 53),
-            k(146, "input", 75),
+            z(146, "input", 75),
             c(),
             c(),
             N(147, wDe, 2, 1, "div", 63),
@@ -31714,7 +31729,7 @@ var UEe = Object.defineProperty,
               "1.8. Claimant\u2019s representative, if any, and contact details:"
             ),
             c(),
-            k(153, "span", 49),
+            z(153, "span", 49),
             c(),
             o(154, "div", 52),
             o(155, "div", 53),
@@ -31724,7 +31739,7 @@ var UEe = Object.defineProperty,
               const a = E().index;
               return E().onRepresentativeChange(r.target.value, a);
             }),
-            k(157, "option", 77),
+            z(157, "option", 77),
             o(158, "option", 78),
             v(159, " Add new representative "),
             c(),
@@ -31742,13 +31757,13 @@ var UEe = Object.defineProperty,
             v(166, "1.9. Other details"),
             c(),
             c(),
-            k(167, "div", 79),
+            z(167, "div", 79),
             o(168, "div", 80),
             o(169, "div", 53),
-            k(170, "textarea", 81),
+            z(170, "textarea", 81),
             c(),
             c(),
-            k(171, "span", 61),
+            z(171, "span", 61),
             c(),
             c(),
             c(),
@@ -31766,7 +31781,7 @@ var UEe = Object.defineProperty,
             v(177, "Add another claimant"),
             c(),
             c(),
-            k(178, "label", 85),
+            z(178, "label", 85),
             c(),
             c(),
             c(),
@@ -32524,7 +32539,7 @@ var UEe = Object.defineProperty,
               const r = E().index;
               return E().removeClaimant(r);
             }),
-            k(7, "i", 87),
+            z(7, "i", 87),
             c(),
             o(8, "div", 5),
             o(9, "div", 45),
@@ -32552,7 +32567,7 @@ var UEe = Object.defineProperty,
             o(25, "span", 1),
             v(26, "Corporate name of company or organisation"),
             c(),
-            k(27, "span", 49),
+            z(27, "span", 49),
             c(),
             o(28, "div", 52),
             o(29, "div", 53),
@@ -32576,7 +32591,7 @@ var UEe = Object.defineProperty,
             o(34, "span", 1),
             v(35, "Surname"),
             c(),
-            k(36, "span", 49),
+            z(36, "span", 49),
             c(),
             o(37, "div", 52),
             o(38, "div", 53),
@@ -32605,7 +32620,7 @@ var UEe = Object.defineProperty,
             o(43, "span", 1),
             v(44, "First name"),
             c(),
-            k(45, "span", 49),
+            z(45, "span", 49),
             c(),
             o(46, "div", 52),
             o(47, "div", 53),
@@ -32637,15 +32652,15 @@ var UEe = Object.defineProperty,
               "Personal identification number or passport number/ registration number"
             ),
             c(),
-            k(54, "span", 49),
+            z(54, "span", 49),
             c(),
-            k(55, "div", 58),
+            z(55, "div", 58),
             o(56, "div", 59),
             o(57, "div", 53),
-            k(58, "input", 94),
+            z(58, "input", 94),
             c(),
             c(),
-            k(59, "span", 61),
+            z(59, "span", 61),
             c(),
             c(),
             o(60, "div", 4),
@@ -32684,7 +32699,7 @@ var UEe = Object.defineProperty,
             c(),
             o(78, "div", 52),
             o(79, "div", 53),
-            k(80, "input", 96),
+            z(80, "input", 96),
             c(),
             c(),
             N(81, zDe, 2, 1, "div", 63),
@@ -32702,7 +32717,7 @@ var UEe = Object.defineProperty,
             c(),
             o(89, "div", 52),
             o(90, "div", 53),
-            k(91, "input", 97),
+            z(91, "input", 97),
             c(),
             c(),
             N(92, LDe, 2, 1, "div", 63),
@@ -32764,7 +32779,7 @@ var UEe = Object.defineProperty,
             N(124, BDe, 2, 1, "div", 63),
             c(),
             c(),
-            k(125, "p", 72),
+            z(125, "p", 72),
             c(),
             c(),
             o(126, "div", 4),
@@ -32773,14 +32788,14 @@ var UEe = Object.defineProperty,
             o(129, "span", 1),
             v(130, "Telephone"),
             c(),
-            k(131, "span", 49),
+            z(131, "span", 49),
             c(),
             o(132, "div", 73),
             o(133, "div", 53),
-            k(134, "input", 100),
+            z(134, "input", 100),
             c(),
             c(),
-            k(135, "span", 61),
+            z(135, "span", 61),
             c(),
             c(),
             o(136, "div", 4),
@@ -32789,11 +32804,11 @@ var UEe = Object.defineProperty,
             o(139, "span", 1),
             v(140, "E-mail"),
             c(),
-            k(141, "span", 49),
+            z(141, "span", 49),
             c(),
             o(142, "div", 52),
             o(143, "div", 53),
-            k(144, "input", 101),
+            z(144, "input", 101),
             c(),
             c(),
             N(145, qDe, 2, 1, "div", 63),
@@ -32814,7 +32829,7 @@ var UEe = Object.defineProperty,
             v(151, "Add another claimant"),
             c(),
             c(),
-            k(152, "label", 85),
+            z(152, "label", 85),
             c(),
             c(),
             c(),
@@ -33370,9 +33385,6 @@ var UEe = Object.defineProperty,
                   e.translations.europeanCountries),
                   (this.claimantService.worldCountries =
                     e.translations.worldCountries);
-              }),
-              this.claimantService.editForm.valueChanges.subscribe((e) => {
-                this.temporaryStorage.set(e);
               });
           }
           openModal(e) {
@@ -33420,12 +33432,14 @@ var UEe = Object.defineProperty,
                 this.onStableSubscription.unsubscribe(),
                 window.processClaimantDefendantRepresentativeConcept(
                   "step1",
-                  "http://scanii.org/domain/claimant.personalIdNumber"
+                  "http://scanii.org/domain/claimant.personalIdNumber",
+                  !0
                 ),
                 "claimant" === this.selectedOption &&
                   window.processClaimantDefendantRepresentativeConcept(
                     "step1",
-                    "http://scanii.org/domain/claimant.otherDetails"
+                    "http://scanii.org/domain/claimant.otherDetails",
+                    !0
                   ),
                 (this.selectedOption = void 0);
             });
@@ -33585,13 +33599,13 @@ var UEe = Object.defineProperty,
         return (
           (t.ɵfac = function (e) {
             return new (e || t)(
-              z(Dp),
-              z(G2),
-              z(J2),
-              z(mi),
-              z(Ct),
-              z(yk),
-              z(p2)
+              k(Dp),
+              k(G2),
+              k(J2),
+              k(mi),
+              k(Ct),
+              k(yk),
+              k(p2)
             );
           }),
           (t.ɵcmp = qe({
@@ -34288,14 +34302,14 @@ var UEe = Object.defineProperty,
                 o(1, "h3", 1),
                 v(2, "Claimant"),
                 c(),
-                k(3, "label", 2),
-                k(4, "div", 3),
+                z(3, "label", 2),
+                z(4, "div", 3),
                 o(5, "div", 4),
                 o(6, "div", 5),
-                k(7, "input", 6),
-                k(8, "p", 7),
-                k(9, "input", 8),
-                k(10, "p", 9),
+                z(7, "input", 6),
+                z(8, "p", 7),
+                z(9, "input", 8),
+                z(10, "p", 9),
                 o(11, "form", 10),
                 N(12, $De, 5, 3, "div", 11),
                 c(),
@@ -34327,7 +34341,7 @@ var UEe = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                k(26, "br"),
+                z(26, "br"),
                 o(27, "div", 17),
                 o(28, "div", 18),
                 o(29, "input", 19),
@@ -34350,7 +34364,7 @@ var UEe = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                k(36, "br"),
+                z(36, "br"),
                 o(37, "div", 23),
                 o(38, "div", 24),
                 o(39, "a", 25),
@@ -34362,7 +34376,7 @@ var UEe = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                k(42, "div", 26),
+                z(42, "div", 26),
                 o(43, "div", 24),
                 o(44, "a", 27),
                 X("click", function () {
@@ -34474,21 +34488,21 @@ var UEe = Object.defineProperty,
       function GDe(t, n) {
         if (1 & t) {
           const e = Yt();
-          o(0, "button", 89),
+          o(0, "button", 88),
             X("click", function () {
               Te(e);
               const r = E(2).index;
               return E().removeDefendant(r);
             }),
-            k(1, "i", 90),
+            z(1, "i", 89),
             c();
         }
       }
       function JDe(t, n) {
         if (
           (1 & t &&
-            (o(0, "div", 91),
-            o(1, "span", 92),
+            (o(0, "div", 90),
+            o(1, "span", 91),
             v(
               2,
               'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed.'
@@ -34515,7 +34529,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field is required "),
             c(),
             c()),
@@ -34533,7 +34547,7 @@ var UEe = Object.defineProperty,
         }
       }
       function KDe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, YDe, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, YDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -34551,7 +34565,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field is required "),
             c(),
             c()),
@@ -34569,7 +34583,7 @@ var UEe = Object.defineProperty,
         }
       }
       function XDe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, QDe, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, QDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -34588,7 +34602,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field is required "),
             c(),
             c()),
@@ -34606,7 +34620,7 @@ var UEe = Object.defineProperty,
         }
       }
       function eHe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, ZDe, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, ZDe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -34621,7 +34635,7 @@ var UEe = Object.defineProperty,
         }
       }
       function tHe(t, n) {
-        if ((1 & t && (o(0, "option", 93), v(1), c()), 2 & t)) {
+        if ((1 & t && (o(0, "option", 92), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), f(1), nt(" ", e.label, " ");
         }
@@ -34630,7 +34644,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field is required "),
             c(),
             c()),
@@ -34648,7 +34662,7 @@ var UEe = Object.defineProperty,
         }
       }
       function iHe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, nHe, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, nHe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -34664,7 +34678,7 @@ var UEe = Object.defineProperty,
         }
       }
       function rHe(t, n) {
-        if ((1 & t && (o(0, "option", 93), v(1), c()), 2 & t)) {
+        if ((1 & t && (o(0, "option", 92), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), f(1), nt(" ", e.label, " ");
         }
@@ -34673,7 +34687,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field is required "),
             c(),
             c()),
@@ -34691,7 +34705,7 @@ var UEe = Object.defineProperty,
         }
       }
       function sHe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, aHe, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, aHe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -34710,7 +34724,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field has an invalid e-mail address "),
             c(),
             c()),
@@ -34728,7 +34742,7 @@ var UEe = Object.defineProperty,
         }
       }
       function cHe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, oHe, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, oHe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -34743,7 +34757,7 @@ var UEe = Object.defineProperty,
         }
       }
       function lHe(t, n) {
-        if ((1 & t && (o(0, "option", 93), v(1), c()), 2 & t)) {
+        if ((1 & t && (o(0, "option", 92), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.id), f(1), nt(" ", e.label, " ");
         }
@@ -34752,7 +34766,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field is required "),
             c(),
             c()),
@@ -34770,7 +34784,7 @@ var UEe = Object.defineProperty,
         }
       }
       function dHe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, uHe, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, uHe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -34835,7 +34849,7 @@ var UEe = Object.defineProperty,
             o(26, "span", 1),
             v(27, "2.1. Corporate name of company or organisation"),
             c(),
-            k(28, "span", 51),
+            z(28, "span", 51),
             c(),
             o(29, "div", 54),
             o(30, "div", 55),
@@ -34855,7 +34869,7 @@ var UEe = Object.defineProperty,
             o(35, "span", 1),
             v(36, "Surname"),
             c(),
-            k(37, "span", 51),
+            z(37, "span", 51),
             c(),
             o(38, "div", 54),
             o(39, "div", 55),
@@ -34876,7 +34890,7 @@ var UEe = Object.defineProperty,
             o(44, "span", 1),
             v(45, "First name"),
             c(),
-            k(46, "span", 51),
+            z(46, "span", 51),
             c(),
             o(47, "div", 54),
             o(48, "div", 55),
@@ -34893,22 +34907,22 @@ var UEe = Object.defineProperty,
             c(),
             o(50, "div", 4),
             o(51, "div", 59),
-            o(52, "label", 60),
+            o(52, "label"),
             o(53, "span", 1),
             v(
               54,
               "2.2. Personal identification number or passport number/ registration number"
             ),
             c(),
-            k(55, "span", 51),
+            z(55, "span", 51),
             c(),
-            k(56, "div", 61),
-            o(57, "div", 62),
+            z(56, "div", 60),
+            o(57, "div", 61),
             o(58, "div", 55),
-            k(59, "input", 63),
+            z(59, "input", 62),
             c(),
             c(),
-            k(60, "span", 64),
+            z(60, "span", 63),
             c(),
             c(),
             o(61, "div", 4),
@@ -34923,10 +34937,10 @@ var UEe = Object.defineProperty,
             c(),
             o(68, "div", 54),
             o(69, "div", 55),
-            k(70, "input", 65),
+            z(70, "input", 64),
             c(),
             c(),
-            N(71, KDe, 2, 1, "div", 66),
+            N(71, KDe, 2, 1, "div", 65),
             c(),
             c(),
             o(72, "div", 4),
@@ -34941,10 +34955,10 @@ var UEe = Object.defineProperty,
             c(),
             o(79, "div", 54),
             o(80, "div", 55),
-            k(81, "input", 67),
+            z(81, "input", 66),
             c(),
             c(),
-            N(82, XDe, 2, 1, "div", 66),
+            N(82, XDe, 2, 1, "div", 65),
             c(),
             c(),
             o(83, "div", 4),
@@ -34959,10 +34973,10 @@ var UEe = Object.defineProperty,
             c(),
             o(90, "div", 54),
             o(91, "div", 55),
-            k(92, "input", 68),
+            z(92, "input", 67),
             c(),
             c(),
-            N(93, eHe, 2, 1, "div", 66),
+            N(93, eHe, 2, 1, "div", 65),
             c(),
             c(),
             o(94, "div", 4),
@@ -34977,28 +34991,28 @@ var UEe = Object.defineProperty,
             c(),
             o(101, "div", 54),
             o(102, "div", 55),
-            o(103, "select", 69),
+            o(103, "select", 68),
             X("change", function (r) {
               Te(e);
               const a = E().index;
               return E().expandWorldCountrySelect(r.target.value, a, !0);
             }),
-            o(104, "option", 70),
+            o(104, "option", 69),
             v(105, " Please select "),
             c(),
-            N(106, tHe, 2, 2, "option", 71),
-            o(107, "option", 72),
+            N(106, tHe, 2, 2, "option", 70),
+            o(107, "option", 71),
             v(108, " Other (please specify) "),
             c(),
             c(),
             c(),
             c(),
-            N(109, iHe, 2, 1, "div", 66),
+            N(109, iHe, 2, 1, "div", 65),
             c(),
             c(),
-            k(110, "div"),
+            z(110, "div"),
             o(111, "div"),
-            o(112, "div", 73),
+            o(112, "div", 72),
             o(113, "div", 4),
             o(114, "div"),
             o(115, "label"),
@@ -35011,18 +35025,18 @@ var UEe = Object.defineProperty,
             c(),
             o(120, "div", 54),
             o(121, "div", 55),
-            o(122, "select", 74),
-            o(123, "option", 70),
+            o(122, "select", 73),
+            o(123, "option", 69),
             v(124, " Please select "),
             c(),
-            N(125, rHe, 2, 2, "option", 71),
+            N(125, rHe, 2, 2, "option", 70),
             c(),
             c(),
             c(),
-            N(126, sHe, 2, 1, "div", 66),
+            N(126, sHe, 2, 1, "div", 65),
             c(),
             c(),
-            k(127, "p", 75),
+            z(127, "p", 74),
             c(),
             c(),
             o(128, "div", 4),
@@ -35031,14 +35045,14 @@ var UEe = Object.defineProperty,
             o(131, "span", 1),
             v(132, "2.6. Telephone"),
             c(),
-            k(133, "span", 51),
+            z(133, "span", 51),
             c(),
-            o(134, "div", 76),
+            o(134, "div", 75),
             o(135, "div", 55),
-            k(136, "input", 77),
+            z(136, "input", 76),
             c(),
             c(),
-            k(137, "span", 64),
+            z(137, "span", 63),
             c(),
             c(),
             o(138, "div", 4),
@@ -35047,14 +35061,14 @@ var UEe = Object.defineProperty,
             o(141, "span", 1),
             v(142, "2.7. E-mail"),
             c(),
-            k(143, "span", 51),
+            z(143, "span", 51),
             c(),
             o(144, "div", 54),
             o(145, "div", 55),
-            k(146, "input", 78),
+            z(146, "input", 77),
             c(),
             c(),
-            N(147, cHe, 2, 1, "div", 66),
+            N(147, cHe, 2, 1, "div", 65),
             c(),
             c(),
             o(148, "div", 4),
@@ -35066,25 +35080,25 @@ var UEe = Object.defineProperty,
               "2.8. Defendant\u2019s representative, if any, and contact details:"
             ),
             c(),
-            k(153, "span", 51),
+            z(153, "span", 51),
             c(),
             o(154, "div", 54),
             o(155, "div", 55),
-            o(156, "select", 79),
+            o(156, "select", 78),
             X("change", function (r) {
               Te(e);
               const a = E().index;
               return E().onRepresentativeChange(r.target.value, a);
             }),
-            k(157, "option", 80),
-            o(158, "option", 81),
+            z(157, "option", 79),
+            o(158, "option", 80),
             v(159, " Add new representative "),
             c(),
-            N(160, lHe, 2, 2, "option", 71),
+            N(160, lHe, 2, 2, "option", 70),
             c(),
             c(),
             c(),
-            N(161, dHe, 2, 1, "div", 66),
+            N(161, dHe, 2, 1, "div", 65),
             c(),
             c(),
             o(162, "div", 4),
@@ -35094,23 +35108,23 @@ var UEe = Object.defineProperty,
             v(166, " 2.9. Other details"),
             c(),
             c(),
-            k(167, "div", 82),
-            o(168, "div", 83),
+            z(167, "div", 81),
+            o(168, "div", 82),
             o(169, "div", 55),
-            k(170, "textarea", 84),
+            z(170, "textarea", 83),
             c(),
             c(),
-            k(171, "span", 64),
+            z(171, "span", 63),
             c(),
             c(),
             c(),
             c(),
-            o(172, "div", 85),
+            o(172, "div", 84),
             v(173, "\xa0"),
             c(),
             c(),
-            o(174, "div", 86),
-            o(175, "a", 87),
+            o(174, "div", 85),
+            o(175, "a", 86),
             X("click", function () {
               return Te(e), E(2).openModal("js_modal_add_defendant");
             }),
@@ -35118,7 +35132,7 @@ var UEe = Object.defineProperty,
             v(177, "Add another defendant"),
             c(),
             c(),
-            k(178, "label", 88),
+            z(178, "label", 87),
             c(),
             c(),
             c(),
@@ -35616,8 +35630,8 @@ var UEe = Object.defineProperty,
       function hHe(t, n) {
         if (
           (1 & t &&
-            (o(0, "div", 91),
-            o(1, "span", 92),
+            (o(0, "div", 90),
+            o(1, "span", 91),
             v(
               2,
               'Either "Corporate name of company or organisation" field must be completed or "Surname" and "First name" fields must be completed. '
@@ -35644,7 +35658,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field is required "),
             c(),
             c()),
@@ -35662,7 +35676,7 @@ var UEe = Object.defineProperty,
         }
       }
       function mHe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, pHe, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, pHe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -35680,7 +35694,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field is required "),
             c(),
             c()),
@@ -35698,7 +35712,7 @@ var UEe = Object.defineProperty,
         }
       }
       function vHe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, gHe, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, gHe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -35717,7 +35731,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field is required "),
             c(),
             c()),
@@ -35735,7 +35749,7 @@ var UEe = Object.defineProperty,
         }
       }
       function CHe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, _He, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, _He, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -35750,7 +35764,7 @@ var UEe = Object.defineProperty,
         }
       }
       function yHe(t, n) {
-        if ((1 & t && (o(0, "option", 93), v(1), c()), 2 & t)) {
+        if ((1 & t && (o(0, "option", 92), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), f(1), nt(" ", e.label, " ");
         }
@@ -35759,7 +35773,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field is required "),
             c(),
             c()),
@@ -35777,7 +35791,7 @@ var UEe = Object.defineProperty,
         }
       }
       function MHe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, bHe, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, bHe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -35793,7 +35807,7 @@ var UEe = Object.defineProperty,
         }
       }
       function SHe(t, n) {
-        if ((1 & t && (o(0, "option", 93), v(1), c()), 2 & t)) {
+        if ((1 & t && (o(0, "option", 92), v(1), c()), 2 & t)) {
           const e = n.$implicit;
           m("value", e.value), f(1), nt(" ", e.label, " ");
         }
@@ -35802,7 +35816,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field is required "),
             c(),
             c()),
@@ -35820,7 +35834,7 @@ var UEe = Object.defineProperty,
         }
       }
       function DHe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, wHe, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, wHe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -35839,7 +35853,7 @@ var UEe = Object.defineProperty,
         if (
           (1 & t &&
             (o(0, "div"),
-            o(1, "span", 92),
+            o(1, "span", 91),
             v(2, "Field has an invalid e-mail address "),
             c(),
             c()),
@@ -35857,7 +35871,7 @@ var UEe = Object.defineProperty,
         }
       }
       function VHe(t, n) {
-        if ((1 & t && (o(0, "div"), N(1, HHe, 3, 2, "div", 66), c()), 2 & t)) {
+        if ((1 & t && (o(0, "div"), N(1, HHe, 3, 2, "div", 65), c()), 2 & t)) {
           const e = E(2).index,
             i = E();
           let r;
@@ -35888,13 +35902,13 @@ var UEe = Object.defineProperty,
             c(),
             c(),
             c(),
-            o(6, "button", 89),
+            o(6, "button", 88),
             X("click", function () {
               Te(e);
               const r = E().index;
               return E().removeDefendant(r);
             }),
-            k(7, "i", 90),
+            z(7, "i", 89),
             c(),
             o(8, "div", 5),
             o(9, "div", 47),
@@ -35922,11 +35936,11 @@ var UEe = Object.defineProperty,
             o(25, "span", 1),
             v(26, "Corporate name of company or organisation"),
             c(),
-            k(27, "span", 51),
+            z(27, "span", 51),
             c(),
             o(28, "div", 54),
             o(29, "div", 55),
-            o(30, "input", 94),
+            o(30, "input", 93),
             X("change", function (r) {
               Te(e);
               const a = E().index;
@@ -35946,11 +35960,11 @@ var UEe = Object.defineProperty,
             o(34, "span", 1),
             v(35, "Surname"),
             c(),
-            k(36, "span", 51),
+            z(36, "span", 51),
             c(),
             o(37, "div", 54),
             o(38, "div", 55),
-            o(39, "input", 95),
+            o(39, "input", 94),
             X("change", function (r) {
               Te(e);
               const a = E().index;
@@ -35975,11 +35989,11 @@ var UEe = Object.defineProperty,
             o(43, "span", 1),
             v(44, "First name"),
             c(),
-            k(45, "span", 51),
+            z(45, "span", 51),
             c(),
             o(46, "div", 54),
             o(47, "div", 55),
-            o(48, "input", 96),
+            o(48, "input", 95),
             X("change", function (r) {
               Te(e);
               const a = E().index;
@@ -36007,15 +36021,15 @@ var UEe = Object.defineProperty,
               "Personal identification number or passport number/ registration number"
             ),
             c(),
-            k(54, "span", 51),
+            z(54, "span", 51),
             c(),
-            k(55, "div", 61),
-            o(56, "div", 62),
+            z(55, "div", 60),
+            o(56, "div", 61),
             o(57, "div", 55),
-            k(58, "input", 97),
+            z(58, "input", 96),
             c(),
             c(),
-            k(59, "span", 64),
+            z(59, "span", 63),
             c(),
             c(),
             o(60, "div", 4),
@@ -36030,7 +36044,7 @@ var UEe = Object.defineProperty,
             c(),
             o(67, "div", 54),
             o(68, "div", 55),
-            o(69, "input", 98),
+            o(69, "input", 97),
             X("change", function (r) {
               Te(e);
               const a = E().index;
@@ -36039,7 +36053,7 @@ var UEe = Object.defineProperty,
             c(),
             c(),
             c(),
-            N(70, mHe, 2, 1, "div", 66),
+            N(70, mHe, 2, 1, "div", 65),
             c(),
             c(),
             o(71, "div", 4),
@@ -36054,10 +36068,10 @@ var UEe = Object.defineProperty,
             c(),
             o(78, "div", 54),
             o(79, "div", 55),
-            k(80, "input", 99),
+            z(80, "input", 98),
             c(),
             c(),
-            N(81, vHe, 2, 1, "div", 66),
+            N(81, vHe, 2, 1, "div", 65),
             c(),
             c(),
             o(82, "div", 4),
@@ -36072,10 +36086,10 @@ var UEe = Object.defineProperty,
             c(),
             o(89, "div", 54),
             o(90, "div", 55),
-            k(91, "input", 100),
+            z(91, "input", 99),
             c(),
             c(),
-            N(92, CHe, 2, 1, "div", 66),
+            N(92, CHe, 2, 1, "div", 65),
             c(),
             c(),
             o(93, "div", 4),
@@ -36090,27 +36104,27 @@ var UEe = Object.defineProperty,
             c(),
             o(100, "div", 54),
             o(101, "div", 55),
-            o(102, "select", 101),
+            o(102, "select", 100),
             X("change", function (r) {
               Te(e);
               const a = E().index;
               return E().expandWorldCountrySelect(r.target.value, a, !1);
             }),
-            o(103, "option", 70),
+            o(103, "option", 69),
             v(104, " Please select "),
             c(),
-            N(105, yHe, 2, 2, "option", 71),
-            o(106, "option", 72),
+            N(105, yHe, 2, 2, "option", 70),
+            o(106, "option", 71),
             v(107, " Other (please specify) "),
             c(),
             c(),
             c(),
             c(),
-            N(108, MHe, 2, 1, "div", 66),
+            N(108, MHe, 2, 1, "div", 65),
             c(),
             c(),
             o(109, "div"),
-            o(110, "div", 73),
+            o(110, "div", 72),
             o(111, "div", 4),
             o(112, "div"),
             o(113, "label"),
@@ -36123,18 +36137,18 @@ var UEe = Object.defineProperty,
             c(),
             o(118, "div", 54),
             o(119, "div", 55),
-            o(120, "select", 102),
-            o(121, "option", 70),
+            o(120, "select", 101),
+            o(121, "option", 69),
             v(122, " Please select "),
             c(),
-            N(123, SHe, 2, 2, "option", 71),
+            N(123, SHe, 2, 2, "option", 70),
             c(),
             c(),
             c(),
-            N(124, DHe, 2, 1, "div", 66),
+            N(124, DHe, 2, 1, "div", 65),
             c(),
             c(),
-            k(125, "p", 75),
+            z(125, "p", 74),
             c(),
             c(),
             o(126, "div", 4),
@@ -36143,14 +36157,14 @@ var UEe = Object.defineProperty,
             o(129, "span", 1),
             v(130, "Telephone"),
             c(),
-            k(131, "span", 51),
+            z(131, "span", 51),
             c(),
-            o(132, "div", 76),
+            o(132, "div", 75),
             o(133, "div", 55),
-            k(134, "input", 103),
+            z(134, "input", 102),
             c(),
             c(),
-            k(135, "span", 64),
+            z(135, "span", 63),
             c(),
             c(),
             o(136, "div", 4),
@@ -36159,24 +36173,24 @@ var UEe = Object.defineProperty,
             o(139, "span", 1),
             v(140, "E-mail"),
             c(),
-            k(141, "span", 51),
+            z(141, "span", 51),
             c(),
             o(142, "div", 54),
             o(143, "div", 55),
-            k(144, "input", 104),
+            z(144, "input", 103),
             c(),
             c(),
-            N(145, VHe, 2, 1, "div", 66),
+            N(145, VHe, 2, 1, "div", 65),
             c(),
             c(),
             c(),
             c(),
-            o(146, "div", 85),
+            o(146, "div", 84),
             v(147, "\xa0"),
             c(),
             c(),
-            o(148, "div", 86),
-            o(149, "a", 87),
+            o(148, "div", 85),
+            o(149, "a", 86),
             X("click", function () {
               return Te(e), E(2).openModal("js_modal_add_defendant");
             }),
@@ -36184,7 +36198,7 @@ var UEe = Object.defineProperty,
             v(151, "Add another defendant"),
             c(),
             c(),
-            k(152, "label", 88),
+            z(152, "label", 87),
             c(),
             c(),
             c(),
@@ -36802,12 +36816,14 @@ var UEe = Object.defineProperty,
                 this.onStableSubscription.unsubscribe(),
                 window.processClaimantDefendantRepresentativeConcept(
                   "step2",
-                  "http://scanii.org/domain/defendant.personalIdNumber"
+                  "http://scanii.org/domain/defendant.personalIdNumber",
+                  !0
                 ),
                 "defendant" === this.selectedOption &&
                   window.processClaimantDefendantRepresentativeConcept(
                     "step2",
-                    "http://scanii.org/domain/defendant.otherDetails"
+                    "http://scanii.org/domain/defendant.otherDetails",
+                    !0
                   ),
                 (this.selectedOption = void 0);
             });
@@ -36974,7 +36990,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(Hp), z(G2), z(J2), z(mi), z(Ct), z(p2));
+            return new (e || t)(k(Hp), k(G2), k(J2), k(mi), k(Ct), k(p2));
           }),
           (t.ɵcmp = qe({
             type: t,
@@ -37292,10 +37308,6 @@ var UEe = Object.defineProperty,
                 "input",
               ],
               [1, "labelInfo"],
-              [
-                "concept",
-                "http://scanii.org/domain/defendant.personalIdNumber",
-              ],
               [
                 "concept",
                 "http://scanii.org/domain/defendant.personalIdNumber",
@@ -37693,14 +37705,14 @@ var UEe = Object.defineProperty,
                 o(1, "h3", 1),
                 v(2, "2. Defendant"),
                 c(),
-                k(3, "label", 2),
-                k(4, "div", 3),
+                z(3, "label", 2),
+                z(4, "div", 3),
                 o(5, "div", 4),
                 o(6, "div", 5),
-                k(7, "input", 6),
-                k(8, "p", 7),
-                k(9, "input", 8),
-                k(10, "p", 9),
+                z(7, "input", 6),
+                z(8, "p", 7),
+                z(9, "input", 8),
+                z(10, "p", 9),
                 o(11, "form", 10),
                 N(12, xHe, 5, 3, "div", 11),
                 c(),
@@ -37732,7 +37744,7 @@ var UEe = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                k(26, "br"),
+                z(26, "br"),
                 o(27, "div", 17),
                 o(28, "div", 18),
                 o(29, "input", 19),
@@ -37755,7 +37767,7 @@ var UEe = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                k(36, "br"),
+                z(36, "br"),
                 o(37, "div", 23),
                 o(38, "div", 24),
                 o(39, "a", 25),
@@ -37765,7 +37777,7 @@ var UEe = Object.defineProperty,
                 v(40, "Cancel "),
                 c(),
                 c(),
-                k(41, "div", 26),
+                z(41, "div", 26),
                 o(42, "div", 24),
                 o(43, "a", 27),
                 X("click", function () {
@@ -37973,7 +37985,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(Vp), z(G2), z(J2), z(p2));
+            return new (e || t)(k(Vp), k(G2), k(J2), k(p2));
           }),
           (t.ɵcmp = qe({
             type: t,
@@ -38309,13 +38321,13 @@ var UEe = Object.defineProperty,
                 o(1, "h3", 1),
                 v(2, "3. Jurisdiction"),
                 c(),
-                k(3, "label", 2),
-                k(4, "div", 3),
+                z(3, "label", 2),
+                z(4, "div", 3),
                 o(5, "div", 4),
                 o(6, "div", 5),
-                k(7, "div", 6),
-                k(8, "div", 6),
-                k(9, "div", 7),
+                z(7, "div", 6),
+                z(8, "div", 6),
+                z(9, "div", 7),
                 o(10, "div", 8),
                 o(11, "div", 9),
                 o(12, "div"),
@@ -38486,7 +38498,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(86, "div", 42),
                 o(87, "div", 43),
-                k(88, "input", 44),
+                z(88, "input", 44),
                 c(),
                 c(),
                 N(89, zHe, 2, 1, "div", 12),
@@ -39337,7 +39349,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(Ap), z(G2), z(J2), z(mi), z(p2));
+            return new (e || t)(k(Ap), k(G2), k(J2), k(mi), k(p2));
           }),
           (t.ɵcmp = qe({
             type: t,
@@ -40415,8 +40427,8 @@ var UEe = Object.defineProperty,
                 o(2, "h3", 2),
                 v(3, " 4.1 Cross-border nature of the case "),
                 c(),
-                k(4, "label", 3),
-                o(5, "div", 4),
+                z(4, "label", 3),
+                z(5, "div", 4),
                 o(6, "form", 5),
                 o(7, "div", 6),
                 o(8, "div", 7),
@@ -40483,7 +40495,7 @@ var UEe = Object.defineProperty,
                 N(43, UHe, 3, 1, "div", 18),
                 c(),
                 c(),
-                k(44, "p", 24),
+                z(44, "p", 24),
                 c(),
                 c(),
                 o(45, "div", 9),
@@ -40548,7 +40560,7 @@ var UEe = Object.defineProperty,
                 N(78, XHe, 3, 1, "div", 18),
                 c(),
                 c(),
-                k(79, "p", 34),
+                z(79, "p", 34),
                 c(),
                 c(),
                 o(80, "div", 9),
@@ -40610,7 +40622,7 @@ var UEe = Object.defineProperty,
                 N(113, sVe, 3, 1, "div", 18),
                 c(),
                 c(),
-                k(114, "p", 44),
+                z(114, "p", 44),
                 c(),
                 c(),
                 c(),
@@ -40638,13 +40650,12 @@ var UEe = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                c(),
                 o(123, "div", 50),
                 o(124, "h3", 2),
                 v(125, "4.2. Bank details (optional)"),
                 c(),
-                k(126, "div", 51),
-                k(127, "div", 52),
+                z(126, "div", 51),
+                z(127, "div", 52),
                 o(128, "form", 5),
                 o(129, "div", 6),
                 o(130, "div", 7),
@@ -40680,10 +40691,10 @@ var UEe = Object.defineProperty,
                 o(149, "span", 2),
                 v(150, " By bank transfer"),
                 c(),
-                k(151, "span", 61),
+                z(151, "span", 61),
                 c(),
                 c(),
-                k(152, "span", 62),
+                z(152, "span", 62),
                 c(),
                 c(),
                 o(153, "div", 9),
@@ -40701,10 +40712,10 @@ var UEe = Object.defineProperty,
                 o(158, "span", 2),
                 v(159, " By credit card"),
                 c(),
-                k(160, "span", 61),
+                z(160, "span", 61),
                 c(),
                 c(),
-                k(161, "span", 62),
+                z(161, "span", 62),
                 c(),
                 c(),
                 o(162, "div", 65),
@@ -40721,7 +40732,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(171, "div", 69),
                 o(172, "div", 13),
-                k(173, "input", 70),
+                z(173, "input", 70),
                 c(),
                 c(),
                 N(174, cVe, 2, 1, "div", 18),
@@ -40739,7 +40750,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(182, "div", 73),
                 o(183, "div", 13),
-                k(184, "input", 74),
+                z(184, "input", 74),
                 c(),
                 c(),
                 N(185, uVe, 2, 1, "div", 18),
@@ -40757,7 +40768,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(193, "div", 77),
                 o(194, "div", 13),
-                k(195, "input", 78),
+                z(195, "input", 78),
                 c(),
                 c(),
                 N(196, fVe, 2, 1, "div", 18),
@@ -40775,7 +40786,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(204, "div", 81),
                 o(205, "div", 13),
-                k(206, "input", 82),
+                z(206, "input", 82),
                 c(),
                 c(),
                 N(207, pVe, 2, 1, "div", 18),
@@ -40793,7 +40804,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(215, "div", 85),
                 o(216, "div", 13),
-                k(217, "input", 86),
+                z(217, "input", 86),
                 c(),
                 c(),
                 N(218, gVe, 2, 1, "div", 18),
@@ -40816,10 +40827,10 @@ var UEe = Object.defineProperty,
                 o(224, "span", 2),
                 v(225, " Direct debit from your bank account"),
                 c(),
-                k(226, "span", 61),
+                z(226, "span", 61),
                 c(),
                 c(),
-                k(227, "span", 62),
+                z(227, "span", 62),
                 c(),
                 c(),
                 o(228, "div", 89),
@@ -40836,7 +40847,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(237, "div", 93),
                 o(238, "div", 13),
-                k(239, "input", 94),
+                z(239, "input", 94),
                 c(),
                 c(),
                 N(240, _Ve, 2, 1, "div", 18),
@@ -40854,7 +40865,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(248, "div", 97),
                 o(249, "div", 13),
-                k(250, "input", 98),
+                z(250, "input", 98),
                 c(),
                 c(),
                 N(251, yVe, 2, 1, "div", 18),
@@ -40872,7 +40883,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(259, "div", 101),
                 o(260, "div", 13),
-                k(261, "input", 102),
+                z(261, "input", 102),
                 c(),
                 c(),
                 N(262, MVe, 2, 1, "div", 18),
@@ -40895,10 +40906,10 @@ var UEe = Object.defineProperty,
                 o(268, "span", 2),
                 v(269, " Other (please specify)"),
                 c(),
-                k(270, "span", 61),
+                z(270, "span", 61),
                 c(),
                 c(),
-                k(271, "span", 62),
+                z(271, "span", 62),
                 c(),
                 c(),
                 o(272, "div", 105),
@@ -40915,7 +40926,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(281, "div", 109),
                 o(282, "div", 13),
-                k(283, "input", 110),
+                z(283, "input", 110),
                 c(),
                 c(),
                 N(284, wVe, 2, 1, "div", 18),
@@ -40948,14 +40959,14 @@ var UEe = Object.defineProperty,
                 o(297, "span", 2),
                 v(298, " 4.2.2.1. Account holder"),
                 c(),
-                k(299, "span", 114),
+                z(299, "span", 114),
                 c(),
                 o(300, "div", 115),
                 o(301, "div", 13),
-                k(302, "input", 116),
+                z(302, "input", 116),
                 c(),
                 c(),
-                k(303, "span", 117),
+                z(303, "span", 117),
                 c(),
                 c(),
                 o(304, "div", 9),
@@ -40964,14 +40975,14 @@ var UEe = Object.defineProperty,
                 o(307, "span", 2),
                 v(308, " 4.2.2.2 Bank name, BIC or other relevant bank code"),
                 c(),
-                k(309, "span", 119),
+                z(309, "span", 119),
                 c(),
                 o(310, "div", 120),
                 o(311, "div", 13),
-                k(312, "input", 121),
+                z(312, "input", 121),
                 c(),
                 c(),
-                k(313, "span", 122),
+                z(313, "span", 122),
                 c(),
                 c(),
                 o(314, "div", 9),
@@ -40980,11 +40991,11 @@ var UEe = Object.defineProperty,
                 o(317, "span", 2),
                 v(318, " 4.2.2.3. Account number/IBAN"),
                 c(),
-                k(319, "span", 124),
+                z(319, "span", 124),
                 c(),
                 o(320, "div", 125),
                 o(321, "div", 13),
-                k(322, "input", 126),
+                z(322, "input", 126),
                 c(),
                 c(),
                 N(323, HVe, 2, 1, "div", 18),
@@ -42167,7 +42178,7 @@ var UEe = Object.defineProperty,
         }
       }
       function hNe(t, n) {
-        1 & t && k(0, "span", 245);
+        1 & t && z(0, "span", 245);
       }
       function pNe(t, n) {
         1 & t && (o(0, "span", 246), v(1, "*"), c());
@@ -42237,7 +42248,7 @@ var UEe = Object.defineProperty,
           2 & t && (f(1), m("translate", "errors.dateValidationError"));
       }
       function yNe(t, n) {
-        1 & t && k(0, "span", 245);
+        1 & t && z(0, "span", 245);
       }
       function bNe(t, n) {
         1 & t &&
@@ -42318,7 +42329,7 @@ var UEe = Object.defineProperty,
         }
       }
       function VNe(t, n) {
-        1 & t && k(0, "span", 245);
+        1 & t && z(0, "span", 245);
       }
       function NNe(t, n) {
         1 & t && (o(0, "span", 253), v(1, "*"), c());
@@ -42388,7 +42399,7 @@ var UEe = Object.defineProperty,
           2 & t && (f(1), m("translate", "errors.dateValidationError"));
       }
       function kNe(t, n) {
-        1 & t && k(0, "span", 245);
+        1 & t && z(0, "span", 245);
       }
       function LNe(t, n) {
         1 & t &&
@@ -42520,7 +42531,7 @@ var UEe = Object.defineProperty,
         }
       }
       function WNe(t, n) {
-        1 & t && k(0, "span", 245);
+        1 & t && z(0, "span", 245);
       }
       function GNe(t, n) {
         1 & t &&
@@ -42613,7 +42624,7 @@ var UEe = Object.defineProperty,
           2 & t && (f(1), m("translate", "errors.dateValidationError"));
       }
       function txe(t, n) {
-        1 & t && k(0, "span", 245);
+        1 & t && z(0, "span", 245);
       }
       function nxe(t, n) {
         1 & t &&
@@ -42891,7 +42902,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(Tp), z(G2), z(J2), z(mi), z(p2));
+            return new (e || t)(k(Tp), k(G2), k(J2), k(mi), k(p2));
           }),
           (t.ɵcmp = qe({
             type: t,
@@ -44814,8 +44825,8 @@ var UEe = Object.defineProperty,
                   o(1, "h3", 1),
                   v(2, "5. Oggetto della controversia"),
                   c(),
-                  k(3, "label", 2),
-                  k(4, "div", 3),
+                  z(3, "label", 2),
+                  z(4, "div", 3),
                   o(5, "div", 4),
                   o(6, "div", 5),
                   o(7, "form", 6),
@@ -44858,7 +44869,7 @@ var UEe = Object.defineProperty,
                   o(22, "span", 1),
                   v(23, " Yes"),
                   c(),
-                  k(24, "span", 15),
+                  z(24, "span", 15),
                   c(),
                   c(),
                   c(),
@@ -44888,7 +44899,7 @@ var UEe = Object.defineProperty,
                   o(30, "span", 1),
                   v(31, " No"),
                   c(),
-                  k(32, "span", 15),
+                  z(32, "span", 15),
                   c(),
                   c(),
                   c(),
@@ -44897,7 +44908,7 @@ var UEe = Object.defineProperty,
                   o(34, "span", 1),
                   v(35, 'Are you claiming money? If so, click "yes".'),
                   c(),
-                  k(36, "p"),
+                  z(36, "p"),
                   c(),
                   c(),
                   o(37, "div", 19),
@@ -44918,7 +44929,7 @@ var UEe = Object.defineProperty,
                   c(),
                   o(47, "div", 24),
                   o(48, "div", 25),
-                  k(49, "input", 26),
+                  z(49, "input", 26),
                   c(),
                   c(),
                   N(50, EVe, 3, 2, "div", 11),
@@ -45039,7 +45050,7 @@ var UEe = Object.defineProperty,
                   N(107, qVe, 2, 1, "div", 11),
                   c(),
                   c(),
-                  k(108, "div", 46),
+                  z(108, "div", 46),
                   o(109, "div", 8),
                   o(110, "div"),
                   o(111, "div", 47),
@@ -45065,7 +45076,7 @@ var UEe = Object.defineProperty,
                   o(114, "span", 1),
                   v(115, " Yes"),
                   c(),
-                  k(116, "span", 50),
+                  z(116, "span", 50),
                   c(),
                   c(),
                   c(),
@@ -45095,7 +45106,7 @@ var UEe = Object.defineProperty,
                   o(122, "span", 1),
                   v(123, " No"),
                   c(),
-                  k(124, "span", 50),
+                  z(124, "span", 50),
                   c(),
                   c(),
                   c(),
@@ -45104,7 +45115,7 @@ var UEe = Object.defineProperty,
                   o(126, "span", 1),
                   v(127, 'Is your claim non-monetary? If so click "yes".'),
                   c(),
-                  k(128, "p"),
+                  z(128, "p"),
                   c(),
                   c(),
                   o(129, "div", 53),
@@ -45122,7 +45133,7 @@ var UEe = Object.defineProperty,
                   c(),
                   o(139, "div", 57),
                   o(140, "div", 25),
-                  k(141, "input", 58),
+                  z(141, "input", 58),
                   c(),
                   c(),
                   N(142, $Ve, 2, 1, "div", 11),
@@ -45140,7 +45151,7 @@ var UEe = Object.defineProperty,
                   c(),
                   o(150, "div", 61),
                   o(151, "div", 25),
-                  k(152, "input", 62),
+                  z(152, "input", 62),
                   c(),
                   c(),
                   N(153, JVe, 3, 2, "div", 11),
@@ -45287,7 +45298,7 @@ var UEe = Object.defineProperty,
                   N(227, rNe, 2, 1, "div", 11),
                   c(),
                   c(),
-                  k(228, "div", 84),
+                  z(228, "div", 84),
                   o(229, "div", 8),
                   o(230, "div"),
                   o(231, "div", 85),
@@ -45305,7 +45316,7 @@ var UEe = Object.defineProperty,
                   o(234, "span", 1),
                   v(235, "Yes"),
                   c(),
-                  k(236, "span", 88),
+                  z(236, "span", 88),
                   c(),
                   c(),
                   c(),
@@ -45327,7 +45338,7 @@ var UEe = Object.defineProperty,
                   o(242, "span", 1),
                   v(243, "No"),
                   c(),
-                  k(244, "span", 88),
+                  z(244, "span", 88),
                   c(),
                   c(),
                   c(),
@@ -45351,7 +45362,7 @@ var UEe = Object.defineProperty,
                   c(),
                   o(255, "div", 95),
                   o(256, "div", 25),
-                  k(257, "textarea", 96),
+                  z(257, "textarea", 96),
                   c(),
                   c(),
                   N(258, sNe, 2, 1, "div", 11),
@@ -45377,7 +45388,7 @@ var UEe = Object.defineProperty,
                   N(269, cNe, 2, 1, "div", 11),
                   c(),
                   c(),
-                  k(270, "div", 98),
+                  z(270, "div", 98),
                   o(271, "div", 8),
                   o(272, "div"),
                   o(273, "div", 99),
@@ -45402,7 +45413,7 @@ var UEe = Object.defineProperty,
                   o(276, "span", 1),
                   v(277, "Yes"),
                   c(),
-                  k(278, "span", 102),
+                  z(278, "span", 102),
                   c(),
                   c(),
                   c(),
@@ -45431,7 +45442,7 @@ var UEe = Object.defineProperty,
                   o(284, "span", 1),
                   v(285, "No"),
                   c(),
-                  k(286, "span", 102),
+                  z(286, "span", 102),
                   c(),
                   c(),
                   c(),
@@ -45483,7 +45494,7 @@ var UEe = Object.defineProperty,
                   o(306, "span", 1),
                   v(307, "Contractual?"),
                   c(),
-                  k(308, "span", 111),
+                  z(308, "span", 111),
                   c(),
                   c(),
                   c(),
@@ -45509,7 +45520,7 @@ var UEe = Object.defineProperty,
                   o(314, "span", 1),
                   v(315, "Statutory?"),
                   c(),
-                  k(316, "span", 111),
+                  z(316, "span", 111),
                   c(),
                   c(),
                   c(),
@@ -45535,7 +45546,7 @@ var UEe = Object.defineProperty,
                   o(329, "span", 1),
                   v(330, "(1) the rate is"),
                   c(),
-                  k(331, "span", 119),
+                  z(331, "span", 119),
                   c(),
                   o(332, "div", 120),
                   o(333, "label"),
@@ -45549,16 +45560,16 @@ var UEe = Object.defineProperty,
                   c(),
                   c(),
                   o(339, "div", 123),
-                  k(340, "input", 124),
+                  z(340, "input", 124),
                   c(),
                   c(),
-                  k(341, "span", 125),
+                  z(341, "span", 125),
                   c(),
                   c(),
                   o(342, "div", 8),
                   o(343, "div", 117),
                   o(344, "label", 126),
-                  k(345, "div", 127),
+                  z(345, "div", 127),
                   c(),
                   o(346, "div", 128),
                   o(347, "div", 122),
@@ -45572,10 +45583,10 @@ var UEe = Object.defineProperty,
                   c(),
                   c(),
                   o(351, "div", 123),
-                  k(352, "input", 131),
+                  z(352, "input", 131),
                   c(),
                   c(),
-                  k(353, "span", 132),
+                  z(353, "span", 132),
                   o(354, "label", 133),
                   v(355, "% "),
                   o(356, "span", 1),
@@ -45590,14 +45601,14 @@ var UEe = Object.defineProperty,
                   o(361, "span", 1),
                   v(362, "other"),
                   c(),
-                  k(363, "span", 135),
+                  z(363, "span", 135),
                   c(),
                   o(364, "div", 136),
                   o(365, "div", 25),
-                  k(366, "input", 137),
+                  z(366, "input", 137),
                   c(),
                   c(),
-                  k(367, "span", 138),
+                  z(367, "span", 138),
                   c(),
                   c(),
                   c(),
@@ -45615,7 +45626,7 @@ var UEe = Object.defineProperty,
                   c(),
                   o(377, "div", 142),
                   o(378, "div", 25),
-                  k(379, "input", 143),
+                  z(379, "input", 143),
                   c(),
                   c(),
                   N(380, fNe, 2, 1, "div", 144),
@@ -45651,11 +45662,11 @@ var UEe = Object.defineProperty,
                   o(394, "div", 8),
                   o(395, "div"),
                   o(396, "label", 126),
-                  k(397, "div", 151),
+                  z(397, "div", 151),
                   c(),
                   o(398, "div", 152),
                   o(399, "div", 25),
-                  k(400, "input", 153),
+                  z(400, "input", 153),
                   c(),
                   c(),
                   N(401, _Ne, 2, 1, "div", 144),
@@ -45682,7 +45693,7 @@ var UEe = Object.defineProperty,
                   o(410, "span", 1),
                   v(411, "to the date of the judgment"),
                   c(),
-                  k(412, "span", 157),
+                  z(412, "span", 157),
                   c(),
                   c(),
                   N(413, MNe, 2, 1, "div", 11),
@@ -45708,7 +45719,7 @@ var UEe = Object.defineProperty,
                   o(421, "span", 1),
                   v(422, "to the date of payment of principal"),
                   c(),
-                  k(423, "span", 161),
+                  z(423, "span", 161),
                   c(),
                   c(),
                   N(424, wNe, 2, 1, "div", 11),
@@ -45737,7 +45748,7 @@ var UEe = Object.defineProperty,
                   c(),
                   o(436, "div", 166),
                   o(437, "div", 25),
-                  k(438, "input", 167),
+                  z(438, "input", 167),
                   c(),
                   c(),
                   N(439, HNe, 2, 1, "div", 144),
@@ -45776,11 +45787,11 @@ var UEe = Object.defineProperty,
                   o(455, "div", 8),
                   o(456, "div"),
                   o(457, "label", 126),
-                  k(458, "div", 173),
+                  z(458, "div", 173),
                   c(),
                   o(459, "div", 174),
                   o(460, "div", 25),
-                  k(461, "input", 175),
+                  z(461, "input", 175),
                   c(),
                   c(),
                   N(462, ENe, 2, 1, "div", 144),
@@ -45811,7 +45822,7 @@ var UEe = Object.defineProperty,
                   o(473, "span", 1),
                   v(474, "to the date of the judgment"),
                   c(),
-                  k(475, "span", 179),
+                  z(475, "span", 179),
                   c(),
                   c(),
                   N(476, INe, 2, 1, "div", 11),
@@ -45837,7 +45848,7 @@ var UEe = Object.defineProperty,
                   o(484, "span", 1),
                   v(485, "to the date of payment of principal"),
                   c(),
-                  k(486, "span", 183),
+                  z(486, "span", 183),
                   c(),
                   c(),
                   N(487, ONe, 2, 1, "div", 11),
@@ -45891,7 +45902,7 @@ var UEe = Object.defineProperty,
                   o(504, "span", 1),
                   v(505, "Yes"),
                   c(),
-                  k(506, "span", 188),
+                  z(506, "span", 188),
                   c(),
                   c(),
                   c(),
@@ -45923,7 +45934,7 @@ var UEe = Object.defineProperty,
                   o(512, "span", 1),
                   v(513, "No"),
                   c(),
-                  k(514, "span", 188),
+                  z(514, "span", 188),
                   c(),
                   c(),
                   c(),
@@ -45963,11 +45974,11 @@ var UEe = Object.defineProperty,
                   o(531, "div", 8),
                   o(532, "div"),
                   o(533, "label", 126),
-                  k(534, "div", 199),
+                  z(534, "div", 199),
                   c(),
                   o(535, "div", 200),
                   o(536, "div", 25),
-                  k(537, "input", 201),
+                  z(537, "input", 201),
                   c(),
                   c(),
                   N(538, $Ne, 2, 1, "div", 144),
@@ -45996,7 +46007,7 @@ var UEe = Object.defineProperty,
                   o(548, "span", 1),
                   v(549, "(event)"),
                   c(),
-                  k(550, "span", 205),
+                  z(550, "span", 205),
                   c(),
                   c(),
                   N(551, JNe, 2, 1, "div", 11),
@@ -46006,14 +46017,14 @@ var UEe = Object.defineProperty,
                   o(553, "div", 8),
                   o(554, "div"),
                   o(555, "label", 126),
-                  k(556, "div", 207),
+                  z(556, "div", 207),
                   c(),
                   o(557, "div", 208),
                   o(558, "div", 25),
-                  k(559, "input", 209),
+                  z(559, "input", 209),
                   c(),
                   c(),
-                  k(560, "span", 210),
+                  z(560, "span", 210),
                   c(),
                   c(),
                   c(),
@@ -46049,11 +46060,11 @@ var UEe = Object.defineProperty,
                   o(575, "div", 8),
                   o(576, "div"),
                   o(577, "label", 126),
-                  k(578, "div", 216),
+                  z(578, "div", 216),
                   c(),
                   o(579, "div", 217),
                   o(580, "div", 25),
-                  k(581, "input", 218),
+                  z(581, "input", 218),
                   c(),
                   c(),
                   N(582, ZNe, 2, 1, "div", 144),
@@ -46084,7 +46095,7 @@ var UEe = Object.defineProperty,
                   o(593, "span", 1),
                   v(594, "to the date of payment of costs"),
                   c(),
-                  k(595, "span", 222),
+                  z(595, "span", 222),
                   c(),
                   c(),
                   N(596, ixe, 2, 1, "div", 11),
@@ -47195,7 +47206,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(Ep), z(G2), z(J2), z(p2));
+            return new (e || t)(k(Ep), k(G2), k(J2), k(p2));
           }),
           (t.ɵcmp = qe({
             type: t,
@@ -47638,8 +47649,8 @@ var UEe = Object.defineProperty,
                 o(1, "h3", 1),
                 v(2, "6. Dettagli della controversia"),
                 c(),
-                k(3, "label", 2),
-                k(4, "div", 3),
+                z(3, "label", 2),
+                z(4, "div", 3),
                 o(5, "div", 4),
                 o(6, "div", 5),
                 o(7, "form", 6),
@@ -47660,7 +47671,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(17, "div", 11),
                 o(18, "div", 12),
-                k(19, "textarea", 13),
+                z(19, "textarea", 13),
                 c(),
                 c(),
                 N(20, sxe, 2, 1, "div", 14),
@@ -47712,7 +47723,7 @@ var UEe = Object.defineProperty,
                 o(44, "span", 1),
                 v(45, " Yes"),
                 c(),
-                k(46, "span", 23),
+                z(46, "span", 23),
                 c(),
                 c(),
                 c(),
@@ -47732,7 +47743,7 @@ var UEe = Object.defineProperty,
                 o(52, "span", 1),
                 v(53, "No"),
                 c(),
-                k(54, "span", 23),
+                z(54, "span", 23),
                 c(),
                 c(),
                 c(),
@@ -47754,7 +47765,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(65, "div", 29),
                 o(66, "div", 12),
-                k(67, "textarea", 30),
+                z(67, "textarea", 30),
                 c(),
                 c(),
                 N(68, uxe, 2, 1, "div", 14),
@@ -47796,7 +47807,7 @@ var UEe = Object.defineProperty,
                 o(86, "span", 1),
                 v(87, "Yes"),
                 c(),
-                k(88, "span", 35),
+                z(88, "span", 35),
                 c(),
                 c(),
                 c(),
@@ -47816,7 +47827,7 @@ var UEe = Object.defineProperty,
                 o(94, "span", 1),
                 v(95, "No"),
                 c(),
-                k(96, "span", 35),
+                z(96, "span", 35),
                 c(),
                 c(),
                 c(),
@@ -47838,7 +47849,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(107, "div", 41),
                 o(108, "div", 12),
-                k(109, "textarea", 42),
+                z(109, "textarea", 42),
                 c(),
                 c(),
                 N(110, pxe, 2, 1, "div", 14),
@@ -47880,7 +47891,7 @@ var UEe = Object.defineProperty,
                 o(128, "span", 1),
                 v(129, "Yes"),
                 c(),
-                k(130, "span", 47),
+                z(130, "span", 47),
                 c(),
                 c(),
                 c(),
@@ -47900,7 +47911,7 @@ var UEe = Object.defineProperty,
                 o(136, "span", 1),
                 v(137, "No"),
                 c(),
-                k(138, "span", 47),
+                z(138, "span", 47),
                 c(),
                 c(),
                 c(),
@@ -47922,7 +47933,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(149, "div", 53),
                 o(150, "div", 12),
-                k(151, "textarea", 54),
+                z(151, "textarea", 54),
                 c(),
                 c(),
                 N(152, _xe, 2, 1, "div", 14),
@@ -48460,7 +48471,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(zp), z(G2), z(J2), z(mi), z(p2), z(Z6));
+            return new (e || t)(k(zp), k(G2), k(J2), k(mi), k(p2), k(Z6));
           }),
           (t.ɵcmp = qe({
             type: t,
@@ -49158,9 +49169,9 @@ var UEe = Object.defineProperty,
                 o(2, "h3", 2),
                 v(3, "7.1. Udienza"),
                 c(),
-                k(4, "label", 3),
-                k(5, "div", 4),
-                k(6, "div", 5),
+                z(4, "label", 3),
+                z(5, "div", 4),
+                z(6, "div", 5),
                 o(7, "div", 6),
                 o(8, "div", 7),
                 o(9, "form", 8),
@@ -49197,7 +49208,7 @@ var UEe = Object.defineProperty,
                 o(27, "span", 14),
                 v(28, "Yes"),
                 c(),
-                k(29, "span", 20),
+                z(29, "span", 20),
                 c(),
                 c(),
                 c(),
@@ -49217,7 +49228,7 @@ var UEe = Object.defineProperty,
                 o(35, "span", 14),
                 v(36, "No"),
                 c(),
-                k(37, "span", 20),
+                z(37, "span", 20),
                 c(),
                 c(),
                 c(),
@@ -49239,7 +49250,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(48, "div", 26),
                 o(49, "div", 27),
-                k(50, "textarea", 28),
+                z(50, "textarea", 28),
                 c(),
                 c(),
                 N(51, Sxe, 2, 1, "div", 16),
@@ -49284,7 +49295,7 @@ var UEe = Object.defineProperty,
                 o(69, "span", 14),
                 v(70, "Yes"),
                 c(),
-                k(71, "span", 33),
+                z(71, "span", 33),
                 c(),
                 c(),
                 c(),
@@ -49304,7 +49315,7 @@ var UEe = Object.defineProperty,
                 o(77, "span", 14),
                 v(78, "No"),
                 c(),
-                k(79, "span", 33),
+                z(79, "span", 33),
                 c(),
                 c(),
                 c(),
@@ -49326,7 +49337,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(90, "div", 39),
                 o(91, "div", 27),
-                k(92, "textarea", 40),
+                z(92, "textarea", 40),
                 c(),
                 c(),
                 N(93, Vxe, 2, 1, "div", 16),
@@ -49346,8 +49357,8 @@ var UEe = Object.defineProperty,
                   " 7.2 Notifica o comunicazione degli atti e comunicazione con l\u2019organo giurisdizionale "
                 ),
                 c(),
-                k(97, "div", 42),
-                k(98, "div", 5),
+                z(97, "div", 42),
+                z(98, "div", 5),
                 o(99, "div", 6),
                 o(100, "div", 7),
                 o(101, "form", 8),
@@ -49375,12 +49386,12 @@ var UEe = Object.defineProperty,
                 o(114, "div", 12),
                 o(115, "div"),
                 o(116, "div", 44),
-                k(117, "input", 45),
+                z(117, "input", 45),
                 o(118, "label", 46),
                 o(119, "span", 14),
                 v(120, "Yes"),
                 c(),
-                k(121, "span", 47),
+                z(121, "span", 47),
                 c(),
                 c(),
                 c(),
@@ -49388,12 +49399,12 @@ var UEe = Object.defineProperty,
                 o(122, "div", 12),
                 o(123, "div"),
                 o(124, "div", 44),
-                k(125, "input", 48),
+                z(125, "input", 48),
                 o(126, "label", 49),
                 o(127, "span", 14),
                 v(128, "No"),
                 c(),
-                k(129, "span", 47),
+                z(129, "span", 47),
                 c(),
                 c(),
                 c(),
@@ -49424,12 +49435,12 @@ var UEe = Object.defineProperty,
                 o(142, "div", 12),
                 o(143, "div"),
                 o(144, "div", 51),
-                k(145, "input", 52),
+                z(145, "input", 52),
                 o(146, "label", 53),
                 o(147, "span", 14),
                 v(148, "Yes"),
                 c(),
-                k(149, "span", 54),
+                z(149, "span", 54),
                 c(),
                 c(),
                 c(),
@@ -49437,12 +49448,12 @@ var UEe = Object.defineProperty,
                 o(150, "div", 12),
                 o(151, "div"),
                 o(152, "div", 51),
-                k(153, "input", 55),
+                z(153, "input", 55),
                 o(154, "label", 56),
                 o(155, "span", 14),
                 v(156, "No"),
                 c(),
-                k(157, "span", 54),
+                z(157, "span", 54),
                 c(),
                 c(),
                 c(),
@@ -49457,7 +49468,7 @@ var UEe = Object.defineProperty,
                 o(159, "h3", 14),
                 v(160, "7.3. Certificato"),
                 c(),
-                k(161, "div", 58),
+                z(161, "div", 58),
                 o(162, "div", 6),
                 o(163, "div", 7),
                 o(164, "form", 8),
@@ -49481,12 +49492,12 @@ var UEe = Object.defineProperty,
                 o(174, "div", 12),
                 o(175, "div"),
                 o(176, "div", 60),
-                k(177, "input", 61),
+                z(177, "input", 61),
                 o(178, "label", 62),
                 o(179, "span", 14),
                 v(180, "Yes"),
                 c(),
-                k(181, "span", 63),
+                z(181, "span", 63),
                 c(),
                 c(),
                 c(),
@@ -49494,12 +49505,12 @@ var UEe = Object.defineProperty,
                 o(182, "div", 12),
                 o(183, "div"),
                 o(184, "div", 60),
-                k(185, "input", 64),
+                z(185, "input", 64),
                 o(186, "label", 65),
                 o(187, "span", 14),
                 v(188, "No"),
                 c(),
-                k(189, "span", 63),
+                z(189, "span", 63),
                 c(),
                 c(),
                 c(),
@@ -49514,7 +49525,7 @@ var UEe = Object.defineProperty,
                   " 7.3.2. I ask the court/tribunal to issue a certificate in another language than the language of the court proceedings, in particular:"
                 ),
                 c(),
-                k(195, "span", 68),
+                z(195, "span", 68),
                 c(),
                 o(196, "div", 69),
                 o(197, "div", 70),
@@ -49536,7 +49547,7 @@ var UEe = Object.defineProperty,
                 c(),
                 c(),
                 c(),
-                k(206, "span", 77),
+                z(206, "span", 77),
                 c(),
                 c(),
                 c(),
@@ -49547,7 +49558,7 @@ var UEe = Object.defineProperty,
                 o(208, "h3", 14),
                 v(209, "7.4. Date and signature"),
                 c(),
-                k(210, "div", 79),
+                z(210, "div", 79),
                 o(211, "p", 80),
                 v(212, "\xa0"),
                 c(),
@@ -49589,7 +49600,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(233, "div", 84),
                 o(234, "div", 27),
-                k(235, "input", 85),
+                z(235, "input", 85),
                 c(),
                 c(),
                 N(236, Ixe, 2, 1, "div", 16),
@@ -49607,7 +49618,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(244, "div", 89),
                 o(245, "div", 90),
-                k(246, "input", 91),
+                z(246, "input", 91),
                 c(),
                 c(),
                 N(247, Oxe, 2, 1, "div", 16),
@@ -49625,7 +49636,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(255, "div", 94),
                 o(256, "div", 27),
-                k(257, "input", 95),
+                z(257, "input", 95),
                 c(),
                 c(),
                 N(258, Pxe, 2, 1, "div", 16),
@@ -50049,7 +50060,7 @@ var UEe = Object.defineProperty,
         }
         return (
           (t.ɵfac = function (e) {
-            return new (e || t)(z(kp), z(G2), z(J2), z(mi), z(p2));
+            return new (e || t)(k(kp), k(G2), k(J2), k(mi), k(p2));
           }),
           (t.ɵcmp = qe({
             type: t,
@@ -50494,9 +50505,9 @@ var UEe = Object.defineProperty,
                 o(1, "h3", 1),
                 v(2, "Court/tribunal"),
                 c(),
-                k(3, "label", 2),
-                k(4, "div", 3),
-                k(5, "div", 4),
+                z(3, "label", 2),
+                z(4, "div", 3),
+                z(5, "div", 4),
                 o(6, "div", 5),
                 o(7, "div", 6),
                 o(8, "form", 7),
@@ -50566,7 +50577,7 @@ var UEe = Object.defineProperty,
                 o(45, "span", 28),
                 v(46),
                 c(),
-                k(47, "input", 29),
+                z(47, "input", 29),
                 c(),
                 o(48, "p", 26),
                 o(49, "label", 30),
@@ -50579,7 +50590,7 @@ var UEe = Object.defineProperty,
                 v(54, "European cross-border procedures - Small claims"),
                 c(),
                 c(),
-                k(55, "input", 32),
+                z(55, "input", 32),
                 c(),
                 o(56, "p", 26),
                 o(57, "label", 33),
@@ -50592,7 +50603,7 @@ var UEe = Object.defineProperty,
                 v(62, "Court with jurisdiction"),
                 c(),
                 c(),
-                k(63, "input", 35),
+                z(63, "input", 35),
                 c(),
                 o(64, "div", 36),
                 o(65, "p", 37),
@@ -50604,12 +50615,12 @@ var UEe = Object.defineProperty,
                 v(70, "*"),
                 c(),
                 c(),
-                k(71, "input", 40),
-                k(72, "input", 41),
+                z(71, "input", 40),
+                z(72, "input", 41),
                 c(),
                 c(),
                 c(),
-                k(73, "input", 42),
+                z(73, "input", 42),
                 c(),
                 c(),
                 c(),
@@ -50629,7 +50640,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(84, "div", 46),
                 o(85, "div", 14),
-                k(86, "input", 47),
+                z(86, "input", 47),
                 c(),
                 c(),
                 N(87, Wxe, 2, 1, "div", 18),
@@ -50647,7 +50658,7 @@ var UEe = Object.defineProperty,
                 c(),
                 o(95, "div", 50),
                 o(96, "div", 14),
-                k(97, "input", 51),
+                z(97, "input", 51),
                 c(),
                 c(),
                 N(98, Jxe, 2, 1, "div", 18),
@@ -50659,14 +50670,14 @@ var UEe = Object.defineProperty,
                 o(102, "span", 1),
                 v(103, "8.4. Postal Code"),
                 c(),
-                k(104, "span", 53),
+                z(104, "span", 53),
                 c(),
                 o(105, "div", 54),
                 o(106, "div", 14),
-                k(107, "input", 55),
+                z(107, "input", 55),
                 c(),
                 c(),
-                k(108, "span", 56),
+                z(108, "span", 56),
                 c(),
                 c(),
                 o(109, "div", 8),
@@ -50675,19 +50686,19 @@ var UEe = Object.defineProperty,
                 o(112, "span", 1),
                 v(113, "8.5 City"),
                 c(),
-                k(114, "span", 58),
+                z(114, "span", 58),
                 c(),
                 o(115, "div", 59),
                 o(116, "div", 14),
-                k(117, "input", 60),
+                z(117, "input", 60),
                 c(),
                 c(),
-                k(118, "span", 61),
+                z(118, "span", 61),
                 c(),
                 c(),
                 c(),
                 c(),
-                k(119, "hr", 62),
+                z(119, "hr", 62),
                 o(120, "p", 63),
                 v(121, "\xa0"),
                 c(),
@@ -50718,7 +50729,7 @@ var UEe = Object.defineProperty,
                 c(),
                 c(),
                 o(131, "div", 70),
-                k(132, "div"),
+                z(132, "div"),
                 o(133, "div", 71),
                 o(134, "span", 72),
                 o(135, "input", 73),
@@ -50971,8 +50982,7 @@ var UEe = Object.defineProperty,
                         }
                       }
                     });
-                  }),
-                  this.setClaimant();
+                  });
               }
               setClaimant() {
                 this.temporaryStorageService
@@ -50981,7 +50991,7 @@ var UEe = Object.defineProperty,
                   .then((i) => {
                     i &&
                       i.claimants.length > 0 &&
-                      this.claimantService.setClaimantForm(i.claimants);
+                      this.claimantService.setClaimantForm(i.claimants, !1);
                   });
               }
               blurChildren(e) {
@@ -51135,11 +51145,11 @@ var UEe = Object.defineProperty,
                 const i = new FileReader();
                 (i.onload = () => {
                   const a = JSON.parse(i.result);
-                  this.setClaimForm(a.form_A);
+                  this.setFormA(a.form_A);
                 }),
                   this.file && i.readAsText(this.file);
               }
-              setClaimForm(e) {
+              setFormA(e) {
                 this.claimantService
                   .setClaimantForm(e.claimants)
                   .then(() =>
@@ -51186,19 +51196,19 @@ var UEe = Object.defineProperty,
             return (
               (t.ɵfac = function (e) {
                 return new (e || t)(
-                  z(G2),
-                  z(J2),
-                  z(Dp),
-                  z(Hp),
-                  z(Vp),
-                  z(Ap),
-                  z(Tp),
-                  z(Ep),
-                  z(zp),
-                  z(kp),
-                  z(yk),
-                  z(bk),
-                  z(p2)
+                  k(G2),
+                  k(J2),
+                  k(Dp),
+                  k(Hp),
+                  k(Vp),
+                  k(Ap),
+                  k(Tp),
+                  k(Ep),
+                  k(zp),
+                  k(kp),
+                  k(yk),
+                  k(bk),
+                  k(p2)
                 );
               }),
               (t.ɵcmp = qe({
@@ -51468,17 +51478,17 @@ var UEe = Object.defineProperty,
                     o(22, "h1", 13),
                     v(23, "Form A - Claim form"),
                     c(),
-                    k(24, "div", 14),
+                    z(24, "div", 14),
                     c(),
                     c(),
-                    k(25, "div", 15),
+                    z(25, "div", 15),
                     o(26, "div", 16),
                     o(27, "div", 17),
                     o(28, "a", 18),
                     o(29, "span", 19),
                     (Fe.lFrame.currentNamespace = no),
                     o(30, "svg", 20),
-                    k(31, "path", 21),
+                    z(31, "path", 21),
                     c(),
                     c(),
                     (Fe.lFrame.currentNamespace = null),
@@ -51486,7 +51496,7 @@ var UEe = Object.defineProperty,
                     v(33, "\xa0"),
                     c(),
                     o(34, "span", 23),
-                    v(35, "Passa a versione semplificata"),
+                    v(35, "Passa alla versione semplificata"),
                     c(),
                     c(),
                     c(),
@@ -51496,8 +51506,8 @@ var UEe = Object.defineProperty,
                     c(),
                     c(),
                     o(36, "div", 24),
-                    k(37, "app-warning-toast"),
-                    k(38, "app-error-toast"),
+                    z(37, "app-warning-toast"),
+                    z(38, "app-error-toast"),
                     c(),
                     o(39, "div", 25),
                     o(40, "div", 26),
@@ -51514,7 +51524,7 @@ var UEe = Object.defineProperty,
                     v(50, "1."),
                     c(),
                     o(51, "span", 35),
-                    k(52, "span", 36),
+                    z(52, "span", 36),
                     o(53, "span", 37),
                     o(54, "p"),
                     v(55),
@@ -51522,7 +51532,7 @@ var UEe = Object.defineProperty,
                     c(),
                     c(),
                     c(),
-                    k(57, "div", 38),
+                    z(57, "div", 38),
                     c(),
                     c(),
                     o(58, "li", 39),
@@ -51531,7 +51541,7 @@ var UEe = Object.defineProperty,
                     v(61, "2."),
                     c(),
                     o(62, "span", 35),
-                    k(63, "span", 36),
+                    z(63, "span", 36),
                     o(64, "span", 37),
                     o(65, "p"),
                     v(66),
@@ -51539,7 +51549,7 @@ var UEe = Object.defineProperty,
                     c(),
                     c(),
                     c(),
-                    k(68, "div", 38),
+                    z(68, "div", 38),
                     c(),
                     c(),
                     o(69, "li", 41),
@@ -51548,7 +51558,7 @@ var UEe = Object.defineProperty,
                     v(72, "3."),
                     c(),
                     o(73, "span", 35),
-                    k(74, "span", 36),
+                    z(74, "span", 36),
                     o(75, "span", 37),
                     o(76, "p"),
                     v(77),
@@ -51556,7 +51566,7 @@ var UEe = Object.defineProperty,
                     c(),
                     c(),
                     c(),
-                    k(79, "div", 38),
+                    z(79, "div", 38),
                     c(),
                     c(),
                     o(80, "li", 43),
@@ -51565,7 +51575,7 @@ var UEe = Object.defineProperty,
                     v(83, "4."),
                     c(),
                     o(84, "span", 35),
-                    k(85, "span", 36),
+                    z(85, "span", 36),
                     o(86, "span", 37),
                     o(87, "p"),
                     v(88),
@@ -51573,7 +51583,7 @@ var UEe = Object.defineProperty,
                     c(),
                     c(),
                     c(),
-                    k(90, "div", 38),
+                    z(90, "div", 38),
                     c(),
                     c(),
                     o(91, "li", 45),
@@ -51582,7 +51592,7 @@ var UEe = Object.defineProperty,
                     v(94, "5."),
                     c(),
                     o(95, "span", 35),
-                    k(96, "span", 36),
+                    z(96, "span", 36),
                     o(97, "span", 37),
                     o(98, "p"),
                     v(99),
@@ -51590,7 +51600,7 @@ var UEe = Object.defineProperty,
                     c(),
                     c(),
                     c(),
-                    k(101, "div", 38),
+                    z(101, "div", 38),
                     c(),
                     c(),
                     o(102, "li", 47),
@@ -51599,7 +51609,7 @@ var UEe = Object.defineProperty,
                     v(105, "6."),
                     c(),
                     o(106, "span", 35),
-                    k(107, "span", 36),
+                    z(107, "span", 36),
                     o(108, "span", 37),
                     o(109, "p"),
                     v(110),
@@ -51607,7 +51617,7 @@ var UEe = Object.defineProperty,
                     c(),
                     c(),
                     c(),
-                    k(112, "div", 38),
+                    z(112, "div", 38),
                     c(),
                     c(),
                     o(113, "li", 49),
@@ -51616,7 +51626,7 @@ var UEe = Object.defineProperty,
                     v(116, "7."),
                     c(),
                     o(117, "span", 35),
-                    k(118, "span", 36),
+                    z(118, "span", 36),
                     o(119, "span", 37),
                     o(120, "p"),
                     v(121),
@@ -51624,7 +51634,7 @@ var UEe = Object.defineProperty,
                     c(),
                     c(),
                     c(),
-                    k(123, "div", 38),
+                    z(123, "div", 38),
                     c(),
                     c(),
                     o(124, "li", 51),
@@ -51633,7 +51643,7 @@ var UEe = Object.defineProperty,
                     v(127, "8."),
                     c(),
                     o(128, "span", 35),
-                    k(129, "span", 36),
+                    z(129, "span", 36),
                     o(130, "span", 37),
                     o(131, "p"),
                     v(132),
@@ -51641,7 +51651,7 @@ var UEe = Object.defineProperty,
                     c(),
                     c(),
                     c(),
-                    k(134, "div", 38),
+                    z(134, "div", 38),
                     c(),
                     c(),
                     c(),
@@ -51649,12 +51659,12 @@ var UEe = Object.defineProperty,
                     o(136, "span", 30),
                     v(137, "PDF utili"),
                     c(),
-                    k(138, "div", 54),
+                    z(138, "div", 54),
                     o(139, "span", 55),
                     v(140, "Sinonimi"),
                     c(),
                     o(141, "div", 56),
-                    k(142, "ul"),
+                    z(142, "ul"),
                     c(),
                     c(),
                     o(143, "div", 57),
@@ -51679,7 +51689,7 @@ var UEe = Object.defineProperty,
                     v(151, "Load draft"),
                     c(),
                     c(),
-                    k(152, "br"),
+                    z(152, "br"),
                     o(153, "button", 62),
                     X("click", function () {
                       return i.navbarService.generateJson();
@@ -51701,28 +51711,28 @@ var UEe = Object.defineProperty,
                     o(160, "div", 66),
                     o(161, "div", 67),
                     o(162, "div", 68),
-                    k(163, "app-claimant"),
+                    z(163, "app-claimant"),
                     c(),
                     o(164, "div", 69),
-                    k(165, "app-defendant"),
+                    z(165, "app-defendant"),
                     c(),
                     o(166, "div", 70),
-                    k(167, "app-jurisdiction"),
+                    z(167, "app-jurisdiction"),
                     c(),
                     o(168, "div", 71),
-                    k(169, "app-step-four"),
+                    z(169, "app-step-four"),
                     c(),
                     o(170, "div", 72),
-                    k(171, "app-claim"),
+                    z(171, "app-claim"),
                     c(),
                     o(172, "div", 73),
-                    k(173, "app-claim-details"),
+                    z(173, "app-claim-details"),
                     c(),
                     o(174, "div", 74),
-                    k(175, "app-step-seven"),
+                    z(175, "app-step-seven"),
                     c(),
                     o(176, "div", 75),
-                    k(177, "app-court"),
+                    z(177, "app-court"),
                     c(),
                     c(),
                     c(),
@@ -53224,7 +53234,7 @@ var UEe = Object.defineProperty,
             decls: 1,
             vars: 0,
             template: function (e, i) {
-              1 & e && k(0, "router-outlet");
+              1 & e && z(0, "router-outlet");
             },
             directives: function () {
               return [r9];
@@ -55347,9 +55357,9 @@ var UEe = Object.defineProperty,
         return (
           (t.ɵfac = function (e) {
             return new (e || t)(
-              z(kc),
-              z(li),
-              z(Oi),
+              k(kc),
+              k(li),
+              k(Oi),
               (function (t) {
                 return (function (t, n) {
                   if ("class" === n) return t.classes;
@@ -55373,7 +55383,7 @@ var UEe = Object.defineProperty,
                   return null;
                 })(c1(), t);
               })("name"),
-              z(f1)
+              k(f1)
             );
           }),
           (t.ɵdir = Ce({
@@ -55876,9 +55886,9 @@ var UEe = Object.defineProperty,
         yEe = (() => {
           class t {
             constructor(e) {
-              (this.translateConfigService = e),
-                this.translateConfigService.getDefaultLanguage(),
-                this.translateConfigService.setLanguage("it"),
+              this.translateConfigService = e;
+              const i = this.translateConfigService.getDefaultLanguage();
+              this.translateConfigService.setLanguage(i),
                 window.addEventListener(
                   "message",
                   this.listener.bind(this),
@@ -55887,14 +55897,13 @@ var UEe = Object.defineProperty,
             }
             listener(e) {
               "https://yellow-coast-0c9cc7403.2.azurestaticapps.net" ===
-                e.origin &&
-                ((this.language = e.data),
-                this.translateConfigService.setLanguage(this.language));
+                e.origin && this.translateConfigService.setLanguage(e.data);
             }
+            send() {}
           }
           return (
             (t.ɵfac = function (e) {
-              return new (e || t)(z(bk));
+              return new (e || t)(k(bk));
             }),
             (t.ɵcmp = qe({
               type: t,
@@ -55905,9 +55914,9 @@ var UEe = Object.defineProperty,
               template: function (e, i) {
                 1 & e &&
                   (o(0, "div"),
-                  k(1, "router-outlet", 0),
+                  z(1, "router-outlet", 0),
                   c(),
-                  k(2, "app-footer"));
+                  z(2, "app-footer"));
               },
               directives: [r9, CEe],
               styles: [""],

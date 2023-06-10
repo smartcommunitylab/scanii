@@ -100,13 +100,15 @@ export class DefendantComponent implements OnInit {
       }
       window['processClaimantDefendantRepresentativeConcept'](
         'step2',
-        'http://scanii.org/domain/defendant.personalIdNumber'
+        'http://scanii.org/domain/defendant.personalIdNumber',
+        true
       );
 
       if (this.selectedOption === 'defendant') {
         window['processClaimantDefendantRepresentativeConcept'](
           'step2',
-          'http://scanii.org/domain/defendant.otherDetails'
+          'http://scanii.org/domain/defendant.otherDetails',
+          true
         );
       }
 

@@ -18,8 +18,8 @@ export class TranslateConfigService {
     if (this.currentLang) {
       this.translate.setDefaultLang(this.currentLang);
     } else {
-      localStorage.setItem('lang', this.translate.getBrowserLang()!);
-      this.currentLang = this.translate.getBrowserLang();
+      this.currentLang = 'en';
+      localStorage.setItem('lang', this.currentLang);
       this.translate.setDefaultLang(this.currentLang);
     }
     return this.currentLang;
