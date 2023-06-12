@@ -1355,6 +1355,15 @@
                                     i +
                                     '].dynformSCA2DefendantTelephone'
                                   "
+                                  [ngClass]="{
+                                    invalid:
+                                      defendantService.defendants
+                                        .at(i)
+                                        .get('phoneNumber')!.invalid &&
+                                      defendantService.defendants
+                                        .at(i)
+                                        .get('phoneNumber')!.dirty
+                                  }"
                                 >
                                   <div class="input-content">
                                     <input
@@ -1378,18 +1387,39 @@
                                   </div>
                                 </div>
 
-                                <span
-                                  [attr.id]="
-                                    'validation_error_text_parties[' +
-                                    i +
-                                    '].dynformSCA2DefendantTelephone'
+                                <div
+                                  *ngIf="
+                                    defendantService.defendants
+                                      .at(i)
+                                      .get('phoneNumber')!.invalid &&
+                                    defendantService.defendants
+                                      .at(i)
+                                      .get('phoneNumber')!.dirty
                                   "
-                                  class="error"
-                                  style="position: relative; top: 0px"
                                 >
-                                </span>
-
-                                <!--  <span id="validation_error_text_parties['+i+'].dynformSCA2DefendantTelephone" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <div
+                                    *ngIf="
+                                    defendantService.defendants
+                                        .at(i)
+                                        .get('phoneNumber')?.errors?.['invalidPhoneNumber']
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2DefendantTelephone'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="
+                                        'errors.phoneNumberValidationError'
+                                      "
+                                    >
+                                      Invalid phone number
+                                    </span>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                             <div class="form-row full-width bold">
@@ -3182,6 +3212,15 @@
                                     i +
                                     '].dynformSCA2DefendantRepresentativeCountryTelephone'
                                   "
+                                  [ngClass]="{
+                                    invalid:
+                                      defendantService.defendants
+                                        .at(i)
+                                        .get('phoneNumber')!.invalid &&
+                                      defendantService.defendants
+                                        .at(i)
+                                        .get('phoneNumber')!.dirty
+                                  }"
                                 >
                                   <div class="input-content">
                                     <!-- </if> -->
@@ -3207,16 +3246,39 @@
                                   </div>
                                 </div>
 
-                                <span
-                                  [attr.id]="
-                                    'validation_error_text_parties[' +
-                                    i +
-                                    '].dynformSCA2DefendantRepresentativeCountryTelephone'
+                                <div
+                                  *ngIf="
+                                    defendantService.defendants
+                                      .at(i)
+                                      .get('phoneNumber')!.invalid &&
+                                    defendantService.defendants
+                                      .at(i)
+                                      .get('phoneNumber')!.dirty
                                   "
-                                  class="error"
-                                  style="position: relative; top: 0px"
                                 >
-                                </span>
+                                  <div
+                                    *ngIf="
+                                    defendantService.defendants
+                                        .at(i)
+                                        .get('phoneNumber')?.errors?.['invalidPhoneNumber']
+                                    "
+                                  >
+                                    <span
+                                      [attr.id]="
+                                        'validation_error_text_parties[' +
+                                        i +
+                                        '].dynformSCA2DefendantRepresentativeCountryTelephone'
+                                      "
+                                      class="error"
+                                      style="position: relative; top: 0px"
+                                      [translate]="
+                                        'errors.phoneNumberValidationError'
+                                      "
+                                    >
+                                      Invalid phone number
+                                    </span>
+                                  </div>
+                                </div>
                               </div>
                             </div>
 

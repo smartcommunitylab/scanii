@@ -39,6 +39,7 @@
       let currentStep = 1;
       let interaction = null;
       let translations = null;
+      let simplificatinBoxTooltipStyle;
 
       this.initializeLanguage();
       window.addEventListener("message", this.listener.bind(this), false);
@@ -52,7 +53,10 @@
       });
 
       function listener(event) {
-        if (event.origin === "https://yellow-coast-0c9cc7403.2.azurestaticapps.net") {
+        if (
+          event.origin ===
+          "https://yellow-coast-0c9cc7403.2.azurestaticapps.net"
+        ) {
           currentLang = event.data;
           resetForm();
           initializeForm().then(() => {
@@ -296,6 +300,13 @@
 
           setSimplifiedVersioButton(btn);
 
+          //add simplification box tooltip style
+          simplificatinBoxTooltipStyle = document.head.appendChild(
+            document.createElement("style")
+          );
+          simplificatinBoxTooltipStyle.innerHTML =
+            ".simplification-box .tooltip-inner { background-color: rgb(247, 250, 160) !important;} .simplification-box .tooltip-arrow::before { border-top-color: rgb(247, 250, 160) !important; }";
+
           if (typeof hideToast === "undefined") {
             //remove css class containing the animation for the toast arrow exiting
             document
@@ -320,23 +331,35 @@
           simplificationBoxs = document.querySelectorAll(
             "[scanii_simplificationBox]"
           );
+
+          const word = translations.menu.simplifiedText;
           for (i = 0; i < divLegal.length; i++) {
             simplificationBoxs[i].style =
-              "margin-top: 20px; background-color: #F7FAA0 ; padding: 10px; border: 0px ";
-            simplificationBoxs[i].title = "Testo semplificato";
+              "margin-top: 20px; background-color: #F7FAA0 ; padding: 10px; border: 0px; ";
+
+            const text =
+              "<span data-i18n-key='menu.simplifiedText'>" + word + "</span>";
+            simplificationBoxs[i].setAttribute("data-bs-original-title", text);
           }
         } else {
           version = "original";
+
+          simplificatinBoxTooltipStyle.remove();
 
           setCompleteVersionButton(btn, toastClosureBtn);
 
           simplificationBoxs = document.querySelectorAll(
             "[scanii_simplificationBox]"
           );
+
+          const word = translations.menu.originalText;
           for (i = 0; i < divLegal.length; i++) {
             simplificationBoxs[i].style =
               "margin-top: 20px; background-color: #cce6ff ; padding: 10px; border: 0px ";
-            simplificationBoxs[i].title = "Testo originale";
+
+            const text =
+              "<span data-i18n-key='menu.originalText'>" + word + "</span>";
+            simplificationBoxs[i].setAttribute("data-bs-original-title", text);
           }
 
           this.hideToast();
@@ -426,7 +449,7 @@
               a.text = link.name;
               a.setAttribute("data-bs-toggle", "tooltip");
               a.setAttribute("data-bs-placement", "top");
-              a.setAttribute("data-bs-custom-class", "pdf-tooltip");
+              a.setAttribute("data-bs-custom-class", "tooltip pdf-tooltip");
               a.setAttribute("data-bs-title", link.description);
               div.append(a);
               divLegal.append(div);
@@ -544,7 +567,10 @@
               li.setAttribute("data-bs-toggle", "tooltip");
               li.setAttribute("data-bs-placement", "top");
               li.setAttribute("data-bs-html", "true");
-              li.setAttribute("data-bs-custom-class", "synonym-tooltip");
+              li.setAttribute(
+                "data-bs-custom-class",
+                "tooltip synonym-tooltip"
+              );
               li.setAttribute("data-bs-title", synmsList);
               li.innerText = capitalizeFirstLetter(word.text);
               ul.append(li);
@@ -553,7 +579,7 @@
           span.setAttribute("data-bs-toggle", "tooltip");
           span.setAttribute("data-bs-placement", "top");
           span.setAttribute("data-bs-html", "true");
-          span.setAttribute("data-bs-custom-class", "word-tooltip");
+          span.setAttribute("data-bs-custom-class", "tooltip word-tooltip");
           span.setAttribute("data-bs-title", text);
 
           span.append(keyTextNode);
@@ -655,8 +681,19 @@
         simplificationBox = document.createElement("div");
         simplificationBox.style =
           "min-height: 1px;max-height: 3px;margin-top: 20px;background-color: #cce6ff ; padding: 10px; border: 0px";
+        simplificationBox.setAttribute("data-bs-toggle", "tooltip");
+        simplificationBox.setAttribute("data-bs-placement", "top");
+        simplificationBox.setAttribute("data-bs-html", "true");
+        simplificationBox.setAttribute(
+          "data-bs-custom-class",
+          "tooltip simplification-box box-tooltip"
+        );
+        const word = translations.menu.originalText;
+        simplificationBox.setAttribute(
+          "data-bs-original-title",
+          "<span data-i18n-key='menu.originalText'>" + word + "</span>"
+        );
 
-        simplificationBox.title = "Testo originale";
         simplificationBox.setAttribute("scanii_simplificationBox", "");
         simplificationBox.setAttribute("class", "description");
 
@@ -902,7 +939,10 @@
               li.setAttribute("data-bs-toggle", "tooltip");
               li.setAttribute("data-bs-placement", "top");
               li.setAttribute("data-bs-html", "true");
-              li.setAttribute("data-bs-custom-class", "synonym-tooltip");
+              li.setAttribute(
+                "data-bs-custom-class",
+                "tooltip synonym-tooltip"
+              );
               li.setAttribute("data-bs-title", synmsList);
               li.innerText = capitalizeFirstLetter(word.text);
               ul.append(li);
@@ -911,7 +951,7 @@
           span.setAttribute("data-bs-toggle", "tooltip");
           span.setAttribute("data-bs-placement", "top");
           span.setAttribute("data-bs-html", "true");
-          span.setAttribute("data-bs-custom-class", "word-tooltip");
+          span.setAttribute("data-bs-custom-class", "tooltip word-tooltip");
           span.setAttribute("data-bs-title", text);
 
           span.append(keyTextNode);
@@ -1013,8 +1053,19 @@
         simplificationBox = document.createElement("div");
         simplificationBox.style =
           "min-height: 1px;max-height: 3px;margin-top: 20px;background-color: #cce6ff ; padding: 10px; border: 0px";
+        simplificationBox.setAttribute("data-bs-toggle", "tooltip");
+        simplificationBox.setAttribute("data-bs-placement", "top");
+        simplificationBox.setAttribute("data-bs-html", "true");
+        simplificationBox.setAttribute(
+          "data-bs-custom-class",
+          "tooltip simplification-box box-tooltip"
+        );
+        const word = translations.menu.originalText;
+        simplificationBox.setAttribute(
+          "data-bs-original-title",
+          "<span data-i18n-key='menu.originalText'>" + word + "</span>"
+        );
 
-        simplificationBox.title = "Testo originale";
         simplificationBox.setAttribute("scanii_simplificationBox", "");
         simplificationBox.setAttribute("class", "description");
 

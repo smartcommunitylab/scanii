@@ -1,5 +1,11 @@
 import { Injectable, NgZone } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { PromiseContent } from '../common/promise-content.model';
 import {
   CountryIdGenerator,
@@ -68,7 +74,7 @@ export class DefendantService {
           city: ['', [Validators.required]],
           country: ['', [Validators.required]],
           countryOther: [''],
-          phoneNumber: [''],
+          phoneNumber: ['', [this.phoneNumberValidator]],
           email: ['', [Validators.email]],
           representative: [''],
           otherDetails: [''],
@@ -89,7 +95,7 @@ export class DefendantService {
           city: ['', [Validators.required]],
           country: ['', [Validators.required]],
           countryOther: [''],
-          phoneNumber: [''],
+          phoneNumber: ['', [this.phoneNumberValidator]],
           email: ['', [Validators.email]],
           isRepresentative: [true],
         },
@@ -145,6 +151,15 @@ export class DefendantService {
       }
       resolve(new PromiseContent('step2', isValid));
     });
+  }
+
+  phoneNumberValidator(control: FormControl): { [key: string]: any } | null {
+    //const phoneNumberPattern = /^(\+\d{1,5}\s?)?(?:\d{3}[ ]?\d{3}[ ]?\d{4}|\d{10})$/;
+    const phoneNumberPattern = /^[\d+\s]*$/;
+    if (control.value && !phoneNumberPattern.test(control.value.trim())) {
+      return { invalidPhoneNumber: true };
+    }
+    return null;
   }
 
   markAsDirty() {
@@ -211,7 +226,10 @@ export class DefendantService {
     return this.representativeOptionLabel + ' ' + number;
   }
 
-  setDefendantForm(defendants: any[], addInformation: boolean = true): Promise<void> {
+  setDefendantForm(
+    defendants: any[],
+    addInformation: boolean = true
+  ): Promise<void> {
     this.resetAll();
     for (let i = 0; i < defendants.length; i++) {
       const defendant = defendants[i];
@@ -229,7 +247,10 @@ export class DefendantService {
     return this.handleStableEvent(defendants, addInformation);
   }
 
-  private handleStableEvent(defendants: any[], addInformation: boolean): Promise<void> {
+  private handleStableEvent(
+    defendants: any[],
+    addInformation: boolean
+  ): Promise<void> {
     return new Promise<void>((resolve) => {
       this.onStableSubscription = this.zone.onStable.subscribe(() => {
         if (this.onStableSubscription) {

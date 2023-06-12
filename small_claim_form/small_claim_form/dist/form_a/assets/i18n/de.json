@@ -14,7 +14,8 @@
     "IBANValidationError": "Fehler bei der IBAN-Validierung. Vergessen Sie nicht den zweistelligen Ländercode am Anfang der IBAN-Nummer",
     "amountValidationError": "Ungultige Eingabe. Bitte geben Sie den Betrag im Format XXX.XXX,XX ein",
     "dateValidationError": "Das Enddatum liegt vor dem Anfangsdatum. Bitte überprüfen Sie Ihre Eingabe",
-    "emailValidationError": "Feld enthält ungültige E-Mail-Adresse"
+    "emailValidationError": "Feld enthält ungültige E-Mail-Adresse",
+    "phoneNumberValidationError": "Feld enthält ungültige Zeichen. Bitte verwenden Sie nur Zahlen, Leerzeichen und das Zeichen „+“"
   },
   "menu": {
     "title": "Formblatt A - Klageformblatt",

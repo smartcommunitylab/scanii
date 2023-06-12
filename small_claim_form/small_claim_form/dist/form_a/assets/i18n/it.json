@@ -14,7 +14,8 @@
     "IBANValidationError": "Errore di convalida dell'IBAN. È necessario includere anche il codice paese (prime 2 lettere della sequenza)",
     "amountValidationError": "Elemento non valido. Utilizzare il formato XXX.XXX,XX quando si indica un importo",
     "dateValidationError": "La data finale è anteriore a quella iniziale. Riformula il criterio",
-    "emailValidationError": "Questo campo contiene un indirizzo di posta elettronica non valido"
+    "emailValidationError": "Questo campo contiene un indirizzo di posta elettronica non valido",
+    "phoneNumberValidationError": "Questo campo contiene caratteri non validi. Si prega di utilizzare esclusivamente numeri, spazi e il carattere \"+\""
   },
   "menu": {
     "title": "Modulo A - Modulo di domanda",

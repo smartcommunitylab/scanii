@@ -268,7 +268,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
         match: function () {
           $(window).on('scroll', function (e) {
             var scrollPos = $(window).scrollTop();
-            var sidebartop = $stickySidebar.offset().top - 147.28;
+            var sidebartop = $stickySidebar.offset().top - 153;
             var bottomSpacing = $('footer').height() + 25;
             var scrollBottom =
               $(document).height() - $(window).height() - $(window).scrollTop();
