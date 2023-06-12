@@ -99,6 +99,9 @@
 
         if (version === "simplyfied") {
           version = "original";
+          
+          simplificatinBoxTooltipStyle.remove();
+
           setTimeout(() => {
             setCompleteVersionButton(
               document.getElementById("simplyfied_btn"),
