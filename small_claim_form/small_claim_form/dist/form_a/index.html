@@ -221,6 +221,11 @@
   </head>
   <body>
     <script>
+      EXTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
+      INTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
+      JSON_PATH = "/small_claim_form/dist/form_a/content/json/";
+      I18N_PATH = "/small_claim_form/dist/form_a/assets/i18n/";
+
       let version = "original";
       let currentLang;
       let currentStep = 1;
@@ -240,10 +245,7 @@
       });
 
       function listener(event) {
-        if (
-          event.origin ===
-          "https://yellow-coast-0c9cc7403.2.azurestaticapps.net"
-        ) {
+        if (event.origin === EXTERNAL_URI) {
           currentLang = event.data;
           resetForm();
           initializeForm().then(() => {
@@ -286,7 +288,7 @@
 
         if (version === "simplyfied") {
           version = "original";
-          
+
           simplificatinBoxTooltipStyle.remove();
 
           setTimeout(() => {
@@ -435,16 +437,16 @@
 
       async function main() {
         return new Promise(async (resolve) => {
-          let modelRequest = await fetch("/small_claim_form/dist/form_a/content/json/model.json");
+          let modelRequest = await fetch(JSON_PATH + "model.json");
           model = await modelRequest.json();
 
           let interactionRequest = await fetch(
-            "/small_claim_form/dist/form_a/content/json/interaction_" + currentLang + ".json"
+            JSON_PATH + "interaction_" + currentLang + ".json"
           );
           interaction = await interactionRequest.json();
 
           let translationsRequest = await fetch(
-            "/small_claim_form/dist/form_a/assets/i18n/" + currentLang + ".json"
+            I18N_PATH + currentLang + ".json"
           );
           translations = await translationsRequest.json();
 
@@ -1389,6 +1391,6 @@
     <script src="/small_claim_form/dist/form_a/runtime.79683ac39f951fb596f6.js" defer></script>
     <script src="/small_claim_form/dist/form_a/polyfills.af17f83eafaf15683d3c.js" defer></script>
     <script src="/small_claim_form/dist/form_a/scripts.6c2e76d7c0794e9d85c0.js" defer></script>
-    <script src="/small_claim_form/dist/form_a/main.c6c73895b012106d332c.js" defer></script>
+    <script src="/small_claim_form/dist/form_a/main.c7c902aa688977d17d0e.js" defer></script>
   </body>
 </html>

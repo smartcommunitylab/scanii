@@ -41,6 +41,9 @@
     ></script>
 
     <script>
+      EXTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
+      INTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
+
       const translations = {
         it: {
           search: "Ricerca",
@@ -98,20 +101,14 @@
       window.addEventListener("message", listener, false);
 
       function listener(event) {
-        if (
-          event.origin ===
-          "https://yellow-coast-0c9cc7403.2.azurestaticapps.net"
-        ) {
+        if (event.origin === INTERNAL_URI) {
           // TODO
         }
       }
 
       function send(message) {
         const frame = document.getElementById("iframe");
-        frame.contentWindow.postMessage(
-          message,
-          "https://yellow-coast-0c9cc7403.2.azurestaticapps.net"
-        );
+        frame.contentWindow.postMessage(message, INTERNAL_URI);
       }
 
       function initializeLanguage() {
@@ -2715,7 +2712,7 @@
       </div>
     </header>
     <iframe
-      src="https://yellow-coast-0c9cc7403.2.azurestaticapps.net/small_claim_form/dist/form_a"
+      src="http://localhost:4200/"
       width="100%"
       id="iframe"
     ></iframe>

@@ -34,6 +34,11 @@
   </head>
   <body>
     <script>
+      EXTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
+      INTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
+      JSON_PATH = "./content/json/";
+      I18N_PATH = "./assets/i18n/";
+
       let version = "original";
       let currentLang;
       let currentStep = 1;
@@ -53,10 +58,7 @@
       });
 
       function listener(event) {
-        if (
-          event.origin ===
-          "https://yellow-coast-0c9cc7403.2.azurestaticapps.net"
-        ) {
+        if (event.origin === EXTERNAL_URI) {
           currentLang = event.data;
           resetForm();
           initializeForm().then(() => {
@@ -99,7 +101,7 @@
 
         if (version === "simplyfied") {
           version = "original";
-          
+
           simplificatinBoxTooltipStyle.remove();
 
           setTimeout(() => {
@@ -248,16 +250,16 @@
 
       async function main() {
         return new Promise(async (resolve) => {
-          let modelRequest = await fetch("./content/json/model.json");
+          let modelRequest = await fetch(JSON_PATH + "model.json");
           model = await modelRequest.json();
 
           let interactionRequest = await fetch(
-            "./content/json/interaction_" + currentLang + ".json"
+            JSON_PATH + "interaction_" + currentLang + ".json"
           );
           interaction = await interactionRequest.json();
 
           let translationsRequest = await fetch(
-            "./assets/i18n/" + currentLang + ".json"
+            I18N_PATH + currentLang + ".json"
           );
           translations = await translationsRequest.json();
 
