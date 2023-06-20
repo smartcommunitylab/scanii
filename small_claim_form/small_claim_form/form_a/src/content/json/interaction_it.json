@@ -196,7 +196,7 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Nella sottosezione 6.1 fornire una breve descrizione dell’oggetto della domanda. Nella sottosezione 6.2 fornire una descrizione dei pertinenti elementi di prova; potrebbe trattarsi ad esempio di prove scritte (come un contratto, una ricevuta ecc.) o di prove testimoniali orali o scritte. Precisare per ciascun elemento di prova i punti della domanda a sostegno dei quali è addotto.",
+          "text": "Nella sottosezione 6.1. fornire una breve descrizione dell’oggetto della domanda. Nella sottosezione 6.2 fornire una descrizione dei pertinenti elementi di prova; potrebbe trattarsi ad esempio di prove scritte (come un contratto, una ricevuta ecc.) o di prove testimoniali orali o scritte. Precisare per ciascun elemento di prova i punti della domanda a sostegno dei quali è addotto.",
           "simplifiedText": "Descrivere brevemente l’oggetto della domanda che si intende formulare all’autorità giudiziaria nella sottosezione 6.1. Gli elementi di prova (quali contratti, ricevute, prove testimoniali orali o scritte) andranno indicati nella sottosezione 6.2, precisando per ciascuno quali punti della domanda supportano/provano.",
           "link": [
             {
@@ -298,7 +298,7 @@
             {
               "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true#tocHeader2",
-              "name": "Ricerca tribunali e autorità competenti per paese",
+              "name": "Ricerca tribunali e autorità competenti per paese.",
               "text": "apposita funzione di ricerca",
               "description": "Lo strumento di ricerca permette di identificare i tribunali/le autorità competenti in ciascun paese per le controversie di modesta entità."
             }
@@ -447,7 +447,7 @@
             {
               "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true",
-              "name": "Ricerca tribunali e autorità competenti per paese",
+              "name": "Ricerca tribunali e autorità competenti per paese.",
               "text": "portale europeo della giustizia elettronica",
               "description": "Lo strumento di ricerca permette di identificare i tribunali/le autorità competenti in ciascun paese per le controversie di modesta entità."
             }

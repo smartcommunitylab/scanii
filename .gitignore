@@ -45,3 +45,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# forb_b
+small_claim_form/small_claim_form/form_b

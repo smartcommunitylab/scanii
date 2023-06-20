@@ -1,560 +1,559 @@
 {
-    "domain": "http://scanii.org/simplification/smallclaimform",
-    "concepts": [
-      {
-        "id": "http://scanii.org/domain/bankDetails",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "Nella sottosezione 4.2.1. l’attore può indicare come intende pagare la tassa di domanda. Va ricordato che presso l’organo giurisdizionale cui viene spedita la domanda potrebbero non essere disponibili tutti i metodi e si raccomanda di verificare quali siano accettati. A tal fine è possibile contattare l’organo giurisdizionale interessato o verificare le informazioni fornite dallo Stato membro interessato e pubblicate sul sito web dell’atlante giudiziario europeo in materia civile e commerciale, disponibili sul portale europeo della giustizia elettronica. È ugualmente possibile trovare maggiori informazioni circa l’importo delle spese di giudizio che dovranno essere corrisposte. Qualora l’attore scelga il pagamento con carta di credito o autorizzi l’organo giurisdizionale a prelevare l’importo dal proprio conto corrente, è necessario che indichi le informazioni opportune relative alla carta di credito o al conto bancario nell’appendice del presente modulo. L’appendice è utilizzata solo per comunicare le informazioni necessarie all’organo giurisdizionale e non sarà trasmessa al convenuto. Nella sottosezione 4.2.2. l’attore ha la possibilità di indicare la modalità con cui desidera ricevere il pagamento da parte del convenuto, ad esempio qualora quest’ultimo desideri pagare immediatamente, prima ancora che sia emessa la sentenza. Se la modalità prescelta è il bonifico bancario occorre indicare le necessarie informazioni bancarie.",
-            "simplifiedText": "Nella sottosezione 4.2.1. l’attore può indicare la modalità prescelta per il pagamento delle spese di causa. E’ possibile che alcune delle modalità di pagamento indicate nel modulo non siano accettate dall’organo giurisdizionale competente.  Maggiori informazioni possono essere reperite sul portale europeo della giustizia elettronica o contattando preventivamente l’ufficio giudiziario interessato. Nel caso in cui la causa abbia ad oggetto il pagamento di una somma da parte del convenuto, l’attore può indicare la modalità attraverso cui ricevere il pagamento nella sottosezione 4.2.2. fornendo le informazioni necessarie.",
-            "link": [
-              {
-                "type": "SERVICE_LINK",
-                "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true",
-                "text": "portale europeo della giustizia elettronica",
-                "name": "Ricerca tribunali e autorità competenti per paese",
-                "description": "Lo strumento di ricerca permette di identificare i tribunali/le autorità competenti in ciascun paese per le controversie di modesta entità."
-              }
-            ],
-            "words": [
-              {
-                "text": "attore",
-                "position": "29-6",
-                "definition": "L'attore è la persona che avvia una azione legale.",
-                "synonyms": [],
-                "links": []
-              },
-              {
-                "text": "organo giurisdizionale",
-                "position": "116-22",
-                "definition": "In questo caso ci si riferisce al tribunale. In generale un organo giurisdizionale è un'autorità dello stato responsabile dell'interpretazione e della applicazione delle leggi.",
-                "synonyms": ["Tribunale", "Autorità giudiziaria", "Magistratura"],
-                "links": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/certificate",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "Si rammenta che il procedimento europeo per le controversie di modesta entità si svolge in forma scritta. Tuttavia, l’organo giurisdizionale può decidere di procedere ad un’udienza se ritiene che non sia possibile emettere la sentenza sulla base delle prove scritte. È tuttavia possibile richiedere, con il presente modulo o in una fase successiva, un’udienza. L’organo giurisdizionale può rigettare tale richiesta se ritiene che, tenuto conto delle circostanze del caso, un’udienza sia superflua per l’equa trattazione del procedimento. L’udienza dovrebbe essere effettuata tramite opportuni mezzi di comunicazione a distanza, come la videoconferenza o teleconferenza, a condizione che siano a disposizione dell'autorità giudiziaria. Se la persona da sentire è domiciliata in uno Stato membro diverso da quello dell’organo giurisdizionale adito, è organizzata un’udienza mediante tecnologie di comunicazione a distanza, avvalendosi delle procedure di cui al regolamento (CE) n. 1206/2001 del Consiglio. Tuttavia, l’organo giurisdizionale può stabilire la necessità della presenza fisica delle persone convocate per l’udienza. È possibile indicare le proprie preferenze al giudice, tenendo presente che, se si chiede di essere fisicamente presenti all’udienza, il recupero di eventuali spese sostenute in relazione a tale presenza è soggetto alle disposizioni dell’articolo 16 del regolamento (CE) n. 861/2007, che istituisce un procedimento europeo per le controversie di modesta entità. L'articolo prevede che l’organo giurisdizionale non riconosca alla parte vincente spese superflue sostenute o spese sproporzionate rispetto al valore della controversia. Su richiesta, l'organo giurisdizionale può fornire il certificato in un’altra lingua, utilizzando i moduli dinamici disponibili attraverso il portale europeo della giustizia elettronica. Ciò può essere utile all'esecuzione della sentenza in un altro Stato membro. Si prega di notare che l'organo giurisdizionale non è tenuto a fornire una traduzione o una traslitterazione del testo inserito nei campi di testo libero del certificato.",
-            "simplifiedText": "Il procedimento europeo per le controversie di modesta entità si svolge in forma scritta. Il Giudice può decidere di procedere ad un'udienza se ritiene che non sia possibile emettere la sentenza basandosi solo sulla documentazione acquisita. Anche l’attore può chiedere la fissazione di un’udienza contestualmente alla compilazione di questo modulo o in una fase successiva, tuttavia il Giudice può respingere la richiesta se ritiene l'udienza superflua o non riconoscere il pagamento delle spese sostenute per la partecipazione all’udienza se ritenute superflue o sproporzionate. L'udienza può essere tenuta tramite mezzi di comunicazione a distanza, come videoconferenza o teleconferenza. Compilando la sezione 11 del modulo si può richiedere al Giudice l’emissione, unitamente alla sentenza, del certificato in un'altra lingua ad essa relativo, qualora l’esecuzione debba essere effettuata in un altro Stato  membro.",
-            "link": [
-              {
-                "type": "",
-                "url": "",
-                "name": "",
-                "description": ""
-              },
-              {
-                "type": "LEGAL_LINK",
-                "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:02001R1206-20081204&from=DE",
-                "name": "Regolamento Europeo n. 1206/2001",
-                "text": "regolamento (CE) n. 1206/2001 del Consiglio",
-                "description": "Testo del Regolamento Europeo sulla cooperazione fra le autorità giudiziarie degli Stati membri nel settore dell'assunzione delle prove in materia civile o commerciale."
-              },
-              {
-                "type": "LEGAL_LINK",
-                "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
-                "name": "Regolamento Europeo n. 861/2007",
-                "text": "regolamento (CE) n. 861/2007",
-                "description": "Regolamento europeo che istituisce il procedimento europeo per le controversie di modesta entità."
-              }
-            ],
-            "words": [
-              {
-                "text": "organo giurisdizionale",
-                "position": "119-22",
-                "definition": "In questo caso, un tribunale. In generale un organo giurisdizionale è un'autorità dello stato responsabile dell'interpretazione e della applicazione delle leggi.",
-                "synonyms": ["Tribunale", "Autorità giudiziaria", "Magistratura"],
-                "links": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/claim",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "Campo di applicazione: si rammenta che il procedimento europeo per le controversie di modesta entità ha un campo di applicazione limitato. Esso non si applica alle controversie di valore superiore a 5 000 EUR, né a quelle elencate all’articolo 2 del regolamento (CE) n. 861/2007 del Parlamento europeo e del Consiglio, che istituisce un procedimento europeo per le controversie di modesta entità. Qualora la domanda riguardi un’azione che non rientra nel campo d’applicazione di detto regolamento, a norma dell’articolo 2, il procedimento prosegue dinanzi all’organo giurisdizionale competente secondo le norme di procedura civile ordinaria. Se in tal caso l’attore non desidera proseguire il procedimento, dovrebbe ritirare la domanda. Controversia avente ad oggetto somme di denaro o di altro tipo: l’attore dovrebbe indicare se intende chiedere il pagamento di una somma di denaro e/o qualcos’altro (controversia non avente ad oggetto somme di denaro), ad esempio la fornitura di beni, e completare, rispettivamente, la sottosezione 5.1. e/o la sottosezione 5.2.",
-            "simplifiedText": "Il procedimento europeo per le controversie di modesta entità può essere utilizzato solo per controversie transfrontaliere in materia civile e commerciale il cui valore non superi i 5000 euro, con l'eccezione delle controversie indicate all’articolo 2 del regolamento (CE) n. 861/2007 che istituisce tale procedura. Se la controversia non rientra nel campo di applicazione del procedimento per le controversie di modesta entità, il procedimento attivato prosegue dinanzi all’organo giurisdizionale competente secondo le norme di procedura civile ordinaria, a meno che l’attore non ritiri la domanda. Se la domanda riguarda somme di denaro, l'attore deve compilare la sottosezione 5.1. Se la controversia non ha direttamente come oggetto una somma di denaro, è necessario indicarne il valore stimato compilando la sottosezione 5.2.",
-            "link": [
-              {
-                "type": "LEGAL_LINK",
-                "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
-                "name": "Regolamento Europeo n. 861/2007",
-                "text": "regolamento (CE) n. 861/2007 del Parlamento europeo e del Consiglio",
-                "description": "Regolamento europeo che istituisce il procedimento europeo per le controversie di modesta entità."
-              }
-            ],
-            "words": [
-              {
-                "text": "organo giurisdizionale",
-                "position": "561-22",
-                "definition": "In questo caso, un tribunale. In generale un organo giurisdizionale è un'autorità dello stato responsabile dell'interpretazione e della applicazione delle leggi.",
-                "synonyms": ["Tribunale", "Autorità giudiziaria", "Magistratura"],
-                "links": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/claim.claimCostOfProceeding",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "Se si intende chiedere il pagamento delle spese processuali (ad esempio spese di traduzione, onorari degli avvocati, spese di notificazione e/o comunicazione degli atti, ecc.), occorre precisarlo alla sottosezione 5.3. Si noti che le norme relative alle spese che gli organi giurisdizionali possono riconoscere variano da uno Stato membro ad un altro. Per informazioni dettagliate relative alle categorie di spese nei vari Stati membri, consultare il portale europeo della giustizia elettronica.",
-            "simplifiedText": "La richiesta di pagamento delle spese processuali (traduzione, onorari avvocati, notificazione/comunicazione atti etc.) deve essere formulata compilando la sottosezione 5.3. Le norme relative alle spese variano da Stato a Stato. Per info dettagliate, visitare il portale europeo della giustizia elettronica https://e-justice.europa.eu/content_costs_of_proceedings-37-it.do?init=true .",
-            "link": [
-              {
-                "type": "DESCRIPTION_LINK",
-                "url": "https://e-justice.europa.eu/content_costs_of_proceedings-37-it.do?init=true",
-                "name": "Costi dei processi in vari stati Membri.",
-                "text": "informazioni dettagliate relative alle categorie di spese nei vari Stati membri",
-                "description": "Informazioni sulle spese processuali nei vari stati membri."
-              }
-            ],
-            "words": [
-              {
-                "text": "organi giurisdizionali",
-                "position": "269-22",
-                "definition": "In questo caso, un tribunale. In generale un organo giurisdizionale è un'autorità dello stato responsabile dell'interpretazione e della applicazione delle leggi.",
-                "synonyms": ["Tribunale", "Autorità giudiziaria", "Magistratura"],
-                "links": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/claim.claimInterests",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "Se si intende chiedere la corresponsione di interessi contrattuali, ad esempio su un prestito, indicarne il tasso e la decorrenza. Qualora la domanda venga accolta, l'organo giurisdizionale può accordare interessi legali sulla stessa. Precisare se si intende richiederli e da quale data dovrebbero decorrere. Se necessario, utilizzare fogli supplementari per descrivere la richiesta, ad esempio, se vengono richiesti diversi pagamenti e gli interessi sono richiesti a decorrere da date diverse per ciascun pagamento.",
-            "simplifiedText": "È possibile richiedere il pagamento degli interessi contrattuali. In tal caso è necessario indicare il tasso e la data di decorrenza. Se la domanda viene accolta, l'organo giurisdizionale può accordare gli interessi legali. Nel caso in cui la richiesta di pagamento degli interessi si riferisca a pagamenti e date di decorrenza differenti, è possibile utilizzare fogli supplementari per specificare le singole richieste.",
-            "link": [
-              {
-                "url": "",
-                "name": "",
-                "description": ""
-              }
-            ],
-            "words": [
-              {
-                "text": "interessi contrattuali",
-                "position": "45-22",
-                "definition": "Interessi concordati tra le parti.",
-                "synonyms": [],
-                "links": []
-              },
-              {
-                "text": "organo giurisdizionale",
-                "position": "168-22",
-                "definition": "In questo caso, un tribunale. In generale un organo giurisdizionale è un'autorità dello Stato responsabile dell'interpretazione e della applicazione delle leggi.",
-                "synonyms": ["Tribunale", "Autorità giudiziaria", "Magistratura"],
-                "links": []
-              },
-              {
-                "text": "interessi legali",
-                "position": "205-16",
-                "definition": "Interessi stabiliti per legge.",
-                "synonyms": [],
-                "links": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/claim.otherClaim",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "In caso di controversia avente oggetto diverso dal denaro, il valore stimato della controversia va indicato alla sottosezione 5.2. In caso di controversia non avente ad oggetto somme di denaro, l’attore dovrebbe indicare l’eventuale esistenza di una domanda di risarcimento secondaria, qualora non fosse possibile dar seguito a quella principale.",
-            "simplifiedText": "Nel caso in cui la controversia abbia un oggetto diverso da una somma di denaro, è necessario indicare il valore stimato della controversia nella sottosezione 5.2. Inoltre è necessario indicare se esiste già una domanda di risarcimento secondaria.",
-            "link": [
-              {
-                "url": "",
-                "name": "",
-                "description": ""
-              }
-            ],
-            "words": []
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/claimDetails",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "Nella sottosezione 6.1 fornire una breve descrizione dell’oggetto della domanda. Nella sottosezione 6.2 fornire una descrizione dei pertinenti elementi di prova; potrebbe trattarsi ad esempio di prove scritte (come un contratto, una ricevuta ecc.) o di prove testimoniali orali o scritte. Precisare per ciascun elemento di prova i punti della domanda a sostegno dei quali è addotto.",
-            "simplifiedText": "Descrivere brevemente l’oggetto della domanda che si intende formulare all’autorità giudiziaria nella sottosezione 6.1. Gli elementi di prova (quali contratti, ricevute, prove testimoniali orali o scritte) andranno indicati nella sottosezione 6.2, precisando per ciascuno quali punti della domanda supportano/provano.",
-            "link": [
-              {
-                "url": "",
-                "name": "",
-                "description": ""
-              }
-            ],
-            "words": [
-              {
-                "text": "prove testimoniali",
-                "position": "254-18",
-                "definition": "Una prova testimoniale è una forma di prova che si basa su testimonianze dirette di testimoni, cioè di persone che hanno partecipato direttamente o indirettamente alla vicenda o che hanno una conoscenza diretta dei fatti in questione.",
-                "synonyms": [],
-                "links": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/claimant",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "In questa sezione l’attore deve fornire informazioni su se stesso e, se del caso, sul suo rappresentante. Si noti che non è obbligatorio essere rappresentati da un avvocato o da un altro professionista del settore legale. In alcuni paesi potrebbe non essere sufficiente fornire esclusivamente una casella postale come indirizzo, ed è quindi necessario includere, oltre al codice postale, anche la via e il numero civico. L'inosservanza di questa disposizione può compromettere la notificazione e/o comunicazione del documento.",
-            "simplifiedText": "In questa sezione vanno fornite informazioni sulla persona (fisica o giuridica) che vuole far valere il proprio diritto e, se del caso, del soggetto rappresentante. Non è obbligatorio farsi assistere da un avvocato o da un'altra figura professionale. Per il buon esito delle comunicazioni da parte dell’ufficio giudiziario è opportuno inserire in maniera completa il proprio indirizzo geografico.",
-            "link": [
-              {
-                "url": "",
-                "name": "",
-                "description": ""
-              }
-            ],
-            "words": [
-              {
-                "text": "attore",
-                "position": "21-6",
-                "definition": "L'attore è la persona che avvia una azione legale.",
-                "synonyms": [],
-                "links": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/claimant.personalIdNumber",
-        "infoElements": [
-          {
-            "type": "INFORMATION",
-            "text": "Se si dispone di un numero d’identificazione personale fornito dalle autorità di uno Stato membro sarebbe utile indicarlo. Se non si dispone di tale numero, sarebbe utile fornire il numero del passaporto o di un documento di identità, ove disponibile. Se si agisce per conto di una persona giuridica o di un soggetto avente capacità giuridica, sarebbe utile fornire un numero di registrazione pertinente.",
-            "simplifiedText": "Se si è in possesso di un numero di identificazione personale assegnato dalle autorità di uno Stato membro, è utile indicarlo. In alternativa o in aggiunta, sarebbe utile fornire il numero del passaporto o di un altro documento d'identità. Per le persone giuridiche è utile fornire  il proprio numero di identificazione/registrazione.",
-            "link": [
-              {
-                "url": "",
-                "name": "",
-                "description": ""
-              }
-            ],
-            "words": [
-              {
-                "position": "283-17",
-                "text": "persona giuridica",
-                "definition": "Una persona giuridica è un'entità, una società, un'organizzazione, un'istituzione o un'associazione, a prescindere dal riconoscimento o meno della personalità stessa.",
-                "synonyms": [],
-                "links": ["https://www.law.cornell.edu/wex/legal_person"]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/claimant.otherDetails",
-        "infoElements": [
-          {
-            "type": "INFORMATION",
-            "text": "Alla voce 'Altro' si possono inserire altre informazioni che permettano di identificare l'attore, per esempio la data di nascita, la professione o la funzione nell’impresa. Se vi è più di un attore, aggiungere dei fogli.",
-            "simplifiedText": "Nella sezione 'Altro' è possibile inserire altre informazioni utili ad identificare la persona o l'ente, come la data di nascita, la professione o il ruolo nell'impresa.",
-            "link": [
-              {
-                "url": "",
-                "name": "",
-                "description": ""
-              }
-            ],
-            "words": []
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/courtTribunal",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "Sezione in cui occorre fornire informazioni sull’organo giurisdizionale cui si inoltra la domanda. Nella scelta dell’organo giurisdizionale occorrere tener conto dei motivi della competenza giurisdizionale. Nella sezione 4 è riportato un elenco non esaustivo dei possibili motivi di competenza giurisdizionale. È possibile utilizzare l’apposita funzione di ricerca, disponibile sul portale europeo della giustizia elettronica, per trovare le informazioni dettagliate (indirizzo, numero di telefono ecc.) sull’organo competente.",
-            "simplifiedText": "In questa sezione è necessario indicare l’autorità giudiziaria competente. Per individuare il giudice competente a ricevere la domanda in ciascun Paese è possibile avvalersi dell’apposita funzione di ricerca disponibile sul Portale europeo della giustizia elettronica.",
-            "link": [
-              {
-                "type": "SERVICE_LINK",
-                "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true#tocHeader2",
-                "name": "Ricerca tribunali e autorità competenti per paese",
-                "text": "apposita funzione di ricerca",
-                "description": "Lo strumento di ricerca permette di identificare i tribunali/le autorità competenti in ciascun paese per le controversie di modesta entità."
-              }
-            ],
-            "words": [
-              {
-                "text": "organo giurisdizionale",
-                "position": "50-22",
-                "definition": "In questo caso ci si riferisce al tribunale. In generale un organo giurisdizionale è un'autorità dello stato responsabile dell'interpretazione e della applicazione delle leggi.",
-                "synonyms": ["Tribunale", "Autorità giudiziaria", "Magistratura"],
-                "links": []
-              },
-              {
-                "text": "competenza giurisdizionale",
-                "position": "180-26",
-                "definition": "Ambito di competenza entro il quale un tribunale ha il potere di decidere su una questione o un caso specifico.",
-                "synonyms": [],
-                "links": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/crossborderNature",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "Per poter ricorrere al procedimento europeo per le controversie di modesta entità, la controversia deve avere carattere transfrontaliero: per essere definita tale è necessario che almeno una delle parti abbia domicilio o residenza abituale in uno Stato membro diverso da quello dell’organo giurisdizionale.",
-            "simplifiedText": "Il procedimento europeo per le controversie di modesta entità può essere utilizzato quando almeno una delle parti in causa ha domicilio o residenza abituale in uno Stato membro diverso da quello dell'organo giudiziario presso cui è necessario instaurare il giudizio.",
-            "link": [
-              {
-                "url": "",
-                "name": "",
-                "description": ""
-              }
-            ],
-            "words": [
-              {
-                "text": "organo giurisdizionale",
-                "position": "284-22",
-                "definition": "In questo caso ci si riferisce al tribunale. In generale un organo giurisdizionale è un'autorità dello stato responsabile dell'interpretazione e della applicazione delle leggi.",
-                "synonyms": ["Tribunale", "Autorità giudiziaria", "Magistratura"],
-                "links": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/dateAndSignature",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "Apporre il nome in caratteri chiari, firmare e datare in calce alla domanda.",
-            "simplifiedText": "Scrivere il proprio nome in modo leggibile, firmare e datare in fondo alla domanda.",
-            "link": [
-              {
-                "url": "",
-                "name": "",
-                "description": ""
-              }
-            ],
-            "words": []
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/defendant",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "In questa sezione devono essere fornite informazioni sul convenuto e, se noto, sul suo rappresentante. Si noti che non è obbligatorio essere rappresentati da un avvocato o da un altro professionista del settore legale. In alcuni paesi può non essere sufficiente fornire esclusivamente una casella postale come indirizzo, ed è quindi necessario includere, oltre al codice postale, anche la via e il numero civico. L'inosservanza di questa disposizione può compromettere la notificazione e/o comunicazione del documento.",
-            "simplifiedText": "In questa sezione vanno fornite informazioni sulla persona (fisica o giuridica) cui si intende fare causa e, se del caso, del soggetto rappresentante. Per il buon esito delle comunicazioni da parte dell’ufficio giudiziario è opportuno inserire in maniera completa indirizzo geografico del soggetto che si cita in giudizio.",
-            "link": [
-              {
-                "url": "",
-                "name": "",
-                "description": ""
-              }
-            ],
-            "words": [
-              {
-                "text": "convenuto",
-                "position": "58-9",
-                "definition": "Il convenuto è il soggetto contro il quale si intende iniziare l'azione legale, cioè la parte chiamata in giudizio dall'attore.",
-                "synonyms": [],
-                "links": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/defendant.personalIdNumber",
-        "infoElements": [
-          {
-            "type": "INFORMATION",
-            "text": "Se si è a conoscenza di un numero d’identificazione personale attribuito al convenuto dalle autorità di uno Stato membro sarebbe utile indicarlo. In alternativa o in aggiunta, sarebbe utile fornire il numero del passaporto o di un documento di identità del convenuto, ove disponibile. Se il convenuto è una persona giuridica o un soggetto avente capacità giuridica, sarebbe utile fornire un numero di registrazione pertinente, ove noto.",
-            "simplifiedText": "È utile indicare il numero di identificazione personale assegnato dalle autorità di uno Stato membro, se conosciuto. In alternativa o in aggiunta, sarebbe utile fornire il numero del passaporto o di un altro documento d'identità. Per la persona giuridica è utile fornire il relativo numero di identificazione/registrazione.",
-            "link": [
-              {
-                "url": "",
-                "name": "",
-                "description": ""
-              }
-            ],
-            "words": [
-              {
-                "position": "308-17",
-                "text": "persona giuridica",
-                "definition": "Una persona giuridica è un'entità, una società, un'organizzazione, un'istituzione o un'associazione, a prescindere dal riconoscimento o meno della personalità stessa.",
-                "synonyms": [],
-                "links": ["https://www.law.cornell.edu/wex/legal_person"]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/defendant.otherDetails",
-        "infoElements": [
-          {
-            "type": "INFORMATION",
-            "text": "Alla voce 'Altro' si possono inserire altre informazioni che permettano di identificare il convenuto, per esempio la data di nascita, la professione o la funzione nell’impresa. Se vi è più di un convenuto, aggiungere dei fogli.",
-            "simplifiedText": "Nella sezione 'Altro' è possibile inserire altre informazioni utili ad identificare la persona o l'ente a cui si intende fare causa, come la data di nascita, la professione o il ruolo nell'impresa.",
-            "link": [
-              {
-                "url": "",
-                "name": "",
-                "description": ""
-              }
-            ],
-            "words": []
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/documentAndCommunication",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "Gli atti procedurali, come la domanda dell'attore, la replica del convenuto, eventuali domande riconvenzionali e la sentenza, possono essere notificati o comunicati alle parti per posta o per via elettronica, se l'organo giurisdizionale ha tecnicamente a disposizione tali mezzi e se questi sono ammissibili conformemente al diritto processuale dello Stato membro in cui si svolge il procedimento. Se gli atti devono essere notificati o comunicati in uno Stato membro diverso da quello in cui si svolge il procedimento, è necessario che siano osservate anche le norme procedurali dello Stato membro in cui è effettuata la notifica/comunicazione. I mezzi elettronici possono essere utilizzati anche per altre comunicazioni scritte (come una richiesta di partecipazione a un’udienza). I mezzi elettronici possono essere utilizzati soltanto se il destinatario ne ha espressamente autorizzato l'uso in anticipo o se egli è giuridicamente tenuto ad accettare la notifica e/o altra comunicazione scritta dell'organo giurisdizionale in forma elettronica, in conformità con le norme procedurali dello Stato membro in cui ha il domicilio. Per verificare la disponibilità e l'ammissibilità dei mezzi elettronici per la notifica e/o comunicazione negli Stati membri occorre verificare le informazioni sul portale europeo della giustizia elettronica.",
-            "simplifiedText": "Gli atti procedurali (domanda, replica del denunciato, sentenza) possono essere notificati o comunicati per posta o per via elettronica, se l'organo giurisdizionale è in grado tecnicamente e se è previsto dal diritto processuale dello Stato membro in cui si svolge il procedimento. Se gli atti vengono notificati/comunicati in un altro Stato membro, devono essere osservate anche le norme dello Stato membro in cui avviene la notifica/comunicazione. I mezzi elettronici, che possono essere usati anche per altre comunicazioni scritte (per esempio una richiesta di partecipazione a un'udienza), devono essere autorizzati in anticipo dal destinatario, a meno che questi non sia obbligato ad accettarli secondo la legge del paese in cui risiede. Verificare i mezzi elettronici ammissibili su https://e-justice.europa.eu/content_small_claims-354-it.do?init=true",
-            "link": [
-              {
-                "type": "SERVICE_LINK",
-                "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true",
-                "name": "Ricerca tribunali e autorità competenti per paese",
-                "text": "portale europeo della giustizia elettronica",
-                "description": "Lo strumento di ricerca permette di identificare i tribunali/le autorità competenti in ciascun paese per le controversie di modesta entità."
-              }
-            ],
-            "words": [
-              {
-                "text": "atti procedurali",
-                "position": "5-16",
-                "definition": "Gli atti e documenti relativi al procedimento.",
-                "synonyms": [],
-                "links": []
-              },
-              {
-                "text": "domande riconvenzionali",
-                "position": "88-23",
-                "definition": "La richiesta di tutela del proprio diritto effettuata dal convenuto nell’ambito della stessa procedura",
-                "synonyms": [],
-                "links": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/jurisdiction",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "La domanda deve essere presentata all’organo giurisdizionale competente. Esso dev’essere competente ai sensi del regolamento (CE) n. 1215/2012 del Parlamento europeo e del Consiglio. Nella presente sezione è riportato un elenco non esaustivo dei possibili motivi della competenza giurisdizionale. Per ulteriori informazioni in materia di norme sulla competenza, si consulti la pagina web dell’atlante giudiziario europeo.",
-            "simplifiedText": "La domanda va presentata all'organo giurisdizionale che ha il potere di decidere sulla specifica controversia sulla base delle regole fissate dal regolamento (CE) n. 1215/2012.",
-            "link": [
-              {
-                "type": "LEGAL_LINK",
-                "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:32012R1215",
-                "name": "Regolamento UE n. 1215/2012 del Parlamento Europeo e del Consiglio",
-                "text": "regolamento (CE) n. 1215/2012 del Parlamento europeo e del Consiglio",
-                "description": "Testo del Regolamento n. 1215/2012 concernente la competenza giurisdizionale, il riconoscimento e l’esecuzione delle decisioni in materia civile e commerciale."
-              },
-              {
-                "type": "SERVICE_LINK",
-                "url": "https://e-justice.europa.eu/content_brussels_i_regulation_recast-350-it.do?init=true",
-                "name": "Regolamento Bruxelles I",
-                "text": "ulteriori informazioni in materia di norme sulla competenza",
-                "description": "Informazioni nazionali e moduli online concernenti il regolamento n. 1215/2012 "
-              }
-            ],
-            "words": [
-              {
-                "text": "organo giurisdizionale",
-                "position": "39-22",
-                "definition": "In questo caso ci si riferisce al tribunale. In generale un organo giurisdizionale è un'autorità dello stato responsabile dell'interpretazione e della applicazione delle leggi.",
-                "synonyms": [],
-                "links": []
-              },
-              {
-                "text": "competenza giurisdizionale",
-                "position": "270-26",
-                "definition": "Ambito di competenza entro il quale un tribunale ha il potere di decidere su una questione o un caso specifico.",
-                "synonyms": [],
-                "links": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "http://scanii.org/domain/oralHearing",
-        "infoElements": [
-          {
-            "type": "DESCRIPTION",
-            "text": "Si rammenta che il procedimento europeo per le controversie di modesta entità si svolge in forma scritta. Tuttavia, l’organo giurisdizionale può decidere di procedere ad un’udienza se ritiene che non sia possibile emettere la sentenza sulla base delle prove scritte. È tuttavia possibile richiedere, con il presente modulo o in una fase successiva, un’udienza. L’organo giurisdizionale può rigettare tale richiesta se ritiene che, tenuto conto delle circostanze del caso, un’udienza sia superflua per l’equa trattazione del procedimento. L’udienza dovrebbe essere effettuata tramite opportuni mezzi di comunicazione a distanza, come la videoconferenza o teleconferenza, a condizione che siano a disposizione dell'autorità giudiziaria. Se la persona da sentire è domiciliata in uno Stato membro diverso da quello dell’organo giurisdizionale adito, è organizzata un’udienza mediante tecnologie di comunicazione a distanza, avvalendosi delle procedure di cui al regolamento (CE) n. 1206/2001 del Consiglio. Tuttavia, l’organo giurisdizionale può stabilire la necessità della presenza fisica delle persone convocate per l’udienza. È possibile indicare le proprie preferenze al giudice, tenendo presente che, se si chiede di essere fisicamente presenti all’udienza, il recupero di eventuali spese sostenute in relazione a tale presenza è soggetto alle disposizioni dell’articolo 16 del regolamento (CE) n. 861/2007, che istituisce un procedimento europeo per le controversie di modesta entità. L'articolo prevede che l’organo giurisdizionale non riconosca alla parte vincente spese superflue sostenute o spese sproporzionate rispetto al valore della controversia.",
-            "simplifiedText": "Il procedimento europeo per le controversie di modesta entità si svolge in forma scritta. Se necessario, il tribunale può decidere di organizzare un’udienza tramite mezzi di comunicazione a distanza, se disponibili presso l'autorità giudiziaria. È possibile richiedere un’udienza con il presente modulo o in una fase successiva. Se si richiede di essere fisicamente presenti, le spese relative saranno soggette all'articolo 16 del regolamento (CE) n. 861/2007 e potrebbero non essere rimborsate se il giudice le dovesse ritenere superflue o sproporzionate.",
-            "link": [
-              {
-                "type": "LEGAL_LINK",
-                "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
-                "name": "Regolamento Europeo n. 861/2007",
-                "text": "regolamento (CE) n. 861/2007",
-                "description": "Regolamento europeo che istituisce il procedimento europeo per le controversie di modesta entità."
-              },
-              {
-                "type": "HOW_TO_LINK",
-                "url": "https://e-justice.europa.eu/content_taking_of_evidence-76-it.do?init=true",
-                "name": "Assunzione delle prove",
-                "text": "procedure",
-                "description": "Informazioni sulle modalità di assunzione e presentazione delle prove al giudice."
-              },
-              {
-                "type": "LEGAL_LINK",
-                "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:02001R1206-20081204&from=DE",
-                "name": "Regolamento Europeo n. 1206/2001",
-                "text": "regolamento (CE) n. 1206/2001 del Consiglio",
-                "description": "Testo del Regolamento Europeo sulla cooperazione fra le autorità giudiziarie degli Stati membri nel settore dell'assunzione delle prove in materia civile o commerciale."
-              }
-            ],
-            "words": [
-              {
-                "text": "organo giurisdizionale",
-                "position": "119-22",
-                "definition": "In questo caso ci si riferisce al tribunale. In generale un organo giurisdizionale è un'autorità dello stato responsabile dell'interpretazione e della applicazione delle leggi.",
-                "synonyms": [],
-                "links": []
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-  
+  "domain": "http://scanii.org/simplification/smallclaimform",
+  "concepts": [
+    {
+      "id": "http://scanii.org/domain/bankDetails",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Unter Nummer 4.2.1. können Sie dem Gericht mitteilen, wie Sie die Gerichtsgebühr entrichten wollen. Beachten Sie bitte, dass dem Gericht, bei dem Sie Ihre Klage einreichen, nicht unbedingt alle Zahlungssysteme zur Verfügung stehen. Vergewissern Sie sich, welche Zahlungsmethoden das Gericht akzeptiert. Dies können Sie den von dem betreffenden Mitgliedstaat bereitgestellten und auf der Website des Europäischen Gerichtsatlas für Zivilsachen veröffentlichten Informationen entnehmen, die über das Europäische Justizportal unter https://e-justice.europa.eu/content_small_claims-354-de.do abrufbar sind, oder Sie können sich an das betreffende Gericht wenden. Auf diese Weise erfahren Sie auch Näheres zur Höhe der Gerichtsgebühr. Falls Sie per Kreditkarte zahlen oder dem Gericht erlauben wollen, die Gebühr von Ihrem Bankkonto einzuziehen, tragen Sie bitte die notwendigen Angaben zu Ihrer Kreditkarte oder Ihrem Bankkonto in die Anlage zu diesem Formblatt ein. Die Anlage dient ausschließlich der Unterrichtung des Gerichts und wird nicht an den Beklagten weitergeleitet. Unter Nummer 4.2.2. können Sie angeben, wie der Beklagte zahlen soll, beispielsweise wenn er sofort zahlen möchte, bevor ein Urteil ergeht. Falls Sie eine Überweisung wünschen, geben Sie bitte die entsprechende Bankverbindung an.",
+          "simplifiedText": "Bitte tragen Sie unter Nummer 4.2.1. auf dem Formular den gewünschten Zahlungsmodus ein. Einige Gerichte können Kreditkarten oder Lastschriftverfahren akzeptieren. Wenn ja, können Sie Angaben zu Ihrer Kreditkarte oder Bankverbindung in die Anlage aufnehmen. Nummer 4.2.2. gibt an, wie der Beklagte bezahlen soll, etwa nach Einreichung Ihrer Klage oder per Banküberweisung (geben Sie hierfür die Bankverbindung an). Informationen zur Höhe der Gerichtsgebühr finden Sie auf der Website des Europäischen Justizportals.",
+          "link": [
+            {
+              "type": "SERVICE_LINK",
+              "url": "https://e-justice.europa.eu/content_small_claims-354-de.do?init=true",
+              "text": "Europäisches Justizportal",
+              "name": "Landesspezifische Informationen und Online-Formulare",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": ["", "", ""],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/certificate",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Ein in einem Mitgliedstaat im Rahmen des europäischen Verfahrens für geringfügige Forderungen erlassenes Urteil kann in einem anderen Mitgliedstaat anerkannt und vollstreckt werden. Haben Sie die Absicht, die Anerkennung und Vollstreckung in einem anderen Mitgliedstaat als dem des Gerichts zu beantragen, so können Sie in diesem Formblatt das Gericht darum ersuchen, nach Erlass eines Urteils zu Ihren Gunsten eine Bestätigung dieses Urteils auszustellen. Auf Antrag kann das Gericht Ihnen die Bestätigung unter Verwendung der über das Europäische Justizportal abrufbaren dynamischen Formulare in einer anderen Sprache zur Verfügung stellen. Dies könnte bei einer Vollstreckung des Urteils in einem anderen Mitgliedstaat von Vorteil sein. Beachten Sie bitte, dass das Gericht nicht verpflichtet ist, eine Übersetzung und/oder Transliteration eines in die Freitextfelder der Bestätigung eingetragenen Textes bereitzustellen.",
+          "simplifiedText": "Wenn Sie eine Forderung in einem anderen Mitgliedstaat des europäischen Verfahrens geltend machen, erhalten Sie nach Erlass des Urteils von der Gerichtsbarkeit des Erteilungsstaates eine Bestätigung. Das Gericht kann Ihnen bei Bedarf auf Ihren Antrag hin eine Bestätigung in einer anderen Sprache zur Verfügung stellen. Dies ist vorteilhaft, wenn Sie die Anerkennung und Vollstreckung des Urteils in einem anderen Staat vornehmen möchten. Beachten Sie, dass das Gericht nicht verpflichtet ist, Ihnen eine Übersetzung oder Transliteration Ihres im Freitext eingegebenen Textes zu liefern.",
+          "link": [
+            {
+              "type": "LEGAL_LINK",
+              "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02001R1206-20081204&from=DE",
+              "name": "Europäische Verordnung Nr. 1206/2001.",
+              "text": "Europäische Verordnung Nr. 1206/2001 des Rates.",
+              "description": "Text der Europäischen Verordnung über die Zusammenarbeit zwischen den Gerichten der Mitgliedstaaten auf dem Gebiet der Beweisaufnahme in Zivil- oder Handelssachen."
+            },
+            {
+              "type": "LEGAL_LINK",
+              "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
+              "name": "Europäische Verordnung Nr. 861/2007",
+              "text": "Europäische Verordnung Nr. 861/2007",
+              "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": ["", "", ""],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/claim",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Anwendungsbereich: Beachten Sie bitte, dass das europäische Verfahren für geringfügige Forderungen einen begrenzten Anwendungsbereich hat. Über Klagen, deren Streitwert 5000 EUR überschreitet oder deren Gegenstand in Artikel 2 der Verordnung (EG) Nr. 861/2007 des Europäischen Parlaments und des Rates zur Einführung eines Verfahrens für geringfügige Forderungen aufgeführt ist, kann im Rahmen dieses Verfahrens nicht verhandelt werden. Falls Ihre Klage eine Forderung betrifft, die nach Artikel 2 der Verordnung nicht in deren Anwendungsbereich fällt, wird das Verfahren vor den zuständigen Gerichten nach den Vorschriften für ein ordentliches Zivilverfahren weitergeführt. Falls Sie nicht wollen, dass das Verfahren in diesem Fall weitergeführt wird, sollten Sie Ihre Klage zurücknehmen. Geldforderung oder andere Forderung: Geben Sie bitte an, ob Sie eine Geldforderung und/oder eine andere (nicht auf eine Geldzahlung gerichtete) Forderung, z. B. die Lieferung von Waren, geltend machen, und füllen Sie dann Nummer 5.1. und/oder Nummer 5.2. aus.",
+          "simplifiedText": "Das europäische Verfahren für geringfügige Forderungen hat einen eingeschränkten Anwendungsbereich. Wenn Ihre Klage mehr als 5.000 Euro beträgt oder Schlussfolgerungen in Artikel 2 der Verordnung (EG) Nr. 861/2007 des Europäischen Parlaments und des Rates zur Einführung eines Verfahrens für geringfügige Forderungen aufgeführt sind, kann dieses Verfahren nicht angewendet werde. Wenn Sie nicht wollen, dass das Verfahren weitergeführt wird, sollten Sie Ihre Klage zurücknehmen. Geben Sie an, ob Sie eine Geldforderung oder eine andere Forderung, z. B. die Lieferung von Waren, geltend machen.",
+          "link": [
+            {
+              "type": "LEGAL_LINK",
+              "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
+              "name": "Europäische Verordnung Nr. 861/2007",
+              "text": "Europäische Verordnung Nr. 861/2007 des Europäischen Parlaments und des Rates.",
+              "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/claim.CostOfProceeding",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Falls Sie die Erstattung der Verfahrenskosten fordern (z. B. Übersetzungskosten, Anwaltshonorare, Zustellungskosten usw.), geben Sie dies bitte unter Nummer 5.3. an. Beachten Sie bitte, dass die Vorschriften für die Kostenentscheidung der Gerichte von Mitgliedstaat zu Mitgliedstaat unterschiedlich sind. Einzelheiten zu den Kostenkategorien der einzelnen Mitgliedstaaten sind über das Europäische Justizportal unter https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do zu finden.",
+          "simplifiedText": "Falls Sie Erstattung von Verfahrenskosten fordern (z. B. Übersetzungs-, Anwalts- oder Zustellungskosten), tragen Sie dies bitte unter Nummer 5.3. ein. Beachten Sie, dass die Kostenregeln je nach Mitgliedstaat variieren können. Einzelheiten zu den Kostenkategorien in den einzelnen Mitgliedstaaten finden Sie unter https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do.",
+          "link": [
+            {
+              "type": "DESCRIPTION_LINK",
+              "url": "https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do?init=true",
+              "name": "Verfahrenskosten in den einzelnen Mitgliedstaaten.",
+              "text": "Info über die Verfahrenskosten in den einzelnen Mitgliedstaaten.",
+              "description": "Info über die Verfahrenskosten in den einzelnen Mitgliedstaaten."
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": ["", "", ""],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/claim.claimInterests",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Falls Sie vertraglich vereinbarte Zinsen geltend machen, z. B. bei einem Darlehen, sollten Sie den Zinssatz und den Beginn der Laufzeit angeben. Das Gericht kann Ihnen gesetzliche Zinsen zusprechen, falls Ihrer Klage stattgegeben wird. Geben Sie bitte an, ob Sie Zinsen fordern und ab welchem Tag die Zinsen laufen sollen. Verwenden Sie bei Bedarf bitte zusätzliche Blätter, um den Gegenstand Ihrer Klage zu beschreiben, z. B. wenn Sie mehrere Zahlungen fordern und die Zinsen für jede dieser Zahlungen ab einem anderen Tag geltend gemacht werden.",
+          "simplifiedText": "Falls Sie Geld schuldet bekommen, dann kann das Gericht Ihnen gesetzliche Zinsen geben. Erwähnen Sie daher bitte immer, ob und ab welchem Tag Sie Zinsen wollen. Wenn Sie mehrere Zahlungen einfordern, geben Sie auch das Datum für jede an, ab wann Zinsen berechnet werden sollen. Falls nötig, können Sie weitere Seiten angeben, um den Grund der Klage ausführlicher zu beschreiben.",
+          "link": [
+            {
+              "type": "LEGAL_LINK",
+              "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
+              "name": "Europäische Verordnung Nr. 861/2007",
+              "text": "Europäische Verordnung Nr. 861/2007 des Europäischen Parlaments und des Rates.",
+              "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/claim.otherClaim",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Falls Ihre Forderung nicht auf die Zahlung eines Geldbetrags gerichtet ist, füllen Sie bitte Nummer 5.2. aus und geben Sie den geschätzten Wert Ihrer Forderung an. In diesem Fall sollten Sie auch angeben, ob Sie für den Fall, dass die ursprüngliche Forderung nicht erfüllt werden kann, hilfsweise einen Anspruch auf Schadensersatz geltend machen.",
+          "simplifiedText": "Bitte geben Sie bei Nummer 5.2. den geschätzten Wert Ihrer Forderung an. Wenn Ihre ursprüngliche Forderung nicht erfüllt werden kann, können Sie außerdem einen Anspruch auf Schadensersatz geltend machen.",
+          "link": [
+            {
+              "type": "LEGAL_LINK",
+              "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
+              "name": "Europäische Verordnung Nr. 861/2007",
+              "text": "Europäische Verordnung Nr. 861/2007 des Europäischen Parlaments und des Rates.",
+              "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/claimDetails",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Sie sollten unter Nummer 6.1. kurz ausführen, womit Sie Ihre Klage begründen. Sie sollten unter Nummer 6.2. die erheblichen Beweismittel beschreiben. Dabei kann es sich beispielsweise um Urkundenbeweise (z. B. Vertrag, Quittung usw.) oder mündliche/schriftliche Zeugenaussagen handeln. Bitte geben Sie für jedes Beweismittel an, welcher Aspekt Ihrer Forderung dadurch jeweils begründet werden soll. Falls der Platz nicht ausreicht, können Sie weitere Blätter hinzufügen.",
+          "simplifiedText": "Beschreiben Sie unter Nummer 6.1. und 6.2., warum Sie eine Klage einreichen. Unter 6.1. sollten Sie kurz angeben, was Sie mit Ihrer Klage begründen. Unter 6.2. sollten Sie mögliche Beweise (z.B. Vertrag, Quittung usw., mündliche/schriftliche Zeugenaussagen) aufzählen, die Ihre Forderung unterstützen. Falls mehr Platz erforderlich ist, fügen Sie einfach weitere Blätter hinzu.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/claimant",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "In diesem Feld sind Sie als Kläger und gegebenenfalls Ihr Vertreter anzugeben. Sie sind nicht verpflichtet, sich durch einen Rechtsanwalt oder sonstigen Rechtsbeistand vertreten zu lassen. Da in manchen Ländern ein Postfach als Anschrift möglicherweise nicht ausreicht, sollten Sie auch Straße, Hausnummer und Postleitzahl eintragen. Das Fehlen dieser Angaben kann dazu führen, dass das Schriftstück nicht zugestellt wird.",
+          "simplifiedText": "Sie müssen als Kläger angeben, wer Sie sind und wo Sie wohnen. Möglicherweise müssen Sie also auch Ihre Straße, Hausnummer und Postleitzahl angeben.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            },
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/claimant.personalIdNumber",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Falls Sie über eine persönliche Identifikationsnummer verfügen, die Ihnen von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Falls Sie keine solche Nummer haben, wäre es zweckdienlich, Ihre Pass- oder Ausweisnummer einzutragen, falls verfügbar. Falls Sie im Namen einer juristischen Person oder eines sonstigen Rechtsträgers handeln, wäre die Angabe einer Registrierungsnummer von Nutzen.",
+          "simplifiedText": "Wenn Sie eine persönliche Identifikationsnummer besitzen (z. B. zugewiesen von den Behörden eines Mitgliedstaats), dann geben Sie diese an. Wenn nicht, dann Ihre Pass- oder Ausweisnummer, falls verfügbar. Wenn Sie im Namen einer juristischen Person oder eines anderen Rechtsträgers auftreten, dann geben Sie die Registrierungsnummer an.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "position": "",
+              "text": "",
+              "definition": "",
+              "synonyms": [],
+              "links": [""]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/claimant.otherDetails",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Unter „Sonstige Angaben“ können Sie weitere Informationen eintragen, die der Identifizierung Ihrer Person dienen, z. B. Geburtsdatum, Beruf oder Stellung im Unternehmen. Bei mehr als einem Kläger verwenden Sie bitte zusätzliche Blätter.",
+          "simplifiedText": "Tragen Sie unter \"Sonstige Angaben\" weitere Informationen über sich ein, die für Ihre Identifizierung nützlich sind, wie Geburtsdatum, Beruf und Stellung im Unternehmen. Für mehrere Kläger müssen extra Blätter verwendet werden.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/courtTribunal",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "In diesem Feld ist das Gericht anzugeben, bei dem Sie Ihre Klage einreichen. Bei der Auswahl des Gerichts ist auf die Zuständigkeit des Gerichts zu achten. In Abschnitt 4 finden Sie eine nicht abschließende Aufzählung von Kriterien, auf die sich die gerichtliche Zuständigkeit gründen kann. Die Kontaktdaten des zuständigen Gerichts können Sie mithilfe der entsprechenden Suchfunktion des Europäischen Justizportals ermitteln: https://e-justice.europa.eu/content_small_claims-354-de.do",
+          "simplifiedText": "Geben Sie bitte das Gericht an, bei dem Sie Ihre Klage einreichen wollen. Achten Sie darauf, dass das Gericht zuständig ist. Um herauszufinden, welches Gericht zuständig ist, können Sie die Suchfunktion des Europäischen Justizportals aufrufen: https://e-justice.europa.eu/content_small_claims-354-de.do.",
+          "link": [
+            {
+              "type": "SERVICE_LINK",
+              "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true#tocHeader2",
+              "name": "Suche nach Gerichten und Behörden nach Land.",
+              "text": "Suche nach Gerichten und Behörden nach Land.",
+              "description": "Die Suchfunktion ermöglicht es, die zuständigen Gerichte/Behörden in jedem Land für geringfügige Forderungen zu finden."
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            },
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/crossBorderNature",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Sie können das europäische Verfahren für geringfügige Forderungen nur in Anspruch nehmen, wenn Ihre Rechtssache einen Auslandsbezug aufweist. Dies ist der Fall, wenn mindestens eine der Parteien ihren Wohnsitz oder gewöhnlichen Aufenthalt in einem anderen Mitgliedstaat als dem des Gerichts hat.",
+          "simplifiedText": "Sie können das europäische Verfahren für geringfügige Forderungen verwenden, wenn sich eine der Parteien in einem anderen EU-Staat als dem des Gerichts befindet.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/dateAndSignature",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Vergessen Sie bitte nicht, auf der letzten Seite des Formblatts Ihren Namen deutlich lesbar einzutragen und die Klage zu unterzeichnen und zu datieren.",
+          "simplifiedText": "Vermerken Sie Ihren Namen deutlich lesbar auf der letzten Seite des Formulars, unterzeichnen und datieren Sie die Klage.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": []
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/defendant",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Geben Sie in diesem Feld bitte den Beklagten und, falls bekannt, seinen Vertreter an. Auch der Beklagte ist nicht verpflichtet, sich durch einen Rechtsanwalt oder sonstigen Rechtsbeistand vertreten zu lassen. Da in manchen Ländern ein Postfach als Anschrift möglicherweise nicht ausreicht, sollten Sie auch Straße, Hausnummer und Postleitzahl eintragen. Das Fehlen dieser Angaben kann dazu führen, dass das Schriftstück nicht zugestellt wird.",
+          "simplifiedText": "Bitte die Anschrift des Beklagten, eventuell die persönliche Identifikations- oder Ausweisnummer sowie ggf. eine Registrierungsnummer eingeben. Der Beklagte muss nicht durch einen Rechtsbeistand vertreten werden, aber bitte Straße, Hausnummer und Postleitzahl angeben.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/defendant.personalIdNumber",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Falls Ihnen eine persönliche Identifikationsnummer bekannt ist, die dem Beklagten von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Alternativ oder zusätzlich wäre es zweckdienlich, die Pass- oder Ausweisnummer des Beklagten einzutragen, falls verfügbar. Falls es sich bei dem Beklagten um eine juristische Person oder einen sonstigen Rechtsträger handelt, wäre die Angabe einer Registrierungsnummer des Beklagten von Nutzen, falls Sie diese kennen.",
+          "simplifiedText": "Falls Ihnen eine persönliche Identifikationsnummer bekannt ist, die dem Beklagten von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Alternativ oder zusätzlich wäre es zweckdienlich, die Pass- oder Ausweisnummer des Beklagten einzutragen, falls verfügbar. Falls es sich bei dem Beklagten um eine juristische Person oder einen sonstigen Rechtsträger handelt, wäre die Angabe einer Registrierungsnummer des Beklagten von Nutzen, falls Sie diese kennen.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "position": "",
+              "text": "",
+              "definition": "",
+              "synonyms": [],
+              "links": [""]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/defendant.otherDetails",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Unter „Sonstige Angaben“ können Sie weitere Informationen eintragen, die der Identifizierung der Person dienen, z. B. Geburtsdatum, Beruf oder Stellung im Unternehmen. Bei mehr als einem Beklagten verwenden Sie bitte zusätzliche Blätter.",
+          "simplifiedText": "Unter \"Sonstige Angaben\" geben Sie bitte weitere Informationen zur Identifizierung der Person ein, z.B. das Geburtsdatum, den Beruf oder die Stellung im Unternehmen. Falls mehrere Beklagte vorhanden sind, dann benutzen Sie bitte zusätzliche Blätter.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": []
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/documentAndCommunication",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Verfahrensschriftstücke wie Ihre Klage, die Erwiderung des Beklagten, eine etwaige Widerklage und das Urteil können den Parteien per Post oder auf elektronischem Wege zugestellt werden, wenn das Gericht über entsprechende technische Mittel verfügt und dies nach dem Verfahrensrecht des Mitgliedstaats, in dem das Verfahren durchgeführt wird, zulässig ist. Falls die Schriftstücke in einem anderen Mitgliedstaat als demjenigen, in dem das Verfahren durchgeführt wird, zugestellt werden sollen, müssen auch die Verfahrensvorschriften des Mitgliedstaats beachtet werden, in dem die Zustellung erfolgt. Auch ndere schriftliche Mitteilungen (z. B. der Antrag auf Teilnahme an einer Gerichtsverhandlung) können auf elektronischem Wege übermittelt werden. Elektronische Mittel dürfen jedoch nur genutzt werden, wenn der Empfänger ihrem Einsatz vorher ausdrücklich zugestimmt hat oder wenn er nach den Verfahrensvorschriften des Mitgliedstaats, in dem er seinen Wohnsitz hat, rechtlich verpflichtet ist, die elektronische Zustellung und/oder andere schriftliche Mitteilungen des Gerichts in elektronischer Form zu akzeptieren. Informationen darüber, ob die elektronische Zustellung und/oder elektronische Kommunikationsmittel in den betreffenden Mitgliedstaaten verfügbar und zulässig sind, können Sie über das Europäische Justizportal abrufen unter: https://e-justice.europa.eu/content_small_claims-354-de.do?clang=de",
+          "simplifiedText": "Verfahrensschriftstücke und andere schriftliche Mitteilungen können auf elektronischem Wege zugestellt werden, solange das in dem betreffenden Mitgliedstaat erlaubt ist. In einem anderen Mitgliedstaat müssen die dortige Verfahrensvorschriften beachtet werden. Dazu muss der Empfänger der elektronischen Zustellung zustimmen oder rechtlich verpflichtet sein, die elektronische Zustellung zu akzeptieren. Weitere Informationen zur Verfügbarkeit der elektronischen Zustellung gibt es auf dem Europäischen Justizportal unter https://e-justice.europa.eu/content_small_claims-354-de.do?clang=de.",
+          "link": [
+            {
+              "type": "SERVICE_LINK",
+              "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true#tocHeader2",
+              "name": "Suche nach Gerichten und Behörden nach Land.",
+              "text": "Suche nach Gerichten und Behörden nach Land.",
+              "description": "Die Suchfunktion ermöglicht es, die zuständigen Gerichte/Behörden in jedem Land für geringfügige Forderungen zu finden."
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            },
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/jurisdiction",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Die Klage ist bei dem Gericht einzureichen, das für ihre Bearbeitung zuständig ist. Das Gericht muss nach den Vorschriften der Verordnung (EU) Nr. 1215/2012 des Europäischen Parlaments und des Rates zuständig sein. Dieser Abschnitt enthält eine nicht abschließende Aufzählung von Kriterien, auf die sich die gerichtliche Zuständigkeit gründen kann. Informationen über die Zuständigkeitsvorschriften finden Sie auf der Website des Europäischen Gerichtsatlas unter https://e-justice.europa.eu/content_brussels_i_regulation_recast-350-de.do. Sie können auch das Glossar unter http://ec.europa.eu/civiljustice/glossary/glossary_de.htm zurate ziehen, in dem einige der hier verwendeten Rechtsbegriffe erklärt werden.",
+          "simplifiedText": "Um eine Klage einzureichen, muss man sich an das Gericht wenden, das für die Bearbeitung zuständig ist. Auf der Website des Europäischen Gerichtsatlas unter https://e-justice.europa.eu/content_brussels_i_regulation_recast-350-de.do und dem Glossar unter http://ec.europa.eu/civiljustice/glossary/glossary_de.htm gibt es Informationen über die Kriterien, nach denen man die Zuständigkeit eines Gerichtes ermitteln kann.",
+          "link": [
+            {
+              "type": "LEGAL_LINK",
+              "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32012R1215",
+              "name": "Verordnung (EU) Nr. 1215/2012 des Europäischen Parlaments und des Rates",
+              "text": "Verordnung (EU) Nr. 1215/2012 des Europäischen Parlaments und des Rates",
+              "description": "Text der Verordnung Nr. 1215/2012 über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen."
+            },
+            {
+              "type": "SERVICE_LINK",
+              "url": "https://e-justice.europa.eu/content_brussels_i_regulation_recast-350-de.do?init=true",
+              "name": "Brüssel I-Verordnung",
+              "text": "Weitere Informationen zu den Zuständigkeitsregeln",
+              "description": "Landesspezifische Informationen und Online-Formulare gemäß der Verordnung (EU) Nr. 1215/2012."
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            },
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/oralHearing",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Beachten Sie bitte, dass das europäische Verfahren für geringfügige Forderungen ein schriftliches Verfahren ist. Das Gericht kann jedoch beschließen, eine mündliche Verhandlung anzuberaumen, wenn eine Entscheidung auf der Grundlage der schriftlichen Beweismittel seines Erachtens nicht möglich ist. Sie können auf diesem Formblatt oder zu einem späteren Zeitpunkt eine mündliche Verhandlung beantragen. Das Gericht kann Ihren Antrag ablehnen, wenn es der Auffassung ist, dass unter Berücksichtigung der Umstände des Falles ein faires Verfahren auch ohne mündliche Verhandlung sichergestellt werden kann. Die mündliche Verhandlung sollte mit geeigneten Fernkommunikationsmitteln wie Video- oder Telekonferenz durchgeführt werden, sofern das Gericht über diese Mittel verfügt. Falls die zu hörende Person ihren Wohnsitz in einem anderen Mitgliedstaat als dem des angerufenen Gerichts hat, wird eine Anhörung per Fernkommunikationstechnologie nach den in der Verordnung (EG) Nr. 1206/2001 des Rates vorgesehenen Verfahren organisiert. (https://e-justice.europa.eu/content_taking_of_evidence-76-de.do) Das Gericht kann jedoch beschließen, dass die zur Verhandlung geladenen Personen persönlich erscheinen müssen. Sie können dem Gericht mitteilen, was Sie bevorzugen, sollten dabei aber Folgendes berücksichtigen: Wenn Sie beantragen, persönlich an der Verhandlung teilzunehmen, gilt für die Erstattung der durch Ihre Anwesenheit entstehenden Kosten Artikel 16 der Verordnung (EG) Nr. 861/2007 zur Einführung eines europäischen Verfahrens für geringfügige Forderungen. Danach spricht das Gericht der obsiegenden Partei keine Erstattung für Kosten zu, die nicht notwendig waren oder in keinem Verhältnis zu der Klage stehen.",
+          "simplifiedText": "Beim europäischen Verfahren für geringfügige Forderungen wird im Allgemeinen eine schriftliche Verhandlung durchgeführt. Das Gericht kann aber auch eine mündliche Verhandlung anordnen, wenn es der Meinung ist, dass eine Entscheidung ohne eine mündliche Anhörung nicht möglich ist. Sie können dies beantragen, müssen dann aber damit rechnen, dass das Gericht Ihren Antrag ablehnen kann. Es ist möglich, dass die mündliche Verhandlung über Video- oder Telekonferenz stattfindet. Wenn Sie persönlich erscheinen möchten, müssen Sie beachten, dass Ihnen eventuell nicht alle anfallenden Kosten erstattet werden.",
+          "link": [
+            {
+              "type": "LEGAL_LINK",
+              "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
+              "name": "Europäische Verordnung Nr. 861/2007",
+              "text": "Europäische Verordnung Nr. 861/2007",
+              "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
+            },
+            {
+              "type": "HOW_TO_LINK",
+              "url": "https://e-justice.europa.eu/content_taking_of_evidence-76-de.do?init=true",
+              "name": "Beweisaufnahme",
+              "text": "Beweisaufnahme",
+              "description": "Informationen darüber, wie man Beweise aufnimmt und dem Richter vorlegt."
+            },
+            {
+              "type": "LEGAL_LINK",
+              "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02001R1206-20081204&from=DE",
+              "name": "Europäische Verordnung Nr. 1206/2001.",
+              "text": "Europäische Verordnung Nr. 1206/2001 des Rates.",
+              "description": "Text der Europäischen Verordnung über die Zusammenarbeit zwischen den Gerichten der Mitgliedstaaten auf dem Gebiet der Beweisaufnahme in Zivil- oder Handelssachen."
+            }
+          ],
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

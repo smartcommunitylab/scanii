@@ -6,8 +6,8 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Unter Nummer 6.1 können Sie dem Gericht mitteilen, wie Sie die Gerichtsgebühr entrichten wollen. Beachten Sie bitte, dass dem Gericht, bei dem Sie Ihre Klage einreichen, nicht unbedingt alle Zahlungssysteme zur Verfügung stehen. Vergewissern Sie sich, welche Zahlungsmethoden das Gericht akzeptiert. Dies können Sie den von dem betreffenden Mitgliedstaat bereitgestellten und auf der Website des Europäischen Gerichtsatlas für Zivilsachen veröffentlichten Informationen entnehmen, die über das Europäische Justizportal unter https://e-justice.europa.eu/content_small_claims-354-de.do abrufbar sind, oder Sie können sich an das betreffende Gericht wenden. Auf diese Weise erfahren Sie auch Näheres zur Höhe der Gerichtsgebühr. Falls Sie per Kreditkarte zahlen oder dem Gericht erlauben wollen, die Gebühr von Ihrem Bankkonto einzuziehen, tragen Sie bitte die notwendigen Angaben zu Ihrer Kreditkarte oder Ihrem Bankkonto in die Anlage zu diesem Formblatt ein. Die Anlage dient ausschließlich der Unterrichtung des Gerichts und wird nicht an den Beklagten weitergeleitet. Unter Nummer 6.2 können Sie angeben, wie der Beklagte zahlen soll, beispielsweise wenn er sofort zahlen möchte, bevor ein Urteil ergeht. Falls Sie eine Überweisung wünschen, geben Sie bitte die entsprechende Bankverbindung an.",
-          "simplifiedText": "Bitte tragen Sie unter Nummer 6.1 auf dem Formular den gewünschten Zahlungsmodus ein. Einige Gerichte können Kreditkarten oder Lastschriftverfahren akzeptieren. Wenn ja, können Sie Angaben zu Ihrer Kreditkarte oder Bankverbindung in die Anlage aufnehmen. Nummer 6.2 gibt an, wie der Beklagte bezahlen soll, etwa nach Einreichung Ihrer Klage oder per Banküberweisung (geben Sie hierfür die Bankverbindung an). Informationen zur Höhe der Gerichtsgebühr finden Sie auf der Website des Europäischen Justizportals.",
+          "text": "Unter Nummer 4.2.1. können Sie dem Gericht mitteilen, wie Sie die Gerichtsgebühr entrichten wollen. Beachten Sie bitte, dass dem Gericht, bei dem Sie Ihre Klage einreichen, nicht unbedingt alle Zahlungssysteme zur Verfügung stehen. Vergewissern Sie sich, welche Zahlungsmethoden das Gericht akzeptiert. Dies können Sie den von dem betreffenden Mitgliedstaat bereitgestellten und auf der Website des Europäischen Gerichtsatlas für Zivilsachen veröffentlichten Informationen entnehmen, die über das Europäische Justizportal unter https://e-justice.europa.eu/content_small_claims-354-de.do abrufbar sind, oder Sie können sich an das betreffende Gericht wenden. Auf diese Weise erfahren Sie auch Näheres zur Höhe der Gerichtsgebühr. Falls Sie per Kreditkarte zahlen oder dem Gericht erlauben wollen, die Gebühr von Ihrem Bankkonto einzuziehen, tragen Sie bitte die notwendigen Angaben zu Ihrer Kreditkarte oder Ihrem Bankkonto in die Anlage zu diesem Formblatt ein. Die Anlage dient ausschließlich der Unterrichtung des Gerichts und wird nicht an den Beklagten weitergeleitet. Unter Nummer 4.2.2. können Sie angeben, wie der Beklagte zahlen soll, beispielsweise wenn er sofort zahlen möchte, bevor ein Urteil ergeht. Falls Sie eine Überweisung wünschen, geben Sie bitte die entsprechende Bankverbindung an.",
+          "simplifiedText": "Bitte tragen Sie unter Nummer 4.2.1. auf dem Formular den gewünschten Zahlungsmodus ein. Einige Gerichte können Kreditkarten oder Lastschriftverfahren akzeptieren. Wenn ja, können Sie Angaben zu Ihrer Kreditkarte oder Bankverbindung in die Anlage aufnehmen. Nummer 4.2.2. gibt an, wie der Beklagte bezahlen soll, etwa nach Einreichung Ihrer Klage oder per Banküberweisung (geben Sie hierfür die Bankverbindung an). Informationen zur Höhe der Gerichtsgebühr finden Sie auf der Website des Europäischen Justizportals.",
           "link": [
             {
               "type": "SERVICE_LINK",
@@ -22,11 +22,7 @@
               "text": "",
               "position": "",
               "definition": "",
-              "synonyms": [
-                "",
-                "",
-                ""
-              ],
+              "synonyms": ["", "", ""],
               "links": []
             }
           ]
@@ -61,11 +57,7 @@
               "text": "",
               "position": "",
               "definition": "",
-              "synonyms": [
-                "",
-                "",
-                ""
-              ],
+              "synonyms": ["", "", ""],
               "links": []
             }
           ]
@@ -77,7 +69,7 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Anwendungsbereich: Beachten Sie bitte, dass das europäische Verfahren für geringfügige Forderungen einen begrenzten Anwendungsbereich hat. Über Klagen, deren Streitwert 5000 EUR überschreitet oder deren Gegenstand in Artikel 2 der Verordnung (EG) Nr. 861/2007 des Europäischen Parlaments und des Rates zur Einführung eines Verfahrens für geringfügige Forderungen aufgeführt ist, kann im Rahmen dieses Verfahrens nicht verhandelt werden. Falls Ihre Klage eine Forderung betrifft, die nach Artikel 2 der Verordnung nicht in deren Anwendungsbereich fällt, wird das Verfahren vor den zuständigen Gerichten nach den Vorschriften für ein ordentliches Zivilverfahren weitergeführt. Falls Sie nicht wollen, dass das Verfahren in diesem Fall weitergeführt wird, sollten Sie Ihre Klage zurücknehmen. Geldforderung oder andere Forderung: Geben Sie bitte an, ob Sie eine Geldforderung und/oder eine andere (nicht auf eine Geldzahlung gerichtete) Forderung, z. B. die Lieferung von Waren, geltend machen, und füllen Sie dann Nummer 7.1 und/oder Nummer 7.2 aus.",
+          "text": "Anwendungsbereich: Beachten Sie bitte, dass das europäische Verfahren für geringfügige Forderungen einen begrenzten Anwendungsbereich hat. Über Klagen, deren Streitwert 5000 EUR überschreitet oder deren Gegenstand in Artikel 2 der Verordnung (EG) Nr. 861/2007 des Europäischen Parlaments und des Rates zur Einführung eines Verfahrens für geringfügige Forderungen aufgeführt ist, kann im Rahmen dieses Verfahrens nicht verhandelt werden. Falls Ihre Klage eine Forderung betrifft, die nach Artikel 2 der Verordnung nicht in deren Anwendungsbereich fällt, wird das Verfahren vor den zuständigen Gerichten nach den Vorschriften für ein ordentliches Zivilverfahren weitergeführt. Falls Sie nicht wollen, dass das Verfahren in diesem Fall weitergeführt wird, sollten Sie Ihre Klage zurücknehmen. Geldforderung oder andere Forderung: Geben Sie bitte an, ob Sie eine Geldforderung und/oder eine andere (nicht auf eine Geldzahlung gerichtete) Forderung, z. B. die Lieferung von Waren, geltend machen, und füllen Sie dann Nummer 5.1. und/oder Nummer 5.2. aus.",
           "simplifiedText": "Das europäische Verfahren für geringfügige Forderungen hat einen eingeschränkten Anwendungsbereich. Wenn Ihre Klage mehr als 5.000 Euro beträgt oder Schlussfolgerungen in Artikel 2 der Verordnung (EG) Nr. 861/2007 des Europäischen Parlaments und des Rates zur Einführung eines Verfahrens für geringfügige Forderungen aufgeführt sind, kann dieses Verfahren nicht angewendet werde. Wenn Sie nicht wollen, dass das Verfahren weitergeführt wird, sollten Sie Ihre Klage zurücknehmen. Geben Sie an, ob Sie eine Geldforderung oder eine andere Forderung, z. B. die Lieferung von Waren, geltend machen.",
           "link": [
             {
@@ -101,12 +93,12 @@
       ]
     },
     {
-      "id": "http://scanii.org/domain/claimCostOfProceeding",
+      "id": "http://scanii.org/domain/claim.CostOfProceeding",
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Falls Sie die Erstattung der Verfahrenskosten fordern (z. B. Übersetzungskosten, Anwaltshonorare, Zustellungskosten usw.), geben Sie dies bitte unter Nummer 7.3 an. Beachten Sie bitte, dass die Vorschriften für die Kostenentscheidung der Gerichte von Mitgliedstaat zu Mitgliedstaat unterschiedlich sind. Einzelheiten zu den Kostenkategorien der einzelnen Mitgliedstaaten sind über das Europäische Justizportal unter https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do zu finden.",
-          "simplifiedText": "Falls Sie Erstattung von Verfahrenskosten fordern (z. B. Übersetzungs-, Anwalts- oder Zustellungskosten), tragen Sie dies bitte unter Nummer 7.3 ein. Beachten Sie, dass die Kostenregeln je nach Mitgliedstaat variieren können. Einzelheiten zu den Kostenkategorien in den einzelnen Mitgliedstaaten finden Sie unter https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do.",
+          "text": "Falls Sie die Erstattung der Verfahrenskosten fordern (z. B. Übersetzungskosten, Anwaltshonorare, Zustellungskosten usw.), geben Sie dies bitte unter Nummer 5.3. an. Beachten Sie bitte, dass die Vorschriften für die Kostenentscheidung der Gerichte von Mitgliedstaat zu Mitgliedstaat unterschiedlich sind. Einzelheiten zu den Kostenkategorien der einzelnen Mitgliedstaaten sind über das Europäische Justizportal unter https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do zu finden.",
+          "simplifiedText": "Falls Sie Erstattung von Verfahrenskosten fordern (z. B. Übersetzungs-, Anwalts- oder Zustellungskosten), tragen Sie dies bitte unter Nummer 5.3. ein. Beachten Sie, dass die Kostenregeln je nach Mitgliedstaat variieren können. Einzelheiten zu den Kostenkategorien in den einzelnen Mitgliedstaaten finden Sie unter https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do.",
           "link": [
             {
               "type": "DESCRIPTION_LINK",
@@ -121,11 +113,7 @@
               "text": "",
               "position": "",
               "definition": "",
-              "synonyms": [
-                "",
-                "",
-                ""
-              ],
+              "synonyms": ["", "", ""],
               "links": []
             }
           ]
@@ -133,7 +121,7 @@
       ]
     },
     {
-      "id": "http://scanii.org/domain/claimInterests",
+      "id": "http://scanii.org/domain/claim.claimInterests",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -165,8 +153,8 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Falls Ihre Forderung nicht auf die Zahlung eines Geldbetrags gerichtet ist, füllen Sie bitte Nummer 7.2 aus und geben Sie den geschätzten Wert Ihrer Forderung an. In diesem Fall sollten Sie auch angeben, ob Sie für den Fall, dass die ursprüngliche Forderung nicht erfüllt werden kann, hilfsweise einen Anspruch auf Schadensersatz geltend machen.",
-          "simplifiedText": "Bitte geben Sie bei Nummer 7.2 den geschätzten Wert Ihrer Forderung an. Wenn Ihre ursprüngliche Forderung nicht erfüllt werden kann, können Sie außerdem einen Anspruch auf Schadensersatz geltend machen.",
+          "text": "Falls Ihre Forderung nicht auf die Zahlung eines Geldbetrags gerichtet ist, füllen Sie bitte Nummer 5.2. aus und geben Sie den geschätzten Wert Ihrer Forderung an. In diesem Fall sollten Sie auch angeben, ob Sie für den Fall, dass die ursprüngliche Forderung nicht erfüllt werden kann, hilfsweise einen Anspruch auf Schadensersatz geltend machen.",
+          "simplifiedText": "Bitte geben Sie bei Nummer 5.2. den geschätzten Wert Ihrer Forderung an. Wenn Ihre ursprüngliche Forderung nicht erfüllt werden kann, können Sie außerdem einen Anspruch auf Schadensersatz geltend machen.",
           "link": [
             {
               "type": "LEGAL_LINK",
@@ -193,8 +181,8 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Sie sollten unter Nummer 8.1 kurz ausführen, womit Sie Ihre Klage begründen. Sie sollten unter Nummer 8.2 die erheblichen Beweismittel beschreiben. Dabei kann es sich beispielsweise um Urkundenbeweise (z. B. Vertrag, Quittung usw.) oder mündliche/schriftliche Zeugenaussagen handeln. Bitte geben Sie für jedes Beweismittel an, welcher Aspekt Ihrer Forderung dadurch jeweils begründet werden soll. Falls der Platz nicht ausreicht, können Sie weitere Blätter hinzufügen.",
-          "simplifiedText": "Beschreiben Sie unter Nummer 8.1 und 8.2, warum Sie eine Klage einreichen. Unter 8.1 sollten Sie kurz angeben, was Sie mit Ihrer Klage begründen. Unter 8.2 sollten Sie mögliche Beweise (z.B. Vertrag, Quittung usw., mündliche/schriftliche Zeugenaussagen) aufzählen, die Ihre Forderung unterstützen. Falls mehr Platz erforderlich ist, fügen Sie einfach weitere Blätter hinzu.",
+          "text": "Sie sollten unter Nummer 6.1. kurz ausführen, womit Sie Ihre Klage begründen. Sie sollten unter Nummer 6.2. die erheblichen Beweismittel beschreiben. Dabei kann es sich beispielsweise um Urkundenbeweise (z. B. Vertrag, Quittung usw.) oder mündliche/schriftliche Zeugenaussagen handeln. Bitte geben Sie für jedes Beweismittel an, welcher Aspekt Ihrer Forderung dadurch jeweils begründet werden soll. Falls der Platz nicht ausreicht, können Sie weitere Blätter hinzufügen.",
+          "simplifiedText": "Beschreiben Sie unter Nummer 6.1. und 6.2., warum Sie eine Klage einreichen. Unter 6.1. sollten Sie kurz angeben, was Sie mit Ihrer Klage begründen. Unter 6.2. sollten Sie mögliche Beweise (z.B. Vertrag, Quittung usw., mündliche/schriftliche Zeugenaussagen) aufzählen, die Ihre Forderung unterstützen. Falls mehr Platz erforderlich ist, fügen Sie einfach weitere Blätter hinzu.",
           "link": [
             {
               "url": "",
@@ -219,8 +207,8 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "In diesem Feld sind Sie als Kläger und gegebenenfalls Ihr Vertreter anzugeben. Sie sind nicht verpflichtet, sich durch einen Rechtsanwalt oder sonstigen Rechtsbeistand vertreten zu lassen. Da in manchen Ländern ein Postfach als Anschrift möglicherweise nicht ausreicht, sollten Sie auch Straße, Hausnummer und Postleitzahl eintragen. Das Fehlen dieser Angaben kann dazu führen, dass das Schriftstück nicht zugestellt wird. Falls Sie über eine persönliche Identifikationsnummer verfügen, die Ihnen von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Falls Sie keine solche Nummer haben, wäre es zweckdienlich, Ihre Pass- oder Ausweisnummer einzutragen, falls verfügbar. Falls Sie im Namen einer juristischen Person oder eines sonstigen Rechtsträgers handeln, wäre die Angabe einer Registrierungsnummer von Nutzen.",
-          "simplifiedText": "Sie müssen als Kläger angeben, wer Sie sind und wo Sie wohnen. Möglicherweise müssen Sie also auch Ihre Straße, Hausnummer und Postleitzahl angeben. Wenn Sie eine persönliche Identifikationsnummer besitzen (z. B. zugewiesen von den Behörden eines Mitgliedstaats), dann geben Sie diese an. Wenn nicht, dann Ihre Pass- oder Ausweisnummer, falls verfügbar. Wenn Sie im Namen einer juristischen Person oder eines anderen Rechtsträgers auftreten, dann geben Sie die Registrierungsnummer an.",
+          "text": "In diesem Feld sind Sie als Kläger und gegebenenfalls Ihr Vertreter anzugeben. Sie sind nicht verpflichtet, sich durch einen Rechtsanwalt oder sonstigen Rechtsbeistand vertreten zu lassen. Da in manchen Ländern ein Postfach als Anschrift möglicherweise nicht ausreicht, sollten Sie auch Straße, Hausnummer und Postleitzahl eintragen. Das Fehlen dieser Angaben kann dazu führen, dass das Schriftstück nicht zugestellt wird.",
+          "simplifiedText": "Sie müssen als Kläger angeben, wer Sie sind und wo Sie wohnen. Möglicherweise müssen Sie also auch Ihre Straße, Hausnummer und Postleitzahl angeben.",
           "link": [
             {
               "url": "",
@@ -248,10 +236,36 @@
       ]
     },
     {
+      "id": "http://scanii.org/domain/claimant.personalIdNumber",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Falls Sie über eine persönliche Identifikationsnummer verfügen, die Ihnen von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Falls Sie keine solche Nummer haben, wäre es zweckdienlich, Ihre Pass- oder Ausweisnummer einzutragen, falls verfügbar. Falls Sie im Namen einer juristischen Person oder eines sonstigen Rechtsträgers handeln, wäre die Angabe einer Registrierungsnummer von Nutzen.",
+          "simplifiedText": "Wenn Sie eine persönliche Identifikationsnummer besitzen (z. B. zugewiesen von den Behörden eines Mitgliedstaats), dann geben Sie diese an. Wenn nicht, dann Ihre Pass- oder Ausweisnummer, falls verfügbar. Wenn Sie im Namen einer juristischen Person oder eines anderen Rechtsträgers auftreten, dann geben Sie die Registrierungsnummer an.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "position": "",
+              "text": "",
+              "definition": "",
+              "synonyms": [],
+              "links": [""]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "http://scanii.org/domain/claimant.otherDetails",
       "infoElements": [
         {
-          "type": "DESCRIPTION",
+          "type": "INFORMATION",
           "text": "Unter „Sonstige Angaben“ können Sie weitere Informationen eintragen, die der Identifizierung Ihrer Person dienen, z. B. Geburtsdatum, Beruf oder Stellung im Unternehmen. Bei mehr als einem Kläger verwenden Sie bitte zusätzliche Blätter.",
           "simplifiedText": "Tragen Sie unter \"Sonstige Angaben\" weitere Informationen über sich ein, die für Ihre Identifizierung nützlich sind, wie Geburtsdatum, Beruf und Stellung im Unternehmen. Für mehrere Kläger müssen extra Blätter verwendet werden.",
           "link": [
@@ -262,14 +276,14 @@
             }
           ],
           "words": [
-			{
+            {
               "text": "",
               "position": "",
               "definition": "",
               "synonyms": [],
               "links": []
             }
-		  ]
+          ]
         }
       ]
     },
@@ -357,7 +371,7 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Geben Sie in diesem Feld bitte den Beklagten und, falls bekannt, seinen Vertreter an. Auch der Beklagte ist nicht verpflichtet, sich durch einen Rechtsanwalt oder sonstigen Rechtsbeistand vertreten zu lassen. Da in manchen Ländern ein Postfach als Anschrift möglicherweise nicht ausreicht, sollten Sie auch Straße, Hausnummer und Postleitzahl eintragen. Das Fehlen dieser Angaben kann dazu führen, dass das Schriftstück nicht zugestellt wird. Falls Ihnen eine persönliche Identifikationsnummer bekannt ist, die dem Beklagten von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Alternativ oder zusätzlich wäre es zweckdienlich, die Pass- oder Ausweisnummer des Beklagten einzutragen, falls verfügbar. Falls es sich bei dem Beklagten um eine juristische Person oder einen sonstigen Rechtsträger handelt, wäre die Angabe einer Registrierungsnummer des Beklagten von Nutzen, falls Sie diese kennen.",
+          "text": "Geben Sie in diesem Feld bitte den Beklagten und, falls bekannt, seinen Vertreter an. Auch der Beklagte ist nicht verpflichtet, sich durch einen Rechtsanwalt oder sonstigen Rechtsbeistand vertreten zu lassen. Da in manchen Ländern ein Postfach als Anschrift möglicherweise nicht ausreicht, sollten Sie auch Straße, Hausnummer und Postleitzahl eintragen. Das Fehlen dieser Angaben kann dazu führen, dass das Schriftstück nicht zugestellt wird.",
           "simplifiedText": "Bitte die Anschrift des Beklagten, eventuell die persönliche Identifikations- oder Ausweisnummer sowie ggf. eine Registrierungsnummer eingeben. Der Beklagte muss nicht durch einen Rechtsbeistand vertreten werden, aber bitte Straße, Hausnummer und Postleitzahl angeben.",
           "link": [
             {
@@ -373,6 +387,32 @@
               "definition": "",
               "synonyms": [],
               "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/defendant.personalIdNumber",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Falls Ihnen eine persönliche Identifikationsnummer bekannt ist, die dem Beklagten von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Alternativ oder zusätzlich wäre es zweckdienlich, die Pass- oder Ausweisnummer des Beklagten einzutragen, falls verfügbar. Falls es sich bei dem Beklagten um eine juristische Person oder einen sonstigen Rechtsträger handelt, wäre die Angabe einer Registrierungsnummer des Beklagten von Nutzen, falls Sie diese kennen.",
+          "simplifiedText": "Falls Ihnen eine persönliche Identifikationsnummer bekannt ist, die dem Beklagten von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Alternativ oder zusätzlich wäre es zweckdienlich, die Pass- oder Ausweisnummer des Beklagten einzutragen, falls verfügbar. Falls es sich bei dem Beklagten um eine juristische Person oder einen sonstigen Rechtsträger handelt, wäre die Angabe einer Registrierungsnummer des Beklagten von Nutzen, falls Sie diese kennen.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "position": "",
+              "text": "",
+              "definition": "",
+              "synonyms": [],
+              "links": [""]
             }
           ]
         }
@@ -400,7 +440,7 @@
       "id": "http://scanii.org/domain/documentAndCommunication",
       "infoElements": [
         {
-          "type": "DESCRIPTION",
+          "type": "INFORMATION",
           "text": "Verfahrensschriftstücke wie Ihre Klage, die Erwiderung des Beklagten, eine etwaige Widerklage und das Urteil können den Parteien per Post oder auf elektronischem Wege zugestellt werden, wenn das Gericht über entsprechende technische Mittel verfügt und dies nach dem Verfahrensrecht des Mitgliedstaats, in dem das Verfahren durchgeführt wird, zulässig ist. Falls die Schriftstücke in einem anderen Mitgliedstaat als demjenigen, in dem das Verfahren durchgeführt wird, zugestellt werden sollen, müssen auch die Verfahrensvorschriften des Mitgliedstaats beachtet werden, in dem die Zustellung erfolgt. Auch ndere schriftliche Mitteilungen (z. B. der Antrag auf Teilnahme an einer Gerichtsverhandlung) können auf elektronischem Wege übermittelt werden. Elektronische Mittel dürfen jedoch nur genutzt werden, wenn der Empfänger ihrem Einsatz vorher ausdrücklich zugestimmt hat oder wenn er nach den Verfahrensvorschriften des Mitgliedstaats, in dem er seinen Wohnsitz hat, rechtlich verpflichtet ist, die elektronische Zustellung und/oder andere schriftliche Mitteilungen des Gerichts in elektronischer Form zu akzeptieren. Informationen darüber, ob die elektronische Zustellung und/oder elektronische Kommunikationsmittel in den betreffenden Mitgliedstaaten verfügbar und zulässig sind, können Sie über das Europäische Justizportal abrufen unter: https://e-justice.europa.eu/content_small_claims-354-de.do?clang=de",
           "simplifiedText": "Verfahrensschriftstücke und andere schriftliche Mitteilungen können auf elektronischem Wege zugestellt werden, solange das in dem betreffenden Mitgliedstaat erlaubt ist. In einem anderen Mitgliedstaat müssen die dortige Verfahrensvorschriften beachtet werden. Dazu muss der Empfänger der elektronischen Zustellung zustimmen oder rechtlich verpflichtet sein, die elektronische Zustellung zu akzeptieren. Weitere Informationen zur Verfügbarkeit der elektronischen Zustellung gibt es auf dem Europäischen Justizportal unter https://e-justice.europa.eu/content_small_claims-354-de.do?clang=de.",
           "link": [
