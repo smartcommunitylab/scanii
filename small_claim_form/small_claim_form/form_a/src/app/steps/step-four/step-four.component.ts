@@ -1,7 +1,7 @@
 import { FormGroup, Validators } from '@angular/forms';
 import { StepFourService } from '../../core/step-four/step-four.service';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { JhiEventManager } from 'ng-jhipster';
+import { EventManagerService } from 'src/app/shared/services/event-manager.service';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';
 import { Movement } from 'src/app/core/common/movement.model';
 import { Direction } from 'src/app/shared/constants/direction.constants';
@@ -22,7 +22,7 @@ export class StepFourComponent implements OnInit {
 
   constructor(
     public stepFourService: StepFourService,
-    private eventManager: JhiEventManager,
+    private eventManager: EventManagerService,
     private navbarService: NavbarService,
     private translateService: TranslateService,
     private toastService: ToastService

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { JhiEventManager } from 'ng-jhipster';
+import { EventManagerService } from 'src/app/shared/services/event-manager.service';
 import { Movement } from 'src/app/core/common/movement.model';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';
 import { StepSevenService } from 'src/app/core/step-seven/step-seven.service';
@@ -22,7 +22,7 @@ export class StepSevenComponent implements OnInit {
 
   constructor(
     public stepSevenService: StepSevenService,
-    private eventManager: JhiEventManager,
+    private eventManager: EventManagerService,
     private navbarService: NavbarService,
     private translateService: TranslateService,
     private toastService: ToastService,

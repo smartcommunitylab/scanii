@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { JhiEventManager } from 'ng-jhipster';
+import { EventManagerService } from 'src/app/shared/services/event-manager.service';
 import { ClaimDetailsService } from 'src/app/core/claim-details/claim-details.service';
 import { Movement } from 'src/app/core/common/movement.model';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';
@@ -15,7 +15,7 @@ import { ToastService } from 'src/app/shared/services/toast.service';
 export class ClaimDetailsComponent implements OnInit {
   constructor(
     public claimDetailsService: ClaimDetailsService,
-    private eventManager: JhiEventManager,
+    private eventManager: EventManagerService,
     private navbarService: NavbarService,
     private toastService: ToastService
   ) {}

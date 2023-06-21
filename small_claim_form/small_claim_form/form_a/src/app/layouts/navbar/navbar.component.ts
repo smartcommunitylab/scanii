@@ -11,7 +11,7 @@ import * as $ from 'jquery';
 import 'jquery-sticky';
 import { Movement } from 'src/app/core/common/movement.model';
 import { PromiseContent } from 'src/app/core/common/promise-content.model';
-import { JhiEventManager } from 'ng-jhipster';
+import { EventManagerService } from 'src/app/shared/services/event-manager.service';
 import { Subscription } from 'rxjs';
 import * as bootstrap from 'bootstrap';
 import { ClaimantService } from 'src/app/core/claimant/claimant.service';
@@ -42,7 +42,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   file?: File;
 
   constructor(
-    private eventManager: JhiEventManager,
+    private eventManager: EventManagerService,
     public navbarService: NavbarService,
     private claimantService: ClaimantService,
     private defendantService: DefendantService,

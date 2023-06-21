@@ -1,5 +1,5 @@
 import { element } from 'protractor';
-import { JhiEventManager } from 'ng-jhipster';
+import { EventManagerService } from 'src/app/shared/services/event-manager.service';
 import { ClaimService } from '../../core/claim/claim.service';
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';
@@ -24,7 +24,7 @@ export class ClaimComponent implements OnInit {
 
   constructor(
     public claimService: ClaimService,
-    private eventManager: JhiEventManager,
+    private eventManager: EventManagerService,
     private navbarService: NavbarService,
     private translateService: TranslateService,
     private toastService: ToastService

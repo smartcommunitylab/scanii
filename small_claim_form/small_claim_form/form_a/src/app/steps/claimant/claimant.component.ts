@@ -6,7 +6,7 @@ import 'chosen-js';
 import { LabelType } from '../../shared/constants/claimant.constants';
 import { Direction } from 'src/app/shared/constants/direction.constants';
 import { Movement } from 'src/app/core/common/movement.model';
-import { JhiEventManager } from 'ng-jhipster';
+import { EventManagerService } from 'src/app/shared/services/event-manager.service';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import {
@@ -27,7 +27,7 @@ export class ClaimantComponent implements OnInit {
 
   constructor(
     public claimantService: ClaimantService,
-    private eventManager: JhiEventManager,
+    private eventManager: EventManagerService,
     private navbarService: NavbarService,
     private translateService: TranslateService,
     private zone: NgZone,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { JhiEventManager } from 'ng-jhipster';
+import { EventManagerService } from 'src/app/shared/services/event-manager.service';
 import { Movement } from 'src/app/core/common/movement.model';
 import { CourtService } from 'src/app/core/court/court.service';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';
@@ -18,7 +18,7 @@ export class CourtComponent implements OnInit {
 
   constructor(
     public courtService: CourtService,
-    private eventManager: JhiEventManager,
+    private eventManager: EventManagerService,
     public navbarService: NavbarService,
     private translateService: TranslateService,
     private toastService: ToastService

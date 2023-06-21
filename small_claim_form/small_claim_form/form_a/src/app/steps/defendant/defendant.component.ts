@@ -4,7 +4,7 @@ import 'chosen-js';
 import { LabelType } from '../../shared/constants/defendant.constants';
 import { Movement } from 'src/app/core/common/movement.model';
 import { Direction } from 'src/app/shared/constants/direction.constants';
-import { JhiEventManager } from 'ng-jhipster';
+import { EventManagerService } from 'src/app/shared/services/event-manager.service';
 import { DefendantService } from 'src/app/core/defendant/defendant.service';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
@@ -24,7 +24,7 @@ export class DefendantComponent implements OnInit {
 
   constructor(
     public defendantService: DefendantService,
-    private eventManager: JhiEventManager,
+    private eventManager: EventManagerService,
     private navbarService: NavbarService,
     private translateService: TranslateService,
     private zone: NgZone,

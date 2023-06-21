@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { JhiEventManager } from 'ng-jhipster';
+import { EventManagerService } from 'src/app/shared/services/event-manager.service';
 import { Movement } from 'src/app/core/common/movement.model';
 import { JurisdictionService } from 'src/app/core/jurisdiction/jurisdiction.service';
 import { NavbarService } from 'src/app/core/navbar/navbar.service';
@@ -14,7 +14,7 @@ import { ToastService } from 'src/app/shared/services/toast.service';
 export class JurisdictionComponent implements OnInit, AfterViewInit {
   constructor(
     public jurisdictionService: JurisdictionService,
-    private eventManager: JhiEventManager,
+    private eventManager: EventManagerService,
     private navbarService: NavbarService,
     private toastService: ToastService
   ) {}
