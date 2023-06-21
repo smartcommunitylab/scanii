@@ -25,7 +25,7 @@
     "@ngx-translate/core": "14.0",
     "@ngx-translate/http-loader": "7.0",
     "@popperjs/core": "^2.11.7",
-    "angular-iban": "14.0",
+    "angular-iban": "16.0",
     "bootstrap": "^5.3.0-alpha1",
     "bootstrap-icons": "^1.10.3",
     "chosen-js": "^1.8.7",
