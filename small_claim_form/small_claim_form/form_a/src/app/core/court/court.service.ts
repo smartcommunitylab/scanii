@@ -1,8 +1,8 @@
 import { Injectable, NgZone } from '@angular/core';
 import {
   AbstractControl,
-  FormBuilder,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 import { Subscription } from 'rxjs';
@@ -20,7 +20,7 @@ export class CourtService {
     city: [''],
   });
 
-  constructor(private fb: FormBuilder, private zone: NgZone) {}
+  constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
 
   onStableSubscription: Subscription;
 
@@ -45,10 +45,10 @@ export class CourtService {
   }
 
   private markAsDirty(formElement: AbstractControl) {
-    if (formElement instanceof FormGroup) {
+    if (formElement instanceof UntypedFormGroup) {
       for (const nestedFormElementName in formElement.controls) {
         const nestedFormElement = formElement.get(nestedFormElementName);
-        if (nestedFormElement instanceof FormGroup) {
+        if (nestedFormElement instanceof UntypedFormGroup) {
           this.markAsDirty(nestedFormElement);
         } else {
           nestedFormElement.markAsDirty({

@@ -1,9 +1,9 @@
 import { Injectable, NgZone } from '@angular/core';
 import {
-  FormArray,
-  FormBuilder,
-  FormControl,
-  FormGroup,
+  UntypedFormArray,
+  UntypedFormBuilder,
+  UntypedFormControl,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 import { PromiseContent } from '../common/promise-content.model';
@@ -23,7 +23,7 @@ export class DefendantService {
   editForm = this.fb.group({
     defendants: this.fb.array([this.createFormGroup('defendant')]),
   });
-  defendants: FormArray = new FormArray([]);
+  defendants: UntypedFormArray = new UntypedFormArray([]);
   isWorldCountrySelectVisible = false;
   representatives: {
     id: number;
@@ -39,7 +39,7 @@ export class DefendantService {
   representativeOptionLabel: string;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private zone: NgZone,
     private translateService: TranslateService
   ) {
@@ -61,7 +61,7 @@ export class DefendantService {
       });
   }
 
-  createFormGroup(value: string): FormGroup {
+  createFormGroup(value: string): UntypedFormGroup {
     if (value === 'defendant') {
       const formGroup = this.fb.group(
         {
@@ -106,14 +106,14 @@ export class DefendantService {
   }
 
   validateOrganisationSurnameFirstName(
-    formGroup: FormGroup
+    formGroup: UntypedFormGroup
   ): { [key: string]: boolean } | null {
     const organisation = formGroup.get('organisation');
     const surname = formGroup.get('surname');
     const firstName = formGroup.get('firstName');
 
     const setFormControlValidity = (
-      formGroup: FormGroup,
+      formGroup: UntypedFormGroup,
       formControlName: string,
       isValid: boolean
     ) => {
@@ -153,7 +153,7 @@ export class DefendantService {
     });
   }
 
-  phoneNumberValidator(control: FormControl): { [key: string]: any } | null {
+  phoneNumberValidator(control: UntypedFormControl): { [key: string]: any } | null {
     //const phoneNumberPattern = /^(\+\d{1,5}\s?)?(?:\d{3}[ ]?\d{3}[ ]?\d{4}|\d{10})$/;
     const phoneNumberPattern = /^[\d+\s]*$/;
     if (control.value && !phoneNumberPattern.test(control.value.trim())) {
@@ -163,7 +163,7 @@ export class DefendantService {
   }
 
   markAsDirty() {
-    this.defendants.controls.forEach((formGroup: FormGroup) => {
+    this.defendants.controls.forEach((formGroup: UntypedFormGroup) => {
       Object.keys(formGroup.controls).forEach((field) => {
         const formControl = formGroup.get(field);
         if (field === 'countryOther') {

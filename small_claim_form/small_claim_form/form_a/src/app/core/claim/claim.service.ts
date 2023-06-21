@@ -2,8 +2,8 @@ import { StatutoryInterest } from './statutory-interest.model';
 import { Injectable, NgZone } from '@angular/core';
 import {
   AbstractControl,
-  FormBuilder,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormGroup,
   ValidatorFn,
   Validators,
 } from '@angular/forms';
@@ -94,9 +94,9 @@ export class ClaimService {
 
   onStableSubscription: Subscription;
 
-  constructor(private fb: FormBuilder, private zone: NgZone) {}
+  constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
 
-  validateDates(formGroup: FormGroup): { [key: string]: boolean } | null {
+  validateDates(formGroup: UntypedFormGroup): { [key: string]: boolean } | null {
     let fromDateFormControlName: string;
     let toDateFormControlName: string;
     
@@ -178,10 +178,10 @@ export class ClaimService {
     });
   }
 
-  markClaimFormAsDirty(formGroup: FormGroup) {
+  markClaimFormAsDirty(formGroup: UntypedFormGroup) {
     for (const formElementName in formGroup.controls) {
       const formElement = formGroup.get(formElementName);
-      if (formElement instanceof FormGroup) {
+      if (formElement instanceof UntypedFormGroup) {
         const value = this.getTriggeringFormControlValue(formElementName);
         if (value === claimShowHideFields[formElementName]['triggeringValue']) {
           this.markClaimFormAsDirty(formElement);
@@ -208,10 +208,10 @@ export class ClaimService {
   }
 
   private markAsDirty(formElement: AbstractControl) {
-    if (formElement instanceof FormGroup) {
+    if (formElement instanceof UntypedFormGroup) {
       for (const nestedFormElementName in formElement.controls) {
         const nestedFormElement = formElement.get(nestedFormElementName);
-        if (nestedFormElement instanceof FormGroup) {
+        if (nestedFormElement instanceof UntypedFormGroup) {
           this.markAsDirty(nestedFormElement);
         } else {
           nestedFormElement.markAsDirty({
@@ -233,14 +233,14 @@ export class ClaimService {
     );
     let formGroup = this.editForm;
     for (let i = 0; i < formGroupNames.length; i++) {
-      formGroup = formGroup.get(formGroupNames[i]) as FormGroup;
+      formGroup = formGroup.get(formGroupNames[i]) as UntypedFormGroup;
     }
     return formGroup.get(formControlName);
   }
 
   private findFormGroupNames(
     formElementName: string,
-    formGroup: FormGroup,
+    formGroup: UntypedFormGroup,
     parentFormGroupNames: string[] = []
   ): string[] | undefined {
     if (formGroup.contains(formElementName)) {
@@ -249,7 +249,7 @@ export class ClaimService {
 
     for (const nestedFormElementName in formGroup.controls) {
       const nestedFormElement = formGroup.get(nestedFormElementName);
-      if (nestedFormElement instanceof FormGroup) {
+      if (nestedFormElement instanceof UntypedFormGroup) {
         const nestedFormGroupNames = this.findFormGroupNames(
           formElementName,
           nestedFormElement,

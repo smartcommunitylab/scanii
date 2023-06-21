@@ -1,7 +1,7 @@
 import { NavbarService } from '../../core/navbar/navbar.service';
 import { ClaimantService } from '../../core/claimant/claimant.service';
 import { Component, NgZone, OnInit } from '@angular/core';
-import { FormArray } from '@angular/forms';
+import { UntypedFormArray } from '@angular/forms';
 import 'chosen-js';
 import { LabelType } from '../../shared/constants/claimant.constants';
 import { Direction } from 'src/app/shared/constants/direction.constants';
@@ -40,7 +40,7 @@ export class ClaimantComponent implements OnInit {
   ngOnInit(): void {
     this.claimantService.claimants = this.claimantService.editForm.get(
       'claimants'
-    ) as FormArray;
+    ) as UntypedFormArray;
 
     // this.claimantService.claimants.controls[0].patchValue({
     //   firstName: 'John',
@@ -75,7 +75,7 @@ export class ClaimantComponent implements OnInit {
   addAnotherClaimant(index?: number) {
     this.claimantService.claimants = this.claimantService.editForm.get(
       'claimants'
-    ) as FormArray;
+    ) as UntypedFormArray;
     if (this.selectedOption === 'claimant') {
       //create a new claimant
       const formGroup = this.claimantService.createFormGroup('claimant');
@@ -140,7 +140,7 @@ export class ClaimantComponent implements OnInit {
   removeClaimant(index: number) {
     this.claimantService.claimants = this.claimantService.editForm.get(
       'claimants'
-    ) as FormArray;
+    ) as UntypedFormArray;
 
     if (
       this.claimantService.claimants.at(index).get('isRepresentative').value

@@ -1,8 +1,8 @@
 import { Injectable, NgZone } from '@angular/core';
 import {
   AbstractControl,
-  FormBuilder,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 import { PromiseContent } from '../common/promise-content.model';
@@ -69,9 +69,9 @@ export class StepFourService {
 
   onStableSubscription: Subscription;
 
-  constructor(private fb: FormBuilder, private zone: NgZone) {}
+  constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
 
-  crossborderNatureValidator(formGroup: FormGroup) {
+  crossborderNatureValidator(formGroup: UntypedFormGroup) {
     if (
       formGroup.get('claimantCountry').value !== 'other' &&
       formGroup.get('defendantCountry').value !== 'other' &&
@@ -201,10 +201,10 @@ export class StepFourService {
   }
 
   markAsDirty(formElement: AbstractControl) {
-    if (formElement instanceof FormGroup) {
+    if (formElement instanceof UntypedFormGroup) {
       for (const nestedFormElementName in formElement.controls) {
         const nestedFormElement = formElement.get(nestedFormElementName);
-        if (nestedFormElement instanceof FormGroup) {
+        if (nestedFormElement instanceof UntypedFormGroup) {
           this.markAsDirty(nestedFormElement);
         } else {
           nestedFormElement.markAsDirty({

@@ -139,7 +139,6 @@
       }
     }
   },
-  "defaultProject": "scanii",
   "cli": {
     "analytics": false
   }

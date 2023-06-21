@@ -1,5 +1,5 @@
 import { Component, NgZone, OnInit } from '@angular/core';
-import { FormArray } from '@angular/forms';
+import { UntypedFormArray } from '@angular/forms';
 import 'chosen-js';
 import { LabelType } from '../../shared/constants/defendant.constants';
 import { Movement } from 'src/app/core/common/movement.model';
@@ -34,7 +34,7 @@ export class DefendantComponent implements OnInit {
   ngOnInit(): void {
     this.defendantService.defendants = this.defendantService.editForm.get(
       'defendants'
-    ) as FormArray;
+    ) as UntypedFormArray;
 
     // this.defendantService.defendants.controls[0].patchValue({
     //   firstName: 'John',
@@ -64,7 +64,7 @@ export class DefendantComponent implements OnInit {
   addAnotherDefendant(index?: number) {
     this.defendantService.defendants = this.defendantService.editForm.get(
       'defendants'
-    ) as FormArray;
+    ) as UntypedFormArray;
     if (this.selectedOption === 'defendant') {
       //create a new claimant
       const formGroup = this.defendantService.createFormGroup('defendant');
@@ -129,7 +129,7 @@ export class DefendantComponent implements OnInit {
   removeDefendant(index: number) {
     this.defendantService.defendants = this.defendantService.editForm.get(
       'defendants'
-    ) as FormArray;
+    ) as UntypedFormArray;
 
     if (
       this.defendantService.defendants.at(index).get('isRepresentative').value

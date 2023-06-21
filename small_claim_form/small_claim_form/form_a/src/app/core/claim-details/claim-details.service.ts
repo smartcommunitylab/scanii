@@ -1,8 +1,8 @@
 import { Injectable, NgZone } from '@angular/core';
 import {
   AbstractControl,
-  FormBuilder,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 import { PromiseContent } from '../common/promise-content.model';
@@ -27,7 +27,7 @@ export class ClaimDetailsService {
 
   onStableSubscription: Subscription;
 
-  constructor(private fb: FormBuilder, private zone: NgZone) {}
+  constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
 
   isClaimDetailsFormValid(): Promise<PromiseContent> {
     return new Promise((resolve) => {
@@ -66,10 +66,10 @@ export class ClaimDetailsService {
   }
 
   private markAsDirty(formElement: AbstractControl) {
-    if (formElement instanceof FormGroup) {
+    if (formElement instanceof UntypedFormGroup) {
       for (const nestedFormElementName in formElement.controls) {
         const nestedFormElement = formElement.get(nestedFormElementName);
-        if (nestedFormElement instanceof FormGroup) {
+        if (nestedFormElement instanceof UntypedFormGroup) {
           this.markAsDirty(nestedFormElement);
         } else {
           nestedFormElement.markAsDirty({
@@ -134,7 +134,7 @@ export class ClaimDetailsService {
 
   private findFormGroupNames(
     formElementName: string,
-    formGroup: FormGroup,
+    formGroup: UntypedFormGroup,
     parentFormGroupNames: string[] = []
   ): string[] | undefined {
     if (formGroup.contains(formElementName)) {
@@ -143,7 +143,7 @@ export class ClaimDetailsService {
 
     for (const nestedFormElementName in formGroup.controls) {
       const nestedFormElement = formGroup.get(nestedFormElementName);
-      if (nestedFormElement instanceof FormGroup) {
+      if (nestedFormElement instanceof UntypedFormGroup) {
         const nestedFormGroupNames = this.findFormGroupNames(
           formElementName,
           nestedFormElement,

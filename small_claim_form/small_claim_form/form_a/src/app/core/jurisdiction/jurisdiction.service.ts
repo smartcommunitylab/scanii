@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { PromiseContent } from '../common/promise-content.model';
 import { Subscription } from 'rxjs';
 import { otherCheckboxId } from 'src/app/shared/constants/jurisdiction.constants';
@@ -26,11 +26,11 @@ export class JurisdictionService {
   );
   onStableSubscription: Subscription;
 
-  constructor(private fb: FormBuilder, private zone: NgZone) {}
+  constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
 
-  checkboxValidator(formGroup: FormGroup): { [key: string]: boolean } | null {
+  checkboxValidator(formGroup: UntypedFormGroup): { [key: string]: boolean } | null {
     const setFormControlValidity = (
-      formGroup: FormGroup,
+      formGroup: UntypedFormGroup,
       formControlName: string,
       isValid: boolean
     ) => {

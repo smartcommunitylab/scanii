@@ -1,4 +1,4 @@
-import { FormGroup, Validators } from '@angular/forms';
+import { UntypedFormGroup, Validators } from '@angular/forms';
 import { StepFourService } from '../../core/step-four/step-four.service';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { EventManagerService } from 'src/app/shared/services/event-manager.service';
@@ -203,7 +203,7 @@ export class StepFourComponent implements OnInit {
   private addRequiredValidators(value: string) {
     const formGroup = this.stepFourService.bankDetailsForm
       .get('applicationFeePayment')
-      .get(value) as FormGroup;
+      .get(value) as UntypedFormGroup;
     for (const key in formGroup.controls) {
       const formControl = formGroup.get(key);
       formControl.setValidators(this.stepFourService.requiredValidator);
@@ -221,7 +221,7 @@ export class StepFourComponent implements OnInit {
   removeRequiredValidators(value: string) {
     const formGroup = this.stepFourService.bankDetailsForm
       .get('applicationFeePayment')
-      .get(value) as FormGroup;
+      .get(value) as UntypedFormGroup;
     for (const key in formGroup.controls) {
       const formControl = formGroup.get(key);
       formControl.clearValidators();

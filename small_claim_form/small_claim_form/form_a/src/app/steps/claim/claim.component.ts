@@ -6,7 +6,7 @@ import { NavbarService } from 'src/app/core/navbar/navbar.service';
 import { Direction } from 'src/app/shared/constants/direction.constants';
 import { Movement } from 'src/app/core/common/movement.model';
 import datepickerFactory from 'jquery-datepicker';
-import { AbstractControl, FormGroup } from '@angular/forms';
+import { AbstractControl, UntypedFormGroup } from '@angular/forms';
 declare const $: any;
 datepickerFactory($);
 import 'chosen-js';
@@ -183,7 +183,7 @@ export class ClaimComponent implements OnInit {
 
     if (value === referenceValue) {
       if (elementToExpand.classList.contains('df_collapsed')) {
-        if (formElement instanceof FormGroup) {
+        if (formElement instanceof UntypedFormGroup) {
           const array = excludedFormControls ? excludedFormControls : [];
           this.addRequiredValidatorToFormElement(formElement, array);
         } else this.addRequiredValidatorToFormControl(formElement);
@@ -234,7 +234,7 @@ export class ClaimComponent implements OnInit {
     this.removeRequiredValidatorFromFormElement(controlToCollapse);
 
     //expand div
-    if (controlToExpand instanceof FormGroup) {
+    if (controlToExpand instanceof UntypedFormGroup) {
       const array = excludedFormControlsToExpand
         ? excludedFormControlsToExpand
         : [];
@@ -334,7 +334,7 @@ export class ClaimComponent implements OnInit {
   }
 
   private addRequiredValidatorToFormElement(
-    formElement: FormGroup,
+    formElement: UntypedFormGroup,
     excludedFormControls: string[]
   ) {
     for (const formControlName in formElement.controls) {
@@ -346,10 +346,10 @@ export class ClaimComponent implements OnInit {
   }
 
   private removeRequiredValidatorFromFormElement(formElement: any) {
-    if (formElement instanceof FormGroup) {
+    if (formElement instanceof UntypedFormGroup) {
       for (const formControlName in formElement.controls) {
         const internalFormElement = formElement.get(formControlName);
-        if (internalFormElement instanceof FormGroup) {
+        if (internalFormElement instanceof UntypedFormGroup) {
           this.removeRequiredValidatorFromFormElement(internalFormElement);
         } else {
           this.removeRequiredValidatorFromFormControl(internalFormElement);

@@ -1,8 +1,8 @@
 import { Injectable, NgZone } from '@angular/core';
 import {
   AbstractControl,
-  FormBuilder,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 import { PromiseContent } from '../common/promise-content.model';
@@ -37,7 +37,7 @@ export class StepSevenService {
 
   onStableSubscription: Subscription;
 
-  constructor(private fb: FormBuilder, private zone: NgZone) {}
+  constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
 
   isStepValid(): boolean {
     return (
@@ -68,7 +68,7 @@ export class StepSevenService {
     this.markFormGroupAsDirty(this.dateAndSignatureForm);
   }
 
-  markFormGroupAsDirty(formGroup: FormGroup) {
+  markFormGroupAsDirty(formGroup: UntypedFormGroup) {
     for (const formElementName in formGroup.controls) {
       const formElement = formGroup.get(formElementName);
       if (formElementName in stepSevenShowHideFields) {
@@ -88,7 +88,7 @@ export class StepSevenService {
   }
 
   private getTriggeringFormControlValue(
-    formGroup: FormGroup,
+    formGroup: UntypedFormGroup,
     formElementName: string
   ) {
     return formGroup.get(
@@ -97,10 +97,10 @@ export class StepSevenService {
   }
 
   private markAsDirty(formElement: AbstractControl) {
-    if (formElement instanceof FormGroup) {
+    if (formElement instanceof UntypedFormGroup) {
       for (const nestedFormElementName in formElement.controls) {
         const nestedFormElement = formElement.get(nestedFormElementName);
-        if (nestedFormElement instanceof FormGroup) {
+        if (nestedFormElement instanceof UntypedFormGroup) {
           this.markAsDirty(nestedFormElement);
         } else {
           nestedFormElement.markAsDirty({
@@ -157,7 +157,7 @@ export class StepSevenService {
 
   private getJsonValue(
     key: string,
-    formGroup: FormGroup,
+    formGroup: UntypedFormGroup,
     oralHearing: any
   ): any {
     const formGroupNames = this.findFormGroupNames(key, formGroup);
@@ -184,7 +184,7 @@ export class StepSevenService {
 
   private findFormGroupNames(
     formElementName: string,
-    formGroup: FormGroup,
+    formGroup: UntypedFormGroup,
     parentFormGroupNames: string[] = []
   ): string[] | undefined {
     if (formGroup.contains(formElementName)) {
@@ -193,7 +193,7 @@ export class StepSevenService {
 
     for (const nestedFormElementName in formGroup.controls) {
       const nestedFormElement = formGroup.get(nestedFormElementName);
-      if (nestedFormElement instanceof FormGroup) {
+      if (nestedFormElement instanceof UntypedFormGroup) {
         const nestedFormGroupNames = this.findFormGroupNames(
           formElementName,
           nestedFormElement,
