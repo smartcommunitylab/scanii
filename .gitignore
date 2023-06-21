@@ -46,5 +46,8 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# forb_b
+#form_a
+small_claim_form/small_claim_form/form_a/.angular
+
+# form_b
 small_claim_form/small_claim_form/form_b
