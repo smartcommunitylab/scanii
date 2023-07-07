@@ -1,11 +1,11 @@
 import { To } from '../common/to.model';
 
 export class ContractualInterest {
-  private interestPercentage?: number;
-  private percentagePointsAboveECB?: number;
-  private other?: string;
-  private fromDate: Date;
-  private to: To;
+  private _interestPercentage?: number;
+  private _percentagePointsAboveECB?: number;
+  private _other?: string;
+  private _fromDate: Date;
+  private _to: To;
 
   constructor(
     fromDate: Date,
@@ -14,11 +14,31 @@ export class ContractualInterest {
     percentagePointsAboveECB?: number,
     other?: string
   ) {
-    this.fromDate = fromDate;
-    this.to = to;
-    if (interestPercentage) this.interestPercentage = interestPercentage;
+    this._fromDate = fromDate;
+    this._to = to;
+    if (interestPercentage) this._interestPercentage = interestPercentage;
     if (percentagePointsAboveECB)
-      this.percentagePointsAboveECB = percentagePointsAboveECB;
-    if (other) this.other = other;
+      this._percentagePointsAboveECB = percentagePointsAboveECB;
+    if (other) this._other = other;
+  }
+
+  public get interestPercentage(): number | undefined {
+    return this._interestPercentage;
+  }
+
+  public get percentagePointsAboveECB(): number | undefined {
+    return this._percentagePointsAboveECB;
+  }
+
+  public get other(): string | undefined {
+    return this._other;
+  }
+
+  public get fromDate(): Date {
+    return this._fromDate;
+  }
+
+  public get to(): To {
+    return this._to;
   }
 }

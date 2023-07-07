@@ -1,91 +1,102 @@
-import { StatutoryInterest } from './statutory-interest.model';
-import { Injectable, NgZone } from '@angular/core';
+import { StatutoryInterest } from "./statutory-interest.model";
+import { Injectable, NgZone } from "@angular/core";
 import {
   AbstractControl,
   UntypedFormBuilder,
   UntypedFormGroup,
   ValidatorFn,
   Validators,
-} from '@angular/forms';
-import { PromiseContent } from '../common/promise-content.model';
-import { claimShowHideFields } from 'src/app/shared/constants/claim.constants';
-import { Subscription } from 'rxjs';
+} from "@angular/forms";
+import { PromiseContent } from "../common/promise-content.model";
+import { claimShowHideFields } from "src/app/shared/constants/claim.constants";
+import { Subscription } from "rxjs";
+import { ClaimForMoney } from "./claim-for-money.model";
+import { OtherClaim } from "./other-claim.model";
+import { ContractualInterest } from "./contractual-interest.model";
+import { TranslateService } from "@ngx-translate/core";
+import { To } from "../common/to.model";
+import { ClaimingInterest } from "./claiming-interest.model";
+import { ClaimingInterestOnCost } from "./claiming-interest-on-cost.model";
+import { From } from "./from.model";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class ClaimService {
   requiredValidator = Validators.required;
+  europeanCurrencies: { value: string; label: string }[] = [];
+  worldCurrencies: { value: string; label: string }[] = [];
+  worldAndHistoricalCurrencies: { value: string; label: string }[] = [];
 
   claimForMoneyExpansionForm = this.fb.group({
-    principalAmount: ['', this.amountValidator()],
+    principalAmount: ["", this.amountValidator()],
     claimForMoneyCurrency: [],
-    claimForMoneyCurrencyOther: [''],
-    claimForMoneyCurrencyHistorical: [''],
-    claimForMoneyCurrencyHistoricalCheckbox: [''],
+    claimForMoneyCurrencyOther: [""],
+    claimForMoneyCurrencyHistorical: [""],
+    claimForMoneyCurrencyHistoricalCheckbox: [""],
   });
 
   otherClaimExpansionForm = this.fb.group({
-    claimDescription: [''],
-    claimValue: ['', this.amountValidator()],
+    claimDescription: [""],
+    claimValue: ["", this.amountValidator()],
     otherClaimCurrency: [],
-    otherClaimCurrencyOther: [''],
-    otherClaimCurrencyHistorical: [''],
-    otherClaimCurrencyHistoricalCheckbox: [''],
+    otherClaimCurrencyOther: [""],
+    otherClaimCurrencyHistorical: [""],
+    otherClaimCurrencyHistoricalCheckbox: [""],
   });
 
   claimingCostProceedingsExpansionForm = this.fb.group({
-    costsDetails: [''],
+    costsDetails: [""],
   });
 
   contractualInterest = this.fb.group(
     {
-      interestPercentage: [''],
-      percentagePointsAboveECB: [''],
-      contractualInterestOther: [''],
-      contractualInterestFromDate: [''],
-      contractualInterestTo: [''],
-      contractualInterestToDate: [''],
+      interestPercentage: [""],
+      percentagePointsAboveECB: [""],
+      contractualInterestOther: [""],
+      contractualInterestFromDate: [""],
+      contractualInterestTo: [""],
+      contractualInterestToDate: [""],
     },
     { validator: this.validateDates }
   );
 
   statutoryInterest = this.fb.group(
     {
-      statutoryInterestFromDate: [''],
-      statutoryInterestTo: [''],
-      statutoryInterestToDate: [''],
+      statutoryInterestFromDate: [""],
+      statutoryInterestTo: [""],
+      statutoryInterestToDate: [""],
     },
     { validator: this.validateDates }
   );
 
   claimingInterestExpansion = this.fb.group({
-    claimingInterestOption: [''],
+    claimingInterestOption: [""],
     contractualInterest: this.contractualInterest,
     statutoryInterest: this.statutoryInterest,
   });
 
   claimingInterestOnCostExpansion = this.fb.group(
     {
-      claimingInterestOnCostFromOption: [''],
-      claimingInterestOnCostFromDate: [''],
-      claimingInterestOnCostFromEvent: [''],
-      claimingInterestOnCostToOption: [''],
-      claimingInterestOnCostToDate: [''],
+      claimingInterestOnCostFrom: [""],
+      claimingInterestOnCostFromDate: [""],
+      claimingInterestOnCostFromEvent: [""],
+      claimingInterestOnCostTo: [""],
+      claimingInterestOnCostToDate: [""],
     },
     { validator: this.validateDates }
   );
 
   editForm = this.fb.group({
-    claimForMoney: ['', [this.requiredValidator]],
+    claimForMoney: ["", [this.requiredValidator]],
     claimForMoneyExpansion: this.claimForMoneyExpansionForm,
-    otherClaim: ['', [this.requiredValidator]],
+    otherClaim: ["", [this.requiredValidator]],
     otherClaimExpansion: this.otherClaimExpansionForm,
-    claimingCostProceedings: ['', [this.requiredValidator]],
+    claimingCostProceedings: ["", [this.requiredValidator]],
     claimingCostProceedingsExpansion: this.claimingCostProceedingsExpansionForm,
-    claimingInterest: ['', [this.requiredValidator]],
+    claimingInterest: ["", [this.requiredValidator]],
     claimingInterestExpansion: this.claimingInterestExpansion,
-    claimingInterestOnCost: ['', [this.requiredValidator]],
+    claimingInterestOnCost: ["", [this.requiredValidator]],
     claimingInterestOnCostExpansion: this.claimingInterestOnCostExpansion,
   });
 
@@ -94,46 +105,52 @@ export class ClaimService {
 
   onStableSubscription: Subscription;
 
-  constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
+  constructor(
+    private fb: UntypedFormBuilder,
+    private zone: NgZone,
+    private translateService: TranslateService
+  ) {}
 
-  validateDates(formGroup: UntypedFormGroup): { [key: string]: boolean } | null {
+  validateDates(
+    formGroup: UntypedFormGroup
+  ): { [key: string]: boolean } | null {
     let fromDateFormControlName: string;
     let toDateFormControlName: string;
-    
+
     if (
-      Object.keys(formGroup.controls).includes('contractualInterestFromDate') &&
-      Object.keys(formGroup.controls).includes('contractualInterestToDate')
+      Object.keys(formGroup.controls).includes("contractualInterestFromDate") &&
+      Object.keys(formGroup.controls).includes("contractualInterestToDate")
     ) {
-      fromDateFormControlName = 'contractualInterestFromDate';
-      toDateFormControlName = 'contractualInterestToDate';
+      fromDateFormControlName = "contractualInterestFromDate";
+      toDateFormControlName = "contractualInterestToDate";
     } else if (
-      Object.keys(formGroup.controls).includes('statutoryInterestFromDate') &&
-      Object.keys(formGroup.controls).includes('statutoryInterestToDate')
+      Object.keys(formGroup.controls).includes("statutoryInterestFromDate") &&
+      Object.keys(formGroup.controls).includes("statutoryInterestToDate")
     ) {
-      fromDateFormControlName = 'statutoryInterestFromDate';
-      toDateFormControlName = 'statutoryInterestToDate';
+      fromDateFormControlName = "statutoryInterestFromDate";
+      toDateFormControlName = "statutoryInterestToDate";
     } else if (
       Object.keys(formGroup.controls).includes(
-        'claimingInterestOnCostFromDate'
+        "claimingInterestOnCostFromDate"
       ) &&
-      Object.keys(formGroup.controls).includes('claimingInterestOnCostToDate')
+      Object.keys(formGroup.controls).includes("claimingInterestOnCostToDate")
     ) {
-      fromDateFormControlName = 'claimingInterestOnCostFromDate';
-      toDateFormControlName = 'claimingInterestOnCostToDate';
+      fromDateFormControlName = "claimingInterestOnCostFromDate";
+      toDateFormControlName = "claimingInterestOnCostToDate";
     }
 
     const fromStringDate = formGroup.get(fromDateFormControlName).value;
     const toStringDate = formGroup.get(toDateFormControlName).value;
 
     if (fromStringDate && toStringDate) {
-      const fromDateParts = fromStringDate.split('/');
+      const fromDateParts = fromStringDate.split("/");
       const fromDate = new Date(
         +fromDateParts[2],
         fromDateParts[1] - 1,
         +fromDateParts[0]
       );
 
-      const toDateParts = toStringDate.split('/');
+      const toDateParts = toStringDate.split("/");
       const toDate = new Date(
         +toDateParts[2],
         toDateParts[1] - 1,
@@ -174,8 +191,193 @@ export class ClaimService {
       } else {
         isValid = true;
       }
-      resolve(new PromiseContent('step5', isValid));
+      resolve(new PromiseContent("step5", isValid));
     });
+  }
+
+  getClaimForMoney(): ClaimForMoney {
+    const isYes = this.editForm.get("claimForMoney").value === "yes";
+
+    if (isYes) {
+      const principalAmount = this.editForm.get(
+        "claimForMoneyExpansion.principalAmount"
+      ).value;
+
+      const currency = this.getCurrency("claimForMoneyExpansion.claimForMoney");
+
+      return new ClaimForMoney(
+        isYes,
+        principalAmount,
+        currency.currencyId,
+        currency.currencyName
+      );
+    } else return new ClaimForMoney(isYes);
+  }
+
+  getOtherClaim(): OtherClaim {
+    const isYes = this.editForm.get("otherClaim").value === "yes";
+
+    if (isYes) {
+      const description = this.editForm.get(
+        "otherClaimExpansion.claimDescription"
+      ).value;
+
+      const value = this.editForm.get("otherClaimExpansion.claimValue").value;
+
+      const currency = this.getCurrency("otherClaimExpansion.otherClaim");
+
+      return new OtherClaim(
+        isYes,
+        description,
+        value,
+        currency.currencyId,
+        currency.currencyName
+      );
+    } else return new OtherClaim(isYes);
+  }
+
+  getClaimingInterest(): ClaimingInterest {
+    const isYes = this.editForm.get("claimingInterest").value === "yes";
+
+    if (isYes) {
+      const interestType = this.editForm.get(
+        "claimingInterestExpansion.claimingInterestOption"
+      ).value;
+
+      let contractualInterest: ContractualInterest;
+      let statutoryInterest: StatutoryInterest;
+
+      if (interestType === "contractual")
+        contractualInterest = this.getContractualInterest();
+      else if (interestType === "statutory")
+        statutoryInterest = this.getStatutoryInterest();
+
+      return new ClaimingInterest(
+        isYes,
+        interestType,
+        contractualInterest,
+        statutoryInterest
+      );
+    } else return new ClaimingInterest(isYes);
+  }
+
+  private getContractualInterest(): ContractualInterest {
+    const interestPercentage = this.editForm.get(
+      "claimingInterestExpansion.contractualInterest.interestPercentage"
+    ).value;
+
+    const percentagePointsAboveECB = this.editForm.get(
+      "claimingInterestExpansion.contractualInterest.percentagePointsAboveECB"
+    ).value;
+
+    const other = this.editForm.get(
+      "claimingInterestExpansion.contractualInterest.contractualInterestOther"
+    ).value;
+
+    const fromDate = this.editForm.get(
+      "claimingInterestExpansion.contractualInterest.contractualInterestFromDate"
+    ).value;
+
+    const to = this.getTo(
+      "claimingInterestExpansion.contractualInterest.contractualInterest",
+      "01"
+    );
+
+    return new ContractualInterest(
+      fromDate,
+      to,
+      interestPercentage,
+      percentagePointsAboveECB,
+      other
+    );
+  }
+
+  private getStatutoryInterest(): StatutoryInterest {
+    const fromDate = this.editForm.get(
+      "claimingInterestExpansion.statutoryInterest.statutoryInterestFromDate"
+    ).value;
+
+    const to = this.getTo(
+      "claimingInterestExpansion.statutoryInterest.statutoryInterest",
+      "01"
+    );
+
+    return new StatutoryInterest(fromDate, to);
+  }
+
+  getClaimingInterestOnCost(): ClaimingInterestOnCost {
+    const isYes = this.editForm.get("claimingInterestOnCost").value === "yes";
+
+    if (isYes) {
+      const from = this.getFrom();
+
+      const to = this.getTo(
+        "claimingInterestOnCostExpansion.claimingInterestOnCost",
+        "02"
+      );
+
+      return new ClaimingInterestOnCost(isYes, from, to);
+    } else return new ClaimingInterestOnCost(isYes);
+  }
+
+  private getTo(prefix: string, value: string): To {
+    const toOption = this.editForm.get(prefix + "To").value;
+
+    if (toOption === value) {
+      const toDate = this.editForm.get(prefix + "ToDate").value;
+      return new To(toOption, toDate);
+    } else return new To(toOption);
+  }
+
+  private getFrom(): From {
+    const fromOption = this.editForm.get(
+      "claimingInterestOnCostExpansion.claimingInterestOnCostFrom"
+    ).value;
+    if (fromOption === "00") {
+      const from = new From(fromOption);
+      from.fromDate = this.editForm.get(
+        "claimingInterestOnCostExpansion.claimingInterestOnCostFromDate"
+      ).value;
+      return from;
+    } else {
+      const from = new From(fromOption);
+      from.fromEvent = this.editForm.get(
+        "claimingInterestOnCostExpansion.claimingInterestOnCostFromEvent"
+      ).value;
+      return from;
+    }
+  }
+
+  private getCurrency(prefix: string): {
+    currencyId: string;
+    currencyName: string;
+  } {
+    let currencyId = "";
+    let currencyName = "";
+    //"OO" is the value associated with the "Other (please specify)" option in the dropdown
+    if (this.editForm.get(prefix + "Currency").value !== "00") {
+      //european currencies
+      currencyId = this.editForm.get(prefix + "Currency").value;
+
+      currencyName = this.europeanCurrencies.find(
+        (currency) => currency.value === currencyId
+      ).label;
+    } else if (this.editForm.get(prefix + "CurrencyHistoricalCheckbox").value) {
+      //historical and world currencies
+      currencyId = this.editForm.get(prefix + "CurrencyHistorical").value;
+
+      currencyName = this.worldAndHistoricalCurrencies.find(
+        (currency) => currency.value === currencyId
+      ).label;
+    } else {
+      //world currencies
+      currencyId = this.editForm.get(prefix + "CurrencyOther").value;
+
+      currencyName = this.worldCurrencies.find(
+        (currency) => currency.value === currencyId
+      ).label;
+    }
+    return { currencyId, currencyName };
   }
 
   markClaimFormAsDirty(formGroup: UntypedFormGroup) {
@@ -183,14 +385,14 @@ export class ClaimService {
       const formElement = formGroup.get(formElementName);
       if (formElement instanceof UntypedFormGroup) {
         const value = this.getTriggeringFormControlValue(formElementName);
-        if (value === claimShowHideFields[formElementName]['triggeringValue']) {
+        if (value === claimShowHideFields[formElementName]["triggeringValue"]) {
           this.markClaimFormAsDirty(formElement);
         }
       } else {
         if (formElementName in claimShowHideFields) {
           const value = this.getTriggeringFormControlValue(formElementName);
           if (
-            value === claimShowHideFields[formElementName]['triggeringValue']
+            value === claimShowHideFields[formElementName]["triggeringValue"]
           ) {
             this.markAsDirty(formElement);
           }
@@ -203,7 +405,7 @@ export class ClaimService {
 
   private getTriggeringFormControlValue(formElementName: string) {
     return this.getFormControl(
-      claimShowHideFields[formElementName]['triggeringFormControlName']
+      claimShowHideFields[formElementName]["triggeringFormControlName"]
     ).value;
   }
 
@@ -284,10 +486,10 @@ export class ClaimService {
         const filteredClaimShowHideFields = Object.keys(claimShowHideFields)
           .filter(
             (key) =>
-              key !== 'contractualInterest' &&
-              key !== 'statutoryInterest' &&
-              key !== 'claimingInterestOnCostFromDate' &&
-              key !== 'claimingInterestOnCostFromEvent'
+              key !== "contractualInterest" &&
+              key !== "statutoryInterest" &&
+              key !== "claimingInterestOnCostFromDate" &&
+              key !== "claimingInterestOnCostFromEvent"
           )
           .reduce((obj, key) => {
             obj[key] = claimShowHideFields[key];
@@ -296,27 +498,26 @@ export class ClaimService {
 
         for (const key of Object.keys(filteredClaimShowHideFields)) {
           const value = this.getJsonValue(
-            claimShowHideFields[key]['triggeringFormControlName'],
+            claimShowHideFields[key]["triggeringFormControlName"],
             claim
           );
 
-          if (value === claimShowHideFields[key]['triggeringValue']) {
+          if (value === claimShowHideFields[key]["triggeringValue"]) {
             this.triggerChangeEvent(
-              claimShowHideFields[key]['triggeringFieldId']
+              claimShowHideFields[key]["triggeringFieldId"]
             );
           }
         }
 
         this.triggerChangeEventBasedOnValue(
           claim.claimingInterestExpansion.claimingInterestOption,
-          'contractualInterest',
-          'statutoryInterest'
+          "contractualInterest",
+          "statutoryInterest"
         );
         this.triggerChangeEventBasedOnValue(
-          claim.claimingInterestOnCostExpansion
-            .claimingInterestOnCostFromOption,
-          'claimingInterestOnCostFromDate',
-          'claimingInterestOnCostFromEvent'
+          claim.claimingInterestOnCostExpansion.claimingInterestOnCostFrom,
+          "claimingInterestOnCostFromDate",
+          "claimingInterestOnCostFromEvent"
         );
 
         resolve();
@@ -339,13 +540,13 @@ export class ClaimService {
     firstField: string,
     secondField: string
   ) {
-    if (value === claimShowHideFields[firstField]['triggeringValue']) {
+    if (value === claimShowHideFields[firstField]["triggeringValue"]) {
       this.triggerChangeEvent(
-        claimShowHideFields[firstField]['triggeringFieldId']
+        claimShowHideFields[firstField]["triggeringFieldId"]
       );
-    } else if (value === claimShowHideFields[secondField]['triggeringValue']) {
+    } else if (value === claimShowHideFields[secondField]["triggeringValue"]) {
       this.triggerChangeEvent(
-        claimShowHideFields[secondField]['triggeringFieldId']
+        claimShowHideFields[secondField]["triggeringFieldId"]
       );
     }
   }
@@ -358,7 +559,7 @@ export class ClaimService {
 
   private triggerChangeEvent(id: string) {
     const inputElement = document.getElementById(id) as HTMLInputElement;
-    const event = new Event('change');
+    const event = new Event("change");
     inputElement.dispatchEvent(event);
   }
 }

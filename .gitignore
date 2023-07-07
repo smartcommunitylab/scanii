@@ -48,6 +48,7 @@ Thumbs.db
 
 #form_a
 small_claim_form/small_claim_form/form_a/.angular
+small_claim_form/small_claim_form/form_a/dist
 
 # form_b
 small_claim_form/small_claim_form/form_b

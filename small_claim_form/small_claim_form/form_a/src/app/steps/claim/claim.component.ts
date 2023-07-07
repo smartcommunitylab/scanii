@@ -18,9 +18,6 @@ import { ToastService } from 'src/app/shared/services/toast.service';
   styleUrls: ['./claim.component.scss'],
 })
 export class ClaimComponent implements OnInit {
-  europeanCurrencies: { value: string; label: string }[] = [];
-  worldCurrencies: { value: string; label: string }[] = [];
-  worldAndHistoricalCurrencies: { value: string; label: string }[] = [];
 
   constructor(
     public claimService: ClaimService,
@@ -31,19 +28,19 @@ export class ClaimComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.claimService.editForm.patchValue({
-    //   claimForMoney: 'no',
-    //   otherClaim: 'no',
-    //   claimingCostProceedings: 'no',
-    //   claimingInterest: 'no',
-    //   claimingInterestOnCost: 'no',
-    // });
+    this.claimService.editForm.patchValue({
+      claimForMoney: 'no',
+      otherClaim: 'no',
+      claimingCostProceedings: 'no',
+      claimingInterest: 'no',
+      claimingInterestOnCost: 'no',
+    });
     
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.initDatepicker(event.lang);
-      this.europeanCurrencies = event.translations.europeanCurrencies;
-      this.worldCurrencies = event.translations.worldCurrencies;
-      this.worldAndHistoricalCurrencies = event.translations.worldAndHistoricalCurrencies;
+      this.claimService.europeanCurrencies = event.translations.europeanCurrencies;
+      this.claimService.worldCurrencies = event.translations.worldCurrencies;
+      this.claimService.worldAndHistoricalCurrencies = event.translations.worldAndHistoricalCurrencies;
     });
   }
 

@@ -749,7 +749,7 @@
                                       </option>
                                       <option
                                         *ngFor="
-                                          let country of europeanCountries
+                                          let country of defendantService.europeanCountries
                                         "
                                         [value]="country.value"
                                       >
@@ -907,7 +907,7 @@
                                           </option>
                                           <option
                                             *ngFor="
-                                              let country of worldCountries
+                                              let country of defendantService.worldCountries
                                             "
                                             [value]="country.value"
                                           >
@@ -2598,7 +2598,7 @@
                                       </option>
                                       <option
                                         *ngFor="
-                                          let country of europeanCountries
+                                          let country of defendantService.europeanCountries
                                         "
                                         [value]="country.value"
                                       >
@@ -2762,7 +2762,7 @@
                                           </option>
                                           <option
                                             *ngFor="
-                                              let country of worldCountries
+                                              let country of defendantService.worldCountries
                                             "
                                             [value]="country.value"
                                           >

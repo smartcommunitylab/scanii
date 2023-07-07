@@ -566,7 +566,7 @@
                       "
                       >7.2.2. Do you agree to the use of electronic means of
                       communication to receive written communications other than
-                      the documents mentioned in point 10.1?</span
+                      the documents mentioned in point 7.2.1.?</span
                     >
 
                     <span class="asterisk">*</span>
@@ -843,7 +843,7 @@
                       Please select
                     </option>
                     <option
-                      *ngFor="let language of europeanLanguages"
+                      *ngFor="let language of stepSevenService.europeanLanguages"
                       [value]="language.value"
                     >
                       {{ language.label }}
@@ -1008,6 +1008,7 @@
                     data-title=""
                     autocomplete="off"
                     formControlName="date"
+                    [readOnly]="true"
                   />
                 </div>
               </div>

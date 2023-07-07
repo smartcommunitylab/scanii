@@ -17,9 +17,6 @@ datepickerFactory($);
   styleUrls: ['./step-four.component.scss'],
 })
 export class StepFourComponent implements OnInit {
-  europeanCountries: { value: string; label: string }[] = [];
-  worldCountries: { value: string; label: string }[] = [];
-
   constructor(
     public stepFourService: StepFourService,
     private eventManager: EventManagerService,
@@ -29,15 +26,15 @@ export class StepFourComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.stepFourService.crossborderNatureForm.patchValue({
-    //   claimantCountry: 'IT',
-    //   defendantCountry: 'ES',
-    //   courtCountry: 'IT',
-    // });
+    this.stepFourService.crossborderNatureForm.patchValue({
+      claimantCountry: 'ES',
+      defendantCountry: 'IT',
+      courtCountry: 'IT',
+    });
     
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.europeanCountries = event.translations.europeanCountries;
-      this.worldCountries = event.translations.worldCountries;
+      this.stepFourService.europeanCountries = event.translations.europeanCountries;
+      this.stepFourService.worldCountries = event.translations.worldCountries;
     });
   }
 
@@ -76,6 +73,8 @@ export class StepFourComponent implements OnInit {
       this.stepFourService.crossborderNatureForm.get('claimantCountry')
         .value !== '' &&
       this.stepFourService.crossborderNatureForm.get('defendantCountry')
+        .value !== '' &&
+      this.stepFourService.crossborderNatureForm.get('courtCountry')
         .value !== ''
     ) {
       if (
@@ -91,6 +90,14 @@ export class StepFourComponent implements OnInit {
       ) {
         this.stepFourService.crossborderNatureForm
           .get('defendantCountry')
+          .markAsDirty();
+      }
+      if (
+        !this.stepFourService.crossborderNatureForm.get('courtCountry')
+          .dirty
+      ) {
+        this.stepFourService.crossborderNatureForm
+          .get('courtCountry')
           .markAsDirty();
       }
     }

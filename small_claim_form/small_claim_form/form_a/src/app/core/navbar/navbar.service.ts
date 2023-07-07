@@ -71,7 +71,7 @@ export class NavbarService {
     return `${day}${month}${year}`;
   }
 
-  private getIntermediateForm(): IntermediateForm {
+  getIntermediateForm(): IntermediateForm {
     const intermediateForm = new IntermediateForm();
     intermediateForm.claimants = this.claimantService.editForm.value.claimants;
     intermediateForm.defendants =

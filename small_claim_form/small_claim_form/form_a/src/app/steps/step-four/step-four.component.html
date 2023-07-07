@@ -64,7 +64,9 @@
                         Please select
                       </option>
                       <option
-                        *ngFor="let country of europeanCountries"
+                        *ngFor="
+                          let country of stepFourService.europeanCountries
+                        "
                         [value]="country.value"
                       >
                         {{ country.label }}
@@ -201,7 +203,9 @@
                             Please select
                           </option>
                           <option
-                            *ngFor="let country of worldCountries"
+                            *ngFor="
+                              let country of stepFourService.worldCountries
+                            "
                             [value]="country.value"
                           >
                             {{ country.label }}
@@ -556,7 +560,9 @@
                         Please select
                       </option>
                       <option
-                        *ngFor="let country of europeanCountries"
+                        *ngFor="
+                          let country of stepFourService.europeanCountries
+                        "
                         [value]="country.value"
                       >
                         {{ country.label }}
@@ -693,7 +699,9 @@
                             Please select
                           </option>
                           <option
-                            *ngFor="let country of worldCountries"
+                            *ngFor="
+                              let country of stepFourService.worldCountries
+                            "
                             [value]="country.value"
                           >
                             {{ country.label }}
@@ -1047,7 +1055,9 @@
                         Please select
                       </option>
                       <option
-                        *ngFor="let country of europeanCountries"
+                        *ngFor="
+                          let country of stepFourService.europeanCountries
+                        "
                         [value]="country.value"
                       >
                         {{ country.label }}
@@ -1182,7 +1192,9 @@
                             Please select
                           </option>
                           <option
-                            *ngFor="let country of worldCountries"
+                            *ngFor="
+                              let country of stepFourService.worldCountries
+                            "
                             [value]="country.value"
                           >
                             {{ country.label }}

@@ -1,38 +1,40 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone } from "@angular/core";
 import {
   AbstractControl,
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
-} from '@angular/forms';
-import { PromiseContent } from '../common/promise-content.model';
-import { stepSevenShowHideFields } from 'src/app/shared/constants/step-seven.constants';
-import { Subscription } from 'rxjs';
+} from "@angular/forms";
+import { PromiseContent } from "../common/promise-content.model";
+import { stepSevenShowHideFields } from "src/app/shared/constants/step-seven.constants";
+import { Subscription } from "rxjs";
+import { Certificate } from "./certificate.model";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class StepSevenService {
   requiredValidator = Validators.required;
+  europeanLanguages: { value: string; label: string }[] = [];
 
   oralHearingForm = this.fb.group({
-    oralHearingRequest: ['', [Validators.required]],
-    oralHearingRequestReasons: [''],
-    oralHearingPresence: ['', [Validators.required]],
-    oralHearingPresenceReasons: [''],
+    oralHearingRequest: ["", [Validators.required]],
+    oralHearingRequestReasons: [""],
+    oralHearingPresence: ["", [Validators.required]],
+    oralHearingPresenceReasons: [""],
   });
   documentAndCommunicationForm = this.fb.group({
-    electronicCommunicationWithCourtTribunal: ['', [Validators.required]],
-    electronicCommunicationOther: ['', [Validators.required]],
+    electronicCommunicationWithCourtTribunal: ["", [Validators.required]],
+    electronicCommunicationOther: ["", [Validators.required]],
   });
   certificateForm = this.fb.group({
-    certificateRequest: ['', [Validators.required]],
-    language: [''],
+    certificateRequest: ["", [Validators.required]],
+    language: [""],
   });
   dateAndSignatureForm = this.fb.group({
-    city: ['', [Validators.required]],
-    date: ['', [Validators.required]],
-    sign: ['', [Validators.required]],
+    city: ["", [Validators.required]],
+    date: ["", [Validators.required]],
+    sign: ["", [Validators.required]],
   });
 
   onStableSubscription: Subscription;
@@ -57,8 +59,29 @@ export class StepSevenService {
       } else {
         isValid = true;
       }
-      resolve(new PromiseContent('step7', isValid));
+      resolve(new PromiseContent("step7", isValid));
     });
+  }
+
+  getCertificate(): Certificate {
+    const certificateRequest =
+      this.certificateForm.get("certificateRequest").value === "yes";
+
+    const certificate = new Certificate(certificateRequest);
+
+    const languageId = this.certificateForm.get("language").value;
+    let languageName = "";
+    if (languageId) {
+      const language = this.europeanLanguages.find(
+        (language) => language.value === languageId
+      );
+      if (language) languageName = language.label;
+
+      certificate.language = languageId;
+      certificate.languageName = languageName;
+    }
+
+    return certificate;
   }
 
   markStepSevenFormsAsDirty() {
@@ -77,7 +100,7 @@ export class StepSevenService {
           formElementName
         );
         if (
-          value === stepSevenShowHideFields[formElementName]['triggeringValue']
+          value === stepSevenShowHideFields[formElementName]["triggeringValue"]
         ) {
           this.markAsDirty(formElement);
         }
@@ -92,7 +115,7 @@ export class StepSevenService {
     formElementName: string
   ) {
     return formGroup.get(
-      stepSevenShowHideFields[formElementName]['triggeringFormControlName']
+      stepSevenShowHideFields[formElementName]["triggeringFormControlName"]
     ).value;
   }
 
@@ -138,14 +161,14 @@ export class StepSevenService {
 
         for (const key of Object.keys(stepSevenShowHideFields)) {
           const value = this.getJsonValue(
-            stepSevenShowHideFields[key]['triggeringFormControlName'],
+            stepSevenShowHideFields[key]["triggeringFormControlName"],
             this.oralHearingForm,
             oralHearing
           );
 
-          if (value === stepSevenShowHideFields[key]['triggeringValue']) {
+          if (value === stepSevenShowHideFields[key]["triggeringValue"]) {
             this.triggerChangeEvent(
-              stepSevenShowHideFields[key]['triggeringFieldId']
+              stepSevenShowHideFields[key]["triggeringFieldId"]
             );
           }
         }
@@ -178,7 +201,7 @@ export class StepSevenService {
 
   private triggerChangeEvent(id: string) {
     const inputElement = document.getElementById(id) as HTMLInputElement;
-    const event = new Event('change');
+    const event = new Event("change");
     inputElement.dispatchEvent(event);
   }
 

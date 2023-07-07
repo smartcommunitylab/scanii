@@ -1,11 +1,19 @@
-import { To } from '../common/to.model';
+import { To } from "../common/to.model";
 
 export class StatutoryInterest {
-  private fromDate: Date;
-  private to: To;
+  private _fromDate: Date;
+  private _to: To;
 
   constructor(fromDate: Date, to: To) {
-    this.fromDate = fromDate;
-    this.to = to;
+    this._fromDate = fromDate;
+    this._to = to;
+  }
+
+  public get fromDate(): Date {
+    return this._fromDate;
+  }
+
+  public get to(): To {
+    return this._to;
   }
 }

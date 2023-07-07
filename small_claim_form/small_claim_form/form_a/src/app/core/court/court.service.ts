@@ -1,24 +1,26 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone } from "@angular/core";
 import {
   AbstractControl,
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
-} from '@angular/forms';
-import { Subscription } from 'rxjs';
-import { PromiseContent } from '../common/promise-content.model';
+} from "@angular/forms";
+import { Subscription } from "rxjs";
+import { PromiseContent } from "../common/promise-content.model";
+import { Court } from "./court.model";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class CourtService {
   editForm = this.fb.group({
-    country: ['', [Validators.required]],
-    name: ['', [Validators.required]],
-    street: ['', [Validators.required]],
-    postalCode: [''],
-    city: [''],
+    country: ["", [Validators.required]],
+    name: ["", [Validators.required]],
+    street: ["", [Validators.required]],
+    postalCode: [""],
+    city: [""],
   });
+  europeanCountries: { value: string; label: string }[] = [];
 
   constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
 
@@ -33,7 +35,7 @@ export class CourtService {
       } else {
         isValid = true;
       }
-      resolve(new PromiseContent('step8', isValid));
+      resolve(new PromiseContent("step8", isValid));
     });
   }
 
@@ -76,11 +78,28 @@ export class CourtService {
           this.onStableSubscription.unsubscribe();
         }
 
-        this.triggerChangeEvent('dynformSCA1CourtCountry');
+        this.triggerChangeEvent("dynformSCA1CourtCountry");
 
         resolve();
       });
     });
+  }
+
+  getCourt(): Court {
+    const contryId = this.editForm.get("country").value;
+
+    let countryName = "";
+    const country = this.europeanCountries.find(
+      (country) => country.value === contryId
+    );
+    if (country) countryName = country.label;
+
+    const name = this.editForm.get("name").value;
+    const street = this.editForm.get("street").value;
+    const postalCode = this.editForm.get("postalCode").value;
+    const city = this.editForm.get("city").value;
+
+    return new Court(contryId, countryName, name, street, postalCode, city);
   }
 
   private resetAll() {
@@ -89,8 +108,7 @@ export class CourtService {
 
   private triggerChangeEvent(id: string) {
     const inputElement = document.getElementById(id) as HTMLInputElement;
-    const event = new Event('change');
+    const event = new Event("change");
     inputElement.dispatchEvent(event);
   }
-
 }

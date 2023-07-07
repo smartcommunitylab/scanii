@@ -1,18 +1,19 @@
-import { Citizen } from '../common/citizen.model';
-import { Organisation } from '../common/organisation.model';
+import { Citizen } from "../common/citizen.model";
+import { Organisation } from "../common/organisation.model";
+import { Representative } from "../common/representative.model";
 
 export class Defendant {
-  private _defendant: Organisation | Citizen;
-  private _representative?: Organisation | Citizen;
-  private _otherDetails?: string;
+  private defendant: Organisation | Citizen;
+  private representative: Representative;
+  private otherDetails: string;
 
   constructor(
     defendant: Organisation | Citizen,
-    representative?: Organisation | Citizen,
-    otherDetails?: string
+    representative: Representative,
+    otherDetails: string
   ) {
-    this._defendant = defendant;
-    if (representative) this._representative = representative;
-    if (otherDetails) this._otherDetails = otherDetails;
+    this.defendant = defendant;
+    this.representative = representative;
+    this.otherDetails = otherDetails;
   }
 }

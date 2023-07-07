@@ -22,13 +22,13 @@
 
    5.6. Anteporre la stringa **/small_claim_form/dist/form_a/** al nome del file JavaScript specificato come valore dell'attributo src nei quattro elementi script collocati in fondo al file
 
-6. Aprire il file JavaScript contenuto nella cartella /small_claim_form/small_claim_form/dist/form_a avente come parola iniziale il termine “main”
+6. Aprire il file JavaScript contenuto nella cartella /small_claim_form/small_claim_form/dist/form_a avente come parola iniziale il termine **main**
 
    6.1. Formattare il file
 
    6.2. Cercare la stringa **/assets/i18n/** servendosi dell’apposito strumento di ricerca e sostituire le due occorrenze trovate con la stringa **/small_claim_form/dist/form_a/assets/i18n/**
 
-7. Aprire il file JavaScript contenuto nella cartella /small_claim_form/small_claim_form/dist/form_a avente come parola iniziale il termine “runtime”
+7. Aprire il file JavaScript contenuto nella cartella /small_claim_form/small_claim_form/dist/form_a avente come parola iniziale il termine **runtime**
 
    7.1. Formattare il file
 
@@ -68,4 +68,4 @@
 
 4. Aprire un terminale, spostarsi nella cartella /small_claim_form ed eseguire il comando **python3 -m http.server 3000**
 5. Aprire un nuovo terminale, spostarsi nella cartella /small_claim_form/small_claim_form/form_a, eseguire i comandi **npm install** e **npm start**
-6. Il progetto Angular può essere raggiunto al seguente link: http://localhost:4200. La pagina iframe.html può essere raggiunta al seguente link: http://localhost:3000/small_claim_form/form_a/iframe.html
+6. Il progetto Angular può essere raggiunto al seguente link: http://localhost:4200. La pagina iframe.html può essere raggiunta al seguente link: http://localhost:3000/small_claim_form/dist/form_a/iframe.html

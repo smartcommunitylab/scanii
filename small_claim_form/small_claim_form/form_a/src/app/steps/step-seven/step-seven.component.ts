@@ -18,8 +18,6 @@ datepickerFactory($);
   providers: [DatePipe],
 })
 export class StepSevenComponent implements OnInit {
-  europeanLanguages: { value: string; label: string }[] = [];
-
   constructor(
     public stepSevenService: StepSevenService,
     private eventManager: EventManagerService,
@@ -36,24 +34,24 @@ export class StepSevenComponent implements OnInit {
         date: currentDate,
       });
       this.initDatepicker(event.lang);
-      this.europeanLanguages = event.translations.europeanLanguages;
+      this.stepSevenService.europeanLanguages = event.translations.europeanLanguages;
     });
 
-    // this.stepSevenService.oralHearingForm.patchValue({
-    //   oralHearingRequest: 'no',
-    //   oralHearingPresence: 'no',
-    // });
-    // this.stepSevenService.documentAndCommunicationForm.patchValue({
-    //   electronicCommunicationWithCourtTribunal: 'no',
-    //   electronicCommunicationOther: 'no',
-    // });
-    // this.stepSevenService.certificateForm.patchValue({
-    //   certificateRequest: 'no',
-    // });
-    // this.stepSevenService.dateAndSignatureForm.patchValue({
-    //   city: 'Roma',
-    //   sign: 'Mario Rossi',
-    // });
+    this.stepSevenService.oralHearingForm.patchValue({
+      oralHearingRequest: 'no',
+      oralHearingPresence: 'no',
+    });
+    this.stepSevenService.documentAndCommunicationForm.patchValue({
+      electronicCommunicationWithCourtTribunal: 'no',
+      electronicCommunicationOther: 'no',
+    });
+    this.stepSevenService.certificateForm.patchValue({
+      certificateRequest: 'no',
+    });
+    this.stepSevenService.dateAndSignatureForm.patchValue({
+      city: 'Roma',
+      sign: 'Mario Rossi',
+    });
   }
 
   initDatepicker(language: string) {

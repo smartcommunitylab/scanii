@@ -34,8 +34,8 @@
   </head>
   <body>
     <script>
-      EXTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
-      INTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
+      EXTERNAL_URI = "http://localhost:3000";
+      INTERNAL_URI = "http://localhost:4200";
       JSON_PATH = "./content/json/";
       I18N_PATH = "./assets/i18n/";
 
@@ -140,6 +140,7 @@
 
       function closeAccordion(event) {
         if (event.target.getAttribute("accordion-is-collapsed") === "false") {
+          // accordion is open and needs to be closed
           var accordionCntId = event.target.getAttribute("aria-controls");
           var accordionCnt = document.getElementById(accordionCntId);
 
@@ -150,17 +151,14 @@
               : "true"
           );
 
-          event.target.removeEventListener("click", closeAccordion);
-
           setTimeout(function () {
             event.target.classList.add("collapsed");
             event.target.setAttribute("aria-expanded", "false");
 
             accordionCnt.classList.remove("show");
-
-            event.target.addEventListener("click", closeAccordion);
           }, 8);
         } else {
+          // accordion is closed and the click on it opens it
           event.target.setAttribute(
             "accordion-is-collapsed",
             event.target.getAttribute("accordion-is-collapsed") === "true"
@@ -736,7 +734,7 @@
           "background-color: #F9E79F; color: black; font-size:15px;";
 
         accordionBtn.innerText = "Dettagli";
-        accordionBtn.addEventListener("click", closeAccordion);
+        accordionBtn.setAttribute("onClick", 'closeAccordion(event)');
         accordionItm.append(accordionBtn);
         accordionItm.append(accordionCnt);
         accordionDiv.append(accordionItm);
@@ -1108,7 +1106,7 @@
           "background-color: #F9E79F; color: black; font-size:15px;";
 
         accordionBtn.innerText = "Dettagli";
-        accordionBtn.addEventListener("click", closeAccordion);
+        accordionBtn.setAttribute("onClick", 'closeAccordion(event)');
         accordionItm.append(accordionBtn);
         accordionItm.append(accordionCnt);
         accordionDiv.append(accordionItm);

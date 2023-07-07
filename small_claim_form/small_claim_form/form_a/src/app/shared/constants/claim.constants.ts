@@ -65,17 +65,17 @@ export const claimShowHideFields = {
     triggeringFieldId: 'dynformSCA6ClaimingInterestCost_Yes',
   },
   claimingInterestOnCostFromDate: {
-    triggeringFormControlName: 'claimingInterestOnCostFromOption',
+    triggeringFormControlName: 'claimingInterestOnCostFrom',
     triggeringValue: '00',
     triggeringFieldId: 'dynformSCA6ClaimingInterestCostDateRadio',
   },
   claimingInterestOnCostFromEvent: {
-    triggeringFormControlName: 'claimingInterestOnCostFromOption',
+    triggeringFormControlName: 'claimingInterestOnCostFrom',
     triggeringValue: '01',
     triggeringFieldId: 'dynformSCA6ClaimingInterestCostRadio',
   },
   claimingInterestOnCostToDate: {
-    triggeringFormControlName: 'claimingInterestOnCostToOption',
+    triggeringFormControlName: 'claimingInterestOnCostTo',
     triggeringValue: '02',
     triggeringFieldId: 'dynformSCA6ClaimingInterestCostToDateRadio',
   },

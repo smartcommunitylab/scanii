@@ -2,7 +2,7 @@ import { ClaimForMoney } from './claim-for-money.model';
 import { ClaimingCostProceedings } from './claiming-cost-proceedings.model';
 import { ClaimingInterestOnCost } from './claiming-interest-on-cost.model';
 import { ClaimingInterest } from './claiming-interest.model';
-import { OtherClaim } from './oter-claim.model';
+import { OtherClaim } from './other-claim.model';
 
 export class Claim {
   private _claimForMoney: ClaimForMoney;

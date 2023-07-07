@@ -293,7 +293,9 @@
                           Please select
                         </option>
                         <option
-                          *ngFor="let country of europeanCurrencies"
+                          *ngFor="
+                            let country of claimService.europeanCurrencies
+                          "
                           [value]="country.value"
                         >
                           {{ country.label }}
@@ -401,7 +403,7 @@
                             Please select
                           </option>
                           <option
-                            *ngFor="let country of worldCurrencies"
+                            *ngFor="let country of claimService.worldCurrencies"
                             [value]="country.value"
                           >
                             {{ country.label }}
@@ -651,7 +653,9 @@
                             Please select
                           </option>
                           <option
-                            *ngFor="let country of worldAndHistoricalCurrencies"
+                            *ngFor="
+                              let country of claimService.worldAndHistoricalCurrencies
+                            "
                             [value]="country.value"
                           >
                             {{ country.label }}
@@ -1370,16 +1374,14 @@
                         >
                           Please select
                         </option>
-                        <option value="EUR">Euro (EUR)</option>
-                        <option value="BGN">Bulgarian lev (BGN)</option>
-                        <option value="HRK">Croatian kuna (HRK)</option>
-                        <option value="CZK">Czech koruna (CZK)</option>
-                        <option value="HUF">Hungarian forint (HUF)</option>
-                        <option value="GBP">Pound Sterling (GBP)</option>
-                        <option value="PLN">Polish zloty (PLN)</option>
-                        <option value="RON">Romanian leu (RON)</option>
-                        <option value="SEK">Swedish krona (SEK)</option>
-
+                        <option
+                          *ngFor="
+                            let country of claimService.europeanCurrencies
+                          "
+                          [value]="country.value"
+                        >
+                          {{ country.label }}
+                        </option>
                         <!-- <option value="EUR">Euro (EUR)</option>
                         <option value="BGN">Bulgarian lev (BGN)</option>
                         <option value="HRK">Croatian kuna (HRK)</option>
@@ -1481,7 +1483,7 @@
                             Please select
                           </option>
                           <option
-                            *ngFor="let country of worldCurrencies"
+                            *ngFor="let country of claimService.worldCurrencies"
                             [value]="country.value"
                           >
                             {{ country.label }}
@@ -1731,7 +1733,9 @@
                             Please select
                           </option>
                           <option
-                            *ngFor="let country of worldAndHistoricalCurrencies"
+                            *ngFor="
+                              let country of claimService.worldAndHistoricalCurrencies
+                            "
                             [value]="country.value"
                           >
                             {{ country.label }}
@@ -2787,6 +2791,7 @@
                                 data-title=""
                                 autocomplete="off"
                                 formControlName="contractualInterestFromDate"
+                                [readOnly]="true"
                               />
                             </div>
                           </div>
@@ -2957,6 +2962,7 @@
                                   data-title=""
                                   autocomplete="off"
                                   formControlName="contractualInterestToDate"
+                                  [readOnly]="true"
                                 />
                               </div>
                             </div>
@@ -3234,6 +3240,7 @@
                               data-title=""
                               autocomplete="off"
                               formControlName="statutoryInterestFromDate"
+                              [readOnly]="true"
                             />
                           </div>
                         </div>
@@ -3402,6 +3409,7 @@
                                 data-title=""
                                 autocomplete="off"
                                 formControlName="statutoryInterestToDate"
+                                [readOnly]="true"
                               />
                             </div>
                           </div>
@@ -3786,7 +3794,7 @@
                   >
                     <input
                       type="radio"
-                      name="claimingInterestOnCostFromOption"
+                      name="claimingInterestOnCostFrom"
                       value="00"
                       id="dynformSCA6ClaimingInterestCostDateRadio"
                       class="df_input"
@@ -3799,7 +3807,7 @@
                           'claimingInterestOnCostFromEvent'
                         )
                       "
-                      formControlName="claimingInterestOnCostFromOption"
+                      formControlName="claimingInterestOnCostFrom"
                     />
 
                     <label for="dynformSCA6ClaimingInterestCostDateRadio">
@@ -3830,17 +3838,17 @@
                     *ngIf="
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostFromOption')!.invalid &&
+                        .get('claimingInterestOnCostFrom')!.invalid &&
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostFromOption')!.dirty
+                        .get('claimingInterestOnCostFrom')!.dirty
                     "
                   >
                     <div
                       *ngIf="
                         claimService.editForm
                           .get('claimingInterestOnCostExpansion')
-                          .get('claimingInterestOnCostFromOption')?.errors
+                          .get('claimingInterestOnCostFrom')?.errors
                           ?.required
                       "
                     >
@@ -3894,6 +3902,7 @@
                             data-title=""
                             autocomplete="off"
                             formControlName="claimingInterestOnCostFromDate"
+                            [readOnly]="true"
                           />
                         </div>
                       </div>
@@ -3945,7 +3954,7 @@
                   >
                     <input
                       type="radio"
-                      name="claimingInterestOnCostFromOption"
+                      name="claimingInterestOnCostFrom"
                       value="01"
                       (change)="
                         showHideDivs(
@@ -3958,7 +3967,7 @@
                       id="dynformSCA6ClaimingInterestCostRadio"
                       class="df_input"
                       data-title=""
-                      formControlName="claimingInterestOnCostFromOption"
+                      formControlName="claimingInterestOnCostFrom"
                     />
 
                     <label for="dynformSCA6ClaimingInterestCostRadio">
@@ -3980,17 +3989,17 @@
                     *ngIf="
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostFromOption')!.invalid &&
+                        .get('claimingInterestOnCostFrom')!.invalid &&
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostFromOption')!.dirty
+                        .get('claimingInterestOnCostFrom')!.dirty
                     "
                   >
                     <div
                       *ngIf="
                         claimService.editForm
                           .get('claimingInterestOnCostExpansion')
-                          .get('claimingInterestOnCostFromOption')?.errors
+                          .get('claimingInterestOnCostFrom')?.errors
                           ?.required
                       "
                     >
@@ -4058,7 +4067,7 @@
                   >
                     <input
                       type="radio"
-                      name="claimingInterestOnCostToOption"
+                      name="claimingInterestOnCostTo"
                       value="02"
                       id="dynformSCA6ClaimingInterestCostToDateRadio"
                       class="df_input"
@@ -4071,7 +4080,7 @@
                           'claimingInterestOnCostToDate'
                         )
                       "
-                      formControlName="claimingInterestOnCostToOption"
+                      formControlName="claimingInterestOnCostTo"
                     />
 
                     <label for="dynformSCA6ClaimingInterestCostToDateRadio">
@@ -4100,17 +4109,17 @@
                     *ngIf="
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostToOption')!.invalid &&
+                        .get('claimingInterestOnCostTo')!.invalid &&
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostToOption')!.dirty
+                        .get('claimingInterestOnCostTo')!.dirty
                     "
                   >
                     <div
                       *ngIf="
                         claimService.editForm
                           .get('claimingInterestOnCostExpansion')
-                          .get('claimingInterestOnCostToOption')?.errors
+                          .get('claimingInterestOnCostTo')?.errors
                           ?.required
                       "
                     >
@@ -4171,6 +4180,7 @@
                               data-title=""
                               autocomplete="off"
                               formControlName="claimingInterestOnCostToDate"
+                              [readOnly]="true"
                             />
                           </div>
                         </div>
@@ -4245,7 +4255,7 @@
                   >
                     <input
                       type="radio"
-                      name="claimingInterestOnCostToOption"
+                      name="claimingInterestOnCostTo"
                       value="03"
                       id="dynformSCA6ClaimingInterestOnCostContractualDatePrincipal"
                       class="df_input"
@@ -4258,7 +4268,7 @@
                           'claimingInterestOnCostToDate'
                         )
                       "
-                      formControlName="claimingInterestOnCostToOption"
+                      formControlName="claimingInterestOnCostTo"
                     />
 
                     <label
@@ -4284,17 +4294,17 @@
                     *ngIf="
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostToOption')!.invalid &&
+                        .get('claimingInterestOnCostTo')!.invalid &&
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostToOption')!.dirty
+                        .get('claimingInterestOnCostTo')!.dirty
                     "
                   >
                     <div
                       *ngIf="
                         claimService.editForm
                           .get('claimingInterestOnCostExpansion')
-                          .get('claimingInterestOnCostToOption')?.errors
+                          .get('claimingInterestOnCostTo')?.errors
                           ?.required
                       "
                     >

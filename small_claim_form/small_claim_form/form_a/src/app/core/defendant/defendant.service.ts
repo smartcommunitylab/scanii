@@ -13,6 +13,14 @@ import {
 } from 'src/app/shared/constants/defendant.constants';
 import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { Defendant } from './defendant.model';
+import { Representative } from '../common/representative.model';
+import { Organisation } from '../common/organisation.model';
+import { Citizen } from '../common/citizen.model';
+import { Address } from '../common/address.model';
+import { Contacts } from '../common/contacts.model';
+import { RepresentativeOrganisation } from '../common/representative-organisation.model';
+import { RepresentativeCitizen } from '../common/representative-citizen.model';
 
 @Injectable({
   providedIn: 'root',
@@ -37,6 +45,8 @@ export class DefendantService {
   }[] = [];
   onStableSubscription: Subscription;
   representativeOptionLabel: string;
+  europeanCountries: { value: string; label: string }[] = [];
+  worldCountries: { value: string; label: string }[] = [];
 
   constructor(
     private fb: UntypedFormBuilder,
@@ -224,6 +234,139 @@ export class DefendantService {
   getLabel(labelIndex: number) {
     const number = labelIndex < 10 ? '0' + labelIndex : labelIndex.toString();
     return this.representativeOptionLabel + ' ' + number;
+  }
+
+  getDefendants(): (Defendant | Representative)[] {
+    const defendants: (Defendant | Representative)[] = [];
+    const representativeIds: number[] = [];
+    for (let i = 0; i < this.editForm.value.defendants.length; i++) {
+      const defendant = this.editForm.value.defendants[i];
+      if (!defendant.isRepresentative) {
+        const address = this.getAddress(defendant);
+        const contacts = this.getContacts(defendant);
+        let obj: Organisation | Citizen;
+        if (defendant.organisation !== "")
+          obj = this.getOrganisation(defendant, address, contacts);
+        else obj = this.getCitizen(defendant, address, contacts);
+        let representative: Representative;
+        if (defendant.representative !== "") {
+          //the index at which the representative of the defendant is located within the array being looped over is referred to as "defendant.representative".
+          const index = parseInt(defendant.representative);
+          representativeIds.push(index);
+          representative = this.getRepresentative(
+            this.editForm.value.defendants[index]
+          );
+        }
+        defendants.push(
+          new Defendant(obj, representative, defendant.otherDetails)
+        );
+      } else {
+        // since there might be representatives who are not associated with a defendant, it is necessary to add them in the defendants array
+        if (!representativeIds.includes(i)) {
+          const address = this.getAddress(defendant);
+          const contacts = this.getContacts(defendant);
+          if (defendant.organisation !== "") {
+            const representative = this.getRepresentativeOrganisation(
+              defendant,
+              address,
+              contacts
+            );
+            defendants.push(representative);
+          } else {
+            const representative = this.getRepresentativeCitizen(
+              defendant,
+              address,
+              contacts
+            );
+            defendants.push(representative);
+          }
+        }
+      }
+    }
+    return defendants;
+  }
+
+  private getRepresentative(representative: any): Representative {
+    const address = this.getAddress(representative);
+    const contacts = this.getContacts(representative);
+    if (representative.organisation !== "")
+      return this.getRepresentativeOrganisation(representative, address, contacts);
+    else return this.getRepresentativeCitizen(representative, address, contacts);
+  }
+
+  private getOrganisation(
+    obj: any,
+    address: Address,
+    contacts: Contacts
+  ): Organisation {
+    return new Organisation(
+      obj.organisation,
+      address,
+      obj.identificationCode,
+      contacts
+    );
+  }
+
+  private getCitizen(obj: any, address: Address, contacts: Contacts): Citizen {
+    return new Citizen(
+      obj.firstName,
+      obj.surname,
+      address,
+      obj.identificationCode,
+      contacts
+    );
+  }
+
+  private getRepresentativeOrganisation(
+    obj: any,
+    address: Address,
+    contacts: Contacts
+  ): RepresentativeOrganisation {
+    return new RepresentativeOrganisation(
+      obj.organisation,
+      address,
+      obj.identificationCode,
+      contacts
+    );
+  }
+
+  private getRepresentativeCitizen(
+    obj: any,
+    address: Address,
+    contacts: Contacts
+  ): RepresentativeCitizen {
+    return new RepresentativeCitizen(
+      obj.firstName,
+      obj.surname,
+      address,
+      obj.identificationCode,
+      contacts
+    );
+  }
+
+  private getAddress(obj: any): Address {
+    const countryId = obj.country !== "other" ? obj.country : obj.countryOther;
+
+    let countryName = "";
+    if (obj.country !== "other") {
+      const country = this.europeanCountries.find((c) => c.value === countryId);
+      if (country) countryName = country.label;
+    } else {
+      const country = this.worldCountries.find((c) => c.value === countryId);
+      if (country) countryName = country.label;
+    }
+    
+    return new Address(
+      obj.street,
+      obj.postalCode,
+      obj.city,
+      countryId,
+      countryName
+    );
+  }
+
+  private getContacts(obj: any): Contacts {
+    return new Contacts(obj.phoneNumber, obj.email);
   }
 
   setDefendantForm(

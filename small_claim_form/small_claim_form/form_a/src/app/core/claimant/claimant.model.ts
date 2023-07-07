@@ -1,37 +1,31 @@
-import { Citizen } from '../common/citizen.model';
-import { Organisation } from '../common/organisation.model';
+import { Citizen } from "../common/citizen.model";
+import { Organisation } from "../common/organisation.model";
+import { Representative } from "../common/representative.model";
 
 export class Claimant {
   private _claimant: Organisation | Citizen;
-  private _representative?: Organisation | Citizen;
-  private _otherDetails?: string;
+  private _representative: Representative;
+  private _otherDetails: string;
 
   constructor(
     claimant: Organisation | Citizen,
-    representative?: Organisation | Citizen,
-    otherDetails?: string
+    representative: Representative,
+    otherDetails: string
   ) {
     this._claimant = claimant;
-    if (representative) this._representative = representative;
-    if (otherDetails) this._otherDetails = otherDetails;
+    this._representative = representative;
+    this._otherDetails = otherDetails;
   }
 
-  public get claimant(): Organisation | Citizen {
+  get claimant(): Organisation | Citizen {
     return this._claimant;
   }
-  public set claimant(value: Organisation | Citizen) {
-    this._claimant = value;
-  }
-  public get representative(): Organisation | Citizen {
+
+  get representative(): Representative {
     return this._representative;
   }
-  public set representative(value: Organisation | Citizen) {
-    this._representative = value;
-  }
-  public get otherDetails(): string {
+
+  get otherDetails(): string {
     return this._otherDetails;
-  }
-  public set otherDetails(value: string) {
-    this._otherDetails = value;
   }
 }
