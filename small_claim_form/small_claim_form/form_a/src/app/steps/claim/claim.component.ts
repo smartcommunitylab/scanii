@@ -1,24 +1,23 @@
-import { element } from 'protractor';
-import { EventManagerService } from 'src/app/shared/services/event-manager.service';
-import { ClaimService } from '../../core/claim/claim.service';
-import { Component, OnInit } from '@angular/core';
-import { NavbarService } from 'src/app/core/navbar/navbar.service';
-import { Direction } from 'src/app/shared/constants/direction.constants';
-import { Movement } from 'src/app/core/common/movement.model';
-import datepickerFactory from 'jquery-datepicker';
-import { AbstractControl, UntypedFormGroup } from '@angular/forms';
+import { element } from "protractor";
+import { EventManagerService } from "src/app/shared/services/event-manager.service";
+import { ClaimService } from "../../core/claim/claim.service";
+import { Component, OnInit } from "@angular/core";
+import { NavbarService } from "src/app/core/navbar/navbar.service";
+import { Direction } from "src/app/shared/constants/direction.constants";
+import { Movement } from "src/app/core/common/movement.model";
+import datepickerFactory from "jquery-datepicker";
+import { AbstractControl, UntypedFormGroup } from "@angular/forms";
 declare const $: any;
 datepickerFactory($);
-import 'chosen-js';
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { ToastService } from 'src/app/shared/services/toast.service';
+import "chosen-js";
+import { LangChangeEvent, TranslateService } from "@ngx-translate/core";
+import { ToastService } from "src/app/shared/services/toast.service";
 @Component({
-  selector: 'app-claim',
-  templateUrl: './claim.component.html',
-  styleUrls: ['./claim.component.scss'],
+  selector: "app-claim",
+  templateUrl: "./claim.component.html",
+  styleUrls: ["./claim.component.scss"],
 })
 export class ClaimComponent implements OnInit {
-
   constructor(
     public claimService: ClaimService,
     private eventManager: EventManagerService,
@@ -29,28 +28,30 @@ export class ClaimComponent implements OnInit {
 
   ngOnInit(): void {
     this.claimService.editForm.patchValue({
-      claimForMoney: 'no',
-      otherClaim: 'no',
-      claimingCostProceedings: 'no',
-      claimingInterest: 'no',
-      claimingInterestOnCost: 'no',
+      claimForMoney: "no",
+      otherClaim: "no",
+      claimingCostProceedings: "no",
+      claimingInterest: "no",
+      claimingInterestOnCost: "no",
     });
-    
+
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.initDatepicker(event.lang);
-      this.claimService.europeanCurrencies = event.translations.europeanCurrencies;
+      this.claimService.europeanCurrencies =
+        event.translations.europeanCurrencies;
       this.claimService.worldCurrencies = event.translations.worldCurrencies;
-      this.claimService.worldAndHistoricalCurrencies = event.translations.worldAndHistoricalCurrencies;
+      this.claimService.worldAndHistoricalCurrencies =
+        event.translations.worldAndHistoricalCurrencies;
     });
   }
 
   private initDatepicker(language: string) {
     let languageToUse = language;
-    
-    if (language === 'en') {
-      languageToUse = 'en-GB';
-    } else if (language === 'mt') {
-      languageToUse = 'en-GB';
+
+    if (language === "en") {
+      languageToUse = "en-GB";
+    } else if (language === "mt") {
+      languageToUse = "en-GB";
     }
 
     import(`jquery-datepicker/i18n/jquery.ui.datepicker-${languageToUse}`)
@@ -64,10 +65,10 @@ export class ClaimComponent implements OnInit {
     var options = $.extend(
       {},
       {
-        dateFormat: 'dd/mm/yy',
+        dateFormat: "dd/mm/yy",
         changeMonth: true,
         changeYear: true,
-        yearRange: '1900:2060',
+        yearRange: "1900:2060",
         onClose: (value: string, inst: any) => {
           const formControlName =
             inst.input[0].attributes.formControlName.value;
@@ -78,12 +79,12 @@ export class ClaimComponent implements OnInit {
       }
     );
 
-    $('#dynformSCA6ClaimingContractualDate').datepicker(options);
-    $('#dynformSCA6ClaimingContractualToDate').datepicker(options);
-    $('#dynformSCA6ClaimingStatutoryDate').datepicker(options);
-    $('#dynformSCA6ClaimingStatutoryToDate').datepicker(options);
-    $('#dynformSCA6ClaimingInterestCostDate').datepicker(options);
-    $('#dynformSCA6ClaimingInterestCostToDate').datepicker(options);
+    $("#dynformSCA6ClaimingContractualDate").datepicker(options);
+    $("#dynformSCA6ClaimingContractualToDate").datepicker(options);
+    $("#dynformSCA6ClaimingStatutoryDate").datepicker(options);
+    $("#dynformSCA6ClaimingStatutoryToDate").datepicker(options);
+    $("#dynformSCA6ClaimingInterestCostDate").datepicker(options);
+    $("#dynformSCA6ClaimingInterestCostToDate").datepicker(options);
   }
 
   showHideOtherCurrencyDiv(
@@ -91,26 +92,19 @@ export class ClaimComponent implements OnInit {
     divIdToExpand: string,
     referenceValue: string,
     selectIds: string[],
-    radioButtonLabel: 'claimForMoney' | 'otherClaim'
+    radioButtonLabel: "claimForMoney" | "otherClaim"
   ) {
     const value = event.target.value;
     const elementToExpand = document.getElementById(divIdToExpand);
 
-    const otherCurrencySelectFormControlName =
-      event.target.attributes.formControlName.value + 'Other';
-
-    const otherCurrencySelectFormControl = this.claimService.getFormControl(
-      otherCurrencySelectFormControlName
-    );
-
     if (value === referenceValue) {
-      if (elementToExpand.classList.contains('df_collapsed')) {
+      if (elementToExpand.classList.contains("df_collapsed")) {
         for (const id of selectIds) {
           this.initCurrencyOtherSelect(id);
         }
 
         let isHistoricalCurrenciesCheckboxChecked = false;
-        if (radioButtonLabel === 'claimForMoney') {
+        if (radioButtonLabel === "claimForMoney") {
           if (this.claimService.areIncludedClaimForMoneyHistoricalCurrencies) {
             isHistoricalCurrenciesCheckboxChecked = true;
           }
@@ -127,18 +121,28 @@ export class ClaimComponent implements OnInit {
           radioButtonLabel
         );
 
+        const otherCurrencySelectFormControlName =
+          event.target.attributes.formControlName.value + "Other";
+        const otherCurrencySelectFormControl = this.claimService.getFormControl(
+          otherCurrencySelectFormControlName
+        );
         this.addRequiredValidatorToFormControl(otherCurrencySelectFormControl);
 
-        elementToExpand.classList.remove('df_collapsed');
+        elementToExpand.classList.remove("df_collapsed");
       }
     } else {
-      if (!elementToExpand.classList.contains('df_collapsed')) {
-        elementToExpand.classList.add('df_collapsed');
+      if (!elementToExpand.classList.contains("df_collapsed")) {
+        elementToExpand.classList.add("df_collapsed");
+        const otherCurrencySelectFormControlName =
+          event.target.attributes.formControlName.value + "Other";
         const historicalCurrencySelectFormControlName =
-          event.target.attributes.formControlName.value + 'Historical';
+          event.target.attributes.formControlName.value + "Historical";
         const historicalCurrencyCheckboxFormControlName =
-          event.target.attributes.formControlName.value + 'HistoricalCheckbox';
+          event.target.attributes.formControlName.value + "HistoricalCheckbox";
 
+        const otherCurrencySelectFormControl = this.claimService.getFormControl(
+          otherCurrencySelectFormControlName
+        );
         const historicalCurrencySelectFormControl =
           this.claimService.getFormControl(
             historicalCurrencySelectFormControlName
@@ -158,7 +162,7 @@ export class ClaimComponent implements OnInit {
           historicalCurrencySelectFormControl
         );
 
-        if (radioButtonLabel === 'claimForMoney')
+        if (radioButtonLabel === "claimForMoney")
           this.claimService.areIncludedClaimForMoneyHistoricalCurrencies =
             false;
         else
@@ -179,21 +183,21 @@ export class ClaimComponent implements OnInit {
     const formElement = this.claimService.getFormControl(formControlName);
 
     if (value === referenceValue) {
-      if (elementToExpand.classList.contains('df_collapsed')) {
+      if (elementToExpand.classList.contains("df_collapsed")) {
         if (formElement instanceof UntypedFormGroup) {
           const array = excludedFormControls ? excludedFormControls : [];
           this.addRequiredValidatorToFormElement(formElement, array);
         } else this.addRequiredValidatorToFormControl(formElement);
 
         //expand div
-        elementToExpand.classList.remove('df_collapsed');
+        elementToExpand.classList.remove("df_collapsed");
       }
     } else {
       //collapse divs
       for (const id of divIds) {
         const elementToCollapse = document.getElementById(id);
-        if (!elementToCollapse.classList.contains('df_collapsed')) {
-          elementToCollapse.classList.add('df_collapsed');
+        if (!elementToCollapse.classList.contains("df_collapsed")) {
+          elementToCollapse.classList.add("df_collapsed");
         }
       }
 
@@ -221,8 +225,8 @@ export class ClaimComponent implements OnInit {
     //collapse divs
     for (const id of divIdsToCollapse) {
       const elementToCollapse = document.getElementById(id);
-      if (!elementToCollapse.classList.contains('df_collapsed')) {
-        elementToCollapse.classList.add('df_collapsed');
+      if (!elementToCollapse.classList.contains("df_collapsed")) {
+        elementToCollapse.classList.add("df_collapsed");
       }
     }
 
@@ -237,15 +241,15 @@ export class ClaimComponent implements OnInit {
         : [];
       this.addRequiredValidatorToFormElement(controlToExpand, array);
     } else this.addRequiredValidatorToFormControl(controlToExpand);
-    elementToExpand.classList.remove('df_collapsed');
+    elementToExpand.classList.remove("df_collapsed");
   }
 
   private initCurrencyOtherSelect(id: string) {
-    var $select = $('#' + id);
+    var $select = $("#" + id);
 
-    if (!$select.hasClass('chosen-container')) {
+    if (!$select.hasClass("chosen-container")) {
       $select.chosen({
-        width: '100%',
+        width: "100%",
         inherit_select_classes: true,
         search_contains: true,
         display_disabled_options: false,
@@ -260,12 +264,12 @@ export class ClaimComponent implements OnInit {
   }
 
   private resetCurrencyOtherSelect(id: string) {
-    var $select = $('#' + id);
+    var $select = $("#" + id);
 
-    $select.val('').trigger('chosen:updated');
+    $select.val("").trigger("chosen:updated");
 
     const element = document.getElementById(id) as HTMLElement;
-    const formControlName = element.attributes['formControlName'].value;
+    const formControlName = element.attributes["formControlName"].value;
     this.claimService.getFormControl(formControlName)?.reset();
   }
 
@@ -273,21 +277,21 @@ export class ClaimComponent implements OnInit {
     isChecked: boolean,
     otherCurrencySelectId: string,
     historicalCurrencySelectId: string,
-    radioButtonLabel: 'claimForMoney' | 'otherClaim'
+    radioButtonLabel: "claimForMoney" | "otherClaim"
   ) {
     if (isChecked) {
-      if (radioButtonLabel === 'claimForMoney')
+      if (radioButtonLabel === "claimForMoney")
         this.claimService.areIncludedClaimForMoneyHistoricalCurrencies = true;
       else this.claimService.areIncludedOtherClaimHistoricalCurrencies = true;
     } else {
-      if (radioButtonLabel === 'claimForMoney')
+      if (radioButtonLabel === "claimForMoney")
         this.claimService.areIncludedClaimForMoneyHistoricalCurrencies = false;
       else this.claimService.areIncludedOtherClaimHistoricalCurrencies = false;
     }
 
     const otherCurrencySelectFormControl = this.claimService.getFormControl(
       document.getElementById(otherCurrencySelectId).attributes[
-        'formControlName'
+        "formControlName"
       ].value
     );
 
@@ -296,12 +300,12 @@ export class ClaimComponent implements OnInit {
       historicalCurrencySelectId
     );
     historicalCurrencySelectFormControl = this.claimService.getFormControl(
-      historicalCurrencySelect.attributes['formControlName'].value
+      historicalCurrencySelect.attributes["formControlName"].value
     );
 
     if (isChecked) {
-      $('#' + otherCurrencySelectId)
-        .nextAll('.chosen-container')
+      $("#" + otherCurrencySelectId)
+        .nextAll(".chosen-container")
         .hide();
       this.removeRequiredValidatorFromFormControl(
         otherCurrencySelectFormControl
@@ -311,17 +315,17 @@ export class ClaimComponent implements OnInit {
       this.addRequiredValidatorToFormControl(
         historicalCurrencySelectFormControl
       );
-      $('#' + historicalCurrencySelectId)
-        .nextAll('.chosen-container')
+      $("#" + historicalCurrencySelectId)
+        .nextAll(".chosen-container")
         .show();
     } else {
       this.addRequiredValidatorToFormControl(otherCurrencySelectFormControl);
-      $('#' + otherCurrencySelectId)
-        .nextAll('.chosen-container')
+      $("#" + otherCurrencySelectId)
+        .nextAll(".chosen-container")
         .show();
 
-      $('#' + historicalCurrencySelectId)
-        .nextAll('.chosen-container')
+      $("#" + historicalCurrencySelectId)
+        .nextAll(".chosen-container")
         .hide();
       this.removeRequiredValidatorFromFormControl(
         historicalCurrencySelectFormControl
@@ -368,13 +372,13 @@ export class ClaimComponent implements OnInit {
   }
 
   changeStep(value: string, destinationStepId: string) {
-    if (value === 'next') {
+    if (value === "next") {
       if (!this.claimService.editForm.invalid) {
         this.navbarService.previousStepId = this.navbarService.currentStepId;
         this.navbarService.currentStepId = destinationStepId;
-        const movement = new Movement('step6', Direction.NEXT);
+        const movement = new Movement("step6", Direction.NEXT);
         this.eventManager.broadcast({
-          name: 'changeStep',
+          name: "changeStep",
           content: movement,
         });
       } else {
@@ -382,16 +386,16 @@ export class ClaimComponent implements OnInit {
         window.scrollTo({
           top: 0,
           left: 0,
-          behavior: 'auto',
+          behavior: "auto",
         });
         this.toastService.showErrorToast();
       }
-    } else if (value === 'back') {
+    } else if (value === "back") {
       this.navbarService.previousStepId = this.navbarService.currentStepId;
       this.navbarService.currentStepId = destinationStepId;
-      const movement = new Movement('step4', Direction.BACK);
+      const movement = new Movement("step4", Direction.BACK);
       this.eventManager.broadcast({
-        name: 'changeStep',
+        name: "changeStep",
         content: movement,
       });
     }

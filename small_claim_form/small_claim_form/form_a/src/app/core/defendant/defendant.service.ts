@@ -379,11 +379,11 @@ export class DefendantService {
 
       if (!defendant.isRepresentative) {
         this.defendants.push(this.createFormGroup('defendant'));
-        this.editForm.get('defendants').get(i.toString()).setValue(defendant);
+        this.editForm.get('defendants').get(i.toString()).patchValue(defendant);
       } else {
         this.defendants.push(this.createFormGroup('representative'));
         this.addRepresentative(i);
-        this.editForm.get('defendants').get(i.toString()).setValue(defendant);
+        this.editForm.get('defendants').get(i.toString()).patchValue(defendant);
       }
     }
 

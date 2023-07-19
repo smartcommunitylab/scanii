@@ -196,6 +196,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
       });
     });
 
+    // uncomment to allow state maintenance
     //this.setClaimant();
   }
 
@@ -264,7 +265,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     if ($stickySidebar.length) {
       $stickySidebar = $('.sidebar');
 
-      enquire.register('(max-width:48rem)', {
+      enquire.register('(max-width:47.99rem)', {
         match: function () {
           $(window).on('scroll', function (e) {
             var scrollPos = $(window).scrollTop();

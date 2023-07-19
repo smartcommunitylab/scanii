@@ -36,7 +36,7 @@
     <script>
       EXTERNAL_URI = "http://localhost:3000";
       INTERNAL_URI = "http://localhost:4200";
-      JSON_PATH = "./content/json/";
+      JSON_PATH = "./assets/json/";
       I18N_PATH = "./assets/i18n/";
 
       let version = "original";
@@ -847,7 +847,7 @@
 
         if (!interaction) {
           let interactionRequest = await fetch(
-            "./content/json/interaction_" + currentLang + ".json"
+            "./assets/json/interaction_" + currentLang + ".json"
           );
           interaction = await interactionRequest.json();
         }

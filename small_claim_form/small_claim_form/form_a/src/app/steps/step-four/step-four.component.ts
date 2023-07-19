@@ -39,7 +39,7 @@ export class StepFourComponent implements OnInit {
   }
 
   expandWorldCountrySelect(event: any, worldCountrySelectId: string) {
-    this.markClaimantCountryAndDefendantCountryAsDirty();
+    this.markSelectsAsDirty();
 
     const formControlName =
       event.target.getAttribute('formControlName') + 'Other';
@@ -68,7 +68,7 @@ export class StepFourComponent implements OnInit {
     }
   }
 
-  private markClaimantCountryAndDefendantCountryAsDirty(): void {
+  private markSelectsAsDirty(): void {
     if (
       this.stepFourService.crossborderNatureForm.get('claimantCountry')
         .value !== '' &&
@@ -318,7 +318,7 @@ export class StepFourComponent implements OnInit {
     $('#dynformSCA5ExpiryDate').datepicker(options);
   }
 
-  openModal(id: string) {
+  private openModal(id: string) {
     document.body.style.overflow = 'hidden';
     document.getElementById(id).classList.add('active');
   }

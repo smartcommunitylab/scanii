@@ -1,0 +1,440 @@
+<div class="form-row full-width">
+  <div class="description">
+    <form name="editForm" role="form" [formGroup]="stepTwoService.form">
+      <label style="font-weight: bold"
+        ><span class="blocksubhead df_subSection">
+          The court/tribunal has examined your claim form and considers it to be
+          inadequate or insufficiently clear or not properly filled in: please
+          complete and/or rectify your form in the language of the
+          court/tribunal as indicated below as soon as possible and at the
+          latest by (date)
+          <span class="asterisk" id="requiredStar_required_dynformSCB2Date"
+            >*</span
+          >
+        </span>
+      </label>
+      <div class="date-input">
+        <div class="form-row full-width bold">
+          <div
+            class="input-wrapper regular"
+            id="input-wrapper_dynformSCB2Date"
+            [ngClass]="{
+              invalid:
+                stepTwoService.form.get('expiryDate').invalid &&
+                stepTwoService.form.get('expiryDate').dirty
+            }"
+          >
+            <div class="input-content nopaddingTop">
+              <input
+                type="text"
+                title="Date"
+                name="dynformSCB2Date"
+                maxlength="150"
+                class="df_textbox textDate"
+                id="dynformSCB2Date"
+                formControlName="expiryDate"
+                [readOnly]="true"
+              />
+            </div>
+          </div>
+
+          <div
+            *ngIf="
+              stepTwoService.form.get('expiryDate').invalid &&
+              stepTwoService.form.get('expiryDate').dirty
+            "
+          >
+            <div
+              *ngIf="stepTwoService.form.get('expiryDate').errors?.['required']"
+            >
+              <span
+                id="validation_error_text_dynformSCB2Date"
+                class="error"
+                style="position: relative; top: 0px"
+                [translate]="'errors.required'"
+              >
+                Field is required
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="js-toggle-trigger" style="width: 93%; display: inline-block">
+        <span>
+          The court/tribunal shall dismiss your application under the conditions
+          provided for in Regulation (EC) No 861(*)/2007 if you fail to complete
+          and/or rectify it within the time limit set out above.
+        </span>
+      </div>
+
+      <p style="margin-bottom: 0">&nbsp;</p>
+      <div>
+        <!-- <label style="font-weight: bold"
+        ><span class="my_hidden_abs">{7}</span>You must complete either the
+        section on languages or the section indicating which sections must be
+        completed.<span class="asterisk">*</span></label
+      > -->
+        <div class="marginBot15">&nbsp;</div>
+      </div>
+
+      <div class="form-row full-width bold">
+        <div>
+          <label style="margin-bottom: 0px">
+            Your claim form has not been filled in the correct language. Please
+            fill it in one of the following languages.
+          </label>
+        </div>
+      </div>
+
+      <label style="font-size: 14px; color: #bbbbbb">
+        <!-- Once you have selected a language, press the "add language" button.  -->
+        You can add up to 3 languages in total.</label
+      >
+      <div class="form-row full-width bold">
+        <div>
+          <label class="asteriskOnly">
+            <div
+              class="asterisk"
+              id="requiredStar_blank_dynform_empty_string"
+            ></div>
+          </label>
+
+          <div class="input-wrapper regular">
+            <div id="dynformSCB2LanguageContainer" class="input-content">
+              <select
+                name="dynformSCB2Language"
+                id="dynformSCB2Language"
+                class="df_select df_mandatory"
+                data-placeholder="Please select"
+                multiple
+              >
+                <option
+                  *ngFor="let language of stepTwoService.europeanLanguages"
+                  [value]="language.value"
+                >
+                  {{ language.label }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div
+            *ngIf="
+            stepTwoService.form.get('languages').dirty &&
+            stepTwoService.form.errors?.['atLeastOneRequired']
+          "
+          >
+            <span
+              id="validation_error_text_dynform_empty_string"
+              class="error"
+              style="position: relative; top: 0px"
+            >
+              You must complete either the section on "languages" or the section
+              for indicating which items must be "completed"
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- start active link section -->
+
+      <!-- <div class="grid" style="float: right">
+        <div
+          class="grid_item one-third"
+          style="float: right; width: 40%"
+          id="modalDivId"
+        >
+          <a
+            class="js-add-nomodal"
+            data-select="languages"
+            data-form="formModal1"
+            href="#"
+            data-before="+"
+          >
+            <span>Add language</span> </a
+          ><label style="font-size: 14px; color: #bbbbbb"
+            >You can add up to 3 languages in total</label
+          >
+        </div>
+      </div> -->
+
+      <div class="marginBot15">&nbsp;</div>
+
+      <div class="form-row full-width bold">
+        <div>
+          <label for="dynformSCB2SectionsOfClaimMustBeCompletedRectified">
+            The following sections of the claim form must be completed and/or
+            rectified as stated below
+
+            <span
+              class="asterisk"
+              id="requiredStar_blank_dynformSCB2SectionsOfClaimMustBeCompletedRectified"
+            ></span>
+          </label>
+
+          <div
+            class="input-wrapper regular"
+            id="input-wrapper_dynformSCB2SectionsOfClaimMustBeCompletedRectified"
+            [ngClass]="{
+              invalid:
+                stepTwoService.form.get('statement').dirty &&
+                stepTwoService.form.errors?.['atLeastOneRequired']
+            }"
+          >
+            <div class="input-content nopaddingTop">
+              <textarea
+                title="The following sections of the claim form must be completed and/or rectified as stated below"
+                name="dynformSCB2SectionsOfClaimMustBeCompletedRectified"
+                class="df_textarea df_textboxsafarionly"
+                id="dynformSCB2SectionsOfClaimMustBeCompletedRectified"
+                formControlName="statement"
+                (input)="markLanguagesStatementAsDirty()"
+              ></textarea>
+            </div>
+          </div>
+
+          <div
+            *ngIf="
+            stepTwoService.form.get('statement').dirty &&
+            stepTwoService.form.errors?.['atLeastOneRequired']
+          "
+          >
+            <span
+              id="validation_error_text_dynformSCB2SectionsOfClaimMustBeCompletedRectified"
+              class="error"
+              style="position: relative; top: 0px"
+            >
+              You must complete either the section on "languages" or the section
+              for indicating which items must be "completed"
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row full-width bold">
+        <div>
+          <label for="dynformSCB2DoneAt">
+            Done at
+
+            <span class="asterisk" id="requiredStar_required_dynformSCB2DoneAt"
+              >*</span
+            >
+          </label>
+
+          <div
+            class="input-wrapper regular"
+            id="input-wrapper_dynformSCB2DoneAt"
+            [ngClass]="{
+              invalid:
+                stepTwoService.form.get('doneAt').invalid &&
+                stepTwoService.form.get('doneAt').dirty
+            }"
+          >
+            <div class="input-content nopaddingTop">
+              <input
+                type="text"
+                title="Done at"
+                name="dynformSCB2DoneAt"
+                maxlength="60"
+                value=""
+                class="df_textbox df_mandatory"
+                id="dynformSCB2DoneAt"
+                formControlName="doneAt"
+              />
+            </div>
+          </div>
+
+          <div
+            *ngIf="
+              stepTwoService.form.get('doneAt').invalid &&
+              stepTwoService.form.get('doneAt').dirty
+            "
+          >
+            <div
+              *ngIf="
+          stepTwoService.form.get('doneAt').errors?.['required']"
+            >
+              <span
+                id="validation_error_text_dynformSCB2DoneAt"
+                class="error"
+                style="position: relative; top: 0px"
+                [translate]="'errors.required'"
+              >
+                Field is required
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="date-input">
+        <div class="form-row full-width bold">
+          <div>
+            <label for="dynformSCB2DoneDate">
+              Date
+
+              <span
+                class="asterisk"
+                id="requiredStar_required_dynformSCB2DoneDate"
+                >*</span
+              >
+            </label>
+
+            <div
+              class="input-wrapper regular"
+              id="input-wrapper_dynformSCB2DoneDate"
+              [ngClass]="{
+                invalid:
+                  stepTwoService.form.get('date').invalid &&
+                  stepTwoService.form.get('date').dirty
+              }"
+            >
+              <div class="input-content nopaddingTop">
+                <input
+                  type="text"
+                  title="Date"
+                  name="dynformSCB2DoneDate"
+                  maxlength="150"
+                  class="df_textbox textDate"
+                  id="dynformSCB2DoneDate"
+                  formControlName="date"
+                  [readOnly]="true"
+                />
+              </div>
+            </div>
+
+            <div
+              *ngIf="
+                stepTwoService.form.get('date').invalid &&
+                stepTwoService.form.get('date').dirty
+              "
+            >
+              <div
+                *ngIf="
+            stepTwoService.form.get('date').errors?.['required']"
+              >
+                <span
+                  id="validation_error_text_dynformSCB2DoneDate"
+                  class="error"
+                  style="position: relative; top: 0px"
+                  [translate]="'errors.required'"
+                >
+                  Field is required
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row full-width bold">
+        <div>
+          <label
+            >Please remember to sign and stamp (if available) this form once it
+            has been printed.</label
+          >
+        </div>
+      </div>
+
+      <!-- <p class="br">&nbsp;</p>
+      <div class="form-row full-width">
+        <div>
+          <h4>PDF form</h4>
+
+          <p></p>
+          <label for="dynformSCB2PdfLanguage"
+            >Please select the language in which you wish to generate the pdf
+            form:
+
+            <span class="asterisk">*</span>
+          </label>
+
+          <div
+            class="input-wrapper regular"
+            id="input-wrapper_dynformSCB2PdfLanguage"
+          >
+            <div class="input-content">
+              <select
+                id="dynformSCB2PdfLanguage"
+                title="Please select the language in which you wish to generate the pdf form"
+                name="dynformSCB2PdfLanguage"
+                onchange="validateFieldOnBlur(this)"
+                class="df_select df_mandatory"
+              >
+                <option value="" disabled selected>Please select</option>
+
+                <option value="bg">Bulgarian (bg)</option>
+                <option value="es">Spanish (es)</option>
+                <option value="cs">Czech (cs)</option>
+                <option value="da">Danish (da)</option>
+                <option value="de">German (de)</option>
+                <option value="et">Estonian (et)</option>
+                <option value="el">Greek (el)</option>
+                <option value="en">English (en)</option>
+                <option value="fr">French (fr)</option>
+                <option value="hr">Croatian (hr)</option>
+                <option value="it">Italian (it)</option>
+                <option value="lv">Latvian (lv)</option>
+                <option value="lt">Lithuanian (lt)</option>
+                <option value="hu">Hungarian (hu)</option>
+                <option value="mt">Maltese (mt)</option>
+                <option value="nl">Dutch (nl)</option>
+                <option value="pl">Polish (pl)</option>
+                <option value="pt">Portuguese (pt)</option>
+                <option value="ro">Romanian (ro)</option>
+                <option value="sk">Slovak (sk)</option>
+                <option value="sl">Slovenian (sl)</option>
+                <option value="fi">Finnish (fi)</option>
+                <option value="sv">Swedish (sv)</option>
+              </select>
+            </div>
+          </div>
+          <span
+            id="validation_error_text_dynformSCB2PdfLanguage"
+            class="error"
+            style="position: relative; top: 0px"
+          >
+          </span>
+        </div>
+      </div> -->
+    </form>
+  </div>
+</div>
+
+<div class="buttons">
+  <!-- the second div layer of buttons is added when the current page is not the first page -->
+  <div
+    style="
+      margin-top: 10px;
+      margin-bottom: 60px;
+      display: inline-block;
+      width: 100%;
+    "
+  >
+    <!-- the back button is added always on the left of the 2nd div layer -->
+    <span class="ieborder backPageButton"
+      ><input
+        type="submit"
+        class="button big outline pull-left"
+        name="submitNavigation2"
+        value="<    {{ 'buttons.back' | translate }}"
+        data-title=""
+        (click)="changeStep('back', 'step1')"
+    /></span>
+    <!-- end of back button -->
+    <div style="float: right; width: 40%">
+      <!-- start of create json form -->
+      <span class="ieborder pdfDownloadButton"
+        ><input
+          type="submit"
+          class="button big dark pull-right piwik_download"
+          name="submitNavigation3"
+          id="submitNavigation3"
+          value="Submit"
+          data-title=""
+          (click)="openPreviewModal()"
+      /></span>
+    </div>
+  </div>
+  <!-- end of the second div layer of buttons -->
+</div>

@@ -6,7 +6,7 @@ import { Observable, Observer, Subscription, filter, share } from 'rxjs';
 })
 export class EventManagerService {
   observable: Observable<any>;
-  observer: Observer<any>;
+  observer: Observer<any> | undefined;
 
   constructor() {
     this.observable = Observable.create((observer: Observer<any>) => {
@@ -26,7 +26,7 @@ export class EventManagerService {
   }
   
   broadcast(event: any) {
-    if (this.observer != null) {
+    if (this.observer) {
       this.observer.next(event);
     }
   }

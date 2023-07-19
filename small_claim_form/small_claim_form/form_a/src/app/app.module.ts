@@ -57,12 +57,12 @@ export class CustomMissingTranslationHandler
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     AngularIbanModule,
-    ReactiveFormsModule,
-    CommonModule,
-    HttpClientModule,
     CustomModule,
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: "en",
       loader: {

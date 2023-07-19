@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { EXTERNAL_URI, INTERNAL_URI } from 'src/app/app.constants';
 import { TranslateConfigService } from 'src/app/shared/services/translate-config.service';
 

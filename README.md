@@ -16,7 +16,7 @@
 
    5.3. Assegnare alla variabile EXTERNAL_URI l’origin (l'insieme formato dal protocollo, "://", il nome host e ":" seguito da un numero di porta se una porta è presente e differisce dalla porta predefinita per il protocollo dato. Esempi: https://example.org, http://example.net e http://example.com:8080) dell’URL che permette di visualizzare la pagina iframe.html, mentre alla variabile INTERNAL_URI l’origin dell’URL che permette di visualizzare il progetto Angular
 
-   5.4. Assegnare alla variabile JSON_PATH la stringa **/small_claim_form/dist/form_a/content/json/**
+   5.4. Assegnare alla variabile JSON_PATH la stringa **/small_claim_form/dist/form_a/assets/json/**
 
    5.5. Assegnare alla variabile I18N_PATH la stringa **/small_claim_form/dist/form_a/assets/i18n/**
 
@@ -52,7 +52,7 @@
 
    2.2. Assegnare alla variabile INTERNAL_URI la stringa **http://localhost:4200**
 
-   2.3. Assegnare alla variabile JSON_PATH la stringa **./content/json/**
+   2.3. Assegnare alla variabile JSON_PATH la stringa **./assets/json/**
 
    2.4. Assegnare alla variabile I18N_PATH la stringa **./assets/i18n/**
 

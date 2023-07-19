@@ -21,10 +21,9 @@ export class CourtService {
     city: [""],
   });
   europeanCountries: { value: string; label: string }[] = [];
+  onStableSubscription: Subscription;
 
   constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
-
-  onStableSubscription: Subscription;
 
   isCourtFormValid(): Promise<PromiseContent> {
     return new Promise((resolve) => {

@@ -391,14 +391,14 @@ export class ClaimantService {
               this.editForm
                 .get("claimants")
                 .get(i.toString())
-                .setValue(claimant);
+                .patchValue(claimant);
             } else {
               this.claimants.push(this.createFormGroup("representative"));
               this.addRepresentative(i);
               this.editForm
                 .get("claimants")
                 .get(i.toString())
-                .setValue(claimant);
+                .patchValue(claimant);
             }
           }
 

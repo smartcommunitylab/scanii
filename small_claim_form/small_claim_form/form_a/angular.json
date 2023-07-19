@@ -24,16 +24,14 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/content/json",
-              "src/content/images"
+              "src/assets"
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "./node_modules/font-awesome/css/font-awesome.css",
               "./node_modules/chosen-js/chosen.css",
-              "src/content/scss/global.scss"
+              "src/assets/scss/global.scss"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
@@ -106,16 +104,14 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/content/json",
-              "src/content/images"
+              "src/assets"
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "./node_modules/font-awesome/css/font-awesome.css",
               "./node_modules/chosen-js/chosen.css",
-              "src/content/scss/global.scss"
+              "src/assets/scss/global.scss"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",

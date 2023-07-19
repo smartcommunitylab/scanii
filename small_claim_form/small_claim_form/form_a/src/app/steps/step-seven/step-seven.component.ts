@@ -30,9 +30,7 @@ export class StepSevenComponent implements OnInit {
   ngOnInit(): void {
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       const currentDate = this.datePipe.transform(new Date(), 'dd/MM/yyyy');
-      this.stepSevenService.dateAndSignatureForm.patchValue({
-        date: currentDate,
-      });
+      this.stepSevenService.dateAndSignatureForm.get("date").setValue(currentDate);
       this.initDatepicker(event.lang);
       this.stepSevenService.europeanLanguages = event.translations.europeanLanguages;
     });

@@ -309,7 +309,7 @@ export class ClaimantComponent implements OnInit {
     }
   }
 
-  onChangeRepresentativeAddress(event: any, index: number) {
+  onRepresentativeAddressChange(event: any, index: number) {
     const value = event.target.value;
     const representative = this.claimantService.representatives.find(
       (r) => r.id === index
