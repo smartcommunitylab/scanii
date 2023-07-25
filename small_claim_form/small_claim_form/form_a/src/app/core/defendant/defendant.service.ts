@@ -1,35 +1,35 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone } from "@angular/core";
 import {
   UntypedFormArray,
   UntypedFormBuilder,
   UntypedFormControl,
   UntypedFormGroup,
   Validators,
-} from '@angular/forms';
-import { PromiseContent } from '../common/promise-content.model';
+} from "@angular/forms";
+import { PromiseContent } from "../common/promise-content.model";
 import {
   CountryIdGenerator,
   LabelType,
-} from 'src/app/shared/constants/defendant.constants';
-import { Subscription } from 'rxjs';
-import { TranslateService } from '@ngx-translate/core';
-import { Defendant } from './defendant.model';
-import { Representative } from '../common/representative.model';
-import { Organisation } from '../common/organisation.model';
-import { Citizen } from '../common/citizen.model';
-import { Address } from '../common/address.model';
-import { Contacts } from '../common/contacts.model';
-import { RepresentativeOrganisation } from '../common/representative-organisation.model';
-import { RepresentativeCitizen } from '../common/representative-citizen.model';
+} from "src/app/shared/constants/defendant.constants";
+import { Subscription } from "rxjs";
+import { TranslateService } from "@ngx-translate/core";
+import { Defendant } from "./defendant.model";
+import { Representative } from "../common/representative.model";
+import { Organisation } from "../common/organisation.model";
+import { Citizen } from "../common/citizen.model";
+import { Address } from "../common/address.model";
+import { Contacts } from "../common/contacts.model";
+import { RepresentativeOrganisation } from "../common/representative-organisation.model";
+import { RepresentativeCitizen } from "../common/representative-citizen.model";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class DefendantService {
   requiredValidator = Validators.required;
 
   editForm = this.fb.group({
-    defendants: this.fb.array([this.createFormGroup('defendant')]),
+    defendants: this.fb.array([this.createFormGroup("defendant")]),
   });
   defendants: UntypedFormArray = new UntypedFormArray([]);
   isWorldCountrySelectVisible = false;
@@ -54,7 +54,7 @@ export class DefendantService {
     private translateService: TranslateService
   ) {
     this.translateService
-      .stream('defendant.representativeOption')
+      .stream("defendant.representativeOption")
       .subscribe((res) => {
         this.representativeOptionLabel = res;
         if (this.representatives.length > 0) {
@@ -72,41 +72,43 @@ export class DefendantService {
   }
 
   createFormGroup(value: string): UntypedFormGroup {
-    if (value === 'defendant') {
+    if (value === "defendant") {
+      //form group of the defendant
       const formGroup = this.fb.group(
         {
-          organisation: [''],
-          surname: [''],
-          firstName: [''],
-          identificationCode: [''],
-          street: ['', [Validators.required]],
-          postalCode: ['', [Validators.required]],
-          city: ['', [Validators.required]],
-          country: ['', [Validators.required]],
-          countryOther: [''],
-          phoneNumber: ['', [this.phoneNumberValidator]],
-          email: ['', [Validators.email]],
-          representative: [''],
-          otherDetails: [''],
+          organisation: [""],
+          surname: [""],
+          firstName: [""],
+          identificationCode: [""],
+          street: ["", [Validators.required]],
+          postalCode: ["", [Validators.required]],
+          city: ["", [Validators.required]],
+          country: ["", [Validators.required]],
+          countryOther: [""],
+          phoneNumber: ["", [this.phoneNumberValidator]],
+          email: ["", [Validators.email]],
+          representative: [""],
+          otherDetails: [""],
           isRepresentative: [false],
         },
         { validator: this.validateOrganisationSurnameFirstName }
       );
       return formGroup;
-    } else if (value === 'representative') {
+    } else {
+      //form group of the defendant's representative
       const formGroup = this.fb.group(
         {
-          organisation: [''],
-          surname: [''],
-          firstName: [''],
-          identificationCode: [''],
-          street: ['', [Validators.required]],
-          postalCode: ['', [Validators.required]],
-          city: ['', [Validators.required]],
-          country: ['', [Validators.required]],
-          countryOther: [''],
-          phoneNumber: ['', [this.phoneNumberValidator]],
-          email: ['', [Validators.email]],
+          organisation: [""],
+          surname: [""],
+          firstName: [""],
+          identificationCode: [""],
+          street: ["", [Validators.required]],
+          postalCode: ["", [Validators.required]],
+          city: ["", [Validators.required]],
+          country: ["", [Validators.required]],
+          countryOther: [""],
+          phoneNumber: ["", [this.phoneNumberValidator]],
+          email: ["", [Validators.email]],
           isRepresentative: [true],
         },
         { validator: this.validateOrganisationSurnameFirstName }
@@ -118,9 +120,9 @@ export class DefendantService {
   validateOrganisationSurnameFirstName(
     formGroup: UntypedFormGroup
   ): { [key: string]: boolean } | null {
-    const organisation = formGroup.get('organisation');
-    const surname = formGroup.get('surname');
-    const firstName = formGroup.get('firstName');
+    const organisation = formGroup.get("organisation");
+    const surname = formGroup.get("surname");
+    const firstName = formGroup.get("firstName");
 
     const setFormControlValidity = (
       formGroup: UntypedFormGroup,
@@ -138,32 +140,34 @@ export class DefendantService {
       (organisation.value && !surname.value && !firstName.value) ||
       (!organisation.value && surname.value && firstName.value)
     ) {
-      setFormControlValidity(formGroup, 'organisation', true);
-      setFormControlValidity(formGroup, 'surname', true);
-      setFormControlValidity(formGroup, 'firstName', true);
+      setFormControlValidity(formGroup, "organisation", true);
+      setFormControlValidity(formGroup, "surname", true);
+      setFormControlValidity(formGroup, "firstName", true);
       return null;
     }
 
-    setFormControlValidity(formGroup, 'organisation', false);
-    setFormControlValidity(formGroup, 'surname', false);
-    setFormControlValidity(formGroup, 'firstName', false);
+    setFormControlValidity(formGroup, "organisation", false);
+    setFormControlValidity(formGroup, "surname", false);
+    setFormControlValidity(formGroup, "firstName", false);
     return { validateOrganisationSurnameFirstName: true };
   }
 
   isDefendantFormValid(): Promise<PromiseContent> {
     return new Promise((resolve) => {
       let isValid = false;
-      if (this.editForm.get('defendants').invalid) {
+      if (this.editForm.get("defendants").invalid) {
         this.markAsDirty();
         isValid = false;
       } else {
         isValid = true;
       }
-      resolve(new PromiseContent('step2', isValid));
+      resolve(new PromiseContent("step2", isValid));
     });
   }
 
-  phoneNumberValidator(control: UntypedFormControl): { [key: string]: any } | null {
+  phoneNumberValidator(
+    control: UntypedFormControl
+  ): { [key: string]: any } | null {
     //const phoneNumberPattern = /^(\+\d{1,5}\s?)?(?:\d{3}[ ]?\d{3}[ ]?\d{4}|\d{10})$/;
     const phoneNumberPattern = /^[\d+\s]*$/;
     if (control.value && !phoneNumberPattern.test(control.value.trim())) {
@@ -176,7 +180,7 @@ export class DefendantService {
     this.defendants.controls.forEach((formGroup: UntypedFormGroup) => {
       Object.keys(formGroup.controls).forEach((field) => {
         const formControl = formGroup.get(field);
-        if (field === 'countryOther') {
+        if (field === "countryOther") {
           if (this.isWorldCountrySelectVisible) {
             formControl.markAsDirty({ onlySelf: true });
           }
@@ -193,10 +197,10 @@ export class DefendantService {
       label,
       labelType: LabelType.DEFAULT,
       default: label,
-      organisation: '',
-      firstName: '',
-      surname: '',
-      address: '',
+      organisation: "",
+      firstName: "",
+      surname: "",
+      address: "",
     });
   }
 
@@ -206,7 +210,7 @@ export class DefendantService {
 
     for (let i = objIndex; i < this.representatives.length; i++) {
       const number =
-        parseInt(this.representatives[i].default.split(' ')[1]) - 1;
+        parseInt(this.representatives[i].default.split(" ")[1]) - 1;
       this.representatives[i].default = this.getLabel(number);
       if (this.representatives[i].labelType === LabelType.DEFAULT) {
         this.representatives[i].label = this.representatives[i].default;
@@ -214,16 +218,16 @@ export class DefendantService {
     }
 
     for (let i = 0; i < this.defendants.length; i++) {
-      if (!this.defendants.at(i).get('isRepresentative').value) {
-        const value = this.defendants.at(i).get('representative').value;
-        if (value !== '' && !isNaN(value)) {
+      if (!this.defendants.at(i).get("isRepresentative").value) {
+        const value = this.defendants.at(i).get("representative").value;
+        if (value !== "" && !isNaN(value)) {
           const number = parseInt(value);
           if (number === index) {
-            this.defendants.at(i).get('representative').setValue('');
+            this.defendants.at(i).get("representative").setValue("");
           } else if (number > index) {
             this.defendants
               .at(i)
-              .get('representative')
+              .get("representative")
               .setValue(value - 1);
           }
         } else continue;
@@ -232,8 +236,8 @@ export class DefendantService {
   }
 
   getLabel(labelIndex: number) {
-    const number = labelIndex < 10 ? '0' + labelIndex : labelIndex.toString();
-    return this.representativeOptionLabel + ' ' + number;
+    const number = labelIndex < 10 ? "0" + labelIndex : labelIndex.toString();
+    return this.representativeOptionLabel + " " + number;
   }
 
   getDefendants(): (Defendant | Representative)[] {
@@ -290,8 +294,13 @@ export class DefendantService {
     const address = this.getAddress(representative);
     const contacts = this.getContacts(representative);
     if (representative.organisation !== "")
-      return this.getRepresentativeOrganisation(representative, address, contacts);
-    else return this.getRepresentativeCitizen(representative, address, contacts);
+      return this.getRepresentativeOrganisation(
+        representative,
+        address,
+        contacts
+      );
+    else
+      return this.getRepresentativeCitizen(representative, address, contacts);
   }
 
   private getOrganisation(
@@ -355,7 +364,7 @@ export class DefendantService {
       const country = this.worldCountries.find((c) => c.value === countryId);
       if (country) countryName = country.label;
     }
-    
+
     return new Address(
       obj.street,
       obj.postalCode,
@@ -378,12 +387,12 @@ export class DefendantService {
       const defendant = defendants[i];
 
       if (!defendant.isRepresentative) {
-        this.defendants.push(this.createFormGroup('defendant'));
-        this.editForm.get('defendants').get(i.toString()).patchValue(defendant);
+        this.defendants.push(this.createFormGroup("defendant"));
+        this.editForm.get("defendants").get(i.toString()).patchValue(defendant);
       } else {
-        this.defendants.push(this.createFormGroup('representative'));
+        this.defendants.push(this.createFormGroup("representative"));
         this.addRepresentative(i);
-        this.editForm.get('defendants').get(i.toString()).patchValue(defendant);
+        this.editForm.get("defendants").get(i.toString()).patchValue(defendant);
       }
     }
 
@@ -401,19 +410,19 @@ export class DefendantService {
         }
 
         if (addInformation) {
-          window['processClaimantDefendantRepresentativeConcept'](
-            'step2',
-            'http://scanii.org/domain/defendant.personalIdNumber'
+          window["processClaimantDefendantRepresentativeConcept"](
+            "step2",
+            "http://scanii.org/domain/defendant.personalIdNumber"
           );
-          window['processClaimantDefendantRepresentativeConcept'](
-            'step2',
-            'http://scanii.org/domain/defendant.otherDetails'
+          window["processClaimantDefendantRepresentativeConcept"](
+            "step2",
+            "http://scanii.org/domain/defendant.otherDetails"
           );
         }
 
         for (let i = 0; i < defendants.length; i++) {
           const obj = new CountryIdGenerator(i);
-          let id = '';
+          let id = "";
           if (!defendants[i].isRepresentative) {
             id = obj.defendantCountryId;
           } else {
@@ -435,7 +444,7 @@ export class DefendantService {
 
   private triggerChangeEvent(id: string) {
     const inputElement = document.getElementById(id) as HTMLInputElement;
-    const event = new Event('change');
+    const event = new Event("change");
     inputElement.dispatchEvent(event);
   }
 }

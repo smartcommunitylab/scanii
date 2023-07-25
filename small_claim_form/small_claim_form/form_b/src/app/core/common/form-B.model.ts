@@ -1,4 +1,4 @@
-export class IntermediateForm {
+export class FormB {
   private _stepOne: any;
   private _stepTwo: any;
 

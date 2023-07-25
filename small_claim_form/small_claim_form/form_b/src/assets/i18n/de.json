@@ -3,13 +3,17 @@
     "next": "Weiter",
     "back": "Zurück",
     "add": "Hinzufügen",
-    "cancel": "Abbrechen"
+    "cancel": "Abbrechen",
+    "downloadJSON": "JSON herunterladen",
+    "downloadPDF": "PDF herunterladen",
+    "submit": "Einreichen"
   },
   "errors": {
     "required": "Felderforderlich",
     "organisationSurnameFirstNameValidationError": "Das Feld „Name der Firma oder Organisation“ oder die Felder „Name“ und „Vorname“ müssen ausgefüllt werden. Beide Alternativen sind nicht zulässig",
     "emailValidationError": "Feld enthält ungültige E-Mail-Adresse",
-    "phoneNumberValidationError": "Feld enthält ungültige Zeichen. Bitte verwenden Sie nur Zahlen, Leerzeichen und das Zeichen „+“"
+    "phoneNumberValidationError": "Feld enthält ungültige Zeichen. Bitte verwenden Sie nur Zahlen, Leerzeichen und das Zeichen „+“",
+    "completeLanguageOrIndicationSectionError": "Sie müssen entweder den Abschnitt zu den Sprachen oder den Abschnitt zu den zu vervollständigenden Punkten ausfüllen."
   },
   "menu": {
     "title": "Formblatt B - Aufforderung des gerichts zur vervollständigung und/oder berichtigung des klageformblatts",
@@ -374,5 +378,36 @@
     "defendantRepresentative": "3.8. Ggf. Vertreter des Beklagten und Kontaktadresse",
     "defendantOther": "3.9. Sonstige Angaben"
   },
-  "unitedKingdomModal": "Ab dem 1. Januar 2021 ist das Vereinigte Königreich kein EU-Mitgliedstaat mehr. Im Bereich der Ziviljustiz kommt für vor dem Ablauf des Übergangszeitraums eingeleitete und noch anhängige Verfahren jedoch weiterhin EU-Recht zur Anwendung. Darum ist es bis Ende 2024 möglich, das Vereinigte Königreich in dynamischen Online-Formularen auszuwählen – allerdings nur für die Zwecke dieser Verfahren. Ausgenommen sind Formulare für öffentliche Urkunden, in denen das Vereinigte Königreich nicht ausgewählt werden sollte."
+  "stepTwo": {
+    "courtExamineClaimForm": "Das Gericht hat Ihr Klageformblatt geprüft und befunden, dass die Angaben unzureichend oder nicht klar genug sind oder das Klageformblatt nicht ordnungsgemäß ausgefüllt wurde: Bitte vervollständigen und/oder berichtigen Sie das Formblatt in der nachstehend angegebenen Sprache des Gerichts so schnell wie möglich, spätestens aber bis",
+    "date": "Datum",
+    "courtTribunalDismissApplication": "Bei Nichteinhaltung der vorgenannten Frist für die Vervollständigung und/oder Berichtigung wird die Klage vom Gericht nach Maßgabe der Verordnung (EG) Nr. 861/2007 zurück- bzw. abgewiesen.",
+    "completeSectionsIndication": "Sie müssen entweder den Abschnitt über die Sprache oder den Abschnitt über die zu vervollständigenden Abschnitte des Klageformblatts ausfüllen.",
+    "correctLanguageFill": "Ihr Klageformblatt wurde nicht in der richtigen Sprache ausgefüllt. Bitte füllen Sie es in einer der folgenden Sprachen aus:",
+    "addUpTo3Languages": "Sie können bis zu drei Sprachen hinzufügen.",
+    "select": "Bitte auswählen",
+    "other": "Sonstige",
+    "specify": "Bitte angeben",
+    "noResultsMatch": "nessun risultato corrisponde a",
+    "claimFormSectionsRectified": "Folgende Abschnitte des Klageformblatts sind wie folgt zu vervollständigen und/oder zu berichtigen:",
+    "doneAt": "Ort",
+    "rememberSignStampPrintedForm": "Bitte vergessen Sie nicht die Unterschrift und gegebenenfalls den Stempel, nachdem Sie das Formular ausgedruckt haben."
+  },
+  "unitedKingdomModal": "Ab dem 1. Januar 2021 ist das Vereinigte Königreich kein EU-Mitgliedstaat mehr. Im Bereich der Ziviljustiz kommt für vor dem Ablauf des Übergangszeitraums eingeleitete und noch anhängige Verfahren jedoch weiterhin EU-Recht zur Anwendung. Darum ist es bis Ende 2024 möglich, das Vereinigte Königreich in dynamischen Online-Formularen auszuwählen – allerdings nur für die Zwecke dieser Verfahren. Ausgenommen sind Formulare für öffentliche Urkunden, in denen das Vereinigte Königreich nicht ausgewählt werden sollte.",
+  "preview": {
+    "title": "Vorschau",
+    "claimantDetails": "Angaben zum Antragsteller",
+    "representativeClaimantDetails": "Angaben zum Vertreter des Antragstellers",
+    "defendantDetails": "Angaben zum Beklagten",
+    "representativeDefendantDetails": "Angaben zum Vertreter des Beklagten",
+    "claimantIdentifier": "2.1. Nachname, Vorname / Name des Unternehmens oder der Organisation",
+    "defendantIdentifier": "3.1. Nachname, Vorname / Name des Unternehmens oder der Organisation",
+    "identifier": "Nachname, Vorname / Name des Unternehmens oder der Organisation",
+    "claimantCityPostalCode": "2.4. Postleitzahl und Ort:",
+    "defendantCityPostalCode": "3.4. Postleitzahl und Ort:",
+    "cityPostalCode": "Postleitzahl und Ort",
+    "representativeClaimant": "2.8. Vertreter des Antragstellers",
+    "representativeDefendant": "3.8. Vertreter des Beklagten",
+    "sign": "Unterschrift und/oder Stempel:"
+  }
 }

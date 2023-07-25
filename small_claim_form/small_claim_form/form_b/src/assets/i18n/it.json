@@ -3,13 +3,17 @@
     "next": "Avanti",
     "back": "Indietro",
     "add": "Aggiungere",
-    "cancel": "Annulla"
+    "cancel": "Annulla",
+    "downloadJSON": "Scarica JSON",
+    "downloadPDF": "Scarica PDF",
+    "submit": "Invia"
   },
   "errors": {
     "required": "Campo obbligatorio",
     "organisationSurnameFirstNameValidationError": "Occorre completare il campo \"Ragione sociale\" oppure i campi \"Cognome\" e \"Nome\". Non sono ammesse entrambe le alternative",
     "emailValidationError": "Questo campo contiene un indirizzo di posta elettronica non valido",
-    "phoneNumberValidationError": "Questo campo contiene caratteri non validi. Si prega di utilizzare esclusivamente numeri, spazi e il carattere \"+\""
+    "phoneNumberValidationError": "Questo campo contiene caratteri non validi. Si prega di utilizzare esclusivamente numeri, spazi e il carattere \"+\"",
+    "completeLanguageOrIndicationSectionError": "Completare la sezione relativa alle lingue o quella relativa alle caselle da completare"
   },
   "menu": {
     "title": "Modulo B - Richiesta dell’organo giurisdizionale di completare e/o rettificare il modulo di domanda",
@@ -323,10 +327,10 @@
     "caseNumber": "Numero della causa",
     "date": "Ricevuto dall’organo giurisdizionale in data",
     "courtTitle": "1. Organo giurisdizionale",
-    "courtCountry": "Paese",
-    "courtName": "1.1. Denominazione",
-    "courtStreet": "1.2. Via e numero civico / casella postale",
-    "courtCityPostalCode": "1.3. Città e codice postale",
+    "courtCountry": "1.1. Paese",
+    "courtName": "1.2. Denominazione",
+    "courtStreet": "1.3. Via e numero civico / casella postale",
+    "courtCityPostalCode": "1.4. Città e codice postale",
     "claimantTitle": "2. Ricorrente",
     "claimantLabel": "Ricorrente",
     "claimantRepresentativeLabel": "Rappresentante del ricorrente",
@@ -374,5 +378,36 @@
     "defendantRepresentative": "3.8. Eventuale rappresentante del covenuto e suoi estremi",
     "defendantOther": "3.9. Altro"
   },
-  "unitedKingdomModal": "Dal 1° gennaio 2021 il Regno Unito non sarà più uno Stato membro dell'UE. Ciononostante, nel campo della giustizia civile, le procedure e i procedimenti in corso avviati prima della fine del periodo di transizione proseguiranno a norma del diritto dell'UE. Fino alla fine del 2024 sarà ancora possibile selezionare il Regno Unito nei moduli dinamici online ai fini di tali procedimenti e procedure. Fanno eccezione i moduli per i documenti pubblici, nei quali non sarà possibile selezionare il Regno Unito."
+  "stepTwo": {
+    "courtExamineClaimForm": "L’organo giurisdizionale ha esaminato il modulo di domanda e lo ha ritenuto non pertinente o non sufficientemente chiaro o non compilato in modo corretto: si prega di compilare e/o rettificare il modulo nella lingua dell’organo giurisdizionale indicato qui di seguito, nel minor tempo possibile e comunque entro il",
+    "date": "Data",
+    "courtTribunalDismissApplication": "In caso di mancata compilazione e/o rettifica entro i termini sopra indicati, l’organo giurisdizionale riterrà irricevibile la domanda, secondo i termini previsti dal regolamento (CE) n. 861/2007.",
+    "completeSectionsIndication": "È necessario compilare la sezione sulle lingue oppure lo spazio dove indicare quali sezioni devono essere compilate.",
+    "correctLanguageFill": "La lingua in cui è stata compilata la domanda è sbagliata. Si prega di compilarla in una delle seguenti lingue:",
+    "addUpTo3Languages": "È possibile aggiungere fino a 3 lingue.",
+    "select": "Selezionare",
+    "other": "Altra lingua",
+    "specify": "Precisare",
+    "noResultsMatch": "nessun risultato corrisponde a",
+    "claimFormSectionsRectified": "Le seguenti sezioni del modulo di domanda devono essere compilate e/o rettificate come indicato qui di seguito:",
+    "doneAt": "Luogo",
+    "rememberSignStampPrintedForm": "Non dimenticare di firmare e timbrare (se pertinente) il modulo dopo averlo stampato."
+  },
+  "unitedKingdomModal": "Dal 1° gennaio 2021 il Regno Unito non sarà più uno Stato membro dell'UE. Ciononostante, nel campo della giustizia civile, le procedure e i procedimenti in corso avviati prima della fine del periodo di transizione proseguiranno a norma del diritto dell'UE. Fino alla fine del 2024 sarà ancora possibile selezionare il Regno Unito nei moduli dinamici online ai fini di tali procedimenti e procedure. Fanno eccezione i moduli per i documenti pubblici, nei quali non sarà possibile selezionare il Regno Unito.",
+  "preview": {
+    "title": "Anteprima",
+    "claimantDetails": "Estremi identificativi del ricorrente",
+    "representativeClaimantDetails": "Estremi identificativi del rappresentante del ricorrente",
+    "defendantDetails": "Estremi identificativi del convenuto",
+    "representativeDefendantDetails": "Estremi identificativi del rappresentante del convenuto",
+    "claimantIdentifier": "2.1. Cognome e nome / ragione sociale o nome dell’organizzazione",
+    "defendantIdentifier": "3.1. Cognome e nome / ragione sociale o nome dell’organizzazione",
+    "identifier": "Cognome e nome / ragione sociale o nome dell’organizzazione",
+    "claimantCityPostalCode": "2.4. Città e codice postale",
+    "defendantCityPostalCode": "3.4. Città e codice postale",
+    "cityPostalCode": "Città e codice postale",
+    "representativeClaimant": "2.8. Rappresentante del ricorrente",
+    "representativeDefendant": "3.8. Rappresentante del convenuto",
+    "sign": "Firma e/o timbro"
+  }
 }

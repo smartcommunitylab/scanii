@@ -11,7 +11,7 @@ import { EventManagerService } from "src/app/shared/services/event-manager.servi
 import { TranslateConfigService } from "src/app/shared/services/translate-config.service";
 import * as bootstrap from "bootstrap";
 import { PromiseContent } from "src/app/core/common/promise-content.model";
-import { IntermediateForm } from "src/app/core/common/intermediate-form.model";
+import { FormB } from "src/app/core/common/form-B.model";
 
 @Component({
   selector: "app-navbar",
@@ -205,8 +205,8 @@ export class NavbarComponent {
       enquire.register("(min-width:48rem)", {
         match: function () {
           $stickyStuff.sticky({
-            topSpacing: 182.78,
-            bottomSpacing: $("footer").height()! + 25,
+            topSpacing: 220,
+            //bottomSpacing: $("footer").height()! + 25,
           });
         },
         unmatch: function () {
@@ -364,7 +364,7 @@ export class NavbarComponent {
     if (this.file) reader.readAsText(this.file);
   }
 
-  private setFormB(data: IntermediateForm) {
+  private setFormB(data: FormB) {
     this.stepOneService
       .setStepOneForm(data.stepOne)
       .then(() => {

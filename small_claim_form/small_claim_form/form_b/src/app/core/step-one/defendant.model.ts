@@ -1,15 +1,16 @@
-import { Citizen } from "../common/citizen.model";
-import { Organisation } from "../common/organisation.model";
-import { Representative } from "../common/representative.model";
+import { Citizen } from "./citizen.model";
+import { Organisation } from "./organisation.model";
+import { RepresentativeCitizen } from "./representative-citizen.model";
+import { RepresentativeOrganisation } from "./representative-organisation.model";
 
 export class Defendant {
   private _defendant: Organisation | Citizen;
-  private _representative: Representative;
+  private _representative: RepresentativeCitizen | RepresentativeOrganisation;
   private _otherDetails: string;
 
   constructor(
     defendant: Organisation | Citizen,
-    representative: Representative,
+    representative: RepresentativeCitizen | RepresentativeOrganisation,
     otherDetails: string
   ) {
     this._defendant = defendant;
@@ -21,7 +22,7 @@ export class Defendant {
     return this._defendant;
   }
 
-  get representative(): Representative {
+  get representative(): RepresentativeCitizen | RepresentativeOrganisation {
     return this._representative;
   }
 

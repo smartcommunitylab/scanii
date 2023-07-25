@@ -1,4 +1,4 @@
-export class IntermediateForm {
+export class FormA {
   private _claimants: any[];
   private _defendants: any[];
   private _jurisdiction: any;

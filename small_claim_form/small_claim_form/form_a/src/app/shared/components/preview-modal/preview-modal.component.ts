@@ -11,7 +11,6 @@ import { OtherClaim } from "src/app/core/claim/other-claim.model";
 import { Claimant } from "src/app/core/claimant/claimant.model";
 import { ClaimantService } from "src/app/core/claimant/claimant.service";
 import { Citizen } from "src/app/core/common/citizen.model";
-import { IntermediateForm } from "src/app/core/common/intermediate-form.model";
 import { Organisation } from "src/app/core/common/organisation.model";
 import { RepresentativeCitizen } from "src/app/core/common/representative-citizen.model";
 import { RepresentativeOrganisation } from "src/app/core/common/representative-organisation.model";
@@ -25,7 +24,7 @@ import { CrossborderNature } from "src/app/core/step-four/crossborder-nature.mod
 import { StepFourService } from "src/app/core/step-four/step-four.service";
 import { Certificate } from "src/app/core/step-seven/certificate.model";
 import { StepSevenService } from "src/app/core/step-seven/step-seven.service";
-import { Subscription } from "rxjs";
+import { FormA } from "src/app/core/common/form-A.model";
 
 @Component({
   selector: "app-preview-modal",
@@ -34,7 +33,7 @@ import { Subscription } from "rxjs";
 })
 export class PreviewModalComponent implements OnInit {
   pdf: jsPDF;
-  intermediateForm: IntermediateForm;
+  formA: FormA;
   claimants: (Claimant | Representative)[] = [];
   defendants: (Defendant | Representative)[] = [];
   crossBorderNature: CrossborderNature;
@@ -45,7 +44,6 @@ export class PreviewModalComponent implements OnInit {
   certificate: Certificate;
   court: Court;
   showSpinner = false;
-  subscription: Subscription;
 
   constructor(
     private activeModal: NgbActiveModal,
@@ -61,7 +59,7 @@ export class PreviewModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.pdf = new jsPDF("p", "pt", "a4");
-    this.intermediateForm = this.navbarService.getIntermediateForm();
+    this.formA = this.navbarService.getFormA();
     this.claimants = this.claimantService.getClaimants();
     this.defendants = this.defendantService.getDefendants();
     this.crossBorderNature = this.stepFourService.getCrossborderNature();
@@ -71,12 +69,6 @@ export class PreviewModalComponent implements OnInit {
     this.claimingInterestOnCost = this.claimService.getClaimingInterestOnCost();
     this.certificate = this.stepSevenService.getCertificate();
     this.court = this.courtService.getCourt();
-  }
-
-  ngOnDestroy(): void {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
   }
 
   cancel(): void {
@@ -105,13 +97,34 @@ export class PreviewModalComponent implements OnInit {
     this.showSpinner = true;
 
     const content = document.getElementById("content");
-    //const margin = 5;
+    const clone = content.cloneNode(true) as HTMLElement;
+    const yesNoRadioButtons = clone.querySelectorAll(".yes-no-radio-button");
+    this.changePdfContent(
+      yesNoRadioButtons,
+      ".yes-no-radio-option-div",
+      ".yes-no-radio-option",
+      ".yes-no-title"
+    );
+    const contractualStatutoryRadioButtons = clone.querySelectorAll(
+      ".contractual-statutory-radio-button"
+    );
+    this.changePdfContent(
+      contractualStatutoryRadioButtons,
+      ".contractual-statutory-radio-option-div",
+      ".contractual-statutory-radio-option",
+      ".contractual-statutory-title"
+    );
+
+    const margin = 20;
 
     setTimeout(() => {
-      this.pdf.html(content, {
+      this.pdf.html(clone, {
         callback: (pdf) => {
           pdf.save(this.getFileName());
           this.showSpinner = false;
+
+          // const blob = pdf.output("blob");
+          // const file = new File([blob], this.getFileName());
         },
         width: this.pdf.internal.pageSize.getWidth(),
         windowWidth: 950,
@@ -138,9 +151,57 @@ export class PreviewModalComponent implements OnInit {
             ],
           },
         ],
-        //margin: [margin, 0, margin, 0],
+        margin: [margin, 0, margin, 0],
       });
     }, 100);
+  }
+
+  private changePdfContent(
+    elementsToChange: any,
+    radioOptionDivClassName: string,
+    radioOptionClassName: string,
+    titleClassName: string
+  ): void {
+    for (let i = 0; i < elementsToChange.length; i++) {
+      const radioOptionDivs = elementsToChange[i].querySelectorAll(
+        radioOptionDivClassName
+      );
+      let value: string;
+      let j: number = 0;
+      let checkedElementFound = false;
+
+      //find the checked radio button and get its value
+      while (j < radioOptionDivs.length || !checkedElementFound) {
+        //get the element inside the div with class "pdf-radio-button"
+        const radioOption = radioOptionDivs[j].querySelector(
+          radioOptionClassName
+        ) as HTMLInputElement;
+        if (radioOption.checked) {
+          value = radioOption.getAttribute("value");
+          checkedElementFound = true;
+        }
+
+        j++;
+      }
+
+      //append the value after the title
+      const title = elementsToChange[i].querySelector(titleClassName);
+      const text = title.firstElementChild.textContent;
+      if (text[text.length - 1] === "?" || text[text.length - 1] === " ")
+        title.firstElementChild.classList.add("space");
+      else title.firstElementChild.classList.add("colon");
+      const span = document.createElement("span");
+      span.classList.add("fw-bold");
+      span.style.fontFamily = "FontAwesome, LiberationSans";
+      span.innerHTML = value;
+      title.appendChild(span);
+
+      //remove all divs with class "remove-radio-button-from-pdf"
+      const length = radioOptionDivs.length;
+      for (let k = 0; k < length; k++) {
+        radioOptionDivs[k].remove();
+      }
+    }
   }
 
   private getFileName(): string {

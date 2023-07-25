@@ -85,11 +85,11 @@ export class CourtService {
   }
 
   getCourt(): Court {
-    const contryId = this.editForm.get("country").value;
+    const countryId = this.editForm.get("country").value;
 
     let countryName = "";
     const country = this.europeanCountries.find(
-      (country) => country.value === contryId
+      (country) => country.value === countryId
     );
     if (country) countryName = country.label;
 
@@ -98,7 +98,7 @@ export class CourtService {
     const postalCode = this.editForm.get("postalCode").value;
     const city = this.editForm.get("city").value;
 
-    return new Court(contryId, countryName, name, street, postalCode, city);
+    return new Court(countryId, countryName, name, street, postalCode, city);
   }
 
   private resetAll() {

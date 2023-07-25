@@ -21,7 +21,6 @@ import { ClaimService } from 'src/app/core/claim/claim.service';
 import { ClaimDetailsService } from 'src/app/core/claim-details/claim-details.service';
 import { StepSevenService } from 'src/app/core/step-seven/step-seven.service';
 import { StepFourService } from 'src/app/core/step-four/step-four.service';
-import { IntermediateForm } from 'src/app/core/common/intermediate-form.model';
 import exportFromJSON from 'export-from-json';
 import { CourtService } from 'src/app/core/court/court.service';
 import {
@@ -30,6 +29,7 @@ import {
 } from 'src/app/shared/services/temporary-storage.service';
 import { TranslateConfigService } from 'src/app/shared/services/translate-config.service';
 import { ToastService } from 'src/app/shared/services/toast.service';
+import { FormA } from 'src/app/core/common/form-A.model';
 
 @Component({
   selector: 'app-navbar',
@@ -406,7 +406,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     if (this.file) reader.readAsText(this.file);
   }
 
-  private setFormA(data: IntermediateForm) {
+  private setFormA(data: FormA) {
     this.claimantService
       .setClaimantForm(data.claimants)
       .then(() => {

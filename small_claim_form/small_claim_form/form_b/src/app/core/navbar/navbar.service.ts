@@ -3,8 +3,8 @@ import { TranslateService } from "@ngx-translate/core";
 import { PromiseContent } from "../common/promise-content.model";
 import { StepOneService } from "../step-one/step-one.service";
 import { StepTwoService } from "../step-two/step-two.service";
-import { IntermediateForm } from "../common/intermediate-form.model";
 import exportFromJSON from "export-from-json";
+import { FormB } from "../common/form-B.model";
 
 @Injectable({
   providedIn: "root",
@@ -36,7 +36,7 @@ export class NavbarService {
     }`;
 
     exportFromJSON({
-      data: { form_B: this.getIntermediateForm() },
+      data: { form_B: this.getFormB() },
       fileName,
       exportType: exportFromJSON.types.json,
     });
@@ -49,11 +49,11 @@ export class NavbarService {
     return `${day}${month}${year}`;
   }
 
-  getIntermediateForm(): IntermediateForm {
-    const intermediateForm = new IntermediateForm(
+  getFormB(): FormB {
+    const formB = new FormB(
       this.stepOneService.form.value,
       this.stepTwoService.form.value
     );
-    return intermediateForm;
+    return formB;
   }
 }

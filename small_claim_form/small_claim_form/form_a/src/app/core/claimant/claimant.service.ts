@@ -73,6 +73,7 @@ export class ClaimantService {
 
   createFormGroup(value: string): UntypedFormGroup {
     if (value === "claimant") {
+      //form group of the claimant
       const formGroup = this.fb.group(
         {
           organisation: [""],
@@ -93,7 +94,8 @@ export class ClaimantService {
         { validator: this.validateOrganisationSurnameFirstName }
       );
       return formGroup;
-    } else if (value === "representative") {
+    } else {
+      //form group of the claimant's representative
       const formGroup = this.fb.group(
         {
           organisation: [""],
@@ -292,8 +294,13 @@ export class ClaimantService {
     const address = this.getAddress(representative);
     const contacts = this.getContacts(representative);
     if (representative.organisation !== "")
-      return this.getRepresentativeOrganisation(representative, address, contacts);
-    else return this.getRepresentativeCitizen(representative, address, contacts);
+      return this.getRepresentativeOrganisation(
+        representative,
+        address,
+        contacts
+      );
+    else
+      return this.getRepresentativeCitizen(representative, address, contacts);
   }
 
   private getOrganisation(
@@ -357,7 +364,7 @@ export class ClaimantService {
       const country = this.worldCountries.find((c) => c.value === countryId);
       if (country) countryName = country.label;
     }
-    
+
     return new Address(
       obj.street,
       obj.postalCode,

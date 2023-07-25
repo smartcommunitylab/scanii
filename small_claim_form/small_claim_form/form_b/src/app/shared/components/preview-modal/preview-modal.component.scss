@@ -31,7 +31,6 @@ h2 {
 
 h3 {
   font-weight: bold;
-  font-family: "FontAwesome", "LiberationSans";
   font-size: 2rem
 }
 
@@ -51,19 +50,11 @@ p, div, span {
   font-size: 1.6rem;
 }
 
-.colon:after {
-  content: ": ";
-}
-
 .margin-bottom {
   margin-bottom: 1.5rem;
 }
 
 .margin-top {
-  margin-top: 1.5rem;
-}
-
-.p-margin-top {
   margin-top: 1.5rem;
 }
 
@@ -75,14 +66,17 @@ p, div, span {
   pointer-events: none;
 }
 
-.percentage:after {
-  content: "% ";
-}
-
 .space:after {
   content: " ";
 }
 
+.colon:after {
+  content: ": ";
+}
+
+.dot:after {
+  content: ".";
+}
 .fw-bold {
   font-family: "FontAwesome", "LiberationSans";
 }

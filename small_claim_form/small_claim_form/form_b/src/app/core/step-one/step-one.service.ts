@@ -16,6 +16,16 @@ import {
   courtCountrySelectId,
 } from "src/app/shared/constants/step-one.constants";
 import { PromiseContent } from "../common/promise-content.model";
+import { Claimant } from "./claimant.model";
+import { Organisation } from "./organisation.model";
+import { Citizen } from "./citizen.model";
+import { Address } from "./address.model";
+import { Contacts } from "./contacts.model";
+import { RepresentativeOrganisation } from "./representative-organisation.model";
+import { RepresentativeCitizen } from "./representative-citizen.model";
+import { Defendant } from "./defendant.model";
+import { Court } from "./court.model";
+import { StepOne } from "./step-one.model";
 
 @Injectable({
   providedIn: "root",
@@ -359,138 +369,153 @@ export class StepOneService {
     return this.claimantRepresentativeOptionLabel + " " + number;
   }
 
-  // getClaimants(): (Claimant | Representative)[] {
-  //   const claimants: (Claimant | Representative)[] = [];
-  //   const representativeIds: number[] = [];
-  //   for (let i = 0; i < this.editForm.value.claimants.length; i++) {
-  //     const claimant = this.editForm.value.claimants[i];
-  //     if (!claimant.isRepresentative) {
-  //       const address = this.getAddress(claimant);
-  //       const contacts = this.getContacts(claimant);
-  //       let obj: Organisation | Citizen;
-  //       if (claimant.organisation !== "")
-  //         obj = this.getOrganisation(claimant, address, contacts);
-  //       else obj = this.getCitizen(claimant, address, contacts);
-  //       let representative: Representative;
-  //       if (claimant.representative !== "") {
-  //         //the index at which the representative of the claimant is located within the array being looped over is referred to as "claimant.representative".
-  //         const index = parseInt(claimant.representative);
-  //         representativeIds.push(index);
-  //         representative = this.getRepresentative(
-  //           this.editForm.value.claimants[index]
-  //         );
-  //       }
-  //       claimants.push(
-  //         new Claimant(obj, representative, claimant.otherDetails)
-  //       );
-  //     } else {
-  //       // since there might be claimantRepresentatives who are not associated with a claimant, it is necessary to add them in the claimants array
-  //       if (!representativeIds.includes(i)) {
-  //         const address = this.getAddress(claimant);
-  //         const contacts = this.getContacts(claimant);
-  //         if (claimant.organisation !== "") {
-  //           const representative = this.getRepresentativeOrganisation(
-  //             claimant,
-  //             address,
-  //             contacts
-  //           );
-  //           claimants.push(representative);
-  //         } else {
-  //           const representative = this.getRepresentativeCitizen(
-  //             claimant,
-  //             address,
-  //             contacts
-  //           );
-  //           claimants.push(representative);
-  //         }
-  //       }
-  //     }
-  //   }
-  //   return claimants;
-  // }
+  getStepOne(): StepOne {
+    const caseNumber = this.form.get("caseNumber").value;
+    const date = this.form.get("date").value;
+    const court = this.getCourt();
+    const claimants = this.getClaimants();
+    const defendants = this.getDefendants();
 
-  // private getRepresentative(representative: any): Representative {
-  //   const address = this.getAddress(representative);
-  //   const contacts = this.getContacts(representative);
-  //   if (representative.organisation !== "")
-  //     return this.getRepresentativeOrganisation(representative, address, contacts);
-  //   else return this.getRepresentativeCitizen(representative, address, contacts);
-  // }
+    return new StepOne(caseNumber, date, court, claimants, defendants);
+  }
 
-  // private getOrganisation(
-  //   obj: any,
-  //   address: Address,
-  //   contacts: Contacts
-  // ): Organisation {
-  //   return new Organisation(
-  //     obj.organisation,
-  //     address,
-  //     obj.identificationCode,
-  //     contacts
-  //   );
-  // }
+  getClaimants(): (Claimant | RepresentativeCitizen | RepresentativeOrganisation)[] {
+    const claimants: (Claimant | RepresentativeCitizen | RepresentativeOrganisation)[] = [];
+    const representativeIds: number[] = [];
+    for (let i = 0; i < this.form.value.claimants.length; i++) {
+      const claimant = this.form.value.claimants[i];
+      if (!claimant.isRepresentative) {
+        const address = this.getAddress(claimant);
+        const contacts = this.getContacts(claimant);
+        let obj: Organisation | Citizen;
+        if (claimant.organisation !== "")
+          obj = this.getOrganisation(claimant, address, contacts);
+        else obj = this.getCitizen(claimant, address, contacts);
+        let representative: RepresentativeCitizen | RepresentativeOrganisation;
+        if (claimant.representative !== "") {
+          //the index at which the representative of the claimant is located within the array being looped over is referred to as "claimant.representative".
+          const index = parseInt(claimant.representative);
+          representativeIds.push(index);
+          representative = this.getRepresentative(
+            this.form.value.claimants[index]
+          );
+        }
+        claimants.push(
+          new Claimant(obj, representative, claimant.otherDetails)
+        );
+      } else {
+        // since there might be claimantRepresentatives who are not associated with a claimant, it is necessary to add them in the claimants array
+        if (!representativeIds.includes(i)) {
+          const address = this.getAddress(claimant);
+          const contacts = this.getContacts(claimant);
+          if (claimant.organisation !== "") {
+            const representative = this.getRepresentativeOrganisation(
+              claimant,
+              address,
+              contacts
+            );
+            claimants.push(representative);
+          } else {
+            const representative = this.getRepresentativeCitizen(
+              claimant,
+              address,
+              contacts
+            );
+            claimants.push(representative);
+          }
+        }
+      }
+    }
+    return claimants;
+  }
 
-  // private getCitizen(obj: any, address: Address, contacts: Contacts): Citizen {
-  //   return new Citizen(
-  //     obj.firstName,
-  //     obj.surname,
-  //     address,
-  //     obj.identificationCode,
-  //     contacts
-  //   );
-  // }
+  private getRepresentative(representative: any): RepresentativeCitizen | RepresentativeOrganisation {
+    const address = this.getAddress(representative);
+    const contacts = this.getContacts(representative);
+    if (representative.organisation !== "")
+      return this.getRepresentativeOrganisation(
+        representative,
+        address,
+        contacts
+      );
+    else
+      return this.getRepresentativeCitizen(representative, address, contacts);
+  }
 
-  // private getRepresentativeOrganisation(
-  //   obj: any,
-  //   address: Address,
-  //   contacts: Contacts
-  // ): RepresentativeOrganisation {
-  //   return new RepresentativeOrganisation(
-  //     obj.organisation,
-  //     address,
-  //     obj.identificationCode,
-  //     contacts
-  //   );
-  // }
+  private getOrganisation(
+    obj: any,
+    address: Address,
+    contacts: Contacts
+  ): Organisation {
+    return new Organisation(
+      obj.organisation,
+      address,
+      obj.identificationCode,
+      contacts
+    );
+  }
 
-  // private getRepresentativeCitizen(
-  //   obj: any,
-  //   address: Address,
-  //   contacts: Contacts
-  // ): RepresentativeCitizen {
-  //   return new RepresentativeCitizen(
-  //     obj.firstName,
-  //     obj.surname,
-  //     address,
-  //     obj.identificationCode,
-  //     contacts
-  //   );
-  // }
+  private getCitizen(obj: any, address: Address, contacts: Contacts): Citizen {
+    return new Citizen(
+      obj.firstName,
+      obj.surname,
+      address,
+      obj.identificationCode,
+      contacts
+    );
+  }
 
-  // private getAddress(obj: any): Address {
-  //   const countryId = obj.country !== "other" ? obj.country : obj.countryOther;
+  private getRepresentativeOrganisation(
+    obj: any,
+    address: Address,
+    contacts: Contacts
+  ): RepresentativeOrganisation {
+    return new RepresentativeOrganisation(
+      obj.organisation,
+      address,
+      obj.identificationCode,
+      contacts
+    );
+  }
 
-  //   let countryName = "";
-  //   if (obj.country !== "other") {
-  //     const country = this.europeanCountries.find((c) => c.value === countryId);
-  //     if (country) countryName = country.label;
-  //   } else {
-  //     const country = this.worldCountries.find((c) => c.value === countryId);
-  //     if (country) countryName = country.label;
-  //   }
+  private getRepresentativeCitizen(
+    obj: any,
+    address: Address,
+    contacts: Contacts
+  ): RepresentativeCitizen {
+    return new RepresentativeCitizen(
+      obj.firstName,
+      obj.surname,
+      address,
+      obj.identificationCode,
+      contacts
+    );
+  }
 
-  //   return new Address(
-  //     obj.street,
-  //     obj.postalCode,
-  //     obj.city,
-  //     countryId,
-  //     countryName
-  //   );
-  // }
+  private getAddress(obj: any): Address {
+    const countryId = obj.country !== "other" ? obj.country : obj.countryOther;
 
-  // private getContacts(obj: any): Contacts {
-  //   return new Contacts(obj.phoneNumber, obj.email);
-  // }
+    let countryName = "";
+    if (obj.country !== "other") {
+      const country = this.europeanCountries.find((c) => c.value === countryId);
+      if (country) countryName = country.label;
+    } else {
+      const country = this.worldCountries.find((c) => c.value === countryId);
+      if (country) countryName = country.label;
+    }
+
+    return new Address(
+      obj.street,
+      obj.postalCode,
+      obj.city,
+      countryId,
+      countryName
+    );
+  }
+
+  private getContacts(obj: any): Contacts {
+    return new Contacts(obj.phoneNumber, obj.email);
+  }
 
   setStepOneForm(stepOne: any): Promise<void> {
     return new Promise<void>((resolve) => {
@@ -704,136 +729,77 @@ export class StepOneService {
     return this.defendantRepresentativeOptionLabel + " " + number;
   }
 
-  // getDefendants(): (Defendant | Representative)[] {
-  //   const defendants: (Defendant | Representative)[] = [];
-  //   const representativeIds: number[] = [];
-  //   for (let i = 0; i < this.editForm.value.defendants.length; i++) {
-  //     const defendant = this.editForm.value.defendants[i];
-  //     if (!defendant.isRepresentative) {
-  //       const address = this.getAddress(defendant);
-  //       const contacts = this.getContacts(defendant);
-  //       let obj: Organisation | Citizen;
-  //       if (defendant.organisation !== "")
-  //         obj = this.getOrganisation(defendant, address, contacts);
-  //       else obj = this.getCitizen(defendant, address, contacts);
-  //       let representative: Representative;
-  //       if (defendant.representative !== "") {
-  //         //the index at which the representative of the defendant is located within the array being looped over is referred to as "defendant.representative".
-  //         const index = parseInt(defendant.representative);
-  //         representativeIds.push(index);
-  //         representative = this.getRepresentative(
-  //           this.editForm.value.defendants[index]
-  //         );
-  //       }
-  //       defendants.push(
-  //         new Defendant(obj, representative, defendant.otherDetails)
-  //       );
-  //     } else {
-  //       // since there might be representatives who are not associated with a defendant, it is necessary to add them in the defendants array
-  //       if (!representativeIds.includes(i)) {
-  //         const address = this.getAddress(defendant);
-  //         const contacts = this.getContacts(defendant);
-  //         if (defendant.organisation !== "") {
-  //           const representative = this.getRepresentativeOrganisation(
-  //             defendant,
-  //             address,
-  //             contacts
-  //           );
-  //           defendants.push(representative);
-  //         } else {
-  //           const representative = this.getRepresentativeCitizen(
-  //             defendant,
-  //             address,
-  //             contacts
-  //           );
-  //           defendants.push(representative);
-  //         }
-  //       }
-  //     }
-  //   }
-  //   return defendants;
-  // }
+  getDefendants(): (Defendant | RepresentativeCitizen | RepresentativeOrganisation)[] {
+    const defendants: (Defendant | RepresentativeCitizen | RepresentativeOrganisation)[] = [];
+    const representativeIds: number[] = [];
+    for (let i = 0; i < this.form.value.defendants.length; i++) {
+      const defendant = this.form.value.defendants[i];
+      if (!defendant.isRepresentative) {
+        const address = this.getAddress(defendant);
+        const contacts = this.getContacts(defendant);
+        let obj: Organisation | Citizen;
+        if (defendant.organisation !== "")
+          obj = this.getOrganisation(defendant, address, contacts);
+        else obj = this.getCitizen(defendant, address, contacts);
+        let representative: RepresentativeCitizen | RepresentativeOrganisation;
+        if (defendant.representative !== "") {
+          //the index at which the representative of the defendant is located within the array being looped over is referred to as "defendant.representative".
+          const index = parseInt(defendant.representative);
+          representativeIds.push(index);
+          representative = this.getRepresentative(
+            this.form.value.defendants[index]
+          );
+        }
+        defendants.push(
+          new Defendant(obj, representative, defendant.otherDetails)
+        );
+      } else {
+        // since there might be representatives who are not associated with a defendant, it is necessary to add them in the defendants array
+        if (!representativeIds.includes(i)) {
+          const address = this.getAddress(defendant);
+          const contacts = this.getContacts(defendant);
+          if (defendant.organisation !== "") {
+            const representative = this.getRepresentativeOrganisation(
+              defendant,
+              address,
+              contacts
+            );
+            defendants.push(representative);
+          } else {
+            const representative = this.getRepresentativeCitizen(
+              defendant,
+              address,
+              contacts
+            );
+            defendants.push(representative);
+          }
+        }
+      }
+    }
+    return defendants;
+  }
 
-  // private getRepresentative(representative: any): Representative {
-  //   const address = this.getAddress(representative);
-  //   const contacts = this.getContacts(representative);
-  //   if (representative.organisation !== "")
-  //     return this.getRepresentativeOrganisation(representative, address, contacts);
-  //   else return this.getRepresentativeCitizen(representative, address, contacts);
-  // }
+  getCourt(): Court {
+    const value = this.form.get("court").get("courtCountry").value;
 
-  // private getOrganisation(
-  //   obj: any,
-  //   address: Address,
-  //   contacts: Contacts
-  // ): Organisation {
-  //   return new Organisation(
-  //     obj.organisation,
-  //     address,
-  //     obj.identificationCode,
-  //     contacts
-  //   );
-  // }
+    const countryId =
+      value !== "other"
+        ? value
+        : this.form.get("court").get("courtCountryOther").value;
 
-  // private getCitizen(obj: any, address: Address, contacts: Contacts): Citizen {
-  //   return new Citizen(
-  //     obj.firstName,
-  //     obj.surname,
-  //     address,
-  //     obj.identificationCode,
-  //     contacts
-  //   );
-  // }
+    let countryName = "";
+    if (value !== "other") {
+      const country = this.europeanCountries.find((c) => c.value === countryId);
+      if (country) countryName = country.label;
+    } else {
+      const country = this.worldCountries.find((c) => c.value === countryId);
+      if (country) countryName = country.label;
+    }
 
-  // private getRepresentativeOrganisation(
-  //   obj: any,
-  //   address: Address,
-  //   contacts: Contacts
-  // ): RepresentativeOrganisation {
-  //   return new RepresentativeOrganisation(
-  //     obj.organisation,
-  //     address,
-  //     obj.identificationCode,
-  //     contacts
-  //   );
-  // }
+    const name = this.form.get("court").get("name").value;
+    const street = this.form.get("court").get("street").value;
+    const cityPostalCode = this.form.get("court").get("cityPostalCode").value;
 
-  // private getRepresentativeCitizen(
-  //   obj: any,
-  //   address: Address,
-  //   contacts: Contacts
-  // ): RepresentativeCitizen {
-  //   return new RepresentativeCitizen(
-  //     obj.firstName,
-  //     obj.surname,
-  //     address,
-  //     obj.identificationCode,
-  //     contacts
-  //   );
-  // }
-
-  // private getAddress(obj: any): Address {
-  //   const countryId = obj.country !== "other" ? obj.country : obj.countryOther;
-
-  //   let countryName = "";
-  //   if (obj.country !== "other") {
-  //     const country = this.europeanCountries.find((c) => c.value === countryId);
-  //     if (country) countryName = country.label;
-  //   } else {
-  //     const country = this.worldCountries.find((c) => c.value === countryId);
-  //     if (country) countryName = country.label;
-  //   }
-
-  //   return new Address(
-  //     obj.street,
-  //     obj.postalCode,
-  //     obj.city,
-  //     countryId,
-  //     countryName
-  //   );
-  // }
-
-  // private getContacts(obj: any): Contacts {
-  //   return new Contacts(obj.phoneNumber, obj.email);
-  // }
+    return new Court(countryId, countryName, name, street, cityPostalCode);
+  }
 }

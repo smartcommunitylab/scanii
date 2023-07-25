@@ -2,19 +2,37 @@
   <div class="description">
     <form name="editForm" role="form" [formGroup]="stepTwoService.form">
       <label style="font-weight: bold"
-        ><span class="blocksubhead df_subSection">
-          The court/tribunal has examined your claim form and considers it to be
-          inadequate or insufficiently clear or not properly filled in: please
-          complete and/or rectify your form in the language of the
-          court/tribunal as indicated below as soon as possible and at the
-          latest by (date)
-          <span class="asterisk" id="requiredStar_required_dynformSCB2Date"
-            >*</span
+        ><span class="blocksubhead df_subSection"
+          ><span [translate]="'stepTwo.courtExamineClaimForm'" class="space">
+            The court/tribunal has examined your claim form and considers it to
+            be inadequate or insufficiently clear or not properly filled in:
+            please complete and/or rectify your form in the language of the
+            court/tribunal as indicated below as soon as possible and at the
+            latest by</span
           >
+          <span id="dynform_sc_b_2_court_examined_claim_considers_inadequate"
+            ><span
+              *ngIf="
+                !stepTwoService.form.get('expiryDate').value;
+                else expiryDate
+              "
+            >
+              __/__/__
+            </span>
+            <ng-template #expiryDate>
+              <span>{{ stepTwoService.form.get("expiryDate").value }}</span>
+            </ng-template> </span
+          >.
         </span>
       </label>
       <div class="date-input">
         <div class="form-row full-width bold">
+          <label for="dynformSCB2Date">
+            <span [translate]="'stepTwo.date'"> Date </span>
+            <span class="asterisk" id="requiredStar_required_dynformSCB2Date"
+              >*</span
+            >
+          </label>
           <div
             class="input-wrapper regular"
             id="input-wrapper_dynformSCB2Date"
@@ -61,7 +79,7 @@
       </div>
 
       <div class="js-toggle-trigger" style="width: 93%; display: inline-block">
-        <span>
+        <span [translate]="'stepTwo.courtTribunalDismissApplication'">
           The court/tribunal shall dismiss your application under the conditions
           provided for in Regulation (EC) No 861(*)/2007 if you fail to complete
           and/or rectify it within the time limit set out above.
@@ -70,26 +88,31 @@
 
       <p style="margin-bottom: 0">&nbsp;</p>
       <div>
-        <!-- <label style="font-weight: bold"
-        ><span class="my_hidden_abs">{7}</span>You must complete either the
-        section on languages or the section indicating which sections must be
-        completed.<span class="asterisk">*</span></label
-      > -->
+        <label style="font-weight: bold">
+          <span [translate]="'stepTwo.completeSectionsIndication'"
+            >You must complete either the section on languages or the section
+            indicating which sections must be completed.</span
+          ><span class="asterisk">*</span></label
+        >
         <div class="marginBot15">&nbsp;</div>
       </div>
 
       <div class="form-row full-width bold">
         <div>
           <label style="margin-bottom: 0px">
-            Your claim form has not been filled in the correct language. Please
-            fill it in one of the following languages.
+            <span [translate]="'stepTwo.correctLanguageFill'">
+              Your claim form has not been filled in the correct language.
+              Please fill it in one of the following languages:</span
+            >
           </label>
         </div>
       </div>
 
       <label style="font-size: 14px; color: #bbbbbb">
-        <!-- Once you have selected a language, press the "add language" button.  -->
-        You can add up to 3 languages in total.</label
+        <span [translate]="'stepTwo.addUpTo3Languages'">
+          <!-- Once you have selected a language, press the "add language" button.  -->
+          You can add up to 3 languages in total.</span
+        ></label
       >
       <div class="form-row full-width bold">
         <div>
@@ -101,12 +124,12 @@
           </label>
 
           <div class="input-wrapper regular">
-            <div id="dynformSCB2LanguageContainer" class="input-content">
+            <div id="dynformSCB2LanguageContainer">
               <select
                 name="dynformSCB2Language"
                 id="dynformSCB2Language"
                 class="df_select df_mandatory"
-                data-placeholder="Please select"
+                [attr.data-placeholder]="languageSelectPlaceholder"
                 multiple
               >
                 <option
@@ -129,6 +152,7 @@
               id="validation_error_text_dynform_empty_string"
               class="error"
               style="position: relative; top: 0px"
+              [translate]="'errors.completeLanguageOrIndicationSectionError'"
             >
               You must complete either the section on "languages" or the section
               for indicating which items must be "completed"
@@ -164,9 +188,10 @@
       <div class="form-row full-width bold">
         <div>
           <label for="dynformSCB2SectionsOfClaimMustBeCompletedRectified">
-            The following sections of the claim form must be completed and/or
-            rectified as stated below
-
+            <span [translate]="'stepTwo.claimFormSectionsRectified'">
+              The following sections of the claim form must be completed and/or
+              rectified as stated below:
+            </span>
             <span
               class="asterisk"
               id="requiredStar_blank_dynformSCB2SectionsOfClaimMustBeCompletedRectified"
@@ -204,6 +229,7 @@
               id="validation_error_text_dynformSCB2SectionsOfClaimMustBeCompletedRectified"
               class="error"
               style="position: relative; top: 0px"
+              [translate]="'errors.completeLanguageOrIndicationSectionError'"
             >
               You must complete either the section on "languages" or the section
               for indicating which items must be "completed"
@@ -215,7 +241,7 @@
       <div class="form-row full-width bold">
         <div>
           <label for="dynformSCB2DoneAt">
-            Done at
+            <span [translate]="'stepTwo.doneAt'">Done at</span>
 
             <span class="asterisk" id="requiredStar_required_dynformSCB2DoneAt"
               >*</span
@@ -272,7 +298,7 @@
         <div class="form-row full-width bold">
           <div>
             <label for="dynformSCB2DoneDate">
-              Date
+              <span [translate]="'stepTwo.date'">Date</span>
 
               <span
                 class="asterisk"
@@ -329,9 +355,11 @@
       </div>
       <div class="form-row full-width bold">
         <div>
-          <label
-            >Please remember to sign and stamp (if available) this form once it
-            has been printed.</label
+          <label>
+            <span [translate]="'stepTwo.rememberSignStampPrintedForm'">
+              Please remember to sign and stamp (if available) this form once it
+              has been printed.</span
+            ></label
           >
         </div>
       </div>

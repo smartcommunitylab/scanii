@@ -8,6 +8,8 @@ import { Movement } from "src/app/core/common/movement.model";
 import { Direction } from "src/app/shared/constants/direction.constants";
 import { EventManagerService } from "src/app/shared/services/event-manager.service";
 import { DatePipe } from "@angular/common";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { PreviewModalComponent } from "src/app/shared/components/preview-modal/preview-modal.component";
 declare const $: any;
 datepickerFactory($);
 
@@ -17,8 +19,9 @@ datepickerFactory($);
   styleUrls: ["./step-two.component.scss"],
   providers: [DatePipe],
 })
-export class StepTwoComponent implements OnInit, AfterViewInit {
+export class StepTwoComponent implements OnInit {
   isLanguageSelectUsedForTheFirstTime = true;
+  languageSelectPlaceholder: string = "";
 
   constructor(
     public stepTwoService: StepTwoService,
@@ -26,7 +29,8 @@ export class StepTwoComponent implements OnInit, AfterViewInit {
     private translateService: TranslateService,
     private navbarService: NavbarService,
     private eventManager: EventManagerService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
@@ -35,10 +39,14 @@ export class StepTwoComponent implements OnInit, AfterViewInit {
       languages: ["00", "01", "cinese"],
       statement: "Statement",
       doneAt: "Trento",
-    })
+    });
+
+    this.renderer.listen("window", "DOMContentLoaded", () => {
+      this.initLanguagesSelect();
+    });
 
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      const currentDate = this.datePipe.transform(new Date(), 'dd/MM/yyyy');
+      const currentDate = this.datePipe.transform(new Date(), "dd/MM/yyyy");
       this.stepTwoService.form.get("date").setValue(currentDate);
       this.initDatepicker(event.lang);
       this.stepTwoService.europeanLanguages =
@@ -46,16 +54,21 @@ export class StepTwoComponent implements OnInit, AfterViewInit {
 
       setTimeout(() => {
         $("#dynformSCB2Language").trigger("chosen:updated");
-        
+
         this.stepTwoService.setLanguagesSelect();
       }, 100);
     });
-  }
 
-  ngAfterViewInit(): void {
-    this.renderer.listen("window", "DOMContentLoaded", () => {
-      this.initLanguagesSelect();
-    });
+    this.translateService
+      .stream(["stepTwo.select", "stepTwo.other", "stepTwo.specify"])
+      .subscribe((response) => {
+        this.languageSelectPlaceholder = response["stepTwo.select"];
+        document.getElementById("chosen-text").innerText =
+          response["stepTwo.other"];
+        document
+          .getElementById("chosen-text-input")
+          .setAttribute("placeholder", response["stepTwo.specify"]);
+      });
   }
 
   private initLanguagesSelect() {
@@ -72,7 +85,7 @@ export class StepTwoComponent implements OnInit, AfterViewInit {
     $("#dynformSCB2LanguageContainer .chosen-drop").append(
       `<div class="input-group chosen-input-group">
         <span class="input-group-text chosen-input-group-text" id="chosen-text">Other</span>
-        <input type="text" class="form-control chosen-input" placeholder="Please specify">
+        <input type="text" class="form-control chosen-input" id="chosen-text-input" placeholder="Please select">
         <button class="btn" type="button" id="chosen-button"></button>
       </div>`
     );
@@ -96,7 +109,7 @@ export class StepTwoComponent implements OnInit, AfterViewInit {
 
   private addOption(event: any) {
     const value = event.target.previousElementSibling.value;
-    const optionHTML = '<option value="' + value + '">' + value + "</option>";
+    const optionHTML = '<option value="' + value + '" class="added-option">' + value + "</option>";
 
     if (value) {
       $("#dynformSCB2Language").append(optionHTML).trigger("chosen:updated");
@@ -183,21 +196,21 @@ export class StepTwoComponent implements OnInit, AfterViewInit {
   openPreviewModal() {
     if (!this.stepTwoService.form.invalid) {
       // this.toastService.hideErrorToast();
-      const element = document.getElementById('step2-menu');
+      const element = document.getElementById("step2-menu");
       element.querySelector("a div.validation-icon").classList.add("validated");
-      // const modalRef = this.modalService.open(PreviewModalComponent, {
-      //   size: "xl",
-      //   backdrop: "static",
-      //   centered: true,
-      // });
-      // modalRef.result.then(
-      //   () => {
-      //     //this.loadAllUsers();
-      //   },
-      //   () => {
-      //     //this.loadAllUsers();
-      //   }
-      // );
+      const modalRef = this.modalService.open(PreviewModalComponent, {
+        size: "xl",
+        backdrop: "static",
+        centered: true,
+      });
+      modalRef.result.then(
+        () => {
+          //this.loadAllUsers();
+        },
+        () => {
+          //this.loadAllUsers();
+        }
+      );
     } else {
       this.stepTwoService.markStepTwoFormAsDirty();
       window.scrollTo({

@@ -437,7 +437,7 @@
         <span>
           <input
             type="checkbox"
-            [checked]="intermediateForm.jurisdiction.defendantDomicile"
+            [checked]="formA.jurisdiction.defendantDomicile"
             class="disabled-input"
           />
           <span [translate]="'jurisdiction.defendantDomicile'"></span>
@@ -447,7 +447,7 @@
         <span>
           <input
             type="checkbox"
-            [checked]="intermediateForm.jurisdiction.customerDomicile"
+            [checked]="formA.jurisdiction.customerDomicile"
             class="disabled-input"
           />
           <span [translate]="'jurisdiction.customerDomicile'"></span>
@@ -457,7 +457,7 @@
         <span>
           <input
             type="checkbox"
-            [checked]="intermediateForm.jurisdiction.policyholderDomicilie"
+            [checked]="formA.jurisdiction.policyholderDomicilie"
             class="disabled-input"
           />
           <span [translate]="'jurisdiction.policyholderDomicilie'"></span>
@@ -468,7 +468,7 @@
           <input
             type="checkbox"
             [checked]="
-              intermediateForm.jurisdiction.placePerformanceObbligation
+              formA.jurisdiction.placePerformanceObbligation
             "
             class="disabled-input"
           />
@@ -479,7 +479,7 @@
         <span>
           <input
             type="checkbox"
-            [checked]="intermediateForm.jurisdiction.placeHarmfulEvent"
+            [checked]="formA.jurisdiction.placeHarmfulEvent"
             class="disabled-input"
           />
           <span [translate]="'jurisdiction.placeHarmfulEvent'"></span>
@@ -489,7 +489,7 @@
         <span>
           <input
             type="checkbox"
-            [checked]="intermediateForm.jurisdiction.placeImmovableProperty"
+            [checked]="formA.jurisdiction.placeImmovableProperty"
             class="disabled-input"
           />
           <span [translate]="'jurisdiction.placeImmovableProperty'"></span>
@@ -499,7 +499,7 @@
         <span>
           <input
             type="checkbox"
-            [checked]="intermediateForm.jurisdiction.choiceCourtTribunal"
+            [checked]="formA.jurisdiction.choiceCourtTribunal"
             class="disabled-input"
           />
           <span [translate]="'jurisdiction.choiceCourtTribunal'"></span>
@@ -509,7 +509,7 @@
         <span>
           <input
             type="checkbox"
-            [checked]="intermediateForm.jurisdiction.otherCheckbox"
+            [checked]="formA.jurisdiction.otherCheckbox"
             class="disabled-input"
           />
           <span class="colon" [translate]="'jurisdiction.otherCheckbox'"></span>
@@ -517,9 +517,9 @@
       </div>
       <div
         class="fw-bold justify margin-bottom ps-3"
-        *ngIf="intermediateForm.jurisdiction.otherCheckbox"
+        *ngIf="formA.jurisdiction.otherCheckbox"
       >
-        {{ intermediateForm.jurisdiction.otherText }}
+        {{ formA.jurisdiction.otherText }}
       </div>
     </div>
   </div>
@@ -559,7 +559,7 @@
           <input
             type="radio"
             [checked]="
-              intermediateForm.bankDetails.applicationFeePayment
+              formA.bankDetails.applicationFeePayment
                 .paymentMethod === 'bankTransfer'
             "
             class="disabled-input"
@@ -572,7 +572,7 @@
           <input
             type="radio"
             [checked]="
-              intermediateForm.bankDetails.applicationFeePayment
+              formA.bankDetails.applicationFeePayment
                 .paymentMethod === 'creditCard'
             "
             class="disabled-input"
@@ -582,7 +582,7 @@
         <div
           class="ps-3"
           *ngIf="
-            intermediateForm.bankDetails.applicationFeePayment.paymentMethod ===
+            formA.bankDetails.applicationFeePayment.paymentMethod ===
             'creditCard'
           "
         >
@@ -591,7 +591,7 @@
               >Credit card holder</span
             >
             <span class="fw-bold">{{
-              intermediateForm.bankDetails.applicationFeePayment.creditCard
+              formA.bankDetails.applicationFeePayment.creditCard
                 .cardHolder
             }}</span>
           </p>
@@ -600,7 +600,7 @@
               >Credit card company</span
             >
             <span class="fw-bold">{{
-              intermediateForm.bankDetails.applicationFeePayment.creditCard
+              formA.bankDetails.applicationFeePayment.creditCard
                 .cardCompany
             }}</span>
           </p>
@@ -609,7 +609,7 @@
               >Credit card number</span
             >
             <span class="fw-bold">{{
-              intermediateForm.bankDetails.applicationFeePayment.creditCard
+              formA.bankDetails.applicationFeePayment.creditCard
                 .cardNumber
             }}</span>
           </p>
@@ -618,7 +618,7 @@
               >Expiry date</span
             >
             <span class="fw-bold">{{
-              intermediateForm.bankDetails.applicationFeePayment.creditCard
+              formA.bankDetails.applicationFeePayment.creditCard
                 .cardExpireDate
             }}</span>
           </p>
@@ -627,7 +627,7 @@
               >Security number of credit card</span
             >
             <span class="fw-bold">{{
-              intermediateForm.bankDetails.applicationFeePayment.creditCard
+              formA.bankDetails.applicationFeePayment.creditCard
                 .cardSecurityNumber
             }}</span>
           </p>
@@ -638,7 +638,7 @@
           <input
             type="radio"
             [checked]="
-              intermediateForm.bankDetails.applicationFeePayment
+              formA.bankDetails.applicationFeePayment
                 .paymentMethod === 'directDebit'
             "
             class="disabled-input"
@@ -650,7 +650,7 @@
         <div
           class="ps-3"
           *ngIf="
-            intermediateForm.bankDetails.applicationFeePayment.paymentMethod ===
+            formA.bankDetails.applicationFeePayment.paymentMethod ===
             'directDebit'
           "
         >
@@ -659,7 +659,7 @@
               >Account holder</span
             >
             <span class="fw-bold">{{
-              intermediateForm.bankDetails.applicationFeePayment.directDebit
+              formA.bankDetails.applicationFeePayment.directDebit
                 .accountHolder
             }}</span>
           </p>
@@ -668,7 +668,7 @@
               >Bank name, BIC or other relevant bank code</span
             >
             <span class="fw-bold">{{
-              intermediateForm.bankDetails.applicationFeePayment.directDebit
+              formA.bankDetails.applicationFeePayment.directDebit
                 .bicOrBankName
             }}</span>
           </p>
@@ -677,7 +677,7 @@
               >Account number or IBAN</span
             >
             <span class="fw-bold">{{
-              intermediateForm.bankDetails.applicationFeePayment.directDebit
+              formA.bankDetails.applicationFeePayment.directDebit
                 .accountNumberOrIBAN
             }}</span>
           </p>
@@ -688,7 +688,7 @@
           <input
             type="radio"
             [checked]="
-              intermediateForm.bankDetails.applicationFeePayment
+              formA.bankDetails.applicationFeePayment
                 .paymentMethod === 'other'
             "
             class="disabled-input"
@@ -698,13 +698,13 @@
         <div
           class="ps-3"
           *ngIf="
-            intermediateForm.bankDetails.applicationFeePayment.paymentMethod ===
+            formA.bankDetails.applicationFeePayment.paymentMethod ===
             'other'
           "
         >
           <p class="p-margin-top">
             <span class="fw-bold">{{
-              intermediateForm.bankDetails.applicationFeePayment.other.other
+              formA.bankDetails.applicationFeePayment.other.other
             }}</span>
           </p>
         </div>
@@ -720,7 +720,7 @@
           >4.2.2.1. Account holder</span
         >
         <span class="fw-bold">{{
-          intermediateForm.bankDetails.claimantBankAccount.accountHolder
+          formA.bankDetails.claimantBankAccount.accountHolder
         }}</span>
       </p>
       <p>
@@ -728,7 +728,7 @@
           >4.2.2.2. Bank name, BIC or other relevant bank code</span
         >
         <span class="fw-bold">{{
-          intermediateForm.bankDetails.claimantBankAccount.bicOrBankName
+          formA.bankDetails.claimantBankAccount.bicOrBankName
         }}</span>
       </p>
       <p>
@@ -738,7 +738,7 @@
           >4.2.2.3. Account number or IBAN</span
         >
         <span class="fw-bold">{{
-          intermediateForm.bankDetails.claimantBankAccount.accountNumberOrIBAN
+          formA.bankDetails.claimantBankAccount.accountNumberOrIBAN
         }}</span>
       </p>
     </div>
@@ -746,331 +746,367 @@
 
   <h3 [translate]="'claim.title'">5. Claim</h3>
   <div class="ps-3">
-    <h4 [translate]="'claim.claimForMoney'">5.1. Claim for money</h4>
-    <div class="ps-3">
-      <div class="radio-wrapper radio-margin-bottom">
-        <input
-          type="radio"
-          value="yes"
-          [checked]="claimForMoney.isYes"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'claim.yes'">Yes</span>
-        </label>
-      </div>
-      <div class="radio-wrapper">
-        <input
-          type="radio"
-          value="no"
-          [checked]="!claimForMoney.isYes"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'claim.no'">No</span>
-        </label>
-      </div>
-      <div class="ps-3" *ngIf="claimForMoney.isYes">
-        <p class="p-margin-top">
-          <span class="colon" [translate]="'claim.principalAmount'"
-            >5.1.1. Amount of principal (excluding interest and costs)
-          </span>
-          <span class="fw-bold">{{ claimForMoney.principalAmount }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'claim.claimForMoneyCurrency'"
-            >5.1.2. Currency</span
-          >
-          <span class="fw-bold">{{ claimForMoney.currencyName }}</span>
-        </p>
-      </div>
-    </div>
-
-    <h4 [translate]="'claim.otherClaim'">5.2. Other claim</h4>
-    <div class="ps-3">
-      <div class="radio-wrapper radio-margin-bottom">
-        <input
-          type="radio"
-          value="yes"
-          [checked]="otherClaim.isYes"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'claim.yes'">Yes</span>
-        </label>
-      </div>
-      <div class="radio-wrapper">
-        <input
-          type="radio"
-          value="no"
-          [checked]="!otherClaim.isYes"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'claim.no'">No</span>
-        </label>
-      </div>
-      <div class="ps-3" *ngIf="otherClaim.isYes">
-        <p class="p-margin-top">
-          <span class="colon" [translate]="'claim.claimDescription'"
-            >5.2.1. Please specify what you are claiming
-          </span>
-          <span class="fw-bold">{{ otherClaim.description }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'claim.claimValue'"
-            >5.2.2. Estimated value of the claim</span
-          >
-          <span class="fw-bold">{{ otherClaim.value }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'claim.otherClaimCurrency'"
-            >5.2.3. Currency</span
-          >
-          <span class="fw-bold">{{ otherClaim.currencyName }}</span>
-        </p>
-      </div>
-    </div>
-
-    <h4 [translate]="'claim.claimingCostProceedings'">
-      5.3. Are you claiming the costs of proceedings?
-    </h4>
-    <div class="ps-3">
-      <div class="radio-wrapper radio-margin-bottom">
-        <input
-          type="radio"
-          value="yes"
-          [checked]="intermediateForm.claim.claimingCostProceedings === 'yes'"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'claim.yes'">Yes</span>
-        </label>
-      </div>
-      <div class="radio-wrapper">
-        <input
-          type="radio"
-          value="no"
-          [checked]="intermediateForm.claim.claimingCostProceedings === 'no'"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'claim.no'">No</span>
-        </label>
-      </div>
-      <div
-        class="ps-3"
-        *ngIf="intermediateForm.claim.claimingCostProceedings === 'yes'"
-      >
-        <p class="p-margin-top">
-          <span class="colon" [translate]="'claim.costsDetails'"
-            >5.3.1. If yes, please specify which costs and indicate the amount
-            claimed or incurred so far
-          </span>
-        </p>
-        <div class="fw-bold justify margin-bottom ps-3">
-          {{
-            intermediateForm.claim.claimingCostProceedingsExpansion.costsDetails
-          }}
+    <div class="yes-no-radio-button">
+      <h4 class="yes-no-title">
+        <span [translate]="'claim.claimForMoney'">5.1. Claim for money</span>
+      </h4>
+      <div class="ps-3">
+        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.yes' | translate"
+            [checked]="claimForMoney.isYes"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'claim.yes'">Yes</span>
+          </label>
+        </div>
+        <div class="radio-wrapper yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.no' | translate"
+            [checked]="!claimForMoney.isYes"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'claim.no'">No</span>
+          </label>
+        </div>
+        <div class="ps-3" *ngIf="claimForMoney.isYes">
+          <p class="p-margin-top">
+            <span class="colon" [translate]="'claim.principalAmount'"
+              >5.1.1. Amount of principal (excluding interest and costs)
+            </span>
+            <span class="fw-bold">{{ claimForMoney.principalAmount }}</span>
+          </p>
+          <p>
+            <span class="colon" [translate]="'claim.claimForMoneyCurrency'"
+              >5.1.2. Currency</span
+            >
+            <span class="fw-bold">{{ claimForMoney.currencyName }}</span>
+          </p>
         </div>
       </div>
     </div>
 
-    <h4 [translate]="'claim.claimingInterest'">
-      5.4. Are you claiming interest?
-    </h4>
-    <div class="ps-3">
-      <div class="radio-wrapper radio-margin-bottom">
-        <input
-          type="radio"
-          value="yes"
-          [checked]="claimingInterest.isYes"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'claim.yes'">Yes</span>
-        </label>
+    <div class="yes-no-radio-button">
+      <h4 class="yes-no-title">
+        <span [translate]="'claim.otherClaim'">5.2. Other claim</span>
+      </h4>
+      <div class="ps-3">
+        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.yes' | translate"
+            [checked]="otherClaim.isYes"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'claim.yes'">Yes</span>
+          </label>
+        </div>
+        <div class="radio-wrapper yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.no' | translate"
+            [checked]="!otherClaim.isYes"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'claim.no'">No</span>
+          </label>
+        </div>
+        <div class="ps-3" *ngIf="otherClaim.isYes">
+          <p class="p-margin-top">
+            <span class="colon" [translate]="'claim.claimDescription'"
+              >5.2.1. Please specify what you are claiming
+            </span>
+            <span class="fw-bold">{{ otherClaim.description }}</span>
+          </p>
+          <p>
+            <span class="colon" [translate]="'claim.claimValue'"
+              >5.2.2. Estimated value of the claim</span
+            >
+            <span class="fw-bold">{{ otherClaim.value }}</span>
+          </p>
+          <p>
+            <span class="colon" [translate]="'claim.otherClaimCurrency'"
+              >5.2.3. Currency</span
+            >
+            <span class="fw-bold">{{ otherClaim.currencyName }}</span>
+          </p>
+        </div>
       </div>
-      <div class="radio-wrapper">
-        <input
-          type="radio"
-          value="no"
-          [checked]="!claimingInterest.isYes"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'claim.no'">No</span>
-        </label>
+    </div>
+
+    <div class="yes-no-radio-button">
+      <h4 class="yes-no-title">
+        <span [translate]="'claim.claimingCostProceedings'">
+          5.3. Are you claiming the costs of proceedings?
+        </span>
+      </h4>
+      <div class="ps-3">
+        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.yes' | translate"
+            [checked]="formA.claim.claimingCostProceedings === 'yes'"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'claim.yes'">Yes</span>
+          </label>
+        </div>
+        <div class="radio-wrapper yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.no' | translate"
+            [checked]="formA.claim.claimingCostProceedings === 'no'"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'claim.no'">No</span>
+          </label>
+        </div>
+        <div
+          class="ps-3"
+          *ngIf="formA.claim.claimingCostProceedings === 'yes'"
+        >
+          <p class="p-margin-top">
+            <span class="colon" [translate]="'claim.costsDetails'"
+              >5.3.1. If yes, please specify which costs and indicate the amount
+              claimed or incurred so far
+            </span>
+          </p>
+          <div class="fw-bold justify margin-bottom ps-3">
+            {{
+              formA.claim.claimingCostProceedingsExpansion
+                .costsDetails
+            }}
+          </div>
+        </div>
       </div>
-      <div class="ps-3" *ngIf="claimingInterest.isYes">
-        <h5 [translate]="'claim.isTheInterest'">If yes, is the interest</h5>
-        <div class="ps-3">
-          <div class="radio-wrapper radio-margin-bottom">
-            <input
-              type="radio"
-              value="contractual"
-              [checked]="claimingInterest.interestType === 'contractual'"
-              class="disabled-input"
-            />
-            <label>
-              <span [translate]="'claim.contractual'">contractual?</span>
-            </label>
-          </div>
+    </div>
 
-          <div class="radio-wrapper">
-            <input
-              type="radio"
-              value="statutory"
-              [checked]="claimingInterest.interestType === 'statutory'"
-              class="disabled-input"
-            />
-            <label>
-              <span [translate]="'claim.statutory'">statutory?</span>
-            </label>
-          </div>
-
-          <div
-            class="ps-3"
-            *ngIf="claimingInterest.interestType === 'contractual'"
-          >
-            <h5 [translate]="'claim.ifContractual'">5.4.1. If contractual</h5>
-            <div class="ps-3">
-              <p>
-                <span class="colon" [translate]="'claim.theRateIs'"
-                  >(1) the rate is
-                </span>
-                <span class="fw-bold percentage">{{
-                  claimingInterest.contractualInterest.interestPercentage
-                }}</span>
-              </p>
-              <p>
-                <span class="fw-bold percentage">{{
-                  claimingInterest.contractualInterest.percentagePointsAboveECB
-                }}</span>
-                <span [translate]="'claim.aboveTheBaseRate'"
-                  >% above the base rate of the ECB
-                </span>
-              </p>
-              <p>
-                <span class="colon" [translate]="'claim.other'">other</span>
-                <span class="fw-bold justify">{{
-                  claimingInterest.contractualInterest.other
-                }}</span>
-              </p>
-              <p>
-                <span class="colon" [translate]="'preview.contractualFromDate'"
-                  >(2) the interest should run from</span
-                >
-                <span class="fw-bold">{{
-                  claimingInterest.contractualInterest.fromDate
-                }}</span>
-              </p>
-
-              <div class="margin-bottom">
-                <span>
-                  <input
-                    type="radio"
-                    [checked]="
-                      claimingInterest.contractualInterest.to.toOption === '01'
-                    "
-                    class="disabled-input"
-                  />
-                  <span class="colon" [translate]="'preview.to'">to</span>
-                  <span class="fw-bold">{{
-                    claimingInterest.contractualInterest.to.toDate
-                  }}</span>
-                </span>
-              </div>
-
-              <div class="margin-bottom">
-                <span>
-                  <input
-                    type="radio"
-                    [checked]="
-                      claimingInterest.contractualInterest.to.toOption === '02'
-                    "
-                    class="disabled-input"
-                  />
-                  <span [translate]="'claim.toJudgmentDate'"
-                    >to the date of the judgment</span
-                  >
-                </span>
-              </div>
-
-              <div class="margin-bottom">
-                <span>
-                  <input
-                    type="radio"
-                    [checked]="
-                      claimingInterest.contractualInterest.to.toOption === '03'
-                    "
-                    class="disabled-input"
-                  />
-                  <span [translate]="'claim.toPrincipalPaymentDate'"
-                    >to the date of payment of principal</span
-                  >
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="ps-3"
-            *ngIf="claimingInterest.interestType === 'statutory'"
-          >
-            <h5>
-              <span class="colon" [translate]="'preview.ifStatutory'"
-                >5.4.2. If statutory, the interest should run from</span
-              >
-              <span class="fw-bold space">{{
-                claimingInterest.statutoryInterest.fromDate
-              }}</span>
+    <div class="yes-no-radio-button">
+      <h4 class="yes-no-title">
+        <span [translate]="'claim.claimingInterest'">
+          5.4. Are you claiming interest?</span
+        >
+      </h4>
+      <div class="ps-3">
+        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.yes' | translate"
+            [checked]="claimingInterest.isYes"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'claim.yes'">Yes</span>
+          </label>
+        </div>
+        <div class="radio-wrapper yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.no' | translate"
+            [checked]="!claimingInterest.isYes"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'claim.no'">No</span>
+          </label>
+        </div>
+        <div class="ps-3" *ngIf="claimingInterest.isYes">
+          <div class="contractual-statutory-radio-button">
+            <h5 class="contractual-statutory-title">
+              <span [translate]="'claim.isTheInterest'"
+                >If yes, is the interest
+              </span>
             </h5>
             <div class="ps-3">
-              <div class="margin-bottom">
-                <span>
-                  <input
-                    type="radio"
-                    [checked]="
-                      claimingInterest.statutoryInterest.to.toOption === '01'
-                    "
-                    class="disabled-input"
-                  />
-                  <span class="colon" [translate]="'preview.to'">to</span>
-                  <span class="fw-bold">{{
-                    claimingInterest.statutoryInterest.to.toDate
+              <div
+                class="radio-wrapper radio-margin-bottom contractual-statutory-radio-option-div"
+              >
+                <input
+                  type="radio"
+                  [value]="'claim.contractual' | translate"
+                  [checked]="claimingInterest.interestType === 'contractual'"
+                  class="disabled-input contractual-statutory-radio-option"
+                />
+                <label>
+                  <span [translate]="'claim.contractual'">contractual?</span>
+                </label>
+              </div>
+
+              <div class="radio-wrapper contractual-statutory-radio-option-div">
+                <input
+                  type="radio"
+                  [value]="'claim.statutory' | translate"
+                  [checked]="claimingInterest.interestType === 'statutory'"
+                  class="disabled-input contractual-statutory-radio-option"
+                />
+                <label>
+                  <span [translate]="'claim.statutory'">statutory?</span>
+                </label>
+              </div>
+
+              <div
+                class="ps-3"
+                *ngIf="claimingInterest.interestType === 'contractual'"
+              >
+                <h5 [translate]="'claim.ifContractual'">
+                  5.4.1. If contractual
+                </h5>
+                <div class="ps-3">
+                  <p>
+                    <span class="colon" [translate]="'claim.theRateIs'"
+                      >(1) the rate is
+                    </span>
+                    <span class="fw-bold percentage">{{
+                      claimingInterest.contractualInterest.interestPercentage
+                    }}</span>
+                  </p>
+                  <p>
+                    <span class="fw-bold percentage">{{
+                      claimingInterest.contractualInterest
+                        .percentagePointsAboveECB
+                    }}</span>
+                    <span [translate]="'claim.aboveTheBaseRate'"
+                      >% above the base rate of the ECB
+                    </span>
+                  </p>
+                  <p>
+                    <span class="colon" [translate]="'claim.other'">other</span>
+                    <span class="fw-bold justify">{{
+                      claimingInterest.contractualInterest.other
+                    }}</span>
+                  </p>
+                  <p>
+                    <span
+                      class="colon"
+                      [translate]="'preview.contractualFromDate'"
+                      >(2) the interest should run from</span
+                    >
+                    <span class="fw-bold">{{
+                      claimingInterest.contractualInterest.fromDate
+                    }}</span>
+                  </p>
+
+                  <div class="margin-bottom">
+                    <span>
+                      <input
+                        type="radio"
+                        [checked]="
+                          claimingInterest.contractualInterest.to.toOption ===
+                          '01'
+                        "
+                        class="disabled-input"
+                      />
+                      <span class="colon" [translate]="'preview.to'">to</span>
+                      <span class="fw-bold">{{
+                        claimingInterest.contractualInterest.to.toDate
+                      }}</span>
+                    </span>
+                  </div>
+
+                  <div class="margin-bottom">
+                    <span>
+                      <input
+                        type="radio"
+                        [checked]="
+                          claimingInterest.contractualInterest.to.toOption ===
+                          '02'
+                        "
+                        class="disabled-input"
+                      />
+                      <span [translate]="'claim.toJudgmentDate'"
+                        >to the date of the judgment</span
+                      >
+                    </span>
+                  </div>
+
+                  <div class="margin-bottom">
+                    <span>
+                      <input
+                        type="radio"
+                        [checked]="
+                          claimingInterest.contractualInterest.to.toOption ===
+                          '03'
+                        "
+                        class="disabled-input"
+                      />
+                      <span [translate]="'claim.toPrincipalPaymentDate'"
+                        >to the date of payment of principal</span
+                      >
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="ps-3"
+                *ngIf="claimingInterest.interestType === 'statutory'"
+              >
+                <h5>
+                  <span class="colon" [translate]="'preview.ifStatutory'"
+                    >5.4.2. If statutory, the interest should run from</span
+                  >
+                  <span class="fw-bold space">{{
+                    claimingInterest.statutoryInterest.fromDate
                   }}</span>
-                </span>
-              </div>
+                </h5>
+                <div class="ps-3">
+                  <div class="margin-bottom">
+                    <span>
+                      <input
+                        type="radio"
+                        [checked]="
+                          claimingInterest.statutoryInterest.to.toOption ===
+                          '01'
+                        "
+                        class="disabled-input"
+                      />
+                      <span class="colon" [translate]="'preview.to'">to</span>
+                      <span class="fw-bold">{{
+                        claimingInterest.statutoryInterest.to.toDate
+                      }}</span>
+                    </span>
+                  </div>
 
-              <div class="margin-bottom">
-                <span>
-                  <input
-                    type="radio"
-                    [checked]="
-                      claimingInterest.statutoryInterest.to.toOption === '02'
-                    "
-                    class="disabled-input"
-                  />
-                  <span [translate]="'claim.toJudgmentDate'"
-                    >to the date of the judgment</span
-                  >
-                </span>
-              </div>
+                  <div class="margin-bottom">
+                    <span>
+                      <input
+                        type="radio"
+                        [checked]="
+                          claimingInterest.statutoryInterest.to.toOption ===
+                          '02'
+                        "
+                        class="disabled-input"
+                      />
+                      <span [translate]="'claim.toJudgmentDate'"
+                        >to the date of the judgment</span
+                      >
+                    </span>
+                  </div>
 
-              <div class="margin-bottom">
-                <span>
-                  <input
-                    type="radio"
-                    [checked]="
-                      claimingInterest.statutoryInterest.to.toOption === '03'
-                    "
-                    class="disabled-input"
-                  />
-                  <span [translate]="'claim.toPrincipalPaymentDate'"
-                    >to the date of payment of principal</span
-                  >
-                </span>
+                  <div class="margin-bottom">
+                    <span>
+                      <input
+                        type="radio"
+                        [checked]="
+                          claimingInterest.statutoryInterest.to.toOption ===
+                          '03'
+                        "
+                        class="disabled-input"
+                      />
+                      <span [translate]="'claim.toPrincipalPaymentDate'"
+                        >to the date of payment of principal</span
+                      >
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1078,97 +1114,101 @@
       </div>
     </div>
 
-    <h4 [translate]="'claim.claimingInterestOnCost'">
-      5.5. Are you claiming interest on costs?
-    </h4>
-    <div class="ps-3">
-      <div class="radio-wrapper radio-margin-bottom">
-        <input
-          type="radio"
-          value="yes"
-          [checked]="claimingInterestOnCost.isYes"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'claim.yes'">Yes</span>
-        </label>
-      </div>
+    <div class="yes-no-radio-button">
+      <h4 class="yes-no-title">
+        <span [translate]="'claim.claimingInterestOnCost'">
+          5.5. Are you claiming interest on costs?</span
+        >
+      </h4>
+      <div class="ps-3">
+        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.yes' | translate"
+            [checked]="claimingInterestOnCost.isYes"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'claim.yes'">Yes</span>
+          </label>
+        </div>
 
-      <div class="radio-wrapper">
-        <input
-          type="radio"
-          value="no"
-          [checked]="!claimingInterestOnCost.isYes"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'claim.no'">No</span>
-        </label>
-      </div>
+        <div class="radio-wrapper yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.no' | translate"
+            [checked]="!claimingInterestOnCost.isYes"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'claim.no'">No</span>
+          </label>
+        </div>
 
-      <div class="ps-3" *ngIf="claimingInterestOnCost.isYes">
-        <h5 class="margin-bottom">
-          <span
-            class="colon"
-            [translate]="'preview.claimingInterestOnCostFromDate'"
-            >If yes, the interest should run from</span
-          >
-        </h5>
-        <div class="ps-3">
-          <div class="margin-bottom margin-top">
-            <span>
-              <input
-                type="radio"
-                [checked]="claimingInterestOnCost.from.fromOption === '00'"
-                class="disabled-input"
-              />
-              <span class="colon" [translate]="'preview.date'">(date)</span>
-              <span class="fw-bold">{{
-                claimingInterestOnCost.from.fromDate
-              }}</span>
-            </span>
-          </div>
-
-          <div class="margin-bottom">
-            <div class="radio-margin-bottom">
-              <input
-                type="radio"
-                [checked]="claimingInterestOnCost.from.fromOption === '01'"
-                class="disabled-input"
-              />
-              <span class="colon" [translate]="'claim.event'">(event)</span>
+        <div class="ps-3" *ngIf="claimingInterestOnCost.isYes">
+          <h5 class="margin-bottom">
+            <span
+              class="colon"
+              [translate]="'preview.claimingInterestOnCostFromDate'"
+              >If yes, the interest should run from</span
+            >
+          </h5>
+          <div class="ps-3">
+            <div class="margin-bottom margin-top">
+              <span>
+                <input
+                  type="radio"
+                  [checked]="claimingInterestOnCost.from.fromOption === '00'"
+                  class="disabled-input"
+                />
+                <span class="colon" [translate]="'preview.date'">(date)</span>
+                <span class="fw-bold">{{
+                  claimingInterestOnCost.from.fromDate
+                }}</span>
+              </span>
             </div>
-            <div class="fw-bold justify margin-bottom ps-3">
-              {{ claimingInterestOnCost.from.fromEvent }}
+
+            <div class="margin-bottom">
+              <div class="radio-margin-bottom">
+                <input
+                  type="radio"
+                  [checked]="claimingInterestOnCost.from.fromOption === '01'"
+                  class="disabled-input"
+                />
+                <span class="colon" [translate]="'claim.event'">(event)</span>
+              </div>
+              <div class="fw-bold justify margin-bottom ps-3">
+                {{ claimingInterestOnCost.from.fromEvent }}
+              </div>
             </div>
-          </div>
 
-          <div class="margin-bottom" style="margin-top: 3rem">
-            <span>
-              <input
-                type="radio"
-                [checked]="claimingInterestOnCost.to.toOption === '02'"
-                class="disabled-input"
-              />
-              <span class="colon" [translate]="'preview.to'">to</span>
-              <span class="fw-bold">{{
-                claimingInterestOnCost.to.toDate
-              }}</span>
-            </span>
-          </div>
+            <div class="margin-bottom" style="margin-top: 3rem">
+              <span>
+                <input
+                  type="radio"
+                  [checked]="claimingInterestOnCost.to.toOption === '02'"
+                  class="disabled-input"
+                />
+                <span class="colon" [translate]="'preview.to'">to</span>
+                <span class="fw-bold">{{
+                  claimingInterestOnCost.to.toDate
+                }}</span>
+              </span>
+            </div>
 
-          <div class="margin-bottom">
-            <span>
-              <input
-                type="radio"
-                [checked]="claimingInterestOnCost.to.toOption === '03'"
-                class="disabled-input"
-              />
+            <div class="margin-bottom">
+              <span>
+                <input
+                  type="radio"
+                  [checked]="claimingInterestOnCost.to.toOption === '03'"
+                  class="disabled-input"
+                />
 
-              <span [translate]="'claim.toCostsPaymentDate'"
-                >to the date of payment of costs</span
-              >
-            </span>
+                <span [translate]="'claim.toCostsPaymentDate'"
+                  >to the date of payment of costs</span
+                >
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -1182,7 +1222,7 @@
       and when
     </h4>
     <div class="fw-bold justify margin-bottom ps-3">
-      {{ intermediateForm.claimDetails.detailsOfClaim }}
+      {{ formA.claimDetails.detailsOfClaim }}
     </div>
 
     <h4 [translate]="'claimDetails.evidenceDescription'">
@@ -1191,109 +1231,137 @@
       you should add relevant supporting documents
     </h4>
     <div class="ps-3">
-      <h5 [translate]="'claimDetails.writtenEvidence'">
-        6.2.1. Written evidence
-      </h5>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom">
-          <input
-            type="radio"
-            value="yes"
-            [checked]="intermediateForm.claimDetails.writtenEvidence === 'yes'"
-            class="disabled-input"
-          />
-          <label>
-            <span [translate]="'claimDetails.yes'">Yes</span>
-          </label>
-        </div>
+      <div class="yes-no-radio-button">
+        <h5 class="yes-no-title">
+          <span [translate]="'claimDetails.writtenEvidence'">
+            6.2.1. Written evidence
+          </span>
+        </h5>
+        <div class="ps-3">
+          <div
+            class="radio-wrapper radio-margin-bottom yes-no-radio-option-div"
+          >
+            <input
+              type="radio"
+              [value]="'claim.yes' | translate"
+              [checked]="
+                formA.claimDetails.writtenEvidence === 'yes'
+              "
+              class="disabled-input yes-no-radio-option"
+            />
+            <label>
+              <span [translate]="'claimDetails.yes'">Yes</span>
+            </label>
+          </div>
 
-        <div class="radio-wrapper radio-margin-bottom">
-          <input
-            type="radio"
-            value="no"
-            [checked]="intermediateForm.claimDetails.writtenEvidence === 'no'"
-            class="disabled-input"
-          />
-          <label>
-            <span [translate]="'claimDetails.no'">No</span>
-          </label>
-        </div>
+          <div
+            class="radio-wrapper radio-margin-bottom yes-no-radio-option-div"
+          >
+            <input
+              type="radio"
+              [value]="'claim.no' | translate"
+              [checked]="formA.claimDetails.writtenEvidence === 'no'"
+              class="disabled-input yes-no-radio-option"
+            />
+            <label>
+              <span [translate]="'claimDetails.no'">No</span>
+            </label>
+          </div>
 
-        <div
-          class="fw-bold justify margin-bottom margin-top ps-3"
-          *ngIf="intermediateForm.claimDetails.writtenEvidence === 'yes'"
-        >
-          {{ intermediateForm.claimDetails.writtenEvidenceText }}
-        </div>
-      </div>
-
-      <h5 [translate]="'claimDetails.witnesses'">6.2.2. Witnesses</h5>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom">
-          <input
-            type="radio"
-            value="yes"
-            [checked]="intermediateForm.claimDetails.witnesses === 'yes'"
-            class="disabled-input"
-          />
-          <label>
-            <span [translate]="'claimDetails.yes'">Yes</span>
-          </label>
-        </div>
-
-        <div class="radio-wrapper radio-margin-bottom">
-          <input
-            type="radio"
-            value="no"
-            [checked]="intermediateForm.claimDetails.witnesses === 'no'"
-            class="disabled-input"
-          />
-          <label>
-            <span [translate]="'claimDetails.no'">No</span>
-          </label>
-        </div>
-
-        <div
-          class="fw-bold justify margin-bottom margin-top ps-3"
-          *ngIf="intermediateForm.claimDetails.witnesses === 'yes'"
-        >
-          {{ intermediateForm.claimDetails.witnessesText }}
+          <div
+            class="fw-bold justify margin-bottom margin-top ps-3"
+            *ngIf="formA.claimDetails.writtenEvidence === 'yes'"
+          >
+            {{ formA.claimDetails.writtenEvidenceText }}
+          </div>
         </div>
       </div>
 
-      <h5 [translate]="'claimDetails.otherClaimDetails'">6.2.3. Other</h5>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom">
-          <input
-            type="radio"
-            value="yes"
-            [checked]="
-              intermediateForm.claimDetails.otherClaimDetails === 'yes'
-            "
-            class="disabled-input"
-          />
-          <label>
-            <span [translate]="'claimDetails.yes'">Yes</span>
-          </label>
-        </div>
+      <div class="yes-no-radio-button">
+        <h5 class="yes-no-title">
+          <span [translate]="'claimDetails.witnesses'"> 6.2.2. Witnesses</span>
+        </h5>
+        <div class="ps-3">
+          <div
+            class="radio-wrapper radio-margin-bottom yes-no-radio-option-div"
+          >
+            <input
+              type="radio"
+              [value]="'claim.yes' | translate"
+              [checked]="formA.claimDetails.witnesses === 'yes'"
+              class="disabled-input yes-no-radio-option"
+            />
+            <label>
+              <span [translate]="'claimDetails.yes'">Yes</span>
+            </label>
+          </div>
 
-        <div class="radio-wrapper">
-          <input
-            type="radio"
-            value="no"
-            [checked]="intermediateForm.claimDetails.otherClaimDetails === 'no'"
-            class="disabled-input"
-          />
-          <label>
-            <span [translate]="'claimDetails.no'">No</span>
-          </label>
-        </div>
+          <div
+            class="radio-wrapper radio-margin-bottom yes-no-radio-option-div"
+          >
+            <input
+              type="radio"
+              [value]="'claim.no' | translate"
+              [checked]="formA.claimDetails.witnesses === 'no'"
+              class="disabled-input yes-no-radio-option"
+            />
+            <label>
+              <span [translate]="'claimDetails.no'">No</span>
+            </label>
+          </div>
 
-        <div
-          class="fw-bold justify margin-bottom margin-top ps-3"
-          *ngIf="intermediateForm.claimDetails.otherClaimDetails === 'yes'"
-        >
-          {{ intermediateForm.claimDetails.otherClaimDetailsText }}
+          <div
+            class="fw-bold justify margin-bottom margin-top ps-3"
+            *ngIf="formA.claimDetails.witnesses === 'yes'"
+          >
+            {{ formA.claimDetails.witnessesText }}
+          </div>
+        </div>
+      </div>
+
+      <div class="yes-no-radio-button">
+        <h5 class="yes-no-title">
+          <span [translate]="'claimDetails.otherClaimDetails'"
+            >6.2.3. Other</span
+          >
+        </h5>
+        <div class="ps-3">
+          <div
+            class="radio-wrapper radio-margin-bottom yes-no-radio-option-div"
+          >
+            <input
+              type="radio"
+              [value]="'claim.yes' | translate"
+              [checked]="
+                formA.claimDetails.otherClaimDetails === 'yes'
+              "
+              class="disabled-input yes-no-radio-option"
+            />
+            <label>
+              <span [translate]="'claimDetails.yes'">Yes</span>
+            </label>
+          </div>
+
+          <div class="radio-wrapper yes-no-radio-option-div">
+            <input
+              type="radio"
+              [value]="'claim.no' | translate"
+              [checked]="
+                formA.claimDetails.otherClaimDetails === 'no'
+              "
+              class="disabled-input yes-no-radio-option"
+            />
+            <label>
+              <span [translate]="'claimDetails.no'">No</span>
+            </label>
+          </div>
+
+          <div
+            class="fw-bold justify margin-bottom margin-top ps-3"
+            *ngIf="formA.claimDetails.otherClaimDetails === 'yes'"
+          >
+            {{ formA.claimDetails.otherClaimDetailsText }}
+          </div>
         </div>
       </div>
     </div>
@@ -1301,89 +1369,103 @@
 
   <h3 [translate]="'oralHearing.title'">7.1. Oral hearing</h3>
   <div class="ps-3">
-    <h4 [translate]="'oralHearing.oralHearingRequest'">
-      7.1.1. Do you want an oral hearing to be held?
-    </h4>
-    <div class="ps-3">
-      <div class="radio-wrapper radio-margin-bottom">
-        <input
-          type="radio"
-          value="yes"
-          [checked]="intermediateForm.oralHearing.oralHearingRequest === 'yes'"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'oralHearing.yes'">Yes</span>
-        </label>
-      </div>
-      <div class="radio-wrapper">
-        <input
-          type="radio"
-          value="no"
-          [checked]="intermediateForm.oralHearing.oralHearingRequest === 'no'"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'oralHearing.no'">No</span>
-        </label>
-      </div>
-      <div
-        class="ps-3"
-        *ngIf="intermediateForm.oralHearing.oralHearingRequest === 'yes'"
-      >
-        <p class="p-margin-top">
-          <span
-            class="colon"
-            [translate]="'oralHearing.oralHearingRequestReasons'"
-            >If yes, please indicate reasons
-          </span>
-        </p>
-        <div class="fw-bold justify margin-bottom margin-top ps-3">
-          {{ intermediateForm.oralHearing.oralHearingRequestReasons }}
+    <div class="yes-no-radio-button">
+      <h4 class="yes-no-title">
+        <span [translate]="'oralHearing.oralHearingRequest'">
+          7.1.1. Do you want an oral hearing to be held?
+        </span>
+      </h4>
+      <div class="ps-3">
+        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.yes' | translate"
+            [checked]="
+              formA.oralHearing.oralHearingRequest === 'yes'
+            "
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'oralHearing.yes'">Yes</span>
+          </label>
+        </div>
+        <div class="radio-wrapper yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.no' | translate"
+            [checked]="formA.oralHearing.oralHearingRequest === 'no'"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'oralHearing.no'">No</span>
+          </label>
+        </div>
+        <div
+          class="ps-3"
+          *ngIf="formA.oralHearing.oralHearingRequest === 'yes'"
+        >
+          <p class="p-margin-top">
+            <span
+              class="colon"
+              [translate]="'oralHearing.oralHearingRequestReasons'"
+              >If yes, please indicate reasons
+            </span>
+          </p>
+          <div class="fw-bold justify margin-bottom margin-top ps-3">
+            {{ formA.oralHearing.oralHearingRequestReasons }}
+          </div>
         </div>
       </div>
     </div>
 
-    <h4 [translate]="'oralHearing.oralHearingPresence'">
-      7.1.2. If the court decides to hold an oral hearing, do you want to be
-      physically present?
-    </h4>
-    <div class="ps-3">
-      <div class="radio-wrapper radio-margin-bottom">
-        <input
-          type="radio"
-          value="yes"
-          [checked]="intermediateForm.oralHearing.oralHearingPresence === 'yes'"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'oralHearing.yes'">Yes</span>
-        </label>
-      </div>
-      <div class="radio-wrapper">
-        <input
-          type="radio"
-          value="no"
-          [checked]="intermediateForm.oralHearing.oralHearingPresence === 'no'"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'oralHearing.no'">No</span>
-        </label>
-      </div>
-      <div
-        class="ps-3"
-        *ngIf="intermediateForm.oralHearing.oralHearingPresence === 'yes'"
-      >
-        <p class="p-margin-top">
-          <span
-            class="colon"
-            [translate]="'oralHearing.oralHearingPresenceReasons'"
-            >Please indicate reasons
-          </span>
-        </p>
-        <div class="fw-bold justify margin-bottom margin-top ps-3">
-          {{ intermediateForm.oralHearing.oralHearingPresenceReasons }}
+    <div class="yes-no-radio-button">
+      <h4 class="yes-no-title">
+        <span [translate]="'oralHearing.oralHearingPresence'">
+          7.1.2. If the court decides to hold an oral hearing, do you want to be
+          physically present?
+        </span>
+      </h4>
+      <div class="ps-3">
+        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.yes' | translate"
+            [checked]="
+              formA.oralHearing.oralHearingPresence === 'yes'
+            "
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'oralHearing.yes'">Yes</span>
+          </label>
+        </div>
+        <div class="radio-wrapper yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.no' | translate"
+            [checked]="
+              formA.oralHearing.oralHearingPresence === 'no'
+            "
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'oralHearing.no'">No</span>
+          </label>
+        </div>
+        <div
+          class="ps-3"
+          *ngIf="formA.oralHearing.oralHearingPresence === 'yes'"
+        >
+          <p class="p-margin-top">
+            <span
+              class="colon"
+              [translate]="'oralHearing.oralHearingPresenceReasons'"
+              >Please indicate reasons
+            </span>
+          </p>
+          <div class="fw-bold justify margin-bottom margin-top ps-3">
+            {{ formA.oralHearing.oralHearingPresenceReasons }}
+          </div>
         </div>
       </div>
     </div>
@@ -1393,121 +1475,135 @@
     7.2. Service of documents and communication with the court
   </h3>
   <div class="ps-3">
-    <h4
-      [translate]="
-        'documentAndCommunication.electronicCommunicationWithCourtTribunal'
-      "
-    >
-      7.2.1. Do you agree to the use of electronic means of communication for
-      the service of the response by the defendant, any counterclaim and the
-      judgment?
-    </h4>
-    <div class="ps-3">
-      <div class="radio-wrapper radio-margin-bottom">
-        <input
-          type="radio"
-          value="yes"
-          [checked]="
-            intermediateForm.documentAndCommunication
-              .electronicCommunicationWithCourtTribunal === 'yes'
+    <div class="yes-no-radio-button">
+      <h4 class="yes-no-title">
+        <span
+          [translate]="
+            'documentAndCommunication.electronicCommunicationWithCourtTribunal'
           "
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'documentAndCommunication.yes'">Yes</span>
-        </label>
-      </div>
-      <div class="radio-wrapper">
-        <input
-          type="radio"
-          value="no"
-          [checked]="
-            intermediateForm.documentAndCommunication
-              .electronicCommunicationWithCourtTribunal === 'no'
-          "
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'documentAndCommunication.no'">No</span>
-        </label>
+        >
+          7.2.1. Do you agree to the use of electronic means of communication
+          for the service of the response by the defendant, any counterclaim and
+          the judgment?
+        </span>
+      </h4>
+      <div class="ps-3">
+        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.yes' | translate"
+            [checked]="
+              formA.documentAndCommunication
+                .electronicCommunicationWithCourtTribunal === 'yes'
+            "
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'documentAndCommunication.yes'">Yes</span>
+          </label>
+        </div>
+        <div class="radio-wrapper yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.no' | translate"
+            [checked]="
+              formA.documentAndCommunication
+                .electronicCommunicationWithCourtTribunal === 'no'
+            "
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'documentAndCommunication.no'">No</span>
+          </label>
+        </div>
       </div>
     </div>
 
-    <h4 [translate]="'documentAndCommunication.electronicCommunicationOther'">
-      7.2.2. Do you agree to the use of electronic means of communication to
-      receive written communications other than the documents mentioned in point
-      7.2.1.?
-    </h4>
-    <div class="ps-3">
-      <div class="radio-wrapper radio-margin-bottom">
-        <input
-          type="radio"
-          value="yes"
-          [checked]="
-            intermediateForm.documentAndCommunication
-              .electronicCommunicationOther === 'yes'
-          "
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'documentAndCommunication.yes'">Yes</span>
-        </label>
-      </div>
-      <div class="radio-wrapper">
-        <input
-          type="radio"
-          value="no"
-          [checked]="
-            intermediateForm.documentAndCommunication
-              .electronicCommunicationOther === 'no'
-          "
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'documentAndCommunication.no'">No</span>
-        </label>
+    <div class="yes-no-radio-button">
+      <h4 class="yes-no-title">
+        <span
+          [translate]="'documentAndCommunication.electronicCommunicationOther'"
+        >
+          7.2.2. Do you agree to the use of electronic means of communication to
+          receive written communications other than the documents mentioned in
+          point 7.2.1.?</span
+        >
+      </h4>
+      <div class="ps-3">
+        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.yes' | translate"
+            [checked]="
+              formA.documentAndCommunication
+                .electronicCommunicationOther === 'yes'
+            "
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'documentAndCommunication.yes'">Yes</span>
+          </label>
+        </div>
+        <div class="radio-wrapper yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.no' | translate"
+            [checked]="
+              formA.documentAndCommunication
+                .electronicCommunicationOther === 'no'
+            "
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'documentAndCommunication.no'">No</span>
+          </label>
+        </div>
       </div>
     </div>
   </div>
 
   <h3 [translate]="'certificate.title'">7.3. Certificate</h3>
   <div class="ps-3">
-    <h4 [translate]="'certificate.certificateRequest'">
-      7.3.1. I ask the court/tribunal to issue a certificate concerning the
-      judgment
-    </h4>
-    <div class="ps-3">
-      <div class="radio-wrapper radio-margin-bottom">
-        <input
-          type="radio"
-          value="yes"
-          [checked]="certificate.certificateRequest"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'certificate.yes'">Yes</span>
-        </label>
-      </div>
-      <div class="radio-wrapper">
-        <input
-          type="radio"
-          value="no"
-          [checked]="!certificate.certificateRequest"
-          class="disabled-input"
-        />
-        <label>
-          <span [translate]="'certificate.no'">No</span>
-        </label>
-      </div>
-
-      <h4>
-        <span class="space" [translate]="'certificate.language'"
-          >7.3.2. I ask the court/tribunal to issue a certificate in another
-          language than the language of the court proceedings, in
-          particular:</span
-        >
-        <span class="fw-bold">{{ certificate.languageName }}</span>
+    <div class="yes-no-radio-button">
+      <h4 class="yes-no-title">
+        <span [translate]="'certificate.certificateRequest'">
+          7.3.1. I ask the court/tribunal to issue a certificate concerning the
+          judgment
+        </span>
       </h4>
+      <div class="ps-3">
+        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.yes' | translate"
+            [checked]="certificate.certificateRequest"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'certificate.yes'">Yes</span>
+          </label>
+        </div>
+        <div class="radio-wrapper yes-no-radio-option-div">
+          <input
+            type="radio"
+            [value]="'claim.no' | translate"
+            [checked]="!certificate.certificateRequest"
+            class="disabled-input yes-no-radio-option"
+          />
+          <label>
+            <span [translate]="'certificate.no'">No</span>
+          </label>
+        </div>
+
+        <h4>
+          <span class="space" [translate]="'certificate.language'"
+            >7.3.2. I ask the court/tribunal to issue a certificate in another
+            language than the language of the court proceedings, in
+            particular:</span
+          >
+          <span class="fw-bold">{{ certificate.languageName }}</span>
+        </h4>
+      </div>
     </div>
   </div>
 
@@ -1515,17 +1611,17 @@
   <div class="ps-3">
     <h4>
       <span class="colon" [translate]="'dateAndSignature.city'">Done at</span>
-      <span class="fw-bold">{{ intermediateForm.dateAndSignature.city }}</span>
+      <span class="fw-bold">{{ formA.dateAndSignature.city }}</span>
     </h4>
 
     <h4>
       <span class="colon" [translate]="'dateAndSignature.date'">Date</span>
-      <span class="fw-bold">{{ intermediateForm.dateAndSignature.date }}</span>
+      <span class="fw-bold">{{ formA.dateAndSignature.date }}</span>
     </h4>
 
     <h4>
       <span class="colon" [translate]="'dateAndSignature.sign'">Sign</span>
-      <span class="fw-bold">{{ intermediateForm.dateAndSignature.sign }}</span>
+      <span class="fw-bold">{{ formA.dateAndSignature.sign }}</span>
     </h4>
   </div>
 
@@ -1606,4 +1702,5 @@
     </div>
   </div>
 </div>
+
 <app-spinner [showSpinner]="showSpinner"></app-spinner>
