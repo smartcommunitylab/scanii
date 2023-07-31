@@ -103,7 +103,7 @@ export class StepFourComponent implements OnInit {
     }
   }
 
-  onPaymentMethodClick(event: any, divIdToExpand?: string) {
+  onPaymentMethodRadioButtonsClick(event: any, divIdToExpand?: string) {
     const value = event.target.value;
 
     if (this.stepFourService.areAllRadioButtonsUnchecked) {

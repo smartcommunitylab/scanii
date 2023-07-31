@@ -6,11 +6,12 @@ import { Subscription } from "rxjs";
 import { Movement } from "src/app/core/common/movement.model";
 import { NavbarService } from "src/app/core/navbar/navbar.service";
 import { StepOneService } from "src/app/core/step-one/step-one.service";
+import { StepTwoService } from "src/app/core/step-two/step-two.service";
 import { EventManagerService } from "src/app/shared/services/event-manager.service";
 import { TranslateConfigService } from "src/app/shared/services/translate-config.service";
 import * as bootstrap from "bootstrap";
 import { PromiseContent } from "src/app/core/common/promise-content.model";
-import { FormC } from "src/app/core/common/form-C.model";
+import { FormD } from "src/app/core/common/form-D.model";
 import { ToastService } from "src/app/shared/services/toast.service";
 
 @Component({
@@ -27,6 +28,7 @@ export class NavbarComponent {
     private eventManager: EventManagerService,
     public navbarService: NavbarService,
     private stepOneService: StepOneService,
+    private stepTwoService: StepTwoService,
     private translateConfigService: TranslateConfigService,
     private toastService: ToastService
   ) {}
@@ -209,8 +211,8 @@ export class NavbarComponent {
       enquire.register("(min-width:48rem)", {
         match: function () {
           $stickyStuff.sticky({
-            topSpacing: 182.78,
-            bottomSpacing: $("footer").height()! + 25,
+            topSpacing: 220,
+            bottomSpacing: $("footer").height()!,
           });
         },
         unmatch: function () {
@@ -365,14 +367,17 @@ export class NavbarComponent {
     reader.onload = () => {
       const fileContent = reader.result as string;
       const jsonData = JSON.parse(fileContent);
-      this.setFormC(jsonData.form_C);
+      this.setFormD(jsonData.form_D);
     };
     if (this.file) reader.readAsText(this.file);
   }
 
-  private setFormC(data: FormC) {
+  private setFormD(data: FormD) {
     this.stepOneService
       .setStepOneForm(data.stepOne)
+      .then(() => {
+        return this.stepTwoService.setStepTwoForm(data.stepTwo);
+      })
       .then(() => {
         this.moveToFirstStep();
       })

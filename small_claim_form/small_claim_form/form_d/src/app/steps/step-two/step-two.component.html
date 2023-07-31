@@ -1,0 +1,1273 @@
+<div id="step2" class="step-width">
+  <div class="form-row full-width">
+    <div class="description">
+      <form role="form" [formGroup]="stepTwoService.form">
+        <div class="radioButtons">
+          <div class="form-row full-width bold">
+            <div>
+              <label style="margin-bottom: 0px">
+                Judgement or Court Settlement
+
+                <span class="asterisk">*</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row full-width bold">
+            <div>
+              <div
+                class="radio-wrapper"
+                id="input-wrapper_dynformSCD2JudgementOrCourtSettlement"
+              >
+                <input
+                  type="radio"
+                  title="Judgement"
+                  name="dynformSCD2JudgementOrCourtSettlement"
+                  value="judgement"
+                  id="judgemnent"
+                  class="df_input df_mandatory"
+                  [checked]="stepTwoService.judgementRadioButton"
+                  (click)="
+                    onJudgementSettlementRadioButtonsClick(
+                      $event,
+                      'dynformSCD2JudgementOrCourtSettlement1_div',
+                      ['dynformSCD2WasJudgmentGivenAppealCourt_div'],
+                      ['supersededJudgmentDate', 'supersededJudgmentCaseNumber']
+                    )
+                  "
+                />
+
+                <label for="judgemnent">
+                  Judgement
+
+                  <span
+                    class="asterisk"
+                    id="requiredStar_blank_dynformSCD2JudgementOrCourtSettlement"
+                  ></span>
+                </label>
+
+                <!-- <label>
+    
+      	<div class="asterisk"  id="requiredStar_blank_dynformSCD2JudgementOrCourtSettlement"></div>
+      
+</label> -->
+              </div>
+              <span
+                id="validation_error_text_dynformSCD2JudgementOrCourtSettlement"
+                class="error"
+                style="position: relative; top: 0px"
+              >
+              </span>
+            </div>
+          </div>
+
+          <div class="form-row full-width bold">
+            <div>
+              <div
+                class="radio-wrapper"
+                id="input-wrapper_dynformSCD2JudgementOrCourtSettlement"
+              >
+                <input
+                  type="radio"
+                  title="Court settlement"
+                  name="dynformSCD2JudgementOrCourtSettlement"
+                  value="settlement"
+                  id="courtSettl"
+                  class="df_input"
+                  [checked]="stepTwoService.settlementRadioButton"
+                  (click)="
+                    onJudgementSettlementRadioButtonsClick(
+                      $event,
+                      'dynformSCD2JudgementOrCourtSettlement2_div',
+                      ['']
+                    )
+                  "
+                />
+
+                <label for="courtSettl">
+                  Court settlement
+
+                  <span
+                    class="asterisk"
+                    id="requiredStar_blank_dynformSCD2JudgementOrCourtSettlement"
+                  ></span>
+                </label>
+
+                <!-- <label>
+    
+      	<div class="asterisk"  id="requiredStar_blank_dynformSCD2JudgementOrCourtSettlement"></div>
+      
+</label> -->
+              </div>
+              <span
+                id="validation_error_text_dynformSCD2JudgementOrCourtSettlement"
+                class="error"
+                style="position: relative; top: 0px"
+              >
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="dynformSCD2JudgementOrCourtSettlement1_div"
+          class="df_collapsed"
+        >
+          <div class="form-row full-width bold">
+            <div>
+              <label style="margin-bottom: 0px"> 4. Judgment </label>
+            </div>
+          </div>
+
+          <div>
+            <span class="marginleft20px">
+              <div class="date-input">
+                <div class="form-row full-width bold">
+                  <div>
+                    <label for="dynformSCD2JudgmentDate">
+                      4.1. Date
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_required_dynformSCD2JudgmentDate"
+                        >*</span
+                      >
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformSCD2JudgmentDate"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <input
+                          type="text"
+                          title="4.1. Date"
+                          name="dynformSCD2JudgmentDate"
+                          maxlength="150"
+                          value=""
+                          onchange="validateFieldOnBlur(this)"
+                          onblur="removeClassOnBlur(this)"
+                          onfocus="addClassOnFocus(this)"
+                          class="df_textbox textDate"
+                          id="dynformSCD2JudgmentDate"
+                        />
+                      </div>
+                    </div>
+
+                    <span
+                      id="validation_error_text_dynformSCD2JudgmentDate"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row full-width bold">
+                <div>
+                  <label for="dynformSCD2JudgmentCaseNumber">
+                    4.2. Case number
+
+                    <span
+                      class="asterisk"
+                      id="requiredStar_required_dynformSCD2JudgmentCaseNumber"
+                      >*</span
+                    >
+                  </label>
+
+                  <div
+                    class="input-wrapper regular"
+                    id="input-wrapper_dynformSCD2JudgmentCaseNumber"
+                  >
+                    <div class="input-content nopaddingTop">
+                      <input
+                        type="text"
+                        title="4.2. Case number"
+                        name="dynformSCD2JudgmentCaseNumber"
+                        maxlength="20"
+                        value=""
+                        onchange="validateFieldOnBlur(this)"
+                        onblur="removeClassOnBlur(this)"
+                        onfocus="addClassOnFocus(this)"
+                        class="df_textbox df_mandatory"
+                        id="dynformSCD2JudgmentCaseNumber"
+                      />
+                    </div>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformSCD2JudgmentCaseNumber"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <label style="margin-bottom: 0px">
+                    4.3. The substance of the judgment
+                  </label>
+                </div>
+              </div>
+            </span>
+
+            <div>
+              <span class="marginleft40px">
+                <div class="form-row full-width bold">
+                  <div>
+                    <label for="dynformSCD2JudgmentCourtOrdered1">
+                      4.3.1. The court/tribunal has ordered
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformSCD2JudgmentCourtOrdered1"
+                      ></span>
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformSCD2JudgmentCourtOrdered1"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <input
+                          type="text"
+                          title="4.3.1. The court/tribunal has ordered"
+                          name="dynformSCD2JudgmentCourtOrdered1"
+                          maxlength="30"
+                          value=""
+                          onchange="validateFieldOnBlur(this)"
+                          onblur="removeClassOnBlur(this)"
+                          onfocus="addClassOnFocus(this)"
+                          class="df_textbox"
+                          id="dynformSCD2JudgmentCourtOrdered1"
+                        />
+                      </div>
+                    </div>
+
+                    <span
+                      id="validation_error_text_dynformSCD2JudgmentCourtOrdered1"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label style="margin-bottom: 0px"> to pay to </label>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label class="asteriskOnly">
+                      <div
+                        class="asterisk"
+                        id="requiredStar_blank_dynformSCD2JudgmentCourtOrdered2"
+                      ></div>
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformSCD2JudgmentCourtOrdered2"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <input
+                          type="text"
+                          title="name"
+                          name="dynformSCD2JudgmentCourtOrdered2"
+                          maxlength="30"
+                          value=""
+                          onchange="validateFieldOnBlur(this)"
+                          onblur="removeClassOnBlur(this)"
+                          onfocus="addClassOnFocus(this)"
+                          class="df_textbox"
+                          id="dynformSCD2JudgmentCourtOrdered2"
+                        />
+                      </div>
+                    </div>
+
+                    <span
+                      id="validation_error_text_dynformSCD2JudgmentCourtOrdered2"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label style="margin-bottom: 0px"> </label>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2JudgmentCourtOrderedPrincipal">
+                        (1) Principal
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedPrincipal"
+                        ></span>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2JudgmentCourtOrderedPrincipal"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="(1) Principal"
+                            name="dynformSCD2JudgmentCourtOrderedPrincipal"
+                            maxlength="20"
+                            value=""
+                            onchange="validateFieldOnBlur(this)"
+                            onblur="removeClassOnBlur(this)"
+                            onfocus="addClassOnFocus(this)"
+                            class="df_textbox"
+                            id="dynformSCD2JudgmentCourtOrderedPrincipal"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2JudgmentCourtOrderedPrincipal"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2JudgmentCourtOrderedInterest">
+                        (2) Interest
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedInterest"
+                        ></span>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2JudgmentCourtOrderedInterest"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="(2) Interest"
+                            name="dynformSCD2JudgmentCourtOrderedInterest"
+                            maxlength="250"
+                            value=""
+                            onchange="validateFieldOnBlur(this)"
+                            onblur="removeClassOnBlur(this)"
+                            onfocus="addClassOnFocus(this)"
+                            class="df_textbox"
+                            id="dynformSCD2JudgmentCourtOrderedInterest"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2JudgmentCourtOrderedInterest"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2JudgmentCourtOrderedCosts">
+                        (3) Costs
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedCosts"
+                        ></span>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2JudgmentCourtOrderedCosts"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="(3) Costs"
+                            name="dynformSCD2JudgmentCourtOrderedCosts"
+                            maxlength="20"
+                            value=""
+                            onchange="validateFieldOnBlur(this)"
+                            onblur="removeClassOnBlur(this)"
+                            onfocus="addClassOnFocus(this)"
+                            class="df_textbox"
+                            id="dynformSCD2JudgmentCourtOrderedCosts"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2JudgmentCourtOrderedCosts"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label for="dynformSCD2JudgmentCourtOrderedAgainst1">
+                      4.3.2. The court/tribunal has made an order against
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedAgainst1"
+                      ></span>
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformSCD2JudgmentCourtOrderedAgainst1"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <input
+                          type="text"
+                          title="4.3.2. The court/tribunal has made an order against"
+                          name="dynformSCD2JudgmentCourtOrderedAgainst1"
+                          maxlength="30"
+                          value=""
+                          onchange="validateFieldOnBlur(this)"
+                          onblur="removeClassOnBlur(this)"
+                          onfocus="addClassOnFocus(this)"
+                          class="df_textbox"
+                          id="dynformSCD2JudgmentCourtOrderedAgainst1"
+                        />
+                      </div>
+                    </div>
+
+                    <span
+                      id="validation_error_text_dynformSCD2JudgmentCourtOrderedAgainst1"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label style="margin-bottom: 0px"> to </label>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label class="asteriskOnly">
+                      <div
+                        class="asterisk"
+                        id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedAgainst2"
+                      ></div>
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformSCD2JudgmentCourtOrderedAgainst2"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <input
+                          type="text"
+                          title="name"
+                          name="dynformSCD2JudgmentCourtOrderedAgainst2"
+                          maxlength="30"
+                          value=""
+                          onchange="validateFieldOnBlur(this)"
+                          onblur="removeClassOnBlur(this)"
+                          onfocus="addClassOnFocus(this)"
+                          class="df_textbox"
+                          id="dynformSCD2JudgmentCourtOrderedAgainst2"
+                        />
+                      </div>
+                    </div>
+
+                    <span
+                      id="validation_error_text_dynformSCD2JudgmentCourtOrderedAgainst2"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label style="margin-bottom: 0px"> </label>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+
+          <div class="radioButtons">
+            <div class="form-row full-width bold">
+              <div>
+                <!-- NEW ENTRY -->
+
+                <div
+                  class="radio-wrapper"
+                  id="input-wrapper_dynformSCD2WasJudgmentGivenAppealCourt"
+                >
+                  <input
+                    type="checkbox"
+                    title="Was the judgment given by an appeal court or was it in the case of a review of a judgment?"
+                    name="dynformSCD2WasJudgmentGivenAppealCourt"
+                    value="yes"
+                    onclick="this.checked = dynformSCD2WasJudgmentGivenAppealCourtClick; toggleCheckboxRadioValues(this); validateFieldOnBlur(this); showHideRadioDiv(this, 'dynformSCD2WasJudgmentGivenAppealCourt_div', 'yes');
+					if(!this.checked) {clearAllInputChildNodes('dynformSCD2WasJudgmentGivenAppealCourt_div'); showHideRadioDiv(this, 'dynformSCD2WasJudgmentGivenAppealCourt_div'); }
+					 else {
+					 	showHideRadioDiv(this, 'dynformSCD2WasJudgmentGivenAppealCourt_div', 'yes');
+					 } existRadioSelection(this)"
+                    onmousedown="dynformSCD2WasJudgmentGivenAppealCourtClick = checkClickOnRadio(this)"
+                    class="df_input"
+                    id="dynformSCD2WasJudgmentGivenAppealCourt"
+                  />
+
+                  <label for="dynformSCD2WasJudgmentGivenAppealCourt">
+                    Was the judgment given by an appeal court or was it in the
+                    case of a review of a judgment?
+                  </label>
+                </div>
+
+                <span
+                  id="validation_error_text_dynformSCD2WasJudgmentGivenAppealCourt"
+                  class="error"
+                  style="position: relative; top: 0px"
+                >
+                </span>
+
+                <!-- NEW ENTRY -->
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="dynformSCD2WasJudgmentGivenAppealCourt_div"
+            class="df_collapsed"
+          >
+            <div>
+              <div class="date-input">
+                <div class="form-row full-width bold">
+                  <div>
+                    <label for="dynformSCD2WasJudgmentGivenAppealCourtDate">
+                      This judgment supersedes the judgment given on
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_required_dynformSCD2WasJudgmentGivenAppealCourtDate"
+                        >*</span
+                      >
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformSCD2WasJudgmentGivenAppealCourtDate"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <input
+                          type="text"
+                          title="This judgment supersedes the judgment given on"
+                          name="dynformSCD2WasJudgmentGivenAppealCourtDate"
+                          maxlength="150"
+                          value=""
+                          onchange="validateFieldOnBlur(this)"
+                          onblur="removeClassOnBlur(this)"
+                          onfocus="addClassOnFocus(this)"
+                          class="df_textbox textDate"
+                          id="dynformSCD2WasJudgmentGivenAppealCourtDate"
+                        />
+                      </div>
+                    </div>
+
+                    <span
+                      id="validation_error_text_dynformSCD2WasJudgmentGivenAppealCourtDate"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <label style="margin-bottom: 0px">
+                    , case number
+
+                    <span class="asterisk">*</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <label class="asteriskOnly">
+                    <div
+                      class="asterisk"
+                      id="requiredStar_required_dynformSCD2WasJudgmentGivenAppealCourtText2"
+                    ></div>
+                  </label>
+
+                  <div
+                    class="input-wrapper regular"
+                    id="input-wrapper_dynformSCD2WasJudgmentGivenAppealCourtText2"
+                  >
+                    <div class="input-content nopaddingTop">
+                      <input
+                        type="text"
+                        title="name"
+                        name="dynformSCD2WasJudgmentGivenAppealCourtText2"
+                        maxlength="30"
+                        value=""
+                        onchange="validateFieldOnBlur(this,'dynformSCD2WasJudgmentGivenAppealCourt')"
+                        onblur="removeClassOnBlur(this)"
+                        onfocus="addClassOnFocus(this)"
+                        class="df_textbox df_mandatory"
+                        id="dynformSCD2WasJudgmentGivenAppealCourtText2"
+                      />
+                    </div>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformSCD2WasJudgmentGivenAppealCourtText2"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <label style="margin-bottom: 0px">
+                    , and any certificate relative thereto.
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row full-width bold">
+            <div>
+              <label style="margin-bottom: 0px">
+                THE JUDGMENT WILL BE RECOGNISED AND ENFORCED IN ANOTHER MEMBER
+                STATE WITHOUT THE NEED FOR A DECLARATION OF ENFORCEABILITY AND
+                WITHOUT ANY POSSIBILITY OF OPPOSING ITS RECOGNITION.
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="dynformSCD2JudgementOrCourtSettlement2_div"
+          class="df_collapsed"
+        >
+          <div class="form-row full-width bold">
+            <div>
+              <label style="margin-bottom: 0px"> 5. Court Settlement </label>
+            </div>
+          </div>
+
+          <div>
+            <span class="marginleft20px">
+              <div class="date-input">
+                <div class="form-row full-width bold">
+                  <div>
+                    <label for="dynformSCD2CourtSettlementDate">
+                      5.1. Date
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_required_dynformSCD2CourtSettlementDate"
+                        >*</span
+                      >
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformSCD2CourtSettlementDate"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <input
+                          type="text"
+                          title="5.1. Date"
+                          name="dynformSCD2CourtSettlementDate"
+                          maxlength="150"
+                          value=""
+                          onchange="validateFieldOnBlur(this)"
+                          onblur="removeClassOnBlur(this)"
+                          onfocus="addClassOnFocus(this)"
+                          class="df_textbox textDate"
+                          id="dynformSCD2CourtSettlementDate"
+                        />
+                      </div>
+                    </div>
+
+                    <span
+                      id="validation_error_text_dynformSCD2CourtSettlementDate"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row full-width bold">
+                <div>
+                  <label for="dynformSCD2CourtSettlementCaseNumber">
+                    5.2. Case number
+
+                    <span
+                      class="asterisk"
+                      id="requiredStar_required_dynformSCD2CourtSettlementCaseNumber"
+                      >*</span
+                    >
+                  </label>
+
+                  <div
+                    class="input-wrapper regular"
+                    id="input-wrapper_dynformSCD2CourtSettlementCaseNumber"
+                  >
+                    <div class="input-content nopaddingTop">
+                      <input
+                        type="text"
+                        title="5.2. Case number"
+                        name="dynformSCD2CourtSettlementCaseNumber"
+                        maxlength="20"
+                        value=""
+                        onchange="validateFieldOnBlur(this)"
+                        onblur="removeClassOnBlur(this)"
+                        onfocus="addClassOnFocus(this)"
+                        class="df_textbox df_mandatory"
+                        id="dynformSCD2CourtSettlementCaseNumber"
+                      />
+                    </div>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformSCD2CourtSettlementCaseNumber"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <label style="margin-bottom: 0px">
+                    5.3. The substance of the settlement
+                  </label>
+                </div>
+              </div>
+            </span>
+
+            <div>
+              <span class="marginleft40px">
+                <div class="form-row full-width bold">
+                  <div>
+                    <label for="dynformSCD2CourtOrdered1">
+                      5.3.1. The parties agreed that
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformSCD2CourtOrdered1"
+                      ></span>
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformSCD2CourtOrdered1"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <input
+                          type="text"
+                          title="5.3.1. The parties agreed that"
+                          name="dynformSCD2CourtOrdered1"
+                          maxlength="30"
+                          value=""
+                          onchange="validateFieldOnBlur(this)"
+                          onblur="removeClassOnBlur(this)"
+                          onfocus="addClassOnFocus(this)"
+                          class="df_textbox"
+                          id="dynformSCD2CourtOrdered1"
+                        />
+                      </div>
+                    </div>
+
+                    <span
+                      id="validation_error_text_dynformSCD2CourtOrdered1"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label style="margin-bottom: 0px"> will pay to </label>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label class="asteriskOnly">
+                      <div
+                        class="asterisk"
+                        id="requiredStar_blank_dynformSCD2CourtOrdered2"
+                      ></div>
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformSCD2CourtOrdered2"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <input
+                          type="text"
+                          title="name"
+                          name="dynformSCD2CourtOrdered2"
+                          maxlength="30"
+                          value=""
+                          onchange="validateFieldOnBlur(this)"
+                          onblur="removeClassOnBlur(this)"
+                          onfocus="addClassOnFocus(this)"
+                          class="df_textbox"
+                          id="dynformSCD2CourtOrdered2"
+                        />
+                      </div>
+                    </div>
+
+                    <span
+                      id="validation_error_text_dynformSCD2CourtOrdered2"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2CourtOrderedPrincipal">
+                        (1) Principal
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2CourtOrderedPrincipal"
+                        ></span>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2CourtOrderedPrincipal"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="(1) Principal"
+                            name="dynformSCD2CourtOrderedPrincipal"
+                            maxlength="20"
+                            value=""
+                            onchange="validateFieldOnBlur(this)"
+                            onblur="removeClassOnBlur(this)"
+                            onfocus="addClassOnFocus(this)"
+                            class="df_textbox"
+                            id="dynformSCD2CourtOrderedPrincipal"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2CourtOrderedPrincipal"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2CourtOrderedInterest">
+                        (2) Interest
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2CourtOrderedInterest"
+                        ></span>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2CourtOrderedInterest"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="(2) Interest"
+                            name="dynformSCD2CourtOrderedInterest"
+                            maxlength="250"
+                            value=""
+                            onchange="validateFieldOnBlur(this)"
+                            onblur="removeClassOnBlur(this)"
+                            onfocus="addClassOnFocus(this)"
+                            class="df_textbox"
+                            id="dynformSCD2CourtOrderedInterest"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2CourtOrderedInterest"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2CourtOrderedCosts">
+                        (3) Costs
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2CourtOrderedCosts"
+                        ></span>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2CourtOrderedCosts"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="(3) Costs"
+                            name="dynformSCD2CourtOrderedCosts"
+                            maxlength="20"
+                            value=""
+                            onchange="validateFieldOnBlur(this)"
+                            onblur="removeClassOnBlur(this)"
+                            onfocus="addClassOnFocus(this)"
+                            class="df_textbox"
+                            id="dynformSCD2CourtOrderedCosts"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2CourtOrderedCosts"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label for="dynformSCD2CourtOrderedAgainst1">
+                      5.3.2. The parties agreed that
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformSCD2CourtOrderedAgainst1"
+                      ></span>
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformSCD2CourtOrderedAgainst1"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <input
+                          type="text"
+                          title="5.3.2. The parties agreed that"
+                          name="dynformSCD2CourtOrderedAgainst1"
+                          maxlength="30"
+                          value=""
+                          onchange="validateFieldOnBlur(this)"
+                          onblur="removeClassOnBlur(this)"
+                          onfocus="addClassOnFocus(this)"
+                          class="df_textbox"
+                          id="dynformSCD2CourtOrderedAgainst1"
+                        />
+                      </div>
+                    </div>
+
+                    <span
+                      id="validation_error_text_dynformSCD2CourtOrderedAgainst1"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label style="margin-bottom: 0px"> will </label>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label class="asteriskOnly">
+                      <div
+                        class="asterisk"
+                        id="requiredStar_blank_dynformSCD2CourtOrderedAgainst2"
+                      ></div>
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformSCD2CourtOrderedAgainst2"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <input
+                          type="text"
+                          title="name"
+                          name="dynformSCD2CourtOrderedAgainst2"
+                          maxlength="30"
+                          value=""
+                          onchange="validateFieldOnBlur(this)"
+                          onblur="removeClassOnBlur(this)"
+                          onfocus="addClassOnFocus(this)"
+                          class="df_textbox"
+                          id="dynformSCD2CourtOrderedAgainst2"
+                        />
+                      </div>
+                    </div>
+
+                    <span
+                      id="validation_error_text_dynformSCD2CourtOrderedAgainst2"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row full-width bold">
+          <div>
+            <label for="dynformSCD2DoneAt">
+              Done at
+
+              <span
+                class="asterisk"
+                id="requiredStar_required_dynformSCD2DoneAt"
+                >*</span
+              >
+            </label>
+
+            <div
+              class="input-wrapper regular"
+              id="input-wrapper_dynformSCD2DoneAt"
+            >
+              <div class="input-content nopaddingTop">
+                <input
+                  type="text"
+                  title="Done at"
+                  name="dynformSCD2DoneAt"
+                  maxlength="60"
+                  value=""
+                  onchange="validateFieldOnBlur(this)"
+                  onblur="removeClassOnBlur(this)"
+                  onfocus="addClassOnFocus(this)"
+                  class="df_textbox df_mandatory"
+                  id="dynformSCD2DoneAt"
+                />
+              </div>
+            </div>
+
+            <span
+              id="validation_error_text_dynformSCD2DoneAt"
+              class="error"
+              style="position: relative; top: 0px"
+            >
+            </span>
+          </div>
+        </div>
+
+        <div class="date-input">
+          <div class="form-row full-width bold">
+            <div>
+              <label for="dynformSCD2Date">
+                Date
+
+                <span
+                  class="asterisk"
+                  id="requiredStar_required_dynformSCD2Date"
+                  >*</span
+                >
+              </label>
+
+              <div
+                class="input-wrapper valid regular"
+                id="input-wrapper_dynformSCD2Date"
+              >
+                <div class="input-content nopaddingTop">
+                  <input
+                    type="text"
+                    title="Date"
+                    name="dynformSCD2Date"
+                    maxlength="150"
+                    value="31/7/2023"
+                    onchange="validateFieldOnBlur(this)"
+                    onblur="removeClassOnBlur(this)"
+                    onfocus="addClassOnFocus(this)"
+                    class="df_textbox textDate"
+                    id="dynformSCD2Date"
+                  />
+                </div>
+              </div>
+
+              <span
+                id="validation_error_text_dynformSCD2Date"
+                class="error"
+                style="position: relative; top: 0px"
+              >
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row full-width">
+          <div>
+            <!-- NEW ENTRY -->
+
+            <h4>PDF form</h4>
+
+            <p></p>
+            <label for="dynformSCD2pdfLanguage"
+              >Please select the language in which you wish to generate the pdf
+              form:
+
+              <span class="asterisk">*</span>
+            </label>
+
+            <div
+              class="input-wrapper regular"
+              id="input-wrapper_dynformSCD2pdfLanguage"
+            >
+              <div class="input-content">
+                <select
+                  id="dynformSCD2pdfLanguage"
+                  title="Please select the language in which you wish to generate the pdf form"
+                  name="dynformSCD2pdfLanguage"
+                  onchange="validateFieldOnBlur(this)"
+                  onblur="removeClassOnBlur(this)"
+                  onfocus="addClassOnFocus(this)"
+                  class="df_select df_mandatory"
+                >
+                  <option value="" disabled selected>Please select</option>
+
+                  <option value="bg">Bulgarian (bg)</option>
+                  <option value="es">Spanish (es)</option>
+                  <option value="cs">Czech (cs)</option>
+                  <option value="da">Danish (da)</option>
+                  <option value="de">German (de)</option>
+                  <option value="et">Estonian (et)</option>
+                  <option value="el">Greek (el)</option>
+                  <option value="en">English (en)</option>
+                  <option value="fr">French (fr)</option>
+                  <option value="hr">Croatian (hr)</option>
+                  <option value="it">Italian (it)</option>
+                  <option value="lv">Latvian (lv)</option>
+                  <option value="lt">Lithuanian (lt)</option>
+                  <option value="hu">Hungarian (hu)</option>
+                  <option value="mt">Maltese (mt)</option>
+                  <option value="nl">Dutch (nl)</option>
+                  <option value="pl">Polish (pl)</option>
+                  <option value="pt">Portuguese (pt)</option>
+                  <option value="ro">Romanian (ro)</option>
+                  <option value="sk">Slovak (sk)</option>
+                  <option value="sl">Slovenian (sl)</option>
+                  <option value="fi">Finnish (fi)</option>
+                  <option value="sv">Swedish (sv)</option>
+                </select>
+              </div>
+            </div>
+            <span
+              id="validation_error_text_dynformSCD2pdfLanguage"
+              class="error"
+              style="position: relative; top: 0px"
+            >
+            </span>
+
+            <!-- NEW ENTRY -->
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <!-- the second div layer of buttons is added when the current page is not the first page -->
+    <div
+      style="
+        margin-top: 10px;
+        margin-bottom: 60px;
+        display: inline-block;
+        width: 100%;
+      "
+    >
+      <!-- the back button is added always on the left of the 2nd div layer -->
+      <span class="ieborder backPageButton"
+        ><input
+          type="submit"
+          class="button big outline pull-left"
+          name="submitNavigation2"
+          value="<    {{ 'buttons.back' | translate }}"
+          data-title=""
+          (click)="changeStep('back', 'step1')"
+      /></span>
+      <!-- end of back button -->
+      <div style="float: right; width: 40%">
+        <!-- start of create json form -->
+        <span class="ieborder pdfDownloadButton"
+          ><input
+            type="submit"
+            class="button big dark pull-right piwik_download"
+            name="submitNavigation3"
+            id="submitNavigation3"
+            value="Submit"
+            data-title=""
+            (click)="openPreviewModal()"
+        /></span>
+      </div>
+    </div>
+    <!-- end of the second div layer of buttons -->
+  </div>
+</div>

@@ -232,16 +232,10 @@
                     class="df_input"
                     [checked]="stepOneService.yesClaimApprovalRadioButton"
                     (click)="
-                      onClaimApprovalClick(
+                      onClaimApprovalRadioButtonsClick(
                         $event,
-                        [
-                          'dynformsSCC1P2ClaimAccept_div',
-                          'dynformsSCC1P2ClaimOutsideScope_div',
-                          'dynformsSCC1P2ClaimOutsideOtherClick_div',
-                          'dynformsSCC1P2WishEvidenceWritten_div',
-                          'dynformsSCC1P2WishEvidenceWitnesses_div',
-                          'dynformsSCC1P2WishEvidenceOtherClick_div'
-                        ],
+                        '',
+                        [''],
                         [
                           'outsideScopeText',
                           'otherText',
@@ -291,10 +285,10 @@
                     class="df_input"
                     [checked]="stepOneService.noClaimApprovalRadioButton"
                     (click)="
-                      onClaimApprovalClick(
+                      onClaimApprovalRadioButtonsClick(
                         $event,
+                        'dynformsSCC1P2ClaimAccept_div',
                         [
-                          'dynformsSCC1P2ClaimAccept_div',
                           'dynformsSCC1P2ClaimOutsideScope_div',
                           'dynformsSCC1P2ClaimOutsideOtherClick_div',
                           'dynformsSCC1P2WishEvidenceWritten_div',
@@ -350,10 +344,10 @@
                     class="df_input"
                     [checked]="stepOneService.partialClaimApprovalRadioButton"
                     (click)="
-                      onClaimApprovalClick(
+                      onClaimApprovalRadioButtonsClick(
                         $event,
+                        'dynformsSCC1P2ClaimAccept_div',
                         [
-                          'dynformsSCC1P2ClaimAccept_div',
                           'dynformsSCC1P2ClaimOutsideScope_div',
                           'dynformsSCC1P2ClaimOutsideOtherClick_div',
                           'dynformsSCC1P2WishEvidenceWritten_div',

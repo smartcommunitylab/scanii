@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "formC": {
+    "formD": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/form_c",
+            "outputPath": "dist/form_d",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -74,14 +74,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "port": 4400
+            "port": 4500
           },
           "configurations": {
             "production": {
-              "browserTarget": "formC:build:production"
+              "browserTarget": "formD:build:production"
             },
             "development": {
-              "browserTarget": "formC:build:development"
+              "browserTarget": "formD:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "formC:build"
+            "browserTarget": "formD:build"
           }
         },
         "test": {

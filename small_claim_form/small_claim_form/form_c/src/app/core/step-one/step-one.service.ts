@@ -16,8 +16,8 @@ import { stepOneShowHideFields } from "src/app/shared/constants/step-one.constan
 })
 export class StepOneService {
   requiredValidator = Validators.required;
-  previousSelectedRadioButton = { value: "", divIdToExpand: "" };
-  currentSelectedRadioButton = { value: "", divIdToExpand: "" };
+  previousSelectedRadioButton = { value: "", divIdToExpand: "", extendibleInternalDivIds: [] };
+  currentSelectedRadioButton = { value: "", divIdToExpand: "", extendibleInternalDivIds: [] };
 
   areAllClaimApprovalRadioButtonsUnchecked = true;
   yesClaimApprovalRadioButton = false;
@@ -71,22 +71,6 @@ export class StepOneService {
   });
 
   constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
-
-  languagesStatementValidator(
-    control: AbstractControl
-  ): ValidationErrors | null {
-    const languages = control.get("languages");
-    const statement = control.get("statement");
-
-    if (
-      (!languages.value || languages.value.length === 0) &&
-      (!statement.value || statement.value === "")
-    ) {
-      return { atLeastOneRequired: true };
-    }
-
-    return null;
-  }
 
   isStepOneFormValid(): Promise<PromiseContent> {
     return new Promise((resolve) => {
@@ -206,8 +190,8 @@ export class StepOneService {
 
   private resetAll() {
     this.form.reset();
-    this.previousSelectedRadioButton = { value: "", divIdToExpand: "" };
-    this.currentSelectedRadioButton = { value: "", divIdToExpand: "" };
+    this.previousSelectedRadioButton = { value: "", divIdToExpand: "", extendibleInternalDivIds: [] };
+    this.currentSelectedRadioButton = { value: "", divIdToExpand: "", extendibleInternalDivIds: [] };
     this.areAllClaimApprovalRadioButtonsUnchecked = true;
     this.yesClaimApprovalRadioButton = false;
     this.noClaimApprovalRadioButton = false;

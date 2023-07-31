@@ -1571,7 +1571,7 @@
                         class="df_input"
                         data-title=""
                         [checked]="stepFourService.bankTransferRadioButton"
-                        (click)="onPaymentMethodClick($event)"
+                        (click)="onPaymentMethodRadioButtonsClick($event)"
                       />
 
                       <label for="dynformSCA5PaymentMethodBankTransfer">
@@ -1614,7 +1614,7 @@
                         data-title=""
                         [checked]="stepFourService.creditCardRadioButton"
                         (click)="
-                          onPaymentMethodClick(
+                          onPaymentMethodRadioButtonsClick(
                             $event,
                             'dynformSCA5PaymentMethod_div2'
                           )
@@ -2038,7 +2038,7 @@
                         data-title=""
                         [checked]="stepFourService.directDebitRadioButton"
                         (click)="
-                          onPaymentMethodClick(
+                          onPaymentMethodRadioButtonsClick(
                             $event,
                             'dynformSCA5PaymentMethod_div3'
                           )
@@ -2314,7 +2314,7 @@
                         data-title=""
                         [checked]="stepFourService.otherRadioButton"
                         (click)="
-                          onPaymentMethodClick(
+                          onPaymentMethodRadioButtonsClick(
                             $event,
                             'dynformSCA5PaymentMethod_div4'
                           )

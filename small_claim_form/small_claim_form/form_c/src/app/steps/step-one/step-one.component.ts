@@ -90,22 +90,24 @@ export class StepOneComponent implements OnInit {
     }
   }
 
-  onClaimApprovalClick(
+  onClaimApprovalRadioButtonsClick(
     event: any,
-    divIds: string[],
+    divIdToExpand: string,
+    extendibleInternalDivIds: string[],
     excludedFormControls: string[]
   ) {
     const value = event.target.value;
-    const divIdToExpand = divIds[0];
 
     if (this.stepOneService.areAllClaimApprovalRadioButtonsUnchecked) {
       this.stepOneService.previousSelectedRadioButton = {
         value,
         divIdToExpand,
+        extendibleInternalDivIds,
       };
       this.stepOneService.currentSelectedRadioButton = {
         value,
         divIdToExpand,
+        extendibleInternalDivIds,
       };
     } else {
       this.stepOneService.previousSelectedRadioButton =
@@ -114,6 +116,7 @@ export class StepOneComponent implements OnInit {
       this.stepOneService.currentSelectedRadioButton = {
         value,
         divIdToExpand,
+        extendibleInternalDivIds,
       };
     }
 
@@ -123,14 +126,12 @@ export class StepOneComponent implements OnInit {
     ) {
       this.manageClaimApprovalOptions(
         this.stepOneService.previousSelectedRadioButton,
-        divIds,
         excludedFormControls
       );
     }
 
     this.manageClaimApprovalOptions(
       this.stepOneService.currentSelectedRadioButton,
-      divIds,
       excludedFormControls
     );
 
@@ -140,7 +141,6 @@ export class StepOneComponent implements OnInit {
 
   manageClaimApprovalOptions(
     radioButtonObj: any,
-    divIds: string[],
     excludedFormControls: string[]
   ): void {
     const formGroup = this.stepOneService.form
@@ -170,19 +170,12 @@ export class StepOneComponent implements OnInit {
           this.removeDfCollpasedClass(radioButtonObj.divIdToExpand);
 
           this.setClaimApprovalFormControl("no");
-        } else {
-          //collapse divs
-          for (const id of divIds) {
-            const elementToCollapse = document.getElementById(id);
-            if (!elementToCollapse.classList.contains("df_collapsed")) {
-              elementToCollapse.classList.add("df_collapsed");
-            }
-          }
-
-          formGroup.reset();
-          this.removeRequiredValidatorFromFormElement(formGroup);
-
-          this.setClaimApprovalFormControl("");
+        }
+        // in the case where the user selects the option with the value "no" and then selects the option with the value "partial", the expandable divs must remain open and not be collapsed
+        else if (
+          this.stepOneService.currentSelectedRadioButton.value !== "partial"
+        ) {
+          this.collapseDivsAndResetForm(radioButtonObj, formGroup);
         }
         break;
       case "partial":
@@ -199,32 +192,46 @@ export class StepOneComponent implements OnInit {
           this.removeDfCollpasedClass(radioButtonObj.divIdToExpand);
 
           this.setClaimApprovalFormControl("partial");
-        } else {
-          //collapse divs
-          for (const id of divIds) {
-            const elementToCollapse = document.getElementById(id);
-            if (!elementToCollapse.classList.contains("df_collapsed")) {
-              elementToCollapse.classList.add("df_collapsed");
-            }
-          }
-
-          formGroup.reset();
-          this.removeRequiredValidatorFromFormElement(formGroup);
-
-          this.setClaimApprovalFormControl("");
+        }
+        // in the case where the user selects the option with the value "partial" and then selects the option with the value "no", the expandable divs must remain open and not be collapsed
+        else if (
+          this.stepOneService.currentSelectedRadioButton.value !== "no"
+        ) {
+          this.collapseDivsAndResetForm(radioButtonObj, formGroup);
         }
         break;
     }
   }
 
-  setClaimApprovalFormControl(value: string) {
+  private collapseDivsAndResetForm(radioButtonObj: any, formGroup: FormGroup) {
+    //collapse divs
+    const array = [
+      radioButtonObj.divIdToExpand,
+      ...radioButtonObj.extendibleInternalDivIds,
+    ];
+    for (const id of array) {
+      if (id) {
+        const elementToCollapse = document.getElementById(id);
+        if (!elementToCollapse.classList.contains("df_collapsed")) {
+          elementToCollapse.classList.add("df_collapsed");
+        }
+      }
+    }
+
+    formGroup.reset();
+    this.removeRequiredValidatorFromFormElement(formGroup);
+
+    this.setClaimApprovalFormControl("");
+  }
+
+  private setClaimApprovalFormControl(value: string) {
     this.stepOneService.form
       .get("secondPart")
       .get("claimApproval")
       .setValue(value);
   }
 
-  checkIfAllRadioButtonsAreUnchecked(): boolean {
+  private checkIfAllRadioButtonsAreUnchecked(): boolean {
     if (
       !this.stepOneService.yesClaimApprovalRadioButton &&
       !this.stepOneService.noClaimApprovalRadioButton &&
@@ -328,7 +335,7 @@ export class StepOneComponent implements OnInit {
   openPreviewModal() {
     if (!this.stepOneService.form.invalid) {
       this.toastService.hideErrorToast();
-      
+
       const element = document.getElementById("step1-menu");
       element.querySelector("a div.validation-icon").classList.add("validated");
       const modalRef = this.modalService.open(PreviewModalComponent, {
