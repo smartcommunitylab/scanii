@@ -12,6 +12,7 @@ import { TranslateConfigService } from "src/app/shared/services/translate-config
 import * as bootstrap from "bootstrap";
 import { PromiseContent } from "src/app/core/common/promise-content.model";
 import { FormB } from "src/app/core/common/form-B.model";
+import { ToastService } from "src/app/shared/services/toast.service";
 
 @Component({
   selector: "app-navbar",
@@ -28,7 +29,8 @@ export class NavbarComponent {
     public navbarService: NavbarService,
     private stepOneService: StepOneService,
     private stepTwoService: StepTwoService,
-    private translateConfigService: TranslateConfigService
+    private translateConfigService: TranslateConfigService,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -101,6 +103,7 @@ export class NavbarComponent {
                   this.navbarService.currentStepId;
                 this.navbarService.currentStepId = stepId;
 
+                this.toastService.hideErrorToast();
                 this.setActive(element);
                 tabTrigger.show();
                 this.scrollToTop();
@@ -108,6 +111,8 @@ export class NavbarComponent {
 
                 this.addRemoveValidatedClass(array);
               } else {
+                this.toastService.showErrorToast();
+
                 const invalidStep = array.find(
                   (item: PromiseContent) => !item.isValid
                 );
@@ -143,6 +148,7 @@ export class NavbarComponent {
                 this.navbarService.currentStepId;
               this.navbarService.currentStepId = stepId;
 
+              this.toastService.hideErrorToast();
               this.setActive(element);
               tabTrigger.show();
               this.scrollToTop();
@@ -206,7 +212,7 @@ export class NavbarComponent {
         match: function () {
           $stickyStuff.sticky({
             topSpacing: 220,
-            //bottomSpacing: $("footer").height()! + 25,
+            bottomSpacing: $("footer").height()!,
           });
         },
         unmatch: function () {
@@ -225,7 +231,7 @@ export class NavbarComponent {
         match: function () {
           $(window).on("scroll", function (e) {
             var scrollPos = $(window).scrollTop()!;
-            var sidebartop = $stickySidebar.offset()!.top - 153;
+            var sidebartop = $stickySidebar.offset()!.top;
             var bottomSpacing = $("footer").height()! + 25;
             var scrollBottom =
               $(document).height()! -
@@ -266,6 +272,8 @@ export class NavbarComponent {
   }
 
   manageNavigation(event: any): void {
+    this.toastService.hideErrorToast();
+    
     const movement = event.content as Movement;
 
     const destinationMenu = document.getElementById(

@@ -1,0 +1,7 @@
+.spinner-border {
+    --bs-spinner-width: 8rem;
+    --bs-spinner-height: 8rem;
+    --bs-spinner-border-width: .4em;
+    border: var(--bs-spinner-border-width) solid #0057bd;
+    border-right-color: transparent;
+}

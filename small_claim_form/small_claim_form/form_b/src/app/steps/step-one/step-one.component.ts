@@ -10,6 +10,7 @@ import { UntypedFormArray } from "@angular/forms";
 import { LabelType } from "src/app/shared/constants/step-one.constants";
 import { Direction } from "src/app/shared/constants/direction.constants";
 import { Movement } from "src/app/core/common/movement.model";
+import { ToastService } from "src/app/shared/services/toast.service";
 declare const $: any;
 datepickerFactory($);
 @Component({
@@ -28,7 +29,8 @@ export class StepOneComponent implements OnInit {
     private translateService: TranslateService,
     private eventManager: EventManagerService,
     private navbarService: NavbarService,
-    private zone: NgZone //private toastService: ToastService
+    private zone: NgZone,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -649,7 +651,7 @@ export class StepOneComponent implements OnInit {
         left: 0,
         behavior: "auto",
       });
-      //this.toastService.showErrorToast();
+      this.toastService.showErrorToast();
     }
   }
 }

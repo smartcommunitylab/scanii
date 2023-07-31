@@ -39,8 +39,7 @@
         </li>
 
         <li data-id="">
-          <a
-          [translate]="'menu.formB'"
+          <a [translate]="'menu.formB'"
             >Form B - Request by the court or tribunal to complete and/or
             rectify the claim form</a
           >
@@ -61,78 +60,81 @@
   </div>
 </div>
 
+<div class="toast-container position-fixed end-0 p-3">
+  <app-warning-toast></app-warning-toast>
+  <app-error-toast></app-error-toast>
+</div>
+
 <div id="maincontent" class="content detail-page dynamic-forms">
   <div class="center clearfix">
     <div class="sidebar">
-      <div class="sticky-wrapper is-sticky">
-        <div class="sticky-sidebar">
-          <span
-            class="sidebar_title step-menu-title"
-            [translate]="'menu.formSteps'"
-            >Form Steps</span
-          >
-          <ul class="step-menu nav" id="step-menu">
-            <li class="active" id="step1-menu" data-step="1">
-              <a tabindex="-1" class="nav-link active" data-bs-target="#step1">
-                <div class="step-num">1.</div>
-                <span class="truncate">
-                  <span class="index"></span>
-                  <span class="step-title">
-                    <p>{{ "menu.step1" | translate }}</p>
-                  </span>
+      <div class="sticky-sidebar">
+        <span
+          class="sidebar_title step-menu-title"
+          [translate]="'menu.formSteps'"
+          >Form Steps</span
+        >
+        <ul class="step-menu nav" id="step-menu">
+          <li class="active" id="step1-menu" data-step="1">
+            <a tabindex="-1" class="nav-link active" data-bs-target="#step1">
+              <div class="step-num">1.</div>
+              <span class="truncate">
+                <span class="index"></span>
+                <span class="step-title">
+                  <p>{{ "menu.step1" | translate }}</p>
                 </span>
-                <div class="validation-icon"></div>
-              </a>
-            </li>
-            <li class="incomplete" id="step2-menu" data-step="2">
-              <a tabindex="-1" class="nav-link" data-bs-target="#step2">
-                <div class="step-num">2.</div>
-                <span class="truncate">
-                  <span class="index"></span>
-                  <span class="step-title">
-                    <p>{{ "menu.step2" | translate }}</p>
-                  </span>
+              </span>
+              <div class="validation-icon"></div>
+            </a>
+          </li>
+          <li class="incomplete" id="step2-menu" data-step="2">
+            <a tabindex="-1" class="nav-link" data-bs-target="#step2">
+              <div class="step-num">2.</div>
+              <span class="truncate">
+                <span class="index"></span>
+                <span class="step-title">
+                  <p>{{ "menu.step2" | translate }}</p>
                 </span>
-                <div class="validation-icon"></div>
-              </a>
-            </li>
-          </ul>
+              </span>
+              <div class="validation-icon"></div>
+            </a>
+          </li>
+        </ul>
 
-          <div class="form-sections-helper">
-            <p
-              id="form-instructions"
-              [translate]="'menu.loadSaveDraftExplanation'"
-            >
-              You can save a form you are working on as a draft. Load a saved
-              form later to complete it.
-            </p>
+        <div class="form-sections-helper">
+          <p
+            id="form-instructions"
+            [translate]="'menu.loadSaveDraftExplanation'"
+          >
+            You can save a form you are working on as a draft. Load a saved form
+            later to complete it.
+          </p>
+          <div class="buttons">
             <div class="buttons">
-              <div class="buttons">
-                <input
-                  type="file"
-                  accept=".json"
-                  id="loadDraft"
-                  (change)="loadDraft($event)"
-                />
-                <button
-                  type="button"
-                  class="button dark big load-draft"
-                  id="buttonLoad"
-                  data-title="If you have previously saved a draft form you can resume your work by loading that file into the system by clicking here."
-                  (click)="openFileBrowser()"
-                >
-                  <span [translate]="'menu.loadDraft'">Load draft</span></button
-                ><br />
-                <button
-                  class="button dark big save-draft piwik_download"
-                  type="button"
-                  id="buttonSave"
-                  (click)="navbarService.generateJson()"
-                  data-title="If you wish to stop filling in the form now, save your draft and resume later, please click this button and save the draft file in a safe location on your computer. You can upload it later to resume from where you left off without losing any input already made."
-                >
-                  <span [translate]="'menu.saveDraft'">Save draft</span>
-                </button>
-              </div>
+              <input
+                type="file"
+                accept=".json"
+                id="loadDraft"
+                (change)="loadDraft($event)"
+              />
+              <button
+                type="button"
+                class="button dark big load-draft"
+                id="buttonLoad"
+                data-title="If you have previously saved a draft form you can resume your work by loading that file into the system by clicking here."
+                (click)="openFileBrowser()"
+              >
+                <span [translate]="'menu.loadDraft'">Load draft</span></button
+              ><br />
+              <button
+                class="button dark big save-draft piwik_download"
+                type="button"
+                id="buttonSave"
+                (click)="navbarService.generateJson()"
+                data-title="If you wish to stop filling in the form now, save your draft and resume later, please click this button and save the draft file in a safe location on your computer. You can upload it later to resume from where you left off without losing any input already made."
+              >
+                <span [translate]="'menu.saveDraft'">Save draft</span>
+              </button>
             </div>
           </div>
         </div>
@@ -143,10 +145,7 @@
       <form class="dynamic-form">
         <div class="selection">
           <fieldset>
-            <div
-              class="advanced-forms-step"
-              style="display: block"
-            >
+            <div class="advanced-forms-step" style="display: block">
               <div class="tab-content">
                 <div class="tab-pane active" id="step1">
                   <app-step-one></app-step-one>

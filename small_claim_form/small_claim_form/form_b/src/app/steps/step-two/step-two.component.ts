@@ -10,6 +10,7 @@ import { EventManagerService } from "src/app/shared/services/event-manager.servi
 import { DatePipe } from "@angular/common";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { PreviewModalComponent } from "src/app/shared/components/preview-modal/preview-modal.component";
+import { ToastService } from "src/app/shared/services/toast.service";
 declare const $: any;
 datepickerFactory($);
 
@@ -30,7 +31,8 @@ export class StepTwoComponent implements OnInit {
     private navbarService: NavbarService,
     private eventManager: EventManagerService,
     private datePipe: DatePipe,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private toastService: ToastService
   ) {}
 
   ngOnInit(): void {
@@ -195,7 +197,7 @@ export class StepTwoComponent implements OnInit {
 
   openPreviewModal() {
     if (!this.stepTwoService.form.invalid) {
-      // this.toastService.hideErrorToast();
+      this.toastService.hideErrorToast();
       const element = document.getElementById("step2-menu");
       element.querySelector("a div.validation-icon").classList.add("validated");
       const modalRef = this.modalService.open(PreviewModalComponent, {
@@ -218,7 +220,7 @@ export class StepTwoComponent implements OnInit {
         left: 0,
         behavior: "auto",
       });
-      //this.toastService.showErrorToast();
+      this.toastService.showErrorToast();
     }
   }
 

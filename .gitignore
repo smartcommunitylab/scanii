@@ -53,4 +53,7 @@ small_claim_form/small_claim_form/form_a/dist
 # form_b
 small_claim_form/small_claim_form/form_b/.angular
 small_claim_form/small_claim_form/form_b/dist
-#small_claim_form/small_claim_form/form_b
+
+# form_c
+small_claim_form/small_claim_form/form_c/.angular
+small_claim_form/small_claim_form/form_c/dist

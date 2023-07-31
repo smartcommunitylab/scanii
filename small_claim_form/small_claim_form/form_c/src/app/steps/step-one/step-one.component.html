@@ -1,0 +1,2449 @@
+<div id="step1" class="step-width">
+  <div class="description">
+    <form role="form" [formGroup]="stepOneService.form">
+      <h3>
+        <span [translate]="'stepOne.firstPartTitle'">
+          Part I (to be filled in by the court/tribunal)</span
+        >
+      </h3>
+
+      <div formGroupName="firstPart">
+        <div class="form-row full-width bold">
+          <div>
+            <label for="dynformSCC1ClaimantName">
+              <span [translate]="'stepOne.claimant'"> Name of claimant </span>
+
+              <span
+                class="asterisk"
+                id="requiredStar_blank_dynformSCC1ClaimantName"
+              ></span>
+            </label>
+
+            <div
+              class="input-wrapper regular"
+              id="input-wrapper_dynformSCC1ClaimantName"
+            >
+              <div class="input-content nopaddingTop">
+                <input
+                  type="text"
+                  title="Name of claimant"
+                  name="dynformSCC1ClaimantName"
+                  maxlength="150"
+                  value=""
+                  class="df_textbox"
+                  id="dynformSCC1ClaimantName"
+                  formControlName="claimant"
+                />
+              </div>
+            </div>
+
+            <span
+              id="validation_error_text_dynformSCC1ClaimantName"
+              class="error"
+              style="position: relative; top: 0px"
+            >
+            </span>
+          </div>
+        </div>
+
+        <div class="form-row full-width bold">
+          <div>
+            <label for="dynformSCC1DefendantName">
+              <span [translate]="'stepOne.defendant'"> Name of defendant </span>
+
+              <span
+                class="asterisk"
+                id="requiredStar_blank_dynformSCC1DefendantName"
+              ></span>
+            </label>
+
+            <div
+              class="input-wrapper regular"
+              id="input-wrapper_dynformSCC1DefendantName"
+            >
+              <div class="input-content nopaddingTop">
+                <input
+                  type="text"
+                  title="Name of defendant"
+                  name="dynformSCC1DefendantName"
+                  maxlength="150"
+                  value=""
+                  class="df_textbox"
+                  id="dynformSCC1DefendantName"
+                  formControlName="defendant"
+                />
+              </div>
+            </div>
+
+            <span
+              id="validation_error_text_dynformSCC1DefendantName"
+              class="error"
+              style="position: relative; top: 0px"
+            >
+            </span>
+          </div>
+        </div>
+
+        <div class="form-row full-width bold">
+          <div>
+            <label for="dynformSCC1CourtTribunal">
+              <span [translate]="'stepOne.court'"> Court/tribunal </span>
+
+              <span
+                class="asterisk"
+                id="requiredStar_blank_dynformSCC1CourtTribunal"
+              ></span>
+            </label>
+
+            <div
+              class="input-wrapper regular"
+              id="input-wrapper_dynformSCC1CourtTribunal"
+            >
+              <div class="input-content nopaddingTop">
+                <input
+                  type="text"
+                  title="Court/tribunal"
+                  name="dynformSCC1CourtTribunal"
+                  maxlength="150"
+                  value=""
+                  class="df_textbox"
+                  id="dynformSCC1CourtTribunal"
+                  formControlName="court"
+                />
+              </div>
+            </div>
+
+            <span
+              id="validation_error_text_dynformSCC1CourtTribunal"
+              class="error"
+              style="position: relative; top: 0px"
+            >
+            </span>
+          </div>
+        </div>
+
+        <div class="form-row full-width bold">
+          <div>
+            <label for="dynformSCC1Claim">
+              <span [translate]="'stepOne.claim'"> Claim </span>
+
+              <span
+                class="asterisk"
+                id="requiredStar_blank_dynformSCC1Claim"
+              ></span>
+            </label>
+
+            <div
+              class="input-wrapper regular"
+              id="input-wrapper_dynformSCC1Claim"
+            >
+              <div class="input-content nopaddingTop">
+                <input
+                  type="text"
+                  title="Claim"
+                  name="dynformSCC1Claim"
+                  maxlength="150"
+                  value=""
+                  class="df_textbox"
+                  id="dynformSCC1Claim"
+                  formControlName="claim"
+                />
+              </div>
+            </div>
+
+            <span
+              id="validation_error_text_dynformSCC1Claim"
+              class="error"
+              style="position: relative; top: 0px"
+            >
+            </span>
+          </div>
+        </div>
+
+        <div class="form-row full-width bold">
+          <div>
+            <label for="dynformSCC1CaseNumber">
+              <span [translate]="'stepOne.caseNumber'"> Case number </span>
+
+              <span
+                class="asterisk"
+                id="requiredStar_blank_dynformSCC1CaseNumber"
+              ></span>
+            </label>
+
+            <div
+              class="input-wrapper regular"
+              id="input-wrapper_dynformSCC1CaseNumber"
+            >
+              <div class="input-content nopaddingTop">
+                <input
+                  type="text"
+                  title="Case number"
+                  name="dynformSCC1CaseNumber"
+                  maxlength="150"
+                  value=""
+                  class="df_textbox"
+                  id="dynformSCC1CaseNumber"
+                  formControlName="caseNumber"
+                />
+              </div>
+            </div>
+
+            <span
+              id="validation_error_text_dynformSCC1CaseNumber"
+              class="error"
+              style="position: relative; top: 0px"
+            >
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 2rem">
+        <span [translate]="'stepOne.secondPartTitle'">
+          Part II (to be filled in by the defendant)
+        </span>
+      </h3>
+
+      <div formGroupName="secondPart">
+        <div class="form-row full-width">
+          <div class="form-row full-width bold">
+            <div>
+              <label style="margin-bottom: 0px">
+                <span [translate]="'stepOne.claimApproval'">
+                  1. Do you accept the claim?
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="radioButtons1" style="margin-left: 20px">
+            <div class="form-row full-width bold">
+              <div>
+                <div
+                  class="radio-wrapper"
+                  id="input-wrapper_dynformsSCC1P2ClaimAccept"
+                >
+                  <input
+                    type="radio"
+                    title="Yes"
+                    value="yes"
+                    id="dynforms_Yes_First_Capital"
+                    class="df_input"
+                    [checked]="stepOneService.yesClaimApprovalRadioButton"
+                    (click)="
+                      onClaimApprovalClick(
+                        $event,
+                        [
+                          'dynformsSCC1P2ClaimAccept_div',
+                          'dynformsSCC1P2ClaimOutsideScope_div',
+                          'dynformsSCC1P2ClaimOutsideOtherClick_div',
+                          'dynformsSCC1P2WishEvidenceWritten_div',
+                          'dynformsSCC1P2WishEvidenceWitnesses_div',
+                          'dynformsSCC1P2WishEvidenceOtherClick_div'
+                        ],
+                        [
+                          'outsideScopeText',
+                          'otherText',
+                          'writtenEvidenceText',
+                          'witnessesText',
+                          'otherEvidenceText'
+                        ]
+                      )
+                    "
+                  />
+
+                  <label for="dynforms_Yes_First_Capital">
+                    <span [translate]="'stepOne.yes'"> Yes </span>
+
+                    <span
+                      class="asterisk"
+                      id="requiredStar_blank_dynformsSCC1P2ClaimAccept"
+                    ></span>
+                  </label>
+
+                  <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2ClaimAccept"></div>
+        
+    </label> -->
+                </div>
+                <span
+                  id="validation_error_text_dynformsSCC1P2ClaimAccept"
+                  class="error"
+                  style="position: relative; top: 0px"
+                >
+                </span>
+              </div>
+            </div>
+
+            <div class="form-row full-width bold">
+              <div>
+                <div
+                  class="radio-wrapper"
+                  id="input-wrapper_dynformsSCC1P2ClaimAccept"
+                >
+                  <input
+                    type="radio"
+                    title="No"
+                    value="no"
+                    id="dynforms_No_First_Capital"
+                    class="df_input"
+                    [checked]="stepOneService.noClaimApprovalRadioButton"
+                    (click)="
+                      onClaimApprovalClick(
+                        $event,
+                        [
+                          'dynformsSCC1P2ClaimAccept_div',
+                          'dynformsSCC1P2ClaimOutsideScope_div',
+                          'dynformsSCC1P2ClaimOutsideOtherClick_div',
+                          'dynformsSCC1P2WishEvidenceWritten_div',
+                          'dynformsSCC1P2WishEvidenceWitnesses_div',
+                          'dynformsSCC1P2WishEvidenceOtherClick_div'
+                        ],
+                        [
+                          'outsideScopeText',
+                          'otherText',
+                          'writtenEvidenceText',
+                          'witnessesText',
+                          'otherEvidenceText'
+                        ]
+                      )
+                    "
+                  />
+
+                  <label for="dynforms_No_First_Capital">
+                    <span [translate]="'stepOne.no'"> No </span>
+
+                    <span
+                      class="asterisk"
+                      id="requiredStar_blank_dynformsSCC1P2ClaimAccept"
+                    ></span>
+                  </label>
+
+                  <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2ClaimAccept"></div>
+        
+    </label> -->
+                </div>
+                <span
+                  id="validation_error_text_dynformsSCC1P2ClaimAccept"
+                  class="error"
+                  style="position: relative; top: 0px"
+                >
+                </span>
+              </div>
+            </div>
+
+            <div class="form-row full-width bold">
+              <div>
+                <div
+                  class="radio-wrapper"
+                  id="input-wrapper_dynformsSCC1P2ClaimAccept"
+                >
+                  <input
+                    type="radio"
+                    title="Partially"
+                    value="partial"
+                    id="dynforms_Partially"
+                    class="df_input"
+                    [checked]="stepOneService.partialClaimApprovalRadioButton"
+                    (click)="
+                      onClaimApprovalClick(
+                        $event,
+                        [
+                          'dynformsSCC1P2ClaimAccept_div',
+                          'dynformsSCC1P2ClaimOutsideScope_div',
+                          'dynformsSCC1P2ClaimOutsideOtherClick_div',
+                          'dynformsSCC1P2WishEvidenceWritten_div',
+                          'dynformsSCC1P2WishEvidenceWitnesses_div',
+                          'dynformsSCC1P2WishEvidenceOtherClick_div'
+                        ],
+                        [
+                          'outsideScopeText',
+                          'otherText',
+                          'writtenEvidenceText',
+                          'witnessesText',
+                          'otherEvidenceText'
+                        ]
+                      )
+                    "
+                  />
+
+                  <label for="dynforms_Partially">
+                    <span [translate]="'stepOne.partially'"> Partially </span>
+                    <span
+                      class="asterisk"
+                      id="requiredStar_blank_dynformsSCC1P2ClaimAccept"
+                    ></span>
+                  </label>
+
+                  <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2ClaimAccept"></div>
+        
+    </label> -->
+                </div>
+                <span
+                  id="validation_error_text_dynformsSCC1P2ClaimAccept"
+                  class="error"
+                  style="position: relative; top: 0px"
+                >
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div id="dynformsSCC1P2ClaimAccept_div" class="df_collapsed">
+            <div formGroupName="negativePartialApproval">
+              <div class="form-row full-width bold">
+                <div>
+                  <label style="margin-bottom: 0px">
+                    <span [translate]="'stepOne.noPartiallyAgreementReason'">
+                      If you have answered "no" or "partially", please indicate
+                      reasons:
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <legend class="hidden">&nbsp;</legend>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <label style="margin-bottom: 0px">
+                    <span [translate]="'stepOne.outsideScope'">
+                      The claim is outside the scope of the European Small
+                      Claims Procedure</span
+                    >
+
+                    <span class="asterisk">*</span>
+                  </label>
+
+                  <div
+                    *ngIf="
+                      stepOneService.form
+                        .get('secondPart')
+                        .get('negativePartialApproval')
+                        .get('outsideScope')!.invalid &&
+                      stepOneService.form
+                        .get('secondPart')
+                        .get('negativePartialApproval')
+                        .get('outsideScope')!.dirty
+                    "
+                  >
+                    <div
+                      *ngIf="
+                        stepOneService.form.get('secondPart').get('negativePartialApproval').get('outsideScope')?.errors?.['required']
+                        "
+                    >
+                      <span
+                        id="validation_error_text_dynformsSCC1P2ClaimOutsideScope"
+                        class="error pt-3"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                      >
+                        Field is required
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="radioButtons2" style="margin-left: 20px">
+                <div class="form-row full-width bold">
+                  <div>
+                    <div
+                      class="radio-wrapper"
+                      id="input-wrapper_dynformsSCC1P2ClaimOutsideScope"
+                    >
+                      <input
+                        type="radio"
+                        title="Yes"
+                        value="yes"
+                        id="yesOutsideScope"
+                        class="df_input"
+                        formControlName="outsideScope"
+                        (change)="
+                          showHideDiv(
+                            $event,
+                            ['dynformsSCC1P2ClaimOutsideScope_div'],
+                            ['yes'],
+                            'outsideScopeText'
+                          )
+                        "
+                      />
+
+                      <label for="yesOutsideScope">
+                        <span [translate]="'stepOne.yes'"> Yes </span>
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformsSCC1P2ClaimOutsideScope"
+                        ></span>
+                      </label>
+
+                      <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2ClaimOutsideScope"></div>
+        
+    </label> -->
+                    </div>
+                    <span
+                      id="validation_error_text_dynformsSCC1P2ClaimOutsideScope"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <div
+                      class="radio-wrapper"
+                      id="input-wrapper_dynformsSCC1P2ClaimOutsideScope"
+                    >
+                      <input
+                        type="radio"
+                        title="No"
+                        value="no"
+                        id="noOutsideScope"
+                        class="df_input"
+                        formControlName="outsideScope"
+                        (change)="
+                          showHideDiv(
+                            $event,
+                            ['dynformsSCC1P2ClaimOutsideScope_div'],
+                            ['yes'],
+                            'outsideScopeText'
+                          )
+                        "
+                      />
+
+                      <label for="noOutsideScope">
+                        <span [translate]="'stepOne.no'"> No </span>
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformsSCC1P2ClaimOutsideScope"
+                        ></span>
+                      </label>
+
+                      <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2ClaimOutsideScope"></div>
+        
+    </label> -->
+                    </div>
+                    <span
+                      id="validation_error_text_dynformsSCC1P2ClaimOutsideScope"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="dynformsSCC1P2ClaimOutsideScope_div"
+                class="df_collapsed"
+              >
+                <div>
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformsSCC1P2ClaimOutsideScopePleaseSpecify">
+                        <span [translate]="'stepOne.specify'">
+                          Please specify
+                        </span>
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_required_dynformsSCC1P2ClaimOutsideScopePleaseSpecify"
+                          >*</span
+                        >
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformsSCC1P2ClaimOutsideScopePleaseSpecify"
+                        [ngClass]="{
+                          invalid:
+                            stepOneService.form
+                              .get('secondPart')
+                              .get('negativePartialApproval')
+                              .get('outsideScopeText')?.invalid &&
+                            stepOneService.form
+                              .get('secondPart')
+                              .get('negativePartialApproval')
+                              .get('outsideScopeText')?.dirty
+                        }"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <textarea
+                            title="Please specify"
+                            name="dynformsSCC1P2ClaimOutsideScopePleaseSpecify"
+                            class="df_textarea df_textboxsafarionly df_mandatory"
+                            id="dynformsSCC1P2ClaimOutsideScopePleaseSpecify"
+                            formControlName="outsideScopeText"
+                          ></textarea>
+                        </div>
+                      </div>
+
+                      <div
+                        *ngIf="
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('outsideScopeText')?.invalid &&
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('outsideScopeText')?.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="stepOneService.form.get('secondPart').get('negativePartialApproval').get('outsideScopeText')?.errors?.['required']"
+                        >
+                          <span
+                            id="validation_error_text_dynformsSCC1P2ClaimOutsideScopePleaseSpecify"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <label style="margin-bottom: 0px">
+                    <span [translate]="'stepOne.other'">Other</span>
+                    <span class="asterisk">*</span>
+                  </label>
+
+                  <div
+                    *ngIf="
+                      stepOneService.form
+                        .get('secondPart')
+                        .get('negativePartialApproval')
+                        .get('other')!.invalid &&
+                      stepOneService.form
+                        .get('secondPart')
+                        .get('negativePartialApproval')
+                        .get('other')!.dirty
+                    "
+                  >
+                    <div
+                      *ngIf="stepOneService.form.get('secondPart').get('negativePartialApproval').get('other')?.errors?.['required']"
+                    >
+                      <span
+                        id="validation_error_text_dynformsSCC1P2ClaimOutsideOther"
+                        class="error pt-3"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                        >Field is required</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="radioButtons3" style="margin-left: 20px">
+                <div class="form-row full-width bold">
+                  <div>
+                    <div
+                      class="radio-wrapper"
+                      id="input-wrapper_dynformsSCC1P2ClaimOutsideOther"
+                    >
+                      <input
+                        type="radio"
+                        title="Yes"
+                        value="yes"
+                        id="yesOther"
+                        class="df_input"
+                        formControlName="other"
+                        (change)="
+                          showHideDiv(
+                            $event,
+                            ['dynformsSCC1P2ClaimOutsideOtherClick_div'],
+                            ['yes'],
+                            'otherText'
+                          )
+                        "
+                      />
+
+                      <label for="yesOther">
+                        <span [translate]="'stepOne.yes'"> Yes </span>
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformsSCC1P2ClaimOutsideOther"
+                        ></span>
+                      </label>
+
+                      <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2ClaimOutsideOther"></div>
+        
+    </label> -->
+                    </div>
+                    <span
+                      id="validation_error_text_dynformsSCC1P2ClaimOutsideOther"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <div
+                      class="radio-wrapper"
+                      id="input-wrapper_dynformsSCC1P2ClaimOutsideOther"
+                    >
+                      <input
+                        type="radio"
+                        title="No"
+                        value="no"
+                        id="noOther"
+                        class="df_input"
+                        formControlName="other"
+                        (change)="
+                          showHideDiv(
+                            $event,
+                            ['dynformsSCC1P2ClaimOutsideOtherClick_div'],
+                            ['yes'],
+                            'otherText'
+                          )
+                        "
+                      />
+
+                      <label for="noOther">
+                        <span [translate]="'stepOne.no'"> No </span>
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformsSCC1P2ClaimOutsideOther"
+                        ></span>
+                      </label>
+
+                      <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2ClaimOutsideOther"></div>
+        
+    </label> -->
+                    </div>
+                    <span
+                      id="validation_error_text_dynformsSCC1P2ClaimOutsideOther"
+                      class="error"
+                      style="position: relative; top: 0px"
+                    >
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="dynformsSCC1P2ClaimOutsideOtherClick_div"
+                class="df_collapsed"
+              >
+                <div>
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label
+                        for="dynformsSCC1P2ClaimOutsideOtherClickPleaseSpecify"
+                      >
+                        <span [translate]="'stepOne.specify'">
+                          Please specify
+                        </span>
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_required_dynformsSCC1P2ClaimOutsideOtherClickPleaseSpecify"
+                          >*</span
+                        >
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformsSCC1P2ClaimOutsideOtherClickPleaseSpecify"
+                        [ngClass]="{
+                          invalid:
+                            stepOneService.form
+                              .get('secondPart')
+                              .get('negativePartialApproval')
+                              .get('otherText')?.invalid &&
+                            stepOneService.form
+                              .get('secondPart')
+                              .get('negativePartialApproval')
+                              .get('otherText')?.dirty
+                        }"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <textarea
+                            title="Please specify"
+                            name="dynformsSCC1P2ClaimOutsideOtherClickPleaseSpecify"
+                            class="df_textarea df_textboxsafarionly df_mandatory"
+                            id="dynformsSCC1P2ClaimOutsideOtherClickPleaseSpecify"
+                            formControlName="otherText"
+                          ></textarea>
+                        </div>
+                      </div>
+
+                      <div
+                        *ngIf="
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('otherText')?.invalid &&
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('otherText')?.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="stepOneService.form.get('secondPart').get('negativePartialApproval').get('otherText')?.errors?.['required']"
+                        >
+                          <span
+                            id="validation_error_text_dynformsSCC1P2ClaimOutsideOtherClickPleaseSpecify"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                            >Field is required</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <label style="margin-bottom: 0px">
+                    <span [translate]="'stepOne.justifyingEvidence'">
+                      2. If you do not accept the claim please describe the
+                      evidence you wish to put forward to contest it. Please
+                      state which points of your answer the evidence supports.
+                      Where appropriate, you should add relevant supporting
+                      documents.
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="radioButtons4">
+                <span class="marginleft20px">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label style="margin-bottom: 0px">
+                        <span [translate]="'stepOne.writtenEvidence'">
+                          2.1. Written evidence
+                        </span>
+                        <span class="asterisk">*</span>
+                      </label>
+
+                      <div
+                        *ngIf="
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('writtenEvidence')!.invalid &&
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('writtenEvidence')!.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="stepOneService.form.get('secondPart').get('negativePartialApproval').get('writtenEvidence')?.errors?.['required']"
+                        >
+                          <span
+                            id="validation_error_text_dynformsSCC1P2WishEvidenceWritten"
+                            class="error pt-3"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                            >Field is required</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+                <div style="margin-left: 40px">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <div
+                        class="radio-wrapper"
+                        id="input-wrapper_dynformsSCC1P2WishEvidenceWritten"
+                      >
+                        <input
+                          type="radio"
+                          title="Yes"
+                          value="yes"
+                          id="yesWrittenEvidence"
+                          class="df_input"
+                          formControlName="writtenEvidence"
+                          (change)="
+                            showHideDiv(
+                              $event,
+                              ['dynformsSCC1P2WishEvidenceWritten_div'],
+                              ['yes'],
+                              'writtenEvidenceText'
+                            )
+                          "
+                        />
+
+                        <label for="yesWrittenEvidence">
+                          <span [translate]="'stepOne.yes'"> Yes </span>
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformsSCC1P2WishEvidenceWritten"
+                          ></span>
+                        </label>
+
+                        <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2WishEvidenceWritten"></div>
+        
+    </label> -->
+                      </div>
+                      <span
+                        id="validation_error_text_dynformsSCC1P2WishEvidenceWritten"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <div
+                        class="radio-wrapper"
+                        id="input-wrapper_dynformsSCC1P2WishEvidenceWritten"
+                      >
+                        <input
+                          type="radio"
+                          title="No"
+                          value="no"
+                          id="noWrittenEvidence"
+                          class="df_input"
+                          formControlName="writtenEvidence"
+                          (change)="
+                            showHideDiv(
+                              $event,
+                              ['dynformsSCC1P2WishEvidenceWritten_div'],
+                              ['yes'],
+                              'writtenEvidenceText'
+                            )
+                          "
+                        />
+
+                        <label for="noWrittenEvidence">
+                          <span [translate]="'stepOne.no'"> No </span>
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformsSCC1P2WishEvidenceWritten"
+                          ></span>
+                        </label>
+
+                        <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2WishEvidenceWritten"></div>
+        
+    </label> -->
+                      </div>
+                      <span
+                        id="validation_error_text_dynformsSCC1P2WishEvidenceWritten"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="dynformsSCC1P2WishEvidenceWritten_div"
+                class="df_collapsed"
+              >
+                <div class="form-row full-width bold">
+                  <div>
+                    <label for="dynformsSCC1P2WishEvidenceWrittenSpecify">
+                      <span [translate]="'stepOne.specify'">
+                        Please specify
+                      </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_required_dynformsSCC1P2WishEvidenceWrittenSpecify"
+                        >*</span
+                      >
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformsSCC1P2WishEvidenceWrittenSpecify"
+                      [ngClass]="{
+                        invalid:
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('writtenEvidenceText')?.invalid &&
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('writtenEvidenceText')?.dirty
+                      }"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <textarea
+                          title="Please specify"
+                          name="dynformsSCC1P2WishEvidenceWrittenSpecify"
+                          class="df_textarea df_textboxsafarionly df_mandatory"
+                          id="dynformsSCC1P2WishEvidenceWrittenSpecify"
+                          formControlName="writtenEvidenceText"
+                        ></textarea>
+                      </div>
+                    </div>
+
+                    <div
+                      *ngIf="
+                        stepOneService.form
+                          .get('secondPart')
+                          .get('negativePartialApproval')
+                          .get('writtenEvidenceText')?.invalid &&
+                        stepOneService.form
+                          .get('secondPart')
+                          .get('negativePartialApproval')
+                          .get('writtenEvidenceText')?.dirty
+                      "
+                    >
+                      <div
+                        *ngIf="stepOneService.form.get('secondPart').get('negativePartialApproval').get('writtenEvidenceText')?.errors?.['required']"
+                      >
+                        <span
+                          id="validation_error_text_dynformsSCC1P2WishEvidenceWrittenSpecify"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                          >Field is required</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="radioButtons5">
+                <span class="marginleft20px">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label style="margin-bottom: 0px">
+                        <span [translate]="'stepOne.witnesses'">
+                          2.2. Witnesses
+                        </span>
+
+                        <span class="asterisk">*</span>
+                      </label>
+
+                      <div
+                        *ngIf="
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('witnesses')!.invalid &&
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('witnesses')!.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="stepOneService.form.get('secondPart').get('negativePartialApproval').get('witnesses')?.errors?.['required']"
+                        >
+                          <span
+                            id="validation_error_text_dynformsSCC1P2WishEvidenceWitnesses"
+                            class="error pt-3"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                            >Field is required</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+                <div style="margin-left: 40px">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <div
+                        class="radio-wrapper"
+                        id="input-wrapper_dynformsSCC1P2WishEvidenceWitnesses"
+                      >
+                        <input
+                          type="radio"
+                          title="Yes"
+                          value="yes"
+                          id="yesWitness"
+                          class="df_input"
+                          formControlName="witnesses"
+                          (change)="
+                            showHideDiv(
+                              $event,
+                              ['dynformsSCC1P2WishEvidenceWitnesses_div'],
+                              ['yes'],
+                              'witnessesText'
+                            )
+                          "
+                        />
+
+                        <label for="yesWitness">
+                          <span [translate]="'stepOne.yes'"> Yes </span>
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformsSCC1P2WishEvidenceWitnesses"
+                          ></span>
+                        </label>
+
+                        <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2WishEvidenceWitnesses"></div>
+        
+    </label> -->
+                      </div>
+                      <span
+                        id="validation_error_text_dynformsSCC1P2WishEvidenceWitnesses"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <div
+                        class="radio-wrapper"
+                        id="input-wrapper_dynformsSCC1P2WishEvidenceWitnesses"
+                      >
+                        <input
+                          type="radio"
+                          title="No"
+                          value="no"
+                          id="noWitness"
+                          class="df_input"
+                          formControlName="witnesses"
+                          (change)="
+                            showHideDiv(
+                              $event,
+                              ['dynformsSCC1P2WishEvidenceWitnesses_div'],
+                              ['yes'],
+                              'witnessesText'
+                            )
+                          "
+                        />
+
+                        <label for="noWitness">
+                          <span [translate]="'stepOne.no'"> No </span>
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformsSCC1P2WishEvidenceWitnesses"
+                          ></span>
+                        </label>
+
+                        <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2WishEvidenceWitnesses"></div>
+        
+    </label> -->
+                      </div>
+                      <span
+                        id="validation_error_text_dynformsSCC1P2WishEvidenceWitnesses"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="dynformsSCC1P2WishEvidenceWitnesses_div"
+                class="df_collapsed"
+              >
+                <div>
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformsSCC1P2WishEvidenceWitnessesSpecify">
+                        <span [translate]="'stepOne.specify'">
+                          Please specify
+                        </span>
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_required_dynformsSCC1P2WishEvidenceWitnessesSpecify"
+                          >*</span
+                        >
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformsSCC1P2WishEvidenceWitnessesSpecify"
+                        [ngClass]="{
+                          invalid:
+                            stepOneService.form
+                              .get('secondPart')
+                              .get('negativePartialApproval')
+                              .get('witnessesText')?.invalid &&
+                            stepOneService.form
+                              .get('secondPart')
+                              .get('negativePartialApproval')
+                              .get('witnessesText')?.dirty
+                        }"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <textarea
+                            title="Please specify"
+                            name="dynformsSCC1P2WishEvidenceWitnessesSpecify"
+                            class="df_textarea df_textboxsafarionly df_mandatory"
+                            id="dynformsSCC1P2WishEvidenceWitnessesSpecify"
+                            formControlName="witnessesText"
+                          ></textarea>
+                        </div>
+                      </div>
+
+                      <div
+                        *ngIf="
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('witnessesText')?.invalid &&
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('witnessesText')?.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="stepOneService.form.get('secondPart').get('negativePartialApproval').get('witnessesText')?.errors?.['required']"
+                        >
+                          <span
+                            id="validation_error_text_dynformsSCC1P2WishEvidenceWitnessesSpecify"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                            >Field is required</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="radioButtons6">
+                <span class="marginleft20px">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label style="margin-bottom: 0px">
+                        <span [translate]="'stepOne.otherEvidence'">
+                          2.3. Other
+                        </span>
+
+                        <span class="asterisk">*</span>
+                      </label>
+
+                      <div
+                        *ngIf="
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('otherEvidence')!.invalid &&
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('otherEvidence')!.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="stepOneService.form.get('secondPart').get('negativePartialApproval').get('otherEvidence')?.errors?.['required']"
+                        >
+                          <span
+                            id="validation_error_text_dynformsSCC1P2WishEvidenceOther"
+                            class="error pt-3"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                            >Field is required</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+                <div style="margin-left: 40px">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <div
+                        class="radio-wrapper"
+                        id="input-wrapper_dynformsSCC1P2WishEvidenceOther"
+                      >
+                        <input
+                          type="radio"
+                          title="Yes"
+                          value="yes"
+                          id="yesEvidOther"
+                          class="df_input"
+                          formControlName="otherEvidence"
+                          (change)="
+                            showHideDiv(
+                              $event,
+                              ['dynformsSCC1P2WishEvidenceOtherClick_div'],
+                              ['yes'],
+                              'otherEvidenceText'
+                            )
+                          "
+                        />
+
+                        <label for="yesEvidOther">
+                          <span [translate]="'stepOne.yes'"> Yes </span>
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformsSCC1P2WishEvidenceOther"
+                          ></span>
+                        </label>
+
+                        <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2WishEvidenceOther"></div>
+        
+        </label> -->
+                      </div>
+                      <span
+                        id="validation_error_text_dynformsSCC1P2WishEvidenceOther"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <div
+                        class="radio-wrapper"
+                        id="input-wrapper_dynformsSCC1P2WishEvidenceOther"
+                      >
+                        <input
+                          type="radio"
+                          title="No"
+                          value="no"
+                          id="noEvidOther"
+                          class="df_input"
+                          formControlName="otherEvidence"
+                          (change)="
+                            showHideDiv(
+                              $event,
+                              ['dynformsSCC1P2WishEvidenceOtherClick_div'],
+                              ['yes'],
+                              'otherEvidenceText'
+                            )
+                          "
+                        />
+
+                        <label for="noEvidOther">
+                          <span [translate]="'stepOne.no'"> No </span>
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformsSCC1P2WishEvidenceOther"
+                          ></span>
+                        </label>
+
+                        <!-- <label>
+      
+          <div class="asterisk"  id="requiredStar_blank_dynformsSCC1P2WishEvidenceOther"></div>
+        
+          </label> -->
+                      </div>
+                      <span
+                        id="validation_error_text_dynformsSCC1P2WishEvidenceOther"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="dynformsSCC1P2WishEvidenceOtherClick_div"
+                class="df_collapsed"
+              >
+                <div>
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformsSCC1P2WishEvidenceOtherSpecify">
+                        <span [translate]="'stepOne.specify'">
+                          Please specify
+                        </span>
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_required_dynformsSCC1P2WishEvidenceOtherSpecify"
+                          >*</span
+                        >
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformsSCC1P2WishEvidenceOtherSpecify"
+                        [ngClass]="{
+                          invalid:
+                            stepOneService.form
+                              .get('secondPart')
+                              .get('negativePartialApproval')
+                              .get('otherEvidenceText')?.invalid &&
+                            stepOneService.form
+                              .get('secondPart')
+                              .get('negativePartialApproval')
+                              .get('otherEvidenceText')?.dirty
+                        }"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <textarea
+                            title="Please specify"
+                            name="dynformsSCC1P2WishEvidenceOtherSpecify"
+                            class="df_textarea df_textboxsafarionly df_mandatory"
+                            id="dynformsSCC1P2WishEvidenceOtherSpecify"
+                            formControlName="otherEvidenceText"
+                          ></textarea>
+                        </div>
+                      </div>
+
+                      <div
+                        *ngIf="
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('otherEvidenceText')?.invalid &&
+                          stepOneService.form
+                            .get('secondPart')
+                            .get('negativePartialApproval')
+                            .get('otherEvidenceText')?.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="stepOneService.form.get('secondPart').get('negativePartialApproval').get('otherEvidenceText')?.errors?.['required']"
+                        >
+                          <span
+                            id="validation_error_text_dynformsSCC1P2WishEvidenceOtherSpecify"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                            >Field is required</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row full-width bold">
+            <div>
+              <label style="margin-bottom: 0px">
+                <span [translate]="'stepOne.oralHearing'">
+                  Oral hearing: Please note that the European Small Claims
+                  Procedure is a written procedure. However, you can ask for an
+                  oral hearing to be held. Please be aware that having regard to
+                  the circumstances of the case, the court/tribunal can refuse
+                  this request.
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <legend class="hidden">&nbsp;</legend>
+
+          <div class="radioButtons7">
+            <div class="form-row full-width bold">
+              <div>
+                <label style="margin-bottom: 0px">
+                  <span [translate]="'stepOne.oralHearingRequest'">
+                    3. Do you want an oral hearing to be held?
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-left: 20px">
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformsSCC1P2WantOralHearing"
+                  >
+                    <input
+                      type="radio"
+                      title="Yes"
+                      value="yes"
+                      id="yesWantOralHearing"
+                      class="df_input"
+                      formControlName="oralHearingRequest"
+                      (change)="
+                        showHideDiv(
+                          $event,
+                          ['dynformsSCC1P2WantOralHearing_div'],
+                          ['yes'],
+                          'oralHearingReasons',
+                          ['oralHearingReasons']
+                        )
+                      "
+                    />
+                    <label for="yesWantOralHearing">
+                      <span [translate]="'stepOne.yes'"> Yes </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformsSCC1P2WantOralHearing"
+                      ></span>
+                    </label>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2WantOralHearing"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformsSCC1P2WantOralHearing"
+                  >
+                    <input
+                      type="radio"
+                      title="No"
+                      value="no"
+                      id="noWantOralHearing"
+                      class="df_input"
+                      formControlName="oralHearingRequest"
+                      (change)="
+                        showHideDiv(
+                          $event,
+                          ['dynformsSCC1P2WantOralHearing_div'],
+                          ['yes'],
+                          'oralHearingReasons',
+                          ['oralHearingReasons']
+                        )
+                      "
+                    />
+                    <label for="noWantOralHearing">
+                      <span [translate]="'stepOne.no'"> No </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformsSCC1P2WantOralHearing"
+                      ></span>
+                    </label>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2WantOralHearing"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="dynformsSCC1P2WantOralHearing_div" class="df_collapsed">
+            <div>
+              <div class="form-row full-width bold">
+                <div>
+                  <label for="dynformsSCC1P2WantOralHearingIndicateReason">
+                    <span [translate]="'stepOne.reasons'">
+                      If yes, please indicate reasons
+                    </span>
+
+                    <span
+                      class="asterisk"
+                      id="requiredStar_blank_dynformsSCC1P2WantOralHearingIndicateReason"
+                    ></span>
+                  </label>
+
+                  <div
+                    class="input-wrapper regular"
+                    id="input-wrapper_dynformsSCC1P2WantOralHearingIndicateReason"
+                  >
+                    <div class="input-content nopaddingTop">
+                      <textarea
+                        title="If yes, please indicate reasons"
+                        name="dynformsSCC1P2WantOralHearingIndicateReason"
+                        class="df_textarea df_textboxsafarionly"
+                        id="dynformsSCC1P2WantOralHearingIndicateReason"
+                        formControlName="oralHearingReasons"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2WantOralHearingIndicateReason"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="radioButtons8">
+            <div class="form-row full-width bold">
+              <div>
+                <label style="margin-bottom: 0px">
+                  <span [translate]="'stepOne.oralHearingPhysicallyPresence'">
+                    4. If the court decides to hold an oral hearing, do you want
+                    to be physically present?
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-left: 20px">
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformsSCC1P2HoldOralHearing"
+                  >
+                    <input
+                      type="radio"
+                      title="Yes"
+                      value="yes"
+                      id="yesHoldOralHearing"
+                      class="df_input"
+                      formControlName="oralHearingPhysicallyPresence"
+                      (change)="
+                        showHideDiv(
+                          $event,
+                          ['dynformsSCC1P2HoldOralHearing_div'],
+                          ['yes'],
+                          'oralHearingPhysicallyPresenceReasons',
+                          ['oralHearingPhysicallyPresenceReasons']
+                        )
+                      "
+                    />
+                    <label for="yesHoldOralHearing">
+                      <span [translate]="'stepOne.yes'"> Yes </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformsSCC1P2HoldOralHearing"
+                      ></span>
+                    </label>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2HoldOralHearing"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformsSCC1P2HoldOralHearing"
+                  >
+                    <input
+                      type="radio"
+                      title="No"
+                      value="no"
+                      id="noHoldOralHearing"
+                      class="df_input"
+                      formControlName="oralHearingRequest"
+                      formControlName="oralHearingPhysicallyPresence"
+                      (change)="
+                        showHideDiv(
+                          $event,
+                          ['dynformsSCC1P2HoldOralHearing_div'],
+                          ['yes'],
+                          'oralHearingPhysicallyPresenceReasons',
+                          ['oralHearingPhysicallyPresenceReasons']
+                        )
+                      "
+                    />
+                    <label for="noHoldOralHearing">
+                      <span [translate]="'stepOne.no'"> No </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformsSCC1P2HoldOralHearing"
+                      ></span>
+                    </label>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2HoldOralHearing"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="dynformsSCC1P2HoldOralHearing_div" class="df_collapsed">
+            <div>
+              <div class="form-row full-width bold">
+                <div>
+                  <label for="dynformsSCC1P2HoldOralHearingIndicateReason">
+                    <span [translate]="'stepOne.reasons'">
+                      Please indicate reasons
+                    </span>
+
+                    <span
+                      class="asterisk"
+                      id="requiredStar_blank_dynformsSCC1P2HoldOralHearingIndicateReason"
+                    ></span>
+                  </label>
+
+                  <div
+                    class="input-wrapper regular"
+                    id="input-wrapper_dynformsSCC1P2HoldOralHearingIndicateReason"
+                  >
+                    <div class="input-content nopaddingTop">
+                      <textarea
+                        title="Please indicate reasons"
+                        name="dynformsSCC1P2HoldOralHearingIndicateReason"
+                        class="df_textarea df_textboxsafarionly"
+                        id="dynformsSCC1P2HoldOralHearingIndicateReason"
+                        formControlName="oralHearingPhysicallyPresenceReasons"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2HoldOralHearingIndicateReason"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="radioButtons9">
+            <div class="form-row full-width bold">
+              <div>
+                <label style="margin-bottom: 0px">
+                  <span [translate]="'stepOne.proceedingsCostClaim'">
+                    5. Are you claiming the costs of proceedings?
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-left: 20px">
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformsSCC1P2CostsClaiming"
+                  >
+                    <input
+                      type="radio"
+                      title="Yes"
+                      value="yes"
+                      id="yesCostsClaiming"
+                      class="df_input"
+                      formControlName="proceedingsCostClaim"
+                      (change)="
+                        showHideDiv(
+                          $event,
+                          ['dynformsSCC1P2CostsClaiming_div'],
+                          ['yes'],
+                          'proceedingsCostClaimText'
+                        )
+                      "
+                    />
+                    <label for="yesCostsClaiming">
+                      <span [translate]="'stepOne.yes'"> Yes </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformsSCC1P2CostsClaiming"
+                      ></span>
+                    </label>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2CostsClaiming"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformsSCC1P2CostsClaiming"
+                  >
+                    <input
+                      type="radio"
+                      title="No"
+                      value="no"
+                      id="noCostsClaiming"
+                      class="df_input"
+                      formControlName="proceedingsCostClaim"
+                      (change)="
+                        showHideDiv(
+                          $event,
+                          ['dynformsSCC1P2CostsClaiming_div'],
+                          ['yes'],
+                          'proceedingsCostClaimText'
+                        )
+                      "
+                    />
+                    <label for="noCostsClaiming">
+                      <span [translate]="'stepOne.no'"> No </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformsSCC1P2CostsClaiming"
+                      ></span>
+                    </label>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2CostsClaiming"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="dynformsSCC1P2CostsClaiming_div" class="df_collapsed">
+            <div>
+              <div class="form-row full-width bold">
+                <div>
+                  <label for="dynformsSCC1P2CostsClaimingSpecify">
+                    <span
+                      [translate]="'stepOne.proceedingsCostClaimSpecification'"
+                    >
+                      If yes, please specify which costs and if possible,
+                      indicate the amount claimed or incurred so far</span
+                    >
+
+                    <span
+                      class="asterisk"
+                      id="requiredStar_required_dynformsSCC1P2CostsClaimingSpecify"
+                      >*</span
+                    >
+                  </label>
+
+                  <div
+                    class="input-wrapper regular"
+                    id="input-wrapper_dynformsSCC1P2CostsClaimingSpecify"
+                    [ngClass]="{
+                      invalid:
+                        stepOneService.form
+                          .get('secondPart')
+                          .get('proceedingsCostClaimText')?.invalid &&
+                        stepOneService.form
+                          .get('secondPart')
+                          .get('proceedingsCostClaimText')?.dirty
+                    }"
+                  >
+                    <div class="input-content nopaddingTop">
+                      <textarea
+                        title="If yes, please specify which costs and if possible, indicate the amount claimed or incurred so far"
+                        name="dynformsSCC1P2CostsClaimingSpecify"
+                        class="df_textarea df_textboxsafarionly df_mandatory"
+                        id="dynformsSCC1P2CostsClaimingSpecify"
+                        formControlName="proceedingsCostClaimText"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <div
+                    *ngIf="
+                      stepOneService.form
+                        .get('secondPart')
+                        .get('proceedingsCostClaimText')?.invalid &&
+                      stepOneService.form
+                        .get('secondPart')
+                        .get('proceedingsCostClaimText')?.dirty
+                    "
+                  >
+                    <div
+                      *ngIf="stepOneService.form.get('secondPart').get('proceedingsCostClaimText')?.errors?.['required']"
+                    >
+                      <span
+                        id="validation_error_text_dynformsSCC1P2CostsClaimingSpecify"
+                        class="error"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                        >Field is required</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row full-width bold">
+            <div>
+              <label style="margin-bottom: 0px">
+                <span [translate]="'stepOne.counterclaim'">
+                  Counterclaim: If you want to make a claim against the claimant
+                  (counterclaim), you should fill in and attach a separate Form
+                  A. Please note that for the purposes of the counterclaim you
+                  are considered to be the claimant.
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="radioButtons10">
+            <div class="form-row full-width bold">
+              <div>
+                <label style="margin-bottom: 0px">
+                  <span [translate]="'stepOne.counterclaimRequest'">
+                    6. Do you want to make a counterclaim?
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-left: 20px">
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformsSCC1P2MakeCounterclaim"
+                  >
+                    <input
+                      type="radio"
+                      title="Yes"
+                      value="yes"
+                      id="yesMakeCounterclaim"
+                      class="df_input"
+                      formControlName="counterclaim"
+                      (change)="
+                        showHideDiv(
+                          $event,
+                          ['dynformsSCC1P2MakeCounterclaim_div'],
+                          ['yes']
+                        )
+                      "
+                    />
+                    <label for="yesMakeCounterclaim">
+                      <span [translate]="'stepOne.yes'"> Yes </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformsSCC1P2MakeCounterclaim"
+                      ></span>
+                    </label>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2MakeCounterclaim"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformsSCC1P2MakeCounterclaim"
+                  >
+                    <input
+                      type="radio"
+                      title="No"
+                      value="no"
+                      id="noMakeCounterclaim"
+                      class="df_input"
+                      formControlName="counterclaim"
+                      (change)="
+                        showHideDiv(
+                          $event,
+                          ['dynformsSCC1P2MakeCounterclaim_div'],
+                          ['yes']
+                        )
+                      "
+                    />
+                    <label for="noMakeCounterclaim">
+                      <span [translate]="'stepOne.no'"> No </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformsSCC1P2MakeCounterclaim"
+                      ></span>
+                    </label>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2MakeCounterclaim"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="dynformsSCC1P2MakeCounterclaim_div" class="df_collapsed">
+            <label class="df_text_info_12">
+              <span [innerHTML]="'stepOne.counterclaimInfo' | translate">
+                If yes, please fill in and attach a separate Form A</span
+              ></label
+            >
+          </div>
+
+          <legend class="hidden">&nbsp;</legend>
+
+          <div class="radioButtons11">
+            <div class="form-row full-width bold">
+              <div>
+                <label style="margin-bottom: 0px">
+                  <span [translate]="'stepOne.electronicJudgmentAgreement'">
+                    7.1. Do you agree to the use of electronic means for service
+                    of the judgment?</span
+                  >
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-left: 20px">
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformsSCC1P2ServicesJudgment"
+                  >
+                    <input
+                      type="radio"
+                      title="Yes"
+                      value="yes"
+                      id="yesServicesJudgment"
+                      class="df_input"
+                      formControlName="electronicJudgmentAgreement"
+                    />
+                    <label for="yesServicesJudgment">
+                      <span [translate]="'stepOne.yes'"> Yes </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformsSCC1P2ServicesJudgment"
+                      ></span>
+                    </label>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2ServicesJudgment"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformsSCC1P2ServicesJudgment"
+                  >
+                    <input
+                      type="radio"
+                      title="No"
+                      value="no"
+                      id="noServicesJudgment"
+                      class="df_input"
+                      formControlName="electronicJudgmentAgreement"
+                    />
+                    <label for="noServicesJudgment">
+                      <span [translate]="'stepOne.no'"> No </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformsSCC1P2ServicesJudgment"
+                      ></span>
+                    </label>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2ServicesJudgment"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <legend class="hidden">&nbsp;</legend>
+
+          <div class="radioButtons12">
+            <div class="form-row full-width bold">
+              <div>
+                <label style="margin-bottom: 0px">
+                  <span
+                    [translate]="'stepOne.electronicCommunicationAgreement'"
+                  >
+                    7.2 Do you agree to the use of electronic means to receive
+                    written communications other than the judgment?
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-left: 20px">
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformsSCC1P2ReceiveCommunications"
+                  >
+                    <input
+                      type="radio"
+                      title="Yes"
+                      value="yes"
+                      id="yesReceiveCommunications"
+                      class="df_input"
+                      formControlName="electronicCommunicationAgreement"
+                    />
+                    <label for="yesReceiveCommunications">
+                      <span [translate]="'stepOne.yes'"> Yes </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformsSCC1P2ReceiveCommunications"
+                      ></span>
+                    </label>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2ReceiveCommunications"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformsSCC1P2ReceiveCommunications"
+                  >
+                    <input
+                      type="radio"
+                      title="No"
+                      value="no"
+                      id="noReceiveCommunications"
+                      class="df_input"
+                      formControlName="electronicCommunicationAgreement"
+                    />
+                    <label for="noReceiveCommunications">
+                      <span [translate]="'stepOne.no'"> No </span>
+
+                      <span
+                        class="asterisk"
+                        id="requiredStar_blank_dynformsSCC1P2ReceiveCommunications"
+                      ></span>
+                    </label>
+                  </div>
+
+                  <span
+                    id="validation_error_text_dynformsSCC1P2ReceiveCommunications"
+                    class="error"
+                    style="position: relative; top: 0px"
+                  >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row full-width bold">
+            <div>
+              <label for="dynformsSCC1P2MakeCounterclaimOtherInformation">
+                <span [translate]="'stepOne.otherInformation'">
+                  8. Other information
+                </span>
+
+                <span
+                  class="asterisk"
+                  id="requiredStar_blank_dynformsSCC1P2MakeCounterclaimOtherInformation"
+                ></span>
+              </label>
+
+              <div
+                class="input-wrapper regular"
+                id="input-wrapper_dynformsSCC1P2MakeCounterclaimOtherInformation"
+              >
+                <div class="input-content nopaddingTop">
+                  <textarea
+                    title="8. Other information"
+                    name="dynformsSCC1P2MakeCounterclaimOtherInformation"
+                    class="df_textarea df_textboxsafarionly"
+                    id="dynformsSCC1P2MakeCounterclaimOtherInformation"
+                    formControlName="otherInformation"
+                  ></textarea>
+                </div>
+              </div>
+
+              <span
+                id="validation_error_text_dynformsSCC1P2MakeCounterclaimOtherInformation"
+                class="error"
+                style="position: relative; top: 0px"
+              >
+              </span>
+            </div>
+          </div>
+
+          <div class="form-row full-width bold">
+            <div>
+              <label style="margin-bottom: 0px">
+                <span [translate]="'stepOne.dateAndSignature'">
+                  9. Date and signature</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row full-width bold">
+            <div>
+              <label style="margin-bottom: 0px">
+                <span [translate]="'stepOne.truthfulnessDeclaration'">
+                  I declare that the information provided is true to the best of
+                  my knowledge and is given in good faith.
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row full-width bold">
+            <div>
+              <label for="dynformsSCC1P2DoneAt">
+                <span [translate]="'stepOne.doneAt'"> Done at </span>
+
+                <span
+                  class="asterisk"
+                  id="requiredStar_blank_dynformsSCC1P2DoneAt"
+                ></span>
+              </label>
+
+              <div
+                class="input-wrapper regular"
+                id="input-wrapper_dynformsSCC1P2DoneAt"
+              >
+                <div class="input-content nopaddingTop">
+                  <input
+                    type="text"
+                    title="Done at"
+                    name="dynformsSCC1P2DoneAt"
+                    maxlength="60"
+                    value=""
+                    class="df_textbox"
+                    id="dynformsSCC1P2DoneAt"
+                    formControlName="doneAt"
+                  />
+                </div>
+              </div>
+
+              <span
+                id="validation_error_text_dynformsSCC1P2DoneAt"
+                class="error"
+                style="position: relative; top: 0px"
+              >
+              </span>
+            </div>
+          </div>
+
+          <div class="date-input">
+            <div class="form-row full-width bold">
+              <div>
+                <label for="dynformsSCC1P2Date">
+                  <span [translate]="'stepOne.date'"> Date </span>
+
+                  <span
+                    class="asterisk"
+                    id="requiredStar_blank_dynformsSCC1P2Date"
+                  ></span>
+                </label>
+
+                <div
+                  class="input-wrapper regular"
+                  id="input-wrapper_dynformsSCC1P2Date"
+                >
+                  <div class="input-content nopaddingTop">
+                    <input
+                      type="text"
+                      title="Date"
+                      name="dynformsSCC1P2Date"
+                      maxlength="150"
+                      class="df_textbox textDate"
+                      id="dynformsSCC1P2Date"
+                      formControlName="date"
+                      [readOnly]="true"
+                    />
+                  </div>
+                </div>
+
+                <span
+                  id="validation_error_text_dynformsSCC1P2Date"
+                  class="error"
+                  style="position: relative; top: 0px"
+                >
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row full-width bold">
+            <div>
+              <label for="dynformsSCC1P2NameSignature">
+                <span [translate]="'stepOne.nameAndSignature'">
+                  Name and signature
+                </span>
+
+                <span
+                  class="asterisk"
+                  id="requiredStar_blank_dynformsSCC1P2NameSignature"
+                ></span>
+              </label>
+
+              <div
+                class="input-wrapper regular"
+                id="input-wrapper_dynformsSCC1P2NameSignature"
+              >
+                <div class="input-content nopaddingTop">
+                  <input
+                    type="text"
+                    title="Name and signature"
+                    name="dynformsSCC1P2NameSignature"
+                    maxlength="150"
+                    value=""
+                    class="df_textbox"
+                    id="dynformsSCC1P2NameSignature"
+                    formControlName="nameSignature"
+                  />
+                </div>
+              </div>
+
+              <span
+                id="validation_error_text_dynformsSCC1P2NameSignature"
+                class="error"
+                style="position: relative; top: 0px"
+              >
+              </span>
+            </div>
+          </div>
+
+          <div class="form-row full-width bold">
+            <div>
+              <!-- NEW ENTRY -->
+
+              <label>
+                <span [translate]="'stepOne.rememberSignStampPrintedForm'">
+                  Please remember to sign and stamp (if available) this form
+                  once it has been printed.</span
+                ></label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="buttons">
+  <!-- the second div layer of buttons is added when the current page is not the first page -->
+  <div
+    style="
+      margin-top: 10px;
+      margin-bottom: 60px;
+      display: inline-block;
+      width: 100%;
+    "
+  >
+    <!-- the back button is added always on the left of the 2nd div layer -->
+    <span class="ieborder backPageButton"
+      ><input
+        type="submit"
+        class="button big outline pull-left"
+        name="submitNavigation2"
+        value="<    {{ 'buttons.back' | translate }}"
+        data-title=""
+        (click)="changeStep('back', 'step0')"
+    /></span>
+    <!-- end of back button -->
+    <div style="float: right; width: 40%">
+      <!-- start of create json form -->
+      <span class="ieborder pdfDownloadButton"
+        ><input
+          type="submit"
+          class="button big dark pull-right piwik_download"
+          name="submitNavigation3"
+          id="submitNavigation3"
+          value="Submit"
+          data-title=""
+          (click)="openPreviewModal()"
+      /></span>
+    </div>
+  </div>
+  <!-- end of the second div layer of buttons -->
+</div>

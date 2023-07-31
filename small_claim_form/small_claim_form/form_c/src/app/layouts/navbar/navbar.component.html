@@ -1,0 +1,157 @@
+<div class="intro-header">
+  <div class="d-flex aligns-items-center">
+    <div class="center no-overflow">
+      <ul class="shortcut-links">
+        <li>
+          <a
+            onclick="return checkOnunload();"
+            href="https://e-justice.europa.eu/home?plang=en&amp;action=home"
+            class="navigation"
+            [translate]="'menu.home'"
+            >Home</a
+          >
+        </li>
+        <li data-id="">
+          <a
+            onclick="return checkOnunload();"
+            href="https://e-justice.europa.eu/511/EN/taking_legal_action"
+            [translate]="'menu.takingLegalAction'"
+            >Taking legal action</a
+          >
+        </li>
+
+        <li data-id="">
+          <a
+            onclick="return checkOnunload();"
+            href="https://e-justice.europa.eu/155/EN/online_forms"
+            [translate]="'menu.onlineForms'"
+            >Online forms</a
+          >
+        </li>
+
+        <li data-id="">
+          <a
+            onclick="return checkOnunload();"
+            href="https://e-justice.europa.eu/177/EN/small_claims_forms"
+            [translate]="'menu.smallClaimsForms'"
+            >Small claims forms</a
+          >
+        </li>
+
+        <li data-id="">
+          <a [translate]="'menu.formC'">Form C - Answer form</a>
+        </li>
+      </ul>
+      <div class="row">
+        <div class="col-12 text-start align-self-end">
+          <div class="title-block" style="padding-right: 0 !important">
+            <h1 id="title" [translate]="'menu.title'">Form C - Answer form</h1>
+            <div class="subtitle js-toggle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container position-fixed end-0 p-3">
+  <app-warning-toast></app-warning-toast>
+  <app-error-toast></app-error-toast>
+</div>
+
+<div id="maincontent" class="content detail-page dynamic-forms">
+  <div class="center clearfix">
+    <div class="sidebar">
+      <div class="sticky-sidebar">
+        <span
+          class="sidebar_title step-menu-title"
+          [translate]="'menu.formSteps'"
+          >Form Steps</span
+        >
+        <ul class="step-menu nav" id="step-menu">
+          <li class="active" id="step0-menu" data-step="0">
+            <a tabindex="-1" class="nav-link active" data-bs-target="#step0">
+              <div class="step-num">0.</div>
+              <span class="truncate">
+                <span class="index"></span>
+                <span class="step-title">
+                  <p>{{ "menu.step0" | translate }}</p>
+                </span>
+              </span>
+              <div class="validation-icon"></div>
+            </a>
+          </li>
+          <li class="incomplete" id="step1-menu" data-step="1">
+            <a tabindex="-1" class="nav-link" data-bs-target="#step1">
+              <div class="step-num">1.</div>
+              <span class="truncate">
+                <span class="index"></span>
+                <span class="step-title">
+                  <p>{{ "menu.step1" | translate }}</p>
+                </span>
+              </span>
+              <div class="validation-icon"></div>
+            </a>
+          </li>
+        </ul>
+
+        <div class="form-sections-helper">
+          <p
+            id="form-instructions"
+            [translate]="'menu.loadSaveDraftExplanation'"
+          >
+            You can save a form you are working on as a draft. Load a saved form
+            later to complete it.
+          </p>
+          <div class="buttons">
+            <div class="buttons">
+              <input
+                type="file"
+                accept=".json"
+                id="loadDraft"
+                (change)="loadDraft($event)"
+              />
+              <button
+                type="button"
+                class="button dark big load-draft"
+                id="buttonLoad"
+                data-title="If you have previously saved a draft form you can resume your work by loading that file into the system by clicking here."
+                (click)="openFileBrowser()"
+              >
+                <span [translate]="'menu.loadDraft'">Load draft</span></button
+              ><br />
+              <button
+                class="button dark big save-draft piwik_download"
+                type="button"
+                id="buttonSave"
+                (click)="navbarService.generateJson()"
+                data-title="If you wish to stop filling in the form now, save your draft and resume later, please click this button and save the draft file in a safe location on your computer. You can upload it later to resume from where you left off without losing any input already made."
+              >
+                <span [translate]="'menu.saveDraft'">Save draft</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-bar">
+      <form class="dynamic-form">
+        <div class="selection">
+          <fieldset>
+            <div class="advanced-forms-step" style="display: block">
+              <div class="tab-content">
+                <div class="tab-pane active" id="step0">
+                  <app-step-zero></app-step-zero>
+                </div>
+                <div class="tab-pane" id="step1">
+                  <app-step-one></app-step-one>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

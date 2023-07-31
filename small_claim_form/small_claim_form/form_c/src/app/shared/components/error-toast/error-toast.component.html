@@ -1,0 +1,33 @@
+<div
+  id="error_toast"
+  class="toast align-items-center text-center"
+  role="alert"
+  aria-live="assertive"
+  aria-atomic="true"
+  data-bs-autohide="false"
+  data-bs-animation="true"
+>
+  <!-- <div
+    [ngClass]="{
+      toastArrowContainer: !isWarningToastVisible(),
+      errorToastArrowContainer: isWarningToastVisible()
+    }"
+  > -->
+  <div class="toastArrowContainer">
+    <div class="arrow"></div>
+  </div>
+  <div class="toast-body">
+    <div class="d-flex justify-content-end btn-d-flex">
+      <button
+        type="button"
+        class="btn-close float-right"
+        aria-label="Close"
+        id="close_error_toast_button"
+      ></button>
+    </div>
+    <p [innerHTML]="'menu.errorToast' | translate">
+      <strong>Errore di compilazione.</strong> Si prega di controllare la
+      sezione
+    </p>
+  </div>
+</div>

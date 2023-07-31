@@ -1,0 +1,747 @@
+<div class="modal-header py-4">
+  <h2 class="modal-title ps-3" [translate]="'preview.title'">Preview</h2>
+  <a
+    class="close js-close-modal hide-text"
+    tabindex="1"
+    (click)="cancel()"
+    style="top: 2rem"
+    >Close</a
+  >
+</div>
+
+<!-- <div class="modal-body px-5" id="content">
+  <h4 class="pdf-line-field">
+    <span class="colon pdf-label" [translate]="'stepZero.caseNumber'"
+      >Case number</span
+    >
+    <span class="fw-bold pdf-value">{{ stepZero.caseNumber }}</span>
+  </h4>
+
+  <h4 class="pdf-line-field">
+    <span class="colon pdf-label" [translate]="'stepZero.date'">Date</span>
+    <span class="fw-bold pdf-value">{{ stepZero.date }}</span>
+  </h4>
+
+  <h3 class="pdf-primary-title" [translate]="'stepZero.courtTitle'">
+    1. Court/tribunal
+  </h3>
+  <div class="ps-3">
+    <h4 class="pdf-line-field">
+      <span class="colon pdf-label" [translate]="'stepZero.courtCountry'"
+        >8.1. Country</span
+      >
+      <span class="fw-bold pdf-value">{{ stepZero.court.countryName }}</span>
+    </h4>
+
+    <h4 class="pdf-line-field">
+      <span class="colon pdf-label" [translate]="'stepZero.courtName'"
+        >8.2. Name</span
+      >
+      <span class="fw-bold pdf-value">{{ stepZero.court.name }}</span>
+    </h4>
+
+    <h4 class="pdf-line-field">
+      <span class="colon pdf-label" [translate]="'stepZero.courtStreet'"
+        >8.3. Street and number/PO box</span
+      >
+      <span class="fw-bold pdf-value">{{ stepZero.court.street }}</span>
+    </h4>
+
+    <h4 class="pdf-line-field">
+      <span class="colon pdf-label" [translate]="'stepZero.courtCityPostalCode'"
+        >8.4. City and postal code</span
+      >
+      <span class="fw-bold pdf-value">{{ stepZero.court.city_post_code }}</span>
+    </h4>
+  </div>
+
+  <h3 class="pdf-primary-title" [translate]="'stepZero.claimantTitle'">
+    2. Claimant
+  </h3>
+  <div *ngFor="let obj of stepZero.claimants; let i = index" class="ps-3">
+    <div
+      class="pdf-no-indentation"
+      *ngIf="isClaimant(obj); else claimantRepresentative"
+    >
+      <h4 class="pdf-secondary-title" [translate]="'preview.claimantDetails'">
+        Claimant's details
+      </h4>
+      <div class="ps-3">
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'preview.claimantIdentifier'"
+            >2.1. Surname, first name/name of company or organisation</span
+          >
+          <span *ngIf="isCitizen(obj.claimant); else claimantOrganisation">
+            <span class="fw-bold pdf-value"
+              >{{ obj.claimant.surname }} {{ obj.claimant.name }}</span
+            >
+          </span>
+          <ng-template #claimantOrganisation>
+            <span
+              class="fw-bold pdf-value"
+              *ngIf="isOrganisation(obj.claimant)"
+              >{{ obj.claimant.name }}</span
+            >
+          </ng-template>
+        </p>
+
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'stepZero.claimantIdentificationCode'"
+            >2.2. Personal identification number or passport number/
+            registration number</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.claimant.identificationCode
+          }}</span>
+        </p>
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'stepZero.claimantStreet'"
+            >2.3. Street and number/PO box</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.claimant.address.street
+          }}</span>
+        </p>
+
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'preview.claimantCityPostalCode'"
+            >2.4. City and postal code</span
+          >
+          <span class="fw-bold pdf-value"
+            >{{ obj.claimant.address.city }}
+            {{ obj.claimant.address.post_code }}</span
+          >
+        </p>
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'stepZero.claimantCountry'"
+            >2.5. Country</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.claimant.address.countryName
+          }}</span>
+        </p>
+
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'stepZero.claimantPhoneNumber'"
+            >2.6. Phone</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.claimant.contacts.phone_number
+          }}</span>
+        </p>
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'stepZero.claimantEmail'"
+            >2.7. Email</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.claimant.contacts.email
+          }}</span>
+        </p>
+
+        <div class="pdf-representative-field">
+          <p>
+            <span
+              class="colon pdf-label"
+              [translate]="'preview.representativeClaimant'"
+              >2.8. Claimant's representative</span
+            >
+          </p>
+          <div class="ps-3 pdf-values" *ngIf="obj.representative">
+            <p class="pdf-line-field">
+              <span class="colon pdf-label" [translate]="'preview.identifier'"
+                >Surname, first name/name of company or organisation</span
+              >
+              <span
+                *ngIf="
+                  isRepresentativeCitizen(obj.representative);
+                  else representativeClaimantOrganisation
+                "
+              >
+                <span class="fw-bold pdf-value"
+                  >{{ obj.representative.surname }}
+                  {{ obj.representative.name }}</span
+                >
+              </span>
+              <ng-template #representativeClaimantOrganisation>
+                <span
+                  class="fw-bold pdf-value"
+                  *ngIf="isRepresentativeOrganisation(obj.representative)"
+                  >{{ obj.representative.name }}</span
+                >
+              </ng-template>
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'stepZero.representativeIdentificationCode'"
+                >Personal identification number or passport number/ registration
+                number</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.identificationCode
+              }}</span>
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'stepZero.representativeStreet'"
+                >Street and number/PO box</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.address.street
+              }}</span>
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'preview.cityPostalCode'"
+                >City and postal code</span
+              >
+              <span class="fw-bold pdf-value"
+                >{{ obj.representative.address.city }}
+                {{ obj.representative.address.post_code }}</span
+              >
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'stepZero.representativeCountry'"
+                >Country</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.address.countryName
+              }}</span>
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'stepZero.representativePhoneNumber'"
+                >Phone</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.contacts.phone_number
+              }}</span>
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'stepZero.representativeEmail'"
+                >Email</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.contacts.email
+              }}</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="pdf-div-field">
+          <p>
+            <span class="colon pdf-label" [translate]="'stepZero.claimantOther'"
+              >2.9. Other details</span
+            >
+          </p>
+          <div class="fw-bold justify margin-bottom ps-3 pdf-value">
+            {{ obj.otherDetails }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #claimantRepresentative>
+      <div *ngIf="isClaimantRepresentative(obj)">
+        <h4
+          class="pdf-secondary-title"
+          [translate]="'preview.representativeClaimantDetails'"
+        >
+          Details of the claimant's representative
+        </h4>
+        <div class="ps-3">
+          <p class="pdf-line-field">
+            <span class="colon pdf-label" [translate]="'preview.identifier'"
+              >Surname, first name/name of company or organisation</span
+            >
+            <span
+              *ngIf="
+                isRepresentativeCitizen(obj);
+                else representativeClaimantOrganisation
+              "
+            >
+              <span class="fw-bold pdf-value"
+                >{{ obj.surname }} {{ obj.name }}</span
+              >
+            </span>
+            <ng-template #representativeClaimantOrganisation>
+              <span
+                class="fw-bold pdf-value"
+                *ngIf="isRepresentativeOrganisation(obj)"
+                >{{ obj.name }}</span
+              >
+            </ng-template>
+          </p>
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'stepZero.representativeIdentificationCode'"
+              >Personal identification number or passport number/ registration
+              number</span
+            >
+            <span class="fw-bold pdf-value">{{ obj.identificationCode }}</span>
+          </p>
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'stepZero.representativeStreet'"
+              >Street and number/PO box</span
+            >
+            <span class="fw-bold pdf-value">{{ obj.address.street }}</span>
+          </p>
+          <p class="pdf-line-field">
+            <span class="colon pdf-label" [translate]="'preview.cityPostalCode'"
+              >City and postal code</span
+            >
+            <span class="fw-bold pdf-value"
+              >{{ obj.address.city }} {{ obj.address.post_code }}</span
+            >
+          </p>
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'stepZero.representativeCountry'"
+              >Country</span
+            >
+            <span class="fw-bold pdf-value">{{ obj.address.countryName }}</span>
+          </p>
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'stepZero.representativePhoneNumber'"
+              >Phone</span
+            >
+            <span class="fw-bold pdf-value">{{
+              obj.contacts.phone_number
+            }}</span>
+          </p>
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'stepZero.representativeEmail'"
+              >Email</span
+            >
+            <span class="fw-bold pdf-value">{{ obj.contacts.email }}</span>
+          </p>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+
+  <h3 class="pdf-primary-title" [translate]="'stepZero.defendantTitle'">
+    3. Defendant
+  </h3>
+  <div *ngFor="let obj of stepZero.defendants" class="ps-3">
+    <div
+      class="pdf-no-indentation"
+      *ngIf="isDefendant(obj); else defendantRepresentative"
+    >
+      <h4 class="pdf-secondary-title" [translate]="'preview.defendantDetails'">
+        Defendant's details
+      </h4>
+      <div class="ps-3">
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'preview.defendantIdentifier'"
+            >3.1. Surname, first name/name of company or organisation</span
+          >
+          <span *ngIf="isCitizen(obj.defendant); else defendantOrganisation">
+            <span class="fw-bold pdf-value"
+              >{{ obj.defendant.surname }} {{ obj.defendant.name }}</span
+            >
+          </span>
+          <ng-template #defendantOrganisation>
+            <span
+              class="fw-bold pdf-value"
+              *ngIf="isOrganisation(obj.defendant)"
+              >{{ obj.defendant.name }}</span
+            >
+          </ng-template>
+        </p>
+
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'stepZero.defendantIdentificationCode'"
+            >3.2. Personal identification number or passport number/
+            registration number</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.defendant.identificationCode
+          }}</span>
+        </p>
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'stepZero.defendantStreet'"
+            >3.3. Street and number/PO box</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.defendant.address.street
+          }}</span>
+        </p>
+
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'preview.defendantCityPostalCode'"
+            >3.4. City and postal code</span
+          >
+          <span class="fw-bold pdf-value"
+            >{{ obj.defendant.address.city }}
+            {{ obj.defendant.address.post_code }}</span
+          >
+        </p>
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'stepZero.defendantCountry'"
+            >3.5. Country</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.defendant.address.countryName
+          }}</span>
+        </p>
+
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'stepZero.defendantPhoneNumber'"
+            >3.6. Phone</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.defendant.contacts.phone_number
+          }}</span>
+        </p>
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'stepZero.defendantEmail'"
+            >3.7. Email</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.defendant.contacts.email
+          }}</span>
+        </p>
+
+        <div class="pdf-representative-field">
+          <p>
+            <span
+              class="colon pdf-label"
+              [translate]="'preview.representativeDefendant'"
+              >3.8. Defendant's representative</span
+            >
+          </p>
+          <div class="ps-3 pdf-values" *ngIf="obj.representative">
+            <p class="pdf-line-field">
+              <span class="colon pdf-label" [translate]="'preview.identifier'"
+                >Surname, first name/name of company or organisation</span
+              >
+              <span
+                *ngIf="
+                  isRepresentativeCitizen(obj.representative);
+                  else representativeDefendantOrganisation
+                "
+              >
+                <span class="fw-bold pdf-value"
+                  >{{ obj.representative.surname }}
+                  {{ obj.representative.name }}</span
+                >
+              </span>
+              <ng-template #representativeDefendantOrganisation>
+                <span
+                  class="fw-bold pdf-value"
+                  *ngIf="isRepresentativeOrganisation(obj.representative)"
+                  >{{ obj.representative.name }}</span
+                >
+              </ng-template>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'stepZero.representativeIdentificationCode'"
+                >Personal identification number or passport number/ registration
+                number</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.identificationCode
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'stepZero.representativeStreet'"
+                >Street and number/PO box</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.address.street
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'preview.cityPostalCode'"
+                >City and postal code</span
+              >
+              <span class="fw-bold pdf-value"
+                >{{ obj.representative.address.city }}
+                {{ obj.representative.address.post_code }}</span
+              >
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'stepZero.representativeCountry'"
+                >Country</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.address.countryName
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'stepZero.representativePhoneNumber'"
+                >Phone</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.contacts.phone_number
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'stepZero.representativeEmail'"
+                >Email</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.contacts.email
+              }}</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="pdf-div-field">
+          <p>
+            <span class="colon pdf-label" [translate]="'stepZero.defendantOther'"
+              >3.9. Other details</span
+            >
+          </p>
+          <div class="fw-bold justify margin-bottom ps-3 pdf-value">
+            {{ obj.otherDetails }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #defendantRepresentative>
+      <div *ngIf="isDefendantRepresentative(obj)">
+        <h4
+          class="pdf-secondary-title"
+          [translate]="'preview.representativeDefendantDetails'"
+        >
+          Details of the defendant's representative
+        </h4>
+        <div class="ps-3">
+          <p class="pdf-line-field">
+            <span class="colon pdf-label" [translate]="'preview.identifier'"
+              >Surname, first name/name of company or organisation</span
+            >
+            <span
+              *ngIf="
+                isRepresentativeCitizen(obj);
+                else representativeDefendantOrganisation
+              "
+            >
+              <span class="fw-bold pdf-value"
+                >{{ obj.surname }} {{ obj.name }}</span
+              >
+            </span>
+            <ng-template #representativeDefendantOrganisation>
+              <span
+                class="fw-bold pdf-value"
+                *ngIf="isRepresentativeOrganisation(obj)"
+                >{{ obj.name }}</span
+              >
+            </ng-template>
+          </p>
+
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'stepZero.representativeIdentificationCode'"
+              >Personal identification number or passport number/ registration
+              number</span
+            >
+            <span class="fw-bold pdf-value">{{ obj.identificationCode }}</span>
+          </p>
+
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'stepZero.representativeStreet'"
+              >Street and number/PO box</span
+            >
+            <span class="fw-bold pdf-value">{{ obj.address.street }}</span>
+          </p>
+
+          <p class="pdf-line-field">
+            <span class="colon pdf-label" [translate]="'preview.cityPostalCode'"
+              >City and postal code</span
+            >
+            <span class="fw-bold pdf-value"
+              >{{ obj.address.city }} {{ obj.address.post_code }}</span
+            >
+          </p>
+
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'stepZero.representativeCountry'"
+              >Country</span
+            >
+            <span class="fw-bold pdf-value">{{ obj.address.countryName }}</span>
+          </p>
+
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'stepZero.representativePhoneNumber'"
+              >Phone</span
+            >
+            <span class="fw-bold pdf-value">{{
+              obj.contacts.phone_number
+            }}</span>
+          </p>
+
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'stepZero.representativeEmail'"
+              >Email</span
+            >
+            <span class="fw-bold pdf-value">{{ obj.contacts.email }}</span>
+          </p>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+
+  <h4 class="dot pdf-line-field">
+    <span class="space pdf-label" [translate]="'stepOne.courtExamineClaimForm'"
+      >The court/tribunal has examined your claim form and considers it to be
+      inadequate or insufficiently clear or not properly filled in: please
+      complete and/or rectify your form in the language of the court/tribunal as
+      indicated below as soon as possible and at the latest by</span
+    >
+    <span class="fw-bold pdf-value">{{ stepOne.expiryDate }}</span>
+  </h4>
+
+  <h4 class="pdf-text" [translate]="'stepOne.courtTribunalDismissApplication'">
+    The court/tribunal shall dismiss your application under the conditions
+    provided for in Regulation (EC) No 861(*)/2007 if you fail to complete
+    and/or rectify it within the time limit set out above.
+  </h4>
+
+  <h4
+    class="pdf-line-field"
+    [ngClass]="{
+      dot: languages.length > 0
+    }"
+  >
+    <span class="space pdf-label" [translate]="'stepOne.correctLanguageFill'"
+      >Your claim form has not been filled in the correct language. Please fill
+      it in one of the following languages:</span
+    >
+
+    <span class="fw-bold pdf-value">{{ languages }}</span>
+  </h4>
+
+  <h4 class="pdf-div-field">
+    <span class="pdf-label" [translate]="'stepOne.claimFormSectionsRectified'">
+      The following sections of the claim form must be completed and/or
+      rectified as stated below:
+    </span>
+    <div class="fw-bold justify ps-3 margin-top pdf-value">
+      {{ stepOne.statement }}
+    </div>
+  </h4>
+
+  <h4 class="pdf-line-field">
+    <span class="colon pdf-label" [translate]="'stepOne.doneAt'">Done at</span>
+    <span class="fw-bold pdf-value">{{ stepOne.doneAt }}</span>
+  </h4>
+
+  <h4 class="pdf-line-field">
+    <span class="colon pdf-label" [translate]="'stepOne.date'">Date</span>
+    <span class="fw-bold pdf-value">{{ stepOne.date }}</span>
+  </h4>
+
+  <h4 class="pdf-line-field">
+    <span class="colon pdf-label" [translate]="'preview.sign'"
+      >Signature and/or stamp</span
+    >
+  </h4>
+</div> -->
+
+<div class="modal-footer px-5 py-4">
+  <div class="row">
+    <div class="col-12 col-xl-2">
+      <button
+        class="button big outline"
+        (click)="cancel()"
+        [translate]="'buttons.cancel'"
+      >
+        Cancel
+      </button>
+    </div>
+    <div class="col-0 col-xl"></div>
+    <div class="col-12 col-xl-2">
+      <button
+        class="button big dark"
+        (click)="navbarService.generateJson()"
+        [translate]="'buttons.downloadJSON'"
+      >
+        Download JSON
+      </button>
+    </div>
+    <div class="col-0 col-xl"></div>
+    <div class="col-12 col-xl-2">
+      <button
+        class="button big dark"
+        [translate]="'buttons.downloadPDF'"
+        (click)="downloadPdf()"
+      >
+        Download PDF
+      </button>
+    </div>
+    <div class="col-0 col-xl"></div>
+    <div class="col-12 col-xl-2">
+      <button class="button big dark" [translate]="'buttons.submit'">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-spinner [showSpinner]="showSpinner"></app-spinner>
