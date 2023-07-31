@@ -4,6 +4,7 @@ import {
   UntypedFormBuilder,
   UntypedFormGroup,
   ValidationErrors,
+  ValidatorFn,
   Validators,
 } from "@angular/forms";
 import { PromiseContent } from "../common/promise-content.model";
@@ -26,48 +27,67 @@ export class StepTwoService {
     extendibleInternalDivIds: [],
   };
 
-  areJudgementSettlementRadioButtonsUnchecked = true;
-  judgementRadioButton = false;
+  areJudgmentSettlementRadioButtonsUnchecked = true;
+  judgmentRadioButton = false;
   settlementRadioButton = false;
 
   onStableSubscription: Subscription;
 
-  judgement = this.fb.group({
-    judgementDate: ["", [Validators.required]],
-    judgementCaseNumber: ["", [Validators.required]],
+  judgment = this.fb.group({
+    judgmentDate: [""],
+    judgmentCaseNumber: [""],
     courtOrder: [""],
-    judgementPaymentRecipient: [""],
-    judgementPrincipal: [""],
-    judgementInterest: [""],
-    judgementCosts: [""],
+    judgmentPaymentRecipient: [""],
+    judgmentPrincipal: ["", this.amountValidator()],
+    judgmentInterest: [""],
+    judgmentCosts: ["", this.amountValidator()],
     respondent: [""],
     courtOrderAgainst: [""],
     courtOrderTo: [""],
+    supersededJudgment: [false],
     supersededJudgmentDate: [""],
     supersededJudgmentCaseNumber: [""],
   });
 
   settlement = this.fb.group({
-    settlementDate: ["", [Validators.required]],
-    settlementCaseNumber: ["", [Validators.required]],
+    settlementDate: [""],
+    settlementCaseNumber: [""],
     firstSettlementAgreement: [""],
     settlementPaymentRecipient: [""],
-    settlementPrincipal: [""],
+    settlementPrincipal: ["", this.amountValidator()],
     settlementInterest: [""],
-    settlementCosts: [""],
+    settlementCosts: ["", this.amountValidator()],
     secondSettlementAgreement: [""],
     agreedAction: [""],
   });
 
   form = this.fb.group({
-    judgementOrSettlement: ["", [Validators.required]],
-    judgement: this.judgement,
+    judgmentOrSettlement: ["", [Validators.required]],
+    judgment: this.judgment,
     settlement: this.settlement,
     doneAt: ["", [Validators.required]],
     date: ["", [Validators.required]],
   });
 
   constructor(private fb: UntypedFormBuilder) {}
+
+  private amountValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const value = control.value;
+      if (!value) {
+        return null;
+      }
+
+      const regex =
+        /^(?:(?:\d{1,3}(?:\.\d{3})+|\d{1,3})(?:,\d{1,2})?|\d+(?:,\d{1,2})?)$/;
+
+      if (!regex.test(value)) {
+        return { invalidAmount: true };
+      }
+
+      return null;
+    };
+  }
 
   isStepTwoFormValid(): Promise<PromiseContent> {
     return new Promise((resolve) => {

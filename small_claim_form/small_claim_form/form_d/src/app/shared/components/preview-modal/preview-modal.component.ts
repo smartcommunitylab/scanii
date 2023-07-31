@@ -69,7 +69,6 @@ export class PreviewModalComponent implements OnInit {
   ngOnInit(): void {
     this.stepOne = this.stepOneService.getStepOne();
     //this.stepTwo = this.stepTwoService.getStepTwo();
-    this.languages = this.setLanguagesString();
 
     pdfMake.fonts = {
       FontAwesome: {
@@ -77,17 +76,6 @@ export class PreviewModalComponent implements OnInit {
         bold: `${window.location.origin}/LiberationSans-Bold.ttf`,
       },
     };
-  }
-
-  private setLanguagesString(): string {
-    let languagesString = "";
-    if (this.stepTwo.languagesNames.length > 0) {
-      this.stepTwo.languagesNames.forEach((language) => {
-        languagesString += language + ", ";
-      });
-      languagesString = languagesString.slice(0, -2);
-    }
-    return languagesString;
   }
 
   cancel(): void {

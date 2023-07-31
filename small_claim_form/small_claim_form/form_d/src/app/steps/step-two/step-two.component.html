@@ -6,10 +6,29 @@
           <div class="form-row full-width bold">
             <div>
               <label style="margin-bottom: 0px">
-                Judgement or Court Settlement
+                Judgment or Court Settlement
 
                 <span class="asterisk">*</span>
               </label>
+
+              <div
+                *ngIf="
+                  stepTwoService.form.get('judgmentOrSettlement')!.invalid &&
+                  stepTwoService.form.get('judgmentOrSettlement')!.dirty
+                "
+              >
+                <div
+                  *ngIf="stepTwoService.form.get('judgmentOrSettlement')?.errors?.['required']"
+                >
+                  <span
+                    id="requiredStar_blank_dynformSCD2JudgmentOrCourtSettlement"
+                    class="error pt-3"
+                    style="position: relative; top: 0px"
+                    [translate]="'errors.required'"
+                    >Field is required</span
+                  >
+                </div>
+              </div>
             </div>
           </div>
 
@@ -17,43 +36,43 @@
             <div>
               <div
                 class="radio-wrapper"
-                id="input-wrapper_dynformSCD2JudgementOrCourtSettlement"
+                id="input-wrapper_dynformSCD2JudgmentOrCourtSettlement"
               >
                 <input
                   type="radio"
-                  title="Judgement"
-                  name="dynformSCD2JudgementOrCourtSettlement"
-                  value="judgement"
+                  title="Judgment"
+                  name="dynformSCD2JudgmentOrCourtSettlement"
+                  value="judgment"
                   id="judgemnent"
                   class="df_input df_mandatory"
-                  [checked]="stepTwoService.judgementRadioButton"
+                  [checked]="stepTwoService.judgmentRadioButton"
                   (click)="
-                    onJudgementSettlementRadioButtonsClick(
+                    onJudgmentSettlementRadioButtonsClick(
                       $event,
-                      'dynformSCD2JudgementOrCourtSettlement1_div',
+                      'dynformSCD2JudgmentOrCourtSettlement1_div',
                       ['dynformSCD2WasJudgmentGivenAppealCourt_div'],
-                      ['supersededJudgmentDate', 'supersededJudgmentCaseNumber']
+                      ['judgmentDate', 'judgmentCaseNumber']
                     )
                   "
                 />
 
                 <label for="judgemnent">
-                  Judgement
+                  Judgment
 
                   <span
                     class="asterisk"
-                    id="requiredStar_blank_dynformSCD2JudgementOrCourtSettlement"
+                    id="requiredStar_blank_dynformSCD2JudgmentOrCourtSettlement"
                   ></span>
                 </label>
 
                 <!-- <label>
     
-      	<div class="asterisk"  id="requiredStar_blank_dynformSCD2JudgementOrCourtSettlement"></div>
+      	<div class="asterisk"  id="requiredStar_blank_dynformSCD2JudgmentOrCourtSettlement"></div>
       
 </label> -->
               </div>
               <span
-                id="validation_error_text_dynformSCD2JudgementOrCourtSettlement"
+                id="validation_error_text_dynformSCD2JudgmentOrCourtSettlement"
                 class="error"
                 style="position: relative; top: 0px"
               >
@@ -65,21 +84,22 @@
             <div>
               <div
                 class="radio-wrapper"
-                id="input-wrapper_dynformSCD2JudgementOrCourtSettlement"
+                id="input-wrapper_dynformSCD2JudgmentOrCourtSettlement"
               >
                 <input
                   type="radio"
                   title="Court settlement"
-                  name="dynformSCD2JudgementOrCourtSettlement"
+                  name="dynformSCD2JudgmentOrCourtSettlement"
                   value="settlement"
                   id="courtSettl"
                   class="df_input"
                   [checked]="stepTwoService.settlementRadioButton"
                   (click)="
-                    onJudgementSettlementRadioButtonsClick(
+                    onJudgmentSettlementRadioButtonsClick(
                       $event,
-                      'dynformSCD2JudgementOrCourtSettlement2_div',
-                      ['']
+                      'dynformSCD2JudgmentOrCourtSettlement2_div',
+                      [''],
+                      ['settlementDate', 'settlementCaseNumber']
                     )
                   "
                 />
@@ -89,18 +109,18 @@
 
                   <span
                     class="asterisk"
-                    id="requiredStar_blank_dynformSCD2JudgementOrCourtSettlement"
+                    id="requiredStar_blank_dynformSCD2JudgmentOrCourtSettlement"
                   ></span>
                 </label>
 
                 <!-- <label>
     
-      	<div class="asterisk"  id="requiredStar_blank_dynformSCD2JudgementOrCourtSettlement"></div>
+      	<div class="asterisk"  id="requiredStar_blank_dynformSCD2JudgmentOrCourtSettlement"></div>
       
 </label> -->
               </div>
               <span
-                id="validation_error_text_dynformSCD2JudgementOrCourtSettlement"
+                id="validation_error_text_dynformSCD2JudgmentOrCourtSettlement"
                 class="error"
                 style="position: relative; top: 0px"
               >
@@ -110,971 +130,1191 @@
         </div>
 
         <div
-          id="dynformSCD2JudgementOrCourtSettlement1_div"
+          id="dynformSCD2JudgmentOrCourtSettlement1_div"
           class="df_collapsed"
         >
-          <div class="form-row full-width bold">
-            <div>
-              <label style="margin-bottom: 0px"> 4. Judgment </label>
+          <div formGroupName="judgment">
+            <div class="form-row full-width bold">
+              <div>
+                <label style="margin-bottom: 0px"> 4. Judgment </label>
+              </div>
             </div>
-          </div>
 
-          <div>
-            <span class="marginleft20px">
-              <div class="date-input">
+            <div>
+              <span class="marginleft20px">
+                <div class="date-input">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2JudgmentDate">
+                        4.1. Date
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_required_dynformSCD2JudgmentDate"
+                          >*</span
+                        >
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2JudgmentDate"
+                        [ngClass]="{
+                          invalid:
+                            stepTwoService.form
+                              .get('judgment')
+                              .get('judgmentDate')!.invalid &&
+                            stepTwoService.form
+                              .get('judgment')
+                              .get('judgmentDate')!.dirty
+                        }"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="4.1. Date"
+                            name="dynformSCD2JudgmentDate"
+                            maxlength="150"
+                            class="df_textbox textDate"
+                            id="dynformSCD2JudgmentDate"
+                            formControlName="judgmentDate"
+                            [readOnly]="true"
+                          />
+                        </div>
+                      </div>
+
+                      <div
+                        *ngIf="
+                          stepTwoService.form
+                            .get('judgment')
+                            .get('judgmentDate')!.invalid &&
+                          stepTwoService.form
+                            .get('judgment')
+                            .get('judgmentDate')!.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="stepTwoService.form.get('judgment').get('judgmentDate')?.errors?.['required']"
+                        >
+                          <span
+                            id="validation_error_text_dynformSCD2JudgmentDate"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div class="form-row full-width bold">
                   <div>
-                    <label for="dynformSCD2JudgmentDate">
-                      4.1. Date
+                    <label for="dynformSCD2JudgmentCaseNumber">
+                      4.2. Case number
 
                       <span
                         class="asterisk"
-                        id="requiredStar_required_dynformSCD2JudgmentDate"
+                        id="requiredStar_required_dynformSCD2JudgmentCaseNumber"
                         >*</span
                       >
                     </label>
 
                     <div
                       class="input-wrapper regular"
-                      id="input-wrapper_dynformSCD2JudgmentDate"
+                      id="input-wrapper_dynformSCD2JudgmentCaseNumber"
+                      [ngClass]="{
+                        invalid:
+                          stepTwoService.form
+                            .get('judgment')
+                            .get('judgmentCaseNumber')!.invalid &&
+                          stepTwoService.form
+                            .get('judgment')
+                            .get('judgmentCaseNumber')!.dirty
+                      }"
                     >
                       <div class="input-content nopaddingTop">
                         <input
                           type="text"
-                          title="4.1. Date"
-                          name="dynformSCD2JudgmentDate"
-                          maxlength="150"
+                          title="4.2. Case number"
+                          name="dynformSCD2JudgmentCaseNumber"
+                          maxlength="20"
                           value=""
-                          onchange="validateFieldOnBlur(this)"
-                          onblur="removeClassOnBlur(this)"
-                          onfocus="addClassOnFocus(this)"
-                          class="df_textbox textDate"
-                          id="dynformSCD2JudgmentDate"
+                          class="df_textbox df_mandatory"
+                          id="dynformSCD2JudgmentCaseNumber"
+                          formControlName="judgmentCaseNumber"
                         />
                       </div>
                     </div>
-
-                    <span
-                      id="validation_error_text_dynformSCD2JudgmentDate"
-                      class="error"
-                      style="position: relative; top: 0px"
-                    >
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="form-row full-width bold">
-                <div>
-                  <label for="dynformSCD2JudgmentCaseNumber">
-                    4.2. Case number
-
-                    <span
-                      class="asterisk"
-                      id="requiredStar_required_dynformSCD2JudgmentCaseNumber"
-                      >*</span
-                    >
-                  </label>
-
-                  <div
-                    class="input-wrapper regular"
-                    id="input-wrapper_dynformSCD2JudgmentCaseNumber"
-                  >
-                    <div class="input-content nopaddingTop">
-                      <input
-                        type="text"
-                        title="4.2. Case number"
-                        name="dynformSCD2JudgmentCaseNumber"
-                        maxlength="20"
-                        value=""
-                        onchange="validateFieldOnBlur(this)"
-                        onblur="removeClassOnBlur(this)"
-                        onfocus="addClassOnFocus(this)"
-                        class="df_textbox df_mandatory"
-                        id="dynformSCD2JudgmentCaseNumber"
-                      />
-                    </div>
-                  </div>
-
-                  <span
-                    id="validation_error_text_dynformSCD2JudgmentCaseNumber"
-                    class="error"
-                    style="position: relative; top: 0px"
-                  >
-                  </span>
-                </div>
-              </div>
-
-              <div class="form-row full-width bold">
-                <div>
-                  <label style="margin-bottom: 0px">
-                    4.3. The substance of the judgment
-                  </label>
-                </div>
-              </div>
-            </span>
-
-            <div>
-              <span class="marginleft40px">
-                <div class="form-row full-width bold">
-                  <div>
-                    <label for="dynformSCD2JudgmentCourtOrdered1">
-                      4.3.1. The court/tribunal has ordered
-
-                      <span
-                        class="asterisk"
-                        id="requiredStar_blank_dynformSCD2JudgmentCourtOrdered1"
-                      ></span>
-                    </label>
 
                     <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCD2JudgmentCourtOrdered1"
+                      *ngIf="
+                        stepTwoService.form
+                          .get('judgment')
+                          .get('judgmentCaseNumber')!.invalid &&
+                        stepTwoService.form
+                          .get('judgment')
+                          .get('judgmentCaseNumber')!.dirty
+                      "
                     >
-                      <div class="input-content nopaddingTop">
-                        <input
-                          type="text"
-                          title="4.3.1. The court/tribunal has ordered"
-                          name="dynformSCD2JudgmentCourtOrdered1"
-                          maxlength="30"
-                          value=""
-                          onchange="validateFieldOnBlur(this)"
-                          onblur="removeClassOnBlur(this)"
-                          onfocus="addClassOnFocus(this)"
-                          class="df_textbox"
-                          id="dynformSCD2JudgmentCourtOrdered1"
-                        />
-                      </div>
-                    </div>
-
-                    <span
-                      id="validation_error_text_dynformSCD2JudgmentCourtOrdered1"
-                      class="error"
-                      style="position: relative; top: 0px"
-                    >
-                    </span>
-                  </div>
-                </div>
-
-                <div class="form-row full-width bold">
-                  <div>
-                    <label style="margin-bottom: 0px"> to pay to </label>
-                  </div>
-                </div>
-
-                <div class="form-row full-width bold">
-                  <div>
-                    <label class="asteriskOnly">
                       <div
-                        class="asterisk"
-                        id="requiredStar_blank_dynformSCD2JudgmentCourtOrdered2"
-                      ></div>
-                    </label>
-
-                    <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCD2JudgmentCourtOrdered2"
-                    >
-                      <div class="input-content nopaddingTop">
-                        <input
-                          type="text"
-                          title="name"
-                          name="dynformSCD2JudgmentCourtOrdered2"
-                          maxlength="30"
-                          value=""
-                          onchange="validateFieldOnBlur(this)"
-                          onblur="removeClassOnBlur(this)"
-                          onfocus="addClassOnFocus(this)"
-                          class="df_textbox"
-                          id="dynformSCD2JudgmentCourtOrdered2"
-                        />
-                      </div>
-                    </div>
-
-                    <span
-                      id="validation_error_text_dynformSCD2JudgmentCourtOrdered2"
-                      class="error"
-                      style="position: relative; top: 0px"
-                    >
-                    </span>
-                  </div>
-                </div>
-
-                <div class="form-row full-width bold">
-                  <div>
-                    <label style="margin-bottom: 0px"> </label>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="form-row full-width bold">
-                    <div>
-                      <label for="dynformSCD2JudgmentCourtOrderedPrincipal">
-                        (1) Principal
-
+                        *ngIf="stepTwoService.form.get('judgment').get('judgmentCaseNumber')?.errors?.['required']"
+                      >
                         <span
-                          class="asterisk"
-                          id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedPrincipal"
-                        ></span>
-                      </label>
-
-                      <div
-                        class="input-wrapper regular"
-                        id="input-wrapper_dynformSCD2JudgmentCourtOrderedPrincipal"
-                      >
-                        <div class="input-content nopaddingTop">
-                          <input
-                            type="text"
-                            title="(1) Principal"
-                            name="dynformSCD2JudgmentCourtOrderedPrincipal"
-                            maxlength="20"
-                            value=""
-                            onchange="validateFieldOnBlur(this)"
-                            onblur="removeClassOnBlur(this)"
-                            onfocus="addClassOnFocus(this)"
-                            class="df_textbox"
-                            id="dynformSCD2JudgmentCourtOrderedPrincipal"
-                          />
-                        </div>
+                          id="validation_error_text_dynformSCD2JudgmentCaseNumber"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                        >
+                          Field is required
+                        </span>
                       </div>
-
-                      <span
-                        id="validation_error_text_dynformSCD2JudgmentCourtOrderedPrincipal"
-                        class="error"
-                        style="position: relative; top: 0px"
-                      >
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="form-row full-width bold">
-                    <div>
-                      <label for="dynformSCD2JudgmentCourtOrderedInterest">
-                        (2) Interest
-
-                        <span
-                          class="asterisk"
-                          id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedInterest"
-                        ></span>
-                      </label>
-
-                      <div
-                        class="input-wrapper regular"
-                        id="input-wrapper_dynformSCD2JudgmentCourtOrderedInterest"
-                      >
-                        <div class="input-content nopaddingTop">
-                          <input
-                            type="text"
-                            title="(2) Interest"
-                            name="dynformSCD2JudgmentCourtOrderedInterest"
-                            maxlength="250"
-                            value=""
-                            onchange="validateFieldOnBlur(this)"
-                            onblur="removeClassOnBlur(this)"
-                            onfocus="addClassOnFocus(this)"
-                            class="df_textbox"
-                            id="dynformSCD2JudgmentCourtOrderedInterest"
-                          />
-                        </div>
-                      </div>
-
-                      <span
-                        id="validation_error_text_dynformSCD2JudgmentCourtOrderedInterest"
-                        class="error"
-                        style="position: relative; top: 0px"
-                      >
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="form-row full-width bold">
-                    <div>
-                      <label for="dynformSCD2JudgmentCourtOrderedCosts">
-                        (3) Costs
-
-                        <span
-                          class="asterisk"
-                          id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedCosts"
-                        ></span>
-                      </label>
-
-                      <div
-                        class="input-wrapper regular"
-                        id="input-wrapper_dynformSCD2JudgmentCourtOrderedCosts"
-                      >
-                        <div class="input-content nopaddingTop">
-                          <input
-                            type="text"
-                            title="(3) Costs"
-                            name="dynformSCD2JudgmentCourtOrderedCosts"
-                            maxlength="20"
-                            value=""
-                            onchange="validateFieldOnBlur(this)"
-                            onblur="removeClassOnBlur(this)"
-                            onfocus="addClassOnFocus(this)"
-                            class="df_textbox"
-                            id="dynformSCD2JudgmentCourtOrderedCosts"
-                          />
-                        </div>
-                      </div>
-
-                      <span
-                        id="validation_error_text_dynformSCD2JudgmentCourtOrderedCosts"
-                        class="error"
-                        style="position: relative; top: 0px"
-                      >
-                      </span>
                     </div>
                   </div>
                 </div>
 
                 <div class="form-row full-width bold">
                   <div>
-                    <label for="dynformSCD2JudgmentCourtOrderedAgainst1">
-                      4.3.2. The court/tribunal has made an order against
-
-                      <span
-                        class="asterisk"
-                        id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedAgainst1"
-                      ></span>
+                    <label style="margin-bottom: 0px">
+                      4.3. The substance of the judgment
                     </label>
-
-                    <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCD2JudgmentCourtOrderedAgainst1"
-                    >
-                      <div class="input-content nopaddingTop">
-                        <input
-                          type="text"
-                          title="4.3.2. The court/tribunal has made an order against"
-                          name="dynformSCD2JudgmentCourtOrderedAgainst1"
-                          maxlength="30"
-                          value=""
-                          onchange="validateFieldOnBlur(this)"
-                          onblur="removeClassOnBlur(this)"
-                          onfocus="addClassOnFocus(this)"
-                          class="df_textbox"
-                          id="dynformSCD2JudgmentCourtOrderedAgainst1"
-                        />
-                      </div>
-                    </div>
-
-                    <span
-                      id="validation_error_text_dynformSCD2JudgmentCourtOrderedAgainst1"
-                      class="error"
-                      style="position: relative; top: 0px"
-                    >
-                    </span>
-                  </div>
-                </div>
-
-                <div class="form-row full-width bold">
-                  <div>
-                    <label style="margin-bottom: 0px"> to </label>
-                  </div>
-                </div>
-
-                <div class="form-row full-width bold">
-                  <div>
-                    <label class="asteriskOnly">
-                      <div
-                        class="asterisk"
-                        id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedAgainst2"
-                      ></div>
-                    </label>
-
-                    <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCD2JudgmentCourtOrderedAgainst2"
-                    >
-                      <div class="input-content nopaddingTop">
-                        <input
-                          type="text"
-                          title="name"
-                          name="dynformSCD2JudgmentCourtOrderedAgainst2"
-                          maxlength="30"
-                          value=""
-                          onchange="validateFieldOnBlur(this)"
-                          onblur="removeClassOnBlur(this)"
-                          onfocus="addClassOnFocus(this)"
-                          class="df_textbox"
-                          id="dynformSCD2JudgmentCourtOrderedAgainst2"
-                        />
-                      </div>
-                    </div>
-
-                    <span
-                      id="validation_error_text_dynformSCD2JudgmentCourtOrderedAgainst2"
-                      class="error"
-                      style="position: relative; top: 0px"
-                    >
-                    </span>
-                  </div>
-                </div>
-
-                <div class="form-row full-width bold">
-                  <div>
-                    <label style="margin-bottom: 0px"> </label>
                   </div>
                 </div>
               </span>
-            </div>
-          </div>
 
-          <div class="radioButtons">
-            <div class="form-row full-width bold">
               <div>
-                <!-- NEW ENTRY -->
+                <span class="marginleft40px">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2JudgmentCourtOrdered1">
+                        4.3.1. The court/tribunal has ordered
 
-                <div
-                  class="radio-wrapper"
-                  id="input-wrapper_dynformSCD2WasJudgmentGivenAppealCourt"
-                >
-                  <input
-                    type="checkbox"
-                    title="Was the judgment given by an appeal court or was it in the case of a review of a judgment?"
-                    name="dynformSCD2WasJudgmentGivenAppealCourt"
-                    value="yes"
-                    onclick="this.checked = dynformSCD2WasJudgmentGivenAppealCourtClick; toggleCheckboxRadioValues(this); validateFieldOnBlur(this); showHideRadioDiv(this, 'dynformSCD2WasJudgmentGivenAppealCourt_div', 'yes');
-					if(!this.checked) {clearAllInputChildNodes('dynformSCD2WasJudgmentGivenAppealCourt_div'); showHideRadioDiv(this, 'dynformSCD2WasJudgmentGivenAppealCourt_div'); }
-					 else {
-					 	showHideRadioDiv(this, 'dynformSCD2WasJudgmentGivenAppealCourt_div', 'yes');
-					 } existRadioSelection(this)"
-                    onmousedown="dynformSCD2WasJudgmentGivenAppealCourtClick = checkClickOnRadio(this)"
-                    class="df_input"
-                    id="dynformSCD2WasJudgmentGivenAppealCourt"
-                  />
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2JudgmentCourtOrdered1"
+                        ></span>
+                      </label>
 
-                  <label for="dynformSCD2WasJudgmentGivenAppealCourt">
-                    Was the judgment given by an appeal court or was it in the
-                    case of a review of a judgment?
-                  </label>
-                </div>
-
-                <span
-                  id="validation_error_text_dynformSCD2WasJudgmentGivenAppealCourt"
-                  class="error"
-                  style="position: relative; top: 0px"
-                >
-                </span>
-
-                <!-- NEW ENTRY -->
-              </div>
-            </div>
-          </div>
-
-          <div
-            id="dynformSCD2WasJudgmentGivenAppealCourt_div"
-            class="df_collapsed"
-          >
-            <div>
-              <div class="date-input">
-                <div class="form-row full-width bold">
-                  <div>
-                    <label for="dynformSCD2WasJudgmentGivenAppealCourtDate">
-                      This judgment supersedes the judgment given on
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2JudgmentCourtOrdered1"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="4.3.1. The court/tribunal has ordered"
+                            name="dynformSCD2JudgmentCourtOrdered1"
+                            maxlength="30"
+                            value=""
+                            class="df_textbox"
+                            id="dynformSCD2JudgmentCourtOrdered1"
+                            formControlName="courtOrder"
+                          />
+                        </div>
+                      </div>
 
                       <span
-                        class="asterisk"
-                        id="requiredStar_required_dynformSCD2WasJudgmentGivenAppealCourtDate"
-                        >*</span
+                        id="validation_error_text_dynformSCD2JudgmentCourtOrdered1"
+                        class="error"
+                        style="position: relative; top: 0px"
                       >
-                    </label>
+                      </span>
+                    </div>
+                  </div>
 
-                    <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCD2WasJudgmentGivenAppealCourtDate"
-                    >
-                      <div class="input-content nopaddingTop">
-                        <input
-                          type="text"
-                          title="This judgment supersedes the judgment given on"
-                          name="dynformSCD2WasJudgmentGivenAppealCourtDate"
-                          maxlength="150"
-                          value=""
-                          onchange="validateFieldOnBlur(this)"
-                          onblur="removeClassOnBlur(this)"
-                          onfocus="addClassOnFocus(this)"
-                          class="df_textbox textDate"
-                          id="dynformSCD2WasJudgmentGivenAppealCourtDate"
-                        />
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label style="margin-bottom: 0px"> to pay to </label>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label class="asteriskOnly">
+                        <div
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2JudgmentCourtOrdered2"
+                        ></div>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2JudgmentCourtOrdered2"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="name"
+                            name="dynformSCD2JudgmentCourtOrdered2"
+                            maxlength="30"
+                            value=""
+                            class="df_textbox"
+                            id="dynformSCD2JudgmentCourtOrdered2"
+                            formControlName="judgmentPaymentRecipient"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2JudgmentCourtOrdered2"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label style="margin-bottom: 0px"> </label>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="form-row full-width bold">
+                      <div>
+                        <label for="dynformSCD2JudgmentCourtOrderedPrincipal">
+                          (1) Principal
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedPrincipal"
+                          ></span>
+                        </label>
+
+                        <div
+                          class="input-wrapper regular"
+                          id="input-wrapper_dynformSCD2JudgmentCourtOrderedPrincipal"
+                          [ngClass]="{
+                            invalid:
+                              stepTwoService.form
+                                .get('judgment')
+                                .get('judgmentPrincipal')!.invalid &&
+                              stepTwoService.form
+                                .get('judgment')
+                                .get('judgmentPrincipal')!.dirty
+                          }"
+                        >
+                          <div class="input-content nopaddingTop">
+                            <input
+                              type="text"
+                              title="(1) Principal"
+                              name="dynformSCD2JudgmentCourtOrderedPrincipal"
+                              maxlength="20"
+                              value=""
+                              class="df_textbox"
+                              id="dynformSCD2JudgmentCourtOrderedPrincipal"
+                              formControlName="judgmentPrincipal"
+                            />
+                          </div>
+                        </div>
+
+                        <div
+                          *ngIf="
+                            stepTwoService.form
+                              .get('judgment')
+                              .get('judgmentPrincipal')!.invalid &&
+                            stepTwoService.form
+                              .get('judgment')
+                              .get('judgmentPrincipal')!.dirty
+                          "
+                        >
+                          <div
+                            *ngIf="stepTwoService.form.get('judgment').get('judgmentPrincipal')?.errors?.['invalidAmount']"
+                          >
+                            <span
+                              id="validation_error_text_dynformSCD2JudgmentCourtOrderedPrincipal"
+                              class="error"
+                              style="position: relative; top: 0px"
+                              [translate]="'errors.amountValidationError'"
+                            >
+                              Invalid entry. Please use the XXX.XXX,XX format
+                              when entering an amount.
+                            </span>
+                          </div>
+                        </div>
+                        <span
+                          id="validation_error_text_dynformSCD2JudgmentCourtOrderedPrincipal"
+                          class="error"
+                          style="position: relative; top: 0px"
+                        >
+                        </span>
                       </div>
                     </div>
 
-                    <span
-                      id="validation_error_text_dynformSCD2WasJudgmentGivenAppealCourtDate"
-                      class="error"
-                      style="position: relative; top: 0px"
-                    >
-                    </span>
-                  </div>
-                </div>
-              </div>
+                    <div class="form-row full-width bold">
+                      <div>
+                        <label for="dynformSCD2JudgmentCourtOrderedInterest">
+                          (2) Interest
 
-              <div class="form-row full-width bold">
-                <div>
-                  <label style="margin-bottom: 0px">
-                    , case number
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedInterest"
+                          ></span>
+                        </label>
 
-                    <span class="asterisk">*</span>
-                  </label>
-                </div>
-              </div>
+                        <div
+                          class="input-wrapper regular"
+                          id="input-wrapper_dynformSCD2JudgmentCourtOrderedInterest"
+                        >
+                          <div class="input-content nopaddingTop">
+                            <input
+                              type="text"
+                              title="(2) Interest"
+                              name="dynformSCD2JudgmentCourtOrderedInterest"
+                              maxlength="250"
+                              value=""
+                              class="df_textbox"
+                              id="dynformSCD2JudgmentCourtOrderedInterest"
+                              formControlName="judgmentInterest"
+                            />
+                          </div>
+                        </div>
 
-              <div class="form-row full-width bold">
-                <div>
-                  <label class="asteriskOnly">
-                    <div
-                      class="asterisk"
-                      id="requiredStar_required_dynformSCD2WasJudgmentGivenAppealCourtText2"
-                    ></div>
-                  </label>
+                        <span
+                          id="validation_error_text_dynformSCD2JudgmentCourtOrderedInterest"
+                          class="error"
+                          style="position: relative; top: 0px"
+                        >
+                        </span>
+                      </div>
+                    </div>
 
-                  <div
-                    class="input-wrapper regular"
-                    id="input-wrapper_dynformSCD2WasJudgmentGivenAppealCourtText2"
-                  >
-                    <div class="input-content nopaddingTop">
-                      <input
-                        type="text"
-                        title="name"
-                        name="dynformSCD2WasJudgmentGivenAppealCourtText2"
-                        maxlength="30"
-                        value=""
-                        onchange="validateFieldOnBlur(this,'dynformSCD2WasJudgmentGivenAppealCourt')"
-                        onblur="removeClassOnBlur(this)"
-                        onfocus="addClassOnFocus(this)"
-                        class="df_textbox df_mandatory"
-                        id="dynformSCD2WasJudgmentGivenAppealCourtText2"
-                      />
+                    <div class="form-row full-width bold">
+                      <div>
+                        <label for="dynformSCD2JudgmentCourtOrderedCosts">
+                          (3) Costs
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedCosts"
+                          ></span>
+                        </label>
+
+                        <div
+                          class="input-wrapper regular"
+                          id="input-wrapper_dynformSCD2JudgmentCourtOrderedCosts"
+                          [ngClass]="{
+                            invalid:
+                              stepTwoService.form
+                                .get('judgment')
+                                .get('judgmentCosts')!.invalid &&
+                              stepTwoService.form
+                                .get('judgment')
+                                .get('judgmentCosts')!.dirty
+                          }"
+                        >
+                          <div class="input-content nopaddingTop">
+                            <input
+                              type="text"
+                              title="(3) Costs"
+                              name="dynformSCD2JudgmentCourtOrderedCosts"
+                              maxlength="20"
+                              value=""
+                              class="df_textbox"
+                              id="dynformSCD2JudgmentCourtOrderedCosts"
+                              formControlName="judgmentCosts"
+                            />
+                          </div>
+                        </div>
+
+                        <div
+                          *ngIf="
+                            stepTwoService.form
+                              .get('judgment')
+                              .get('judgmentCosts')!.invalid &&
+                            stepTwoService.form
+                              .get('judgment')
+                              .get('judgmentCosts')!.dirty
+                          "
+                        >
+                          <div
+                            *ngIf="stepTwoService.form.get('judgment').get('judgmentCosts')?.errors?.['invalidAmount']"
+                          >
+                            <span
+                              id="validation_error_text_dynformSCD2JudgmentCourtOrderedCosts"
+                              class="error"
+                              style="position: relative; top: 0px"
+                              [translate]="'errors.amountValidationError'"
+                            >
+                              Invalid entry. Please use the XXX.XXX,XX format
+                              when entering an amount.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2JudgmentCourtOrderedAgainst1">
+                        4.3.2. The court/tribunal has made an order against
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedAgainst1"
+                        ></span>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2JudgmentCourtOrderedAgainst1"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="4.3.2. The court/tribunal has made an order against"
+                            name="dynformSCD2JudgmentCourtOrderedAgainst1"
+                            maxlength="30"
+                            value=""
+                            class="df_textbox"
+                            id="dynformSCD2JudgmentCourtOrderedAgainst1"
+                            formControlName="respondent"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2JudgmentCourtOrderedAgainst1"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label style="margin-bottom: 0px"> to </label>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label class="asteriskOnly">
+                        <div
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedAgainst2"
+                        ></div>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2JudgmentCourtOrderedAgainst2"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="name"
+                            name="dynformSCD2JudgmentCourtOrderedAgainst2"
+                            maxlength="30"
+                            value=""
+                            class="df_textbox"
+                            id="dynformSCD2JudgmentCourtOrderedAgainst2"
+                            formControlName="courtOrderAgainst"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2JudgmentCourtOrderedAgainst2"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+
+            <div class="radioButtons">
+              <div class="form-row full-width bold">
+                <div>
+                  <div
+                    class="radio-wrapper"
+                    id="input-wrapper_dynformSCD2WasJudgmentGivenAppealCourt"
+                  >
+                    <input
+                      type="checkbox"
+                      title="Was the judgment given by an appeal court or was it in the case of a review of a judgment?"
+                      name="dynformSCD2WasJudgmentGivenAppealCourt"
+                      value="yes"
+                      class="df_input"
+                      id="dynformSCD2WasJudgmentGivenAppealCourt"
+                      formControlName="supersededJudgment"
+                      (change)="expandSupersededJudgmentDiv($event)"
+                    />
+
+                    <label for="dynformSCD2WasJudgmentGivenAppealCourt">
+                      Was the judgment given by an appeal court or was it in the
+                      case of a review of a judgment?
+                    </label>
+                  </div>
+
                   <span
-                    id="validation_error_text_dynformSCD2WasJudgmentGivenAppealCourtText2"
+                    id="validation_error_text_dynformSCD2WasJudgmentGivenAppealCourt"
                     class="error"
                     style="position: relative; top: 0px"
                   >
                   </span>
                 </div>
               </div>
+            </div>
 
-              <div class="form-row full-width bold">
-                <div>
-                  <label style="margin-bottom: 0px">
-                    , and any certificate relative thereto.
-                  </label>
+            <div
+              id="dynformSCD2WasJudgmentGivenAppealCourt_div"
+              class="df_collapsed"
+            >
+              <div>
+                <div class="date-input">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2WasJudgmentGivenAppealCourtDate">
+                        This judgment supersedes the judgment given on
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_required_dynformSCD2WasJudgmentGivenAppealCourtDate"
+                          >*</span
+                        >
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2WasJudgmentGivenAppealCourtDate"
+                        [ngClass]="{
+                          invalid:
+                            stepTwoService.form
+                              .get('judgment')
+                              .get('supersededJudgmentDate')!.invalid &&
+                            stepTwoService.form
+                              .get('judgment')
+                              .get('supersededJudgmentDate')!.dirty
+                        }"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="This judgment supersedes the judgment given on"
+                            name="dynformSCD2WasJudgmentGivenAppealCourtDate"
+                            maxlength="150"
+                            class="df_textbox textDate"
+                            id="dynformSCD2WasJudgmentGivenAppealCourtDate"
+                            formControlName="supersededJudgmentDate"
+                            [readOnly]="true"
+                          />
+                        </div>
+                      </div>
+
+                      <div
+                        *ngIf="
+                          stepTwoService.form
+                            .get('judgment')
+                            .get('supersededJudgmentDate')!.invalid &&
+                          stepTwoService.form
+                            .get('judgment')
+                            .get('supersededJudgmentDate')!.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="stepTwoService.form.get('judgment').get('supersededJudgmentDate')?.errors?.['required']"
+                        >
+                          <span
+                            id="validation_error_text_dynformSCD2WasJudgmentGivenAppealCourtDate"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label style="margin-bottom: 0px">
+                      , case number
+
+                      <span class="asterisk">*</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label class="asteriskOnly">
+                      <div
+                        class="asterisk"
+                        id="requiredStar_required_dynformSCD2WasJudgmentGivenAppealCourtText2"
+                      ></div>
+                    </label>
+
+                    <div
+                      class="input-wrapper regular"
+                      id="input-wrapper_dynformSCD2WasJudgmentGivenAppealCourtText2"
+                      [ngClass]="{
+                        invalid:
+                          stepTwoService.form
+                            .get('judgment')
+                            .get('supersededJudgmentCaseNumber')!.invalid &&
+                          stepTwoService.form
+                            .get('judgment')
+                            .get('supersededJudgmentCaseNumber')!.dirty
+                      }"
+                    >
+                      <div class="input-content nopaddingTop">
+                        <input
+                          type="text"
+                          title="name"
+                          name="dynformSCD2WasJudgmentGivenAppealCourtText2"
+                          maxlength="30"
+                          value=""
+                          class="df_textbox df_mandatory"
+                          id="dynformSCD2WasJudgmentGivenAppealCourtText2"
+                          formControlName="supersededJudgmentCaseNumber"
+                        />
+                      </div>
+                    </div>
+
+                    <div
+                      *ngIf="
+                        stepTwoService.form
+                          .get('judgment')
+                          .get('supersededJudgmentCaseNumber')!.invalid &&
+                        stepTwoService.form
+                          .get('judgment')
+                          .get('supersededJudgmentCaseNumber')!.dirty
+                      "
+                    >
+                      <div
+                        *ngIf="stepTwoService.form.get('judgment').get('supersededJudgmentCaseNumber')?.errors?.['required']"
+                      >
+                        <span
+                          id="validation_error_text_dynformSCD2WasJudgmentGivenAppealCourtText2"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                        >
+                          Field is required
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row full-width bold">
+                  <div>
+                    <label style="margin-bottom: 0px">
+                      , and any certificate relative thereto.
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="form-row full-width bold">
-            <div>
-              <label style="margin-bottom: 0px">
-                THE JUDGMENT WILL BE RECOGNISED AND ENFORCED IN ANOTHER MEMBER
-                STATE WITHOUT THE NEED FOR A DECLARATION OF ENFORCEABILITY AND
-                WITHOUT ANY POSSIBILITY OF OPPOSING ITS RECOGNITION.
-              </label>
+            <div class="form-row full-width bold">
+              <div>
+                <label style="margin-bottom: 0px">
+                  THE JUDGMENT WILL BE RECOGNISED AND ENFORCED IN ANOTHER MEMBER
+                  STATE WITHOUT THE NEED FOR A DECLARATION OF ENFORCEABILITY AND
+                  WITHOUT ANY POSSIBILITY OF OPPOSING ITS RECOGNITION.
+                </label>
+              </div>
             </div>
           </div>
         </div>
 
         <div
-          id="dynformSCD2JudgementOrCourtSettlement2_div"
+          id="dynformSCD2JudgmentOrCourtSettlement2_div"
           class="df_collapsed"
         >
-          <div class="form-row full-width bold">
-            <div>
-              <label style="margin-bottom: 0px"> 5. Court Settlement </label>
+          <div formGroupName="settlement">
+            <div class="form-row full-width bold">
+              <div>
+                <label style="margin-bottom: 0px"> 5. Court Settlement </label>
+              </div>
             </div>
-          </div>
 
-          <div>
-            <span class="marginleft20px">
-              <div class="date-input">
+            <div>
+              <span class="marginleft20px">
+                <div class="date-input">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2CourtSettlementDate">
+                        5.1. Date
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_required_dynformSCD2CourtSettlementDate"
+                          >*</span
+                        >
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2CourtSettlementDate"
+                        [ngClass]="{
+                          invalid:
+                            stepTwoService.form
+                              .get('settlement')
+                              .get('settlementDate')!.invalid &&
+                            stepTwoService.form
+                              .get('settlement')
+                              .get('settlementDate')!.dirty
+                        }"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="5.1. Date"
+                            name="dynformSCD2CourtSettlementDate"
+                            maxlength="150"
+                            class="df_textbox textDate"
+                            id="dynformSCD2CourtSettlementDate"
+                            formControlName="settlementDate"
+                            [readOnly]="true"
+                          />
+                        </div>
+                      </div>
+
+                      <div
+                        *ngIf="
+                          stepTwoService.form
+                            .get('settlement')
+                            .get('settlementDate')!.invalid &&
+                          stepTwoService.form
+                            .get('settlement')
+                            .get('settlementDate')!.dirty
+                        "
+                      >
+                        <div
+                          *ngIf="stepTwoService.form.get('settlement').get('settlementDate')?.errors?.['required']"
+                        >
+                          <span
+                            id="validation_error_text_dynformSCD2CourtSettlementDate"
+                            class="error"
+                            style="position: relative; top: 0px"
+                            [translate]="'errors.required'"
+                          >
+                            Field is required
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div class="form-row full-width bold">
                   <div>
-                    <label for="dynformSCD2CourtSettlementDate">
-                      5.1. Date
+                    <label for="dynformSCD2CourtSettlementCaseNumber">
+                      5.2. Case number
 
                       <span
                         class="asterisk"
-                        id="requiredStar_required_dynformSCD2CourtSettlementDate"
+                        id="requiredStar_required_dynformSCD2CourtSettlementCaseNumber"
                         >*</span
                       >
                     </label>
 
                     <div
                       class="input-wrapper regular"
-                      id="input-wrapper_dynformSCD2CourtSettlementDate"
+                      id="input-wrapper_dynformSCD2CourtSettlementCaseNumber"
+                      [ngClass]="{
+                        invalid:
+                          stepTwoService.form
+                            .get('settlement')
+                            .get('settlementCaseNumber')!.invalid &&
+                          stepTwoService.form
+                            .get('settlement')
+                            .get('settlementCaseNumber')!.dirty
+                      }"
                     >
                       <div class="input-content nopaddingTop">
                         <input
                           type="text"
-                          title="5.1. Date"
-                          name="dynformSCD2CourtSettlementDate"
-                          maxlength="150"
+                          title="5.2. Case number"
+                          name="dynformSCD2CourtSettlementCaseNumber"
+                          maxlength="20"
                           value=""
-                          onchange="validateFieldOnBlur(this)"
-                          onblur="removeClassOnBlur(this)"
-                          onfocus="addClassOnFocus(this)"
-                          class="df_textbox textDate"
-                          id="dynformSCD2CourtSettlementDate"
+                          class="df_textbox df_mandatory"
+                          id="dynformSCD2CourtSettlementCaseNumber"
+                          formControlName="settlementCaseNumber"
                         />
                       </div>
                     </div>
-
-                    <span
-                      id="validation_error_text_dynformSCD2CourtSettlementDate"
-                      class="error"
-                      style="position: relative; top: 0px"
-                    >
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="form-row full-width bold">
-                <div>
-                  <label for="dynformSCD2CourtSettlementCaseNumber">
-                    5.2. Case number
-
-                    <span
-                      class="asterisk"
-                      id="requiredStar_required_dynformSCD2CourtSettlementCaseNumber"
-                      >*</span
-                    >
-                  </label>
-
-                  <div
-                    class="input-wrapper regular"
-                    id="input-wrapper_dynformSCD2CourtSettlementCaseNumber"
-                  >
-                    <div class="input-content nopaddingTop">
-                      <input
-                        type="text"
-                        title="5.2. Case number"
-                        name="dynformSCD2CourtSettlementCaseNumber"
-                        maxlength="20"
-                        value=""
-                        onchange="validateFieldOnBlur(this)"
-                        onblur="removeClassOnBlur(this)"
-                        onfocus="addClassOnFocus(this)"
-                        class="df_textbox df_mandatory"
-                        id="dynformSCD2CourtSettlementCaseNumber"
-                      />
-                    </div>
-                  </div>
-
-                  <span
-                    id="validation_error_text_dynformSCD2CourtSettlementCaseNumber"
-                    class="error"
-                    style="position: relative; top: 0px"
-                  >
-                  </span>
-                </div>
-              </div>
-
-              <div class="form-row full-width bold">
-                <div>
-                  <label style="margin-bottom: 0px">
-                    5.3. The substance of the settlement
-                  </label>
-                </div>
-              </div>
-            </span>
-
-            <div>
-              <span class="marginleft40px">
-                <div class="form-row full-width bold">
-                  <div>
-                    <label for="dynformSCD2CourtOrdered1">
-                      5.3.1. The parties agreed that
-
-                      <span
-                        class="asterisk"
-                        id="requiredStar_blank_dynformSCD2CourtOrdered1"
-                      ></span>
-                    </label>
 
                     <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCD2CourtOrdered1"
+                      *ngIf="
+                        stepTwoService.form
+                          .get('settlement')
+                          .get('settlementCaseNumber')!.invalid &&
+                        stepTwoService.form
+                          .get('settlement')
+                          .get('settlementCaseNumber')!.dirty
+                      "
                     >
-                      <div class="input-content nopaddingTop">
-                        <input
-                          type="text"
-                          title="5.3.1. The parties agreed that"
-                          name="dynformSCD2CourtOrdered1"
-                          maxlength="30"
-                          value=""
-                          onchange="validateFieldOnBlur(this)"
-                          onblur="removeClassOnBlur(this)"
-                          onfocus="addClassOnFocus(this)"
-                          class="df_textbox"
-                          id="dynformSCD2CourtOrdered1"
-                        />
-                      </div>
-                    </div>
-
-                    <span
-                      id="validation_error_text_dynformSCD2CourtOrdered1"
-                      class="error"
-                      style="position: relative; top: 0px"
-                    >
-                    </span>
-                  </div>
-                </div>
-
-                <div class="form-row full-width bold">
-                  <div>
-                    <label style="margin-bottom: 0px"> will pay to </label>
-                  </div>
-                </div>
-
-                <div class="form-row full-width bold">
-                  <div>
-                    <label class="asteriskOnly">
                       <div
-                        class="asterisk"
-                        id="requiredStar_blank_dynformSCD2CourtOrdered2"
-                      ></div>
-                    </label>
-
-                    <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCD2CourtOrdered2"
-                    >
-                      <div class="input-content nopaddingTop">
-                        <input
-                          type="text"
-                          title="name"
-                          name="dynformSCD2CourtOrdered2"
-                          maxlength="30"
-                          value=""
-                          onchange="validateFieldOnBlur(this)"
-                          onblur="removeClassOnBlur(this)"
-                          onfocus="addClassOnFocus(this)"
-                          class="df_textbox"
-                          id="dynformSCD2CourtOrdered2"
-                        />
-                      </div>
-                    </div>
-
-                    <span
-                      id="validation_error_text_dynformSCD2CourtOrdered2"
-                      class="error"
-                      style="position: relative; top: 0px"
-                    >
-                    </span>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="form-row full-width bold">
-                    <div>
-                      <label for="dynformSCD2CourtOrderedPrincipal">
-                        (1) Principal
-
+                        *ngIf="stepTwoService.form.get('settlement').get('settlementCaseNumber')?.errors?.['required']"
+                      >
                         <span
-                          class="asterisk"
-                          id="requiredStar_blank_dynformSCD2CourtOrderedPrincipal"
-                        ></span>
-                      </label>
-
-                      <div
-                        class="input-wrapper regular"
-                        id="input-wrapper_dynformSCD2CourtOrderedPrincipal"
-                      >
-                        <div class="input-content nopaddingTop">
-                          <input
-                            type="text"
-                            title="(1) Principal"
-                            name="dynformSCD2CourtOrderedPrincipal"
-                            maxlength="20"
-                            value=""
-                            onchange="validateFieldOnBlur(this)"
-                            onblur="removeClassOnBlur(this)"
-                            onfocus="addClassOnFocus(this)"
-                            class="df_textbox"
-                            id="dynformSCD2CourtOrderedPrincipal"
-                          />
-                        </div>
+                          id="validation_error_text_dynformSCD2CourtSettlementCaseNumber"
+                          class="error"
+                          style="position: relative; top: 0px"
+                          [translate]="'errors.required'"
+                        >
+                          Field is required
+                        </span>
                       </div>
-
-                      <span
-                        id="validation_error_text_dynformSCD2CourtOrderedPrincipal"
-                        class="error"
-                        style="position: relative; top: 0px"
-                      >
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="form-row full-width bold">
-                    <div>
-                      <label for="dynformSCD2CourtOrderedInterest">
-                        (2) Interest
-
-                        <span
-                          class="asterisk"
-                          id="requiredStar_blank_dynformSCD2CourtOrderedInterest"
-                        ></span>
-                      </label>
-
-                      <div
-                        class="input-wrapper regular"
-                        id="input-wrapper_dynformSCD2CourtOrderedInterest"
-                      >
-                        <div class="input-content nopaddingTop">
-                          <input
-                            type="text"
-                            title="(2) Interest"
-                            name="dynformSCD2CourtOrderedInterest"
-                            maxlength="250"
-                            value=""
-                            onchange="validateFieldOnBlur(this)"
-                            onblur="removeClassOnBlur(this)"
-                            onfocus="addClassOnFocus(this)"
-                            class="df_textbox"
-                            id="dynformSCD2CourtOrderedInterest"
-                          />
-                        </div>
-                      </div>
-
-                      <span
-                        id="validation_error_text_dynformSCD2CourtOrderedInterest"
-                        class="error"
-                        style="position: relative; top: 0px"
-                      >
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="form-row full-width bold">
-                    <div>
-                      <label for="dynformSCD2CourtOrderedCosts">
-                        (3) Costs
-
-                        <span
-                          class="asterisk"
-                          id="requiredStar_blank_dynformSCD2CourtOrderedCosts"
-                        ></span>
-                      </label>
-
-                      <div
-                        class="input-wrapper regular"
-                        id="input-wrapper_dynformSCD2CourtOrderedCosts"
-                      >
-                        <div class="input-content nopaddingTop">
-                          <input
-                            type="text"
-                            title="(3) Costs"
-                            name="dynformSCD2CourtOrderedCosts"
-                            maxlength="20"
-                            value=""
-                            onchange="validateFieldOnBlur(this)"
-                            onblur="removeClassOnBlur(this)"
-                            onfocus="addClassOnFocus(this)"
-                            class="df_textbox"
-                            id="dynformSCD2CourtOrderedCosts"
-                          />
-                        </div>
-                      </div>
-
-                      <span
-                        id="validation_error_text_dynformSCD2CourtOrderedCosts"
-                        class="error"
-                        style="position: relative; top: 0px"
-                      >
-                      </span>
                     </div>
                   </div>
                 </div>
 
                 <div class="form-row full-width bold">
                   <div>
-                    <label for="dynformSCD2CourtOrderedAgainst1">
-                      5.3.2. The parties agreed that
-
-                      <span
-                        class="asterisk"
-                        id="requiredStar_blank_dynformSCD2CourtOrderedAgainst1"
-                      ></span>
+                    <label style="margin-bottom: 0px">
+                      5.3. The substance of the settlement
                     </label>
-
-                    <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCD2CourtOrderedAgainst1"
-                    >
-                      <div class="input-content nopaddingTop">
-                        <input
-                          type="text"
-                          title="5.3.2. The parties agreed that"
-                          name="dynformSCD2CourtOrderedAgainst1"
-                          maxlength="30"
-                          value=""
-                          onchange="validateFieldOnBlur(this)"
-                          onblur="removeClassOnBlur(this)"
-                          onfocus="addClassOnFocus(this)"
-                          class="df_textbox"
-                          id="dynformSCD2CourtOrderedAgainst1"
-                        />
-                      </div>
-                    </div>
-
-                    <span
-                      id="validation_error_text_dynformSCD2CourtOrderedAgainst1"
-                      class="error"
-                      style="position: relative; top: 0px"
-                    >
-                    </span>
-                  </div>
-                </div>
-
-                <div class="form-row full-width bold">
-                  <div>
-                    <label style="margin-bottom: 0px"> will </label>
-                  </div>
-                </div>
-
-                <div class="form-row full-width bold">
-                  <div>
-                    <label class="asteriskOnly">
-                      <div
-                        class="asterisk"
-                        id="requiredStar_blank_dynformSCD2CourtOrderedAgainst2"
-                      ></div>
-                    </label>
-
-                    <div
-                      class="input-wrapper regular"
-                      id="input-wrapper_dynformSCD2CourtOrderedAgainst2"
-                    >
-                      <div class="input-content nopaddingTop">
-                        <input
-                          type="text"
-                          title="name"
-                          name="dynformSCD2CourtOrderedAgainst2"
-                          maxlength="30"
-                          value=""
-                          onchange="validateFieldOnBlur(this)"
-                          onblur="removeClassOnBlur(this)"
-                          onfocus="addClassOnFocus(this)"
-                          class="df_textbox"
-                          id="dynformSCD2CourtOrderedAgainst2"
-                        />
-                      </div>
-                    </div>
-
-                    <span
-                      id="validation_error_text_dynformSCD2CourtOrderedAgainst2"
-                      class="error"
-                      style="position: relative; top: 0px"
-                    >
-                    </span>
                   </div>
                 </div>
               </span>
+
+              <div>
+                <span class="marginleft40px">
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2CourtOrdered1">
+                        5.3.1. The parties agreed that
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2CourtOrdered1"
+                        ></span>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2CourtOrdered1"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="5.3.1. The parties agreed that"
+                            name="dynformSCD2CourtOrdered1"
+                            maxlength="30"
+                            value=""
+                            class="df_textbox"
+                            id="dynformSCD2CourtOrdered1"
+                            formControlName="firstSettlementAgreement"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2CourtOrdered1"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label style="margin-bottom: 0px"> will pay to </label>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label class="asteriskOnly">
+                        <div
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2CourtOrdered2"
+                        ></div>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2CourtOrdered2"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="name"
+                            name="dynformSCD2CourtOrdered2"
+                            maxlength="30"
+                            value=""
+                            class="df_textbox"
+                            id="dynformSCD2CourtOrdered2"
+                            formControlName="settlementPaymentRecipient"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2CourtOrdered2"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="form-row full-width bold">
+                      <div>
+                        <label for="dynformSCD2CourtOrderedPrincipal">
+                          (1) Principal
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformSCD2CourtOrderedPrincipal"
+                          ></span>
+                        </label>
+
+                        <div
+                          class="input-wrapper regular"
+                          id="input-wrapper_dynformSCD2CourtOrderedPrincipal"
+                          [ngClass]="{
+                            invalid:
+                              stepTwoService.form
+                                .get('settlement')
+                                .get('settlementPrincipal')!.invalid &&
+                              stepTwoService.form
+                                .get('settlement')
+                                .get('settlementPrincipal')!.dirty
+                          }"
+                        >
+                          <div class="input-content nopaddingTop">
+                            <input
+                              type="text"
+                              title="(1) Principal"
+                              name="dynformSCD2CourtOrderedPrincipal"
+                              maxlength="20"
+                              value=""
+                              class="df_textbox"
+                              id="dynformSCD2CourtOrderedPrincipal"
+                              formControlName="settlementPrincipal"
+                            />
+                          </div>
+                        </div>
+
+                        <div
+                          *ngIf="
+                            stepTwoService.form
+                              .get('settlement')
+                              .get('settlementPrincipal')!.invalid &&
+                            stepTwoService.form
+                              .get('settlement')
+                              .get('settlementPrincipal')!.dirty
+                          "
+                        >
+                          <div
+                            *ngIf="stepTwoService.form.get('settlement').get('settlementPrincipal')?.errors?.['invalidAmount']"
+                          >
+                            <span
+                              id="validation_error_text_dynformSCD2CourtOrderedPrincipal"
+                              class="error"
+                              style="position: relative; top: 0px"
+                              [translate]="'errors.amountValidationError'"
+                            >
+                              Invalid entry. Please use the XXX.XXX,XX format
+                              when entering an amount.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-row full-width bold">
+                      <div>
+                        <label for="dynformSCD2CourtOrderedInterest">
+                          (2) Interest
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformSCD2CourtOrderedInterest"
+                          ></span>
+                        </label>
+
+                        <div
+                          class="input-wrapper regular"
+                          id="input-wrapper_dynformSCD2CourtOrderedInterest"
+                        >
+                          <div class="input-content nopaddingTop">
+                            <input
+                              type="text"
+                              title="(2) Interest"
+                              name="dynformSCD2CourtOrderedInterest"
+                              maxlength="250"
+                              value=""
+                              class="df_textbox"
+                              id="dynformSCD2CourtOrderedInterest"
+                              formControlName="settlementInterest"
+                            />
+                          </div>
+                        </div>
+
+                        <span
+                          id="validation_error_text_dynformSCD2CourtOrderedInterest"
+                          class="error"
+                          style="position: relative; top: 0px"
+                        >
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="form-row full-width bold">
+                      <div>
+                        <label for="dynformSCD2CourtOrderedCosts">
+                          (3) Costs
+
+                          <span
+                            class="asterisk"
+                            id="requiredStar_blank_dynformSCD2CourtOrderedCosts"
+                          ></span>
+                        </label>
+
+                        <div
+                          class="input-wrapper regular"
+                          id="input-wrapper_dynformSCD2CourtOrderedCosts"
+                          [ngClass]="{
+                            invalid:
+                              stepTwoService.form
+                                .get('settlement')
+                                .get('settlementCosts')!.invalid &&
+                              stepTwoService.form
+                                .get('settlement')
+                                .get('settlementCosts')!.dirty
+                          }"
+                        >
+                          <div class="input-content nopaddingTop">
+                            <input
+                              type="text"
+                              title="(3) Costs"
+                              name="dynformSCD2CourtOrderedCosts"
+                              maxlength="20"
+                              value=""
+                              class="df_textbox"
+                              id="dynformSCD2CourtOrderedCosts"
+                              formControlName="settlementCosts"
+                            />
+                          </div>
+                        </div>
+
+                        <div
+                          *ngIf="
+                            stepTwoService.form
+                              .get('settlement')
+                              .get('settlementCosts')!.invalid &&
+                            stepTwoService.form
+                              .get('settlement')
+                              .get('settlementCosts')!.dirty
+                          "
+                        >
+                          <div
+                            *ngIf="stepTwoService.form.get('settlement').get('settlementCosts')?.errors?.['invalidAmount']"
+                          >
+                            <span
+                              id="validation_error_text_dynformSCD2CourtOrderedCosts"
+                              class="error"
+                              style="position: relative; top: 0px"
+                              [translate]="'errors.amountValidationError'"
+                            >
+                              Invalid entry. Please use the XXX.XXX,XX format
+                              when entering an amount.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label for="dynformSCD2CourtOrderedAgainst1">
+                        5.3.2. The parties agreed that
+
+                        <span
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2CourtOrderedAgainst1"
+                        ></span>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2CourtOrderedAgainst1"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="5.3.2. The parties agreed that"
+                            name="dynformSCD2CourtOrderedAgainst1"
+                            maxlength="30"
+                            value=""
+                            class="df_textbox"
+                            id="dynformSCD2CourtOrderedAgainst1"
+                            formControlName="secondSettlementAgreement"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2CourtOrderedAgainst1"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label style="margin-bottom: 0px"> will </label>
+                    </div>
+                  </div>
+
+                  <div class="form-row full-width bold">
+                    <div>
+                      <label class="asteriskOnly">
+                        <div
+                          class="asterisk"
+                          id="requiredStar_blank_dynformSCD2CourtOrderedAgainst2"
+                        ></div>
+                      </label>
+
+                      <div
+                        class="input-wrapper regular"
+                        id="input-wrapper_dynformSCD2CourtOrderedAgainst2"
+                      >
+                        <div class="input-content nopaddingTop">
+                          <input
+                            type="text"
+                            title="name"
+                            name="dynformSCD2CourtOrderedAgainst2"
+                            maxlength="30"
+                            value=""
+                            class="df_textbox"
+                            id="dynformSCD2CourtOrderedAgainst2"
+                            formControlName="agreedAction"
+                          />
+                        </div>
+                      </div>
+
+                      <span
+                        id="validation_error_text_dynformSCD2CourtOrderedAgainst2"
+                        class="error"
+                        style="position: relative; top: 0px"
+                      >
+                      </span>
+                    </div>
+                  </div>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -1094,6 +1334,11 @@
             <div
               class="input-wrapper regular"
               id="input-wrapper_dynformSCD2DoneAt"
+              [ngClass]="{
+                invalid:
+                  stepTwoService.form.get('doneAt')!.invalid &&
+                  stepTwoService.form.get('doneAt')!.dirty
+              }"
             >
               <div class="input-content nopaddingTop">
                 <input
@@ -1102,21 +1347,32 @@
                   name="dynformSCD2DoneAt"
                   maxlength="60"
                   value=""
-                  onchange="validateFieldOnBlur(this)"
-                  onblur="removeClassOnBlur(this)"
-                  onfocus="addClassOnFocus(this)"
                   class="df_textbox df_mandatory"
                   id="dynformSCD2DoneAt"
+                  formControlName="doneAt"
                 />
               </div>
             </div>
 
-            <span
-              id="validation_error_text_dynformSCD2DoneAt"
-              class="error"
-              style="position: relative; top: 0px"
+            <div
+              *ngIf="
+                stepTwoService.form.get('doneAt')!.invalid &&
+                stepTwoService.form.get('doneAt')!.dirty
+              "
             >
-            </span>
+              <div
+                *ngIf="stepTwoService.form.get('doneAt')?.errors?.['required']"
+              >
+                <span
+                  id="validation_error_text_dynformSCD2DoneAt"
+                  class="error"
+                  style="position: relative; top: 0px"
+                  [translate]="'errors.required'"
+                >
+                  Field is required
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1134,8 +1390,13 @@
               </label>
 
               <div
-                class="input-wrapper valid regular"
+                class="input-wrapper regular"
                 id="input-wrapper_dynformSCD2Date"
+                [ngClass]="{
+                  invalid:
+                    stepTwoService.form.get('date')!.invalid &&
+                    stepTwoService.form.get('date')!.dirty
+                }"
               >
                 <div class="input-content nopaddingTop">
                   <input
@@ -1143,90 +1404,34 @@
                     title="Date"
                     name="dynformSCD2Date"
                     maxlength="150"
-                    value="31/7/2023"
-                    onchange="validateFieldOnBlur(this)"
-                    onblur="removeClassOnBlur(this)"
-                    onfocus="addClassOnFocus(this)"
                     class="df_textbox textDate"
                     id="dynformSCD2Date"
+                    formControlName="date"
+                    [readOnly]="true"
                   />
                 </div>
               </div>
 
-              <span
-                id="validation_error_text_dynformSCD2Date"
-                class="error"
-                style="position: relative; top: 0px"
+              <div
+                *ngIf="
+                  stepTwoService.form.get('date')!.invalid &&
+                  stepTwoService.form.get('date')!.dirty
+                "
               >
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-row full-width">
-          <div>
-            <!-- NEW ENTRY -->
-
-            <h4>PDF form</h4>
-
-            <p></p>
-            <label for="dynformSCD2pdfLanguage"
-              >Please select the language in which you wish to generate the pdf
-              form:
-
-              <span class="asterisk">*</span>
-            </label>
-
-            <div
-              class="input-wrapper regular"
-              id="input-wrapper_dynformSCD2pdfLanguage"
-            >
-              <div class="input-content">
-                <select
-                  id="dynformSCD2pdfLanguage"
-                  title="Please select the language in which you wish to generate the pdf form"
-                  name="dynformSCD2pdfLanguage"
-                  onchange="validateFieldOnBlur(this)"
-                  onblur="removeClassOnBlur(this)"
-                  onfocus="addClassOnFocus(this)"
-                  class="df_select df_mandatory"
+                <div
+                  *ngIf="stepTwoService.form.get('date')?.errors?.['required']"
                 >
-                  <option value="" disabled selected>Please select</option>
-
-                  <option value="bg">Bulgarian (bg)</option>
-                  <option value="es">Spanish (es)</option>
-                  <option value="cs">Czech (cs)</option>
-                  <option value="da">Danish (da)</option>
-                  <option value="de">German (de)</option>
-                  <option value="et">Estonian (et)</option>
-                  <option value="el">Greek (el)</option>
-                  <option value="en">English (en)</option>
-                  <option value="fr">French (fr)</option>
-                  <option value="hr">Croatian (hr)</option>
-                  <option value="it">Italian (it)</option>
-                  <option value="lv">Latvian (lv)</option>
-                  <option value="lt">Lithuanian (lt)</option>
-                  <option value="hu">Hungarian (hu)</option>
-                  <option value="mt">Maltese (mt)</option>
-                  <option value="nl">Dutch (nl)</option>
-                  <option value="pl">Polish (pl)</option>
-                  <option value="pt">Portuguese (pt)</option>
-                  <option value="ro">Romanian (ro)</option>
-                  <option value="sk">Slovak (sk)</option>
-                  <option value="sl">Slovenian (sl)</option>
-                  <option value="fi">Finnish (fi)</option>
-                  <option value="sv">Swedish (sv)</option>
-                </select>
+                  <span
+                    id="validation_error_text_dynformSCD2Date"
+                    class="error"
+                    style="position: relative; top: 0px"
+                    [translate]="'errors.required'"
+                  >
+                    Field is required
+                  </span>
+                </div>
               </div>
             </div>
-            <span
-              id="validation_error_text_dynformSCD2pdfLanguage"
-              class="error"
-              style="position: relative; top: 0px"
-            >
-            </span>
-
-            <!-- NEW ENTRY -->
           </div>
         </div>
       </form>

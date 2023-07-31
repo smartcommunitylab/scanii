@@ -43,30 +43,12 @@ export class StepTwoComponent implements OnInit {
     //   statement: "Statement",
     //   doneAt: "Trento",
     // });
-    // this.renderer.listen("window", "DOMContentLoaded", () => {
-    //   this.initLanguagesSelect();
-    // });
-    // this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-    //   const currentDate = this.datePipe.transform(new Date(), "dd/MM/yyyy");
-    //   this.stepTwoService.form.get("date").setValue(currentDate);
-    //   this.initDatepicker(event.lang);
-    //   this.stepTwoService.europeanLanguages =
-    //     event.translations.europeanLanguages;
-    //   setTimeout(() => {
-    //     $("#dynformSCB2Language").trigger("chosen:updated");
-    //     this.stepTwoService.setLanguagesSelect();
-    //   }, 100);
-    // });
-    // this.translateService
-    //   .stream(["stepTwo.select", "stepTwo.other", "stepTwo.specify"])
-    //   .subscribe((response) => {
-    //     this.languageSelectPlaceholder = response["stepTwo.select"];
-    //     document.getElementById("chosen-text").innerText =
-    //       response["stepTwo.other"];
-    //     document
-    //       .getElementById("chosen-text-input")
-    //       .setAttribute("placeholder", response["stepTwo.specify"]);
-    //   });
+
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      const currentDate = this.datePipe.transform(new Date(), "dd/MM/yyyy");
+      this.stepTwoService.form.get("date").setValue(currentDate);
+      this.initDatepicker(event.lang);
+    });
   }
 
   private initDatepicker(language: string) {
@@ -96,14 +78,17 @@ export class StepTwoComponent implements OnInit {
         onClose: (value: string, inst: any) => {
           const formControlName =
             inst.input[0].attributes.formControlName.value;
-          const formControl = this.stepTwoService.form.get(formControlName);
+          const formControl =
+            this.stepTwoService.getFormControl(formControlName);
           formControl.setValue(value);
         },
       }
     );
 
-    $("#dynformSCB2Date").datepicker(options);
-    $("#dynformSCB2DoneDate").datepicker(options);
+    $("#dynformSCD2JudgmentDate").datepicker(options);
+    $("#dynformSCD2WasJudgmentGivenAppealCourtDate").datepicker(options);
+    $("#dynformSCD2CourtSettlementDate").datepicker(options);
+    $("#dynformSCD2Date").datepicker(options);
   }
 
   changeStep(value: string, destinationStepId: string) {
@@ -147,7 +132,7 @@ export class StepTwoComponent implements OnInit {
     }
   }
 
-  onJudgementSettlementRadioButtonsClick(
+  onJudgmentSettlementRadioButtonsClick(
     event: any,
     divIdToExpand: string,
     extendibleInternalDivIds: string[],
@@ -155,7 +140,7 @@ export class StepTwoComponent implements OnInit {
   ) {
     const value = event.target.value;
 
-    if (this.stepTwoService.areJudgementSettlementRadioButtonsUnchecked) {
+    if (this.stepTwoService.areJudgmentSettlementRadioButtonsUnchecked) {
       this.stepTwoService.previousSelectedRadioButton = {
         value,
         divIdToExpand,
@@ -181,24 +166,24 @@ export class StepTwoComponent implements OnInit {
       this.stepTwoService.currentSelectedRadioButton.value !==
       this.stepTwoService.previousSelectedRadioButton.value
     ) {
-      this.manageJudgementSettlementOptions(
+      this.manageJudgmentSettlementOptions(
         this.stepTwoService.previousSelectedRadioButton,
         excludedFormControls
       );
     }
 
-    this.manageJudgementSettlementOptions(
+    this.manageJudgmentSettlementOptions(
       this.stepTwoService.currentSelectedRadioButton,
       excludedFormControls
     );
 
-    this.stepTwoService.areJudgementSettlementRadioButtonsUnchecked =
+    this.stepTwoService.areJudgmentSettlementRadioButtonsUnchecked =
       this.checkIfAllRadioButtonsAreUnchecked();
   }
 
-  manageJudgementSettlementOptions(
+  manageJudgmentSettlementOptions(
     radioButtonObj: any,
-    excludedFormControls?: string[]
+    formControls?: string[]
   ): void {
     //the name of the form control equals the value of the radio button
     const formGroup = this.stepTwoService.form.get(
@@ -206,20 +191,17 @@ export class StepTwoComponent implements OnInit {
     ) as FormGroup;
 
     switch (radioButtonObj.value) {
-      case "judgement":
-        this.stepTwoService.judgementRadioButton =
-          !this.stepTwoService.judgementRadioButton;
+      case "judgment":
+        this.stepTwoService.judgmentRadioButton =
+          !this.stepTwoService.judgmentRadioButton;
 
-        if (this.stepTwoService.judgementRadioButton) {
-          this.addRequiredValidatorToFormElement(
-            formGroup,
-            excludedFormControls
-          );
+        if (this.stepTwoService.judgmentRadioButton) {
+          this.addRequiredValidatorToFormElement(formGroup, formControls);
 
           //expand div
           this.removeDfCollpasedClass(radioButtonObj.divIdToExpand);
 
-          this.setJudgementOrSettlementFormControl("judgement");
+          this.setJudgmentOrSettlementFormControl("judgment");
         } else {
           this.collapseDivsAndResetForm(radioButtonObj, formGroup);
         }
@@ -229,19 +211,49 @@ export class StepTwoComponent implements OnInit {
           !this.stepTwoService.settlementRadioButton;
 
         if (this.stepTwoService.settlementRadioButton) {
-          this.addRequiredValidatorToFormElement(
-            formGroup,
-            excludedFormControls
-          );
+          this.addRequiredValidatorToFormElement(formGroup, formControls);
 
           //expand div
           this.removeDfCollpasedClass(radioButtonObj.divIdToExpand);
 
-          this.setJudgementOrSettlementFormControl("settlement");
+          this.setJudgmentOrSettlementFormControl("settlement");
         } else {
           this.collapseDivsAndResetForm(radioButtonObj, formGroup);
         }
         break;
+    }
+  }
+
+  expandSupersededJudgmentDiv(event: any) {
+    if (event.target.checked) {
+      this.addRequiredValidatorToFormControl(
+        this.stepTwoService.form.get("judgment").get("supersededJudgmentDate")
+      );
+      this.addRequiredValidatorToFormControl(
+        this.stepTwoService.form
+          .get("judgment")
+          .get("supersededJudgmentCaseNumber")
+      );
+
+      document
+        .getElementById("dynformSCD2WasJudgmentGivenAppealCourt_div")
+        .classList.remove("df_collapsed");
+    } else {
+      document
+        .getElementById("dynformSCD2WasJudgmentGivenAppealCourt_div")
+        .classList.add("df_collapsed");
+
+      const supersededJudgmentDate = this.stepTwoService.form
+        .get("judgment")
+        .get("supersededJudgmentDate");
+      const supersededJudgmentCaseNumber = this.stepTwoService.form
+        .get("judgment")
+        .get("supersededJudgmentCaseNumber");
+
+      this.removeRequiredValidatorFromFormControl(supersededJudgmentDate);
+      this.removeRequiredValidatorFromFormControl(supersededJudgmentCaseNumber);
+      supersededJudgmentDate.reset();
+      supersededJudgmentCaseNumber.reset();
     }
   }
 
@@ -263,16 +275,16 @@ export class StepTwoComponent implements OnInit {
     formGroup.reset();
     this.removeRequiredValidatorFromFormElement(formGroup);
 
-    this.setJudgementOrSettlementFormControl("");
+    this.setJudgmentOrSettlementFormControl("");
   }
 
-  private setJudgementOrSettlementFormControl(value: string) {
-    this.stepTwoService.form.get("judgementOrSettlement").setValue(value);
+  private setJudgmentOrSettlementFormControl(value: string) {
+    this.stepTwoService.form.get("judgmentOrSettlement").setValue(value);
   }
 
   private checkIfAllRadioButtonsAreUnchecked(): boolean {
     if (
-      !this.stepTwoService.judgementRadioButton &&
+      !this.stepTwoService.judgmentRadioButton &&
       !this.stepTwoService.settlementRadioButton
     )
       return true;
@@ -286,14 +298,10 @@ export class StepTwoComponent implements OnInit {
 
   private addRequiredValidatorToFormElement(
     formElement: UntypedFormGroup,
-    excludedFormControls?: string[]
+    formControls?: string[]
   ) {
     for (const formControlName in formElement.controls) {
-      if (
-        !excludedFormControls ||
-        (excludedFormControls &&
-          !excludedFormControls.includes(formControlName))
-      ) {
+      if (formControls && formControls.includes(formControlName)) {
         const formControl = formElement.get(formControlName);
         this.addRequiredValidatorToFormControl(formControl);
       }
