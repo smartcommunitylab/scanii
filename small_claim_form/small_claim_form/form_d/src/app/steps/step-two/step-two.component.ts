@@ -122,7 +122,7 @@ export class StepTwoComponent implements OnInit {
         }
       );
     } else {
-      this.stepTwoService.markStepTwoFormAsDirty();
+      this.stepTwoService.markStepTwoFormAsDirty(this.stepTwoService.form);
       window.scrollTo({
         top: 0,
         left: 0,
@@ -136,7 +136,7 @@ export class StepTwoComponent implements OnInit {
     event: any,
     divIdToExpand: string,
     extendibleInternalDivIds: string[],
-    excludedFormControls?: string[]
+    formControls: string[]
   ) {
     const value = event.target.value;
 
@@ -168,13 +168,13 @@ export class StepTwoComponent implements OnInit {
     ) {
       this.manageJudgmentSettlementOptions(
         this.stepTwoService.previousSelectedRadioButton,
-        excludedFormControls
+        formControls
       );
     }
 
     this.manageJudgmentSettlementOptions(
       this.stepTwoService.currentSelectedRadioButton,
-      excludedFormControls
+      formControls
     );
 
     this.stepTwoService.areJudgmentSettlementRadioButtonsUnchecked =
@@ -183,7 +183,7 @@ export class StepTwoComponent implements OnInit {
 
   manageJudgmentSettlementOptions(
     radioButtonObj: any,
-    formControls?: string[]
+    formControls: string[]
   ): void {
     //the name of the form control equals the value of the radio button
     const formGroup = this.stepTwoService.form.get(
@@ -225,15 +225,12 @@ export class StepTwoComponent implements OnInit {
   }
 
   expandSupersededJudgmentDiv(event: any) {
+    const supersededJudgmentExpansion = this.stepTwoService.form
+      .get("judgment")
+      .get("supersededJudgmentExpansion") as UntypedFormGroup;
+
     if (event.target.checked) {
-      this.addRequiredValidatorToFormControl(
-        this.stepTwoService.form.get("judgment").get("supersededJudgmentDate")
-      );
-      this.addRequiredValidatorToFormControl(
-        this.stepTwoService.form
-          .get("judgment")
-          .get("supersededJudgmentCaseNumber")
-      );
+      this.addRequiredValidatorToFormElement(supersededJudgmentExpansion);
 
       document
         .getElementById("dynformSCD2WasJudgmentGivenAppealCourt_div")
@@ -243,17 +240,8 @@ export class StepTwoComponent implements OnInit {
         .getElementById("dynformSCD2WasJudgmentGivenAppealCourt_div")
         .classList.add("df_collapsed");
 
-      const supersededJudgmentDate = this.stepTwoService.form
-        .get("judgment")
-        .get("supersededJudgmentDate");
-      const supersededJudgmentCaseNumber = this.stepTwoService.form
-        .get("judgment")
-        .get("supersededJudgmentCaseNumber");
-
-      this.removeRequiredValidatorFromFormControl(supersededJudgmentDate);
-      this.removeRequiredValidatorFromFormControl(supersededJudgmentCaseNumber);
-      supersededJudgmentDate.reset();
-      supersededJudgmentCaseNumber.reset();
+      this.removeRequiredValidatorFromFormElement(supersededJudgmentExpansion);
+      supersededJudgmentExpansion.reset();
     }
   }
 
@@ -301,7 +289,11 @@ export class StepTwoComponent implements OnInit {
     formControls?: string[]
   ) {
     for (const formControlName in formElement.controls) {
-      if (formControls && formControls.includes(formControlName)) {
+      //if the formControls array is not specified, the required validator is added to all the form controls. Otherwise, it is added only to the form controls specified in the array
+      if (
+        !formControls ||
+        (formControls && formControls.includes(formControlName))
+      ) {
         const formControl = formElement.get(formControlName);
         this.addRequiredValidatorToFormControl(formControl);
       }

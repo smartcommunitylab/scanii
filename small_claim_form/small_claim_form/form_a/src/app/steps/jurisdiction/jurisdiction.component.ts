@@ -25,7 +25,7 @@ export class JurisdictionComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {}
 
-  expandSupersededJudgmentDiv(event: any) {
+  expandOther(event: any) {
     if (event.target.checked) {
       this.addRequiredValidator(
         this.jurisdictionService.editForm.get('otherText')

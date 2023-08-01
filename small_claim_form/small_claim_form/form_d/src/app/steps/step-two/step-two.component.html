@@ -6,7 +6,9 @@
           <div class="form-row full-width bold">
             <div>
               <label style="margin-bottom: 0px">
-                Judgment or Court Settlement
+                <span [translate]="'stepTwo.judgmentOrCourtSettlement'">
+                  Judgment or Court Settlement
+                </span>
 
                 <span class="asterisk">*</span>
               </label>
@@ -43,7 +45,7 @@
                   title="Judgment"
                   name="dynformSCD2JudgmentOrCourtSettlement"
                   value="judgment"
-                  id="judgemnent"
+                  id="judgment"
                   class="df_input df_mandatory"
                   [checked]="stepTwoService.judgmentRadioButton"
                   (click)="
@@ -56,8 +58,8 @@
                   "
                 />
 
-                <label for="judgemnent">
-                  Judgment
+                <label for="judgment">
+                  <span [translate]="'stepTwo.judgmentOption'"> Judgment </span>
 
                   <span
                     class="asterisk"
@@ -91,7 +93,7 @@
                   title="Court settlement"
                   name="dynformSCD2JudgmentOrCourtSettlement"
                   value="settlement"
-                  id="courtSettl"
+                  id="settlement"
                   class="df_input"
                   [checked]="stepTwoService.settlementRadioButton"
                   (click)="
@@ -104,8 +106,10 @@
                   "
                 />
 
-                <label for="courtSettl">
-                  Court settlement
+                <label for="settlement">
+                  <span [translate]="'stepTwo.courtSettlementOption'"
+                    >Court settlement</span
+                  >
 
                   <span
                     class="asterisk"
@@ -136,7 +140,9 @@
           <div formGroupName="judgment">
             <div class="form-row full-width bold">
               <div>
-                <label style="margin-bottom: 0px"> 4. Judgment </label>
+                <label style="margin-bottom: 0px">
+                  <span [translate]="'stepTwo.judgment'">4. Judgment</span>
+                </label>
               </div>
             </div>
 
@@ -146,7 +152,9 @@
                   <div class="form-row full-width bold">
                     <div>
                       <label for="dynformSCD2JudgmentDate">
-                        4.1. Date
+                        <span [translate]="'stepTwo.judgmentDate'">
+                          4.1. Date
+                        </span>
 
                         <span
                           class="asterisk"
@@ -211,7 +219,9 @@
                 <div class="form-row full-width bold">
                   <div>
                     <label for="dynformSCD2JudgmentCaseNumber">
-                      4.2. Case number
+                      <span [translate]="'stepTwo.judgmentCaseNumber'">
+                        4.2. Case number
+                      </span>
 
                       <span
                         class="asterisk"
@@ -221,7 +231,7 @@
                     </label>
 
                     <div
-                      class="input-wrapper regular"
+                      class="input-wrapper regular mb-0"
                       id="input-wrapper_dynformSCD2JudgmentCaseNumber"
                       [ngClass]="{
                         invalid:
@@ -276,7 +286,9 @@
                 <div class="form-row full-width bold">
                   <div>
                     <label style="margin-bottom: 0px">
-                      4.3. The substance of the judgment
+                      <span [translate]="'stepTwo.judgmentSubstance'">
+                        4.3. The substance of the judgment
+                      </span>
                     </label>
                   </div>
                 </div>
@@ -287,7 +299,9 @@
                   <div class="form-row full-width bold">
                     <div>
                       <label for="dynformSCD2JudgmentCourtOrdered1">
-                        4.3.1. The court/tribunal has ordered
+                        <span [translate]="'stepTwo.courtOrder'">
+                          4.3.1. The court/tribunal has ordered
+                        </span>
 
                         <span
                           class="asterisk"
@@ -324,17 +338,14 @@
 
                   <div class="form-row full-width bold">
                     <div>
-                      <label style="margin-bottom: 0px"> to pay to </label>
-                    </div>
-                  </div>
-
-                  <div class="form-row full-width bold">
-                    <div>
-                      <label class="asteriskOnly">
-                        <div
-                          class="asterisk"
-                          id="requiredStar_blank_dynformSCD2JudgmentCourtOrdered2"
-                        ></div>
+                      <label>
+                        <span
+                          [translate]="
+                            'stepTwo.beforeJudgmentPaymentRecipientField'
+                          "
+                        >
+                          to pay to
+                        </span>
                       </label>
 
                       <div
@@ -355,6 +366,22 @@
                         </div>
                       </div>
 
+                      <label
+                        class="post-field-label"
+                        *ngIf="
+                          'stepTwo.afterJudgmentPaymentRecipientField'
+                            | translate
+                        "
+                      >
+                        <span
+                          [translate]="
+                            'stepTwo.afterJudgmentPaymentRecipientField'
+                          "
+                        >
+                          to pay to
+                        </span>
+                      </label>
+
                       <span
                         id="validation_error_text_dynformSCD2JudgmentCourtOrdered2"
                         class="error"
@@ -364,17 +391,13 @@
                     </div>
                   </div>
 
-                  <div class="form-row full-width bold">
-                    <div>
-                      <label style="margin-bottom: 0px"> </label>
-                    </div>
-                  </div>
-
                   <div>
                     <div class="form-row full-width bold">
                       <div>
                         <label for="dynformSCD2JudgmentCourtOrderedPrincipal">
-                          (1) Principal
+                          <span [translate]="'stepTwo.principal'">
+                            (1) Principal
+                          </span>
 
                           <span
                             class="asterisk"
@@ -445,7 +468,9 @@
                     <div class="form-row full-width bold">
                       <div>
                         <label for="dynformSCD2JudgmentCourtOrderedInterest">
-                          (2) Interest
+                          <span [translate]="'stepTwo.interest'">
+                            (2) Interest
+                          </span>
 
                           <span
                             class="asterisk"
@@ -483,7 +508,7 @@
                     <div class="form-row full-width bold">
                       <div>
                         <label for="dynformSCD2JudgmentCourtOrderedCosts">
-                          (3) Costs
+                          <span [translate]="'stepTwo.costs'"> (3) Costs </span>
 
                           <span
                             class="asterisk"
@@ -492,7 +517,7 @@
                         </label>
 
                         <div
-                          class="input-wrapper regular"
+                          class="input-wrapper regular mb-0"
                           id="input-wrapper_dynformSCD2JudgmentCourtOrderedCosts"
                           [ngClass]="{
                             invalid:
@@ -549,7 +574,9 @@
                   <div class="form-row full-width bold">
                     <div>
                       <label for="dynformSCD2JudgmentCourtOrderedAgainst1">
-                        4.3.2. The court/tribunal has made an order against
+                        <span [translate]="'stepTwo.courtOrderAgainst'">
+                          4.3.2. The court/tribunal has made an order against
+                        </span>
 
                         <span
                           class="asterisk"
@@ -586,17 +613,10 @@
 
                   <div class="form-row full-width bold">
                     <div>
-                      <label style="margin-bottom: 0px"> to </label>
-                    </div>
-                  </div>
-
-                  <div class="form-row full-width bold">
-                    <div>
-                      <label class="asteriskOnly">
-                        <div
-                          class="asterisk"
-                          id="requiredStar_blank_dynformSCD2JudgmentCourtOrderedAgainst2"
-                        ></div>
+                      <label>
+                        <span [translate]="'stepTwo.beforeCourtOrderToField'"
+                          >to</span
+                        >
                       </label>
 
                       <div
@@ -616,6 +636,15 @@
                           />
                         </div>
                       </div>
+
+                      <label
+                        class="post-field-label"
+                        *ngIf="'stepTwo.afterCourtOrderToField' | translate"
+                      >
+                        <span
+                          [translate]="'stepTwo.afterCourtOrderToField'"
+                        ></span>
+                      </label>
 
                       <span
                         id="validation_error_text_dynformSCD2JudgmentCourtOrderedAgainst2"
@@ -648,8 +677,10 @@
                     />
 
                     <label for="dynformSCD2WasJudgmentGivenAppealCourt">
-                      Was the judgment given by an appeal court or was it in the
-                      case of a review of a judgment?
+                      <span [translate]="'stepTwo.supersededJudgment'">
+                        Was the judgment given by an appeal court or was it in
+                        the case of a review of a judgment?
+                      </span>
                     </label>
                   </div>
 
@@ -667,12 +698,14 @@
               id="dynformSCD2WasJudgmentGivenAppealCourt_div"
               class="df_collapsed"
             >
-              <div>
+              <div formGroupName="supersededJudgmentExpansion">
                 <div class="date-input">
                   <div class="form-row full-width bold">
                     <div>
                       <label for="dynformSCD2WasJudgmentGivenAppealCourtDate">
-                        This judgment supersedes the judgment given on
+                        <span [translate]="'stepTwo.supersededJudgmentDate'">
+                          This judgment supersedes the judgment given on
+                        </span>
 
                         <span
                           class="asterisk"
@@ -688,9 +721,11 @@
                           invalid:
                             stepTwoService.form
                               .get('judgment')
+                              .get('supersededJudgmentExpansion')
                               .get('supersededJudgmentDate')!.invalid &&
                             stepTwoService.form
                               .get('judgment')
+                              .get('supersededJudgmentExpansion')
                               .get('supersededJudgmentDate')!.dirty
                         }"
                       >
@@ -712,14 +747,16 @@
                         *ngIf="
                           stepTwoService.form
                             .get('judgment')
+                            .get('supersededJudgmentExpansion')
                             .get('supersededJudgmentDate')!.invalid &&
                           stepTwoService.form
                             .get('judgment')
+                            .get('supersededJudgmentExpansion')
                             .get('supersededJudgmentDate')!.dirty
                         "
                       >
                         <div
-                          *ngIf="stepTwoService.form.get('judgment').get('supersededJudgmentDate')?.errors?.['required']"
+                          *ngIf="stepTwoService.form.get('judgment').get('supersededJudgmentExpansion').get('supersededJudgmentDate')?.errors?.['required']"
                         >
                           <span
                             id="validation_error_text_dynformSCD2WasJudgmentGivenAppealCourtDate"
@@ -738,7 +775,11 @@
                 <div class="form-row full-width bold">
                   <div>
                     <label style="margin-bottom: 0px">
-                      , case number
+                      <span
+                        [translate]="'stepTwo.supersededJudgmentCaseNumber'"
+                      >
+                        case number
+                      </span>
 
                       <span class="asterisk">*</span>
                     </label>
@@ -761,9 +802,11 @@
                         invalid:
                           stepTwoService.form
                             .get('judgment')
+                            .get('supersededJudgmentExpansion')
                             .get('supersededJudgmentCaseNumber')!.invalid &&
                           stepTwoService.form
                             .get('judgment')
+                            .get('supersededJudgmentExpansion')
                             .get('supersededJudgmentCaseNumber')!.dirty
                       }"
                     >
@@ -785,14 +828,16 @@
                       *ngIf="
                         stepTwoService.form
                           .get('judgment')
+                          .get('supersededJudgmentExpansion')
                           .get('supersededJudgmentCaseNumber')!.invalid &&
                         stepTwoService.form
                           .get('judgment')
+                          .get('supersededJudgmentExpansion')
                           .get('supersededJudgmentCaseNumber')!.dirty
                       "
                     >
                       <div
-                        *ngIf="stepTwoService.form.get('judgment').get('supersededJudgmentCaseNumber')?.errors?.['required']"
+                        *ngIf="stepTwoService.form.get('judgment').get('supersededJudgmentExpansion').get('supersededJudgmentCaseNumber')?.errors?.['required']"
                       >
                         <span
                           id="validation_error_text_dynformSCD2WasJudgmentGivenAppealCourtText2"
@@ -810,7 +855,9 @@
                 <div class="form-row full-width bold">
                   <div>
                     <label style="margin-bottom: 0px">
-                      , and any certificate relative thereto.
+                      <span [translate]="'stepTwo.documentation'">
+                        and any certificate relative thereto.
+                      </span>
                     </label>
                   </div>
                 </div>
@@ -820,9 +867,11 @@
             <div class="form-row full-width bold">
               <div>
                 <label style="margin-bottom: 0px">
-                  THE JUDGMENT WILL BE RECOGNISED AND ENFORCED IN ANOTHER MEMBER
-                  STATE WITHOUT THE NEED FOR A DECLARATION OF ENFORCEABILITY AND
-                  WITHOUT ANY POSSIBILITY OF OPPOSING ITS RECOGNITION.
+                  {{
+                    "stepTwo.judgmentRecognitionAndEnforcement"
+                      | translate
+                      | uppercase
+                  }}
                 </label>
               </div>
             </div>
@@ -836,7 +885,11 @@
           <div formGroupName="settlement">
             <div class="form-row full-width bold">
               <div>
-                <label style="margin-bottom: 0px"> 5. Court Settlement </label>
+                <label style="margin-bottom: 0px">
+                  <span [translate]="'stepTwo.courtSettlement'"
+                    >5. Court Settlement</span
+                  >
+                </label>
               </div>
             </div>
 
@@ -846,7 +899,9 @@
                   <div class="form-row full-width bold">
                     <div>
                       <label for="dynformSCD2CourtSettlementDate">
-                        5.1. Date
+                        <span [translate]="'stepTwo.courtSettlementDate'">
+                          5.1. Date
+                        </span>
 
                         <span
                           class="asterisk"
@@ -911,7 +966,9 @@
                 <div class="form-row full-width bold">
                   <div>
                     <label for="dynformSCD2CourtSettlementCaseNumber">
-                      5.2. Case number
+                      <span [translate]="'stepTwo.courtSettlementCaseNumber'">
+                        5.2. Case number
+                      </span>
 
                       <span
                         class="asterisk"
@@ -921,7 +978,7 @@
                     </label>
 
                     <div
-                      class="input-wrapper regular"
+                      class="input-wrapper regular mb-0"
                       id="input-wrapper_dynformSCD2CourtSettlementCaseNumber"
                       [ngClass]="{
                         invalid:
@@ -976,7 +1033,9 @@
                 <div class="form-row full-width bold">
                   <div>
                     <label style="margin-bottom: 0px">
-                      5.3. The substance of the settlement
+                      <span [translate]="'stepTwo.settlementSubstance'">
+                        5.3. The substance of the settlement
+                      </span>
                     </label>
                   </div>
                 </div>
@@ -987,7 +1046,9 @@
                   <div class="form-row full-width bold">
                     <div>
                       <label for="dynformSCD2CourtOrdered1">
-                        5.3.1. The parties agreed that
+                        <span [translate]="'stepTwo.firstSettlementAgreement'">
+                          5.3.1. The parties agreed that
+                        </span>
 
                         <span
                           class="asterisk"
@@ -1024,7 +1085,11 @@
 
                   <div class="form-row full-width bold">
                     <div>
-                      <label style="margin-bottom: 0px"> will pay to </label>
+                      <label style="margin-bottom: 0px">
+                        <span [translate]="'stepTwo.willPayTo'"
+                          >will pay to</span
+                        >
+                      </label>
                     </div>
                   </div>
 
@@ -1068,7 +1133,9 @@
                     <div class="form-row full-width bold">
                       <div>
                         <label for="dynformSCD2CourtOrderedPrincipal">
-                          (1) Principal
+                          <span [translate]="'stepTwo.principal'">
+                            (1) Principal
+                          </span>
 
                           <span
                             class="asterisk"
@@ -1133,7 +1200,9 @@
                     <div class="form-row full-width bold">
                       <div>
                         <label for="dynformSCD2CourtOrderedInterest">
-                          (2) Interest
+                          <span [translate]="'stepTwo.interest'">
+                            (2) Interest
+                          </span>
 
                           <span
                             class="asterisk"
@@ -1171,7 +1240,7 @@
                     <div class="form-row full-width bold">
                       <div>
                         <label for="dynformSCD2CourtOrderedCosts">
-                          (3) Costs
+                          <span [translate]="'stepTwo.costs'"> (3) Costs </span>
 
                           <span
                             class="asterisk"
@@ -1180,7 +1249,7 @@
                         </label>
 
                         <div
-                          class="input-wrapper regular"
+                          class="input-wrapper regular mb-0"
                           id="input-wrapper_dynformSCD2CourtOrderedCosts"
                           [ngClass]="{
                             invalid:
@@ -1237,7 +1306,9 @@
                   <div class="form-row full-width bold">
                     <div>
                       <label for="dynformSCD2CourtOrderedAgainst1">
-                        5.3.2. The parties agreed that
+                        <span [translate]="'stepTwo.secondSettlementAgreement'">
+                          5.3.2. The parties agreed that
+                        </span>
 
                         <span
                           class="asterisk"
@@ -1274,7 +1345,9 @@
 
                   <div class="form-row full-width bold">
                     <div>
-                      <label style="margin-bottom: 0px"> will </label>
+                      <label style="margin-bottom: 0px">
+                        <span [translate]="'stepTwo.will'">will</span>
+                      </label>
                     </div>
                   </div>
 
@@ -1322,7 +1395,7 @@
         <div class="form-row full-width bold">
           <div>
             <label for="dynformSCD2DoneAt">
-              Done at
+              <span [translate]="'stepTwo.doneAt'"> Done at </span>
 
               <span
                 class="asterisk"
@@ -1380,7 +1453,7 @@
           <div class="form-row full-width bold">
             <div>
               <label for="dynformSCD2Date">
-                Date
+                <span [translate]="'stepTwo.date'"> Date </span>
 
                 <span
                   class="asterisk"

@@ -130,7 +130,7 @@ export class NavbarComponent {
                 const invalidStepIndex = array.findIndex(
                   (item: PromiseContent) => item.stepId === invalidStep!.stepId
                 );
-                this.addRemoveValidatedClass(array.slice(0, invalidStepIndex));
+                this.addRemoveValidatedClass(array.slice(0, invalidStepIndex+1));
               }
             });
           } else {

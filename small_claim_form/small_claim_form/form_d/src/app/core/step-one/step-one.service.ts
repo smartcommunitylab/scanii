@@ -95,7 +95,6 @@ export class StepOneService {
   // });
 
   form = this.fb.group({
-    date: ["", [Validators.required]],
     court: this.court,
     claimants: this.fb.array([this.createClaimantFormGroup("claimant")]),
     defendants: this.fb.array([this.createDefendantFormGroup("defendant")]),

@@ -2,7 +2,7 @@ import { Component, NgZone, OnInit } from "@angular/core";
 import { LangChangeEvent, TranslateService } from "@ngx-translate/core";
 import { StepOneService } from "src/app/core/step-one/step-one.service";
 import datepickerFactory from "jquery-datepicker";
-import 'chosen-js';
+import "chosen-js";
 import { Subscription } from "rxjs";
 import { EventManagerService } from "src/app/shared/services/event-manager.service";
 import { NavbarService } from "src/app/core/navbar/navbar.service";
@@ -43,8 +43,6 @@ export class StepOneComponent implements OnInit {
     ) as UntypedFormArray;
 
     this.stepOneService.form.patchValue({
-      caseNumber: "123456789",
-      date: "01/01/2021",
       court: {
         courtCountry: "2",
         name: "Tribunale di Roma",

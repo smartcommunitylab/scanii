@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, NgZone } from "@angular/core";
 import {
   AbstractControl,
   UntypedFormBuilder,
@@ -10,6 +10,7 @@ import {
 import { PromiseContent } from "../common/promise-content.model";
 import { Subscription } from "rxjs";
 import { StepTwo } from "./step-two.model";
+import { stepTwoShowHideFields } from "src/app/shared/constants/step-two.constants";
 
 @Injectable({
   providedIn: "root",
@@ -33,6 +34,11 @@ export class StepTwoService {
 
   onStableSubscription: Subscription;
 
+  supersededJudgmentExpansion = this.fb.group({
+    supersededJudgmentDate: [""],
+    supersededJudgmentCaseNumber: [""],
+  });
+
   judgment = this.fb.group({
     judgmentDate: [""],
     judgmentCaseNumber: [""],
@@ -45,8 +51,7 @@ export class StepTwoService {
     courtOrderAgainst: [""],
     courtOrderTo: [""],
     supersededJudgment: [false],
-    supersededJudgmentDate: [""],
-    supersededJudgmentCaseNumber: [""],
+    supersededJudgmentExpansion: this.supersededJudgmentExpansion,
   });
 
   settlement = this.fb.group({
@@ -69,7 +74,7 @@ export class StepTwoService {
     date: ["", [Validators.required]],
   });
 
-  constructor(private fb: UntypedFormBuilder) {}
+  constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
 
   private amountValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
@@ -93,7 +98,7 @@ export class StepTwoService {
     return new Promise((resolve) => {
       let isValid = false;
       if (this.form.invalid) {
-        this.markStepTwoFormAsDirty();
+        this.markStepTwoFormAsDirty(this.form);
         isValid = false;
       } else {
         isValid = true;
@@ -102,11 +107,42 @@ export class StepTwoService {
     });
   }
 
-  markStepTwoFormAsDirty() {
-    for (const formElementName in this.form.controls) {
-      const formElement = this.form.get(formElementName);
-      this.markAsDirty(formElement);
+  markStepTwoFormAsDirty(formGroup: UntypedFormGroup) {
+    for (const formElementName in formGroup.controls) {
+      const formElement = this.getFormControl(formElementName);
+
+      if (formElement instanceof UntypedFormGroup) {
+        if (formElementName in stepTwoShowHideFields) {
+          const value = this.getTriggeringFormControlValue(formElementName);
+
+          if (
+            value === stepTwoShowHideFields[formElementName]["triggeringValue"]
+          ) {
+            this.markStepTwoFormAsDirty(formElement);
+          }
+        } else {
+          this.markStepTwoFormAsDirty(formElement);
+        }
+      } else {
+        if (formElementName in stepTwoShowHideFields) {
+          const value = this.getTriggeringFormControlValue(formElementName);
+
+          if (
+            value === stepTwoShowHideFields[formElementName]["triggeringValue"]
+          ) {
+            this.markAsDirty(formElement);
+          }
+        } else {
+          this.markAsDirty(formElement);
+        }
+      }
     }
+  }
+
+  private getTriggeringFormControlValue(formElementName: string) {
+    return this.getFormControl(
+      stepTwoShowHideFields[formElementName]["triggeringFormControlName"]
+    ).value;
   }
 
   private markAsDirty(formElement: AbstractControl) {
@@ -129,22 +165,83 @@ export class StepTwoService {
   }
 
   setStepTwoForm(stepTwo: any): Promise<void> {
+    this.resetAll();
+    this.form.patchValue(stepTwo);
+    return this.handleStableEvent(stepTwo);
+  }
+
+  private handleStableEvent(stepTwo: any): Promise<void> {
     return new Promise<void>((resolve) => {
-      this.resetAll();
+      this.onStableSubscription = this.zone.onStable.subscribe(() => {
+        if (this.onStableSubscription) {
+          this.onStableSubscription.unsubscribe();
+        }
 
-      //a maximum of three languages can be selected. So, if the length of the array is greater than 3, the last elements are removed
-      if (stepTwo.languages.length > 3) {
-        stepTwo.languages = stepTwo.languages.slice(0, 3);
-      }
+        const supersededJudgementExpansion =
+          stepTwoShowHideFields["supersededJudgementExpansion"];
 
-      this.form.patchValue(stepTwo);
-      resolve();
+        const value = this.getJsonValue(
+          supersededJudgementExpansion["triggeringFormControlName"],
+          stepTwo
+        );
+        if (value === supersededJudgementExpansion["triggeringValue"]) {
+          //trigger change event to expand the div with id "dynformSCD2WasJudgmentGivenAppealCourt_div"
+          this.triggerChangeEvent(
+            supersededJudgementExpansion["triggeringFieldId"]
+          );
+        }
+
+        if (stepTwo.judgmentOrSettlement) {
+          //trigger the click event for either judgment radio button or settlement radio button
+          this.triggerClickEvent(
+            stepTwoShowHideFields[stepTwo.judgmentOrSettlement][
+              "triggeringFieldId"
+            ]
+          );
+        }
+
+        resolve();
+      });
     });
   }
 
   private resetAll() {
     this.form.reset();
-    $("#dynformSCB2Language").find(".added-option").remove();
+    this.previousSelectedRadioButton = {
+      value: "",
+      divIdToExpand: "",
+      extendibleInternalDivIds: [],
+    };
+    this.currentSelectedRadioButton = {
+      value: "",
+      divIdToExpand: "",
+      extendibleInternalDivIds: [],
+    };
+    this.areJudgmentSettlementRadioButtonsUnchecked = true;
+    this.judgmentRadioButton = false;
+    this.settlementRadioButton = false;
+  }
+
+  private getJsonValue(key: string, claim: any): any {
+    const formGroupNames = this.findFormGroupNames(key, this.form);
+
+    let value = claim;
+    for (let i = 0; i < formGroupNames.length; i++) {
+      value = value[formGroupNames[i]];
+    }
+    return value[key];
+  }
+
+  private triggerClickEvent(id: string) {
+    const inputElement = document.getElementById(id) as HTMLInputElement;
+    const event = new Event("click");
+    inputElement.dispatchEvent(event);
+  }
+
+  private triggerChangeEvent(id: string) {
+    const inputElement = document.getElementById(id) as HTMLInputElement;
+    const event = new Event("change");
+    inputElement.dispatchEvent(event);
   }
 
   getFormControl(formControlName: string): AbstractControl {
