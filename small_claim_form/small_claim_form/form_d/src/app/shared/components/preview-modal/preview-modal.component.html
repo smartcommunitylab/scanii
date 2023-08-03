@@ -137,10 +137,10 @@
           }}</span>
         </p>
 
-        <div class="pdf-representative-field">
+        <div class="pdf-fields-block">
           <p>
             <span
-              class="colon pdf-label"
+              class="colon pdf-block-label"
               [translate]="'preview.representativeClaimant'"
               >2.8. Claimant's representative</span
             >
@@ -427,10 +427,10 @@
           }}</span>
         </p>
 
-        <div class="pdf-representative-field">
+        <div class="pdf-fields-block">
           <p>
             <span
-              class="colon pdf-label"
+              class="colon pdf-block-label"
               [translate]="'preview.representativeDefendant'"
               >3.8. Defendant's representative</span
             >
@@ -635,61 +635,429 @@
     </ng-template>
   </div>
 
-  <!-- <h4 class="pdf-line-field">
-    <span class="colon pdf-label" [translate]="'stepTwo.doneAt'">Done at</span>
-    <span class="fw-bold pdf-value">{{ stepTwo.doneAt }}</span>
-  </h4>
-
-  <h4 class="pdf-line-field">
-    <span class="colon pdf-label" [translate]="'stepTwo.date'">Date</span>
-    <span class="fw-bold pdf-value">{{ stepTwo.date }}</span>
-  </h4>
-
-  <h4 class="pdf-line-field">
-    <span class="colon pdf-label" [translate]="'preview.sign'"
-      >Signature and/or stamp</span
+  <h3 class="pdf-primary-title">
+    <span [translate]="'stepTwo.judgmentOrCourtSettlement'"
+      >Judgement or Court Settlement</span
     >
-  </h4> -->
-</div>
+  </h3>
+  <div class="ps-3">
+    <div class="pdf-radio-buttons">
+      <div class="radio-wrapper radio-margin-bottom radio-option-div">
+        <input
+          type="radio"
+          [checked]="stepTwo.judgmentOrSettlement === 'judgment'"
+          class="disabled-input pdf-radio-button"
+        />
+        <label>
+          <span class="pdf-label" [translate]="'stepTwo.judgmentOption'"
+            >Judgment</span
+          >
+        </label>
+      </div>
+      <div class="radio-wrapper radio-option-div">
+        <input
+          type="radio"
+          [checked]="stepTwo.judgmentOrSettlement === 'settlement'"
+          class="disabled-input pdf-radio-button"
+        />
+        <label>
+          <span class="pdf-label" [translate]="'stepTwo.courtSettlementOption'"
+            >Court settlement</span
+          >
+        </label>
+      </div>
+    </div>
 
-<div class="modal-footer px-5 py-4">
-  <div class="row">
-    <div class="col-12 col-xl-2">
-      <button
-        class="button big outline"
-        (click)="cancel()"
-        [translate]="'buttons.cancel'"
-      >
-        Cancel
-      </button>
+    <div class="ps-3" *ngIf="stepTwo.judgmentOrSettlement === 'judgment'">
+      <h4 class="pdf-secondary-title" [translate]="'stepTwo.judgment'">
+        4. Judgment
+      </h4>
+      <div class="ps-3">
+        <h5 class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'stepTwo.judgmentDate'"
+            >4.1. Date</span
+          >
+          <span class="fw-bold pdf-value">{{
+            stepTwo.judgment.judgmentDate
+          }}</span>
+        </h5>
+        <h5 class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'stepTwo.judgmentCaseNumber'"
+            >4.2. Case number</span
+          >
+          <span class="fw-bold pdf-value">{{
+            stepTwo.judgment.judgmentCaseNumber
+          }}</span>
+        </h5>
+
+        <div class="pdf-fields-block">
+          <h5 class="pdf-block-label" [translate]="'stepTwo.judgmentSubstance'">
+            4.3. The substance of the judgment
+          </h5>
+
+          <div class="ps-3 pdf-values">
+            <p class="pdf-line-multiple-fields">
+              <span
+                class="space pdf-line-multiple-field pdf-label"
+                [translate]="'stepTwo.courtOrder'"
+                >4.3.1. The court/tribunal has ordered
+              </span>
+
+              <span
+                class="fw-bold space pdf-line-multiple-field pdf-value"
+                *ngIf="stepTwo.judgment.courtOrder; else judgmentEmptySpace"
+                >{{ stepTwo.judgment.courtOrder }}</span
+              >
+              <ng-template #judgmentEmptySpace>
+                <span
+                  class="space pdf-line-multiple-field pdf-label"
+                  [translate]="'preview.fieldNotFilledIn'"
+                  >(field not filled in)</span
+                >
+              </ng-template>
+
+              <span
+                class="space pdf-line-multiple-field pdf-label"
+                [translate]="'stepTwo.beforeJudgmentPaymentRecipientField'"
+                >to pay to
+              </span>
+
+              <span
+                class="fw-bold space pdf-line-multiple-field pdf-value"
+                *ngIf="
+                  stepTwo.judgment.judgmentPaymentRecipient;
+                  else judgmentEmptySpace
+                "
+                >{{ stepTwo.judgment.judgmentPaymentRecipient }}</span
+              >
+
+              <span
+                *ngIf="'stepTwo.afterJudgmentPaymentRecipientField' | translate"
+                class="pdf-line-multiple-field pdf-label"
+                [translate]="'stepTwo.afterJudgmentPaymentRecipientField'"
+              >
+              </span>
+            </p>
+
+            <div class="ps-3">
+              <p class="pdf-line-field">
+                <span class="colon pdf-label" [translate]="'stepTwo.principal'"
+                  >(1) Principal
+                </span>
+                <span class="fw-bold pdf-value">{{
+                  stepTwo.judgment.judgmentPrincipal
+                }}</span>
+              </p>
+              <p class="pdf-line-field">
+                <span class="colon pdf-label" [translate]="'stepTwo.interest'"
+                  >(2) Interest
+                </span>
+                <span class="fw-bold pdf-value">{{
+                  stepTwo.judgment.judgmentInterest
+                }}</span>
+              </p>
+              <p class="pdf-line-field">
+                <span class="colon pdf-label" [translate]="'stepTwo.costs'"
+                  >(3) Costs
+                </span>
+                <span class="fw-bold pdf-value">{{
+                  stepTwo.judgment.judgmentCosts
+                }}</span>
+              </p>
+            </div>
+
+            <p class="pdf-line-multiple-fields">
+              <span
+                class="space pdf-line-multiple-field pdf-label"
+                [translate]="'stepTwo.courtOrderAgainst'"
+                >4.3.2. The court/tribunal has made an order against
+              </span>
+
+              <span
+                class="fw-bold space pdf-line-multiple-field pdf-value"
+                *ngIf="
+                  stepTwo.judgment.courtOrderAgainst;
+                  else judgmentEmptySpace
+                "
+                >{{ stepTwo.judgment.courtOrderAgainst }}</span
+              >
+
+              <span
+                class="space pdf-line-multiple-field pdf-label"
+                [translate]="'stepTwo.beforeCourtOrderToField'"
+                >to
+              </span>
+
+              <span
+                class="fw-bold space pdf-line-multiple-field pdf-value"
+                *ngIf="stepTwo.judgment.courtOrderTo; else judgmentEmptySpace"
+                >{{ stepTwo.judgment.courtOrderTo }}</span
+              >
+
+              <span
+                *ngIf="'stepTwo.afterCourtOrderToField' | translate"
+                class="pdf-line-multiple-field pdf-label"
+                [translate]="'stepTwo.afterCourtOrderToField'"
+              >
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <h5 class="pdf-checkbox">
+          <input
+            type="checkbox"
+            [checked]="stepTwo.judgment.supersededJudgment"
+            class="disabled-input"
+          />
+          <span class="pdf-label" [translate]="'stepTwo.supersededJudgment'"
+            >Was the judgment given by an appeal court or was it in the case of
+            a review of a judgment?</span
+          >
+        </h5>
+
+        <div class="pdf-fields-block">
+          <div
+            class="ps-3 pdf-values"
+            *ngIf="stepTwo.judgment.supersededJudgment"
+          >
+            <p class="pdf-line-field">
+              <span
+                class="space pdf-label"
+                [translate]="'stepTwo.supersededJudgmentDate'"
+                >This judgment supersedes the judgment given on
+              </span>
+              <span class="fw-bold pdf-value">{{
+                stepTwo.judgment.supersededJudgmentExpansion
+                  .supersededJudgmentDate
+              }}</span>
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="space pdf-label"
+                [translate]="'stepTwo.supersededJudgmentCaseNumber'"
+                >case number
+              </span>
+              <span class="fw-bold pdf-value">{{
+                stepTwo.judgment.supersededJudgmentExpansion
+                  .supersededJudgmentCaseNumber
+              }}</span>
+            </p>
+            <p class="pdf-text" [translate]="'stepTwo.documentation'">
+              and any certificate relative thereto.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-0 col-xl"></div>
-    <div class="col-12 col-xl-2">
-      <button
-        class="button big dark"
-        (click)="navbarService.generateJson()"
-        [translate]="'buttons.downloadJSON'"
-      >
-        Download JSON
-      </button>
+
+    <div class="ps-3" *ngIf="stepTwo.judgmentOrSettlement === 'settlement'">
+      <h4 class="pdf-secondary-title" [translate]="'stepTwo.courtSettlement'">
+        5. Court Settlement
+      </h4>
+      <div class="ps-3">
+        <h5 class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'stepTwo.courtSettlementDate'"
+            >5.1. Date</span
+          >
+          <span class="fw-bold pdf-value">{{
+            stepTwo.settlement.settlementDate
+          }}</span>
+        </h5>
+        <h5 class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'stepTwo.courtSettlementCaseNumber'"
+            >5.2. Case number</span
+          >
+          <span class="fw-bold pdf-value">{{
+            stepTwo.settlement.settlementCaseNumber
+          }}</span>
+        </h5>
+
+        <div class="pdf-fields-block">
+          <h5
+            class="pdf-block-label"
+            [translate]="'stepTwo.settlementSubstance'"
+          >
+            5.3. The substance of the settlement
+          </h5>
+
+          <div class="ps-3 pdf-values">
+            <p class="pdf-line-multiple-fields">
+              <span
+                class="space pdf-line-multiple-field pdf-label"
+                [translate]="'stepTwo.firstSettlementAgreement'"
+                >5.3.1. The parties agreed that
+              </span>
+
+              <span
+                class="fw-bold space pdf-line-multiple-field pdf-value"
+                *ngIf="
+                  stepTwo.settlement.firstSettlementAgreement;
+                  else settlementEmptySpace
+                "
+                >{{ stepTwo.settlement.firstSettlementAgreement }}</span
+              >
+              <ng-template #settlementEmptySpace>
+                <span
+                  class="space pdf-line-multiple-field pdf-label"
+                  [translate]="'preview.fieldNotFilledIn'"
+                  >(field not filled in)</span
+                >
+              </ng-template>
+
+              <span
+                class="space pdf-line-multiple-field pdf-label"
+                [translate]="'stepTwo.beforeSettlementPaymentRecipientField'"
+                >will pay to
+              </span>
+
+              <span
+                class="fw-bold space pdf-line-multiple-field pdf-value"
+                *ngIf="
+                  stepTwo.settlement.settlementPaymentRecipient;
+                  else settlementEmptySpace
+                "
+                >{{ stepTwo.settlement.settlementPaymentRecipient }}</span
+              >
+
+              <span
+                *ngIf="
+                  'stepTwo.afterSettlementPaymentRecipientField' | translate
+                "
+                class="pdf-line-multiple-field pdf-label"
+                [translate]="'stepTwo.afterSettlementPaymentRecipientField'"
+              >
+              </span>
+            </p>
+
+            <div class="ps-3">
+              <p class="pdf-line-field">
+                <span class="colon pdf-label" [translate]="'stepTwo.principal'"
+                  >(1) Principal
+                </span>
+                <span class="fw-bold pdf-value">{{
+                  stepTwo.settlement.settlementPrincipal
+                }}</span>
+              </p>
+              <p class="pdf-line-field">
+                <span class="colon pdf-label" [translate]="'stepTwo.interest'"
+                  >(2) Interest
+                </span>
+                <span class="fw-bold pdf-value">{{
+                  stepTwo.settlement.settlementInterest
+                }}</span>
+              </p>
+              <p class="pdf-line-field">
+                <span class="colon pdf-label" [translate]="'stepTwo.costs'"
+                  >(3) Costs
+                </span>
+                <span class="fw-bold pdf-value">{{
+                  stepTwo.settlement.settlementCosts
+                }}</span>
+              </p>
+            </div>
+
+            <p class="pdf-line-multiple-fields">
+              <span
+                class="space pdf-line-multiple-field pdf-label"
+                [translate]="'stepTwo.secondSettlementAgreement'"
+                >5.3.2. The parties agreed that
+              </span>
+
+              <span
+                class="fw-bold space pdf-line-multiple-field pdf-value"
+                *ngIf="
+                  stepTwo.settlement.secondSettlementAgreement;
+                  else settlementEmptySpace
+                "
+                >{{ stepTwo.settlement.secondSettlementAgreement }}</span
+              >
+
+              <span
+                class="space pdf-line-multiple-field pdf-label"
+                *ngIf="'stepTwo.will' | translate"
+                [translate]="'stepTwo.will'"
+                >will
+              </span>
+
+              <span
+                class="fw-bold pdf-line-multiple-field pdf-value"
+                *ngIf="
+                  stepTwo.settlement.agreedAction;
+                  else settlementEmptySpace
+                "
+                >{{ stepTwo.settlement.agreedAction }}</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-0 col-xl"></div>
-    <div class="col-12 col-xl-2">
-      <button
-        class="button big dark"
-        [translate]="'buttons.downloadPDF'"
-        (click)="downloadPdf()"
+
+    <h4 class="pdf-line-field">
+      <span class="colon pdf-label" [translate]="'stepTwo.doneAt'"
+        >Done at</span
       >
-        Download PDF
-      </button>
-    </div>
-    <div class="col-0 col-xl"></div>
-    <div class="col-12 col-xl-2">
-      <button class="button big dark" [translate]="'buttons.submit'">
-        Submit
-      </button>
+      <span class="fw-bold pdf-value">{{ stepTwo.doneAt }}</span>
+    </h4>
+
+    <h4 class="pdf-line-field">
+      <span class="colon pdf-label" [translate]="'stepTwo.date'">Date</span>
+      <span class="fw-bold pdf-value">{{ stepTwo.date }}</span>
+    </h4>
+
+    <!-- <h4 class="pdf-line-field">
+      <span class="colon pdf-label" [translate]="'preview.sign'"
+        >Signature and/or stamp</span
+      >
+    </h4> -->
+  </div>
+
+  <div class="modal-footer px-5 py-4">
+    <div class="row">
+      <div class="col-12 col-xl-2">
+        <button
+          class="button big outline"
+          (click)="cancel()"
+          [translate]="'buttons.cancel'"
+        >
+          Cancel
+        </button>
+      </div>
+      <div class="col-0 col-xl"></div>
+      <div class="col-12 col-xl-2">
+        <button
+          class="button big dark"
+          (click)="navbarService.generateJson()"
+          [translate]="'buttons.downloadJSON'"
+        >
+          Download JSON
+        </button>
+      </div>
+      <div class="col-0 col-xl"></div>
+      <div class="col-12 col-xl-2">
+        <button
+          class="button big dark"
+          [translate]="'buttons.downloadPDF'"
+          (click)="downloadPdf()"
+        >
+          Download PDF
+        </button>
+      </div>
+      <div class="col-0 col-xl"></div>
+      <div class="col-12 col-xl-2">
+        <button class="button big dark" [translate]="'buttons.submit'">
+          Submit
+        </button>
+      </div>
     </div>
   </div>
-</div>
 
-<app-spinner [showSpinner]="showSpinner"></app-spinner>
+  <app-spinner [showSpinner]="showSpinner"></app-spinner>
+</div>

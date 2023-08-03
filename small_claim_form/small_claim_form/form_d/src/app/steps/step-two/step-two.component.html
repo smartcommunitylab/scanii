@@ -378,7 +378,6 @@
                             'stepTwo.afterJudgmentPaymentRecipientField'
                           "
                         >
-                          to pay to
                         </span>
                       </label>
 
@@ -597,7 +596,7 @@
                             value=""
                             class="df_textbox"
                             id="dynformSCD2JudgmentCourtOrderedAgainst1"
-                            formControlName="respondent"
+                            formControlName="courtOrderAgainst"
                           />
                         </div>
                       </div>
@@ -632,7 +631,7 @@
                             value=""
                             class="df_textbox"
                             id="dynformSCD2JudgmentCourtOrderedAgainst2"
-                            formControlName="courtOrderAgainst"
+                            formControlName="courtOrderTo"
                           />
                         </div>
                       </div>
@@ -1085,21 +1084,13 @@
 
                   <div class="form-row full-width bold">
                     <div>
-                      <label style="margin-bottom: 0px">
-                        <span [translate]="'stepTwo.willPayTo'"
+                      <label>
+                        <span
+                          [translate]="
+                            'stepTwo.beforeSettlementPaymentRecipientField'
+                          "
                           >will pay to</span
                         >
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="form-row full-width bold">
-                    <div>
-                      <label class="asteriskOnly">
-                        <div
-                          class="asterisk"
-                          id="requiredStar_blank_dynformSCD2CourtOrdered2"
-                        ></div>
                       </label>
 
                       <div
@@ -1119,6 +1110,21 @@
                           />
                         </div>
                       </div>
+
+                      <label
+                        class="post-field-label"
+                        *ngIf="
+                          'stepTwo.afterSettlementPaymentRecipientField'
+                            | translate
+                        "
+                      >
+                        <span
+                          [translate]="
+                            'stepTwo.afterSettlementPaymentRecipientField'
+                          "
+                        >
+                        </span>
+                      </label>
 
                       <span
                         id="validation_error_text_dynformSCD2CourtOrdered2"

@@ -378,7 +378,8 @@
     "courtSettlementCaseNumber": "5.2. Aktenzeichen",
     "settlementSubstance": "5.3. Inhalt des Vergleichs",
     "firstSettlementAgreement": "5.3.1. Die Parteien haben vereinbart, dass",
-    "willPayTo": "an ... zahlt",
+    "beforeSettlementPaymentRecipientField": "an",
+    "afterSettlementPaymentRecipientField": "zahlt",
     "secondSettlementAgreement": "5.3.2. Die Parteien haben vereinbart, dass",
     "will": "",
     "doneAt": "Ort",
@@ -399,6 +400,7 @@
     "cityPostalCode": "Postleitzahl und Ort",
     "representativeClaimant": "2.8. Vertreter des Antragstellers",
     "representativeDefendant": "3.8. Vertreter des Beklagten",
+    "fieldNotFilledIn": "(Feld nicht ausgefüllt)",
     "sign": "Unterschrift und/oder Stempel:"
   }
 }

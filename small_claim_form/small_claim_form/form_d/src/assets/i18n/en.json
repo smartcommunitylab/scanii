@@ -378,7 +378,8 @@
     "courtSettlementCaseNumber": "5.2. Numero della causa",
     "settlementSubstance": "5.3. Merito della sentenza",
     "firstSettlementAgreement": "5.3.1. Le parti hanno convenuto che",
-    "willPayTo": "pagherà a",
+    "beforeSettlementPaymentRecipientField": "pagherà a",
+    "afterSettlementPaymentRecipientField": "",
     "secondSettlementAgreement": "5.3.2. Le parti hanno convenuto che",
     "will": "",
     "doneAt": "Luogo",
@@ -399,6 +400,7 @@
     "cityPostalCode": "Città e codice postale",
     "representativeClaimant": "2.8. Rappresentante del ricorrente",
     "representativeDefendant": "3.8. Rappresentante del convenuto",
+    "fieldNotFilledIn": "(campo non compilato)",
     "sign": "Firma e/o timbro"
   }
 }

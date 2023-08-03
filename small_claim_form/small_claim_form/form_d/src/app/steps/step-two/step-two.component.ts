@@ -37,12 +37,11 @@ export class StepTwoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.stepTwoService.form.patchValue({
-    //   expiryDate: "01/01/2021",
-    //   languages: ["00", "01", "cinese"],
-    //   statement: "Statement",
-    //   doneAt: "Trento",
-    // });
+    this.stepTwoService.form.patchValue({
+      judgmentOrSettlement: "judgment",
+      doneAt: "Roma",
+      date: "01/01/2021",
+    });
 
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       const currentDate = this.datePipe.transform(new Date(), "dd/MM/yyyy");

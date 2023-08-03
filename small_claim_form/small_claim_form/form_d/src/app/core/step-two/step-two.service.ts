@@ -9,7 +9,6 @@ import {
 } from "@angular/forms";
 import { PromiseContent } from "../common/promise-content.model";
 import { Subscription } from "rxjs";
-import { StepTwo } from "./step-two.model";
 import { stepTwoShowHideFields } from "src/app/shared/constants/step-two.constants";
 
 @Injectable({
@@ -47,7 +46,6 @@ export class StepTwoService {
     judgmentPrincipal: ["", this.amountValidator()],
     judgmentInterest: [""],
     judgmentCosts: ["", this.amountValidator()],
-    respondent: [""],
     courtOrderAgainst: [""],
     courtOrderTo: [""],
     supersededJudgment: [false],
@@ -217,9 +215,17 @@ export class StepTwoService {
       divIdToExpand: "",
       extendibleInternalDivIds: [],
     };
+    
     this.areJudgmentSettlementRadioButtonsUnchecked = true;
-    this.judgmentRadioButton = false;
-    this.settlementRadioButton = false;
+
+    if (this.judgmentRadioButton) {
+      this.triggerClickEvent("judgment");
+      this.judgmentRadioButton = false;
+    }
+    if (this.settlementRadioButton) {
+      this.triggerClickEvent("settlement");
+      this.settlementRadioButton = false;
+    }
   }
 
   private getJsonValue(key: string, claim: any): any {
@@ -278,33 +284,4 @@ export class StepTwoService {
 
     return undefined;
   }
-
-  // getStepTwo(): StepTwo {
-  //   const languages = this.form.get("languages").value;
-  //   const languagesNames: string[] = [];
-  //   for (let i = 0; i < languages.length; i++) {
-  //     const language = this.europeanLanguages.find((europeanLanguage) => {
-  //       return europeanLanguage.value === languages[i];
-  //     });
-  //     if (language) {
-  //       languagesNames.push(language.label);
-  //     } else {
-  //       languagesNames.push(languages[i]);
-  //     }
-  //   }
-
-  //   const expiryDate = this.form.get("expiryDate").value;
-  //   const doneAt = this.form.get("doneAt").value;
-  //   const date = this.form.get("date").value;
-  //   const statement = this.form.get("statement").value;
-
-  //   return new StepTwo(
-  //     expiryDate,
-  //     doneAt,
-  //     date,
-  //     languages,
-  //     languagesNames,
-  //     statement
-  //   );
-  // }
 }

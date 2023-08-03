@@ -16,8 +16,16 @@ import { stepOneShowHideFields } from "src/app/shared/constants/step-one.constan
 })
 export class StepOneService {
   requiredValidator = Validators.required;
-  previousSelectedRadioButton = { value: "", divIdToExpand: "", extendibleInternalDivIds: [] };
-  currentSelectedRadioButton = { value: "", divIdToExpand: "", extendibleInternalDivIds: [] };
+  previousSelectedRadioButton = {
+    value: "",
+    divIdToExpand: "",
+    extendibleInternalDivIds: [],
+  };
+  currentSelectedRadioButton = {
+    value: "",
+    divIdToExpand: "",
+    extendibleInternalDivIds: [],
+  };
 
   areAllClaimApprovalRadioButtonsUnchecked = true;
   yesClaimApprovalRadioButton = false;
@@ -190,12 +198,31 @@ export class StepOneService {
 
   private resetAll() {
     this.form.reset();
-    this.previousSelectedRadioButton = { value: "", divIdToExpand: "", extendibleInternalDivIds: [] };
-    this.currentSelectedRadioButton = { value: "", divIdToExpand: "", extendibleInternalDivIds: [] };
+    this.previousSelectedRadioButton = {
+      value: "",
+      divIdToExpand: "",
+      extendibleInternalDivIds: [],
+    };
+    this.currentSelectedRadioButton = {
+      value: "",
+      divIdToExpand: "",
+      extendibleInternalDivIds: [],
+    };
+
     this.areAllClaimApprovalRadioButtonsUnchecked = true;
-    this.yesClaimApprovalRadioButton = false;
-    this.noClaimApprovalRadioButton = false;
-    this.partialClaimApprovalRadioButton = false;
+
+    if (this.yesClaimApprovalRadioButton) {
+      this.triggerClickEvent("dynforms_Yes_First_Capital");
+      this.yesClaimApprovalRadioButton = false;
+    }
+    if (this.noClaimApprovalRadioButton) {
+      this.triggerClickEvent("dynforms_No_First_Capital");
+      this.noClaimApprovalRadioButton = false;
+    }
+    if (this.partialClaimApprovalRadioButton) {
+      this.triggerClickEvent("dynforms_Partially");
+      this.partialClaimApprovalRadioButton = false;
+    }
   }
 
   private getJsonValue(key: string, claim: any): any {

@@ -307,13 +307,28 @@ export class StepFourService {
   private resetAll() {
     this.crossborderNatureForm.reset();
     this.bankDetailsForm.reset();
+
     this.previousSelectedRadioButton = { value: "", divIdToExpand: "" };
     this.currentSelectedRadioButton = { value: "", divIdToExpand: "" };
+
     this.areAllRadioButtonsUnchecked = true;
-    this.bankTransferRadioButton = false;
-    this.creditCardRadioButton = false;
-    this.directDebitRadioButton = false;
+
+    if (this.bankTransferRadioButton) {
+      this.triggerClickEvent("dynformSCA5PaymentMethodBankTransfer");
+      this.bankTransferRadioButton = false;
+    }
+    if (this.creditCardRadioButton) {
+      this.triggerClickEvent("dynformSCA5PaymentMethodCreditCard");
+      this.creditCardRadioButton = false;
+    }
+    if (this.directDebitRadioButton) {
+      this.triggerClickEvent("dynformSCA5PaymentMethodDirect");
+      this.directDebitRadioButton = false;
+    }
+    if(this.otherRadioButton){
+      this.triggerClickEvent("dynformSCA5PaymentMethodOther");
     this.otherRadioButton = false;
+    }
   }
 
   private triggerChangeEvent(id: string) {
