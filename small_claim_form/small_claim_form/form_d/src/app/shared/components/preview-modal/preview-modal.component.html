@@ -1018,46 +1018,36 @@
       >
     </h4> -->
   </div>
-
-  <div class="modal-footer px-5 py-4">
-    <div class="row">
-      <div class="col-12 col-xl-2">
-        <button
-          class="button big outline"
-          (click)="cancel()"
-          [translate]="'buttons.cancel'"
-        >
-          Cancel
-        </button>
-      </div>
-      <div class="col-0 col-xl"></div>
-      <div class="col-12 col-xl-2">
-        <button
-          class="button big dark"
-          (click)="navbarService.generateJson()"
-          [translate]="'buttons.downloadJSON'"
-        >
-          Download JSON
-        </button>
-      </div>
-      <div class="col-0 col-xl"></div>
-      <div class="col-12 col-xl-2">
-        <button
-          class="button big dark"
-          [translate]="'buttons.downloadPDF'"
-          (click)="downloadPdf()"
-        >
-          Download PDF
-        </button>
-      </div>
-      <div class="col-0 col-xl"></div>
-      <div class="col-12 col-xl-2">
-        <button class="button big dark" [translate]="'buttons.submit'">
-          Submit
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <app-spinner [showSpinner]="showSpinner"></app-spinner>
 </div>
+
+<div class="modal-footer px-5 py-4 justify-content-evenly">
+  <button
+    class="button big outline my-3"
+    (click)="cancel()"
+    [translate]="'buttons.cancel'"
+  >
+    Cancel
+  </button>
+
+  <button
+    class="button big dark my-3"
+    (click)="navbarService.generateJson()"
+    [translate]="'buttons.downloadJSON'"
+  >
+    Download JSON
+  </button>
+
+  <button
+    class="button big dark my-3"
+    [translate]="'buttons.downloadPDF'"
+    (click)="downloadPdf()"
+  >
+    Download PDF
+  </button>
+
+  <button class="button big dark my-3" [translate]="'buttons.submit'">
+    Submit
+  </button>
+</div>
+
+<app-spinner [showSpinner]="showSpinner"></app-spinner>

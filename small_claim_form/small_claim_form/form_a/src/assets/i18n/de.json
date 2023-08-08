@@ -6,7 +6,8 @@
     "cancel": "Abbrechen",
     "downloadJSON": "JSON herunterladen",
     "downloadPDF": "PDF herunterladen",
-    "submit": "Einreichen"
+    "submit": "Einreichen",
+    "preview": "Vorschau"
   },
   "errors": {
     "required": "Felderforderlich",
@@ -1031,5 +1032,12 @@
     "ifStatutory": "5.4.2. Im Falle eines gesetzlichen Zinssatzes, Zinsen ab",
     "claimingInterestOnCostFromDate": "Falls ja, Zinsen ab",
     "date": "(Datum)"
+  },
+  "login": {
+    "title": "Einloggen",
+    "username": "Nutzername",
+    "password": "Passwort",
+    "failed": "Fehler bei der Anmeldung!",
+    "checkCredentials": "Bitte überprüfen Sie Ihre Anmeldedaten und versuchen Sie es erneut"
   }
 }

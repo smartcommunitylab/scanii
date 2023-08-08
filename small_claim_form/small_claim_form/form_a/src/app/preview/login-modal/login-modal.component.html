@@ -1,0 +1,61 @@
+<div class="modal-header py-4">
+  <h2 class="modal-title ps-3" [translate]="'login.title'">Login</h2>
+  <a
+    class="close js-close-modal hide-text"
+    tabindex="1"
+    (click)="cancel()"
+    style="top: 2rem"
+    >Close</a
+  >
+</div>
+
+<div class="modal-body px-5">
+  <form [formGroup]="form">
+    <div class="form-row full-width bold">
+      <label for="username" class="label-email-address">
+        <span [translate]="'login.username'">Username</span></label
+      >
+      <div class="input-wrapper regular">
+        <div class="input-content nopaddingTop">
+          <input
+            type="text"
+            name="username"
+            value=""
+            id="username"
+            formControlName="username"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-row full-width bold mb-5">
+      <label for="password">
+        <span [translate]="'login.password'">Password</span></label
+      >
+      <div class="input-wrapper regular">
+        <div class="input-content nopaddingTop">
+          <input
+            type="password"
+            name="password"
+            value=""
+            id="password"
+            title="Password"
+            formControlName="password"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="alert-placeholder"></div>
+  </form>
+</div>
+
+<div class="modal-footer px-5 py-4 justify-content-between">
+  <button
+    class="button big outline"
+    (click)="cancel()"
+    [translate]="'buttons.cancel'"
+  >
+    Cancel
+  </button>
+
+  <button class="button big dark" (click)="login()">Login</button>
+</div>

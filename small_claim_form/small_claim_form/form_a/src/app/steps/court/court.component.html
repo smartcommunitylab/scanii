@@ -465,7 +465,7 @@
           class="button big dark pull-right piwik_download"
           name="submitNavigation3"
           id="submitNavigation3"
-          value="Submit"
+          value="{{ 'buttons.preview' | translate }}"
           data-title=""
           (click)="openPreviewModal()"
       /></span>
@@ -473,3 +473,5 @@
   </div>
   <!-- end of the second div layer of buttons -->
 </div>
+
+<app-spinner [showSpinner]="showSpinner"></app-spinner>

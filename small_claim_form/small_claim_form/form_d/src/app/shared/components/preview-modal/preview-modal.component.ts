@@ -453,9 +453,9 @@ export class PreviewModalComponent implements OnInit {
   }
 
   private getFileName(): string {
-    return `SC_B_${this.formatDate(
+    return `SC_D_${this.formatDate(
       new Date()
-    )}_${this.translateService.currentLang.toUpperCase()}`;
+    )}_${this.translateService.currentLang.toUpperCase()}.pdf`;
   }
 
   private formatDate(date: Date): string {

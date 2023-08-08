@@ -22,10 +22,16 @@ import {
   TranslateModule,
 } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { AngularIbanModule } from "angular-iban";
 import { CustomModule } from "./shared/custom.module";
+import { NgxWebstorageModule } from "ngx-webstorage";
+import { AuthInterceptor } from "./blocks/interceptor/auth.interceptor";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -56,6 +62,7 @@ export class CustomMissingTranslationHandler
   ],
   imports: [
     BrowserModule,
+    NgxWebstorageModule.forRoot({ prefix: "", separator: "" }),
     AppRoutingModule,
     AngularIbanModule,
     CustomModule,
@@ -76,7 +83,13 @@ export class CustomMissingTranslationHandler
       },
     }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [MainComponent],
   exports: [TranslateModule],
 })

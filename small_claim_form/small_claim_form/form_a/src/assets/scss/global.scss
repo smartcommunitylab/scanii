@@ -17947,3 +17947,11 @@ html {
 .textDate {
   cursor: pointer;
 }
+.alert-dismissible .btn-close {
+  position: relative;
+}
+.btn-close-alert:focus {
+  background-color: transparent;
+  color: transparent;
+  border: none !important;
+}

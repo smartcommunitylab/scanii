@@ -9,6 +9,90 @@
   >
 </div>
 
+<div class="modal-body px-5" id="content">
+  <h3 class="pdf-primary-title" [translate]="'stepOne.firstPartTitle'">
+    Part I (to be filled in by the court/tribunal)
+  </h3>
+
+  <div class="ps-3">
+    <h4 class="pdf-line-field">
+      <span class="colon pdf-label" [translate]="'stepOne.claimant'"
+        >Name of claimant</span
+      >
+      <span class="fw-bold pdf-value">{{ stepOne.firstPart.claimant }}</span>
+    </h4>
+
+    <h4 class="pdf-line-field">
+      <span class="colon pdf-label" [translate]="'stepOne.defendant'"
+        >Name of defendant</span
+      >
+      <span class="fw-bold pdf-value">{{ stepOne.firstPart.defendant }}</span>
+    </h4>
+
+    <h4 class="pdf-line-field">
+      <span class="colon pdf-label" [translate]="'stepOne.court'"
+        >Court/tribunal</span
+      >
+      <span class="fw-bold pdf-value">{{ stepOne.firstPart.court }}</span>
+    </h4>
+
+    <h4 class="pdf-line-field">
+      <span class="colon pdf-label" [translate]="'stepOne.claim'">Claim</span>
+      <span class="fw-bold pdf-value">{{ stepOne.firstPart.claim }}</span>
+    </h4>
+
+    <h4 class="pdf-line-field">
+      <span class="colon pdf-label" [translate]="'stepOne.caseNumber'"
+        >Case number</span
+      >
+      <span class="fw-bold pdf-value">{{ stepOne.firstPart.caseNumber }}</span>
+    </h4>
+  </div>
+
+  <h3 class="pdf-primary-title" [translate]="'stepOne.secondPartTitle'">
+    Part II (to be filled in by the defendant)
+  </h3>
+  <div class="ps-3">
+    <h4 class="pdf-secondary-title" [translate]="'stepOne.claimApproval'">
+      1. Do you accept the claim?
+    </h4>
+    <div class="pdf-radio-buttons">
+      <div class="radio-wrapper radio-margin-bottom">
+        <input
+          type="radio"
+          [checked]="stepOne.secondPart.claimApproval === 'yes'"
+          class="disabled-input pdf-radio-button"
+        />
+        <label>
+          <span class="pdf-label" [translate]="'stepOne.yes'">Yes</span>
+        </label>
+      </div>
+      <div class="radio-wrapper radio-margin-bottom">
+        <input
+          type="radio"
+          [checked]="stepOne.secondPart.claimApproval === 'no'"
+          class="disabled-input pdf-radio-button"
+        />
+        <label>
+          <span class="pdf-label" [translate]="'stepOne.no'">No</span>
+        </label>
+      </div>
+      <div class="radio-wrapper">
+        <input
+          type="radio"
+          [checked]="stepOne.secondPart.claimApproval === 'partial'"
+          class="disabled-input pdf-radio-button"
+        />
+        <label>
+          <span class="pdf-label" [translate]="'stepOne.partially'"
+            >Partially</span
+          >
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- <div class="modal-body px-5" id="content">
   <h4 class="pdf-line-field">
     <span class="colon pdf-label" [translate]="'stepZero.caseNumber'"
@@ -704,44 +788,34 @@
   </h4>
 </div> -->
 
-<div class="modal-footer px-5 py-4">
-  <div class="row">
-    <div class="col-12 col-xl-2">
-      <button
-        class="button big outline"
-        (click)="cancel()"
-        [translate]="'buttons.cancel'"
-      >
-        Cancel
-      </button>
-    </div>
-    <div class="col-0 col-xl"></div>
-    <div class="col-12 col-xl-2">
-      <button
-        class="button big dark"
-        (click)="navbarService.generateJson()"
-        [translate]="'buttons.downloadJSON'"
-      >
-        Download JSON
-      </button>
-    </div>
-    <div class="col-0 col-xl"></div>
-    <div class="col-12 col-xl-2">
-      <button
-        class="button big dark"
-        [translate]="'buttons.downloadPDF'"
-        (click)="downloadPdf()"
-      >
-        Download PDF
-      </button>
-    </div>
-    <div class="col-0 col-xl"></div>
-    <div class="col-12 col-xl-2">
-      <button class="button big dark" [translate]="'buttons.submit'">
-        Submit
-      </button>
-    </div>
-  </div>
+<div class="modal-footer px-5 py-4 justify-content-evenly">
+  <button
+    class="button big outline my-3"
+    (click)="cancel()"
+    [translate]="'buttons.cancel'"
+  >
+    Cancel
+  </button>
+
+  <button
+    class="button big dark my-3"
+    (click)="navbarService.generateJson()"
+    [translate]="'buttons.downloadJSON'"
+  >
+    Download JSON
+  </button>
+
+  <button
+    class="button big dark my-3"
+    [translate]="'buttons.downloadPDF'"
+    (click)="downloadPdf()"
+  >
+    Download PDF
+  </button>
+
+  <button class="button big dark my-3" [translate]="'buttons.submit'">
+    Submit
+  </button>
 </div>
 
 <app-spinner [showSpinner]="showSpinner"></app-spinner>

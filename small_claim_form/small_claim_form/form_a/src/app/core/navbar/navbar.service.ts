@@ -55,9 +55,9 @@ export class NavbarService {
   }
 
   generateJson(): void {
-    const fileName = `${this.formatDate(new Date())}_${
-      this.translateService.currentLang
-    }`;
+    const fileName = `SC_A_${this.formatDate(
+      new Date()
+    )}_${this.translateService.currentLang.toUpperCase()}.json`;
 
     exportFromJSON({
       data: { form_A: this.getFormA() },
@@ -105,13 +105,22 @@ export class NavbarService {
     return bankDetailsObj;
   }
 
-  // getJsonFile(): File {
-  // const fileName = `${this.formatDate(new Date())}_${
-  //   this.translateService.currentLang
-  // }`;
-  //   const data = { form_A: this.getFormA() };
-  //   const blob = new Blob([JSON.stringify(data)], { type: "text/plain" });
-  //   const file = new File([blob], fileName);
-  //   return file;
-  // }
+  getJsonFile(): File | null {
+    try {
+      const fileName = `SC_A_${this.formatDate(
+        new Date()
+      )}_${this.translateService.currentLang.toUpperCase()}.json`;
+
+      const data = { form_A: this.getFormA() };
+      const blob = new Blob([JSON.stringify(data)], {
+        type: "application/json",
+      });
+
+      const file = new File([blob], fileName, { type: "application/json" });
+      return file;
+    } catch (error) {
+      console.error("Error while creating the JSON file: ", error);
+      return null;
+    }
+  }
 }

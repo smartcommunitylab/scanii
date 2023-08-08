@@ -7,7 +7,13 @@ import { NavbarService } from "src/app/core/navbar/navbar.service";
 import { Direction } from "src/app/shared/constants/direction.constants";
 import { ToastService } from "src/app/shared/services/toast.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { PreviewModalComponent } from "src/app/shared/components/preview-modal/preview-modal.component";
+import { PreviewModalComponent } from "src/app/preview/preview-modal/preview-modal.component";
+import { LoginModalComponent } from "src/app/preview/login-modal/login-modal.component";
+import { LoginService } from "src/app/core/login/login.service";
+import { PreviewModalService } from "src/app/core/preview/preview-modal.service";
+import { TokenService } from "src/app/core/login/token.service";
+import { ClaimDetailsService } from "src/app/core/claim-details/claim-details.service";
+import { Claim } from "src/app/core/preview/claim.model";
 
 @Component({
   selector: "app-court",
@@ -16,6 +22,9 @@ import { PreviewModalComponent } from "src/app/shared/components/preview-modal/p
 })
 export class CourtComponent implements OnInit {
   selectedCountry: string;
+  pdfFileId: number;
+  jsonFileId: number;
+  showSpinner = false;
 
   constructor(
     public courtService: CourtService,
@@ -23,7 +32,11 @@ export class CourtComponent implements OnInit {
     public navbarService: NavbarService,
     private translateService: TranslateService,
     private toastService: ToastService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private loginService: LoginService,
+    private previewModalService: PreviewModalService,
+    private tokenService: TokenService,
+    private claimDetailsService: ClaimDetailsService
   ) {}
 
   ngOnInit(): void {
@@ -95,21 +108,39 @@ export class CourtComponent implements OnInit {
     if (!this.courtService.editForm.invalid) {
       this.toastService.hideErrorToast();
 
-      const element = document.getElementById('step8-menu');
+      const element = document.getElementById("step8-menu");
       element.querySelector("a div.validation-icon").classList.add("validated");
 
-      const modalRef = this.modalService.open(PreviewModalComponent, {
+      const previewModal = this.modalService.open(PreviewModalComponent, {
         size: "xl",
         backdrop: "static",
         centered: true,
       });
-      modalRef.result.then(
+
+      //clone the content of the modal to be able to generate the PDF
+      previewModal.shown.subscribe(() => {
+        this.previewModalService.cloneAlreadyChanged = false;
+        const preview = document.getElementById("preview");
+        this.previewModalService.previewElementClone = preview.cloneNode(
+          true
+        ) as HTMLElement;
+      });
+
+      previewModal.result.then(
         () => {
-          //this.loadAllUsers();
+          if (this.tokenService.getToken()) {
+            this.showSpinner = true;
+          }
+
+          previewModal.hidden.subscribe(() => {
+            if (!this.tokenService.getToken()) {
+              this.openLoginModal();
+            } else {
+              this.uploadPdf();
+            }
+          });
         },
-        () => {
-          //this.loadAllUsers();
-        }
+        () => {}
       );
     } else {
       this.courtService.markCourtFormAsDirty();
@@ -119,6 +150,90 @@ export class CourtComponent implements OnInit {
         behavior: "auto",
       });
       this.toastService.showErrorToast();
+    }
+  }
+
+  openLoginModal() {
+    const loginModal = this.modalService.open(LoginModalComponent, {
+      size: "md",
+      backdrop: "static",
+      centered: true,
+    });
+    loginModal.result.then(
+      () => {
+        this.showSpinner = true;
+
+        loginModal.hidden.subscribe(() => {
+          this.uploadPdf();
+        });
+      },
+      () => {}
+    );
+  }
+
+  uploadPdf() {
+    this.previewModalService.generatePdf(false).then((file) => {
+      if (file) {
+        this.courtService.uploadFile(file).subscribe(
+          (response) => {
+            this.pdfFileId = parseInt(response.data.id);
+            this.uploadJson();
+          },
+          (error) => {
+            this.showSpinner = false;
+            console.error("Error while uploading the PDF file: ", error);
+          }
+        );
+      } else {
+        this.showSpinner = false;
+        console.error("PDF file is null. Upload failed.");
+      }
+    });
+  }
+
+  uploadJson() {
+    const jsonFile: File = this.navbarService.getJsonFile();
+    if (jsonFile) {
+      this.courtService.uploadFile(jsonFile).subscribe(
+        (response) => {
+          this.jsonFileId = parseInt(response.data.id);
+          this.createClaim();
+        },
+        (error) => {
+          this.showSpinner = false;
+          console.error("Error while uploading the JSON file: ", error);
+        }
+      );
+    } else {
+      this.showSpinner = false;
+      console.error("JSON file is null. Upload failed.");
+    }
+  }
+
+  createClaim() {
+    const description =
+      this.claimDetailsService.editForm.get("detailsOfClaim").value;
+    const claimant = this.tokenService.getClaimant();
+    const defendant = "";
+    const amount = "0";
+
+    if (claimant) {
+      const claim = new Claim(claimant, defendant, amount, description, [
+        this.pdfFileId,
+        this.jsonFileId,
+      ]);
+      const obj = { data: claim };
+      this.courtService.createClaim(obj).subscribe(
+        (response) => {
+          this.showSpinner = false;
+        },
+        (error) => {
+          this.showSpinner = false;
+          console.error("Error while creating the claim: ", error);
+        }
+      );
+    } else {
+      this.showSpinner = false;
     }
   }
 }

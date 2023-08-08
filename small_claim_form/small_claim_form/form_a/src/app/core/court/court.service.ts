@@ -5,9 +5,12 @@ import {
   UntypedFormGroup,
   Validators,
 } from "@angular/forms";
-import { Subscription } from "rxjs";
+import { Observable, Subscription } from "rxjs";
 import { PromiseContent } from "../common/promise-content.model";
 import { Court } from "./court.model";
+import { HttpClient } from "@angular/common/http";
+import { SERVER_API_URL } from "src/app/app.constants";
+import { Claim } from "../preview/claim.model";
 
 @Injectable({
   providedIn: "root",
@@ -23,7 +26,11 @@ export class CourtService {
   europeanCountries: { value: string; label: string }[] = [];
   onStableSubscription: Subscription;
 
-  constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
+  constructor(
+    private fb: UntypedFormBuilder,
+    private zone: NgZone,
+    private httpClient: HttpClient
+  ) {}
 
   isCourtFormValid(): Promise<PromiseContent> {
     return new Promise((resolve) => {
@@ -109,5 +116,18 @@ export class CourtService {
     const inputElement = document.getElementById(id) as HTMLInputElement;
     const event = new Event("change");
     inputElement.dispatchEvent(event);
+  }
+
+  uploadFile(dataBlock: any): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append("file", dataBlock);
+    return this.httpClient.post<any>(
+      SERVER_API_URL + "documents/upload/raw",
+      formData
+    );
+  }
+
+  createClaim(claim: any): Observable<any> {
+    return this.httpClient.post(SERVER_API_URL + "claims/v1/claims", claim);
   }
 }

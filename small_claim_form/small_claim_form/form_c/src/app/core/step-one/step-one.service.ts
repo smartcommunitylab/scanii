@@ -8,7 +8,6 @@ import {
 } from "@angular/forms";
 import { PromiseContent } from "../common/promise-content.model";
 import { Subscription } from "rxjs";
-import { StepOne } from "./step-one.model";
 import { stepOneShowHideFields } from "src/app/shared/constants/step-one.constants";
 
 @Injectable({
@@ -245,35 +244,6 @@ export class StepOneService {
     const inputElement = document.getElementById(id) as HTMLInputElement;
     const event = new Event("change");
     inputElement.dispatchEvent(event);
-  }
-
-  getStepOne(): StepOne {
-    const languages = this.form.get("languages").value;
-    const languagesNames: string[] = [];
-    // for (let i = 0; i < languages.length; i++) {
-    //   const language = this.europeanLanguages.find((europeanLanguage) => {
-    //     return europeanLanguage.value === languages[i];
-    //   });
-    //   if (language) {
-    //     languagesNames.push(language.label);
-    //   } else {
-    //     languagesNames.push(languages[i]);
-    //   }
-    // }
-
-    const expiryDate = this.form.get("expiryDate").value;
-    const doneAt = this.form.get("doneAt").value;
-    const date = this.form.get("date").value;
-    const statement = this.form.get("statement").value;
-
-    return new StepOne(
-      expiryDate,
-      doneAt,
-      date,
-      languages,
-      languagesNames,
-      statement
-    );
   }
 
   getFormControl(formControlName: string): AbstractControl {

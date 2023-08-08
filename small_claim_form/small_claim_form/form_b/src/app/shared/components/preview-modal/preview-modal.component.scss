@@ -1,20 +1,10 @@
-.modal-footer {
-  display: inherit;
-}
-
 .ieborder {
   float: none;
 }
 
 .modal-footer button {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 1.6rem 2rem;
-  width: 100%;
-}
-
-.modal-footer button:focus {
-  padding: 1.6rem 1.8125rem;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 h3,
@@ -25,28 +15,34 @@ h5 {
   line-height: 2.5rem;
 }
 
-h2, h2 span {
+h2,
+h2 span {
   font-size: 2.4rem;
 }
 
-h3, h3 span {
+h3,
+h3 span {
   font-weight: bold;
-  font-size: 2rem
+  font-size: 2rem;
 }
 
-h4, h4 span {
+h4,
+h4 span {
   font-weight: normal;
   font-size: 1.7rem;
   text-align: justify;
 }
 
-h5, h5 span {
+h5,
+h5 span {
   font-weight: normal;
   font-size: 1.65rem;
   text-align: justify;
 }
 
-p, div, span {
+p,
+div,
+span {
   font-size: 1.6rem;
 }
 

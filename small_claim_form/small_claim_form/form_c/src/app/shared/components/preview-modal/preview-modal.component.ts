@@ -1,10 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NavbarService } from "src/app/core/navbar/navbar.service";
-import { StepOne } from "src/app/core/step-one/step-one.model";
-import { StepOneService } from "src/app/core/step-one/step-one.service";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
+import { Section, Row, CheckboxInput, RadioInput } from "pdfmake-form-elements";
 import { TranslateService } from "@ngx-translate/core";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -14,9 +13,8 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
   styleUrls: ["./preview-modal.component.scss"],
 })
 export class PreviewModalComponent implements OnInit {
-  stepOne: StepOne;
+  stepOne: any;
   showSpinner = false;
-  languages: string;
   documentDefinition = {
     content: [],
     styles: {
@@ -51,13 +49,11 @@ export class PreviewModalComponent implements OnInit {
   constructor(
     private activeModal: NgbActiveModal,
     public navbarService: NavbarService,
-    private stepOneService: StepOneService,
     private translateService: TranslateService
   ) {}
 
   ngOnInit(): void {
-    this.stepOne = this.stepOneService.getStepOne();
-    this.languages = this.setLanguagesString();
+    this.stepOne = this.navbarService.getFormC().stepOne;
 
     pdfMake.fonts = {
       FontAwesome: {
@@ -65,17 +61,6 @@ export class PreviewModalComponent implements OnInit {
         bold: `${window.location.origin}/LiberationSans-Bold.ttf`,
       },
     };
-  }
-
-  private setLanguagesString(): string {
-    let languagesString = "";
-    if (this.stepOne.languagesNames.length > 0) {
-      this.stepOne.languagesNames.forEach((language) => {
-        languagesString += language + ", ";
-      });
-      languagesString = languagesString.slice(0, -2);
-    }
-    return languagesString;
   }
 
   cancel(): void {
@@ -99,21 +84,28 @@ export class PreviewModalComponent implements OnInit {
 
   private setPdfContent(children: any, addIndentation: boolean): void {
     for (let i = 0; i < children.length; i++) {
-      if (children[i].classList.contains("pdf-line-field")) {
+      const classList = children[i].classList;
+      if (classList.contains("pdf-line-field")) {
         this.handleLineField(children[i], addIndentation);
-      } else if (children[i].classList.contains("pdf-div-field")) {
+      } else if (classList.contains("pdf-div-field")) {
         this.handleDivField(children[i], addIndentation);
-      } else if (children[i].classList.contains("pdf-representative-field")) {
-        this.handleRepresentativeField(children[i], addIndentation);
-      } else if (children[i].classList.contains("pdf-text")) {
+      } else if (classList.contains("pdf-radio-buttons")) {
+        this.handleRadioButtons(children[i], addIndentation);
+      } else if (classList.contains("pdf-fields-block")) {
+        this.handleFieldsBlock(children[i], addIndentation);
+      } else if (classList.contains("pdf-line-multiple-fields")) {
+        this.handleLineMultipleFields(children[i], addIndentation);
+      } else if (classList.contains("pdf-checkbox")) {
+        this.handleCheckbox(children[i], addIndentation);
+      } else if (classList.contains("pdf-text")) {
         this.handleText(children[i], addIndentation);
-      } else if (children[i].classList.contains("pdf-primary-title")) {
+      } else if (classList.contains("pdf-primary-title")) {
         //primary title
         this.documentDefinition.content.push({
           text: children[i].innerText,
           style: "primaryTitle",
         });
-      } else if (children[i].classList.contains("pdf-secondary-title")) {
+      } else if (classList.contains("pdf-secondary-title")) {
         //secondary title
         this.documentDefinition.content.push({
           text: children[i].innerText,
@@ -121,13 +113,11 @@ export class PreviewModalComponent implements OnInit {
           marginLeft: addIndentation ? this.indentationCount * 15 : 0,
         });
       } else {
-        if (!children[i].classList.contains("pdf-no-indentation"))
-          this.indentationCount++;
+        if (!classList.contains("pdf-no-indentation")) this.indentationCount++;
 
         this.setPdfContent(children[i].children, true);
 
-        if (!children[i].classList.contains("pdf-no-indentation"))
-          this.indentationCount--;
+        if (!classList.contains("pdf-no-indentation")) this.indentationCount--;
       }
     }
   }
@@ -203,25 +193,73 @@ export class PreviewModalComponent implements OnInit {
     }
   }
 
-  private handleRepresentativeField(child: any, addIndentation: boolean): void {
-    //fields of a claimant or defendant representative
-    const labelElement = child.querySelector(".pdf-label");
-    const valueElement = child.querySelector(".pdf-values");
+  private handleRadioButtons(element: any, addIndentation: boolean) {
+    const options = [];
 
-    const label = {
-      text: labelElement.innerText,
-    };
-    const punctuation = this.getPunctuation(labelElement);
+    for (let i = 0; i < element.children.length; i++) {
+      const optionElement =
+        element.children[i].querySelector(".pdf-radio-button");
+      const labelElement = element.children[i].querySelector(".pdf-label");
+
+      const isChecked = optionElement.checked;
+      const label = labelElement.innerText;
+
+      const option = {
+        itemLabel: label,
+        selected: isChecked,
+        width: "auto",
+      };
+
+      options.push(option);
+    }
+
+    const section = Section([Row([RadioInput("", options, "vertical")])]);
 
     const marginLeft = addIndentation ? this.indentationCount * 15 : 0;
     const marginTop = 7;
     const marginBottom = 7;
 
-    this.documentDefinition.content.push({
-      text: [label, punctuation],
-      style: "field",
-      margin: [marginLeft, marginTop, 0, marginBottom],
-    });
+    //set margin and font size
+    for (let i = 0; i < options.length; i++) {
+      const path = this.getPath(section, options[i].itemLabel);
+      if (path) {
+        let obj = section;
+        for (let j = 0; j < path.length; j++) {
+          obj = obj[path[j]];
+          if (j === path.length - 3) {
+            obj.columnGap = 10;
+            obj.margin = [marginLeft, marginTop, 0, marginBottom];
+          }
+        }
+        obj.fontSize = 12;
+        obj.italics = false;
+      }
+    }
+
+    this.documentDefinition.content.push(section);
+  }
+
+  private handleFieldsBlock(child: any, addIndentation: boolean): void {
+    //fields of a claimant or defendant representative
+    const blockLabelElement = child.querySelector(".pdf-block-label");
+    const valueElement = child.querySelector(".pdf-values");
+
+    if (blockLabelElement) {
+      const label = {
+        text: blockLabelElement.innerText,
+      };
+      const punctuation = this.getPunctuation(blockLabelElement);
+
+      const marginLeft = addIndentation ? this.indentationCount * 15 : 0;
+      const marginTop = 7;
+      const marginBottom = 7;
+
+      this.documentDefinition.content.push({
+        text: [label, punctuation],
+        style: "field",
+        margin: [marginLeft, marginTop, 0, marginBottom],
+      });
+    }
 
     if (valueElement) {
       if (!child.classList.contains("pdf-no-indentation"))
@@ -230,6 +268,70 @@ export class PreviewModalComponent implements OnInit {
       if (!child.classList.contains("pdf-no-indentation"))
         this.indentationCount--;
     }
+  }
+
+  private handleLineMultipleFields(
+    element: any,
+    addIndentation: boolean
+  ): void {
+    const fields = element.querySelectorAll(".pdf-line-multiple-field");
+    const text = [];
+
+    for (let i = 0; i < fields.length; i++) {
+      const field = fields[i];
+      if (field.classList.contains("pdf-label")) {
+        text.push({
+          text: field.innerText,
+        });
+      } else if (field.classList.contains("pdf-value")) {
+        text.push({
+          text: field.innerText,
+          style: "lineValue",
+        });
+      }
+      text.push(this.getPunctuation(field));
+    }
+
+    const marginLeft = addIndentation ? this.indentationCount * 15 : 0;
+    const marginTop = addIndentation ? 7 : 10;
+    const marginBottom = addIndentation ? 7 : 10;
+
+    this.documentDefinition.content.push({
+      text: text,
+      style: "field",
+      margin: [marginLeft, marginTop, 0, marginBottom],
+    });
+  }
+
+  private handleCheckbox(element: any, addIndentation: boolean) {
+    const checkboxElement = element.querySelector("input[type=checkbox]");
+    const labelElement = element.querySelector(".pdf-label");
+
+    const isChecked = checkboxElement.checked;
+    const section = Section([
+      Row([CheckboxInput(labelElement.innerText, isChecked)]),
+    ]);
+
+    const marginLeft = addIndentation ? this.indentationCount * 15 : 0;
+    const marginTop = 7;
+    const marginBottom = 7;
+
+    //set margin and font size
+    const path = this.getPath(section, labelElement.innerText);
+    if (path) {
+      let obj = section;
+      for (let j = 0; j < path.length; j++) {
+        obj = obj[path[j]];
+        if (j === path.length - 3) {
+          obj.columnGap = 10;
+          obj.margin = [marginLeft, marginTop, 0, marginBottom];
+        }
+      }
+      obj.fontSize = 12;
+      obj.italics = false;
+    }
+
+    this.documentDefinition.content.push(section);
   }
 
   private handleText(child: any, addIndentation: boolean): void {
@@ -245,6 +347,38 @@ export class PreviewModalComponent implements OnInit {
     });
   }
 
+  private getPath(obj: any, targetText: string, path: string[] = []): any {
+    if (obj && typeof obj === "object") {
+      if (Array.isArray(obj)) {
+        for (let i = 0; i < obj.length; i++) {
+          const newPath = this.getPath(obj[i], targetText, [
+            ...path,
+            String(i),
+          ]);
+          if (newPath) {
+            return newPath;
+          }
+        }
+      } else {
+        if (obj.text && obj.text === targetText) {
+          return [...path];
+        } else if (obj.stack && obj.stack[0] === targetText) {
+          return [...path];
+        }
+
+        for (const key in obj) {
+          if (Object.hasOwn(obj, key)) {
+            const newPath = this.getPath(obj[key], targetText, [...path, key]);
+            if (newPath) {
+              return newPath;
+            }
+          }
+        }
+      }
+    }
+    return null;
+  }
+
   private getPunctuation(element: any): string {
     if (element.classList.contains("colon")) return ": ";
     else if (element.classList.contains("dot")) return ".";
@@ -253,9 +387,9 @@ export class PreviewModalComponent implements OnInit {
   }
 
   private getFileName(): string {
-    return `SC_B_${this.formatDate(
+    return `SC_C_${this.formatDate(
       new Date()
-    )}_${this.translateService.currentLang.toUpperCase()}`;
+    )}_${this.translateService.currentLang.toUpperCase()}.pdf`;
   }
 
   private formatDate(date: Date): string {
