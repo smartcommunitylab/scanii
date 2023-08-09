@@ -53,7 +53,8 @@
                   "maximumError": "10kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/small_claim_form/dist/form_b"
             },
             "development": {
               "buildOptimizer": false,

@@ -73,7 +73,8 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "baseHref": "/small_claim_form/dist/form_a"
             }
           },
           "defaultConfiguration": ""
