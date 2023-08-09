@@ -54,7 +54,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/small_claim_form/dist/form_c"
+              "baseHref": "/small_claim_form/dist/form_c/"
             },
             "development": {
               "buildOptimizer": false,
