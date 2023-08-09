@@ -11,12 +11,12 @@ export class ClaimantCountryIdGenerator {
   }
 
   public get claimantCountryId(): string {
-    return 'parties[' + this.index + '].dynformSCB1ClaimantCountry';
+    return 'parties[' + this.index + '].dynformSCD1ClaimantCountry';
   }
 
   public get claimantRepresentativeCountryId(): string {
     return (
-      'parties[' + this.index + '].dynformSCB1ClaimantRepresentativeCountry'
+      'parties[' + this.index + '].dynformSCD1ClaimantRepresentativeCountry'
     );
   }
 }
@@ -28,13 +28,13 @@ export class DefendantCountryIdGenerator {
   }
 
   public get defendantCountryId(): string {
-    return 'parties[' + this.index + '].dynformSCB1DefendantCountry';
+    return 'parties[' + this.index + '].dynformSCD1DefendantCountry';
   }
 
   public get defendantRepresentativeCountryId(): string {
     return (
-      'parties[' + this.index + '].dynformSCB1DefendantRepresentativeCountry'
+      'parties[' + this.index + '].dynformSCD1DefendantRepresentativeCountry'
     );
   }
 }
-export const courtCountrySelectId = 'dynformSCB1CountryCourt';
+export const courtCountrySelectId = 'dynformSCD1CountryCourt';

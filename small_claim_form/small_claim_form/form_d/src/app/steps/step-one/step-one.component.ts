@@ -107,7 +107,7 @@ export class StepOneComponent implements OnInit {
       }
     );
 
-    $("#dynformSCB1ReceivedByTheCourtTribunalOnDate").datepicker(options);
+    $("#dynformSCD1ReceivedByTheCourtTribunalOnDate").datepicker(options);
   }
 
   expandCourtWorldCountrySelect(event: any, worldCountrySelectId: string) {
@@ -274,8 +274,8 @@ export class StepOneComponent implements OnInit {
 
   initClaimantWorldCountrySelect(index: number, isClaimant: boolean) {
     const clazz = isClaimant
-      ? ".dynformSCB1ClaimantCountryOther" + index
-      : ".dynformSCB1ClaimantRepresentativeCountryOther" + index;
+      ? ".dynformSCD1ClaimantCountryOther" + index
+      : ".dynformSCD1ClaimantRepresentativeCountryOther" + index;
     var $select = $(clazz);
 
     if (!$select.hasClass("chosen-container")) {
@@ -296,8 +296,8 @@ export class StepOneComponent implements OnInit {
 
   resetClaimantWorldCountrySelect(index: number, isClaimant: boolean) {
     const clazz = isClaimant
-      ? ".dynformSCB1ClaimantCountryOther" + index
-      : ".dynformSCB1ClaimantRepresentativeCountryOther" + index;
+      ? ".dynformSCD1ClaimantCountryOther" + index
+      : ".dynformSCD1ClaimantRepresentativeCountryOther" + index;
     var $select = $(clazz);
 
     $select.val("").trigger("chosen:updated");
@@ -497,8 +497,8 @@ export class StepOneComponent implements OnInit {
 
   initDefendantWorldCountrySelect(index: number, isDefendant: boolean) {
     const clazz = isDefendant
-      ? ".dynformSCB1DefendantCountryOther" + index
-      : ".dynformSCB1DefendantRepresentativeCountryOther" + index;
+      ? ".dynformSCD1DefendantCountryOther" + index
+      : ".dynformSCD1DefendantRepresentativeCountryOther" + index;
     var $select = $(clazz);
 
     if (!$select.hasClass("chosen-container")) {
@@ -519,8 +519,8 @@ export class StepOneComponent implements OnInit {
 
   resetDefendantWorldCountrySelect(index: number, isDefendant: boolean) {
     const clazz = isDefendant
-      ? ".dynformSCB1DefendantCountryOther" + index
-      : ".dynformSCB1DefendantRepresentativeCountryOther" + index;
+      ? ".dynformSCD1DefendantCountryOther" + index
+      : ".dynformSCD1DefendantRepresentativeCountryOther" + index;
     var $select = $(clazz);
 
     $select.val("").trigger("chosen:updated");

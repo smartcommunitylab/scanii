@@ -360,7 +360,7 @@
             </div>
           </div>
         </div>
-        <div class="form-row full-width bold">
+        <!-- <div class="form-row full-width bold">
           <div>
             <label>
               <span [translate]="'stepTwo.rememberSignStampPrintedForm'">
@@ -369,108 +369,46 @@
               ></label
             >
           </div>
-        </div>
-
-        <!-- <p class="br">&nbsp;</p>
-      <div class="form-row full-width">
-        <div>
-          <h4>PDF form</h4>
-
-          <p></p>
-          <label for="dynformSCB2PdfLanguage"
-            >Please select the language in which you wish to generate the pdf
-            form:
-
-            <span class="asterisk">*</span>
-          </label>
-
-          <div
-            class="input-wrapper regular"
-            id="input-wrapper_dynformSCB2PdfLanguage"
-          >
-            <div class="input-content">
-              <select
-                id="dynformSCB2PdfLanguage"
-                title="Please select the language in which you wish to generate the pdf form"
-                name="dynformSCB2PdfLanguage"
-                onchange="validateFieldOnBlur(this)"
-                class="df_select df_mandatory"
-              >
-                <option value="" disabled selected>Please select</option>
-
-                <option value="bg">Bulgarian (bg)</option>
-                <option value="es">Spanish (es)</option>
-                <option value="cs">Czech (cs)</option>
-                <option value="da">Danish (da)</option>
-                <option value="de">German (de)</option>
-                <option value="et">Estonian (et)</option>
-                <option value="el">Greek (el)</option>
-                <option value="en">English (en)</option>
-                <option value="fr">French (fr)</option>
-                <option value="hr">Croatian (hr)</option>
-                <option value="it">Italian (it)</option>
-                <option value="lv">Latvian (lv)</option>
-                <option value="lt">Lithuanian (lt)</option>
-                <option value="hu">Hungarian (hu)</option>
-                <option value="mt">Maltese (mt)</option>
-                <option value="nl">Dutch (nl)</option>
-                <option value="pl">Polish (pl)</option>
-                <option value="pt">Portuguese (pt)</option>
-                <option value="ro">Romanian (ro)</option>
-                <option value="sk">Slovak (sk)</option>
-                <option value="sl">Slovenian (sl)</option>
-                <option value="fi">Finnish (fi)</option>
-                <option value="sv">Swedish (sv)</option>
-              </select>
-            </div>
-          </div>
-          <span
-            id="validation_error_text_dynformSCB2PdfLanguage"
-            class="error"
-            style="position: relative; top: 0px"
-          >
-          </span>
-        </div>
-      </div> -->
+        </div> -->
       </form>
     </div>
   </div>
+</div>
 
-  <div class="buttons">
-    <!-- the second div layer of buttons is added when the current page is not the first page -->
-    <div
-      style="
-        margin-top: 10px;
-        margin-bottom: 60px;
-        display: inline-block;
-        width: 100%;
-      "
-    >
-      <!-- the back button is added always on the left of the 2nd div layer -->
-      <span class="ieborder backPageButton"
+<div class="buttons">
+  <!-- the second div layer of buttons is added when the current page is not the first page -->
+  <div
+    style="
+      margin-top: 10px;
+      margin-bottom: 60px;
+      display: inline-block;
+      width: 100%;
+    "
+  >
+    <!-- the back button is added always on the left of the 2nd div layer -->
+    <span class="ieborder backPageButton"
+      ><input
+        type="submit"
+        class="button big outline pull-left"
+        name="submitNavigation2"
+        value="<    {{ 'buttons.back' | translate }}"
+        data-title=""
+        (click)="changeStep('back', 'step1')"
+    /></span>
+    <!-- end of back button -->
+    <div style="float: right; width: 40%">
+      <!-- start of create json form -->
+      <span class="ieborder pdfDownloadButton"
         ><input
           type="submit"
-          class="button big outline pull-left"
-          name="submitNavigation2"
-          value="<    {{ 'buttons.back' | translate }}"
+          class="button big dark pull-right piwik_download"
+          name="submitNavigation3"
+          id="submitNavigation3"
+          value="{{ 'buttons.preview' | translate }}"
           data-title=""
-          (click)="changeStep('back', 'step1')"
+          (click)="openPreviewModal()"
       /></span>
-      <!-- end of back button -->
-      <div style="float: right; width: 40%">
-        <!-- start of create json form -->
-        <span class="ieborder pdfDownloadButton"
-          ><input
-            type="submit"
-            class="button big dark pull-right piwik_download"
-            name="submitNavigation3"
-            id="submitNavigation3"
-            value="Submit"
-            data-title=""
-            (click)="openPreviewModal()"
-        /></span>
-      </div>
     </div>
-    <!-- end of the second div layer of buttons -->
   </div>
+  <!-- end of the second div layer of buttons -->
 </div>

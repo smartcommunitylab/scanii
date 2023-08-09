@@ -1,0 +1,153 @@
+{
+  "domain": "http://scanii.org/simplification/smallclaimform",
+  "concepts": [
+    {
+      "id": "http://scanii.org/domain/courtTribunal",
+      "infoElements": []
+    },
+    {
+      "id": "http://scanii.org/domain/claimant",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "In questa sezione l’attore deve fornire informazioni su se stesso e, se del caso, sul suo rappresentante. Si noti che non è obbligatorio essere rappresentati da un avvocato o da un altro professionista del settore legale. In alcuni paesi potrebbe non essere sufficiente fornire esclusivamente una casella postale come indirizzo, ed è quindi necessario includere, oltre al codice postale, anche la via e il numero civico. L'inosservanza di questa disposizione può compromettere la notificazione e/o comunicazione del documento.",
+          "simplifiedText": "In questa sezione vanno fornite informazioni sulla persona (fisica o giuridica) che vuole far valere il proprio diritto e, se del caso, del soggetto rappresentante. Non è obbligatorio farsi assistere da un avvocato o da un'altra figura professionale. Per il buon esito delle comunicazioni da parte dell’ufficio giudiziario è opportuno inserire in maniera completa il proprio indirizzo geografico.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "text": "attore",
+              "position": "21-6",
+              "definition": "L'attore è la persona che avvia una azione legale.",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/claimant.personalIdNumber",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Se si dispone di un numero d’identificazione personale fornito dalle autorità di uno Stato membro sarebbe utile indicarlo. Se non si dispone di tale numero, sarebbe utile fornire il numero del passaporto o di un documento di identità, ove disponibile. Se si agisce per conto di una persona giuridica o di un soggetto avente capacità giuridica, sarebbe utile fornire un numero di registrazione pertinente.",
+          "simplifiedText": "Se si è in possesso di un numero di identificazione personale assegnato dalle autorità di uno Stato membro, è utile indicarlo. In alternativa o in aggiunta, sarebbe utile fornire il numero del passaporto o di un altro documento d'identità. Per le persone giuridiche è utile fornire  il proprio numero di identificazione/registrazione.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "position": "283-17",
+              "text": "persona giuridica",
+              "definition": "Una persona giuridica è un'entità, una società, un'organizzazione, un'istituzione o un'associazione, a prescindere dal riconoscimento o meno della personalità stessa.",
+              "synonyms": [],
+              "links": ["https://www.law.cornell.edu/wex/legal_person"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/claimant.otherDetails",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Alla voce 'Altro' si possono inserire altre informazioni che permettano di identificare l'attore, per esempio la data di nascita, la professione o la funzione nell’impresa. Se vi è più di un attore, aggiungere dei fogli.",
+          "simplifiedText": "Nella sezione 'Altro' è possibile inserire altre informazioni utili ad identificare la persona o l'ente, come la data di nascita, la professione o il ruolo nell'impresa.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": []
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/defendant",
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "In questa sezione devono essere fornite informazioni sul convenuto e, se noto, sul suo rappresentante. Si noti che non è obbligatorio essere rappresentati da un avvocato o da un altro professionista del settore legale. In alcuni paesi può non essere sufficiente fornire esclusivamente una casella postale come indirizzo, ed è quindi necessario includere, oltre al codice postale, anche la via e il numero civico. L'inosservanza di questa disposizione può compromettere la notificazione e/o comunicazione del documento.",
+          "simplifiedText": "In questa sezione vanno fornite informazioni sulla persona (fisica o giuridica) cui si intende fare causa e, se del caso, del soggetto rappresentante. Per il buon esito delle comunicazioni da parte dell’ufficio giudiziario è opportuno inserire in maniera completa indirizzo geografico del soggetto che si cita in giudizio.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "text": "convenuto",
+              "position": "58-9",
+              "definition": "Il convenuto è il soggetto contro il quale si intende iniziare l'azione legale, cioè la parte chiamata in giudizio dall'attore.",
+              "synonyms": [],
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/defendant.personalIdNumber",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Se si è a conoscenza di un numero d’identificazione personale attribuito al convenuto dalle autorità di uno Stato membro sarebbe utile indicarlo. In alternativa o in aggiunta, sarebbe utile fornire il numero del passaporto o di un documento di identità del convenuto, ove disponibile. Se il convenuto è una persona giuridica o un soggetto avente capacità giuridica, sarebbe utile fornire un numero di registrazione pertinente, ove noto.",
+          "simplifiedText": "È utile indicare il numero di identificazione personale assegnato dalle autorità di uno Stato membro, se conosciuto. In alternativa o in aggiunta, sarebbe utile fornire il numero del passaporto o di un altro documento d'identità. Per la persona giuridica è utile fornire il relativo numero di identificazione/registrazione.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": [
+            {
+              "position": "308-17",
+              "text": "persona giuridica",
+              "definition": "Una persona giuridica è un'entità, una società, un'organizzazione, un'istituzione o un'associazione, a prescindere dal riconoscimento o meno della personalità stessa.",
+              "synonyms": [],
+              "links": ["https://www.law.cornell.edu/wex/legal_person"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/defendant.otherDetails",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Alla voce 'Altro' si possono inserire altre informazioni che permettano di identificare il convenuto, per esempio la data di nascita, la professione o la funzione nell’impresa. Se vi è più di un convenuto, aggiungere dei fogli.",
+          "simplifiedText": "Nella sezione 'Altro' è possibile inserire altre informazioni utili ad identificare la persona o l'ente a cui si intende fare causa, come la data di nascita, la professione o il ruolo nell'impresa.",
+          "link": [
+            {
+              "url": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": []
+        }
+      ]
+    },
+    {
+      "id": "http://scanii.org/domain/amendment",
+      "infoElements": []
+    }
+  ]
+}

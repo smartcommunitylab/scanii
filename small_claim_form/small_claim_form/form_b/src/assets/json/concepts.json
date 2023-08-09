@@ -1,0 +1,57 @@
+{
+  "domain": "http://scanii.org/domain",
+  "concepts": [
+    {
+      "meta": {
+        "uri": "http://scanii.org/domain/claimant",
+        "extendsOr": [
+          "http://scanii.org/datastructure/citizen",
+          "http://scanii.org/datastructure/organization"
+        ]
+      },
+      "props": {
+        "representative": "ZERO_OR_MANY(http://scanii.org/domain/representative)",
+        "otherDetails": "string"
+      }
+    },
+    {
+      "meta": {
+        "uri": "http://scanii.org/domain/defendant",
+        "extendsOr": [
+          "http://scanii.org/datastructure/citizen",
+          "http://scanii.org/datastructure/organization"
+        ]
+      },
+      "props": {
+        "representative": "ZERO_OR_MANY(http://scanii.org/domain/representative)",
+        "otherDetails": "string"
+      }
+    },
+    {
+      "meta": {
+        "uri": "http://scanii.org/domain/representative",
+        "extendsOr": [
+          "http://scanii.org/datastructure/citizen",
+          "http://scanii.org/datastructure/organization"
+        ]
+      }
+    },
+    {
+      "meta": {
+        "uri": "http://scanii.org/domain/courtTribunal",
+        "extends": ["http://scanii.org/datastructure/organization"]
+      }
+    },
+
+    {
+      "meta": {
+        "uri": "http://scanii.org/domain/case"
+      },
+      "props": {
+        "claimant": "ONE_OR_MANY(http://scanii.org/domain/claimant)",
+        "defendant": "ONE_OR_MANY(http://scanii.org/domain/defendat)",
+        "courtTrib": "http://scanii.org/domain/courtTribunal"
+      }
+    }
+  ]
+}

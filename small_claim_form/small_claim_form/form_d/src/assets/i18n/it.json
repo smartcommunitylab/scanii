@@ -6,7 +6,8 @@
     "cancel": "Annulla",
     "downloadJSON": "Scarica JSON",
     "downloadPDF": "Scarica PDF",
-    "submit": "Invia"
+    "submit": "Invia",
+    "preview": "Anteprima"
   },
   "errors": {
     "required": "Campo obbligatorio",
@@ -22,13 +23,22 @@
     "onlineForms": "...",
     "smallClaimsForms": "...",
     "formD": "Modulo D - Certificato riguardante una sentenza nell’ambito del procedimento europeo per le controversie di modesta entità o una transazione giudiziaria",
+    "completeVersion": "Passa alla versione semplificata",
+    "simplifiedVersion": "Passa alla versione completa",
     "formSteps": "Fasi di compilazione",
     "step1": "Fase 1",
     "step2": "Fase 2",
+    "usefulPDFs": "PDF utili",
+    "noPdfs": "Non sono presenti pdf utili per la sezione",
+    "synonyms": "Sinonimi",
+    "noSynonyms": "Non sono presenti sinonimi per la sezione",
     "loadSaveDraftExplanation": "È possibile salvare il modulo su cui si sta lavorando come bozza. Per completarlo basta caricare il modulo salvato in un secondo momento.",
     "loadDraft": "Carica bozza",
     "saveDraft": "Scarica bozza",
-    "errorToast": "<strong>Errore di compilazione.</strong> Si prega di controllare la sezione"
+    "warningToast": "<strong>Attenzione</strong>, ricorda che stai visualizzando delle <strong>informazioni semplficate</strong>",
+    "errorToast": "<strong>Errore di compilazione.</strong> Si prega di controllare la sezione",
+    "originalText": "Testo originale",
+    "simplifiedText": "Testo semplificato"
   },
   "footer": {
     "reportAProblem": "Segnala un problema tecnico o di contenuto o lascia un commento su questa pagina",

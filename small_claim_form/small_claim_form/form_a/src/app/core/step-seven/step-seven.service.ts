@@ -34,7 +34,7 @@ export class StepSevenService {
   dateAndSignatureForm = this.fb.group({
     city: ["", [Validators.required]],
     date: ["", [Validators.required]],
-    sign: ["", [Validators.required]],
+    sign: [""],
   });
 
   onStableSubscription: Subscription;

@@ -1,0 +1,17 @@
+{
+  "domain": "http://scanii.org/simplification/smallclaimform",
+  "concepts": [
+    {
+      "id": "http://scanii.org/domain/guidelines",
+      "infoElements": []
+    },
+    {
+      "id": "http://scanii.org/domain/courtPart",
+      "infoElements": []
+    },
+    {
+      "id": "http://scanii.org/domain/bankDetails/defendantPart",
+      "infoElements": []
+    }
+  ]
+}

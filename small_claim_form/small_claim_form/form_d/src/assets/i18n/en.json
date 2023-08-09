@@ -6,7 +6,8 @@
     "cancel": "Annulla",
     "downloadJSON": "Scarica JSON",
     "downloadPDF": "Scarica PDF",
-    "submit": "Invia"
+    "submit": "Invia",
+    "preview": "Anteprima"
   },
   "errors": {
     "required": "Campo obbligatorio",
@@ -22,13 +23,22 @@
     "onlineForms": "...",
     "smallClaimsForms": "...",
     "formD": "Form D - Certificate concerning a judgment in the European small claims procedure or a court settlement",
+    "completeVersion": "Switch to simplified version",
+    "simplifiedVersion": "Switch to complete version",
     "formSteps": "Form steps",
     "step1": "Step 1",
     "step2": "Step 2",
+    "usefulPDFs": "Useful PDFs",
+    "noPdfs": "There are no useful pdfs for this step",
+    "synonyms": "Synonyms",
+    "noSynonyms": "There are no synonyms for this step",
     "loadSaveDraftExplanation": "You can save a form you are working on as a draft. Load a saved form later to complete it.",
     "loadDraft": "Load draft",
     "saveDraft": "Download draft",
-    "errorToast": "<strong>Errore di compilazione.</strong> Si prega di controllare la sezione"
+    "warningToast": "<strong>Attenzione</strong>, ricorda che stai visualizzando delle <strong>informazioni semplficate</strong>",
+    "errorToast": "<strong>Errore di compilazione.</strong> Si prega di controllare la sezione",
+    "originalText": "Testo originale",
+    "simplifiedText": "Testo semplificato"
   },
   "footer": {
     "reportAProblem": "Report a technical / content problem or give feedback on this page",

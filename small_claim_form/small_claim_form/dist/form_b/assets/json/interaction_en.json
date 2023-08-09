@@ -1,0 +1,37 @@
+{
+  "domain": "http://scanii.org/simplification/smallclaimform",
+  "concepts": [
+    {
+      "id": "http://scanii.org/domain/courtTribunal",
+      "infoElements": []
+    },
+    {
+      "id": "http://scanii.org/domain/claimant",
+      "infoElements": []
+    },
+    {
+      "id": "http://scanii.org/domain/claimant.personalIdNumber",
+      "infoElements": []
+    },
+    {
+      "id": "http://scanii.org/domain/claimant.otherDetails",
+      "infoElements": []
+    },
+    {
+      "id": "http://scanii.org/domain/defendant",
+      "infoElements": []
+    },
+    {
+      "id": "http://scanii.org/domain/defendant.personalIdNumber",
+      "infoElements": []
+    },
+    {
+      "id": "http://scanii.org/domain/defendant.otherDetails",
+      "infoElements": []
+    },
+    {
+      "id": "http://scanii.org/domain/amendment",
+      "infoElements": []
+    }
+  ]
+}

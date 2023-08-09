@@ -1,0 +1,44 @@
+{
+  "model": "2.0",
+  "concepts": ["http://scanii.org/domain"],
+  "simplification": "http://scanii.org/simplification/smallclaimform",
+  "blocks": [
+    {
+      "id": "step1",
+      "type": "BLOCK",
+      "xpath": "//*[@id='step1']",
+      "blocks": [
+        {
+          "id": "step1_1",
+          "type": "BLOCK",
+          "xpath": "//*[@id='step1_1']",
+          "concept": "http://scanii.org/domain/courtTribunal",
+          "dependencies": []
+        },
+        {
+          "id": "step1_2",
+          "type": "BLOCK",
+          "xpath": "//*[@id='step1_2']",
+          "concept": "ONE_OR_MANY(http://scanii.org/domain/claimant)",
+          "dependencies": ["step1_1"]
+        },
+        {
+          "id": "step1_3",
+          "type": "BLOCK",
+          "xpath": "//*[@id='step1_3']",
+          "concept": "ONE_OR_MANY(http://scanii.org/domain/defendant)",
+          "dependencies": ["step1_2"]
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "step2",
+      "type": "BLOCK",
+      "xpath": "//*[@id='step2']",
+      "concept": "http://scanii.org/domain/certifcate",
+      "dependencies": ["step1"]
+    }
+  ],
+  "fields": []
+}

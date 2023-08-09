@@ -2,7 +2,6 @@
   <div class="form-row full-width">
     <div class="description">
       <form role="form" [formGroup]="stepOneService.form">
-
         <div class="form-row full-width bold">
           <div>
             <label
@@ -19,21 +18,21 @@
             <span class="marginleft20px">
               <div class="form-row full-width bold">
                 <div>
-                  <label for="dynformSCB1CountryCourt">
+                  <label for="dynformSCD1CountryCourt">
                     <span [translate]="'stepOne.courtCountry'"
                       >1.1. Country
                     </span>
 
                     <span
                       class="asterisk"
-                      id="requiredStar_required_dynformSCB1CountryCourt"
+                      id="requiredStar_required_dynformSCD1CountryCourt"
                       >*</span
                     >
                   </label>
 
                   <div
                     class="input-wrapper regular"
-                    id="input-wrapper_dynformSCB1CountryCourt"
+                    id="input-wrapper_dynformSCD1CountryCourt"
                     [ngClass]="{
                       invalid:
                         stepOneService.form.get('court')!.get('courtCountry')!
@@ -45,14 +44,14 @@
                     <div class="input-content nopaddingTop">
                       <select
                         title="Country"
-                        name="dynformSCB1CountryCourt"
-                        id="dynformSCB1CountryCourt"
+                        name="dynformSCD1CountryCourt"
+                        id="dynformSCD1CountryCourt"
                         class="df_select df_mandatory"
                         formControlName="courtCountry"
                         (change)="
                           expandCourtWorldCountrySelect(
                             $event,
-                            'dynformSCB1CountryCourt_div'
+                            'dynformSCD1CountryCourt_div'
                           )
                         "
                       >
@@ -97,7 +96,7 @@
                 "
                     >
                       <span
-                        id="validation_error_text_dynformSCB1CountryCourt"
+                        id="validation_error_text_dynformSCD1CountryCourt"
                         class="error"
                         style="position: relative; top: 0px"
                         [translate]="'errors.required'"
@@ -109,24 +108,24 @@
                 </div>
               </div>
 
-              <div id="dynformSCB1CountryCourt_div" class="df_collapsed">
+              <div id="dynformSCD1CountryCourt_div" class="df_collapsed">
                 <div class="form-row full-width bold">
                   <div>
-                    <label for="dynformSCB1CountryCourtOtherSpecify">
+                    <label for="dynformSCD1CountryCourtOtherSpecify">
                       <span [translate]="'stepOne.specify'">
                         Please specify
                       </span>
 
                       <span
                         class="asterisk"
-                        id="requiredStar_required_dynformSCB1CountryCourtOtherSpecify"
+                        id="requiredStar_required_dynformSCD1CountryCourtOtherSpecify"
                         >*</span
                       >
                     </label>
 
                     <div
                       class="input-wrapper regular"
-                      id="input-wrapper_dynformSCB1CountryCourtOtherSpecify"
+                      id="input-wrapper_dynformSCD1CountryCourtOtherSpecify"
                       [ngClass]="{
                         invalid:
                           (stepOneService.form
@@ -141,11 +140,11 @@
                         <input
                           type="text"
                           title="Please specify"
-                          name="dynformSCB1CountryCourtOtherSpecify"
+                          name="dynformSCD1CountryCourtOtherSpecify"
                           maxlength="20"
                           value=""
                           class="df_textbox df_mandatory"
-                          id="dynformSCB1CountryCourtOtherSpecify"
+                          id="dynformSCD1CountryCourtOtherSpecify"
                           formControlName="courtCountryOther"
                         />
                       </div>
@@ -165,7 +164,7 @@
                         *ngIf="stepOneService.form.get('court')?.get('courtCountryOther')?.errors?.['required']"
                       >
                         <span
-                          id="validation_error_text_dynformSCB1CountryCourtOtherSpecify"
+                          id="validation_error_text_dynformSCD1CountryCourtOtherSpecify"
                           class="error"
                           style="position: relative; top: 0px"
                           [translate]="'errors.required'"
@@ -180,19 +179,19 @@
 
               <div class="form-row full-width bold">
                 <div>
-                  <label for="dynformSCB1Name">
+                  <label for="dynformSCD1Name">
                     <span [translate]="'stepOne.courtName'"> 1.2. Name </span>
 
                     <span
                       class="asterisk"
-                      id="requiredStar_required_dynformSCB1Name"
+                      id="requiredStar_required_dynformSCD1Name"
                       >*</span
                     >
                   </label>
 
                   <div
                     class="input-wrapper regular"
-                    id="input-wrapper_dynformSCB1Name"
+                    id="input-wrapper_dynformSCD1Name"
                     [ngClass]="{
                       invalid:
                         stepOneService.form.get('court')!.get('name')!
@@ -204,10 +203,10 @@
                       <input
                         type="text"
                         title="1.1. Name"
-                        name="dynformSCB1Name"
+                        name="dynformSCD1Name"
                         value=""
                         class="df_textbox df_mandatory"
-                        id="dynformSCB1Name"
+                        id="dynformSCD1Name"
                         formControlName="name"
                       />
                     </div>
@@ -226,7 +225,7 @@
                 "
                     >
                       <span
-                        id="validation_error_text_dynformSCB1Name"
+                        id="validation_error_text_dynformSCD1Name"
                         class="error"
                         style="position: relative; top: 0px"
                         [translate]="'errors.required'"
@@ -240,21 +239,21 @@
 
               <div class="form-row full-width bold">
                 <div>
-                  <label for="dynformSCB1StreetAndNumberPoBox">
+                  <label for="dynformSCD1StreetAndNumberPoBox">
                     <span [translate]="'stepOne.courtStreet'">
                       1.3. Street and number/PO box
                     </span>
 
                     <span
                       class="asterisk"
-                      id="requiredStar_required_dynformSCB1StreetAndNumberPoBox"
+                      id="requiredStar_required_dynformSCD1StreetAndNumberPoBox"
                       >*</span
                     >
                   </label>
 
                   <div
                     class="input-wrapper regular"
-                    id="input-wrapper_dynformSCB1StreetAndNumberPoBox"
+                    id="input-wrapper_dynformSCD1StreetAndNumberPoBox"
                     [ngClass]="{
                       invalid:
                         stepOneService.form.get('court')!.get('street')!
@@ -266,11 +265,11 @@
                       <input
                         type="text"
                         title="1.2. Street and number/PO box"
-                        name="dynformSCB1StreetAndNumberPoBox"
+                        name="dynformSCD1StreetAndNumberPoBox"
                         maxlength="150"
                         value=""
                         class="df_textbox df_mandatory"
-                        id="dynformSCB1StreetAndNumberPoBox"
+                        id="dynformSCD1StreetAndNumberPoBox"
                         formControlName="street"
                       />
                     </div>
@@ -289,7 +288,7 @@
                 "
                     >
                       <span
-                        id="validation_error_text_dynformSCB1StreetAndNumberPoBox"
+                        id="validation_error_text_dynformSCD1StreetAndNumberPoBox"
                         class="error"
                         style="position: relative; top: 0px"
                         [translate]="'errors.required'"
@@ -303,21 +302,21 @@
 
               <div class="form-row full-width bold">
                 <div>
-                  <label for="dynformSCB1CityAndPostalCode">
+                  <label for="dynformSCD1CityAndPostalCode">
                     <span [translate]="'stepOne.courtCityPostalCode'">
                       1.4. City and postal code
                     </span>
 
                     <span
                       class="asterisk"
-                      id="requiredStar_required_dynformSCB1CityAndPostalCode"
+                      id="requiredStar_required_dynformSCD1CityAndPostalCode"
                       >*</span
                     >
                   </label>
 
                   <div
                     class="input-wrapper regular"
-                    id="input-wrapper_dynformSCB1CityAndPostalCode"
+                    id="input-wrapper_dynformSCD1CityAndPostalCode"
                     [ngClass]="{
                       invalid:
                         stepOneService.form.get('court')!.get('cityPostalCode')!
@@ -330,11 +329,11 @@
                       <input
                         type="text"
                         title="1.3. City and postal code"
-                        name="dynformSCB1CityAndPostalCode"
+                        name="dynformSCD1CityAndPostalCode"
                         maxlength="150"
                         value=""
                         class="df_textbox df_mandatory"
-                        id="dynformSCB1CityAndPostalCode"
+                        id="dynformSCD1CityAndPostalCode"
                         formControlName="cityPostalCode"
                       />
                     </div>
@@ -355,7 +354,7 @@
                 "
                     >
                       <span
-                        id="validation_error_text_dynformSCB1CityAndPostalCode"
+                        id="validation_error_text_dynformSCD1CityAndPostalCode"
                         class="error"
                         style="position: relative; top: 0px"
                         [translate]="'errors.required'"
@@ -436,7 +435,7 @@
                               "
                               >
                                 <span
-                                  id="validation_error_text_dynformSCB1ClaimantOrganisationSurnameFirstName"
+                                  id="validation_error_text_dynformSCD1ClaimantOrganisationSurnameFirstName"
                                   class="error"
                                   style="position: relative; top: 0px"
                                   [translate]="
@@ -452,7 +451,7 @@
                               <div class="form-row full-width bold">
                                 <label
                                   [attr.for]="
-                                    'parties[' + i + '].dynformSCB1ClaimantName'
+                                    'parties[' + i + '].dynformSCD1ClaimantName'
                                   "
                                 >
                                   <span
@@ -465,7 +464,7 @@
                                     [attr.id]="
                                       'requiredStar_blank_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantName'
+                                      '].dynformSCD1ClaimantName'
                                     "
                                   ></span>
                                 </label>
@@ -475,7 +474,7 @@
                                   [attr.id]="
                                     'input-wrapper_parties[' +
                                     i +
-                                    '].dynformSCB1ClaimantName'
+                                    '].dynformSCD1ClaimantName'
                                   "
                                   [ngClass]="{
                                   invalid:
@@ -492,14 +491,14 @@
                                       [attr.name]="
                                         'parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantName'
+                                        '].dynformSCD1ClaimantName'
                                       "
                                       maxlength="150"
                                       value=""
                                       [attr.id]="
                                         'parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantName'
+                                        '].dynformSCD1ClaimantName'
                                       "
                                       class="df_textbox"
                                       data-title="1.1. Corporate name of company or organisation"
@@ -519,7 +518,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantSurname'
+                                      '].dynformSCD1ClaimantSurname'
                                     "
                                     ><span [translate]="'stepOne.surname'"
                                       >Surname</span
@@ -529,7 +528,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantSurname'
+                                        '].dynformSCD1ClaimantSurname'
                                       "
                                     ></span>
                                   </label>
@@ -538,7 +537,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantSurname'
+                                      '].dynformSCD1ClaimantSurname'
                                     "
                                     [ngClass]="{
                                     invalid:
@@ -555,14 +554,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantSurname'
+                                          '].dynformSCD1ClaimantSurname'
                                         "
                                         maxlength="150"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantSurname'
+                                          '].dynformSCD1ClaimantSurname'
                                         "
                                         class="df_textbox"
                                         data-title="Surname"
@@ -583,7 +582,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantFirstname'
+                                      '].dynformSCD1ClaimantFirstname'
                                     "
                                   >
                                     <span [translate]="'stepOne.firstName'"
@@ -594,7 +593,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantFirstname'
+                                        '].dynformSCD1ClaimantFirstname'
                                       "
                                     >
                                     </span>
@@ -604,7 +603,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantFirstname'
+                                      '].dynformSCD1ClaimantFirstname'
                                     "
                                     [ngClass]="{
                                     invalid:
@@ -621,14 +620,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantFirstname'
+                                          '].dynformSCD1ClaimantFirstname'
                                         "
                                         maxlength="150"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantFirstname'
+                                          '].dynformSCD1ClaimantFirstname'
                                         "
                                         class="df_textbox"
                                         data-title="First name"
@@ -649,7 +648,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantIdentification'
+                                      '].dynformSCD1ClaimantIdentification'
                                     "
                                   >
                                     <span
@@ -665,7 +664,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantIdentification'
+                                        '].dynformSCD1ClaimantIdentification'
                                       "
                                     ></span>
                                   </label>
@@ -680,7 +679,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantIdentification'
+                                      '].dynformSCD1ClaimantIdentification'
                                     "
                                     style="padding-right: 0"
                                   >
@@ -690,14 +689,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantIdentification'
+                                          '].dynformSCD1ClaimantIdentification'
                                         "
                                         maxlength="150"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantIdentification'
+                                          '].dynformSCD1ClaimantIdentification'
                                         "
                                         class="df_textbox"
                                         data-title="1.2. Personal identification number or passport number/ registration number"
@@ -710,14 +709,14 @@
                                     [attr.id]="
                                       'validation_error_text_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantIdentification'
+                                      '].dynformSCD1ClaimantIdentification'
                                     "
                                     class="error"
                                     style="position: relative; top: 0px"
                                   >
                                   </span>
 
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantIdentification" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantIdentification" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
                               <div class="form-row full-width bold">
@@ -726,7 +725,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantStreet'
+                                      '].dynformSCD1ClaimantStreet'
                                     "
                                   >
                                     <span [translate]="'stepOne.claimantStreet'"
@@ -738,7 +737,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantStreet'
+                                        '].dynformSCD1ClaimantStreet'
                                       "
                                       >*</span
                                     >
@@ -749,7 +748,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantStreet'
+                                      '].dynformSCD1ClaimantStreet'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -769,14 +768,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantStreet'
+                                          '].dynformSCD1ClaimantStreet'
                                         "
                                         maxlength="50"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantStreet'
+                                          '].dynformSCD1ClaimantStreet'
                                         "
                                         class="df_textbox df_mandatory"
                                         data-title="1.3. Street and number/PO box"
@@ -805,7 +804,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantStreet'
+                                          '].dynformSCD1ClaimantStreet'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -814,7 +813,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantStreet" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantStreet" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
                               <div class="form-row full-width bold">
@@ -823,7 +822,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantPostalCode'
+                                      '].dynformSCD1ClaimantPostalCode'
                                     "
                                   >
                                     <span
@@ -836,7 +835,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantPostalCode'
+                                        '].dynformSCD1ClaimantPostalCode'
                                       "
                                       >*</span
                                     >
@@ -847,7 +846,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantPostalCode'
+                                      '].dynformSCD1ClaimantPostalCode'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -867,14 +866,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantPostalCode'
+                                          '].dynformSCD1ClaimantPostalCode'
                                         "
                                         maxlength="150"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantPostalCode'
+                                          '].dynformSCD1ClaimantPostalCode'
                                         "
                                         class="df_textbox df_mandatory"
                                         data-title="1.4. Postal code"
@@ -903,7 +902,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantPostalCode'
+                                          '].dynformSCD1ClaimantPostalCode'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -912,7 +911,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantPostalCode" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantPostalCode" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
                               <div class="form-row full-width bold">
@@ -921,7 +920,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantCity'
+                                      '].dynformSCD1ClaimantCity'
                                     "
                                   >
                                     <span [translate]="'stepOne.city'"
@@ -933,7 +932,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantCity'
+                                        '].dynformSCD1ClaimantCity'
                                       "
                                       >*</span
                                     >
@@ -944,7 +943,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantCity'
+                                      '].dynformSCD1ClaimantCity'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -964,14 +963,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantCity'
+                                          '].dynformSCD1ClaimantCity'
                                         "
                                         maxlength="50"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantCity'
+                                          '].dynformSCD1ClaimantCity'
                                         "
                                         class="df_textbox df_mandatory"
                                         data-title="City"
@@ -1000,7 +999,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantCity'
+                                          '].dynformSCD1ClaimantCity'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -1009,7 +1008,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantCity" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantCity" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
                               <div class="form-row full-width bold">
@@ -1018,7 +1017,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantCountry'
+                                      '].dynformSCD1ClaimantCountry'
                                     "
                                   >
                                     <span
@@ -1031,7 +1030,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantCountry'
+                                        '].dynformSCD1ClaimantCountry'
                                       "
                                       >*</span
                                     >
@@ -1042,7 +1041,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantCountry'
+                                      '].dynformSCD1ClaimantCountry'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -1061,7 +1060,7 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantCountry'
+                                          '].dynformSCD1ClaimantCountry'
                                         "
                                         (change)="
                                           expandClaimantWorldCountrySelect(
@@ -1073,7 +1072,7 @@
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantCountry'
+                                          '].dynformSCD1ClaimantCountry'
                                         "
                                         class="df_select df_mandatory"
                                         data-title="2.5. Country:"
@@ -1125,7 +1124,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantCountry'
+                                          '].dynformSCD1ClaimantCountry'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -1134,7 +1133,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantCountry" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantCountry" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
                               <div></div>
@@ -1143,7 +1142,7 @@
                                   [attr.id]="
                                     'parties[' +
                                     i +
-                                    '].dynformSCB1ClaimantCountry_div'
+                                    '].dynformSCD1ClaimantCountry_div'
                                   "
                                   class="df_collapsed"
                                 >
@@ -1153,7 +1152,7 @@
                                         [attr.for]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantCountryOther'
+                                          '].dynformSCD1ClaimantCountryOther'
                                         "
                                       >
                                         <span [translate]="'stepOne.specify'"
@@ -1165,7 +1164,7 @@
                                           [attr.id]="
                                             'requiredStar_required_parties[' +
                                             i +
-                                            '].dynformSCB1ClaimantCountryOther'
+                                            '].dynformSCD1ClaimantCountryOther'
                                           "
                                           >*</span
                                         >
@@ -1176,7 +1175,7 @@
                                         [attr.id]="
                                           'input-wrapper_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantCountryOther'
+                                          '].dynformSCD1ClaimantCountryOther'
                                         "
                                         [ngClass]="{
                                           invalid:
@@ -1193,15 +1192,15 @@
                                             [attr.name]="
                                               'parties[' +
                                               i +
-                                              '].dynformSCB1ClaimantCountryOther'
+                                              '].dynformSCD1ClaimantCountryOther'
                                             "
                                             [attr.id]="
                                               'parties[' +
                                               i +
-                                              '].dynformSCB1ClaimantCountryOther'
+                                              '].dynformSCD1ClaimantCountryOther'
                                             "
                                             [attr.class]="
-                                              'dynformSCB1ClaimantCountryOther' +
+                                              'dynformSCD1ClaimantCountryOther' +
                                               i
                                             "
                                             style="width: 460px; display: none"
@@ -1250,7 +1249,7 @@
                                             [attr.id]="
                                               'validation_error_text_parties[' +
                                               i +
-                                              '].dynformSCB1ClaimantCountryOther'
+                                              '].dynformSCD1ClaimantCountryOther'
                                             "
                                             class="error"
                                             style="position: relative; top: 0px"
@@ -1259,7 +1258,7 @@
                                           </span>
                                         </div>
                                       </div>
-                                      <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantCountryOther" class="error" style="position:relative;top:0px;"> </span>-->
+                                      <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantCountryOther" class="error" style="position:relative;top:0px;"> </span>-->
                                     </div>
                                   </div>
 
@@ -1273,7 +1272,7 @@
                                     [attr.id]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantCountryOtherFootnote'
+                                      '].dynformSCD1ClaimantCountryOtherFootnote'
                                     "
                                   ></p>
                                 </div>
@@ -1284,7 +1283,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantTelephone'
+                                      '].dynformSCD1ClaimantTelephone'
                                     "
                                   >
                                     <span
@@ -1299,7 +1298,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantTelephone'
+                                        '].dynformSCD1ClaimantTelephone'
                                       "
                                     ></span>
                                   </label>
@@ -1309,7 +1308,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantTelephone'
+                                      '].dynformSCD1ClaimantTelephone'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -1327,14 +1326,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantTelephone'
+                                          '].dynformSCD1ClaimantTelephone'
                                         "
                                         maxlength="20"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantTelephone'
+                                          '].dynformSCD1ClaimantTelephone'
                                         "
                                         class="df_textbox"
                                         data-title="1.6. Telephone"
@@ -1364,7 +1363,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantTelephone'
+                                          '].dynformSCD1ClaimantTelephone'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -1377,7 +1376,7 @@
                                     </div>
                                   </div>
 
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantTelephone" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantTelephone" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
                               <div class="form-row full-width bold">
@@ -1386,7 +1385,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantEmail'
+                                      '].dynformSCD1ClaimantEmail'
                                     "
                                   >
                                     <span [translate]="'stepOne.claimantEmail'"
@@ -1398,7 +1397,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantEmail'
+                                        '].dynformSCD1ClaimantEmail'
                                       "
                                     ></span>
                                   </label>
@@ -1408,7 +1407,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantEmail'
+                                      '].dynformSCD1ClaimantEmail'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -1428,14 +1427,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantEmail'
+                                          '].dynformSCD1ClaimantEmail'
                                         "
                                         maxlength="320"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantEmail'
+                                          '].dynformSCD1ClaimantEmail'
                                         "
                                         class="df_textbox"
                                         data-title="1.7. E-mail"
@@ -1464,7 +1463,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantEmail'
+                                          '].dynformSCD1ClaimantEmail'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -1476,7 +1475,7 @@
                                     </div>
                                   </div>
 
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantEmail" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantEmail" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
                               <div class="form-row full-width bold">
@@ -1485,7 +1484,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeReference'
+                                      '].dynformSCD1ClaimantRepresentativeReference'
                                     "
                                   >
                                     <span
@@ -1501,7 +1500,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantRepresentativeReference'
+                                        '].dynformSCD1ClaimantRepresentativeReference'
                                       "
                                     ></span>
                                   </label>
@@ -1511,7 +1510,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeReference'
+                                      '].dynformSCD1ClaimantRepresentativeReference'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -1528,12 +1527,12 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeReference'
+                                          '].dynformSCD1ClaimantRepresentativeReference'
                                         "
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeReference'
+                                          '].dynformSCD1ClaimantRepresentativeReference'
                                         "
                                         (change)="
                                           onClaimantRepresentativeChange(
@@ -1591,7 +1590,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeReference'
+                                          '].dynformSCD1ClaimantRepresentativeReference'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -1600,7 +1599,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantRepresentativeReference" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantRepresentativeReference" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
 
@@ -1617,38 +1616,38 @@
                                 <div class="form-row full-width bold">
                                   <div>
                                     <label
-                                      for="dynformSCB1ClaimantRepresentativeAndContactDetails"
+                                      for="dynformSCD1ClaimantRepresentativeAndContactDetails"
                                     >
                                       2.8.1. Surname, first name/name of company or organisation
 
                                       <span
                                         class="asterisk"
-                                        id="requiredStar_blank_dynformSCB1ClaimantRepresentativeAndContactDetails"
+                                        id="requiredStar_blank_dynformSCD1ClaimantRepresentativeAndContactDetails"
                                       ></span>
                                     </label>
 
                                     <div
                                       class="input-wrapper regular"
-                                      id="input-wrapper_dynformSCB1ClaimantRepresentativeAndContactDetails"
+                                      id="input-wrapper_dynformSCD1ClaimantRepresentativeAndContactDetails"
                                     >
                                       <div class="input-content nopaddingTop">
                                         <input
                                           type="text"
                                           title="2.8.1. Surname, first name/name of company or organisation"
-                                          name="dynformSCB1ClaimantRepresentativeAndContactDetails"
+                                          name="dynformSCD1ClaimantRepresentativeAndContactDetails"
                                           maxlength="150"
                                           value=""
                                           onchange="validateFieldOnBlur(this)"
                                           onblur="removeClassOnBlur(this)"
                                           onfocus="addClassOnFocus(this)"
                                           class="df_textbox"
-                                          id="dynformSCB1ClaimantRepresentativeAndContactDetails"
+                                          id="dynformSCD1ClaimantRepresentativeAndContactDetails"
                                         />
                                       </div>
                                     </div>
 
                                     <span
-                                      id="validation_error_text_dynformSCB1ClaimantRepresentativeAndContactDetails"
+                                      id="validation_error_text_dynformSCD1ClaimantRepresentativeAndContactDetails"
                                       class="error"
                                       style="position: relative; top: 0px"
                                     >
@@ -1658,37 +1657,37 @@
 
                                 <div class="form-row full-width bold">
                                   <div>
-                                    <label for="dynformSCB1ClaimantRepresentativeStreet">
+                                    <label for="dynformSCD1ClaimantRepresentativeStreet">
                                       2.8.2. Address
 
                                       <span
                                         class="asterisk"
-                                        id="requiredStar_blank_dynformSCB1ClaimantRepresentativeStreet"
+                                        id="requiredStar_blank_dynformSCD1ClaimantRepresentativeStreet"
                                       ></span>
                                     </label>
 
                                     <div
                                       class="input-wrapper regular"
-                                      id="input-wrapper_dynformSCB1ClaimantRepresentativeStreet"
+                                      id="input-wrapper_dynformSCD1ClaimantRepresentativeStreet"
                                     >
                                       <div class="input-content nopaddingTop">
                                         <input
                                           type="text"
                                           title="2.8.2. Address"
-                                          name="dynformSCB1ClaimantRepresentativeStreet"
+                                          name="dynformSCD1ClaimantRepresentativeStreet"
                                           maxlength="150"
                                           value=""
                                           onchange="validateFieldOnBlur(this)"
                                           onblur="removeClassOnBlur(this)"
                                           onfocus="addClassOnFocus(this)"
                                           class="df_textbox"
-                                          id="dynformSCB1ClaimantRepresentativeStreet"
+                                          id="dynformSCD1ClaimantRepresentativeStreet"
                                         />
                                       </div>
                                     </div>
 
                                     <span
-                                      id="validation_error_text_dynformSCB1ClaimantRepresentativeStreet"
+                                      id="validation_error_text_dynformSCD1ClaimantRepresentativeStreet"
                                       class="error"
                                       style="position: relative; top: 0px"
                                     >
@@ -1698,37 +1697,37 @@
 
                                 <div class="form-row full-width bold">
                                   <div>
-                                    <label for="dynformSCB1ClaimantRepresentativePostalCode">
+                                    <label for="dynformSCD1ClaimantRepresentativePostalCode">
                                       2.8.3. Postal code
 
                                       <span
                                         class="asterisk"
-                                        id="requiredStar_blank_dynformSCB1ClaimantRepresentativePostalCode"
+                                        id="requiredStar_blank_dynformSCD1ClaimantRepresentativePostalCode"
                                       ></span>
                                     </label>
 
                                     <div
                                       class="input-wrapper regular"
-                                      id="input-wrapper_dynformSCB1ClaimantRepresentativePostalCode"
+                                      id="input-wrapper_dynformSCD1ClaimantRepresentativePostalCode"
                                     >
                                       <div class="input-content nopaddingTop">
                                         <input
                                           type="text"
                                           title="2.8.3. Postal code"
-                                          name="dynformSCB1ClaimantRepresentativePostalCode"
+                                          name="dynformSCD1ClaimantRepresentativePostalCode"
                                           maxlength="150"
                                           value=""
                                           onchange="validateFieldOnBlur(this)"
                                           onblur="removeClassOnBlur(this)"
                                           onfocus="addClassOnFocus(this)"
                                           class="df_textbox"
-                                          id="dynformSCB1ClaimantRepresentativePostalCode"
+                                          id="dynformSCD1ClaimantRepresentativePostalCode"
                                         />
                                       </div>
                                     </div>
 
                                     <span
-                                      id="validation_error_text_dynformSCB1ClaimantRepresentativePostalCode"
+                                      id="validation_error_text_dynformSCD1ClaimantRepresentativePostalCode"
                                       class="error"
                                       style="position: relative; top: 0px"
                                     >
@@ -1738,37 +1737,37 @@
 
                                 <div class="form-row full-width bold">
                                   <div>
-                                    <label for="dynformSCB1ClaimantRepresentativeCity">
+                                    <label for="dynformSCD1ClaimantRepresentativeCity">
                                       2.8.4. City
 
                                       <span
                                         class="asterisk"
-                                        id="requiredStar_blank_dynformSCB1ClaimantRepresentativeCity"
+                                        id="requiredStar_blank_dynformSCD1ClaimantRepresentativeCity"
                                       ></span>
                                     </label>
 
                                     <div
                                       class="input-wrapper regular"
-                                      id="input-wrapper_dynformSCB1ClaimantRepresentativeCity"
+                                      id="input-wrapper_dynformSCD1ClaimantRepresentativeCity"
                                     >
                                       <div class="input-content nopaddingTop">
                                         <input
                                           type="text"
                                           title="2.8.4. City"
-                                          name="dynformSCB1ClaimantRepresentativeCity"
+                                          name="dynformSCD1ClaimantRepresentativeCity"
                                           maxlength="150"
                                           value=""
                                           onchange="validateFieldOnBlur(this)"
                                           onblur="removeClassOnBlur(this)"
                                           onfocus="addClassOnFocus(this)"
                                           class="df_textbox"
-                                          id="dynformSCB1ClaimantRepresentativeCity"
+                                          id="dynformSCD1ClaimantRepresentativeCity"
                                         />
                                       </div>
                                     </div>
 
                                     <span
-                                      id="validation_error_text_dynformSCB1ClaimantRepresentativeCity"
+                                      id="validation_error_text_dynformSCD1ClaimantRepresentativeCity"
                                       class="error"
                                       style="position: relative; top: 0px"
                                     >
@@ -1778,37 +1777,37 @@
 
                                 <div class="form-row full-width bold">
                                   <div>
-                                    <label for="dynformSCB1ClaimantRepresentativeCountry">
+                                    <label for="dynformSCD1ClaimantRepresentativeCountry">
                                       2.8.5. Country
 
                                       <span
                                         class="asterisk"
-                                        id="requiredStar_blank_dynformSCB1ClaimantRepresentativeCountry"
+                                        id="requiredStar_blank_dynformSCD1ClaimantRepresentativeCountry"
                                       ></span>
                                     </label>
 
                                     <div
                                       class="input-wrapper regular"
-                                      id="input-wrapper_dynformSCB1ClaimantRepresentativeCountry"
+                                      id="input-wrapper_dynformSCD1ClaimantRepresentativeCountry"
                                     >
                                       <div class="input-content nopaddingTop">
                                         <input
                                           type="text"
                                           title="2.8.5. Country"
-                                          name="dynformSCB1ClaimantRepresentativeCountry"
+                                          name="dynformSCD1ClaimantRepresentativeCountry"
                                           maxlength="150"
                                           value=""
                                           onchange="validateFieldOnBlur(this)"
                                           onblur="removeClassOnBlur(this)"
                                           onfocus="addClassOnFocus(this)"
                                           class="df_textbox"
-                                          id="dynformSCB1ClaimantRepresentativeCountry"
+                                          id="dynformSCD1ClaimantRepresentativeCountry"
                                         />
                                       </div>
                                     </div>
 
                                     <span
-                                      id="validation_error_text_dynformSCB1ClaimantRepresentativeCountry"
+                                      id="validation_error_text_dynformSCD1ClaimantRepresentativeCountry"
                                       class="error"
                                       style="position: relative; top: 0px"
                                     >
@@ -1824,7 +1823,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantOtherDetails'
+                                      '].dynformSCD1ClaimantOtherDetails'
                                     "
                                   >
                                     <span [translate]="'stepOne.claimantOther'"
@@ -1842,7 +1841,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantOtherDetails'
+                                      '].dynformSCD1ClaimantOtherDetails'
                                     "
                                   >
                                     <div class="input-content">
@@ -1850,7 +1849,7 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantOtherDetails'
+                                          '].dynformSCD1ClaimantOtherDetails'
                                         "
                                         cols="10"
                                         rows="7"
@@ -1858,7 +1857,7 @@
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantOtherDetails'
+                                          '].dynformSCD1ClaimantOtherDetails'
                                         "
                                         data-title="1.9. Other details"
                                         formControlName="otherDetails"
@@ -1869,7 +1868,7 @@
                                     [attr.id]="
                                       'validation_error_text_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantOtherDetails'
+                                      '].dynformSCD1ClaimantOtherDetails'
                                     "
                                     class="error"
                                     style="position: relative; top: 0px"
@@ -1954,7 +1953,7 @@
               "
                               >
                                 <span
-                                  id="validation_error_text_dynformSCB1ClaimantOrganisationSurnameFirstName"
+                                  id="validation_error_text_dynformSCD1ClaimantOrganisationSurnameFirstName"
                                   class="error"
                                   style="position: relative; top: 0px"
                                   [translate]="
@@ -1972,7 +1971,7 @@
                                   [attr.for]="
                                     'parties[' +
                                     i +
-                                    '].dynformSCB1ClaimantRepresentative'
+                                    '].dynformSCD1ClaimantRepresentative'
                                   "
                                 >
                                   <span
@@ -1988,7 +1987,7 @@
                                     [attr.id]="
                                       'requiredStar_blank_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentative'
+                                      '].dynformSCD1ClaimantRepresentative'
                                     "
                                   ></span>
                                 </label>
@@ -1998,7 +1997,7 @@
                                   [attr.id]="
                                     'input-wrapper_parties[' +
                                     i +
-                                    '].dynformSCB1ClaimantRepresentative'
+                                    '].dynformSCD1ClaimantRepresentative'
                                   "
                                   [ngClass]="{
                                   invalid:
@@ -2018,7 +2017,7 @@
                                       [attr.name]="
                                         'parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantRepresentative'
+                                        '].dynformSCD1ClaimantRepresentative'
                                       "
                                       maxlength="150"
                                       value=""
@@ -2036,7 +2035,7 @@
                                       [attr.id]="
                                         'parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantRepresentative'
+                                        '].dynformSCD1ClaimantRepresentative'
                                       "
                                       class="df_textbox"
                                       formControlName="organisation"
@@ -2050,7 +2049,7 @@
                                     [attr.id]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeSurname'
+                                      '].dynformSCD1ClaimantRepresentativeSurname'
                                     "
                                   >
                                     <span
@@ -2065,7 +2064,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantRepresentativeSurname'
+                                        '].dynformSCD1ClaimantRepresentativeSurname'
                                       "
                                     ></span>
                                   </label>
@@ -2075,7 +2074,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeSurname'
+                                      '].dynformSCD1ClaimantRepresentativeSurname'
                                     "
                                     [ngClass]="{
                                     invalid:
@@ -2095,7 +2094,7 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeSurname'
+                                          '].dynformSCD1ClaimantRepresentativeSurname'
                                         "
                                         maxlength="150"
                                         value=""
@@ -2114,7 +2113,7 @@
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeSurname'
+                                          '].dynformSCD1ClaimantRepresentativeSurname'
                                         "
                                         class="df_textbox"
                                         formControlName="surname"
@@ -2129,7 +2128,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeFistname'
+                                      '].dynformSCD1ClaimantRepresentativeFistname'
                                     "
                                   >
                                     <span
@@ -2143,7 +2142,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantRepresentativeFistname'
+                                        '].dynformSCD1ClaimantRepresentativeFistname'
                                       "
                                     ></span>
                                   </label>
@@ -2153,7 +2152,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeFistname'
+                                      '].dynformSCD1ClaimantRepresentativeFistname'
                                     "
                                     [ngClass]="{
                                     invalid:
@@ -2173,7 +2172,7 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeFistname'
+                                          '].dynformSCD1ClaimantRepresentativeFistname'
                                         "
                                         maxlength="150"
                                         value=""
@@ -2192,7 +2191,7 @@
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeFistname'
+                                          '].dynformSCD1ClaimantRepresentativeFistname'
                                         "
                                         class="df_textbox"
                                         formControlName="firstName"
@@ -2207,7 +2206,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeIdentification'
+                                      '].dynformSCD1ClaimantRepresentativeIdentification'
                                     "
                                   >
                                     <span
@@ -2223,7 +2222,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantRepresentativeIdentification'
+                                        '].dynformSCD1ClaimantRepresentativeIdentification'
                                       "
                                     ></span>
                                   </label>
@@ -2238,7 +2237,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeIdentification'
+                                      '].dynformSCD1ClaimantRepresentativeIdentification'
                                     "
                                     style="padding-right: 0"
                                   >
@@ -2249,14 +2248,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeIdentification'
+                                          '].dynformSCD1ClaimantRepresentativeIdentification'
                                         "
                                         maxlength="150"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeIdentification'
+                                          '].dynformSCD1ClaimantRepresentativeIdentification'
                                         "
                                         class="df_textbox"
                                         formControlName="identificationCode"
@@ -2268,14 +2267,14 @@
                                     [attr.id]="
                                       'validation_error_text_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeIdentification'
+                                      '].dynformSCD1ClaimantRepresentativeIdentification'
                                     "
                                     class="error"
                                     style="position: relative; top: 0px"
                                   >
                                   </span>
 
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantRepresentativeIdentification" class="error" style="position:relative;top:0px;"> </span>
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantRepresentativeIdentification" class="error" style="position:relative;top:0px;"> </span>
                             
                             -->
                                 </div>
@@ -2286,7 +2285,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeStreet'
+                                      '].dynformSCD1ClaimantRepresentativeStreet'
                                     "
                                   >
                                     <span
@@ -2301,7 +2300,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantRepresentativeStreet'
+                                        '].dynformSCD1ClaimantRepresentativeStreet'
                                       "
                                       >*</span
                                     >
@@ -2312,7 +2311,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeStreet'
+                                      '].dynformSCD1ClaimantRepresentativeStreet'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -2333,7 +2332,7 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeStreet'
+                                          '].dynformSCD1ClaimantRepresentativeStreet'
                                         "
                                         maxlength="50"
                                         value=""
@@ -2346,7 +2345,7 @@
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeStreet'
+                                          '].dynformSCD1ClaimantRepresentativeStreet'
                                         "
                                         class="df_textbox df_mandatory"
                                         formControlName="street"
@@ -2374,7 +2373,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeStreet'
+                                          '].dynformSCD1ClaimantRepresentativeStreet'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -2383,7 +2382,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantRepresentativeStreet" class="error" style="position:relative;top:0px;"> </span>
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantRepresentativeStreet" class="error" style="position:relative;top:0px;"> </span>
                             
                             -->
                                 </div>
@@ -2394,7 +2393,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativePostalCode'
+                                      '].dynformSCD1ClaimantRepresentativePostalCode'
                                     "
                                   >
                                     <span
@@ -2409,7 +2408,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantRepresentativePostalCode'
+                                        '].dynformSCD1ClaimantRepresentativePostalCode'
                                       "
                                       >*</span
                                     >
@@ -2420,7 +2419,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativePostalCode'
+                                      '].dynformSCD1ClaimantRepresentativePostalCode'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -2441,14 +2440,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativePostalCode'
+                                          '].dynformSCD1ClaimantRepresentativePostalCode'
                                         "
                                         maxlength="150"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativePostalCode'
+                                          '].dynformSCD1ClaimantRepresentativePostalCode'
                                         "
                                         class="df_textbox df_mandatory"
                                         formControlName="postalCode"
@@ -2476,7 +2475,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativePostalCode'
+                                          '].dynformSCD1ClaimantRepresentativePostalCode'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -2485,7 +2484,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantRepresentativePostalCode" class="error" style="position:relative;top:0px;"> </span>
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantRepresentativePostalCode" class="error" style="position:relative;top:0px;"> </span>
                             
                             -->
                                 </div>
@@ -2496,7 +2495,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeCity'
+                                      '].dynformSCD1ClaimantRepresentativeCity'
                                     "
                                   >
                                     <span
@@ -2509,7 +2508,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantRepresentativeCity'
+                                        '].dynformSCD1ClaimantRepresentativeCity'
                                       "
                                       >*</span
                                     >
@@ -2520,7 +2519,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeCity'
+                                      '].dynformSCD1ClaimantRepresentativeCity'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -2541,14 +2540,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCity'
+                                          '].dynformSCD1ClaimantRepresentativeCity'
                                         "
                                         maxlength="50"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCity'
+                                          '].dynformSCD1ClaimantRepresentativeCity'
                                         "
                                         class="df_textbox df_mandatory"
                                         formControlName="city"
@@ -2576,7 +2575,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCity'
+                                          '].dynformSCD1ClaimantRepresentativeCity'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -2585,7 +2584,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantRepresentativeCity" class="error" style="position:relative;top:0px;"> </span>
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantRepresentativeCity" class="error" style="position:relative;top:0px;"> </span>
                             
                             -->
                                 </div>
@@ -2596,7 +2595,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeCountry'
+                                      '].dynformSCD1ClaimantRepresentativeCountry'
                                     "
                                   >
                                     <span
@@ -2611,7 +2610,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantRepresentativeCountry'
+                                        '].dynformSCD1ClaimantRepresentativeCountry'
                                       "
                                       >*</span
                                     >
@@ -2622,7 +2621,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeCountry'
+                                      '].dynformSCD1ClaimantRepresentativeCountry'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -2642,7 +2641,7 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCountry'
+                                          '].dynformSCD1ClaimantRepresentativeCountry'
                                         "
                                         (change)="
                                           expandClaimantWorldCountrySelect(
@@ -2654,7 +2653,7 @@
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCountry'
+                                          '].dynformSCD1ClaimantRepresentativeCountry'
                                         "
                                         class="df_select df_mandatory"
                                         formControlName="country"
@@ -2705,7 +2704,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCountry'
+                                          '].dynformSCD1ClaimantRepresentativeCountry'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -2725,7 +2724,7 @@
                                   [attr.id]="
                                     'parties[' +
                                     i +
-                                    '].dynformSCB1ClaimantRepresentativeCountry_div'
+                                    '].dynformSCD1ClaimantRepresentativeCountry_div'
                                   "
                                   class="df_collapsed"
                                 >
@@ -2735,7 +2734,7 @@
                                         [attr.for]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCountryOther'
+                                          '].dynformSCD1ClaimantRepresentativeCountryOther'
                                         "
                                       >
                                         <span [translate]="'stepOne.specify'"
@@ -2747,7 +2746,7 @@
                                           [attr.id]="
                                             'requiredStar_required_parties[' +
                                             i +
-                                            '].dynformSCB1ClaimantRepresentativeCountryOther'
+                                            '].dynformSCD1ClaimantRepresentativeCountryOther'
                                           "
                                           >*</span
                                         >
@@ -2758,7 +2757,7 @@
                                         [attr.id]="
                                           'input-wrapper_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCountryOther'
+                                          '].dynformSCD1ClaimantRepresentativeCountryOther'
                                         "
                                         [ngClass]="{
                                           invalid:
@@ -2778,15 +2777,15 @@
                                             [attr.name]="
                                               'parties[' +
                                               i +
-                                              '].dynformSCB1ClaimantRepresentativeCountryOther'
+                                              '].dynformSCD1ClaimantRepresentativeCountryOther'
                                             "
                                             [attr.id]="
                                               'parties[' +
                                               i +
-                                              '].dynformSCB1ClaimantRepresentativeCountryOther'
+                                              '].dynformSCD1ClaimantRepresentativeCountryOther'
                                             "
                                             [attr.class]="
-                                              'dynformSCB1ClaimantRepresentativeCountryOther' +
+                                              'dynformSCD1ClaimantRepresentativeCountryOther' +
                                               i
                                             "
                                             class="df_select df_mandatory"
@@ -2833,7 +2832,7 @@
                                             [attr.id]="
                                               'validation_error_text_parties[' +
                                               i +
-                                              '].dynformSCB1ClaimantRepresentativeCountryOther'
+                                              '].dynformSCD1ClaimantRepresentativeCountryOther'
                                             "
                                             class="error"
                                             style="position: relative; top: 0px"
@@ -2855,7 +2854,7 @@
                                     [attr.id]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeCountryOtherFootnote'
+                                      '].dynformSCD1ClaimantRepresentativeCountryOtherFootnote'
                                     "
                                   ></p>
                                 </div>
@@ -2866,7 +2865,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeCountryTelephone'
+                                      '].dynformSCD1ClaimantRepresentativeCountryTelephone'
                                     "
                                   >
                                     <span
@@ -2881,7 +2880,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantRepresentativeCountryTelephone'
+                                        '].dynformSCD1ClaimantRepresentativeCountryTelephone'
                                       "
                                     ></span>
                                   </label>
@@ -2891,7 +2890,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeCountryTelephone'
+                                      '].dynformSCD1ClaimantRepresentativeCountryTelephone'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -2912,14 +2911,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCountryTelephone'
+                                          '].dynformSCD1ClaimantRepresentativeCountryTelephone'
                                         "
                                         maxlength="20"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCountryTelephone'
+                                          '].dynformSCD1ClaimantRepresentativeCountryTelephone'
                                         "
                                         class="df_textbox"
                                         formControlName="phoneNumber"
@@ -2948,7 +2947,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCountryTelephone'
+                                          '].dynformSCD1ClaimantRepresentativeCountryTelephone'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -2969,7 +2968,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeCountryEmail'
+                                      '].dynformSCD1ClaimantRepresentativeCountryEmail'
                                     "
                                   >
                                     <span
@@ -2984,7 +2983,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1ClaimantRepresentativeCountryEmail'
+                                        '].dynformSCD1ClaimantRepresentativeCountryEmail'
                                       "
                                     ></span>
                                   </label>
@@ -2994,7 +2993,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1ClaimantRepresentativeCountryEmail'
+                                      '].dynformSCD1ClaimantRepresentativeCountryEmail'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -3015,14 +3014,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCountryEmail'
+                                          '].dynformSCD1ClaimantRepresentativeCountryEmail'
                                         "
                                         maxlength="320"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCountryEmail'
+                                          '].dynformSCD1ClaimantRepresentativeCountryEmail'
                                         "
                                         class="df_textbox"
                                         formControlName="email"
@@ -3050,7 +3049,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1ClaimantRepresentativeCountryEmail'
+                                          '].dynformSCD1ClaimantRepresentativeCountryEmail'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -3063,7 +3062,7 @@
                                     </div>
                                   </div>
 
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1ClaimantRepresentativeCountryEmail" class="error" style="position:relative;top:0px;"> </span> -->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1ClaimantRepresentativeCountryEmail" class="error" style="position:relative;top:0px;"> </span> -->
                                 </div>
                               </div>
                             </div>
@@ -3171,7 +3170,7 @@
                                   [attr.id]="
                                     'validation_error_text_parties[' +
                                     i +
-                                    '].dynformSCB1DefendantOrganisationSurnameFirstName'
+                                    '].dynformSCD1DefendantOrganisationSurnameFirstName'
                                   "
                                   class="error"
                                   style="position: relative; top: 0px"
@@ -3189,7 +3188,7 @@
                                   [attr.for]="
                                     'parties[' +
                                     i +
-                                    '].dynformSCB1DefendantName'
+                                    '].dynformSCD1DefendantName'
                                   "
                                 >
                                   <span
@@ -3204,7 +3203,7 @@
                                     [attr.id]="
                                       'requiredStar_blank_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantName'
+                                      '].dynformSCD1DefendantName'
                                     "
                                   ></span>
                                 </label>
@@ -3213,7 +3212,7 @@
                                   [attr.id]="
                                     'input-wrapper_parties[' +
                                     i +
-                                    '].dynformSCB1DefendantName'
+                                    '].dynformSCD1DefendantName'
                                   "
                                   [ngClass]="{
                                   invalid:
@@ -3230,14 +3229,14 @@
                                       [attr.name]="
                                         'parties[' +
                                         i +
-                                        '].dynformSCB1DefendantName'
+                                        '].dynformSCD1DefendantName'
                                       "
                                       maxlength="150"
                                       value=""
                                       [attr.id]="
                                         'parties[' +
                                         i +
-                                        '].dynformSCB1DefendantName'
+                                        '].dynformSCD1DefendantName'
                                       "
                                       class="df_textbox"
                                       data-title="2.1. Corporate name of company or organisation"
@@ -3257,7 +3256,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantSurname'
+                                      '].dynformSCD1DefendantSurname'
                                     "
                                     ><span [translate]="'stepOne.surname'"
                                       >Surname</span
@@ -3267,7 +3266,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantSurname'
+                                        '].dynformSCD1DefendantSurname'
                                       "
                                     ></span>
                                   </label>
@@ -3276,7 +3275,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantSurname'
+                                      '].dynformSCD1DefendantSurname'
                                     "
                                     [ngClass]="{
                                     invalid:
@@ -3293,14 +3292,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantSurname'
+                                          '].dynformSCD1DefendantSurname'
                                         "
                                         maxlength="150"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantSurname'
+                                          '].dynformSCD1DefendantSurname'
                                         "
                                         class="df_textbox"
                                         data-title="Surname"
@@ -3321,7 +3320,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantFirstname'
+                                      '].dynformSCD1DefendantFirstname'
                                     "
                                   >
                                     <span [translate]="'stepOne.firstName'"
@@ -3332,7 +3331,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantFirstname'
+                                        '].dynformSCD1DefendantFirstname'
                                       "
                                     >
                                     </span>
@@ -3342,7 +3341,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantFirstname'
+                                      '].dynformSCD1DefendantFirstname'
                                     "
                                     [ngClass]="{
                                     invalid:
@@ -3359,14 +3358,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantFirstname'
+                                          '].dynformSCD1DefendantFirstname'
                                         "
                                         maxlength="150"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantFirstname'
+                                          '].dynformSCD1DefendantFirstname'
                                         "
                                         class="df_textbox"
                                         data-title="First name"
@@ -3387,7 +3386,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantIdentification'
+                                      '].dynformSCD1DefendantIdentification'
                                     "
                                   >
                                     <span
@@ -3403,7 +3402,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantIdentification'
+                                        '].dynformSCD1DefendantIdentification'
                                       "
                                     ></span>
                                   </label>
@@ -3418,7 +3417,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantIdentification'
+                                      '].dynformSCD1DefendantIdentification'
                                     "
                                     style="padding-right: 0"
                                   >
@@ -3428,14 +3427,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantIdentification'
+                                          '].dynformSCD1DefendantIdentification'
                                         "
                                         maxlength="150"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantIdentification'
+                                          '].dynformSCD1DefendantIdentification'
                                         "
                                         class="df_textbox"
                                         data-title="2.2. Personal identification number or passport number/ registration number"
@@ -3448,14 +3447,14 @@
                                     [attr.id]="
                                       'validation_error_text_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantIdentification'
+                                      '].dynformSCD1DefendantIdentification'
                                     "
                                     class="error"
                                     style="position: relative; top: 0px"
                                   >
                                   </span>
 
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantIdentification" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantIdentification" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
                               <div class="form-row full-width bold">
@@ -3464,7 +3463,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantStreet'
+                                      '].dynformSCD1DefendantStreet'
                                     "
                                   >
                                     <span
@@ -3477,7 +3476,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantStreet'
+                                        '].dynformSCD1DefendantStreet'
                                       "
                                       >*</span
                                     >
@@ -3488,7 +3487,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantStreet'
+                                      '].dynformSCD1DefendantStreet'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -3508,14 +3507,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantStreet'
+                                          '].dynformSCD1DefendantStreet'
                                         "
                                         maxlength="50"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantStreet'
+                                          '].dynformSCD1DefendantStreet'
                                         "
                                         class="df_textbox df_mandatory"
                                         data-title="2.3. Street and number/PO box"
@@ -3544,7 +3543,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantStreet'
+                                          '].dynformSCD1DefendantStreet'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -3553,7 +3552,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantStreet" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantStreet" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
                               <div class="form-row full-width bold">
@@ -3562,7 +3561,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantPostalCode'
+                                      '].dynformSCD1DefendantPostalCode'
                                     "
                                   >
                                     <span
@@ -3577,7 +3576,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantPostalCode'
+                                        '].dynformSCD1DefendantPostalCode'
                                       "
                                       >*</span
                                     >
@@ -3588,7 +3587,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantPostalCode'
+                                      '].dynformSCD1DefendantPostalCode'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -3608,14 +3607,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantPostalCode'
+                                          '].dynformSCD1DefendantPostalCode'
                                         "
                                         maxlength="150"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantPostalCode'
+                                          '].dynformSCD1DefendantPostalCode'
                                         "
                                         class="df_textbox df_mandatory"
                                         data-title="2.4. Postal code"
@@ -3644,7 +3643,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantPostalCode'
+                                          '].dynformSCD1DefendantPostalCode'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -3653,7 +3652,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantPostalCode" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantPostalCode" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
                               <div class="form-row full-width bold">
@@ -3662,7 +3661,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantCity'
+                                      '].dynformSCD1DefendantCity'
                                     "
                                   >
                                     <span [translate]="'stepOne.city'"
@@ -3674,7 +3673,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantCity'
+                                        '].dynformSCD1DefendantCity'
                                       "
                                       >*</span
                                     >
@@ -3685,7 +3684,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantCity'
+                                      '].dynformSCD1DefendantCity'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -3705,14 +3704,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantCity'
+                                          '].dynformSCD1DefendantCity'
                                         "
                                         maxlength="50"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantCity'
+                                          '].dynformSCD1DefendantCity'
                                         "
                                         class="df_textbox df_mandatory"
                                         data-title="City"
@@ -3741,7 +3740,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantCity'
+                                          '].dynformSCD1DefendantCity'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -3750,7 +3749,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantCity" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantCity" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
                               <div class="form-row full-width bold">
@@ -3759,7 +3758,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantCountry'
+                                      '].dynformSCD1DefendantCountry'
                                     "
                                   >
                                     <span
@@ -3772,7 +3771,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantCountry'
+                                        '].dynformSCD1DefendantCountry'
                                       "
                                       >*</span
                                     >
@@ -3783,7 +3782,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantCountry'
+                                      '].dynformSCD1DefendantCountry'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -3802,7 +3801,7 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantCountry'
+                                          '].dynformSCD1DefendantCountry'
                                         "
                                         (change)="
                                           expandDefendantWorldCountrySelect(
@@ -3814,7 +3813,7 @@
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantCountry'
+                                          '].dynformSCD1DefendantCountry'
                                         "
                                         class="df_select df_mandatory"
                                         data-title="2.5. Country:"
@@ -3866,7 +3865,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantCountry'
+                                          '].dynformSCD1DefendantCountry'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -3875,7 +3874,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantCountry" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantCountry" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
                               <div></div>
@@ -3886,7 +3885,7 @@
                                   [attr.id]="
                                     'parties[' +
                                     i +
-                                    '].dynformSCB1DefendantCountry_div'
+                                    '].dynformSCD1DefendantCountry_div'
                                   "
                                   class="df_collapsed"
                                 >
@@ -3896,7 +3895,7 @@
                                         [attr.for]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantCountryOther'
+                                          '].dynformSCD1DefendantCountryOther'
                                         "
                                       >
                                         <span [translate]="'stepOne.specify'"
@@ -3908,7 +3907,7 @@
                                           [attr.id]="
                                             'requiredStar_required_parties[' +
                                             i +
-                                            '].dynformSCB1DefendantCountryOther'
+                                            '].dynformSCD1DefendantCountryOther'
                                           "
                                           >*</span
                                         >
@@ -3919,7 +3918,7 @@
                                         [attr.id]="
                                           'input-wrapper_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantCountryOther'
+                                          '].dynformSCD1DefendantCountryOther'
                                         "
                                         [ngClass]="{
                                           invalid:
@@ -3936,15 +3935,15 @@
                                             [attr.name]="
                                               'parties[' +
                                               i +
-                                              '].dynformSCB1DefendantCountryOther'
+                                              '].dynformSCD1DefendantCountryOther'
                                             "
                                             [attr.id]="
                                               'parties[' +
                                               i +
-                                              '].dynformSCB1DefendantCountryOther'
+                                              '].dynformSCD1DefendantCountryOther'
                                             "
                                             [attr.class]="
-                                              'dynformSCB1DefendantCountryOther' +
+                                              'dynformSCD1DefendantCountryOther' +
                                               i
                                             "
                                             style="width: 460px; display: none"
@@ -3993,7 +3992,7 @@
                                             [attr.id]="
                                               'validation_error_text_parties[' +
                                               i +
-                                              '].dynformSCB1DefendantCountryOther'
+                                              '].dynformSCD1DefendantCountryOther'
                                             "
                                             class="error"
                                             style="position: relative; top: 0px"
@@ -4002,7 +4001,7 @@
                                           </span>
                                         </div>
                                       </div>
-                                      <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantCountryOther" class="error" style="position:relative;top:0px;"> </span>-->
+                                      <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantCountryOther" class="error" style="position:relative;top:0px;"> </span>-->
                                     </div>
                                   </div>
 
@@ -4016,7 +4015,7 @@
                                     [attr.id]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantCountryOtherFootnote'
+                                      '].dynformSCD1DefendantCountryOtherFootnote'
                                     "
                                   ></p>
                                 </div>
@@ -4027,7 +4026,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantTelephone'
+                                      '].dynformSCD1DefendantTelephone'
                                     "
                                   >
                                     <span
@@ -4042,7 +4041,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantTelephone'
+                                        '].dynformSCD1DefendantTelephone'
                                       "
                                     ></span>
                                   </label>
@@ -4052,7 +4051,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantTelephone'
+                                      '].dynformSCD1DefendantTelephone'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -4070,14 +4069,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantTelephone'
+                                          '].dynformSCD1DefendantTelephone'
                                         "
                                         maxlength="20"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantTelephone'
+                                          '].dynformSCD1DefendantTelephone'
                                         "
                                         class="df_textbox"
                                         data-title="2.6. Telephone"
@@ -4107,7 +4106,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantTelephone'
+                                          '].dynformSCD1DefendantTelephone'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -4127,7 +4126,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantEmail'
+                                      '].dynformSCD1DefendantEmail'
                                     "
                                   >
                                     <span [translate]="'stepOne.defendantEmail'"
@@ -4139,7 +4138,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantEmail'
+                                        '].dynformSCD1DefendantEmail'
                                       "
                                     ></span>
                                   </label>
@@ -4149,7 +4148,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantEmail'
+                                      '].dynformSCD1DefendantEmail'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -4169,14 +4168,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantEmail'
+                                          '].dynformSCD1DefendantEmail'
                                         "
                                         maxlength="320"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantEmail'
+                                          '].dynformSCD1DefendantEmail'
                                         "
                                         class="df_textbox"
                                         data-title="2.7. E-mail"
@@ -4206,7 +4205,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantEmail'
+                                          '].dynformSCD1DefendantEmail'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -4218,7 +4217,7 @@
                                     </div>
                                   </div>
 
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantEmail" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantEmail" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
 
@@ -4228,7 +4227,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeReference'
+                                      '].dynformSCD1DefendantRepresentativeReference'
                                     "
                                   >
                                     <span
@@ -4244,7 +4243,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantRepresentativeReference'
+                                        '].dynformSCD1DefendantRepresentativeReference'
                                       "
                                     ></span>
                                   </label>
@@ -4254,7 +4253,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeReference'
+                                      '].dynformSCD1DefendantRepresentativeReference'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -4271,12 +4270,12 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeReference'
+                                          '].dynformSCD1DefendantRepresentativeReference'
                                         "
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeReference'
+                                          '].dynformSCD1DefendantRepresentativeReference'
                                         "
                                         (change)="
                                           onDefendantRepresentativeChange(
@@ -4334,7 +4333,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeReference'
+                                          '].dynformSCD1DefendantRepresentativeReference'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -4343,7 +4342,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantRepresentativeReference" class="error" style="position:relative;top:0px;"> </span>-->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantRepresentativeReference" class="error" style="position:relative;top:0px;"> </span>-->
                                 </div>
                               </div>
 
@@ -4360,38 +4359,38 @@
                                 <div class="form-row full-width bold">
                                   <div>
                                     <label
-                                      for="dynformSCB1DefendantRepresentativeAndContactDetails"
+                                      for="dynformSCD1DefendantRepresentativeAndContactDetails"
                                     >
                                       3.8.1. Surname, first name/name of company or organisation
                   
                                       <span
                                         class="asterisk"
-                                        id="requiredStar_blank_dynformSCB1DefendantRepresentativeAndContactDetails"
+                                        id="requiredStar_blank_dynformSCD1DefendantRepresentativeAndContactDetails"
                                       ></span>
                                     </label>
                   
                                     <div
                                       class="input-wrapper regular"
-                                      id="input-wrapper_dynformSCB1DefendantRepresentativeAndContactDetails"
+                                      id="input-wrapper_dynformSCD1DefendantRepresentativeAndContactDetails"
                                     >
                                       <div class="input-content nopaddingTop">
                                         <input
                                           type="text"
                                           title="3.8.1. Surname, first name/name of company or organisation"
-                                          name="dynformSCB1DefendantRepresentativeAndContactDetails"
+                                          name="dynformSCD1DefendantRepresentativeAndContactDetails"
                                           maxlength="150"
                                           value=""
                                           onchange="validateFieldOnBlur(this)"
                                           onblur="removeClassOnBlur(this)"
                                           onfocus="addClassOnFocus(this)"
                                           class="df_textbox"
-                                          id="dynformSCB1DefendantRepresentativeAndContactDetails"
+                                          id="dynformSCD1DefendantRepresentativeAndContactDetails"
                                         />
                                       </div>
                                     </div>
                   
                                     <span
-                                      id="validation_error_text_dynformSCB1DefendantRepresentativeAndContactDetails"
+                                      id="validation_error_text_dynformSCD1DefendantRepresentativeAndContactDetails"
                                       class="error"
                                       style="position: relative; top: 0px"
                                     >
@@ -4401,37 +4400,37 @@
                   
                                 <div class="form-row full-width bold">
                                   <div>
-                                    <label for="dynformSCB1DefendantRepresentativeStreet">
+                                    <label for="dynformSCD1DefendantRepresentativeStreet">
                                       3.8.2. Address
                   
                                       <span
                                         class="asterisk"
-                                        id="requiredStar_blank_dynformSCB1DefendantRepresentativeStreet"
+                                        id="requiredStar_blank_dynformSCD1DefendantRepresentativeStreet"
                                       ></span>
                                     </label>
                   
                                     <div
                                       class="input-wrapper regular"
-                                      id="input-wrapper_dynformSCB1DefendantRepresentativeStreet"
+                                      id="input-wrapper_dynformSCD1DefendantRepresentativeStreet"
                                     >
                                       <div class="input-content nopaddingTop">
                                         <input
                                           type="text"
                                           title="3.8.2. Address"
-                                          name="dynformSCB1DefendantRepresentativeStreet"
+                                          name="dynformSCD1DefendantRepresentativeStreet"
                                           maxlength="150"
                                           value=""
                                           onchange="validateFieldOnBlur(this)"
                                           onblur="removeClassOnBlur(this)"
                                           onfocus="addClassOnFocus(this)"
                                           class="df_textbox"
-                                          id="dynformSCB1DefendantRepresentativeStreet"
+                                          id="dynformSCD1DefendantRepresentativeStreet"
                                         />
                                       </div>
                                     </div>
                   
                                     <span
-                                      id="validation_error_text_dynformSCB1DefendantRepresentativeStreet"
+                                      id="validation_error_text_dynformSCD1DefendantRepresentativeStreet"
                                       class="error"
                                       style="position: relative; top: 0px"
                                     >
@@ -4441,37 +4440,37 @@
                   
                                 <div class="form-row full-width bold">
                                   <div>
-                                    <label for="dynformSCB1DefendantRepresentativePostalCode">
+                                    <label for="dynformSCD1DefendantRepresentativePostalCode">
                                       3.8.3. Postal code
                   
                                       <span
                                         class="asterisk"
-                                        id="requiredStar_blank_dynformSCB1DefendantRepresentativePostalCode"
+                                        id="requiredStar_blank_dynformSCD1DefendantRepresentativePostalCode"
                                       ></span>
                                     </label>
                   
                                     <div
                                       class="input-wrapper regular"
-                                      id="input-wrapper_dynformSCB1DefendantRepresentativePostalCode"
+                                      id="input-wrapper_dynformSCD1DefendantRepresentativePostalCode"
                                     >
                                       <div class="input-content nopaddingTop">
                                         <input
                                           type="text"
                                           title="3.8.3. Postal code"
-                                          name="dynformSCB1DefendantRepresentativePostalCode"
+                                          name="dynformSCD1DefendantRepresentativePostalCode"
                                           maxlength="150"
                                           value=""
                                           onchange="validateFieldOnBlur(this)"
                                           onblur="removeClassOnBlur(this)"
                                           onfocus="addClassOnFocus(this)"
                                           class="df_textbox"
-                                          id="dynformSCB1DefendantRepresentativePostalCode"
+                                          id="dynformSCD1DefendantRepresentativePostalCode"
                                         />
                                       </div>
                                     </div>
                   
                                     <span
-                                      id="validation_error_text_dynformSCB1DefendantRepresentativePostalCode"
+                                      id="validation_error_text_dynformSCD1DefendantRepresentativePostalCode"
                                       class="error"
                                       style="position: relative; top: 0px"
                                     >
@@ -4481,37 +4480,37 @@
                   
                                 <div class="form-row full-width bold">
                                   <div>
-                                    <label for="dynformSCB1DefendantRepresentativeCity">
+                                    <label for="dynformSCD1DefendantRepresentativeCity">
                                       3.8.4. City
                   
                                       <span
                                         class="asterisk"
-                                        id="requiredStar_blank_dynformSCB1DefendantRepresentativeCity"
+                                        id="requiredStar_blank_dynformSCD1DefendantRepresentativeCity"
                                       ></span>
                                     </label>
                   
                                     <div
                                       class="input-wrapper regular"
-                                      id="input-wrapper_dynformSCB1DefendantRepresentativeCity"
+                                      id="input-wrapper_dynformSCD1DefendantRepresentativeCity"
                                     >
                                       <div class="input-content nopaddingTop">
                                         <input
                                           type="text"
                                           title="3.8.4. City"
-                                          name="dynformSCB1DefendantRepresentativeCity"
+                                          name="dynformSCD1DefendantRepresentativeCity"
                                           maxlength="150"
                                           value=""
                                           onchange="validateFieldOnBlur(this)"
                                           onblur="removeClassOnBlur(this)"
                                           onfocus="addClassOnFocus(this)"
                                           class="df_textbox"
-                                          id="dynformSCB1DefendantRepresentativeCity"
+                                          id="dynformSCD1DefendantRepresentativeCity"
                                         />
                                       </div>
                                     </div>
                   
                                     <span
-                                      id="validation_error_text_dynformSCB1DefendantRepresentativeCity"
+                                      id="validation_error_text_dynformSCD1DefendantRepresentativeCity"
                                       class="error"
                                       style="position: relative; top: 0px"
                                     >
@@ -4521,37 +4520,37 @@
                   
                                 <div class="form-row full-width bold">
                                   <div>
-                                    <label for="dynformSCB1DefendantRepresentativeCountry">
+                                    <label for="dynformSCD1DefendantRepresentativeCountry">
                                       3.8.5. Country
                   
                                       <span
                                         class="asterisk"
-                                        id="requiredStar_blank_dynformSCB1DefendantRepresentativeCountry"
+                                        id="requiredStar_blank_dynformSCD1DefendantRepresentativeCountry"
                                       ></span>
                                     </label>
                   
                                     <div
                                       class="input-wrapper regular"
-                                      id="input-wrapper_dynformSCB1DefendantRepresentativeCountry"
+                                      id="input-wrapper_dynformSCD1DefendantRepresentativeCountry"
                                     >
                                       <div class="input-content nopaddingTop">
                                         <input
                                           type="text"
                                           title="3.8.5. Country"
-                                          name="dynformSCB1DefendantRepresentativeCountry"
+                                          name="dynformSCD1DefendantRepresentativeCountry"
                                           maxlength="150"
                                           value=""
                                           onchange="validateFieldOnBlur(this)"
                                           onblur="removeClassOnBlur(this)"
                                           onfocus="addClassOnFocus(this)"
                                           class="df_textbox"
-                                          id="dynformSCB1DefendantRepresentativeCountry"
+                                          id="dynformSCD1DefendantRepresentativeCountry"
                                         />
                                       </div>
                                     </div>
                   
                                     <span
-                                      id="validation_error_text_dynformSCB1DefendantRepresentativeCountry"
+                                      id="validation_error_text_dynformSCD1DefendantRepresentativeCountry"
                                       class="error"
                                       style="position: relative; top: 0px"
                                     >
@@ -4567,7 +4566,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantOtherDetails'
+                                      '].dynformSCD1DefendantOtherDetails'
                                     "
                                   >
                                     <span
@@ -4587,7 +4586,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantOtherDetails'
+                                      '].dynformSCD1DefendantOtherDetails'
                                     "
                                   >
                                     <div class="input-content">
@@ -4595,7 +4594,7 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantOtherDetails'
+                                          '].dynformSCD1DefendantOtherDetails'
                                         "
                                         cols="10"
                                         rows="7"
@@ -4603,7 +4602,7 @@
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantOtherDetails'
+                                          '].dynformSCD1DefendantOtherDetails'
                                         "
                                         data-title="2.9. Other details"
                                         formControlName="otherDetails"
@@ -4614,7 +4613,7 @@
                                     [attr.id]="
                                       'validation_error_text_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantOtherDetails'
+                                      '].dynformSCD1DefendantOtherDetails'
                                     "
                                     class="error"
                                     style="position: relative; top: 0px"
@@ -4702,7 +4701,7 @@
                                   [attr.id]="
                                     'validation_error_text_parties[' +
                                     i +
-                                    '].dynformSCB1DefendantRepresentativeOrganisationSurnameFirstName'
+                                    '].dynformSCD1DefendantRepresentativeOrganisationSurnameFirstName'
                                   "
                                   class="error"
                                   style="position: relative; top: 0px"
@@ -4721,7 +4720,7 @@
                                   [attr.for]="
                                     'parties[' +
                                     i +
-                                    '].dynformSCB1DefendantRepresentative'
+                                    '].dynformSCD1DefendantRepresentative'
                                   "
                                 >
                                   <span
@@ -4737,7 +4736,7 @@
                                     [attr.id]="
                                       'requiredStar_blank_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentative'
+                                      '].dynformSCD1DefendantRepresentative'
                                     "
                                   ></span>
                                 </label>
@@ -4747,7 +4746,7 @@
                                   [attr.id]="
                                     'input-wrapper_parties[' +
                                     i +
-                                    '].dynformSCB1DefendantRepresentative'
+                                    '].dynformSCD1DefendantRepresentative'
                                   "
                                   [ngClass]="{
                                   invalid:
@@ -4767,7 +4766,7 @@
                                       [attr.name]="
                                         'parties[' +
                                         i +
-                                        '].dynformSCB1DefendantRepresentative'
+                                        '].dynformSCD1DefendantRepresentative'
                                       "
                                       maxlength="150"
                                       value=""
@@ -4785,7 +4784,7 @@
                                       [attr.id]="
                                         'parties[' +
                                         i +
-                                        '].dynformSCB1DefendantRepresentative'
+                                        '].dynformSCD1DefendantRepresentative'
                                       "
                                       class="df_textbox"
                                       formControlName="organisation"
@@ -4799,7 +4798,7 @@
                                     [attr.id]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeSurname'
+                                      '].dynformSCD1DefendantRepresentativeSurname'
                                     "
                                   >
                                     <span
@@ -4814,7 +4813,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantRepresentativeSurname'
+                                        '].dynformSCD1DefendantRepresentativeSurname'
                                       "
                                     ></span>
                                   </label>
@@ -4824,7 +4823,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeSurname'
+                                      '].dynformSCD1DefendantRepresentativeSurname'
                                     "
                                     [ngClass]="{
                                     invalid:
@@ -4844,7 +4843,7 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeSurname'
+                                          '].dynformSCD1DefendantRepresentativeSurname'
                                         "
                                         maxlength="150"
                                         value=""
@@ -4863,7 +4862,7 @@
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeSurname'
+                                          '].dynformSCD1DefendantRepresentativeSurname'
                                         "
                                         class="df_textbox"
                                         formControlName="surname"
@@ -4878,7 +4877,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeFistname'
+                                      '].dynformSCD1DefendantRepresentativeFistname'
                                     "
                                   >
                                     <span
@@ -4892,7 +4891,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantRepresentativeFistname'
+                                        '].dynformSCD1DefendantRepresentativeFistname'
                                       "
                                     ></span>
                                   </label>
@@ -4902,7 +4901,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeFistname'
+                                      '].dynformSCD1DefendantRepresentativeFistname'
                                     "
                                     [ngClass]="{
                                     invalid:
@@ -4922,7 +4921,7 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeFistname'
+                                          '].dynformSCD1DefendantRepresentativeFistname'
                                         "
                                         maxlength="150"
                                         value=""
@@ -4941,7 +4940,7 @@
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeFistname'
+                                          '].dynformSCD1DefendantRepresentativeFistname'
                                         "
                                         class="df_textbox"
                                         formControlName="firstName"
@@ -4956,7 +4955,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeIdentification'
+                                      '].dynformSCD1DefendantRepresentativeIdentification'
                                     "
                                   >
                                     <span
@@ -4972,7 +4971,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantRepresentativeIdentification'
+                                        '].dynformSCD1DefendantRepresentativeIdentification'
                                       "
                                     ></span>
                                   </label>
@@ -4987,7 +4986,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeIdentification'
+                                      '].dynformSCD1DefendantRepresentativeIdentification'
                                     "
                                     style="padding-right: 0"
                                   >
@@ -4998,14 +4997,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeIdentification'
+                                          '].dynformSCD1DefendantRepresentativeIdentification'
                                         "
                                         maxlength="150"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeIdentification'
+                                          '].dynformSCD1DefendantRepresentativeIdentification'
                                         "
                                         class="df_textbox"
                                         formControlName="identificationCode"
@@ -5017,14 +5016,14 @@
                                     [attr.id]="
                                       'validation_error_text_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeIdentification'
+                                      '].dynformSCD1DefendantRepresentativeIdentification'
                                     "
                                     class="error"
                                     style="position: relative; top: 0px"
                                   >
                                   </span>
 
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantRepresentativeIdentification" class="error" style="position:relative;top:0px;"> </span>
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantRepresentativeIdentification" class="error" style="position:relative;top:0px;"> </span>
                             
                             -->
                                 </div>
@@ -5035,7 +5034,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeStreet'
+                                      '].dynformSCD1DefendantRepresentativeStreet'
                                     "
                                   >
                                     <span
@@ -5050,7 +5049,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantRepresentativeStreet'
+                                        '].dynformSCD1DefendantRepresentativeStreet'
                                       "
                                       >*</span
                                     >
@@ -5061,7 +5060,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeStreet'
+                                      '].dynformSCD1DefendantRepresentativeStreet'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -5082,7 +5081,7 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeStreet'
+                                          '].dynformSCD1DefendantRepresentativeStreet'
                                         "
                                         maxlength="50"
                                         value=""
@@ -5095,7 +5094,7 @@
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeStreet'
+                                          '].dynformSCD1DefendantRepresentativeStreet'
                                         "
                                         class="df_textbox df_mandatory"
                                         formControlName="street"
@@ -5123,7 +5122,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeStreet'
+                                          '].dynformSCD1DefendantRepresentativeStreet'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -5132,7 +5131,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantRepresentativeStreet" class="error" style="position:relative;top:0px;"> </span>
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantRepresentativeStreet" class="error" style="position:relative;top:0px;"> </span>
                             
                             -->
                                 </div>
@@ -5143,7 +5142,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativePostalCode'
+                                      '].dynformSCD1DefendantRepresentativePostalCode'
                                     "
                                   >
                                     <span
@@ -5158,7 +5157,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantRepresentativePostalCode'
+                                        '].dynformSCD1DefendantRepresentativePostalCode'
                                       "
                                       >*</span
                                     >
@@ -5169,7 +5168,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativePostalCode'
+                                      '].dynformSCD1DefendantRepresentativePostalCode'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -5190,14 +5189,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativePostalCode'
+                                          '].dynformSCD1DefendantRepresentativePostalCode'
                                         "
                                         maxlength="150"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativePostalCode'
+                                          '].dynformSCD1DefendantRepresentativePostalCode'
                                         "
                                         class="df_textbox df_mandatory"
                                         formControlName="postalCode"
@@ -5225,7 +5224,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativePostalCode'
+                                          '].dynformSCD1DefendantRepresentativePostalCode'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -5234,7 +5233,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantRepresentativePostalCode" class="error" style="position:relative;top:0px;"> </span>
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantRepresentativePostalCode" class="error" style="position:relative;top:0px;"> </span>
                             
                             -->
                                 </div>
@@ -5245,7 +5244,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeCity'
+                                      '].dynformSCD1DefendantRepresentativeCity'
                                     "
                                   >
                                     <span
@@ -5258,7 +5257,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantRepresentativeCity'
+                                        '].dynformSCD1DefendantRepresentativeCity'
                                       "
                                       >*</span
                                     >
@@ -5269,7 +5268,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeCity'
+                                      '].dynformSCD1DefendantRepresentativeCity'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -5290,14 +5289,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCity'
+                                          '].dynformSCD1DefendantRepresentativeCity'
                                         "
                                         maxlength="50"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCity'
+                                          '].dynformSCD1DefendantRepresentativeCity'
                                         "
                                         class="df_textbox df_mandatory"
                                         formControlName="city"
@@ -5325,7 +5324,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCity'
+                                          '].dynformSCD1DefendantRepresentativeCity'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -5334,7 +5333,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantRepresentativeCity" class="error" style="position:relative;top:0px;"> </span>
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantRepresentativeCity" class="error" style="position:relative;top:0px;"> </span>
                             
                             -->
                                 </div>
@@ -5345,7 +5344,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeCountry'
+                                      '].dynformSCD1DefendantRepresentativeCountry'
                                     "
                                   >
                                     <span
@@ -5360,7 +5359,7 @@
                                       [attr.id]="
                                         'requiredStar_required_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantRepresentativeCountry'
+                                        '].dynformSCD1DefendantRepresentativeCountry'
                                       "
                                       >*</span
                                     >
@@ -5371,7 +5370,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeCountry'
+                                      '].dynformSCD1DefendantRepresentativeCountry'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -5391,7 +5390,7 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCountry'
+                                          '].dynformSCD1DefendantRepresentativeCountry'
                                         "
                                         (change)="
                                           expandDefendantWorldCountrySelect(
@@ -5403,7 +5402,7 @@
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCountry'
+                                          '].dynformSCD1DefendantRepresentativeCountry'
                                         "
                                         class="df_select df_mandatory"
                                         formControlName="country"
@@ -5454,7 +5453,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCountry'
+                                          '].dynformSCD1DefendantRepresentativeCountry'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -5463,7 +5462,7 @@
                                       </span>
                                     </div>
                                   </div>
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantRepresentativeCountry" class="error" style="position:relative;top:0px;"> </span>
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantRepresentativeCountry" class="error" style="position:relative;top:0px;"> </span>
                             
                             -->
                                 </div>
@@ -5478,7 +5477,7 @@
                                   [attr.id]="
                                     'parties[' +
                                     i +
-                                    '].dynformSCB1DefendantRepresentativeCountry_div'
+                                    '].dynformSCD1DefendantRepresentativeCountry_div'
                                   "
                                   class="df_collapsed"
                                 >
@@ -5488,7 +5487,7 @@
                                         [attr.for]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCountryOther'
+                                          '].dynformSCD1DefendantRepresentativeCountryOther'
                                         "
                                       >
                                         <span [translate]="'stepOne.specify'"
@@ -5500,7 +5499,7 @@
                                           [attr.id]="
                                             'requiredStar_required_parties[' +
                                             i +
-                                            '].dynformSCB1DefendantRepresentativeCountryOther'
+                                            '].dynformSCD1DefendantRepresentativeCountryOther'
                                           "
                                           >*</span
                                         >
@@ -5511,7 +5510,7 @@
                                         [attr.id]="
                                           'input-wrapper_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCountryOther'
+                                          '].dynformSCD1DefendantRepresentativeCountryOther'
                                         "
                                         [ngClass]="{
                                           invalid:
@@ -5531,15 +5530,15 @@
                                             [attr.name]="
                                               'parties[' +
                                               i +
-                                              '].dynformSCB1DefendantRepresentativeCountryOther'
+                                              '].dynformSCD1DefendantRepresentativeCountryOther'
                                             "
                                             [attr.id]="
                                               'parties[' +
                                               i +
-                                              '].dynformSCB1DefendantRepresentativeCountryOther'
+                                              '].dynformSCD1DefendantRepresentativeCountryOther'
                                             "
                                             [attr.class]="
-                                              'dynformSCB1DefendantRepresentativeCountryOther' +
+                                              'dynformSCD1DefendantRepresentativeCountryOther' +
                                               i
                                             "
                                             class="df_select df_mandatory"
@@ -5586,7 +5585,7 @@
                                             [attr.id]="
                                               'validation_error_text_parties[' +
                                               i +
-                                              '].dynformSCB1DefendantRepresentativeCountryOther'
+                                              '].dynformSCD1DefendantRepresentativeCountryOther'
                                             "
                                             class="error"
                                             style="position: relative; top: 0px"
@@ -5608,7 +5607,7 @@
                                     [attr.id]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeCountryOtherFootnote'
+                                      '].dynformSCD1DefendantRepresentativeCountryOtherFootnote'
                                     "
                                   ></p>
                                 </div>
@@ -5619,7 +5618,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeCountryTelephone'
+                                      '].dynformSCD1DefendantRepresentativeCountryTelephone'
                                     "
                                   >
                                     <span
@@ -5634,7 +5633,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantRepresentativeCountryTelephone'
+                                        '].dynformSCD1DefendantRepresentativeCountryTelephone'
                                       "
                                     ></span>
                                   </label>
@@ -5644,7 +5643,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeCountryTelephone'
+                                      '].dynformSCD1DefendantRepresentativeCountryTelephone'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -5665,14 +5664,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCountryTelephone'
+                                          '].dynformSCD1DefendantRepresentativeCountryTelephone'
                                         "
                                         maxlength="20"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCountryTelephone'
+                                          '].dynformSCD1DefendantRepresentativeCountryTelephone'
                                         "
                                         class="df_textbox"
                                         formControlName="phoneNumber"
@@ -5701,7 +5700,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCountryTelephone'
+                                          '].dynformSCD1DefendantRepresentativeCountryTelephone'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -5722,7 +5721,7 @@
                                     [attr.for]="
                                       'parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeCountryEmail'
+                                      '].dynformSCD1DefendantRepresentativeCountryEmail'
                                     "
                                   >
                                     <span
@@ -5737,7 +5736,7 @@
                                       [attr.id]="
                                         'requiredStar_blank_parties[' +
                                         i +
-                                        '].dynformSCB1DefendantRepresentativeCountryEmail'
+                                        '].dynformSCD1DefendantRepresentativeCountryEmail'
                                       "
                                     ></span>
                                   </label>
@@ -5747,7 +5746,7 @@
                                     [attr.id]="
                                       'input-wrapper_parties[' +
                                       i +
-                                      '].dynformSCB1DefendantRepresentativeCountryEmail'
+                                      '].dynformSCD1DefendantRepresentativeCountryEmail'
                                     "
                                     [ngClass]="{
                                       invalid:
@@ -5768,14 +5767,14 @@
                                         [attr.name]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCountryEmail'
+                                          '].dynformSCD1DefendantRepresentativeCountryEmail'
                                         "
                                         maxlength="320"
                                         value=""
                                         [attr.id]="
                                           'parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCountryEmail'
+                                          '].dynformSCD1DefendantRepresentativeCountryEmail'
                                         "
                                         class="df_textbox"
                                         formControlName="email"
@@ -5804,7 +5803,7 @@
                                         [attr.id]="
                                           'validation_error_text_parties[' +
                                           i +
-                                          '].dynformSCB1DefendantRepresentativeCountryEmail'
+                                          '].dynformSCD1DefendantRepresentativeCountryEmail'
                                         "
                                         class="error"
                                         style="position: relative; top: 0px"
@@ -5816,7 +5815,7 @@
                                     </div>
                                   </div>
 
-                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCB1DefendantRepresentativeCountryEmail" class="error" style="position:relative;top:0px;"> </span> -->
+                                  <!--  <span id="validation_error_text_parties['+i+'].dynformSCD1DefendantRepresentativeCountryEmail" class="error" style="position:relative;top:0px;"> </span> -->
                                 </div>
                               </div>
                             </div>
@@ -6080,9 +6079,10 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="buttons">
-    <!-- <div style="">
+<div class="buttons">
+  <!-- <div style="">
     <input
       type="hidden"
       id="download_token_value_id"
@@ -6105,30 +6105,29 @@
     <div class="actionbuttons-right"></div>
   </div> -->
 
-    <!--<br><br><br><br>-->
-    <!-- the second div layer of buttons is added when the current page is not the first page -->
+  <!--<br><br><br><br>-->
+  <!-- the second div layer of buttons is added when the current page is not the first page -->
 
-    <div
-      style="
-        margin-top: 10px;
-        margin-bottom: 60px;
-        display: inline-block;
-        width: 100%;
-      "
-    >
-      <!-- end of back button -->
-      <div style="float: right; width: 40%">
-        <span class="ieborder nextPageButton"
-          ><input
-            type="submit"
-            class="button big dark pull-right"
-            name="submitNavigation1"
-            value="{{ 'buttons.next' | translate }}    >"
-            data-title=""
-            (click)="changeStep('next', 'step2')"
-        /></span>
-      </div>
+  <div
+    style="
+      margin-top: 10px;
+      margin-bottom: 60px;
+      display: inline-block;
+      width: 100%;
+    "
+  >
+    <!-- end of back button -->
+    <div style="float: right; width: 40%">
+      <span class="ieborder nextPageButton"
+        ><input
+          type="submit"
+          class="button big dark pull-right"
+          name="submitNavigation1"
+          value="{{ 'buttons.next' | translate }}    >"
+          data-title=""
+          (click)="changeStep('next', 'step2')"
+      /></span>
     </div>
-    <!-- end of the second div layer of buttons -->
   </div>
+  <!-- end of the second div layer of buttons -->
 </div>

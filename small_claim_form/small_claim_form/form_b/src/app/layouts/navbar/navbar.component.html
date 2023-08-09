@@ -45,16 +45,39 @@
           >
         </li>
       </ul>
-      <div class="row">
-        <div class="col-12 text-start align-self-end">
-          <div class="title-block" style="padding-right: 0 !important">
-            <h1 id="title" [translate]="'menu.title'">
-              Form B - Request by the court or tribunal to complete and/or
-              rectify the claim form
-            </h1>
-            <div class="subtitle js-toggle"></div>
-          </div>
+
+      <div class="d-flex justify-content-between">
+        <div class="title-block" style="padding-right: 0 !important">
+          <h1 id="title" [translate]="'menu.title'">
+            Form B - Request by the court or tribunal to complete and/or rectify
+            the claim form
+          </h1>
+          <div class="subtitle js-toggle"></div>
         </div>
+
+        <!-- <div class="align-self-end mb-4">
+          <span id="simplyfied_btn" onClick="showText('simplyfied')">
+            <span id="initial_icon">
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                style="vertical-align: text-top"
+              >
+                <path
+                  d="M3.54545 11.7188C4.15909 11.7188 4.75284 11.8164 5.3267 12.0117C5.90057 12.207 6.46591 12.5 7.02273 12.8906V2.88281C6.51136 2.41406 5.95739 2.05078 5.3608 1.79297C4.7642 1.53516 4.15909 1.40625 3.54545 1.40625C3.11364 1.40625 2.69034 1.48047 2.27557 1.62891C1.8608 1.77734 1.44318 1.96094 1.02273 2.17969V12.3516C1.375 12.1328 1.77557 11.9727 2.22443 11.8711C2.6733 11.7695 3.11364 11.7188 3.54545 11.7188ZM8.04545 12.8906C8.61364 12.5 9.17045 12.207 9.71591 12.0117C10.2614 11.8164 10.8409 11.7188 11.4545 11.7188C11.8864 11.7188 12.3324 11.7656 12.7926 11.8594C13.2528 11.9531 13.6477 12.0781 13.9773 12.2344V2.17969C13.5909 1.91406 13.1818 1.71875 12.75 1.59375C12.3182 1.46875 11.8864 1.40625 11.4545 1.40625C10.8409 1.40625 10.2472 1.53516 9.6733 1.79297C9.09943 2.05078 8.55682 2.41406 8.04545 2.88281V12.8906ZM7.53409 15C6.95455 14.4062 6.32386 13.9492 5.64205 13.6289C4.96023 13.3086 4.26136 13.1484 3.54545 13.1484C3.125 13.1484 2.71591 13.2188 2.31818 13.3594C1.92045 13.5 1.52273 13.6719 1.125 13.875C0.863636 14.0469 0.610795 14.0234 0.366477 13.8047C0.122159 13.5859 0 13.2734 0 12.8672V2.01562C0 1.78125 0.0397727 1.56641 0.119318 1.37109C0.198864 1.17578 0.318182 1.02344 0.477273 0.914062C0.954545 0.601562 1.4517 0.371094 1.96875 0.222656C2.4858 0.0742189 3.01136 0 3.54545 0C4.26136 0 4.95739 0.132813 5.63352 0.398438C6.30966 0.664063 6.94318 1.07031 7.53409 1.61719C8.11364 1.07031 8.7358 0.664063 9.40057 0.398438C10.0653 0.132813 10.75 0 11.4545 0C11.9886 0 12.5114 0.0742189 13.0227 0.222656C13.5341 0.371094 14.0284 0.601562 14.5057 0.914062C14.6648 1.02344 14.7869 1.17578 14.8722 1.37109C14.9574 1.56641 15 1.78125 15 2.01562V12.8672C15 13.3047 14.8722 13.6367 14.6165 13.8633C14.3608 14.0898 14.108 14.0937 13.858 13.875C13.4716 13.6562 13.0795 13.4805 12.6818 13.3477C12.2841 13.2148 11.875 13.1484 11.4545 13.1484C10.7386 13.1484 10.0511 13.3125 9.39205 13.6406C8.73295 13.9687 8.11364 14.4219 7.53409 15Z"
+                  fill="white"
+                />
+              </svg>
+            </span>
+            <i style="cursor: default">&nbsp;</i>
+            <span [translate]="'menu.completeVersion'" id="version-label"
+              >Passa alla versione semplificata</span
+            ></span
+          >
+        </div> -->
       </div>
     </div>
   </div>
@@ -100,6 +123,24 @@
             </a>
           </li>
         </ul>
+
+        <!-- <div class="step-info">
+          <span
+            class="sidebar_title step-menu-title"
+            [translate]="'menu.usefulPDFs'"
+            >PDF utili</span
+          >
+          <div id="legal_information" class="list-group"></div>
+          <span
+            class="sidebar_title step-menu-title mb-5"
+            id="synonyms_title"
+            [translate]="'menu.synonyms'"
+            >Sinonimi</span
+          >
+          <div id="synonyms_info" class="list-group">
+            <ul></ul>
+          </div>
+        </div> -->
 
         <div class="form-sections-helper">
           <p

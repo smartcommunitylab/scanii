@@ -7,7 +7,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { CustomModule } from './shared/custom.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MissingTranslationHandler, MissingTranslationHandlerParams, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
@@ -57,7 +57,7 @@ export class CustomMissingTranslationHandler
       },
     }),
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/small_claim_form/dist/form_b'}],
   bootstrap: [MainComponent],
   exports: [TranslateModule],
 })

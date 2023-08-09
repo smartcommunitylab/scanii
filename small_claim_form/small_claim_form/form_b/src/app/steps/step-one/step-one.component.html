@@ -6200,9 +6200,10 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="buttons">
-    <!-- <div style="">
+<div class="buttons">
+  <!-- <div style="">
     <input
       type="hidden"
       id="download_token_value_id"
@@ -6225,30 +6226,29 @@
     <div class="actionbuttons-right"></div>
   </div> -->
 
-    <!--<br><br><br><br>-->
-    <!-- the second div layer of buttons is added when the current page is not the first page -->
+  <!--<br><br><br><br>-->
+  <!-- the second div layer of buttons is added when the current page is not the first page -->
 
-    <div
-      style="
-        margin-top: 10px;
-        margin-bottom: 60px;
-        display: inline-block;
-        width: 100%;
-      "
-    >
-      <!-- end of back button -->
-      <div style="float: right; width: 40%">
-        <span class="ieborder nextPageButton"
-          ><input
-            type="submit"
-            class="button big dark pull-right"
-            name="submitNavigation1"
-            value="{{ 'buttons.next' | translate }}    >"
-            data-title=""
-            (click)="changeStep('next', 'step2')"
-        /></span>
-      </div>
+  <div
+    style="
+      margin-top: 10px;
+      margin-bottom: 60px;
+      display: inline-block;
+      width: 100%;
+    "
+  >
+    <!-- end of back button -->
+    <div style="float: right; width: 40%">
+      <span class="ieborder nextPageButton"
+        ><input
+          type="submit"
+          class="button big dark pull-right"
+          name="submitNavigation1"
+          value="{{ 'buttons.next' | translate }}    >"
+          data-title=""
+          (click)="changeStep('next', 'step2')"
+      /></span>
     </div>
-    <!-- end of the second div layer of buttons -->
   </div>
+  <!-- end of the second div layer of buttons -->
 </div>

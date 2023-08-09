@@ -1,0 +1,37 @@
+{
+  "model": "2.0",
+  "concepts": ["http://scanii.org/domain"],
+  "simplification": "http://scanii.org/simplification/smallclaimform",
+  "blocks": [
+    {
+      "id": "step0",
+      "type": "BLOCK",
+      "xpath": "//*[@id='step0']",
+      "concept": "http://scanii.org/domain/guidelines",
+      "dependencies": []
+    },
+    {
+      "id": "step1",
+      "type": "BLOCK",
+      "xpath": "//*[@id='step1']",
+      "blocks": [
+        {
+          "id": "step1_1",
+          "type": "BLOCK",
+          "xpath": "//*[@id='step1_1']",
+          "concept": "http://scanii.org/domain/courtPart",
+          "dependencies": []
+        },
+        {
+          "id": "step1_2",
+          "type": "BLOCK",
+          "xpath": "//*[@id='step1_2']",
+          "concept": "http://scanii.org/domain/bankDetails/defendantPart",
+          "dependencies": ["step1_1"]
+        }
+      ],
+      "dependencies": []
+    }
+  ],
+  "fields": []
+}

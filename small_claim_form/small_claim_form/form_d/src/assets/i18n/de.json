@@ -6,7 +6,8 @@
     "cancel": "Abbrechen",
     "downloadJSON": "JSON herunterladen",
     "downloadPDF": "PDF herunterladen",
-    "submit": "Einreichen"
+    "submit": "Einreichen",
+    "preview": "Vorschau"
   },
   "errors": {
     "required": "Felderforderlich",
@@ -22,13 +23,22 @@
     "onlineForms": "...",
     "smallClaimsForms": "...",
     "formD": "Formblatt D - Bestätigung eines Urteils oder eines gerichtlichen vergleichs nach dem europäischen Verfahren für geringfügige Forderungen",
+    "completeVersion": "Wechseln zur vereinfachten Version",
+    "simplifiedVersion": "Wechseln zur Vollversion",
     "formSteps": "Kompilierungsstufen",
     "step1": "Schritt 1",
     "step2": "Schritt 2",
+    "usefulPDFs": "Nützliche PDFs",
+    "noPdfs": "Es gibt keine nützlichen PDFs für den Abschnitt",
+    "synonyms": "Synonyme",
+    "noSynonyms": "Es gibt keine Synonyme für den Abschnitt",
     "loadSaveDraftExplanation": "Sie können ein Formular während der Bearbeitung als Entwurf speichern und es später erneut laden, um es zu vervollständigen.",
     "loadDraft": "Entwurf laden",
     "saveDraft": "Entwurf herunterladen",
-    "errorToast": "<strong>Kompilierungsfehler.</strong> Bitte überprüfen Sie den Abschnitt"
+    "warningToast": "<strong>Achtung</strong>: Denken Sie daran, dass Sie <strong>vereinfachte Informationen</strong> sehen",
+    "errorToast": "<strong>Kompilierungsfehler.</strong> Bitte überprüfen Sie den Abschnitt",
+    "originalText": "Original Text",
+    "simplifiedText": "Vereinfachter Text"
   },
   "footer": {
     "reportAProblem": "Technische / inhaltliche Probleme melden oder Rückmeldungen zu dieser Seite geben",

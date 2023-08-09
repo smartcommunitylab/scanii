@@ -33,6 +33,10 @@ export class PreviewModalComponent implements OnInit {
         fontSize: 16,
         margin: [0, 10, 0, 10],
       },
+      tertiaryTitle: {
+        fontSize: 14,
+        margin: [0, 10, 0, 10],
+      },
       field: {
         fontSize: 12,
         alignment: "justify",
@@ -112,6 +116,13 @@ export class PreviewModalComponent implements OnInit {
           style: "secondaryTitle",
           marginLeft: addIndentation ? this.indentationCount * 15 : 0,
         });
+      } else if (classList.contains("pdf-tertiary-title")) {
+        //tertiary title
+        this.documentDefinition.content.push({
+          text: children[i].innerText,
+          style: "tertiaryTitle",
+          marginLeft: addIndentation ? this.indentationCount * 15 : 0,
+        });
       } else {
         if (!classList.contains("pdf-no-indentation")) this.indentationCount++;
 
@@ -158,20 +169,22 @@ export class PreviewModalComponent implements OnInit {
     const labelElement = child.querySelector(".pdf-label");
     const valueElement = child.querySelector(".pdf-value");
 
-    const label = {
-      text: labelElement.innerText,
-    };
-    const punctuation = this.getPunctuation(labelElement);
+    if (labelElement) {
+      const label = {
+        text: labelElement.innerText,
+      };
+      const punctuation = this.getPunctuation(labelElement);
 
-    const labelMarginLeft = addIndentation ? this.indentationCount * 15 : 0;
-    const labelMarginTop = addIndentation ? 7 : 10;
-    const labelMarginBottom = 5;
+      const labelMarginLeft = addIndentation ? this.indentationCount * 15 : 0;
+      const labelMarginTop = addIndentation ? 7 : 10;
+      const labelMarginBottom = 5;
 
-    this.documentDefinition.content.push({
-      text: [label, punctuation],
-      style: "field",
-      margin: [labelMarginLeft, labelMarginTop, 0, labelMarginBottom],
-    });
+      this.documentDefinition.content.push({
+        text: [label, punctuation],
+        style: "field",
+        margin: [labelMarginLeft, labelMarginTop, 0, labelMarginBottom],
+      });
+    }
 
     if (valueElement.innerText) {
       let value = {};
