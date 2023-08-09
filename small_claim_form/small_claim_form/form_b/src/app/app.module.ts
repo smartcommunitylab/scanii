@@ -1,21 +1,33 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module';
-import { MainComponent } from './layouts/main/main.component';
-import { FooterComponent } from './layouts/footer/footer.component';
-import { NavbarComponent } from './layouts/navbar/navbar.component';
-import { CustomModule } from './shared/custom.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { MissingTranslationHandler, MissingTranslationHandlerParams, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { AppRoutingModule } from "./app-routing.module";
+import { MainComponent } from "./layouts/main/main.component";
+import { FooterComponent } from "./layouts/footer/footer.component";
+import { NavbarComponent } from "./layouts/navbar/navbar.component";
+import { CustomModule } from "./shared/custom.module";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CommonModule, LocationStrategy } from "@angular/common";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import {
+  MissingTranslationHandler,
+  MissingTranslationHandlerParams,
+  TranslateLoader,
+  TranslateModule,
+} from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-import { StepOneComponent } from './steps/step-one/step-one.component';
-import { StepTwoComponent } from './steps/step-two/step-two.component';
+import { StepOneComponent } from "./steps/step-one/step-one.component";
+import { StepTwoComponent } from "./steps/step-two/step-two.component";
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+export function HttpLoaderFactory(
+  http: HttpClient,
+  locationStrategy: LocationStrategy
+) {
+  return new TranslateHttpLoader(
+    http,
+    `${locationStrategy.getBaseHref()}assets/i18n/`,
+    ".json"
+  );
 }
 
 export class CustomMissingTranslationHandler
@@ -27,14 +39,13 @@ export class CustomMissingTranslationHandler
   }
 }
 
-
 @NgModule({
   declarations: [
     MainComponent,
     FooterComponent,
     NavbarComponent,
     StepOneComponent,
-    StepTwoComponent
+    StepTwoComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +60,7 @@ export class CustomMissingTranslationHandler
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
+        deps: [HttpClient, LocationStrategy],
       },
       missingTranslationHandler: {
         provide: MissingTranslationHandler,
@@ -61,4 +72,4 @@ export class CustomMissingTranslationHandler
   bootstrap: [MainComponent],
   exports: [TranslateModule],
 })
-export class AppModule { }
+export class AppModule {}
