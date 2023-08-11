@@ -31,9 +31,9 @@ export class NavbarService {
   }
 
   generateJson(): void {
-    const fileName = `SC_C_${this.formatDate(
+    const fileName = `SC_C_JSON_${this.formatDate(
       new Date()
-    )}_${this.translateService.currentLang.toUpperCase()}.json`
+    )}_${this.translateService.currentLang.toUpperCase()}`
 
     exportFromJSON({
       data: { form_C: this.getFormC() },

@@ -73,8 +73,8 @@ export class PreviewModalComponent implements OnInit {
 
     pdfMake.fonts = {
       FontAwesome: {
-        normal: `${window.location.origin}/LiberationSans-Regular.ttf`,
-        bold: `${window.location.origin}/LiberationSans-Bold.ttf`,
+        normal: `${window.location.origin}${window.location.pathname}LiberationSans-Regular.ttf`,
+        bold: `${window.location.origin}${window.location.pathname}LiberationSans-Bold.ttf`,
       },
     };
   }
@@ -315,9 +315,9 @@ export class PreviewModalComponent implements OnInit {
   }
 
   private getFileName(): string {
-    return `SC_B_${this.formatDate(
+    return `SC_B_PDF_${this.formatDate(
       new Date()
-    )}_${this.translateService.currentLang.toUpperCase()}.pdf`;
+    )}_${this.translateService.currentLang.toUpperCase()}`;
   }
 
   private formatDate(date: Date): string {

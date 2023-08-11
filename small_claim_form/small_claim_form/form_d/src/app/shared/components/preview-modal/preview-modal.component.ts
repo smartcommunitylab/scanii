@@ -72,9 +72,9 @@ export class PreviewModalComponent implements OnInit {
 
     pdfMake.fonts = {
       FontAwesome: {
-        normal: `${window.location.origin}/LiberationSans-Regular.ttf`,
-        bold: `${window.location.origin}/LiberationSans-Bold.ttf`,
-        italics: `${window.location.origin}/LiberationSans-Regular.ttf`,
+        normal: `${window.location.origin}${window.location.pathname}LiberationSans-Regular.ttf`,
+        bold: `${window.location.origin}${window.location.pathname}LiberationSans-Bold.ttf`,
+        italics: `${window.location.origin}${window.location.pathname}LiberationSans-Regular.ttf`,
       },
     };
   }
@@ -453,9 +453,9 @@ export class PreviewModalComponent implements OnInit {
   }
 
   private getFileName(): string {
-    return `SC_D_${this.formatDate(
+    return `SC_D_PDF_${this.formatDate(
       new Date()
-    )}_${this.translateService.currentLang.toUpperCase()}.pdf`;
+    )}_${this.translateService.currentLang.toUpperCase()}`;
   }
 
   private formatDate(date: Date): string {

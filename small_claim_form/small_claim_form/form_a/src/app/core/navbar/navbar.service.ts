@@ -55,9 +55,9 @@ export class NavbarService {
   }
 
   generateJson(): void {
-    const fileName = `SC_A_${this.formatDate(
+    const fileName = `SC_A_JSON_${this.formatDate(
       new Date()
-    )}_${this.translateService.currentLang.toUpperCase()}.json`;
+    )}_${this.translateService.currentLang.toUpperCase()}`;
 
     exportFromJSON({
       data: { form_A: this.getFormA() },
@@ -107,9 +107,9 @@ export class NavbarService {
 
   getJsonFile(): File | null {
     try {
-      const fileName = `SC_A_${this.formatDate(
+      const fileName = `SC_A_JSON_${this.formatDate(
         new Date()
-      )}_${this.translateService.currentLang.toUpperCase()}.json`;
+      )}_${this.translateService.currentLang.toUpperCase()}`;
 
       const data = { form_A: this.getFormA() };
       const blob = new Blob([JSON.stringify(data)], {

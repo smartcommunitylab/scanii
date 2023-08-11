@@ -139,9 +139,9 @@ export class PreviewModalService {
   }
 
   private getFileName(): string {
-    return `SC_A_${this.formatDate(
+    return `SC_A_PDF_${this.formatDate(
       new Date()
-    )}_${this.translateService.currentLang.toUpperCase()}.pdf`;
+    )}_${this.translateService.currentLang.toUpperCase()}`;
   }
 
   private formatDate(date: Date): string {
