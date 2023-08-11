@@ -27,14 +27,21 @@ import {
   HttpClient,
   HttpClientModule,
 } from "@angular/common/http";
-import { CommonModule } from "@angular/common";
+import { CommonModule, LocationStrategy } from "@angular/common";
 import { AngularIbanModule } from "angular-iban";
 import { CustomModule } from "./shared/custom.module";
 import { NgxWebstorageModule } from "ngx-webstorage";
 import { AuthInterceptor } from "./blocks/interceptor/auth.interceptor";
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+export function HttpLoaderFactory(
+  http: HttpClient,
+  locationStrategy: LocationStrategy
+) {
+  return new TranslateHttpLoader(
+    http,
+    `${locationStrategy.getBaseHref()}assets/i18n/`,
+    ".json"
+  );
 }
 
 export class CustomMissingTranslationHandler
@@ -75,7 +82,7 @@ export class CustomMissingTranslationHandler
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
+        deps: [HttpClient, LocationStrategy],
       },
       missingTranslationHandler: {
         provide: MissingTranslationHandler,

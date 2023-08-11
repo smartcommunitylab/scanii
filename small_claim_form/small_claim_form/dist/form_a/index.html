@@ -1,230 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-critters-container>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>European e-Justice Portal - Form A - Claim form</title>
-    <base href="/small_claim_form/dist/form_a" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="https://e-justice.europa.eu/assets/img/favicon.ico"
-    />
+    <base href="/small_claim_form/dist/form_a/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="https://e-justice.europa.eu/assets/img/favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script
-      id="ppas_container_configuration"
-      data-appid="f7c9a47b-a694-4597-9059-cbfb8b537954"
-      data-host="webanalytics.europa.eu"
-    ></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-    />
-    <style>
-      @charset "UTF-8";
-      :root {
-        --bs-blue: #0d6efd;
-        --bs-indigo: #6610f2;
-        --bs-purple: #6f42c1;
-        --bs-pink: #d63384;
-        --bs-red: #dc3545;
-        --bs-orange: #fd7e14;
-        --bs-yellow: #ffc107;
-        --bs-green: #198754;
-        --bs-teal: #20c997;
-        --bs-cyan: #0dcaf0;
-        --bs-black: #000;
-        --bs-white: #fff;
-        --bs-gray: #6c757d;
-        --bs-gray-dark: #343a40;
-        --bs-gray-100: #f8f9fa;
-        --bs-gray-200: #e9ecef;
-        --bs-gray-300: #dee2e6;
-        --bs-gray-400: #ced4da;
-        --bs-gray-500: #adb5bd;
-        --bs-gray-600: #6c757d;
-        --bs-gray-700: #495057;
-        --bs-gray-800: #343a40;
-        --bs-gray-900: #212529;
-        --bs-primary: #0d6efd;
-        --bs-secondary: #6c757d;
-        --bs-success: #198754;
-        --bs-info: #0dcaf0;
-        --bs-warning: #ffc107;
-        --bs-danger: #dc3545;
-        --bs-light: #f8f9fa;
-        --bs-dark: #212529;
-        --bs-primary-rgb: 13, 110, 253;
-        --bs-secondary-rgb: 108, 117, 125;
-        --bs-success-rgb: 25, 135, 84;
-        --bs-info-rgb: 13, 202, 240;
-        --bs-warning-rgb: 255, 193, 7;
-        --bs-danger-rgb: 220, 53, 69;
-        --bs-light-rgb: 248, 249, 250;
-        --bs-dark-rgb: 33, 37, 41;
-        --bs-primary-text: #0a58ca;
-        --bs-secondary-text: #6c757d;
-        --bs-success-text: #146c43;
-        --bs-info-text: #087990;
-        --bs-warning-text: #997404;
-        --bs-danger-text: #b02a37;
-        --bs-light-text: #6c757d;
-        --bs-dark-text: #495057;
-        --bs-primary-bg-subtle: #cfe2ff;
-        --bs-secondary-bg-subtle: #f8f9fa;
-        --bs-success-bg-subtle: #d1e7dd;
-        --bs-info-bg-subtle: #cff4fc;
-        --bs-warning-bg-subtle: #fff3cd;
-        --bs-danger-bg-subtle: #f8d7da;
-        --bs-light-bg-subtle: #fcfcfd;
-        --bs-dark-bg-subtle: #ced4da;
-        --bs-primary-border-subtle: #9ec5fe;
-        --bs-secondary-border-subtle: #e9ecef;
-        --bs-success-border-subtle: #a3cfbb;
-        --bs-info-border-subtle: #9eeaf9;
-        --bs-warning-border-subtle: #ffe69c;
-        --bs-danger-border-subtle: #f1aeb5;
-        --bs-light-border-subtle: #e9ecef;
-        --bs-dark-border-subtle: #adb5bd;
-        --bs-white-rgb: 255, 255, 255;
-        --bs-black-rgb: 0, 0, 0;
-        --bs-body-color-rgb: 33, 37, 41;
-        --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
-          "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
-          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-          "Noto Color Emoji";
-        --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-          "Liberation Mono", "Courier New", monospace;
-        --bs-gradient: linear-gradient(180deg, #ffffff26, #fff0);
-        --bs-body-font-family: var(--bs-font-sans-serif);
-        --bs-body-font-size: 1rem;
-        --bs-body-font-weight: 400;
-        --bs-body-line-height: 1.5;
-        --bs-body-color: #212529;
-        --bs-emphasis-color-rgb: 0, 0, 0;
-        --bs-secondary-color: #212529bf;
-        --bs-secondary-color-rgb: 33, 37, 41;
-        --bs-secondary-bg: #e9ecef;
-        --bs-secondary-bg-rgb: 233, 236, 239;
-        --bs-tertiary-color: #21252980;
-        --bs-tertiary-color-rgb: 33, 37, 41;
-        --bs-tertiary-bg: #f8f9fa;
-        --bs-tertiary-bg-rgb: 248, 249, 250;
-        --bs-body-bg: #fff;
-        --bs-body-bg-rgb: 255, 255, 255;
-        --bs-link-color: #0d6efd;
-        --bs-link-color-rgb: 13, 110, 253;
-        --bs-link-decoration: underline;
-        --bs-link-hover-color: #0a58ca;
-        --bs-link-hover-color-rgb: 10, 88, 202;
-        --bs-code-color: #d63384;
-        --bs-border-width: 1px;
-        --bs-border-style: solid;
-        --bs-border-color: #dee2e6;
-        --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
-        --bs-border-radius: 0.375rem;
-        --bs-border-radius-sm: 0.25rem;
-        --bs-border-radius-lg: 0.5rem;
-        --bs-border-radius-xl: 1rem;
-        --bs-border-radius-2xl: 2rem;
-        --bs-border-radius-pill: 50rem;
-        --bs-box-shadow: 0 0.5rem 1rem rgba(var(--bs-body-color-rgb), 0.15);
-        --bs-box-shadow-sm: 0 0.125rem 0.25rem
-          rgba(var(--bs-body-color-rgb), 0.075);
-        --bs-box-shadow-lg: 0 1rem 3rem rgba(var(--bs-body-color-rgb), 0.175);
-        --bs-box-shadow-inset: inset 0 1px 2px
-          rgba(var(--bs-body-color-rgb), 0.075);
-        --bs-emphasis-color: #000;
-        --bs-form-control-bg: var(--bs-body-bg);
-        --bs-form-control-disabled-bg: var(--bs-secondary-bg);
-        --bs-highlight-bg: #fff3cd;
-        --bs-breakpoint-xs: 0;
-        --bs-breakpoint-sm: 576px;
-        --bs-breakpoint-md: 768px;
-        --bs-breakpoint-lg: 992px;
-        --bs-breakpoint-xl: 1200px;
-        --bs-breakpoint-xxl: 1400px;
-      }
-      *,
-      :after,
-      :before {
-        box-sizing: border-box;
-      }
-      @media (prefers-reduced-motion: no-preference) {
-        :root {
-          scroll-behavior: smooth;
-        }
-      }
-      body {
-        margin: 0;
-        font-family: var(--bs-body-font-family);
-        font-size: var(--bs-body-font-size);
-        font-weight: var(--bs-body-font-weight);
-        line-height: var(--bs-body-line-height);
-        color: var(--bs-body-color);
-        text-align: var(--bs-body-text-align);
-        background-color: var(--bs-body-bg);
-        -webkit-text-size-adjust: 100%;
-        -webkit-tap-highlight-color: transparent;
-      }
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font-family: inherit;
-        vertical-align: initial;
-      }
-      html {
-        font-size: 10px;
-        font-size: 62.5%;
-      }
-      body {
-        line-height: 1;
-      }
-      body {
-        font-family: Open Sans, sans-serif;
-        color: #4a4a4a;
-        line-height: 1.5;
-        font-size: 1.4rem;
-      }
-      @media (min-width: 48em) {
-        body {
-          font-size: 1.6rem !important;
-        }
-      }
-      html {
-        scroll-behavior: auto !important;
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="/small_claim_form/dist/form_a/styles.9f2cfc9aa6662cc99502.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript
-      ><link rel="stylesheet" href="/small_claim_form/dist/form_a/styles.9f2cfc9aa6662cc99502.css"
-    /></noscript>
-  </head>
+    <script id="ppas_container_configuration" data-appid="f7c9a47b-a694-4597-9059-cbfb8b537954" data-host="webanalytics.europa.eu"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <style>@charset "UTF-8";:root{--bs-blue:#0d6efd;--bs-indigo:#6610f2;--bs-purple:#6f42c1;--bs-pink:#d63384;--bs-red:#dc3545;--bs-orange:#fd7e14;--bs-yellow:#ffc107;--bs-green:#198754;--bs-teal:#20c997;--bs-cyan:#0dcaf0;--bs-black:#000;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-gray-100:#f8f9fa;--bs-gray-200:#e9ecef;--bs-gray-300:#dee2e6;--bs-gray-400:#ced4da;--bs-gray-500:#adb5bd;--bs-gray-600:#6c757d;--bs-gray-700:#495057;--bs-gray-800:#343a40;--bs-gray-900:#212529;--bs-primary:#0d6efd;--bs-secondary:#6c757d;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;--bs-light:#f8f9fa;--bs-dark:#212529;--bs-primary-rgb:13,110,253;--bs-secondary-rgb:108,117,125;--bs-success-rgb:25,135,84;--bs-info-rgb:13,202,240;--bs-warning-rgb:255,193,7;--bs-danger-rgb:220,53,69;--bs-light-rgb:248,249,250;--bs-dark-rgb:33,37,41;--bs-primary-text:#0a58ca;--bs-secondary-text:#6c757d;--bs-success-text:#146c43;--bs-info-text:#087990;--bs-warning-text:#997404;--bs-danger-text:#b02a37;--bs-light-text:#6c757d;--bs-dark-text:#495057;--bs-primary-bg-subtle:#cfe2ff;--bs-secondary-bg-subtle:#f8f9fa;--bs-success-bg-subtle:#d1e7dd;--bs-info-bg-subtle:#cff4fc;--bs-warning-bg-subtle:#fff3cd;--bs-danger-bg-subtle:#f8d7da;--bs-light-bg-subtle:#fcfcfd;--bs-dark-bg-subtle:#ced4da;--bs-primary-border-subtle:#9ec5fe;--bs-secondary-border-subtle:#e9ecef;--bs-success-border-subtle:#a3cfbb;--bs-info-border-subtle:#9eeaf9;--bs-warning-border-subtle:#ffe69c;--bs-danger-border-subtle:#f1aeb5;--bs-light-border-subtle:#e9ecef;--bs-dark-border-subtle:#adb5bd;--bs-white-rgb:255,255,255;--bs-black-rgb:0,0,0;--bs-body-color-rgb:33,37,41;--bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#212529;--bs-emphasis-color-rgb:0,0,0;--bs-secondary-color:rgba(33, 37, 41, .75);--bs-secondary-color-rgb:33,37,41;--bs-secondary-bg:#e9ecef;--bs-secondary-bg-rgb:233,236,239;--bs-tertiary-color:rgba(33, 37, 41, .5);--bs-tertiary-color-rgb:33,37,41;--bs-tertiary-bg:#f8f9fa;--bs-tertiary-bg-rgb:248,249,250;--bs-body-bg:#fff;--bs-body-bg-rgb:255,255,255;--bs-link-color:#0d6efd;--bs-link-color-rgb:13,110,253;--bs-link-decoration:underline;--bs-link-hover-color:#0a58ca;--bs-link-hover-color-rgb:10,88,202;--bs-code-color:#d63384;--bs-border-width:1px;--bs-border-style:solid;--bs-border-color:#dee2e6;--bs-border-color-translucent:rgba(0, 0, 0, .175);--bs-border-radius:.375rem;--bs-border-radius-sm:.25rem;--bs-border-radius-lg:.5rem;--bs-border-radius-xl:1rem;--bs-border-radius-2xl:2rem;--bs-border-radius-pill:50rem;--bs-box-shadow:0 .5rem 1rem rgba(var(--bs-body-color-rgb), .15);--bs-box-shadow-sm:0 .125rem .25rem rgba(var(--bs-body-color-rgb), .075);--bs-box-shadow-lg:0 1rem 3rem rgba(var(--bs-body-color-rgb), .175);--bs-box-shadow-inset:inset 0 1px 2px rgba(var(--bs-body-color-rgb), .075);--bs-emphasis-color:#000;--bs-form-control-bg:var(--bs-body-bg);--bs-form-control-disabled-bg:var(--bs-secondary-bg);--bs-highlight-bg:#fff3cd;--bs-breakpoint-xs:0;--bs-breakpoint-sm:576px;--bs-breakpoint-md:768px;--bs-breakpoint-lg:992px;--bs-breakpoint-xl:1200px;--bs-breakpoint-xxl:1400px}*,:after,:before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);color:var(--bs-body-color);text-align:var(--bs-body-text-align);background-color:var(--bs-body-bg);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}@font-face{font-family:FontAwesome;src:url(fontawesome-webfont.2b13baa7dd4f54c9.eot?v=4.7.0);src:url(fontawesome-webfont.2b13baa7dd4f54c9.eot?#iefix&v=4.7.0) format("embedded-opentype"),url(fontawesome-webfont.e9955780856cf8aa.woff2?v=4.7.0) format("woff2"),url(fontawesome-webfont.cf011583fb81df9f.woff?v=4.7.0) format("woff"),url(fontawesome-webfont.8a7cb27d142e3e19.ttf?v=4.7.0) format("truetype"),url(fontawesome-webfont.da909aa098b0ee2d.svg?v=4.7.0#fontawesomeregular) format("svg");font-weight:400;font-style:normal}@charset "UTF-8";@font-face{font-family:LiberationSans;src:url(LiberationSans-Regular.7848028f3b061fd5.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-family:LiberationSans;src:url(LiberationSans-Bold.d52c7c0935acbc01.ttf) format("truetype");font-weight:700;font-style:normal}html,body{margin:0;padding:0;border:0;font-size:100%;font-family:inherit;vertical-align:baseline}html{font-size:10px;font-size:62.5%}body{line-height:1}body{font-family:FontAwesome,LiberationSans;color:#4a4a4a;line-height:1.5;font-size:1.4rem}@media (min-width: 48em){body{font-size:1.6rem!important}}html{scroll-behavior:auto!important}</style><link rel="stylesheet" href="/small_claim_form/dist/form_a/styles.665e09314fa0ee3c.css" media="print" onload="this.media=&apos;all&apos;"><noscript><link rel="stylesheet" href="/small_claim_form/dist/form_a/styles.665e09314fa0ee3c.css"></noscript></head>
   <body>
     <script>
       EXTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
       INTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
-      JSON_PATH = "/small_claim_form/dist/form_a/content/json/";
-      I18N_PATH = "/small_claim_form/dist/form_a/assets/i18n/";
+      JSON_PATH = `${window.location.pathname}assets/json/`;
+      I18N_PATH = `${window.location.pathname}assets/i18n/`;
 
       let version = "original";
       let currentLang;
@@ -232,6 +25,7 @@
       let interaction = null;
       let translations = null;
       let simplificatinBoxTooltipStyle;
+      let isWarningStepVisible = false;
 
       this.initializeLanguage();
       window.addEventListener("message", this.listener.bind(this), false);
@@ -292,11 +86,8 @@
           simplificatinBoxTooltipStyle.remove();
 
           setTimeout(() => {
-            setCompleteVersionButton(
-              document.getElementById("simplyfied_btn"),
-              document.getElementById("close_warning_toast_button")
-            );
             hideToast();
+            setCompleteVersionButton(document.getElementById("simplyfied_btn"));
           }, 50);
         }
       }
@@ -327,6 +118,7 @@
 
       function closeAccordion(event) {
         if (event.target.getAttribute("accordion-is-collapsed") === "false") {
+          // accordion is open and needs to be closed
           var accordionCntId = event.target.getAttribute("aria-controls");
           var accordionCnt = document.getElementById(accordionCntId);
 
@@ -337,17 +129,14 @@
               : "true"
           );
 
-          event.target.removeEventListener("click", closeAccordion);
-
           setTimeout(function () {
             event.target.classList.add("collapsed");
             event.target.setAttribute("aria-expanded", "false");
 
             accordionCnt.classList.remove("show");
-
-            event.target.addEventListener("click", closeAccordion);
           }, 8);
         } else {
+          // accordion is closed and the click on it opens it
           event.target.setAttribute(
             "accordion-is-collapsed",
             event.target.getAttribute("accordion-is-collapsed") === "true"
@@ -500,23 +289,11 @@
             ".simplification-box .tooltip-inner { background-color: rgb(247, 250, 160) !important;} .simplification-box .tooltip-arrow::before { border-top-color: rgb(247, 250, 160) !important; }";
 
           if (typeof hideToast === "undefined") {
-            //remove css class containing the animation for the toast arrow exiting
-            document
-              .getElementById("warning_toast")
-              .classList.remove("exiting_arrow");
-
-            //remove onClick attribute
-            btn.removeAttribute("onClick");
-
             toast.show();
+            isWarningStepVisible = true;
 
-            //add entrance animation
-            toastElement.style.animation = "entrance_animation 0.7s linear";
-
-            setTimeout(() => {
-              btn.setAttribute("onClick", 'showText("original")');
-              toastClosureBtn.setAttribute("onClick", "hideToast()");
-            }, 700);
+            btn.setAttribute("onClick", 'showText("original")');
+            toastClosureBtn.setAttribute("onClick", "hideToast()");
           }
 
           // hide pdf legal
@@ -538,7 +315,7 @@
 
           simplificatinBoxTooltipStyle.remove();
 
-          setCompleteVersionButton(btn, toastClosureBtn);
+          setCompleteVersionButton(btn);
 
           simplificationBoxs = document.querySelectorAll(
             "[scanii_simplificationBox]"
@@ -558,11 +335,7 @@
         }
       }
 
-      function setCompleteVersionButton(btn, toastClosureBtn) {
-        //remove onClick attribute
-        btn.removeAttribute("onClick");
-        toastClosureBtn.removeAttribute("onClick");
-
+      function setCompleteVersionButton(btn) {
         // add button icon
         const icon =
           '<svg width="17" height="17" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: text-top;"><path d="M3.54545 11.7188C4.15909 11.7188 4.75284 11.8164 5.3267 12.0117C5.90057 12.207 6.46591 12.5 7.02273 12.8906V2.88281C6.51136 2.41406 5.95739 2.05078 5.3608 1.79297C4.7642 1.53516 4.15909 1.40625 3.54545 1.40625C3.11364 1.40625 2.69034 1.48047 2.27557 1.62891C1.8608 1.77734 1.44318 1.96094 1.02273 2.17969V12.3516C1.375 12.1328 1.77557 11.9727 2.22443 11.8711C2.6733 11.7695 3.11364 11.7188 3.54545 11.7188ZM8.04545 12.8906C8.61364 12.5 9.17045 12.207 9.71591 12.0117C10.2614 11.8164 10.8409 11.7188 11.4545 11.7188C11.8864 11.7188 12.3324 11.7656 12.7926 11.8594C13.2528 11.9531 13.6477 12.0781 13.9773 12.2344V2.17969C13.5909 1.91406 13.1818 1.71875 12.75 1.59375C12.3182 1.46875 11.8864 1.40625 11.4545 1.40625C10.8409 1.40625 10.2472 1.53516 9.6733 1.79297C9.09943 2.05078 8.55682 2.41406 8.04545 2.88281V12.8906ZM7.53409 15C6.95455 14.4062 6.32386 13.9492 5.64205 13.6289C4.96023 13.3086 4.26136 13.1484 3.54545 13.1484C3.125 13.1484 2.71591 13.2188 2.31818 13.3594C1.92045 13.5 1.52273 13.6719 1.125 13.875C0.863636 14.0469 0.610795 14.0234 0.366477 13.8047C0.122159 13.5859 0 13.2734 0 12.8672V2.01562C0 1.78125 0.0397727 1.56641 0.119318 1.37109C0.198864 1.17578 0.318182 1.02344 0.477273 0.914062C0.954545 0.601562 1.4517 0.371094 1.96875 0.222656C2.4858 0.0742189 3.01136 0 3.54545 0C4.26136 0 4.95739 0.132813 5.63352 0.398438C6.30966 0.664063 6.94318 1.07031 7.53409 1.61719C8.11364 1.07031 8.7358 0.664063 9.40057 0.398438C10.0653 0.132813 10.75 0 11.4545 0C11.9886 0 12.5114 0.0742189 13.0227 0.222656C13.5341 0.371094 14.0284 0.601562 14.5057 0.914062C14.6648 1.02344 14.7869 1.17578 14.8722 1.37109C14.9574 1.56641 15 1.78125 15 2.01562V12.8672C15 13.3047 14.8722 13.6367 14.6165 13.8633C14.3608 14.0898 14.108 14.0937 13.858 13.875C13.4716 13.6562 13.0795 13.4805 12.6818 13.3477C12.2841 13.2148 11.875 13.1484 11.4545 13.1484C10.7386 13.1484 10.0511 13.3125 9.39205 13.6406C8.73295 13.9687 8.11364 14.4219 7.53409 15Z" fill="white"/></svg>';
@@ -923,7 +696,7 @@
           "background-color: #F9E79F; color: black; font-size:15px;";
 
         accordionBtn.innerText = "Dettagli";
-        accordionBtn.addEventListener("click", closeAccordion);
+        accordionBtn.setAttribute("onClick", "closeAccordion(event)");
         accordionItm.append(accordionBtn);
         accordionItm.append(accordionCnt);
         accordionDiv.append(accordionItm);
@@ -1036,7 +809,7 @@
 
         if (!interaction) {
           let interactionRequest = await fetch(
-            "./content/json/interaction_" + currentLang + ".json"
+            "./assets/json/interaction_" + currentLang + ".json"
           );
           interaction = await interactionRequest.json();
         }
@@ -1295,7 +1068,7 @@
           "background-color: #F9E79F; color: black; font-size:15px;";
 
         accordionBtn.innerText = "Dettagli";
-        accordionBtn.addEventListener("click", closeAccordion);
+        accordionBtn.setAttribute("onClick", "closeAccordion(event)");
         accordionItm.append(accordionBtn);
         accordionItm.append(accordionCnt);
         accordionDiv.append(accordionItm);
@@ -1365,32 +1138,23 @@
 
       function hideToast() {
         var btn = document.getElementById("simplyfied_btn");
-        btn.removeAttribute("onClick");
-        document
-          .getElementById("close_warning_toast_button")
-          .removeAttribute("onClick");
 
-        //add exiting animation
-        addToastExitingAnimation();
+        //hide the toast
+        toast.hide();
 
-        //wait for the animation to finish and hide the toast
-        setTimeout(() => {
-          toast.hide();
-          const argument = version === "simplyfied" ? "original" : "simplyfied";
-          btn.setAttribute("onClick", 'showText("' + argument + '")');
-        }, 630);
+        const argument = version === "simplyfied" ? "original" : "simplyfied";
+        btn.setAttribute("onClick", 'showText("' + argument + '")');
+
+        setTimeout(function () {
+          isWarningStepVisible = false;
+          document.dispatchEvent(new Event("click"));
+        }, 150);
       }
 
-      function addToastExitingAnimation() {
-        document.getElementById("warning_toast").style.animation =
-          "exiting_animation 0.7s linear";
-        document.getElementById("warning_toast").classList.add("exiting_arrow");
+      function getIsWarningStepVisible() {
+        return isWarningStepVisible;
       }
     </script>
     <app-main></app-main>
-    <script src="/small_claim_form/dist/form_a/runtime.79683ac39f951fb596f6.js" defer></script>
-    <script src="/small_claim_form/dist/form_a/polyfills.af17f83eafaf15683d3c.js" defer></script>
-    <script src="/small_claim_form/dist/form_a/scripts.6c2e76d7c0794e9d85c0.js" defer></script>
-    <script src="/small_claim_form/dist/form_a/main.c7c902aa688977d17d0e.js" defer></script>
-  </body>
+  <script src="/small_claim_form/dist/form_a/runtime.0de798938e9dd133.js" type="module"></script><script src="/small_claim_form/dist/form_a/polyfills.4a7ed440dad8e3c5.js" type="module"></script><script src="/small_claim_form/dist/form_a/scripts.ae934356ffd25f29.js" defer></script><script src="/small_claim_form/dist/form_a/main.b58e37802fc3b673.js" type="module"></script></body>
 </html>

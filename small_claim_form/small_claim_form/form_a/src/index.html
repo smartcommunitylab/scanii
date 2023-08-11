@@ -34,10 +34,10 @@
   </head>
   <body>
     <script>
-      EXTERNAL_URI = "http://localhost:3000";
-      INTERNAL_URI = "http://localhost:4200";
-      JSON_PATH = "./assets/json/";
-      I18N_PATH = "./assets/i18n/";
+      EXTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
+      INTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
+      JSON_PATH = `${window.location.pathname}assets/json/`;
+      I18N_PATH = `${window.location.pathname}assets/i18n/`;
 
       let version = "original";
       let currentLang;
@@ -309,7 +309,6 @@
             ".simplification-box .tooltip-inner { background-color: rgb(247, 250, 160) !important;} .simplification-box .tooltip-arrow::before { border-top-color: rgb(247, 250, 160) !important; }";
 
           if (typeof hideToast === "undefined") {
-
             toast.show();
             isWarningStepVisible = true;
 
