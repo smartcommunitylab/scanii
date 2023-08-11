@@ -72,9 +72,9 @@ export class PreviewModalComponent implements OnInit {
 
     pdfMake.fonts = {
       FontAwesome: {
-        normal: `${window.location.origin}${window.location.pathname}LiberationSans-Regular.ttf`,
-        bold: `${window.location.origin}${window.location.pathname}LiberationSans-Bold.ttf`,
-        italics: `${window.location.origin}${window.location.pathname}LiberationSans-Regular.ttf`,
+        normal: `${window.location.origin}${window.location.pathname}assets/fonts/liberation/LiberationSans-Regular.ttf`,
+        bold: `${window.location.origin}${window.location.pathname}assets/fonts/liberation/LiberationSans-Bold.ttf`,
+        italics: `${window.location.origin}${window.location.pathname}assets/fonts/liberation/LiberationSans-Regular.ttf`,
       },
     };
   }
