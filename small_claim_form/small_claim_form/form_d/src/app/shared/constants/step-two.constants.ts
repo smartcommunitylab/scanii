@@ -9,7 +9,7 @@ export const stepTwoShowHideFields = {
     triggeringValue: "settlement",
     triggeringFieldId: "settlement",
   },
-  supersededJudgementExpansion: {
+  supersededJudgmentExpansion: {
     triggeringFormControlName: "supersededJudgment",
     triggeringValue: true,
     triggeringFieldId: "dynformSCD2WasJudgmentGivenAppealCourt",

@@ -175,17 +175,17 @@ export class StepTwoService {
           this.onStableSubscription.unsubscribe();
         }
 
-        const supersededJudgementExpansion =
-          stepTwoShowHideFields["supersededJudgementExpansion"];
+        const supersededJudgmentExpansion =
+          stepTwoShowHideFields["supersededJudgmentExpansion"];
 
         const value = this.getJsonValue(
-          supersededJudgementExpansion["triggeringFormControlName"],
+          supersededJudgmentExpansion["triggeringFormControlName"],
           stepTwo
         );
-        if (value === supersededJudgementExpansion["triggeringValue"]) {
+        if (value === supersededJudgmentExpansion["triggeringValue"]) {
           //trigger change event to expand the div with id "dynformSCD2WasJudgmentGivenAppealCourt_div"
           this.triggerChangeEvent(
-            supersededJudgementExpansion["triggeringFieldId"]
+            supersededJudgmentExpansion["triggeringFieldId"]
           );
         }
 
