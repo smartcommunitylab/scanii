@@ -74,6 +74,7 @@ export class JurisdictionComponent implements OnInit, AfterViewInit {
           behavior: 'auto',
         });
         this.toastService.showErrorToast();
+        this.navbarService.addRemoveGreenTick("step3", false);
       }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;

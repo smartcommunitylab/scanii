@@ -37,10 +37,15 @@
   </head>
   <body>
     <script>
+      function getBaseHref() {
+        const base = document.querySelector("base");
+        return base ? base.getAttribute("href") : "/";
+      }
+
       EXTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
       INTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
-      JSON_PATH = `${window.location.pathname}assets/json/`;
-      I18N_PATH = `${window.location.pathname}assets/i18n/`;
+      JSON_PATH = `${getBaseHref()}assets/json/`;
+      I18N_PATH = `${getBaseHref()}assets/i18n/`;
 
       let version = "original";
       let currentLang;

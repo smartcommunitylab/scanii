@@ -109,7 +109,12 @@ export class NavbarComponent {
                 this.scrollToTop();
                 a.setAttribute("tabindex", "-1");
 
-                this.addRemoveValidatedClass(array);
+                array.forEach((item: PromiseContent) => {
+                  this.navbarService.addRemoveGreenTick(
+                    item.stepId,
+                    item.isValid
+                  );
+                });
               } else {
                 this.toastService.showErrorToast();
 
@@ -130,7 +135,14 @@ export class NavbarComponent {
                 const invalidStepIndex = array.findIndex(
                   (item: PromiseContent) => item.stepId === invalidStep!.stepId
                 );
-                this.addRemoveValidatedClass(array.slice(0, invalidStepIndex+1));
+                array
+                  .slice(0, invalidStepIndex + 1)
+                  .forEach((item: PromiseContent) => {
+                    this.navbarService.addRemoveGreenTick(
+                      item.stepId,
+                      item.isValid
+                    );
+                  });
               }
             });
           } else {
@@ -142,7 +154,12 @@ export class NavbarComponent {
             }
 
             Promise.all(promises).then((array: any) => {
-              this.addRemoveValidatedClass(array);
+              array.forEach((item: PromiseContent) => {
+                this.navbarService.addRemoveGreenTick(
+                  item.stepId,
+                  item.isValid
+                );
+              });
 
               this.navbarService.previousStepId =
                 this.navbarService.currentStepId;
@@ -180,21 +197,6 @@ export class NavbarComponent {
         this.blurChildren(element.children[i]);
       }
     }
-  }
-
-  addRemoveValidatedClass(array: PromiseContent[]) {
-    array.forEach((item: PromiseContent) => {
-      const element = document.getElementById(item.stepId + "-menu");
-      if (item.isValid) {
-        element
-          ?.querySelector("a div.validation-icon")
-          ?.classList.add("validated");
-      } else {
-        element
-          ?.querySelector("a div.validation-icon")
-          ?.classList.remove("validated");
-      }
-    });
   }
 
   ngOnDestroy(): void {
@@ -273,7 +275,7 @@ export class NavbarComponent {
 
   manageNavigation(event: any): void {
     this.toastService.hideErrorToast();
-    
+
     const movement = event.content as Movement;
 
     const destinationMenu = document.getElementById(
@@ -357,7 +359,7 @@ export class NavbarComponent {
   }
 
   openFileBrowser() {
-    document.getElementById('loadDraft').click();
+    document.getElementById("loadDraft").click();
   }
 
   loadDraft(event: any): void {

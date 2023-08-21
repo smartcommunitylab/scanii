@@ -21,12 +21,12 @@ export class ClaimDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.claimDetailsService.editForm.patchValue({
-    //   detailsOfClaim: 'Crime',
-    //   writtenEvidence: 'no',
-    //   witnesses: 'no',
-    //   otherClaimDetails: 'no',
-    // });
+    this.claimDetailsService.editForm.patchValue({
+      detailsOfClaim: 'Crime',
+      writtenEvidence: 'no',
+      witnesses: 'no',
+      otherClaimDetails: 'no',
+    });
   }
 
   onClaimDetailsRadioButtonChange(event: any, divIdToExpand: string) {
@@ -63,6 +63,7 @@ export class ClaimDetailsComponent implements OnInit {
           behavior: 'auto',
         });
         this.toastService.showErrorToast();
+        this.navbarService.addRemoveGreenTick("step6", false);
       }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;

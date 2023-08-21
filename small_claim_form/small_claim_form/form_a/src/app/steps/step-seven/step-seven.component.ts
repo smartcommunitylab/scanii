@@ -121,6 +121,7 @@ export class StepSevenComponent implements OnInit {
           behavior: 'auto',
         });
         this.toastService.showErrorToast();
+        this.navbarService.addRemoveGreenTick("step7", false);
       }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;

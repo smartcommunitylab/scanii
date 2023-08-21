@@ -69,20 +69,6 @@ export class CourtComponent implements OnInit {
     }
   }
 
-  generateJson() {
-    if (!this.courtService.editForm.invalid) {
-      this.navbarService.generateJson();
-    } else {
-      this.courtService.markCourtFormAsDirty();
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "auto",
-      });
-      this.toastService.showErrorToast();
-    }
-  }
-
   setFindCourtCountry() {
     const country = this.courtService.europeanCountries.find(
       (country) =>
@@ -151,6 +137,7 @@ export class CourtComponent implements OnInit {
         behavior: "auto",
       });
       this.toastService.showErrorToast();
+      this.navbarService.addRemoveGreenTick("step8", false);
     }
   }
 

@@ -135,7 +135,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
                 window["showInfo"](currentStepNumber);
 
-                this.addRemoveValidatedClass(array);
+                array.forEach((item: PromiseContent) => {
+                  this.navbarService.addRemoveGreenTick(
+                    item.stepId,
+                    item.isValid
+                  );
+                });
               } else {
                 this.toastService.showErrorToast();
 
@@ -161,7 +166,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
                 const invalidStepIndex = array.findIndex(
                   (item: PromiseContent) => item.stepId === invalidStep.stepId
                 );
-                this.addRemoveValidatedClass(array.slice(0, invalidStepIndex+1));
+                array
+                  .slice(0, invalidStepIndex + 1)
+                  .forEach((item: PromiseContent) => {
+                    this.navbarService.addRemoveGreenTick(
+                      item.stepId,
+                      item.isValid
+                    );
+                  });
               }
             });
           } else {
@@ -173,7 +185,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
             }
 
             Promise.all(promises).then((array: PromiseContent[]) => {
-              this.addRemoveValidatedClass(array);
+              array.forEach((item: PromiseContent) => {
+                this.navbarService.addRemoveGreenTick(
+                  item.stepId,
+                  item.isValid
+                );
+              });
 
               this.navbarService.previousStepId =
                 this.navbarService.currentStepId;
@@ -214,21 +231,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.blurChildren(element.children[i]);
       }
     }
-  }
-
-  addRemoveValidatedClass(array: PromiseContent[]) {
-    array.forEach((item: PromiseContent) => {
-      const element = document.getElementById(item.stepId + "-menu");
-      if (item.isValid) {
-        element
-          .querySelector("a div.validation-icon")
-          .classList.add("validated");
-      } else {
-        element
-          .querySelector("a div.validation-icon")
-          .classList.remove("validated");
-      }
-    });
   }
 
   ngOnDestroy(): void {

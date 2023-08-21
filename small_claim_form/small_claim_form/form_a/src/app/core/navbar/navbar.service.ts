@@ -123,4 +123,15 @@ export class NavbarService {
       return null;
     }
   }
+
+  addRemoveGreenTick(stepId: string, isValid: boolean): void {
+    const element = document.getElementById(stepId + "-menu");
+    if (isValid) {
+      element.querySelector("a div.validation-icon").classList.add("validated");
+    } else {
+      element
+        .querySelector("a div.validation-icon")
+        .classList.remove("validated");
+    }
+  }
 }

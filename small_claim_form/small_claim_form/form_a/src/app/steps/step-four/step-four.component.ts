@@ -268,6 +268,7 @@ export class StepFourComponent implements OnInit {
           behavior: 'auto',
         });
         this.toastService.showErrorToast();
+        this.navbarService.addRemoveGreenTick("step4", false);
       }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;

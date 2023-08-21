@@ -650,6 +650,7 @@ export class StepOneComponent implements OnInit {
         behavior: "auto",
       });
       this.toastService.showErrorToast();
+      this.navbarService.addRemoveGreenTick("step1", false);
     }
   }
 }

@@ -128,6 +128,7 @@ export class StepTwoComponent implements OnInit {
         behavior: "auto",
       });
       this.toastService.showErrorToast();
+      this.navbarService.addRemoveGreenTick("step2", false);
     }
   }
 

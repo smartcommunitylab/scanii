@@ -331,6 +331,7 @@ export class DefendantComponent implements OnInit {
           behavior: 'auto',
         });
         this.toastService.showErrorToast();
+        this.navbarService.addRemoveGreenTick("step2", false);
       }
     } else if (value === 'back') {
       this.navbarService.previousStepId = this.navbarService.currentStepId;
