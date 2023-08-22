@@ -25,7 +25,7 @@
     "step0": "Istruzioni",
     "step1": "Fase 1",
     "usefulPDFs": "PDF utili",
-    "noPdfs": "Non sono presenti pdf utili per la sezione",
+    "noPDFs": "Non sono presenti PDF utili per la sezione",
     "synonyms": "Sinonimi",
     "noSynonyms": "Non sono presenti sinonimi per la sezione",
     "loadSaveDraftExplanation": "È possibile salvare il modulo su cui si sta lavorando come bozza. Per completarlo basta caricare il modulo salvato in un secondo momento.",
@@ -88,19 +88,6 @@
     "rememberSignStampPrintedForm": "Non dimenticare di firmare e timbrare (se pertinente) il modulo dopo averlo stampato"
   },
   "preview": {
-    "title": "Anteprima",
-    "claimantDetails": "Estremi identificativi del ricorrente",
-    "representativeClaimantDetails": "Estremi identificativi del rappresentante del ricorrente",
-    "defendantDetails": "Estremi identificativi del convenuto",
-    "representativeDefendantDetails": "Estremi identificativi del rappresentante del convenuto",
-    "claimantIdentifier": "2.1. Cognome e nome / ragione sociale o nome dell’organizzazione",
-    "defendantIdentifier": "3.1. Cognome e nome / ragione sociale o nome dell’organizzazione",
-    "identifier": "Cognome e nome / ragione sociale o nome dell’organizzazione",
-    "claimantCityPostalCode": "2.4. Città e codice postale",
-    "defendantCityPostalCode": "3.4. Città e codice postale",
-    "cityPostalCode": "Città e codice postale",
-    "representativeClaimant": "2.8. Rappresentante del ricorrente",
-    "representativeDefendant": "3.8. Rappresentante del convenuto",
-    "sign": "Firma e/o timbro"
+    "title": "Anteprima"
   }
 }

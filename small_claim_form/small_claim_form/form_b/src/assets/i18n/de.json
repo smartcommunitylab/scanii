@@ -29,7 +29,7 @@
     "step1": "Schritt 1",
     "step2": "Schritt 2",
     "usefulPDFs": "Nützliche PDFs",
-    "noPdfs": "Es gibt keine nützlichen PDFs für den Abschnitt",
+    "noPDFs": "Es gibt keine nützlichen PDFs für den Abschnitt",
     "synonyms": "Synonyme",
     "noSynonyms": "Es gibt keine Synonyme für den Abschnitt",
     "loadSaveDraftExplanation": "Sie können ein Formular während der Bearbeitung als Entwurf speichern und es später erneut laden, um es zu vervollständigen.",
@@ -398,7 +398,7 @@
     "select": "Bitte auswählen",
     "other": "Sonstige",
     "specify": "Bitte angeben",
-    "noResultsMatch": "nessun risultato corrisponde a",
+    "noResultsMatch": "Keine Ergebnisse entsprechen",
     "claimFormSectionsRectified": "Folgende Abschnitte des Klageformblatts sind wie folgt zu vervollständigen und/oder zu berichtigen:",
     "doneAt": "Ort",
     "rememberSignStampPrintedForm": "Bitte vergessen Sie nicht die Unterschrift und gegebenenfalls den Stempel, nachdem Sie das Formular ausgedruckt haben."

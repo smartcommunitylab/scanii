@@ -182,10 +182,10 @@
             span = document.createElement("span");
             span.setAttribute("id", "no_pdf_label");
             span.setAttribute("style", "display: contents;");
-            span.setAttribute("data-i18n-key", "menu.noPdfs");
+            span.setAttribute("data-i18n-key", "menu.noPDFs");
             const div = document.getElementById("legal_information");
             if (div) {
-              const text = translations.menu.noPdfs;
+              const text = translations.menu.noPDFs;
               span.innerText = text;
               div.append(span);
             }
@@ -370,12 +370,16 @@
 
       function pdfShow(pdfId) {
         divLink = document.getElementById(pdfId);
-        divLink.classList.add("pop-outin");
+        if (divLink) {
+          divLink.classList.add("pop-outin");
+        }
       }
 
       function pdfHide(pdfId) {
         divLink = document.getElementById(pdfId);
-        divLink.classList.remove("pop-outin");
+        if (divLink) {
+          divLink.classList.remove("pop-outin");
+        }
       }
 
       function processBlock(block) {
@@ -1170,5 +1174,5 @@
       }
     </script>
     <app-main></app-main>
-  <script src="/small_claim_form/dist/form_a/runtime.0de798938e9dd133.js" type="module"></script><script src="/small_claim_form/dist/form_a/polyfills.4a7ed440dad8e3c5.js" type="module"></script><script src="/small_claim_form/dist/form_a/scripts.ae934356ffd25f29.js" defer></script><script src="/small_claim_form/dist/form_a/main.2a5b8dfc451da0dd.js" type="module"></script></body>
+  <script src="/small_claim_form/dist/form_a/runtime.0de798938e9dd133.js" type="module"></script><script src="/small_claim_form/dist/form_a/polyfills.4a7ed440dad8e3c5.js" type="module"></script><script src="/small_claim_form/dist/form_a/scripts.ae934356ffd25f29.js" defer></script><script src="/small_claim_form/dist/form_a/main.de907d8d8bfbca74.js" type="module"></script></body>
 </html>

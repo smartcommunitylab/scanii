@@ -29,7 +29,7 @@
     "step1": "Fase 1",
     "step2": "Fase 2",
     "usefulPDFs": "PDF utili",
-    "noPdfs": "Non sono presenti pdf utili per la sezione",
+    "noPDFs": "Non sono presenti PDF utili per la sezione",
     "synonyms": "Sinonimi",
     "noSynonyms": "Non sono presenti sinonimi per la sezione",
     "loadSaveDraftExplanation": "È possibile salvare il modulo su cui si sta lavorando come bozza. Per completarlo basta caricare il modulo salvato in un secondo momento.",
@@ -398,7 +398,7 @@
     "select": "Selezionare",
     "other": "Altra lingua",
     "specify": "Precisare",
-    "noResultsMatch": "nessun risultato corrisponde a",
+    "noResultsMatch": "Nessun risultato corrisponde a",
     "claimFormSectionsRectified": "Le seguenti sezioni del modulo di domanda devono essere compilate e/o rettificate come indicato qui di seguito:",
     "doneAt": "Luogo",
     "rememberSignStampPrintedForm": "Non dimenticare di firmare e timbrare (se pertinente) il modulo dopo averlo stampato."
