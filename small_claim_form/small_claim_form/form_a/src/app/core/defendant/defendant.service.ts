@@ -14,7 +14,6 @@ import {
 import { Subscription } from "rxjs";
 import { TranslateService } from "@ngx-translate/core";
 import { Defendant } from "./defendant.model";
-import { Representative } from "../common/representative.model";
 import { Organisation } from "../common/organisation.model";
 import { Citizen } from "../common/citizen.model";
 import { Address } from "../common/address.model";
@@ -240,8 +239,8 @@ export class DefendantService {
     return this.representativeOptionLabel + " " + number;
   }
 
-  getDefendants(): (Defendant | Representative)[] {
-    const defendants: (Defendant | Representative)[] = [];
+  getDefendants(): (Defendant | RepresentativeCitizen | RepresentativeOrganisation)[] {
+    const defendants: (Defendant | RepresentativeCitizen | RepresentativeOrganisation)[] = [];
     const representativeIds: number[] = [];
     for (let i = 0; i < this.editForm.value.defendants.length; i++) {
       const defendant = this.editForm.value.defendants[i];
@@ -252,7 +251,7 @@ export class DefendantService {
         if (defendant.organisation !== "")
           obj = this.getOrganisation(defendant, address, contacts);
         else obj = this.getCitizen(defendant, address, contacts);
-        let representative: Representative;
+        let representative: RepresentativeCitizen | RepresentativeOrganisation;
         if (defendant.representative !== "") {
           //the index at which the representative of the defendant is located within the array being looped over is referred to as "defendant.representative".
           const index = parseInt(defendant.representative);
@@ -290,7 +289,7 @@ export class DefendantService {
     return defendants;
   }
 
-  private getRepresentative(representative: any): Representative {
+  private getRepresentative(representative: any): RepresentativeCitizen | RepresentativeOrganisation {
     const address = this.getAddress(representative);
     const contacts = this.getContacts(representative);
     if (representative.organisation !== "")

@@ -128,10 +128,13 @@ export class ClaimComponent implements OnInit {
         );
         this.addRequiredValidatorToFormControl(otherCurrencySelectFormControl);
 
+        //expand div
         elementToExpand.classList.remove("df_collapsed");
+        elementToExpand.classList.add("df_expanded");
       }
     } else {
       if (!elementToExpand.classList.contains("df_collapsed")) {
+        elementToExpand.classList.remove("df_expanded");
         elementToExpand.classList.add("df_collapsed");
         const otherCurrencySelectFormControlName =
           event.target.attributes.formControlName.value + "Other";
@@ -191,12 +194,14 @@ export class ClaimComponent implements OnInit {
 
         //expand div
         elementToExpand.classList.remove("df_collapsed");
+        elementToExpand.classList.add("df_expanded");
       }
     } else {
       //collapse divs
       for (const id of divIds) {
         const elementToCollapse = document.getElementById(id);
         if (!elementToCollapse.classList.contains("df_collapsed")) {
+          elementToCollapse.classList.remove("df_expanded");
           elementToCollapse.classList.add("df_collapsed");
         }
       }
@@ -226,6 +231,7 @@ export class ClaimComponent implements OnInit {
     for (const id of divIdsToCollapse) {
       const elementToCollapse = document.getElementById(id);
       if (!elementToCollapse.classList.contains("df_collapsed")) {
+        elementToCollapse.classList.remove("df_expanded");
         elementToCollapse.classList.add("df_collapsed");
       }
     }
@@ -242,6 +248,7 @@ export class ClaimComponent implements OnInit {
       this.addRequiredValidatorToFormElement(controlToExpand, array);
     } else this.addRequiredValidatorToFormControl(controlToExpand);
     elementToExpand.classList.remove("df_collapsed");
+    elementToExpand.classList.add("df_expanded");
   }
 
   private initCurrencyOtherSelect(id: string) {

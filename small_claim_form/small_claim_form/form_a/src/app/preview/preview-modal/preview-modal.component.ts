@@ -12,7 +12,6 @@ import { Citizen } from "src/app/core/common/citizen.model";
 import { Organisation } from "src/app/core/common/organisation.model";
 import { RepresentativeCitizen } from "src/app/core/common/representative-citizen.model";
 import { RepresentativeOrganisation } from "src/app/core/common/representative-organisation.model";
-import { Representative } from "src/app/core/common/representative.model";
 import { Court } from "src/app/core/court/court.model";
 import { CourtService } from "src/app/core/court/court.service";
 import { Defendant } from "src/app/core/defendant/defendant.model";
@@ -32,8 +31,8 @@ import { PreviewModalService } from "src/app/core/preview/preview-modal.service"
 })
 export class PreviewModalComponent implements OnInit {
   formA: FormA;
-  claimants: (Claimant | Representative)[] = [];
-  defendants: (Defendant | Representative)[] = [];
+  claimants: (Claimant | RepresentativeCitizen | RepresentativeOrganisation)[] = [];
+  defendants: (Defendant | RepresentativeCitizen | RepresentativeOrganisation)[] = [];
   crossBorderNature: CrossborderNature;
   claimForMoney: ClaimForMoney;
   otherClaim: OtherClaim;
@@ -76,21 +75,53 @@ export class PreviewModalComponent implements OnInit {
     this.activeModal.close();
   }
 
-  isClaimant(obj: Claimant | Representative): boolean {
+  isClaimant(
+    obj: Claimant | RepresentativeCitizen | RepresentativeOrganisation
+  ): obj is Claimant {
     return obj instanceof Claimant;
   }
 
-  isDefendant(obj: Defendant | Representative): boolean {
+  isClaimantRepresentative(
+    obj: Claimant | RepresentativeCitizen | RepresentativeOrganisation
+  ): obj is RepresentativeCitizen | RepresentativeOrganisation {
+    return (
+      obj instanceof RepresentativeCitizen ||
+      obj instanceof RepresentativeOrganisation
+    );
+  }
+
+  isDefendant(
+    obj: Defendant | RepresentativeCitizen | RepresentativeOrganisation
+  ): obj is Defendant {
     return obj instanceof Defendant;
   }
 
-  isCitizen(obj: Citizen | Organisation): boolean {
+  isDefendantRepresentative(
+    obj: Defendant | RepresentativeCitizen | RepresentativeOrganisation
+  ): obj is RepresentativeCitizen | RepresentativeOrganisation {
+    return (
+      obj instanceof RepresentativeCitizen ||
+      obj instanceof RepresentativeOrganisation
+    );
+  }
+
+  isCitizen(obj: Citizen | Organisation): obj is Citizen {
     return obj instanceof Citizen;
+  }
+
+  isOrganisation(obj: Citizen | Organisation): obj is Organisation {
+    return obj instanceof Organisation;
   }
 
   isRepresentativeCitizen(
     obj: RepresentativeCitizen | RepresentativeOrganisation
-  ): boolean {
+  ): obj is RepresentativeCitizen {
     return obj instanceof RepresentativeCitizen;
+  }
+
+  isRepresentativeOrganisation(
+    obj: RepresentativeCitizen | RepresentativeOrganisation
+  ): obj is RepresentativeOrganisation {
+    return obj instanceof RepresentativeOrganisation;
   }
 }

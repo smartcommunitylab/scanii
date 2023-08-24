@@ -194,9 +194,34 @@ export class StepSevenService {
 
   private resetAll() {
     this.oralHearingForm.reset();
+
+    const expandedElements = document
+      .getElementById("step7_1")
+      .querySelectorAll(".df_expanded");
+    expandedElements.forEach((expandedElement) => {
+      //collapse all expanded elements
+      expandedElement.classList.remove("df_expanded");
+      expandedElement.classList.add("df_collapsed");
+
+      const formControlElements =
+        expandedElement.querySelectorAll("[formControlName]");
+      formControlElements.forEach((formControlElement) => {
+        //remove required validator
+        const formControl = this.oralHearingForm.get(
+          formControlElement.getAttribute("formControlName")
+        );
+        this.removeRequiredValidatorFromFormControl(formControl);
+      });
+    });
+
     this.documentAndCommunicationForm.reset();
     this.certificateForm.reset();
     this.dateAndSignatureForm.reset();
+  }
+
+  private removeRequiredValidatorFromFormControl(formControl: any) {
+    formControl.removeValidators(this.requiredValidator);
+    formControl.updateValueAndValidity();
   }
 
   private triggerChangeEvent(id: string) {

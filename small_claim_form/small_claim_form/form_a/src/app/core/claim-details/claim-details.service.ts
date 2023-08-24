@@ -1,28 +1,28 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone } from "@angular/core";
 import {
   AbstractControl,
   UntypedFormBuilder,
   UntypedFormGroup,
   Validators,
-} from '@angular/forms';
-import { PromiseContent } from '../common/promise-content.model';
-import { claimDetailsShowHideFields } from 'src/app/shared/constants/claim-details.constants';
-import { Subscription } from 'rxjs';
+} from "@angular/forms";
+import { PromiseContent } from "../common/promise-content.model";
+import { claimDetailsShowHideFields } from "src/app/shared/constants/claim-details.constants";
+import { Subscription } from "rxjs";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class ClaimDetailsService {
   requiredValidator = Validators.required;
 
   editForm = this.fb.group({
-    detailsOfClaim: ['', [Validators.required]],
-    writtenEvidence: ['', [Validators.required]],
-    writtenEvidenceText: [''],
-    witnesses: ['', [Validators.required]],
-    witnessesText: [''],
-    otherClaimDetails: ['', [Validators.required]],
-    otherClaimDetailsText: [''],
+    detailsOfClaim: ["", [Validators.required]],
+    writtenEvidence: ["", [Validators.required]],
+    writtenEvidenceText: [""],
+    witnesses: ["", [Validators.required]],
+    witnessesText: [""],
+    otherClaimDetails: ["", [Validators.required]],
+    otherClaimDetailsText: [""],
   });
 
   onStableSubscription: Subscription;
@@ -38,7 +38,7 @@ export class ClaimDetailsService {
       } else {
         isValid = true;
       }
-      resolve(new PromiseContent('step6', isValid));
+      resolve(new PromiseContent("step6", isValid));
     });
   }
 
@@ -49,7 +49,7 @@ export class ClaimDetailsService {
         const value = this.getTriggeringFormControlValue(formElementName);
         if (
           value ===
-          claimDetailsShowHideFields[formElementName]['triggeringValue']
+          claimDetailsShowHideFields[formElementName]["triggeringValue"]
         ) {
           this.markAsDirty(formElement);
         }
@@ -61,7 +61,7 @@ export class ClaimDetailsService {
 
   private getTriggeringFormControlValue(formElementName: string) {
     return this.editForm.get(
-      claimDetailsShowHideFields[formElementName]['triggeringFormControlName']
+      claimDetailsShowHideFields[formElementName]["triggeringFormControlName"]
     ).value;
   }
 
@@ -98,11 +98,14 @@ export class ClaimDetailsService {
         }
 
         for (const key of Object.keys(claimDetailsShowHideFields)) {
-          const value = this.getJsonValue(claimDetailsShowHideFields[key]['triggeringFormControlName'], claimDetails);
+          const value = this.getJsonValue(
+            claimDetailsShowHideFields[key]["triggeringFormControlName"],
+            claimDetails
+          );
 
-          if (value === claimDetailsShowHideFields[key]['triggeringValue']) {
+          if (value === claimDetailsShowHideFields[key]["triggeringValue"]) {
             this.triggerChangeEvent(
-              claimDetailsShowHideFields[key]['triggeringFieldId']
+              claimDetailsShowHideFields[key]["triggeringFieldId"]
             );
           }
         }
@@ -114,7 +117,7 @@ export class ClaimDetailsService {
 
   private getJsonValue(key: string, claimDetails: any): any {
     const formGroupNames = this.findFormGroupNames(key, this.editForm);
-    
+
     let value = claimDetails;
     for (let i = 0; i < formGroupNames.length; i++) {
       value = value[formGroupNames[i]];
@@ -124,11 +127,35 @@ export class ClaimDetailsService {
 
   private resetAll() {
     this.editForm.reset();
+
+    const expandedElements = document
+      .getElementById("step6")
+      .querySelectorAll(".df_expanded");
+    expandedElements.forEach((expandedElement) => {
+      //collapse all expanded elements
+      expandedElement.classList.remove("df_expanded");
+      expandedElement.classList.add("df_collapsed");
+
+      const formControlElements =
+        expandedElement.querySelectorAll("[formControlName]");
+      formControlElements.forEach((formControlElement) => {
+        //remove required validator
+        const formControl = this.editForm.get(
+          formControlElement.getAttribute("formControlName")
+        );
+        this.removeRequiredValidatorFromFormControl(formControl);
+      });
+    });
+  }
+
+  private removeRequiredValidatorFromFormControl(formControl: any) {
+    formControl.removeValidators(this.requiredValidator);
+    formControl.updateValueAndValidity();
   }
 
   private triggerChangeEvent(id: string) {
     const inputElement = document.getElementById(id) as HTMLInputElement;
-    const event = new Event('change');
+    const event = new Event("change");
     inputElement.dispatchEvent(event);
   }
 

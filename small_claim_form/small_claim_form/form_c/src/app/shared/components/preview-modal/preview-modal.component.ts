@@ -253,7 +253,7 @@ export class PreviewModalComponent implements OnInit {
   }
 
   private handleFieldsBlock(child: any, addIndentation: boolean): void {
-    //fields of a claimant or defendant representative
+    //block with a label and multiple inner fields
     const blockLabelElement = child.querySelector(".pdf-block-label");
     const valueElement = child.querySelector(".pdf-values");
 

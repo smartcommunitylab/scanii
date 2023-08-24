@@ -9,1088 +9,1401 @@
   >
 </div>
 
-<div class="modal-body px-5" id="preview">
-  <h3 [translate]="'claimant.title'">1. Claimant</h3>
+<div class="modal-body px-5" id="content">
+  <h3 class="pdf-primary-title" [translate]="'claimant.title'">1. Claimant</h3>
   <div *ngFor="let obj of claimants; let i = index" class="ps-3">
-    <div *ngIf="isClaimant(obj); else claimantRepresentative">
-      <h4 [translate]="'preview.claimantDetails'">Claimant's details</h4>
+    <div
+      class="pdf-no-indentation"
+      *ngIf="isClaimant(obj); else claimantRepresentative"
+    >
+      <h4 class="pdf-secondary-title" [translate]="'preview.claimantDetails'">
+        Claimant's details
+      </h4>
       <div class="ps-3">
-        <p>
-          <span class="colon" [translate]="'preview.claimantIdentifier'"
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'preview.claimantIdentifier'"
             >1.1. Surname, first name/name of company or organisation</span
           >
           <span *ngIf="isCitizen(obj.claimant); else claimantOrganisation">
-            <span class="fw-bold"
+            <span class="fw-bold pdf-value"
               >{{ obj.claimant.surname }} {{ obj.claimant.name }}</span
             >
           </span>
           <ng-template #claimantOrganisation>
-            <span class="fw-bold">{{ obj.claimant.name }}</span>
+            <span
+              class="fw-bold pdf-value"
+              *ngIf="isOrganisation(obj.claimant)"
+              >{{ obj.claimant.name }}</span
+            >
           </ng-template>
         </p>
-        <p>
-          <span class="colon" [translate]="'claimant.identificationCode'"
+
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'claimant.identificationCode'"
             >1.2. Personal identification number or passport number/
             registration number</span
           >
-          <span class="fw-bold">{{ obj.claimant.identificationCode }}</span>
+          <span class="fw-bold pdf-value">{{
+            obj.claimant.identificationCode
+          }}</span>
         </p>
-        <p>
-          <span class="colon" [translate]="'claimant.street'"
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'claimant.street'"
             >1.3. Street and number/PO box</span
           >
-          <span class="fw-bold">{{ obj.claimant.address.street }}</span>
+          <span class="fw-bold pdf-value">{{
+            obj.claimant.address.street
+          }}</span>
         </p>
-        <p>
-          <span class="colon" [translate]="'preview.claimantCityPostalCode'"
+
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'preview.claimantCityPostalCode'"
             >1.4. City and postal code</span
           >
-          <span class="fw-bold"
+          <span class="fw-bold pdf-value"
             >{{ obj.claimant.address.city }}
             {{ obj.claimant.address.post_code }}</span
           >
         </p>
-        <p>
-          <span class="colon" [translate]="'claimant.country'"
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'claimant.country'"
             >1.5. Country</span
           >
-          <span class="fw-bold">{{ obj.claimant.address.countryName }}</span>
+          <span class="fw-bold pdf-value">{{
+            obj.claimant.address.countryName
+          }}</span>
         </p>
-        <p>
-          <span class="colon" [translate]="'claimant.phoneNumber'"
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'claimant.phoneNumber'"
             >1.6. Phone</span
           >
-          <span class="fw-bold">{{ obj.claimant.contacts.phone_number }}</span>
+          <span class="fw-bold pdf-value">{{
+            obj.claimant.contacts.phone_number
+          }}</span>
         </p>
-        <p>
-          <span class="colon" [translate]="'claimant.email'">1.7. Email</span>
-          <span class="fw-bold">{{ obj.claimant.contacts.email }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'preview.representativeClaimant'"
-            >1.8. Claimant's representative</span
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'claimant.email'"
+            >1.7. Email</span
           >
+          <span class="fw-bold pdf-value">{{
+            obj.claimant.contacts.email
+          }}</span>
         </p>
-        <div class="ps-3" *ngIf="obj.representative">
+
+        <div class="pdf-fields-block">
           <p>
-            <span class="colon" [translate]="'preview.identifier'"
-              >Surname, first name/name of company or organisation</span
-            >
             <span
-              *ngIf="
-                isRepresentativeCitizen(obj.representative);
-                else representativeClaimantOrganisation
-              "
+              class="colon pdf-block-label"
+              [translate]="'preview.representativeClaimant'"
+              >1.8. Claimant's representative</span
             >
-              <span class="fw-bold"
-                >{{ obj.representative.surname }}
-                {{ obj.representative.name }}</span
+          </p>
+          <div class="ps-3 pdf-values" *ngIf="obj.representative">
+            <p class="pdf-line-field">
+              <span class="colon pdf-label" [translate]="'preview.identifier'"
+                >Surname, first name/name of company or organisation</span
               >
-            </span>
-            <ng-template #representativeClaimantOrganisation>
-              <span class="fw-bold">{{ obj.representative.name }}</span>
-            </ng-template>
-          </p>
-          <p>
-            <span
-              class="colon"
-              [translate]="'claimant.representativeIdentificationCode'"
-              >Personal identification number or passport number/ registration
-              number</span
-            >
-            <span class="fw-bold">{{
-              obj.representative.identificationCode
-            }}</span>
-          </p>
-          <p>
-            <span class="colon" [translate]="'claimant.representativeStreet'"
-              >Street and number/PO box</span
-            >
-            <span class="fw-bold">{{ obj.representative.address.street }}</span>
-          </p>
-          <p>
-            <span class="colon" [translate]="'preview.cityPostalCode'"
-              >City and postal code</span
-            >
-            <span class="fw-bold"
-              >{{ obj.representative.address.city }}
-              {{ obj.representative.address.post_code }}</span
-            >
-          </p>
-          <p>
-            <span class="colon" [translate]="'claimant.representativeCountry'"
-              >Country</span
-            >
-            <span class="fw-bold">{{
-              obj.representative.address.countryName
-            }}</span>
-          </p>
-          <p>
-            <span
-              class="colon"
-              [translate]="'claimant.representativePhoneNumber'"
-              >Phone</span
-            >
-            <span class="fw-bold">{{
-              obj.representative.contacts.phone_number
-            }}</span>
-          </p>
-          <p>
-            <span class="colon" [translate]="'claimant.representativeEmail'"
-              >Email</span
-            >
-            <span class="fw-bold">{{ obj.representative.contacts.email }}</span>
-          </p>
+              <span
+                *ngIf="
+                  isRepresentativeCitizen(obj.representative);
+                  else representativeClaimantOrganisation
+                "
+              >
+                <span class="fw-bold pdf-value"
+                  >{{ obj.representative.surname }}
+                  {{ obj.representative.name }}</span
+                >
+              </span>
+              <ng-template #representativeClaimantOrganisation>
+                <span
+                  class="fw-bold pdf-value"
+                  *ngIf="isRepresentativeOrganisation(obj.representative)"
+                  >{{ obj.representative.name }}</span
+                >
+              </ng-template>
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'claimant.representativeIdentificationCode'"
+                >Personal identification number or passport number/ registration
+                number</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.identificationCode
+              }}</span>
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'claimant.representativeStreet'"
+                >Street and number/PO box</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.address.street
+              }}</span>
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'preview.cityPostalCode'"
+                >City and postal code</span
+              >
+              <span class="fw-bold pdf-value"
+                >{{ obj.representative.address.city }}
+                {{ obj.representative.address.post_code }}</span
+              >
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'claimant.representativeCountry'"
+                >Country</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.address.countryName
+              }}</span>
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'claimant.representativePhoneNumber'"
+                >Phone</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.contacts.phone_number
+              }}</span>
+            </p>
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'claimant.representativeEmail'"
+                >Email</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.contacts.email
+              }}</span>
+            </p>
+          </div>
         </div>
-        <p>
-          <span class="colon" [translate]="'claimant.other'"
-            >1.9. Other details</span
-          >
-        </p>
-        <div class="fw-bold justify margin-bottom ps-3">
-          {{ obj.otherDetails }}
+
+        <div class="pdf-div-field">
+          <p>
+            <span class="colon pdf-label" [translate]="'claimant.other'"
+              >1.9. Other details</span
+            >
+          </p>
+          <div class="fw-bold justify margin-bottom ps-3 pdf-value">
+            {{ obj.otherDetails }}
+          </div>
         </div>
       </div>
     </div>
     <ng-template #claimantRepresentative>
-      <h4 [translate]="'preview.representativeClaimantDetails'">
-        Details of the claimant's representative
-      </h4>
-      <div class="ps-3">
-        <p>
-          <span class="colon" [translate]="'preview.identifier'"
-            >Surname, first name/name of company or organisation</span
-          >
-          <span
-            *ngIf="
-              isRepresentativeCitizen(obj);
-              else representativeClaimantOrganisation
-            "
-          >
-            <span class="fw-bold">{{ obj.surname }} {{ obj.name }}</span>
-          </span>
-          <ng-template #representativeClaimantOrganisation>
-            <span class="fw-bold">{{ obj.name }}</span>
-          </ng-template>
-        </p>
-        <p>
-          <span
-            class="colon"
-            [translate]="'claimant.representativeIdentificationCode'"
-            >Personal identification number or passport number/ registration
-            number</span
-          >
-          <span class="fw-bold">{{ obj.identificationCode }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'claimant.representativeStreet'"
-            >Street and number/PO box</span
-          >
-          <span class="fw-bold">{{ obj.address.street }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'preview.cityPostalCode'"
-            >City and postal code</span
-          >
-          <span class="fw-bold"
-            >{{ obj.address.city }} {{ obj.address.post_code }}</span
-          >
-        </p>
-        <p>
-          <span class="colon" [translate]="'claimant.representativeCountry'"
-            >Country</span
-          >
-          <span class="fw-bold">{{ obj.address.countryName }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'claimant.representativePhoneNumber'"
-            >Phone</span
-          >
-          <span class="fw-bold">{{ obj.contacts.phone_number }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'claimant.representativeEmail'"
-            >Email</span
-          >
-          <span class="fw-bold">{{ obj.contacts.email }}</span>
-        </p>
-      </div>
-    </ng-template>
-  </div>
-
-  <h3 [translate]="'defendant.title'">2. Defendant</h3>
-  <div *ngFor="let obj of defendants" class="ps-3">
-    <div *ngIf="isDefendant(obj); else defendantRepresentative">
-      <h4 [translate]="'preview.defendantDetails'">Defendant's details</h4>
-      <div class="ps-3">
-        <p>
-          <span class="colon" [translate]="'preview.defendantIdentifier'"
-            >2.1. Surname, first name/name of company or organisation</span
-          >
-          <span *ngIf="isCitizen(obj.defendant); else defendantOrganisation">
-            <span class="fw-bold"
-              >{{ obj.defendant.surname }} {{ obj.defendant.name }}</span
-            >
-          </span>
-          <ng-template #defendantOrganisation>
-            <span class="fw-bold">{{ obj.defendant.name }}</span>
-          </ng-template>
-        </p>
-        <p>
-          <span class="colon" [translate]="'defendant.identificationCode'"
-            >2.2. Personal identification number or passport number/
-            registration number</span
-          >
-          <span class="fw-bold">{{ obj.defendant.identificationCode }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'defendant.street'"
-            >2.3. Street and number/PO box</span
-          >
-          <span class="fw-bold">{{ obj.defendant.address.street }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'preview.defendantCityPostalCode'"
-            >2.4. City and postal code</span
-          >
-          <span class="fw-bold"
-            >{{ obj.defendant.address.city }}
-            {{ obj.defendant.address.post_code }}</span
-          >
-        </p>
-        <p>
-          <span class="colon" [translate]="'defendant.country'"
-            >2.5. Country</span
-          >
-          <span class="fw-bold">{{ obj.defendant.address.countryName }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'defendant.phoneNumber'"
-            >2.6. Phone</span
-          >
-          <span class="fw-bold">{{ obj.defendant.contacts.phone_number }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'defendant.email'">2.7. Email</span>
-          <span class="fw-bold">{{ obj.defendant.contacts.email }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'preview.representativeDefendant'"
-            >2.8. Defendant's representative</span
-          >
-        </p>
-        <div class="ps-3" *ngIf="obj.representative">
-          <p>
-            <span class="colon" [translate]="'preview.identifier'"
+      <div *ngIf="isClaimantRepresentative(obj)">
+        <h4
+          class="pdf-secondary-title"
+          [translate]="'preview.representativeClaimantDetails'"
+        >
+          Details of the claimant's representative
+        </h4>
+        <div class="ps-3">
+          <p class="pdf-line-field">
+            <span class="colon pdf-label" [translate]="'preview.identifier'"
               >Surname, first name/name of company or organisation</span
             >
             <span
               *ngIf="
-                isRepresentativeCitizen(obj.representative);
-                else representativeDefendantOrganisation
+                isRepresentativeCitizen(obj);
+                else representativeClaimantOrganisation
               "
             >
-              <span class="fw-bold"
-                >{{ obj.representative.surname }}
-                {{ obj.representative.name }}</span
+              <span class="fw-bold pdf-value"
+                >{{ obj.surname }} {{ obj.name }}</span
               >
             </span>
-            <ng-template #representativeDefendantOrganisation>
-              <span class="fw-bold">{{ obj.representative.name }}</span>
+            <ng-template #representativeClaimantOrganisation>
+              <span
+                class="fw-bold pdf-value"
+                *ngIf="isRepresentativeOrganisation(obj)"
+                >{{ obj.name }}</span
+              >
             </ng-template>
           </p>
-          <p>
+          <p class="pdf-line-field">
             <span
-              class="colon"
-              [translate]="'defendant.representativeIdentificationCode'"
+              class="colon pdf-label"
+              [translate]="'claimant.representativeIdentificationCode'"
               >Personal identification number or passport number/ registration
               number</span
             >
-            <span class="fw-bold">{{
-              obj.representative.identificationCode
-            }}</span>
+            <span class="fw-bold pdf-value">{{ obj.identificationCode }}</span>
           </p>
-          <p>
-            <span class="colon" [translate]="'defendant.representativeStreet'"
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'claimant.representativeStreet'"
               >Street and number/PO box</span
             >
-            <span class="fw-bold">{{ obj.representative.address.street }}</span>
+            <span class="fw-bold pdf-value">{{ obj.address.street }}</span>
           </p>
-          <p>
-            <span class="colon" [translate]="'preview.cityPostalCode'"
+          <p class="pdf-line-field">
+            <span class="colon pdf-label" [translate]="'preview.cityPostalCode'"
               >City and postal code</span
             >
-            <span class="fw-bold"
-              >{{ obj.representative.address.city }}
-              {{ obj.representative.address.post_code }}</span
+            <span class="fw-bold pdf-value"
+              >{{ obj.address.city }} {{ obj.address.post_code }}</span
             >
           </p>
-          <p>
-            <span class="colon" [translate]="'defendant.representativeCountry'"
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'claimant.representativeCountry'"
               >Country</span
             >
-            <span class="fw-bold">{{
-              obj.representative.address.countryName
-            }}</span>
+            <span class="fw-bold pdf-value">{{ obj.address.countryName }}</span>
           </p>
-          <p>
+          <p class="pdf-line-field">
             <span
-              class="colon"
-              [translate]="'defendant.representativePhoneNumber'"
+              class="colon pdf-label"
+              [translate]="'claimant.representativePhoneNumber'"
               >Phone</span
             >
-            <span class="fw-bold">{{
-              obj.representative.contacts.phone_number
+            <span class="fw-bold pdf-value">{{
+              obj.contacts.phone_number
             }}</span>
           </p>
-          <p>
-            <span class="colon" [translate]="'defendant.representativeEmail'"
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'claimant.representativeEmail'"
               >Email</span
             >
-            <span class="fw-bold">{{ obj.representative.contacts.email }}</span>
+            <span class="fw-bold pdf-value">{{ obj.contacts.email }}</span>
           </p>
         </div>
-        <p>
-          <span class="colon" [translate]="'defendant.other'"
-            >2.9. Other details</span
-          >
-        </p>
-        <div class="fw-bold justify margin-bottom ps-3">
-          {{ obj.otherDetails }}
-        </div>
-      </div>
-    </div>
-    <ng-template #defendantRepresentative>
-      <h4 [translate]="'preview.representativeDefendantDetails'">
-        Details of the defendant's representative
-      </h4>
-      <div class="ps-3">
-        <p>
-          <span class="colon" [translate]="'preview.identifier'"
-            >Surname, first name/name of company or organisation</span
-          >
-          <span
-            *ngIf="
-              isRepresentativeCitizen(obj);
-              else representativeDefendantOrganisation
-            "
-          >
-            <span class="fw-bold">{{ obj.surname }} {{ obj.name }}</span>
-          </span>
-          <ng-template #representativeDefendantOrganisation>
-            <span class="fw-bold">{{ obj.name }}</span>
-          </ng-template>
-        </p>
-        <p>
-          <span
-            class="colon"
-            [translate]="'defendant.representativeIdentificationCode'"
-            >Personal identification number or passport number/ registration
-            number</span
-          >
-          <span class="fw-bold">{{ obj.identificationCode }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'defendant.representativeStreet'"
-            >Street and number/PO box</span
-          >
-          <span class="fw-bold">{{ obj.address.street }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'preview.cityPostalCode'"
-            >City and postal code</span
-          >
-          <span class="fw-bold"
-            >{{ obj.address.city }} {{ obj.address.post_code }}</span
-          >
-        </p>
-        <p>
-          <span class="colon" [translate]="'defendant.representativeCountry'"
-            >Country</span
-          >
-          <span class="fw-bold">{{ obj.address.countryName }}</span>
-        </p>
-        <p>
-          <span
-            class="colon"
-            [translate]="'defendant.representativePhoneNumber'"
-            >Phone</span
-          >
-          <span class="fw-bold">{{ obj.contacts.phone_number }}</span>
-        </p>
-        <p>
-          <span class="colon" [translate]="'defendant.representativeEmail'"
-            >Email</span
-          >
-          <span class="fw-bold">{{ obj.contacts.email }}</span>
-        </p>
       </div>
     </ng-template>
   </div>
 
-  <h3 [translate]="'jurisdiction.title'">3. Jurisdiction</h3>
+  <h3 class="pdf-primary-title" [translate]="'defendant.title'">
+    2. Defendant
+  </h3>
+  <div *ngFor="let obj of defendants" class="ps-3">
+    <div
+      class="pdf-no-indentation"
+      *ngIf="isDefendant(obj); else defendantRepresentative"
+    >
+      <h4 class="pdf-secondary-title" [translate]="'preview.defendantDetails'">
+        Defendant's details
+      </h4>
+      <div class="ps-3">
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'preview.defendantIdentifier'"
+            >2.1. Surname, first name/name of company or organisation</span
+          >
+          <span *ngIf="isCitizen(obj.defendant); else defendantOrganisation">
+            <span class="fw-bold pdf-value"
+              >{{ obj.defendant.surname }} {{ obj.defendant.name }}</span
+            >
+          </span>
+          <ng-template #defendantOrganisation>
+            <span
+              class="fw-bold pdf-value"
+              *ngIf="isOrganisation(obj.defendant)"
+              >{{ obj.defendant.name }}</span
+            >
+          </ng-template>
+        </p>
+
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'defendant.identificationCode'"
+            >2.2. Personal identification number or passport number/
+            registration number</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.defendant.identificationCode
+          }}</span>
+        </p>
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'defendant.street'"
+            >2.3. Street and number/PO box</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.defendant.address.street
+          }}</span>
+        </p>
+
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'preview.defendantCityPostalCode'"
+            >2.4. City and postal code</span
+          >
+          <span class="fw-bold pdf-value"
+            >{{ obj.defendant.address.city }}
+            {{ obj.defendant.address.post_code }}</span
+          >
+        </p>
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'defendant.country'"
+            >2.5. Country</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.defendant.address.countryName
+          }}</span>
+        </p>
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'defendant.phoneNumber'"
+            >2.6. Phone</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.defendant.contacts.phone_number
+          }}</span>
+        </p>
+
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'defendant.email'"
+            >2.7. Email</span
+          >
+          <span class="fw-bold pdf-value">{{
+            obj.defendant.contacts.email
+          }}</span>
+        </p>
+
+        <div class="pdf-fields-block">
+          <p>
+            <span
+              class="colon pdf-block-label"
+              [translate]="'preview.representativeDefendant'"
+              >2.8. Defendant's representative</span
+            >
+          </p>
+          <div class="ps-3 pdf-values" *ngIf="obj.representative">
+            <p class="pdf-line-field">
+              <span class="colon pdf-label" [translate]="'preview.identifier'"
+                >Surname, first name/name of company or organisation</span
+              >
+              <span
+                *ngIf="
+                  isRepresentativeCitizen(obj.representative);
+                  else representativeDefendantOrganisation
+                "
+              >
+                <span class="fw-bold pdf-value"
+                  >{{ obj.representative.surname }}
+                  {{ obj.representative.name }}</span
+                >
+              </span>
+              <ng-template #representativeDefendantOrganisation>
+                <span
+                  class="fw-bold pdf-value"
+                  *ngIf="isRepresentativeOrganisation(obj.representative)"
+                  >{{ obj.representative.name }}</span
+                >
+              </ng-template>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'defendant.representativeIdentificationCode'"
+                >Personal identification number or passport number/ registration
+                number</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.identificationCode
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'defendant.representativeStreet'"
+                >Street and number/PO box</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.address.street
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'preview.cityPostalCode'"
+                >City and postal code</span
+              >
+              <span class="fw-bold pdf-value"
+                >{{ obj.representative.address.city }}
+                {{ obj.representative.address.post_code }}</span
+              >
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'defendant.representativeCountry'"
+                >Country</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.address.countryName
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'defendant.representativePhoneNumber'"
+                >Phone</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.contacts.phone_number
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'defendant.representativeEmail'"
+                >Email</span
+              >
+              <span class="fw-bold pdf-value">{{
+                obj.representative.contacts.email
+              }}</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="pdf-div-field">
+          <p>
+            <span class="colon pdf-label" [translate]="'defendant.other'"
+              >2.9. Other details</span
+            >
+          </p>
+          <div class="fw-bold justify margin-bottom ps-3 pdf-value">
+            {{ obj.otherDetails }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #defendantRepresentative>
+      <div *ngIf="isDefendantRepresentative(obj)">
+        <h4
+          class="pdf-secondary-title"
+          [translate]="'preview.representativeDefendantDetails'"
+        >
+          Details of the defendant's representative
+        </h4>
+        <div class="ps-3">
+          <p class="pdf-line-field">
+            <span class="colon pdf-label" [translate]="'preview.identifier'"
+              >Surname, first name/name of company or organisation</span
+            >
+            <span
+              *ngIf="
+                isRepresentativeCitizen(obj);
+                else representativeDefendantOrganisation
+              "
+            >
+              <span class="fw-bold pdf-value"
+                >{{ obj.surname }} {{ obj.name }}</span
+              >
+            </span>
+            <ng-template #representativeDefendantOrganisation>
+              <span
+                class="fw-bold pdf-value"
+                *ngIf="isRepresentativeOrganisation(obj)"
+                >{{ obj.name }}</span
+              >
+            </ng-template>
+          </p>
+
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'defendant.representativeIdentificationCode'"
+              >Personal identification number or passport number/ registration
+              number</span
+            >
+            <span class="fw-bold pdf-value">{{ obj.identificationCode }}</span>
+          </p>
+
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'defendant.representativeStreet'"
+              >Street and number/PO box</span
+            >
+            <span class="fw-bold pdf-value">{{ obj.address.street }}</span>
+          </p>
+
+          <p class="pdf-line-field">
+            <span class="colon pdf-label" [translate]="'preview.cityPostalCode'"
+              >City and postal code</span
+            >
+            <span class="fw-bold pdf-value"
+              >{{ obj.address.city }} {{ obj.address.post_code }}</span
+            >
+          </p>
+
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'defendant.representativeCountry'"
+              >Country</span
+            >
+            <span class="fw-bold pdf-value">{{ obj.address.countryName }}</span>
+          </p>
+
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'defendant.representativePhoneNumber'"
+              >Phone</span
+            >
+            <span class="fw-bold pdf-value">{{
+              obj.contacts.phone_number
+            }}</span>
+          </p>
+
+          <p class="pdf-line-field">
+            <span
+              class="colon pdf-label"
+              [translate]="'defendant.representativeEmail'"
+              >Email</span
+            >
+            <span class="fw-bold pdf-value">{{ obj.contacts.email }}</span>
+          </p>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+
+  <h3 class="pdf-primary-title" [translate]="'jurisdiction.title'">
+    3. Jurisdiction
+  </h3>
   <div class="ps-3">
-    <h4 [translate]="'preview.jurisdictionQuestion'">
+    <h4
+      class="pdf-secondary-title"
+      [translate]="'preview.jurisdictionQuestion'"
+    >
       On what ground do you consider the court/tribunal to have jurisdiction?
     </h4>
     <div class="ps-3">
-      <div class="margin-bottom">
+      <div class="margin-bottom pdf-checkbox">
         <span>
           <input
             type="checkbox"
             [checked]="formA.jurisdiction.defendantDomicile"
             class="disabled-input"
           />
-          <span [translate]="'jurisdiction.defendantDomicile'"></span>
+          <span class="pdf-label" [translate]="'jurisdiction.defendantDomicile'"
+            >3.1. Domicile of the defendant</span
+          >
         </span>
       </div>
-      <div class="margin-bottom">
+
+      <div class="margin-bottom pdf-checkbox">
         <span>
           <input
             type="checkbox"
             [checked]="formA.jurisdiction.customerDomicile"
             class="disabled-input"
           />
-          <span [translate]="'jurisdiction.customerDomicile'"></span>
+          <span class="pdf-label" [translate]="'jurisdiction.customerDomicile'"
+            >3.2. Domicile of the consumer</span
+          >
         </span>
       </div>
-      <div class="margin-bottom">
+
+      <div class="margin-bottom pdf-checkbox">
         <span>
           <input
             type="checkbox"
             [checked]="formA.jurisdiction.policyholderDomicilie"
             class="disabled-input"
           />
-          <span [translate]="'jurisdiction.policyholderDomicilie'"></span>
+          <span
+            class="pdf-label"
+            [translate]="'jurisdiction.policyholderDomicilie'"
+            >3.3. Domicile of the policyholder, the insured or the beneficiary
+            in insurance matters</span
+          >
         </span>
       </div>
-      <div class="margin-bottom">
+
+      <div class="margin-bottom pdf-checkbox">
         <span>
           <input
             type="checkbox"
             [checked]="formA.jurisdiction.placePerformanceObbligation"
             class="disabled-input"
           />
-          <span [translate]="'jurisdiction.placePerformanceObbligation'"></span>
+          <span
+            class="pdf-label"
+            [translate]="'jurisdiction.placePerformanceObbligation'"
+            >3.4. Place of performance of the obligation in question</span
+          >
         </span>
       </div>
-      <div class="margin-bottom">
+
+      <div class="margin-bottom pdf-checkbox">
         <span>
           <input
             type="checkbox"
             [checked]="formA.jurisdiction.placeHarmfulEvent"
             class="disabled-input"
           />
-          <span [translate]="'jurisdiction.placeHarmfulEvent'"></span>
+          <span class="pdf-label" [translate]="'jurisdiction.placeHarmfulEvent'"
+            >3.5. Place of the harmful event</span
+          >
         </span>
       </div>
-      <div class="margin-bottom">
+
+      <div class="margin-bottom pdf-checkbox">
         <span>
           <input
             type="checkbox"
             [checked]="formA.jurisdiction.placeImmovableProperty"
             class="disabled-input"
           />
-          <span [translate]="'jurisdiction.placeImmovableProperty'"></span>
+          <span
+            class="pdf-label"
+            [translate]="'jurisdiction.placeImmovableProperty'"
+            >3.6. Place where the immovable property is situated</span
+          >
         </span>
       </div>
-      <div class="margin-bottom">
+
+      <div class="margin-bottom pdf-checkbox">
         <span>
           <input
             type="checkbox"
             [checked]="formA.jurisdiction.choiceCourtTribunal"
             class="disabled-input"
           />
-          <span [translate]="'jurisdiction.choiceCourtTribunal'"></span>
+          <span
+            class="pdf-label"
+            [translate]="'jurisdiction.choiceCourtTribunal'"
+            >3.7. Choice of court/tribunal agreed by the parties</span
+          >
         </span>
       </div>
-      <div class="margin-bottom">
+
+      <div class="margin-bottom pdf-checkbox">
         <span>
           <input
             type="checkbox"
             [checked]="formA.jurisdiction.otherCheckbox"
             class="disabled-input"
           />
-          <span class="colon" [translate]="'jurisdiction.otherCheckbox'"></span>
+          <span
+            class="colon pdf-label"
+            [translate]="'jurisdiction.otherCheckbox'"
+            >3.8. Other (please specify)</span
+          >
         </span>
       </div>
-      <div
-        class="fw-bold justify margin-bottom ps-3"
-        *ngIf="formA.jurisdiction.otherCheckbox"
-      >
-        {{ formA.jurisdiction.otherText }}
+
+      <div class="ps-3" *ngIf="formA.jurisdiction.otherCheckbox">
+        <div class="pdf-div-field">
+          <p class="margin-top">
+            <span class="colon pdf-label" [translate]="'jurisdiction.specify'"
+              >Please specify
+            </span>
+          </p>
+          <div class="fw-bold justify margin-bottom ps-3 pdf-value">
+            {{ formA.jurisdiction.otherText }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <h3 [translate]="'crossborderNature.title'">
+  <h3 class="pdf-primary-title" [translate]="'crossborderNature.title'">
     4.1. Cross-border nature of the case
   </h3>
   <div class="ps-3">
-    <h4>
-      <span class="colon" [translate]="'crossborderNature.claimantCountry'"
+    <h4 class="pdf-line-field pdf-tertiary-field">
+      <span
+        class="colon pdf-label"
+        [translate]="'crossborderNature.claimantCountry'"
         >4.1.1. Country of domicile or habitual residence of claimant:</span
       >
-      <span class="fw-bold">{{ crossBorderNature.claimantCountryName }}</span>
+      <span class="fw-bold pdf-value">{{
+        crossBorderNature.claimantCountryName
+      }}</span>
     </h4>
-    <h4>
-      <span class="colon" [translate]="'crossborderNature.defendantCountry'"
+    <h4 class="pdf-line-field pdf-tertiary-field">
+      <span
+        class="colon pdf-label"
+        [translate]="'crossborderNature.defendantCountry'"
         >4.1.2. Country of domicile or habitual residence of defendant:</span
       >
-      <span class="fw-bold">{{ crossBorderNature.defendantCountryName }}</span>
+      <span class="fw-bold pdf-value">{{
+        crossBorderNature.defendantCountryName
+      }}</span>
     </h4>
-    <h4>
-      <span class="colon" [translate]="'crossborderNature.courtCountry'"
+    <h4 class="pdf-line-field pdf-tertiary-field">
+      <span
+        class="colon pdf-label"
+        [translate]="'crossborderNature.courtCountry'"
         >4.1.3. Member State of the court/tribunal</span
       >
-      <span class="fw-bold">{{ crossBorderNature.courtCountryName }}</span>
+      <span class="fw-bold pdf-value">{{
+        crossBorderNature.courtCountryName
+      }}</span>
     </h4>
   </div>
 
-  <h3 [translate]="'bankDetails.title'">4.2. Bank details</h3>
+  <h3 class="pdf-primary-title" [translate]="'bankDetails.title'">
+    4.2. Bank details
+  </h3>
   <div class="ps-3">
-    <h4 [translate]="'bankDetails.applicationFeePaymentQuestion'">
+    <h4
+      class="pdf-secondary-title"
+      [translate]="'bankDetails.applicationFeePaymentQuestion'"
+    >
       4.2.1. How will you pay the application fee?
     </h4>
     <div class="ps-3">
-      <div class="margin-bottom">
-        <span>
-          <input
-            type="radio"
-            [checked]="
-              formA.bankDetails.applicationFeePayment.paymentMethod ===
-              'bankTransfer'
-            "
-            class="disabled-input"
-          />
-          <span [translate]="'bankDetails.bankTransfer'">By bank transfer</span>
-        </span>
-      </div>
-      <div class="margin-bottom">
-        <span>
-          <input
-            type="radio"
-            [checked]="
+      <div class="pdf-radio-buttons">
+        <div class="margin-bottom">
+          <span>
+            <input
+              type="radio"
+              [checked]="
+                formA.bankDetails.applicationFeePayment.paymentMethod ===
+                'bankTransfer'
+              "
+              class="disabled-input pdf-radio-button"
+            />
+            <span class="pdf-label" [translate]="'bankDetails.bankTransfer'"
+              >By bank transfer</span
+            >
+          </span>
+        </div>
+
+        <div class="margin-bottom">
+          <span>
+            <input
+              type="radio"
+              [checked]="
+                formA.bankDetails.applicationFeePayment.paymentMethod ===
+                'creditCard'
+              "
+              class="disabled-input pdf-radio-button"
+            />
+            <span class="pdf-label" [translate]="'bankDetails.creditCard'"
+              >By credit card</span
+            >
+          </span>
+
+          <div
+            class="ps-3 pdf-radio-button-inner-fields"
+            *ngIf="
               formA.bankDetails.applicationFeePayment.paymentMethod ===
               'creditCard'
             "
-            class="disabled-input"
-          />
-          <span [translate]="'bankDetails.creditCard'">By credit card</span>
-        </span>
-        <div
-          class="ps-3"
-          *ngIf="
-            formA.bankDetails.applicationFeePayment.paymentMethod ===
-            'creditCard'
-          "
-        >
-          <p class="p-margin-top">
-            <span class="colon" [translate]="'bankDetails.cardHolder'"
-              >Credit card holder</span
-            >
-            <span class="fw-bold">{{
-              formA.bankDetails.applicationFeePayment.creditCard.cardHolder
-            }}</span>
-          </p>
-          <p>
-            <span class="colon" [translate]="'bankDetails.cardCompany'"
-              >Credit card company</span
-            >
-            <span class="fw-bold">{{
-              formA.bankDetails.applicationFeePayment.creditCard.cardCompany
-            }}</span>
-          </p>
-          <p>
-            <span class="colon" [translate]="'bankDetails.cardNumber'"
-              >Credit card number</span
-            >
-            <span class="fw-bold">{{
-              formA.bankDetails.applicationFeePayment.creditCard.cardNumber
-            }}</span>
-          </p>
-          <p>
-            <span class="colon" [translate]="'bankDetails.cardExpireDate'"
-              >Expiry date</span
-            >
-            <span class="fw-bold">{{
-              formA.bankDetails.applicationFeePayment.creditCard.cardExpireDate
-            }}</span>
-          </p>
-          <p>
-            <span class="colon" [translate]="'bankDetails.cardSecurityNumber'"
-              >Security number of credit card</span
-            >
-            <span class="fw-bold">{{
-              formA.bankDetails.applicationFeePayment.creditCard
-                .cardSecurityNumber
-            }}</span>
-          </p>
+          >
+            <p class="p-margin-top pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'bankDetails.cardHolder'"
+                >Credit card holder</span
+              >
+              <span class="fw-bold pdf-value">{{
+                formA.bankDetails.applicationFeePayment.creditCard.cardHolder
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'bankDetails.cardCompany'"
+                >Credit card company</span
+              >
+              <span class="fw-bold pdf-value">{{
+                formA.bankDetails.applicationFeePayment.creditCard.cardCompany
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'bankDetails.cardNumber'"
+                >Credit card number</span
+              >
+              <span class="fw-bold pdf-value">{{
+                formA.bankDetails.applicationFeePayment.creditCard.cardNumber
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'bankDetails.cardExpireDate'"
+                >Expiry date</span
+              >
+              <span class="fw-bold pdf-value">{{
+                formA.bankDetails.applicationFeePayment.creditCard
+                  .cardExpireDate
+              }}</span>
+            </p>
+            <p>
+              <span class="colon" [translate]="'bankDetails.cardSecurityNumber'"
+                >Security number of credit card</span
+              >
+              <span class="fw-bold">{{
+                formA.bankDetails.applicationFeePayment.creditCard
+                  .cardSecurityNumber
+              }}</span>
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="margin-bottom">
-        <span>
-          <input
-            type="radio"
-            [checked]="
+
+        <div class="margin-bottom">
+          <span>
+            <input
+              type="radio"
+              [checked]="
+                formA.bankDetails.applicationFeePayment.paymentMethod ===
+                'directDebit'
+              "
+              class="disabled-input pdf-radio-button"
+            />
+            <span class="pdf-label" [translate]="'bankDetails.directDebit'"
+              >Direct debit from your bank account
+            </span>
+          </span>
+
+          <div
+            class="ps-3 pdf-radio-button-inner-fields"
+            *ngIf="
               formA.bankDetails.applicationFeePayment.paymentMethod ===
               'directDebit'
             "
-            class="disabled-input"
-          />
-          <span [translate]="'bankDetails.directDebit'"
-            >Direct debit from your bank account
-          </span>
-        </span>
-        <div
-          class="ps-3"
-          *ngIf="
-            formA.bankDetails.applicationFeePayment.paymentMethod ===
-            'directDebit'
-          "
-        >
-          <p class="p-margin-top">
-            <span class="colon" [translate]="'bankDetails.accountHolder'"
-              >Account holder</span
-            >
-            <span class="fw-bold">{{
-              formA.bankDetails.applicationFeePayment.directDebit.accountHolder
-            }}</span>
-          </p>
-          <p>
-            <span class="colon" [translate]="'bankDetails.bicOrBankName'"
-              >Bank name, BIC or other relevant bank code</span
-            >
-            <span class="fw-bold">{{
-              formA.bankDetails.applicationFeePayment.directDebit.bicOrBankName
-            }}</span>
-          </p>
-          <p>
-            <span class="colon" [translate]="'bankDetails.accountNumberOrIBAN'"
-              >Account number or IBAN</span
-            >
-            <span class="fw-bold">{{
-              formA.bankDetails.applicationFeePayment.directDebit
-                .accountNumberOrIBAN
-            }}</span>
-          </p>
+          >
+            <p class="p-margin-top pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'bankDetails.accountHolder'"
+                >Account holder</span
+              >
+              <span class="fw-bold pdf-value">{{
+                formA.bankDetails.applicationFeePayment.directDebit
+                  .accountHolder
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'bankDetails.bicOrBankName'"
+                >Bank name, BIC or other relevant bank code</span
+              >
+              <span class="fw-bold pdf-value">{{
+                formA.bankDetails.applicationFeePayment.directDebit
+                  .bicOrBankName
+              }}</span>
+            </p>
+
+            <p class="pdf-line-field">
+              <span
+                class="colon pdf-label"
+                [translate]="'bankDetails.accountNumberOrIBAN'"
+                >Account number or IBAN</span
+              >
+              <span class="fw-bold pdf-value">{{
+                formA.bankDetails.applicationFeePayment.directDebit
+                  .accountNumberOrIBAN
+              }}</span>
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="margin-bottom">
-        <span>
-          <input
-            type="radio"
-            [checked]="
+
+        <div class="margin-bottom">
+          <span>
+            <input
+              type="radio"
+              [checked]="
+                formA.bankDetails.applicationFeePayment.paymentMethod ===
+                'other'
+              "
+              class="disabled-input pdf-radio-button"
+            />
+            <span class="colon pdf-label" [translate]="'bankDetails.other'"
+              >Other (please specify)</span
+            >
+          </span>
+
+          <div
+            class="ps-3 pdf-radio-button-inner-fields"
+            *ngIf="
               formA.bankDetails.applicationFeePayment.paymentMethod === 'other'
             "
-            class="disabled-input"
-          />
-          <span class="colon" [translate]="'bankDetails.other'"></span>
-        </span>
-        <div
-          class="ps-3"
-          *ngIf="
-            formA.bankDetails.applicationFeePayment.paymentMethod === 'other'
-          "
-        >
-          <p class="p-margin-top">
-            <span class="fw-bold">{{
-              formA.bankDetails.applicationFeePayment.other.other
-            }}</span>
-          </p>
+          >
+            <div class="pdf-div-field">
+              <p class="margin-top">
+                <span
+                  class="colon pdf-label"
+                  [translate]="'bankDetails.specify'"
+                  >Please specify
+                </span>
+              </p>
+              <div class="fw-bold justify margin-bottom ps-3 pdf-value">
+                {{ formA.bankDetails.applicationFeePayment.other.other }}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <h4 [translate]="'bankDetails.claimantBankAccountQuestion'">
+    <h4
+      class="pdf-secondary-title"
+      [translate]="'bankDetails.claimantBankAccountQuestion'"
+    >
       4.2.2. To which account do you wish the defendant to pay any amount
       claimed or awarded?
     </h4>
     <div class="ps-3">
-      <h5 class="p-margin-top">
-        <span class="colon" [translate]="'bankDetails.claimantAccountHolder'"
+      <h5 class="p-margin-top pdf-line-field">
+        <span
+          class="colon pdf-label"
+          [translate]="'bankDetails.claimantAccountHolder'"
           >4.2.2.1. Account holder</span
         >
-        <span class="fw-bold">{{
+        <span class="fw-bold pdf-value">{{
           formA.bankDetails.claimantBankAccount.accountHolder
         }}</span>
       </h5>
-      <h5>
-        <span class="colon" [translate]="'bankDetails.claimantBicOrBankName'"
+
+      <h5 class="pdf-line-field">
+        <span
+          class="colon pdf-label"
+          [translate]="'bankDetails.claimantBicOrBankName'"
           >4.2.2.2. Bank name, BIC or other relevant bank code</span
         >
-        <span class="fw-bold">{{
+        <span class="fw-bold pdf-value">{{
           formA.bankDetails.claimantBankAccount.bicOrBankName
         }}</span>
       </h5>
-      <h5>
+
+      <h5 class="pdf-line-field">
         <span
-          class="colon"
+          class="colon pdf-label"
           [translate]="'bankDetails.claimantAccountNumberOrIBAN'"
           >4.2.2.3. Account number or IBAN</span
         >
-        <span class="fw-bold">{{
+        <span class="fw-bold pdf-value">{{
           formA.bankDetails.claimantBankAccount.accountNumberOrIBAN
         }}</span>
       </h5>
     </div>
   </div>
 
-  <h3 [translate]="'claim.title'">5. Claim</h3>
+  <h3 class="pdf-primary-title" [translate]="'claim.title'">5. Claim</h3>
   <div class="ps-3">
-    <div class="yes-no-radio-button">
-      <h4 class="yes-no-title">
-        <span [translate]="'claim.claimForMoney'">5.1. Claim for money</span>
-      </h4>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+    <h4 class="pdf-secondary-title" [translate]="'claim.claimForMoney'">
+      5.1. Claim for money
+    </h4>
+
+    <div class="ps-3">
+      <div class="pdf-radio-buttons">
+        <div class="radio-wrapper radio-margin-bottom">
           <input
             type="radio"
             [value]="'claim.yes' | translate"
             [checked]="claimForMoney.isYes"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'claim.yes'">Yes</span>
+            <span class="pdf-label" [translate]="'claim.yes'">Yes</span>
           </label>
         </div>
-        <div class="radio-wrapper yes-no-radio-option-div">
+        <div class="radio-wrapper">
           <input
             type="radio"
             [value]="'claim.no' | translate"
             [checked]="!claimForMoney.isYes"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'claim.no'">No</span>
+            <span class="pdf-label" [translate]="'claim.no'">No</span>
           </label>
         </div>
-        <div class="ps-3" *ngIf="claimForMoney.isYes">
-          <p class="p-margin-top">
-            <span class="colon" [translate]="'claim.principalAmount'"
-              >5.1.1. Amount of principal (excluding interest and costs)
-            </span>
-            <span class="fw-bold">{{ claimForMoney.principalAmount }}</span>
-          </p>
-          <p>
-            <span class="colon" [translate]="'claim.claimForMoneyCurrency'"
-              >5.1.2. Currency</span
-            >
-            <span class="fw-bold">{{ claimForMoney.currencyName }}</span>
-          </p>
-        </div>
+      </div>
+
+      <div class="ps-3" *ngIf="claimForMoney.isYes">
+        <p class="p-margin-top pdf-line-field">
+          <span class="colon pdf-label" [translate]="'claim.principalAmount'"
+            >5.1.1. Amount of principal (excluding interest and costs)
+          </span>
+          <span class="fw-bold pdf-value">{{
+            claimForMoney.principalAmount
+          }}</span>
+        </p>
+        <p class="pdf-line-field">
+          <span
+            class="colon pdf-label"
+            [translate]="'claim.claimForMoneyCurrency'"
+            >5.1.2. Currency</span
+          >
+          <span class="fw-bold pdf-value">{{
+            claimForMoney.currencyName
+          }}</span>
+        </p>
       </div>
     </div>
 
-    <div class="yes-no-radio-button">
-      <h4 class="yes-no-title">
-        <span [translate]="'claim.otherClaim'">5.2. Other claim</span>
-      </h4>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+    <h4 class="pdf-secondary-title" [translate]="'claim.otherClaim'">
+      5.2. Other claim
+    </h4>
+
+    <div class="ps-3">
+      <div class="pdf-radio-buttons">
+        <div class="radio-wrapper radio-margin-bottom">
           <input
             type="radio"
             [value]="'claim.yes' | translate"
             [checked]="otherClaim.isYes"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'claim.yes'">Yes</span>
+            <span class="pdf-label" [translate]="'claim.yes'">Yes</span>
           </label>
         </div>
-        <div class="radio-wrapper yes-no-radio-option-div">
+        <div class="radio-wrapper">
           <input
             type="radio"
             [value]="'claim.no' | translate"
             [checked]="!otherClaim.isYes"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'claim.no'">No</span>
+            <span class="pdf-label" [translate]="'claim.no'">No</span>
           </label>
         </div>
-        <div class="ps-3" *ngIf="otherClaim.isYes">
-          <p class="p-margin-top">
-            <span class="colon" [translate]="'claim.claimDescription'"
-              >5.2.1. Please specify what you are claiming
-            </span>
-            <span class="fw-bold">{{ otherClaim.description }}</span>
-          </p>
-          <p>
-            <span class="colon" [translate]="'claim.claimValue'"
-              >5.2.2. Estimated value of the claim</span
-            >
-            <span class="fw-bold">{{ otherClaim.value }}</span>
-          </p>
-          <p>
-            <span class="colon" [translate]="'claim.otherClaimCurrency'"
-              >5.2.3. Currency</span
-            >
-            <span class="fw-bold">{{ otherClaim.currencyName }}</span>
-          </p>
-        </div>
+      </div>
+
+      <div class="ps-3" *ngIf="otherClaim.isYes">
+        <p class="p-margin-top pdf-line-field">
+          <span class="colon pdf-label" [translate]="'claim.claimDescription'"
+            >5.2.1. Please specify what you are claiming
+          </span>
+          <span class="fw-bold pdf-value">{{ otherClaim.description }}</span>
+        </p>
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'claim.claimValue'"
+            >5.2.2. Estimated value of the claim</span
+          >
+          <span class="fw-bold pdf-value">{{ otherClaim.value }}</span>
+        </p>
+        <p class="pdf-line-field">
+          <span class="colon pdf-label" [translate]="'claim.otherClaimCurrency'"
+            >5.2.3. Currency</span
+          >
+          <span class="fw-bold pdf-value">{{ otherClaim.currencyName }}</span>
+        </p>
       </div>
     </div>
 
-    <div class="yes-no-radio-button">
-      <h4 class="yes-no-title">
-        <span [translate]="'claim.claimingCostProceedings'">
-          5.3. Are you claiming the costs of proceedings?
-        </span>
-      </h4>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+    <h4
+      class="pdf-secondary-title"
+      [translate]="'claim.claimingCostProceedings'"
+    >
+      5.3. Are you claiming the costs of proceedings?
+    </h4>
+
+    <div class="ps-3">
+      <div class="pdf-radio-buttons">
+        <div class="radio-wrapper radio-margin-bottom">
           <input
             type="radio"
             [value]="'claim.yes' | translate"
             [checked]="formA.claim.claimingCostProceedings === 'yes'"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'claim.yes'">Yes</span>
+            <span class="pdf-label" [translate]="'claim.yes'">Yes</span>
           </label>
         </div>
-        <div class="radio-wrapper yes-no-radio-option-div">
+        <div class="radio-wrapper">
           <input
             type="radio"
             [value]="'claim.no' | translate"
             [checked]="formA.claim.claimingCostProceedings === 'no'"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'claim.no'">No</span>
+            <span class="pdf-label" [translate]="'claim.no'">No</span>
           </label>
         </div>
-        <div class="ps-3" *ngIf="formA.claim.claimingCostProceedings === 'yes'">
-          <p class="p-margin-top">
-            <span class="colon" [translate]="'claim.costsDetails'"
+      </div>
+
+      <div class="ps-3" *ngIf="formA.claim.claimingCostProceedings === 'yes'">
+        <div class="pdf-div-field">
+          <p class="margin-top">
+            <span class="colon pdf-label" [translate]="'claim.costsDetails'"
               >5.3.1. If yes, please specify which costs and indicate the amount
               claimed or incurred so far
             </span>
           </p>
-          <div class="fw-bold justify margin-bottom ps-3">
+          <div class="fw-bold justify margin-bottom ps-3 pdf-value">
             {{ formA.claim.claimingCostProceedingsExpansion.costsDetails }}
           </div>
         </div>
       </div>
     </div>
 
-    <div class="yes-no-radio-button">
-      <h4 class="yes-no-title">
-        <span [translate]="'claim.claimingInterest'">
-          5.4. Are you claiming interest?</span
-        >
-      </h4>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+    <h4 class="pdf-secondary-title" [translate]="'claim.claimingInterest'">
+      5.4. Are you claiming interest?
+    </h4>
+
+    <div class="ps-3">
+      <div class="pdf-radio-buttons">
+        <div class="radio-wrapper radio-margin-bottom">
           <input
             type="radio"
             [value]="'claim.yes' | translate"
             [checked]="claimingInterest.isYes"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'claim.yes'">Yes</span>
+            <span class="pdf-label" [translate]="'claim.yes'">Yes</span>
           </label>
         </div>
-        <div class="radio-wrapper yes-no-radio-option-div">
+        <div class="radio-wrapper">
           <input
             type="radio"
             [value]="'claim.no' | translate"
             [checked]="!claimingInterest.isYes"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'claim.no'">No</span>
+            <span class="pdf-label" [translate]="'claim.no'">No</span>
           </label>
         </div>
-        <div class="ps-3" *ngIf="claimingInterest.isYes">
-          <div class="contractual-statutory-radio-button">
-            <h5 class="contractual-statutory-title">
-              <span [translate]="'claim.isTheInterest'"
-                >If yes, is the interest
-              </span>
+      </div>
+
+      <div class="ps-3" *ngIf="claimingInterest.isYes">
+        <h5 class="pdf-tertiary-title" [translate]="'claim.isTheInterest'">
+          If yes, is the interest
+        </h5>
+
+        <div class="ps-3">
+          <div class="pdf-radio-buttons">
+            <div class="radio-wrapper radio-margin-bottom">
+              <input
+                type="radio"
+                [value]="'claim.contractual' | translate"
+                [checked]="claimingInterest.interestType === 'contractual'"
+                class="disabled-input pdf-radio-button"
+              />
+              <label>
+                <span class="pdf-label" [translate]="'claim.contractual'"
+                  >contractual?</span
+                >
+              </label>
+            </div>
+            <div class="radio-wrapper">
+              <input
+                type="radio"
+                [value]="'claim.statutory' | translate"
+                [checked]="claimingInterest.interestType === 'statutory'"
+                class="disabled-input pdf-radio-button"
+              />
+              <label>
+                <span class="pdf-label" [translate]="'claim.statutory'"
+                  >statutory?</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <div
+            class="ps-3"
+            *ngIf="claimingInterest.interestType === 'contractual'"
+          >
+            <h5 class="pdf-tertiary-title" [translate]="'claim.ifContractual'">
+              5.4.1. If contractual
             </h5>
             <div class="ps-3">
-              <div
-                class="radio-wrapper radio-margin-bottom contractual-statutory-radio-option-div"
-              >
-                <input
-                  type="radio"
-                  [value]="'claim.contractual' | translate"
-                  [checked]="claimingInterest.interestType === 'contractual'"
-                  class="disabled-input contractual-statutory-radio-option"
-                />
-                <label>
-                  <span [translate]="'claim.contractual'">contractual?</span>
-                </label>
-              </div>
+              <p class="pdf-line-field">
+                <span class="colon pdf-label" [translate]="'claim.theRateIs'"
+                  >(1) the rate is
+                </span>
+                <span class="fw-bold percentage pdf-value">{{
+                  claimingInterest.contractualInterest.interestPercentage
+                }}</span>
+              </p>
 
-              <div class="radio-wrapper contractual-statutory-radio-option-div">
-                <input
-                  type="radio"
-                  [value]="'claim.statutory' | translate"
-                  [checked]="claimingInterest.interestType === 'statutory'"
-                  class="disabled-input contractual-statutory-radio-option"
-                />
-                <label>
-                  <span [translate]="'claim.statutory'">statutory?</span>
-                </label>
-              </div>
+              <p class="pdf-line-field pdf-inverted-order">
+                <span class="fw-bold percentage pdf-value">{{
+                  claimingInterest.contractualInterest.percentagePointsAboveECB
+                }}</span>
+                <span class="pdf-label" [translate]="'claim.aboveTheBaseRate'"
+                  >% above the base rate of the ECB
+                </span>
+              </p>
 
-              <div
-                class="ps-3"
-                *ngIf="claimingInterest.interestType === 'contractual'"
-              >
-                <h5 [translate]="'claim.ifContractual'">
-                  5.4.1. If contractual
-                </h5>
-                <div class="ps-3">
-                  <p>
-                    <span class="colon" [translate]="'claim.theRateIs'"
-                      >(1) the rate is
-                    </span>
-                    <span class="fw-bold percentage">{{
-                      claimingInterest.contractualInterest.interestPercentage
-                    }}</span>
-                  </p>
-                  <p>
-                    <span class="fw-bold percentage">{{
-                      claimingInterest.contractualInterest
-                        .percentagePointsAboveECB
-                    }}</span>
-                    <span [translate]="'claim.aboveTheBaseRate'"
-                      >% above the base rate of the ECB
-                    </span>
-                  </p>
-                  <p>
-                    <span class="colon" [translate]="'claim.other'">other</span>
-                    <span class="fw-bold justify">{{
-                      claimingInterest.contractualInterest.other
-                    }}</span>
-                  </p>
-                  <p>
-                    <span
-                      class="colon"
-                      [translate]="'preview.contractualFromDate'"
-                      >(2) the interest should run from</span
+              <p class="pdf-line-field">
+                <span class="colon pdf-label" [translate]="'claim.other'"
+                  >other</span
+                >
+                <span class="fw-bold justify pdf-value">{{
+                  claimingInterest.contractualInterest.other
+                }}</span>
+              </p>
+
+              <p class="pdf-line-field">
+                <span
+                  class="colon pdf-label"
+                  [translate]="'preview.contractualFromDate'"
+                  >(2) the interest should run from</span
+                >
+                <span class="fw-bold pdf-value">{{
+                  claimingInterest.contractualInterest.fromDate
+                }}</span>
+              </p>
+
+              <div class="pdf-radio-buttons">
+                <div class="margin-bottom">
+                  <span>
+                    <input
+                      type="radio"
+                      [checked]="
+                        claimingInterest.contractualInterest.to.toOption ===
+                        '01'
+                      "
+                      class="disabled-input pdf-radio-button"
+                    />
+                    <span class="colon pdf-label" [translate]="'preview.to'"
+                      >to</span
                     >
-                    <span class="fw-bold">{{
-                      claimingInterest.contractualInterest.fromDate
+                    <span class="fw-bold pdf-radio-option-value">{{
+                      claimingInterest.contractualInterest.to.toDate
                     }}</span>
-                  </p>
+                  </span>
+                </div>
 
-                  <div class="margin-bottom">
-                    <span>
-                      <input
-                        type="radio"
-                        [checked]="
-                          claimingInterest.contractualInterest.to.toOption ===
-                          '01'
-                        "
-                        class="disabled-input"
-                      />
-                      <span class="colon" [translate]="'preview.to'">to</span>
-                      <span class="fw-bold">{{
-                        claimingInterest.contractualInterest.to.toDate
-                      }}</span>
-                    </span>
-                  </div>
+                <div class="margin-bottom">
+                  <span>
+                    <input
+                      type="radio"
+                      [checked]="
+                        claimingInterest.contractualInterest.to.toOption ===
+                        '02'
+                      "
+                      class="disabled-input pdf-radio-button"
+                    />
+                    <span class="pdf-label" [translate]="'claim.toJudgmentDate'"
+                      >to the date of the judgment</span
+                    >
+                  </span>
+                </div>
 
-                  <div class="margin-bottom">
-                    <span>
-                      <input
-                        type="radio"
-                        [checked]="
-                          claimingInterest.contractualInterest.to.toOption ===
-                          '02'
-                        "
-                        class="disabled-input"
-                      />
-                      <span [translate]="'claim.toJudgmentDate'"
-                        >to the date of the judgment</span
-                      >
-                    </span>
-                  </div>
-
-                  <div class="margin-bottom">
-                    <span>
-                      <input
-                        type="radio"
-                        [checked]="
-                          claimingInterest.contractualInterest.to.toOption ===
-                          '03'
-                        "
-                        class="disabled-input"
-                      />
-                      <span [translate]="'claim.toPrincipalPaymentDate'"
-                        >to the date of payment of principal</span
-                      >
-                    </span>
-                  </div>
+                <div class="margin-bottom">
+                  <span>
+                    <input
+                      type="radio"
+                      [checked]="
+                        claimingInterest.contractualInterest.to.toOption ===
+                        '03'
+                      "
+                      class="disabled-input pdf-radio-button"
+                    />
+                    <span
+                      class="pdf-label"
+                      [translate]="'claim.toPrincipalPaymentDate'"
+                      >to the date of payment of principal</span
+                    >
+                  </span>
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div
-                class="ps-3"
-                *ngIf="claimingInterest.interestType === 'statutory'"
-              >
-                <h5>
-                  <span class="colon" [translate]="'preview.ifStatutory'"
-                    >5.4.2. If statutory, the interest should run from</span
-                  >
-                  <span class="fw-bold space">{{
-                    claimingInterest.statutoryInterest.fromDate
-                  }}</span>
-                </h5>
-                <div class="ps-3">
-                  <div class="margin-bottom">
-                    <span>
-                      <input
-                        type="radio"
-                        [checked]="
-                          claimingInterest.statutoryInterest.to.toOption ===
-                          '01'
-                        "
-                        class="disabled-input"
-                      />
-                      <span class="colon" [translate]="'preview.to'">to</span>
-                      <span class="fw-bold">{{
-                        claimingInterest.statutoryInterest.to.toDate
-                      }}</span>
-                    </span>
-                  </div>
+          <div
+            class="ps-3"
+            *ngIf="claimingInterest.interestType === 'statutory'"
+          >
+            <h5 class="pdf-line-field pdf-tertiary-field">
+              <span class="colon pdf-label" [translate]="'preview.ifStatutory'">
+                5.4.2. If statutory, the interest should run from
+              </span>
+              <span class="fw-bold space pdf-value">{{
+                claimingInterest.statutoryInterest.fromDate
+              }}</span>
+            </h5>
 
-                  <div class="margin-bottom">
-                    <span>
-                      <input
-                        type="radio"
-                        [checked]="
-                          claimingInterest.statutoryInterest.to.toOption ===
-                          '02'
-                        "
-                        class="disabled-input"
-                      />
-                      <span [translate]="'claim.toJudgmentDate'"
-                        >to the date of the judgment</span
-                      >
-                    </span>
-                  </div>
+            <div class="ps-3">
+              <div class="pdf-radio-buttons">
+                <div class="margin-bottom">
+                  <span>
+                    <input
+                      type="radio"
+                      [checked]="
+                        claimingInterest.statutoryInterest.to.toOption === '01'
+                      "
+                      class="disabled-input pdf-radio-button"
+                    />
+                    <span class="colon pdf-label" [translate]="'preview.to'"
+                      >to</span
+                    >
+                    <span class="fw-bold pdf-radio-option-value">{{
+                      claimingInterest.statutoryInterest.to.toDate
+                    }}</span>
+                  </span>
+                </div>
 
-                  <div class="margin-bottom">
-                    <span>
-                      <input
-                        type="radio"
-                        [checked]="
-                          claimingInterest.statutoryInterest.to.toOption ===
-                          '03'
-                        "
-                        class="disabled-input"
-                      />
-                      <span [translate]="'claim.toPrincipalPaymentDate'"
-                        >to the date of payment of principal</span
-                      >
-                    </span>
-                  </div>
+                <div class="margin-bottom">
+                  <span>
+                    <input
+                      type="radio"
+                      [checked]="
+                        claimingInterest.statutoryInterest.to.toOption === '02'
+                      "
+                      class="disabled-input pdf-radio-button"
+                    />
+                    <span class="pdf-label" [translate]="'claim.toJudgmentDate'"
+                      >to the date of the judgment</span
+                    >
+                  </span>
+                </div>
+
+                <div class="margin-bottom">
+                  <span>
+                    <input
+                      type="radio"
+                      [checked]="
+                        claimingInterest.statutoryInterest.to.toOption === '03'
+                      "
+                      class="disabled-input pdf-radio-button"
+                    />
+                    <span
+                      class="pdf-label"
+                      [translate]="'claim.toPrincipalPaymentDate'"
+                      >to the date of payment of principal</span
+                    >
+                  </span>
                 </div>
               </div>
             </div>
@@ -1099,55 +1412,61 @@
       </div>
     </div>
 
-    <div class="yes-no-radio-button">
-      <h4 class="yes-no-title">
-        <span [translate]="'claim.claimingInterestOnCost'">
-          5.5. Are you claiming interest on costs?</span
-        >
-      </h4>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+    <h4
+      class="pdf-secondary-title"
+      [translate]="'claim.claimingInterestOnCost'"
+    >
+      5.5. Are you claiming interest on costs?
+    </h4>
+
+    <div class="ps-3">
+      <div class="pdf-radio-buttons">
+        <div class="radio-wrapper radio-margin-bottom">
           <input
             type="radio"
             [value]="'claim.yes' | translate"
             [checked]="claimingInterestOnCost.isYes"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'claim.yes'">Yes</span>
+            <span class="pdf-label" [translate]="'claim.yes'">Yes</span>
           </label>
         </div>
 
-        <div class="radio-wrapper yes-no-radio-option-div">
+        <div class="radio-wrapper">
           <input
             type="radio"
             [value]="'claim.no' | translate"
             [checked]="!claimingInterestOnCost.isYes"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'claim.no'">No</span>
+            <span class="pdf-label" [translate]="'claim.no'">No</span>
           </label>
         </div>
+      </div>
 
-        <div class="ps-3" *ngIf="claimingInterestOnCost.isYes">
-          <h5 class="margin-bottom">
-            <span
-              class="colon"
-              [translate]="'preview.claimingInterestOnCostFromDate'"
-              >If yes, the interest should run from</span
-            >
-          </h5>
-          <div class="ps-3">
+      <div class="ps-3" *ngIf="claimingInterestOnCost.isYes">
+        <h5
+          class="margin-bottom colon pdf-tertiary-title"
+          [translate]="'preview.claimingInterestOnCostFromDate'"
+        >
+          If yes, the interest should run from
+        </h5>
+
+        <div class="ps-3">
+          <div class="pdf-radio-buttons">
             <div class="margin-bottom margin-top">
               <span>
                 <input
                   type="radio"
                   [checked]="claimingInterestOnCost.from.fromOption === '00'"
-                  class="disabled-input"
+                  class="disabled-input pdf-radio-button"
                 />
-                <span class="colon" [translate]="'preview.date'">(date)</span>
-                <span class="fw-bold">{{
+                <span class="colon pdf-label" [translate]="'preview.date'"
+                  >(date)</span
+                >
+                <span class="fw-bold pdf-radio-option-value">{{
                   claimingInterestOnCost.from.fromDate
                 }}</span>
               </span>
@@ -1158,24 +1477,40 @@
                 <input
                   type="radio"
                   [checked]="claimingInterestOnCost.from.fromOption === '01'"
-                  class="disabled-input"
+                  class="disabled-input pdf-radio-button"
                 />
-                <span class="colon" [translate]="'claim.event'">(event)</span>
+                <span class="colon pdf-label" [translate]="'claim.event'"
+                  >(event)</span
+                >
               </div>
-              <div class="fw-bold justify margin-bottom ps-3">
-                {{ claimingInterestOnCost.from.fromEvent }}
+
+              <div
+                *ngIf="claimingInterestOnCost.from.fromOption === '01'"
+                class="ps-3 pdf-radio-button-inner-fields pdf-no-indentation"
+              >
+                <div class="pdf-div-field">
+                  <div
+                    class="fw-bold justify margin-bottom pdf-value"
+                  >
+                    {{ claimingInterestOnCost.from.fromEvent }}
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
+          <div class="pdf-radio-buttons">
             <div class="margin-bottom" style="margin-top: 3rem">
               <span>
                 <input
                   type="radio"
                   [checked]="claimingInterestOnCost.to.toOption === '02'"
-                  class="disabled-input"
+                  class="disabled-input pdf-radio-button"
                 />
-                <span class="colon" [translate]="'preview.to'">to</span>
-                <span class="fw-bold">{{
+                <span class="colon pdf-label" [translate]="'preview.to'"
+                  >to</span
+                >
+                <span class="fw-bold pdf-radio-option-value">{{
                   claimingInterestOnCost.to.toDate
                 }}</span>
               </span>
@@ -1186,10 +1521,10 @@
                 <input
                   type="radio"
                   [checked]="claimingInterestOnCost.to.toOption === '03'"
-                  class="disabled-input"
+                  class="disabled-input pdf-radio-button"
                 />
 
-                <span [translate]="'claim.toCostsPaymentDate'"
+                <span class="pdf-label" [translate]="'claim.toCostsPaymentDate'"
                   >to the date of payment of costs</span
                 >
               </span>
@@ -1200,243 +1535,280 @@
     </div>
   </div>
 
-  <h3 [translate]="'claimDetails.title'">6. Details of claim</h3>
+  <h3 class="pdf-primary-title" [translate]="'claimDetails.title'">
+    6. Details of claim
+  </h3>
   <div class="ps-3">
-    <h4 [translate]="'claimDetails.detailsOfClaim'">
+    <h4 class="pdf-secondary-title" [translate]="'claimDetails.detailsOfClaim'">
       6.1. Please give reasons for your claim, for example what happened, where
       and when
     </h4>
-    <div class="fw-bold justify margin-bottom ps-3">
-      {{ formA.claimDetails.detailsOfClaim }}
+    <div class="pdf-div-field">
+      <div class="fw-bold justify margin-bottom ps-3 pdf-value">
+        {{ formA.claimDetails.detailsOfClaim }}
+      </div>
     </div>
 
-    <h4 [translate]="'claimDetails.evidenceDescription'">
+    <h4
+      class="pdf-secondary-title"
+      [translate]="'claimDetails.evidenceDescription'"
+    >
       6.2. Please describe the evidence you wish to put forward to support your
       claim and state which points of the claim it supports. Where appropriate,
       you should add relevant supporting documents
     </h4>
     <div class="ps-3">
-      <div class="yes-no-radio-button">
-        <h5 class="yes-no-title">
-          <span [translate]="'claimDetails.writtenEvidence'">
-            6.2.1. Written evidence
-          </span>
-        </h5>
-        <div class="ps-3">
-          <div
-            class="radio-wrapper radio-margin-bottom yes-no-radio-option-div"
-          >
+      <h5
+        class="pdf-tertiary-title"
+        [translate]="'claimDetails.writtenEvidence'"
+      >
+        6.2.1. Written evidence
+      </h5>
+
+      <div class="ps-3">
+        <div class="pdf-radio-buttons">
+          <div class="radio-wrapper radio-margin-bottom">
             <input
               type="radio"
               [value]="'claim.yes' | translate"
               [checked]="formA.claimDetails.writtenEvidence === 'yes'"
-              class="disabled-input yes-no-radio-option"
+              class="disabled-input pdf-radio-button"
             />
             <label>
-              <span [translate]="'claimDetails.yes'">Yes</span>
+              <span class="pdf-label" [translate]="'claimDetails.yes'"
+                >Yes</span
+              >
             </label>
           </div>
 
-          <div
-            class="radio-wrapper radio-margin-bottom yes-no-radio-option-div"
-          >
+          <div class="radio-wrapper radio-margin-bottom">
             <input
               type="radio"
               [value]="'claim.no' | translate"
               [checked]="formA.claimDetails.writtenEvidence === 'no'"
-              class="disabled-input yes-no-radio-option"
+              class="disabled-input pdf-radio-button"
             />
             <label>
-              <span [translate]="'claimDetails.no'">No</span>
+              <span class="pdf-label" [translate]="'claimDetails.no'">No</span>
             </label>
           </div>
+        </div>
 
-          <div
-            class="fw-bold justify margin-bottom margin-top ps-3"
-            *ngIf="formA.claimDetails.writtenEvidence === 'yes'"
-          >
-            {{ formA.claimDetails.writtenEvidenceText }}
+        <div class="ps-3" *ngIf="formA.claimDetails.writtenEvidence === 'yes'">
+          <div class="pdf-div-field">
+            <p class="margin-top">
+              <span class="colon pdf-label" [translate]="'claimDetails.specify'"
+                >Please specify
+              </span>
+            </p>
+            <div class="fw-bold justify margin-bottom ps-3 pdf-value">
+              {{ formA.claimDetails.writtenEvidenceText }}
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="yes-no-radio-button">
-        <h5 class="yes-no-title">
-          <span [translate]="'claimDetails.witnesses'"> 6.2.2. Witnesses</span>
-        </h5>
-        <div class="ps-3">
-          <div
-            class="radio-wrapper radio-margin-bottom yes-no-radio-option-div"
-          >
+      <h5 class="pdf-tertiary-title" [translate]="'claimDetails.witnesses'">
+        6.2.2. Witnesses
+      </h5>
+
+      <div class="ps-3">
+        <div class="pdf-radio-buttons">
+          <div class="radio-wrapper radio-margin-bottom">
             <input
               type="radio"
               [value]="'claim.yes' | translate"
               [checked]="formA.claimDetails.witnesses === 'yes'"
-              class="disabled-input yes-no-radio-option"
+              class="disabled-input pdf-radio-button"
             />
             <label>
-              <span [translate]="'claimDetails.yes'">Yes</span>
+              <span class="pdf-label" [translate]="'claimDetails.yes'"
+                >Yes</span
+              >
             </label>
           </div>
 
-          <div
-            class="radio-wrapper radio-margin-bottom yes-no-radio-option-div"
-          >
+          <div class="radio-wrapper radio-margin-bottom">
             <input
               type="radio"
               [value]="'claim.no' | translate"
               [checked]="formA.claimDetails.witnesses === 'no'"
-              class="disabled-input yes-no-radio-option"
+              class="disabled-input pdf-radio-button"
             />
             <label>
-              <span [translate]="'claimDetails.no'">No</span>
+              <span class="pdf-label" [translate]="'claimDetails.no'">No</span>
             </label>
           </div>
+        </div>
 
-          <div
-            class="fw-bold justify margin-bottom margin-top ps-3"
-            *ngIf="formA.claimDetails.witnesses === 'yes'"
-          >
-            {{ formA.claimDetails.witnessesText }}
+        <div class="ps-3" *ngIf="formA.claimDetails.witnesses === 'yes'">
+          <div class="pdf-div-field">
+            <p class="margin-top">
+              <span class="colon pdf-label" [translate]="'claimDetails.specify'"
+                >Please specify
+              </span>
+            </p>
+            <div class="fw-bold justify margin-bottom ps-3 pdf-value">
+              {{ formA.claimDetails.witnessesText }}
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="yes-no-radio-button">
-        <h5 class="yes-no-title">
-          <span [translate]="'claimDetails.otherClaimDetails'"
-            >6.2.3. Other</span
-          >
-        </h5>
-        <div class="ps-3">
-          <div
-            class="radio-wrapper radio-margin-bottom yes-no-radio-option-div"
-          >
+      <h5
+        class="pdf-tertiary-title"
+        [translate]="'claimDetails.otherClaimDetails'"
+      >
+        6.2.3. Other
+      </h5>
+
+      <div class="ps-3">
+        <div class="pdf-radio-buttons">
+          <div class="radio-wrapper radio-margin-bottom">
             <input
               type="radio"
               [value]="'claim.yes' | translate"
               [checked]="formA.claimDetails.otherClaimDetails === 'yes'"
-              class="disabled-input yes-no-radio-option"
+              class="disabled-input pdf-radio-button"
             />
             <label>
-              <span [translate]="'claimDetails.yes'">Yes</span>
+              <span class="pdf-label" [translate]="'claimDetails.yes'"
+                >Yes</span
+              >
             </label>
           </div>
 
-          <div class="radio-wrapper yes-no-radio-option-div">
+          <div class="radio-wrapper">
             <input
               type="radio"
               [value]="'claim.no' | translate"
               [checked]="formA.claimDetails.otherClaimDetails === 'no'"
-              class="disabled-input yes-no-radio-option"
+              class="disabled-input pdf-radio-button"
             />
             <label>
-              <span [translate]="'claimDetails.no'">No</span>
+              <span class="pdf-label" [translate]="'claimDetails.no'">No</span>
             </label>
           </div>
+        </div>
 
-          <div
-            class="fw-bold justify margin-bottom margin-top ps-3"
-            *ngIf="formA.claimDetails.otherClaimDetails === 'yes'"
-          >
-            {{ formA.claimDetails.otherClaimDetailsText }}
+        <div
+          class="ps-3"
+          *ngIf="formA.claimDetails.otherClaimDetails === 'yes'"
+        >
+          <div class="pdf-div-field">
+            <p class="margin-top">
+              <span class="colon pdf-label" [translate]="'claimDetails.specify'"
+                >Please specify
+              </span>
+            </p>
+            <div class="fw-bold justify margin-bottom ps-3 pdf-value">
+              {{ formA.claimDetails.otherClaimDetailsText }}
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <h3 [translate]="'oralHearing.title'">7.1. Oral hearing</h3>
+  <h3 class="pdf-primary-title" [translate]="'oralHearing.title'">
+    7.1. Oral hearing
+  </h3>
   <div class="ps-3">
-    <div class="yes-no-radio-button">
-      <h4 class="yes-no-title">
-        <span [translate]="'oralHearing.oralHearingRequest'">
-          7.1.1. Do you want an oral hearing to be held?
-        </span>
-      </h4>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+    <h4
+      class="pdf-secondary-title"
+      [translate]="'oralHearing.oralHearingRequest'"
+    >
+      7.1.1. Do you want an oral hearing to be held?
+    </h4>
+
+    <div class="ps-3">
+      <div class="pdf-radio-buttons">
+        <div class="radio-wrapper radio-margin-bottom">
           <input
             type="radio"
             [value]="'claim.yes' | translate"
             [checked]="formA.oralHearing.oralHearingRequest === 'yes'"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'oralHearing.yes'">Yes</span>
+            <span class="pdf-label" [translate]="'oralHearing.yes'">Yes</span>
           </label>
         </div>
-        <div class="radio-wrapper yes-no-radio-option-div">
+
+        <div class="radio-wrapper">
           <input
             type="radio"
             [value]="'claim.no' | translate"
             [checked]="formA.oralHearing.oralHearingRequest === 'no'"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'oralHearing.no'">No</span>
+            <span class="pdf-label" [translate]="'oralHearing.no'">No</span>
           </label>
         </div>
-        <div
-          class="ps-3"
-          *ngIf="formA.oralHearing.oralHearingRequest === 'yes'"
-        >
+      </div>
+
+      <div class="ps-3" *ngIf="formA.oralHearing.oralHearingRequest === 'yes'">
+        <div class="pdf-div-field">
           <p class="p-margin-top">
             <span
-              class="colon"
+              class="colon pdf-label"
               [translate]="'oralHearing.oralHearingRequestReasons'"
               >If yes, please indicate reasons
             </span>
           </p>
-          <div class="fw-bold justify margin-bottom margin-top ps-3">
+          <div class="fw-bold justify margin-bottom margin-top ps-3 pdf-value">
             {{ formA.oralHearing.oralHearingRequestReasons }}
           </div>
         </div>
       </div>
     </div>
 
-    <div class="yes-no-radio-button">
-      <h4 class="yes-no-title">
-        <span [translate]="'oralHearing.oralHearingPresence'">
-          7.1.2. If the court decides to hold an oral hearing, do you want to be
-          physically present?
-        </span>
-      </h4>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+    <h4
+      class="pdf-secondary-title"
+      [translate]="'oralHearing.oralHearingPresence'"
+    >
+      7.1.2. If the court decides to hold an oral hearing, do you want to be
+      physically present?
+    </h4>
+
+    <div class="ps-3">
+      <div class="pdf-radio-buttons">
+        <div class="radio-wrapper radio-margin-bottom">
           <input
             type="radio"
             [value]="'claim.yes' | translate"
             [checked]="formA.oralHearing.oralHearingPresence === 'yes'"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'oralHearing.yes'">Yes</span>
+            <span class="pdf-label" [translate]="'oralHearing.yes'">Yes</span>
           </label>
         </div>
-        <div class="radio-wrapper yes-no-radio-option-div">
+
+        <div class="radio-wrapper">
           <input
             type="radio"
             [value]="'claim.no' | translate"
             [checked]="formA.oralHearing.oralHearingPresence === 'no'"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'oralHearing.no'">No</span>
+            <span class="pdf-label" [translate]="'oralHearing.no'">No</span>
           </label>
         </div>
-        <div
-          class="ps-3"
-          *ngIf="formA.oralHearing.oralHearingPresence === 'yes'"
-        >
+      </div>
+
+      <div class="ps-3" *ngIf="formA.oralHearing.oralHearingPresence === 'yes'">
+        <div class="pdf-div-field">
           <p class="p-margin-top">
             <span
-              class="colon"
+              class="colon pdf-label"
               [translate]="'oralHearing.oralHearingPresenceReasons'"
               >Please indicate reasons
             </span>
           </p>
-          <div class="fw-bold justify margin-bottom margin-top ps-3">
+          <div class="fw-bold justify margin-bottom margin-top ps-3 pdf-value">
             {{ formA.oralHearing.oralHearingPresenceReasons }}
           </div>
         </div>
@@ -1444,24 +1816,24 @@
     </div>
   </div>
 
-  <h3 [translate]="'documentAndCommunication.title'">
+  <h3 class="pdf-primary-title" [translate]="'documentAndCommunication.title'">
     7.2. Service of documents and communication with the court
   </h3>
   <div class="ps-3">
-    <div class="yes-no-radio-button">
-      <h4 class="yes-no-title">
-        <span
-          [translate]="
-            'documentAndCommunication.electronicCommunicationWithCourtTribunal'
-          "
-        >
-          7.2.1. Do you agree to the use of electronic means of communication
-          for the service of the response by the defendant, any counterclaim and
-          the judgment?
-        </span>
-      </h4>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+    <h4
+      class="pdf-secondary-title"
+      [translate]="
+        'documentAndCommunication.electronicCommunicationWithCourtTribunal'
+      "
+    >
+      7.2.1. Do you agree to the use of electronic means of communication for
+      the service of the response by the defendant, any counterclaim and the
+      judgment?
+    </h4>
+
+    <div class="ps-3">
+      <div class="pdf-radio-buttons">
+        <div class="radio-wrapper radio-margin-bottom">
           <input
             type="radio"
             [value]="'claim.yes' | translate"
@@ -1469,13 +1841,16 @@
               formA.documentAndCommunication
                 .electronicCommunicationWithCourtTribunal === 'yes'
             "
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'documentAndCommunication.yes'">Yes</span>
+            <span class="pdf-label" [translate]="'documentAndCommunication.yes'"
+              >Yes</span
+            >
           </label>
         </div>
-        <div class="radio-wrapper yes-no-radio-option-div">
+
+        <div class="radio-wrapper">
           <input
             type="radio"
             [value]="'claim.no' | translate"
@@ -1483,27 +1858,29 @@
               formA.documentAndCommunication
                 .electronicCommunicationWithCourtTribunal === 'no'
             "
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'documentAndCommunication.no'">No</span>
+            <span class="pdf-label" [translate]="'documentAndCommunication.no'"
+              >No</span
+            >
           </label>
         </div>
       </div>
     </div>
 
-    <div class="yes-no-radio-button">
-      <h4 class="yes-no-title">
-        <span
-          [translate]="'documentAndCommunication.electronicCommunicationOther'"
-        >
-          7.2.2. Do you agree to the use of electronic means of communication to
-          receive written communications other than the documents mentioned in
-          point 7.2.1.?</span
-        >
-      </h4>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+    <h4
+      class="pdf-secondary-title"
+      [translate]="'documentAndCommunication.electronicCommunicationOther'"
+    >
+      7.2.2. Do you agree to the use of electronic means of communication to
+      receive written communications other than the documents mentioned in point
+      7.2.1.?
+    </h4>
+
+    <div class="ps-3">
+      <div class="pdf-radio-buttons">
+        <div class="radio-wrapper radio-margin-bottom">
           <input
             type="radio"
             [value]="'claim.yes' | translate"
@@ -1511,13 +1888,16 @@
               formA.documentAndCommunication.electronicCommunicationOther ===
               'yes'
             "
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'documentAndCommunication.yes'">Yes</span>
+            <span class="pdf-label" [translate]="'documentAndCommunication.yes'"
+              >Yes</span
+            >
           </label>
         </div>
-        <div class="radio-wrapper yes-no-radio-option-div">
+
+        <div class="radio-wrapper">
           <input
             type="radio"
             [value]="'claim.no' | translate"
@@ -1525,71 +1905,76 @@
               formA.documentAndCommunication.electronicCommunicationOther ===
               'no'
             "
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'documentAndCommunication.no'">No</span>
+            <span class="pdf-label" [translate]="'documentAndCommunication.no'"
+              >No</span
+            >
           </label>
         </div>
       </div>
     </div>
   </div>
 
-  <h3 [translate]="'certificate.title'">7.3. Certificate</h3>
+  <h3 class="pdf-primary-title" [translate]="'certificate.title'">7.3. Certificate</h3>
   <div class="ps-3">
-    <div class="yes-no-radio-button">
-      <h4 class="yes-no-title">
-        <span [translate]="'certificate.certificateRequest'">
-          7.3.1. I ask the court/tribunal to issue a certificate concerning the
-          judgment
-        </span>
-      </h4>
-      <div class="ps-3">
-        <div class="radio-wrapper radio-margin-bottom yes-no-radio-option-div">
+    <h4
+      class="pdf-secondary-title"
+      [translate]="'certificate.certificateRequest'"
+    >
+      7.3.1. I ask the court/tribunal to issue a certificate concerning the
+      judgment
+    </h4>
+
+    <div class="ps-3">
+      <div class="pdf-radio-buttons">
+        <div class="radio-wrapper radio-margin-bottom">
           <input
             type="radio"
             [value]="'claim.yes' | translate"
             [checked]="certificate.certificateRequest"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'certificate.yes'">Yes</span>
+            <span class="pdf-label" [translate]="'certificate.yes'">Yes</span>
           </label>
         </div>
-        <div class="radio-wrapper yes-no-radio-option-div">
+
+        <div class="radio-wrapper">
           <input
             type="radio"
             [value]="'claim.no' | translate"
             [checked]="!certificate.certificateRequest"
-            class="disabled-input yes-no-radio-option"
+            class="disabled-input pdf-radio-button"
           />
           <label>
-            <span [translate]="'certificate.no'">No</span>
+            <span class="pdf-label" [translate]="'certificate.no'">No</span>
           </label>
         </div>
-
-        <h4>
-          <span class="space" [translate]="'certificate.language'"
-            >7.3.2. I ask the court/tribunal to issue a certificate in another
-            language than the language of the court proceedings, in
-            particular:</span
-          >
-          <span class="fw-bold">{{ certificate.languageName }}</span>
-        </h4>
       </div>
     </div>
+
+    <h4 class="pdf-line-field pdf-tertiary-field">
+      <span class="space pdf-label" [translate]="'certificate.language'"
+        >7.3.2. I ask the court/tribunal to issue a certificate in another
+        language than the language of the court proceedings, in
+        particular:</span
+      >
+      <span class="fw-bold pdf-value">{{ certificate.languageName }}</span>
+    </h4>
   </div>
 
-  <h3 [translate]="'dateAndSignature.title'">7.4. Date and signature</h3>
+  <h3 class="pdf-primary-title" [translate]="'dateAndSignature.title'">7.4. Date and signature</h3>
   <div class="ps-3">
-    <h4>
-      <span class="colon" [translate]="'dateAndSignature.city'">Done at</span>
-      <span class="fw-bold">{{ formA.dateAndSignature.city }}</span>
+    <h4 class="pdf-line-field pdf-tertiary-field">
+      <span class="colon pdf-label" [translate]="'dateAndSignature.city'">Done at</span>
+      <span class="fw-bold pdf-value">{{ formA.dateAndSignature.city }}</span>
     </h4>
 
-    <h4>
-      <span class="colon" [translate]="'dateAndSignature.date'">Date</span>
-      <span class="fw-bold">{{ formA.dateAndSignature.date }}</span>
+    <h4 class="pdf-line-field pdf-tertiary-field">
+      <span class="colon pdf-label" [translate]="'dateAndSignature.date'">Date</span>
+      <span class="fw-bold pdf-value">{{ formA.dateAndSignature.date }}</span>
     </h4>
 
     <!-- <h4>
@@ -1598,39 +1983,39 @@
     </h4> -->
   </div>
 
-  <h3 [translate]="'court.title'">8. Court/tribunal</h3>
+  <h3 class="pdf-primary-title" [translate]="'court.title'">8. Court/tribunal</h3>
   <div class="ps-3">
-    <h4 [translate]="'preview.courtQuestion'">
+    <h4 class="pdf-secondary-title" [translate]="'preview.courtQuestion'">
       On what ground do you consider the court/tribunal to have jurisdiction?
     </h4>
     <div class="ps-3">
-      <h5>
-        <span class="colon" [translate]="'court.country'">8.1. Country</span>
-        <span class="fw-bold">{{ court.countryName }}</span>
+      <h5 class="pdf-line-field">
+        <span class="colon pdf-label" [translate]="'court.country'">8.1. Country</span>
+        <span class="fw-bold pdf-value">{{ court.countryName }}</span>
       </h5>
 
-      <h5>
-        <span class="colon" [translate]="'court.name'">8.2. Name</span>
-        <span class="fw-bold">{{ court.name }}</span>
+      <h5 class="pdf-line-field">
+        <span class="colon pdf-label" [translate]="'court.name'">8.2. Name</span>
+        <span class="fw-bold pdf-value">{{ court.name }}</span>
       </h5>
 
-      <h5>
-        <span class="colon" [translate]="'court.street'"
+      <h5 class="pdf-line-field">
+        <span class="colon pdf-label" [translate]="'court.street'"
           >8.3. Street and number/PO box</span
         >
-        <span class="fw-bold">{{ court.street }}</span>
+        <span class="fw-bold pdf-value">{{ court.street }}</span>
       </h5>
 
-      <h5>
-        <span class="colon" [translate]="'court.postalCode'"
+      <h5 class="pdf-line-field">
+        <span class="colon pdf-label" [translate]="'court.postalCode'"
           >8.4. Postal Code</span
         >
-        <span class="fw-bold">{{ court.post_code }}</span>
+        <span class="fw-bold pdf-value">{{ court.post_code }}</span>
       </h5>
 
-      <h5>
-        <span class="colon" [translate]="'court.city'">8.5. City</span>
-        <span class="fw-bold">{{ court.city }}</span>
+      <h5 class="pdf-line-field">
+        <span class="colon pdf-label" [translate]="'court.city'">8.5. City</span>
+        <span class="fw-bold pdf-value">{{ court.city }}</span>
       </h5>
     </div>
   </div>
@@ -1638,7 +2023,7 @@
 
 <div class="modal-footer px-5 py-4 justify-content-evenly">
   <button
-    class="button big outline my-3 "
+    class="button big outline my-3"
     (click)="cancel()"
     [translate]="'buttons.cancel'"
   >

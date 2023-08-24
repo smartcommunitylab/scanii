@@ -106,9 +106,8 @@ export class CourtComponent implements OnInit {
 
       //clone the content of the modal to be able to generate the PDF
       previewModal.shown.subscribe(() => {
-        this.previewModalService.cloneAlreadyChanged = false;
-        const preview = document.getElementById("preview");
-        this.previewModalService.previewElementClone = preview.cloneNode(
+        const preview = document.getElementById("content");
+        this.previewModalService.preview = preview.cloneNode(
           true
         ) as HTMLElement;
       });

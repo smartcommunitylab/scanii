@@ -18,7 +18,6 @@ import {
   LabelType,
 } from "src/app/shared/constants/claimant.constants";
 import { Subscription } from "rxjs";
-import { Representative } from "../common/representative.model";
 import { RepresentativeOrganisation } from "../common/representative-organisation.model";
 import { RepresentativeCitizen } from "../common/representative-citizen.model";
 
@@ -240,8 +239,8 @@ export class ClaimantService {
     return this.representativeOptionLabel + " " + number;
   }
 
-  getClaimants(): (Claimant | Representative)[] {
-    const claimants: (Claimant | Representative)[] = [];
+  getClaimants(): (Claimant | RepresentativeCitizen | RepresentativeOrganisation)[] {
+    const claimants: (Claimant | RepresentativeCitizen | RepresentativeOrganisation)[] = [];
     const representativeIds: number[] = [];
     for (let i = 0; i < this.editForm.value.claimants.length; i++) {
       const claimant = this.editForm.value.claimants[i];
@@ -252,7 +251,7 @@ export class ClaimantService {
         if (claimant.organisation !== "")
           obj = this.getOrganisation(claimant, address, contacts);
         else obj = this.getCitizen(claimant, address, contacts);
-        let representative: Representative;
+        let representative: RepresentativeCitizen | RepresentativeOrganisation;
         if (claimant.representative !== "") {
           //the index at which the representative of the claimant is located within the array being looped over is referred to as "claimant.representative".
           const index = parseInt(claimant.representative);
@@ -290,7 +289,7 @@ export class ClaimantService {
     return claimants;
   }
 
-  private getRepresentative(representative: any): Representative {
+  private getRepresentative(representative: any): RepresentativeCitizen | RepresentativeOrganisation {
     const address = this.getAddress(representative);
     const contacts = this.getContacts(representative);
     if (representative.organisation !== "")

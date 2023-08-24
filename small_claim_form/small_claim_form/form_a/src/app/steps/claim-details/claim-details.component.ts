@@ -38,7 +38,9 @@ export class ClaimDetailsComponent implements OnInit {
     if (value === 'yes') {
       this.addRequiredValidator(formControl);
       element.classList.remove('df_collapsed');
+      element.classList.add('df_expanded');
     } else if (value === 'no') {
+      element.classList.remove('df_expanded');
       element.classList.add('df_collapsed');
       this.removeRequiredValidator(formControl);
       formControl.reset();

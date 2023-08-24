@@ -1,8 +1,7 @@
 import { Address } from "./address.model";
 import { Contacts } from "./contacts.model";
-import { Representative } from "./representative.model";
 
-export class RepresentativeOrganisation extends Representative {
+export class RepresentativeOrganisation {
   private _name: string;
   private _address: Address;
   private _identificationCode: string;
@@ -14,7 +13,6 @@ export class RepresentativeOrganisation extends Representative {
     identificationCode: string,
     contacts: Contacts
   ) {
-    super();
     this._name = name;
     this._address = address;
     this._identificationCode = identificationCode;
