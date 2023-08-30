@@ -7,7 +7,8 @@
     "downloadJSON": "JSON herunterladen",
     "downloadPDF": "PDF herunterladen",
     "submit": "Einreichen",
-    "preview": "Vorschau"
+    "preview": "Vorschau",
+    "close": "Schließen"
   },
   "errors": {
     "required": "Felderforderlich",
@@ -18,7 +19,7 @@
     "amountValidationError": "Ungultige Eingabe. Bitte geben Sie den Betrag im Format XXX.XXX,XX ein",
     "dateValidationError": "Das Enddatum liegt vor dem Anfangsdatum. Bitte überprüfen Sie Ihre Eingabe",
     "emailValidationError": "Feld enthält ungültige E-Mail-Adresse",
-    "phoneNumberValidationError": "Feld enthält ungültige Zeichen. Bitte verwenden Sie nur Zahlen, Leerzeichen und das Zeichen „+“"
+    "phoneNumberValidationError": "Feld enthält ungültige Zeichen. Bitte verwenden Sie nur Zahlen, Leerzeichen und das „+“ Zeichen"
   },
   "menu": {
     "title": "Formblatt A - Klageformblatt",
@@ -30,7 +31,7 @@
     "completeVersion": "Wechseln zur vereinfachten Version",
     "simplifiedVersion": "Wechseln zur Vollversion",
     "formSteps": "Kompilierungsstufen",
-    "step1": "1. Antragsteller",
+    "step1": "1. Kläger",
     "step2": "2. Beklagter",
     "step3": "3. Gerichtliche Zuständigkeit",
     "step4": "4. Grenzüberschreitende Rechtssache",
@@ -795,12 +796,12 @@
     { "value": "21", "label": "Englisch" }
   ],
   "claimant": {
-    "title": "1. Antragsteller",
-    "claimantLabel": "Antragsteller",
-    "representativeLabel": "Vertreter des Antragstellers",
-    "addAnotherClaimant": "Antragsteller hinzufügen",
+    "title": "1. Kläger",
+    "claimantLabel": "Kläger",
+    "representativeLabel": "Vertreter des Klägers",
+    "addAnotherClaimant": " Kläger hinzufügen",
     "addAnotherClaimantText": "Wenn sie eine weitere Partei und/oder einen weiteren Vertreter hinzufügen möchten, klicken Sie bitte auf die Angabe, die die jeweilige Partei und/oder ihre Vertreter beschreibt",
-    "claimantDetails": "1. <i>Angaben zum Antragsteller</i>&nbsp",
+    "claimantDetails": "1. <i>Angaben zum Kläger</i>&nbsp",
     "organisation": "1.1. Name der Firma oder Organisation",
     "surname": "Name",
     "firstName": "Vorname",
@@ -813,10 +814,10 @@
     "specify": "Bitte genauer angeben",
     "phoneNumber": "1.6. Telefon",
     "email": "1.7. E-Mail",
-    "representative": "1.8. Ggf. Vertreter des Antragstellers und Kontaktadresse",
+    "representative": "1.8. Ggf. Vertreter des Klägers und Kontaktadresse",
     "addRepresentative": "Neuen Vertreter hinzufügen",
     "other": "1.9. Sonstige Angaben",
-    "representativeClaimantDetails": "<i>Angaben zum Vertreter des Antragstellers</i>&nbsp",
+    "representativeClaimantDetails": "<i>Angaben zum Vertreter des Klägers</i>&nbsp",
     "representativeOrganisation": "Name der Firma oder Organisation",
     "representativeSurname": "Name",
     "representativeFirstName": "Vorname",
@@ -1013,8 +1014,8 @@
   "unitedKingdomModal": "Ab dem 1. Januar 2021 ist das Vereinigte Königreich kein EU-Mitgliedstaat mehr. Im Bereich der Ziviljustiz kommt für vor dem Ablauf des Übergangszeitraums eingeleitete und noch anhängige Verfahren jedoch weiterhin EU-Recht zur Anwendung. Darum ist es bis Ende 2024 möglich, das Vereinigte Königreich in dynamischen Online-Formularen auszuwählen – allerdings nur für die Zwecke dieser Verfahren. Ausgenommen sind Formulare für öffentliche Urkunden, in denen das Vereinigte Königreich nicht ausgewählt werden sollte.",
   "preview": {
     "title": "Vorschau",
-    "claimantDetails": "Angaben zum Antragsteller",
-    "representativeClaimantDetails": "Angaben zum Vertreter des Antragstellers",
+    "claimantDetails": "Angaben zum Kläger",
+    "representativeClaimantDetails": "Angaben zum Vertreter des Klägers",
     "defendantDetails": "Angaben zum Beklagten",
     "representativeDefendantDetails": "Angaben zum Vertreter des Beklagten",
     "claimantIdentifier": "1.1. Nachname, Vorname/Name des Unternehmens oder der Organisation",
@@ -1023,7 +1024,7 @@
     "claimantCityPostalCode": "1.4. Postleitzahl und Ort:",
     "defendantCityPostalCode": "2.4. Postleitzahl und Ort:",
     "cityPostalCode": "Postleitzahl und Ort",
-    "representativeClaimant": "1.8. Vertreter des Antragstellers",
+    "representativeClaimant": "1.8. Vertreter des Klägers",
     "representativeDefendant": "2.8. Vertreter des Beklagten",
     "jurisdictionQuestion": "Nach welchem Kriterium ist das Gericht Ihres Erachtens zuständig?",
     "courtQuestion": "Bei welchem Gericht reichen Sie die Klage ein?",
@@ -1039,5 +1040,9 @@
     "password": "Passwort",
     "failed": "Fehler bei der Anmeldung!",
     "checkCredentials": "Bitte überprüfen Sie Ihre Anmeldedaten und versuchen Sie es erneut"
+  },
+  "uploading": {
+    "success": "Sie haben erfolgreich ein Formular hochgeladen zum Verfahren <strong>Formulare „Geringfügige Forderungen“</strong>.",
+    "error": "Beim Laden des Formulars ist ein <strong>Fehler</strong> aufgetreten."
   }
 }

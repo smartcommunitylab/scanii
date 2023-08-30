@@ -7,13 +7,14 @@
     "downloadJSON": "JSON herunterladen",
     "downloadPDF": "PDF herunterladen",
     "submit": "Einreichen",
-    "preview": "Vorschau"
+    "preview": "Vorschau",
+    "close": "Schließen"
   },
   "errors": {
     "required": "Felderforderlich",
     "organisationSurnameFirstNameValidationError": "Das Feld „Name der Firma oder Organisation“ oder die Felder „Name“ und „Vorname“ müssen ausgefüllt werden. Beide Alternativen sind nicht zulässig",
     "emailValidationError": "Feld enthält ungültige E-Mail-Adresse",
-    "phoneNumberValidationError": "Feld enthält ungültige Zeichen. Bitte verwenden Sie nur Zahlen, Leerzeichen und das Zeichen „+“",
+    "phoneNumberValidationError": "Feld enthält ungültige Zeichen. Bitte verwenden Sie nur Zahlen, Leerzeichen und das „+“ Zeichen",
     "amountValidationError": "Ungultige Eingabe. Bitte geben Sie den Betrag im Format XXX.XXX,XX ein"
   },
   "menu": {
@@ -314,10 +315,10 @@
     "courtName": "1.1. Name",
     "courtStreet": "1.2. Straße und Hausnummer/Postfach",
     "courtCityPostalCode": "1.3. Postleitzahl und Ort",
-    "claimantTitle": "2. Antragsteller",
-    "claimantLabel": "Antragsteller",
-    "claimantRepresentativeLabel": "Vertreter des Antragstellers",
-    "addAnotherClaimant": "Antragsteller hinzufügen",
+    "claimantTitle": "2. Kläger",
+    "claimantLabel": "Kläger",
+    "claimantRepresentativeLabel": "Vertreter des Klägers",
+    "addAnotherClaimant": "Kläger hinzufügen",
     "addAnotherClaimantText": "Wenn sie eine weitere Partei und/oder einen weiteren Vertreter hinzufügen möchten, klicken Sie bitte auf die Angabe, die die jeweilige Partei und/oder ihre Vertreter beschreibt.",
     "claimantOrganisation": "2.1. Name der Firma oder Organisation",
     "surname": "Name",
@@ -330,7 +331,7 @@
     "specify": "Bitte genauer angeben",
     "claimantPhoneNumber": "2.6. Telefon",
     "claimantEmail": "2.7. E-Mail",
-    "claimantRepresentative": "2.8. Ggf. Vertreter des Antragstellers und Kontaktadresse",
+    "claimantRepresentative": "2.8. Ggf. Vertreter des Klägers und Kontaktadresse",
     "addRepresentative": "Neuen Vertreter hinzufügen",
     "claimantOther": "2.9. Sonstige Angaben",
     "representativeOrganisation": "Name der Firma oder Organisation",
@@ -398,8 +399,8 @@
   "unitedKingdomModal": "Ab dem 1. Januar 2021 ist das Vereinigte Königreich kein EU-Mitgliedstaat mehr. Im Bereich der Ziviljustiz kommt für vor dem Ablauf des Übergangszeitraums eingeleitete und noch anhängige Verfahren jedoch weiterhin EU-Recht zur Anwendung. Darum ist es bis Ende 2024 möglich, das Vereinigte Königreich in dynamischen Online-Formularen auszuwählen – allerdings nur für die Zwecke dieser Verfahren. Ausgenommen sind Formulare für öffentliche Urkunden, in denen das Vereinigte Königreich nicht ausgewählt werden sollte.",
   "preview": {
     "title": "Vorschau",
-    "claimantDetails": "Angaben zum Antragsteller",
-    "representativeClaimantDetails": "Angaben zum Vertreter des Antragstellers",
+    "claimantDetails": "Angaben zum Kläger",
+    "representativeClaimantDetails": "Angaben zum Vertreter des Klägers",
     "defendantDetails": "Angaben zum Beklagten",
     "representativeDefendantDetails": "Angaben zum Vertreter des Beklagten",
     "claimantIdentifier": "2.1. Nachname, Vorname / Name des Unternehmens oder der Organisation",
@@ -408,9 +409,13 @@
     "claimantCityPostalCode": "2.4. Postleitzahl und Ort:",
     "defendantCityPostalCode": "3.4. Postleitzahl und Ort:",
     "cityPostalCode": "Postleitzahl und Ort",
-    "representativeClaimant": "2.8. Vertreter des Antragstellers",
+    "representativeClaimant": "2.8. Vertreter des Klägers",
     "representativeDefendant": "3.8. Vertreter des Beklagten",
     "fieldNotFilledIn": "(Feld nicht ausgefüllt)",
     "sign": "Unterschrift und/oder Stempel:"
+  },
+  "uploading": {
+    "success": "Sie haben erfolgreich ein Formular hochgeladen zum Verfahren <strong>Formulare „Geringfügige Forderungen“</strong>.",
+    "error": "Beim Laden des Formulars ist ein <strong>Fehler</strong> aufgetreten."
   }
 }

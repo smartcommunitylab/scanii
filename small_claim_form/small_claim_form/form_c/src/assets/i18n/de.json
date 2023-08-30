@@ -7,7 +7,8 @@
     "downloadJSON": "JSON herunterladen",
     "downloadPDF": "PDF herunterladen",
     "submit": "Einreichen",
-    "preview": "Vorschau"
+    "preview": "Vorschau",
+    "close": "Schließen"
   },
   "errors": {
     "required": "Felderforderlich"
@@ -89,5 +90,9 @@
   },
   "preview": {
     "title": "Vorschau"
+  },
+  "uploading": {
+    "success": "Sie haben erfolgreich ein Formular hochgeladen zum Verfahren <strong>Formulare „Geringfügige Forderungen“</strong>.",
+    "error": "Beim Laden des Formulars ist ein <strong>Fehler</strong> aufgetreten."
   }
 }
