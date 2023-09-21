@@ -3,15 +3,61 @@
   "concepts": [
     {
       "id": "http://scanii.org/domain/guidelines",
-      "infoElements": []
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "Nei Suoi confronti è stata introdotta la domanda che figura nel modulo allegato, in forza del procedimento europeo per le controversie di modesta entità. Il convenuto può replicare compilando la parte II del presente modulo e rinviandolo all’organo giurisdizionale, o in altro modo adeguato, entro trenta giorni dalla ricezione del modulo di domanda corredato del modulo di replica. In caso di mancata replica entro trenta giorni, l’organo giurisdizionale emette una sentenza. Apporre, in caratteri chiari, cognome, firma e data sull’ultima pagina del modulo di replica. Si prega inoltre di leggere le istruzioni contenute nel modulo di domanda ai fini della preparazione della replica. Assistenza nella compilazione del modulo È possibile ricevere assistenza per la compilazione del presente modulo. A tal fine, si prega di consultare le informazioni fornite dagli Stati membri e pubblicate sul sito web dell’atlante giudiziario europeo in materia civile e commerciale, disponibile sul portale europeo della giustizia elettronica all'indirizzo: https://e-justice.europa.eu/content_small_claims-354-it.do?init=true. Si prega di notare che l'assistenza non comprende né il patrocinio gratuito, per il quale è opportuno presentare una domanda specifica a norma del diritto nazionale, né una valutazione giuridica del caso. Lingua - Si prega di replicare alla domanda nella lingua dell’organo giurisdizionale da cui proviene il presente modulo. Si rammenta che, al fine di agevolare la compilazione del modulo nella lingua richiesta, esso è disponibile in tutte le lingue ufficiali delle istituzioni dell’Unione europea sul portale euopeo della giustizia elettronica all'indirizzo: https://e-justice.europa.eu/content_small_claims_forms-177-it.do. Potrà essere utile nel compilare il modulo nella lingua richiesta. Udienza - Si rammenta che il procedimento europeo per le controversie di modesta entità si svolge in forma scritta. Tuttavia, l’organo giurisdizionale può decidere di procedere ad un’udienza se ritiene che non sia possibile emettere la sentenza sulla base delle prove scritte. È tuttavia possibile richiedere, con il presente modulo o in una fase successiva, un’udienza. L’organo giurisdizionale può rigettare tale richiesta se ritiene che, tenuto conto delle circostanze del caso, un’udienza sia superflua per l’equa trattazione del procedimento. L’udienza dovrebbe essere effettuata tramite opportuni mezzi di comunicazione a distanza, come la videoconferenza o teleconferenza, a condizione che siano a disposizione dell'autorità giudiziaria. Se la persona da sentire è domiciliata in uno Stato membro diverso da quello dell’organo giurisdizionale adito, è organizzata un’udienza mediante tecnologie di comunicazione a distanza, avvalendosi delle procedure di cui al regolamento (CE) n. 1206/2001 del Consiglio. (https://e-justice.europa.eu/content_taking_of_evidence-76-it.do?init=true) Tuttavia, l’organo giurisdizionale può stabilire la necessità della presenza fisica delle persone convocate per l’udienza. È possibile indicare le proprie preferenze al giudice, tenendo presente che, se si chiede di essere fisicamente presenti all’udienza, il recupero di eventuali spese sostenute in relazione a tale presenza è soggetto alle disposizioni dell’articolo 16 del regolamento (CE) n. 861/2007, che istituisce un procedimento europeo per le controversie di modesta entità. L'articolo prevede che l’organo giurisdizionale non riconosca alla parte vincente spese superflue sostenute o spese sproporzionate rispetto al valore della controversia. Documenti giustificativi - Indicare eventuali elementi di prova allegando, se opportuno, documenti giustificativi. Domanda riconvenzionale: Se si desidera presentare una domanda riconvenzionale (domanda contro l'attore), si prega di compilare e allegare un modulo A separato, reperibile sul portale europeo della giustizia elettronica https://e-justice.europa.eu/content_small_claims_forms-177-it.do od ottenibile presso l’organo giurisdizionale che ha inviato il presente modulo. Si noti che, ai fini della domanda riconvenzionale, il convenuto è considerato attore. Correzione dei dati - Il convenuto può altresì correggere o integrare i dati che lo riguardano (ad esempio estremi, rappresentante, ecc.) nella sezione 6 «Altre informazioni». Notificazione o comunicazione degli atti e comunicazione con l’organo giurisdizionaleI documenti procedurali, come la replica del convenuto e la sentenza, possono essere notificati o comunicati alle parti per posta o per via elettronica, se l'organo giurisdizionale ha tecnicamente a disposizione tali mezzi e se questi sono ammissibili conformemente al diritto processuale dello Stato membro in cui si svolge il procedimento. Se gli atti devono essere notificati o comunicati in uno Stato membro diverso da quello in cui si svolge il procedimento, è necessario che siano osservate anche le norme procedurali dello Stato membro in cui è effettuata la notifica/comunicazione. I mezzi elettronici possono essere utilizzati anche per altre comunicazioni scritte (come una richiesta di partecipazione a un’udienza). I mezzi elettronici possono essere utilizzati soltanto se il destinatario ne ha espressamente autorizzato l'uso in anticipo o se egli è giuridicamente tenuto ad accettare la notifica e/o altra comunicazione scritta dell'organo giurisdizionale in forma elettronica, in conformità con le norme procedurali dello Stato membro in cui ha il domicilio. Per verificare la disponibilità e l'ammissibilità dei mezzi elettronici per la notifica e/o comunicazione negli Stati membri occorre verificare le informazioni sul portale europeo della giustizia elettronica all'indirizzo: https://e-justice.europa.eu/content_small_claims-354-it.do?init=true Spazio supplementare: Se lo spazio è insufficiente, aggiungere altri fogli.",
+          "simplifiedText": "",
+          "link": [
+            {
+              "type": "SERVICE_LINK",
+              "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true",
+              "text": "",
+              "name": "",
+              "description": ""
+            },
+            {
+              "type": "SERVICE_LINK",
+              "url": "https://e-justice.europa.eu/content_small_claims_forms-177-it.do",
+              "text": "",
+              "name": "",
+              "description": ""
+            },
+            {
+              "type": "SERVICE_LINK",
+              "url": "https://e-justice.europa.eu/content_taking_of_evidence-76-it.do?init=true",
+              "text": "",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": []
+        }
+      ]
     },
     {
-      "id": "http://scanii.org/domain/courtPart",
-      "infoElements": []
+      "id": "http://scanii.org/domain/bankDetails/defendantPart.oralHearing",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Udienza: il procedimento europeo per le controversie di modesta entità è un procedimento scritto. È tuttavia possibile richiedere un’udienza. Considerate le circostanze della causa l’organo giurisdizionale può tuttavia respingere tale richiesta.",
+          "simplifiedText": "",
+          "link": [],
+          "words": []
+        }
+      ]
     },
     {
-      "id": "http://scanii.org/domain/bankDetails/defendantPart",
-      "infoElements": []
+      "id": "http://scanii.org/domain/bankDetails/defendantPart.counterClaim",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Domanda riconvenzionale: ove il convenuto decida di introdurre una domanda riconvenzionale, compilare e allegare un modulo A separato. Si noti che, ai fini della domanda riconvenzionale, il convenuto è considerato attore.",
+          "simplifiedText": "",
+          "link": [],
+          "words": []
+        }
+      ]
     }
   ]
 }
