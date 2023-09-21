@@ -31,7 +31,15 @@
               "description": ""
             }
           ],
-          "words": []
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": ["", "", ""],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -43,7 +51,15 @@
           "text": "Mündliche Verhandlung: beachten Sie bitte, dass es sich bei dem europäischen Verfahren für geringfügige Forderungen um ein schriftliches Verfahren handelt. Sie können jedoch in diesem Formblatt oder zu einem späteren Zeitpunkt die Durchführung einer mündlichen Verhandlung beantragen. Das Gericht kann eine mündliche Verhandlung anordnen, wenn es diese zur Gewährleistung eines fairen Verfahrens für notwendig erachtet, oder sie unter Berücksichtigung aller Umstände der Rechtssache ablehnen.",
           "simplifiedText": "",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": ["", "", ""],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -55,7 +71,15 @@
           "text": "Widerklage: falls Sie eine Klage gegen den Kläger erheben möchten (Widerklage), so sollten Sie ein ausgefülltes Formblatt A beifügen. Bitte beachten Sie, dass Sie für die Zwecke der Widerklage als Kläger angesehen werden.",
           "simplifiedText": "",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": ["", "", ""],
+              "links": []
+            }
+          ]
         }
       ]
     }

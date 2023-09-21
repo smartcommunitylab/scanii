@@ -31,7 +31,15 @@
               "description": ""
             }
           ],
-          "words": []
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": ["", "", ""],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -43,7 +51,15 @@
           "text": "Udienza: il procedimento europeo per le controversie di modesta entità è un procedimento scritto. È tuttavia possibile richiedere un’udienza. Considerate le circostanze della causa l’organo giurisdizionale può tuttavia respingere tale richiesta.",
           "simplifiedText": "",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": ["", "", ""],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -55,7 +71,15 @@
           "text": "Domanda riconvenzionale: ove il convenuto decida di introdurre una domanda riconvenzionale, compilare e allegare un modulo A separato. Si noti che, ai fini della domanda riconvenzionale, il convenuto è considerato attore.",
           "simplifiedText": "",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": ["", "", ""],
+              "links": []
+            }
+          ]
         }
       ]
     }

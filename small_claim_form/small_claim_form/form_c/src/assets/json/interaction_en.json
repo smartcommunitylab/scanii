@@ -31,7 +31,15 @@
               "description": ""
             }
           ],
-          "words": []
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": ["", "", ""],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -43,7 +51,15 @@
           "text": "Oral hearing: please note that the European Small Claims Procedure is a written procedure. However, you can ask for an oral hearing to be held. Please be aware that having regard to the circumstances of the case, the court/tribunal can refuse this request.",
           "simplifiedText": "",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": ["", "", ""],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -55,7 +71,15 @@
           "text": "Counterclaim: if you want to make a claim against the claimant (counterclaim), you should fill in and attach a separate Form A. Please note that for the purposes of the counterclaim you are considered to be the claimant.",
           "simplifiedText": "",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "text": "",
+              "position": "",
+              "definition": "",
+              "synonyms": ["", "", ""],
+              "links": []
+            }
+          ]
         }
       ]
     }
