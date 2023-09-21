@@ -1,12 +1,7 @@
 <div class="modal-header py-4">
   <h2 class="modal-title ps-3" [translate]="'login.title'">Login</h2>
-  <a
-    class="close js-close-modal hide-text"
-    tabindex="1"
-    (click)="cancel()"
-    style="top: 2rem"
-    >Close</a
-  >
+  <button hidden></button>
+  <button type="button" class="btn-close" (click)="cancel()"></button>
 </div>
 
 <div class="modal-body px-5">

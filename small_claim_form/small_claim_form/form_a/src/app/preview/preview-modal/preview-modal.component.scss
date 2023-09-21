@@ -82,3 +82,8 @@ span {
 .fw-bold {
   font-family: "FontAwesome", "LiberationSans";
 }
+
+.modal-header button:focus {
+  background-color: #fff;
+}
+

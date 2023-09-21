@@ -71,10 +71,24 @@ export class CourtService {
     }
   }
 
-  setCourtForm(court: any): Promise<void> {
-    this.resetAll();
-    this.editForm.patchValue(court);
-    return this.handleStableEvent();
+  setCourtForm(court: any): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      this.resetAll();
+      let foundErrors = false;
+
+      try {
+        this.editForm.setValue(court);
+      } catch (error) {
+        reject(error);
+        foundErrors = true;
+      }
+
+      if (!foundErrors) {
+        this.handleStableEvent().then(() => {
+          resolve(null);
+        });
+      }
+    });
   }
 
   private handleStableEvent(): Promise<void> {

@@ -46,9 +46,9 @@
     "loadSaveDraftExplanation": "Sie können ein Formular während der Bearbeitung als Entwurf speichern und es später erneut laden, um es zu vervollständigen.",
     "loadDraft": "Entwurf laden",
     "saveDraft": "Entwurf herunterladen",
-    "warningToast": "<strong>Achtung</strong>: Denken Sie daran, dass Sie <strong>vereinfachte Informationen</strong> sehen",
+    "warningToast": "Bitte beachten, dass Sie gerade die <strong>vereinfachte Version des Textes</strong> sehen",
     "errorToast": "<strong>Kompilierungsfehler.</strong> Bitte überprüfen Sie den Abschnitt",
-    "originalText": "Original Text",
+    "originalText": "Originaltext",
     "simplifiedText": "Vereinfachter Text"
   },
   "footer": {
@@ -1036,7 +1036,7 @@
   },
   "login": {
     "title": "Einloggen",
-    "username": "Nutzername",
+    "username": "Benutzername",
     "password": "Passwort",
     "failed": "Fehler bei der Anmeldung!",
     "checkCredentials": "Bitte überprüfen Sie Ihre Anmeldedaten und versuchen Sie es erneut"

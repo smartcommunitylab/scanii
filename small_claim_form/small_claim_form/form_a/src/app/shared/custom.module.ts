@@ -8,6 +8,7 @@ import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { TranslateModule } from "@ngx-translate/core";
 import { LoginModalComponent } from '../preview/login-modal/login-modal.component';
+import { UploadResultModalComponent } from './components/upload-result-modal/upload-result-modal.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { LoginModalComponent } from '../preview/login-modal/login-modal.componen
     PreviewModalComponent,
     SpinnerComponent,
     LoginModalComponent,
+    UploadResultModalComponent,
   ],
   exports: [ErrorToastComponent, WarningToastComponent, SpinnerComponent],
 })

@@ -222,11 +222,29 @@ export class StepFourService {
     }
   }
 
-  setStepFourForms(crossBorderNature: any, bankDetails: any): Promise<void> {
-    this.resetAll();
-    this.crossborderNatureForm.patchValue(crossBorderNature);
-    this.bankDetailsForm.patchValue(bankDetails);
-    return this.handleStableEvent(bankDetails);
+  setStepFourForms(crossBorderNature: any, bankDetails: any): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      this.resetAll();
+      let foundErrors = false;
+      let paymentMethod: string;
+
+      try {
+        paymentMethod = bankDetails.applicationFeePayment.paymentMethod;
+        delete bankDetails.applicationFeePayment.paymentMethod;
+
+        this.crossborderNatureForm.setValue(crossBorderNature);
+        this.bankDetailsForm.setValue(bankDetails);
+      } catch (error) {
+        foundErrors = true;
+        reject(error);
+      }
+
+      if (!foundErrors) {
+        this.handleStableEvent(bankDetails, paymentMethod).then(() => {
+          resolve(null);
+        });
+      }
+    });
   }
 
   getCrossborderNature(): CrossborderNature {
@@ -278,7 +296,10 @@ export class StepFourService {
     return countryName;
   }
 
-  private handleStableEvent(bankDetails: any): Promise<void> {
+  private handleStableEvent(
+    bankDetails: any,
+    paymentMethod: string
+  ): Promise<void> {
     return new Promise<void>((resolve) => {
       this.onStableSubscription = this.zone.onStable.subscribe(() => {
         if (this.onStableSubscription) {
@@ -291,11 +312,9 @@ export class StepFourService {
           );
         }
 
-        if (bankDetails.applicationFeePayment.paymentMethod !== "") {
+        if (paymentMethod !== "") {
           this.triggerClickEvent(
-            bankDetailsShowHideFields[
-              bankDetails.applicationFeePayment.paymentMethod
-            ]["triggeringFieldId"]
+            bankDetailsShowHideFields[paymentMethod]["triggeringFieldId"]
           );
         }
 
@@ -325,9 +344,9 @@ export class StepFourService {
       this.triggerClickEvent("dynformSCA5PaymentMethodDirect");
       this.directDebitRadioButton = false;
     }
-    if(this.otherRadioButton){
+    if (this.otherRadioButton) {
       this.triggerClickEvent("dynformSCA5PaymentMethodOther");
-    this.otherRadioButton = false;
+      this.otherRadioButton = false;
     }
   }
 

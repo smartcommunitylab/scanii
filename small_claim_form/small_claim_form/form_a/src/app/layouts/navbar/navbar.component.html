@@ -222,14 +222,14 @@
                 type="file"
                 accept=".json"
                 id="loadDraft"
-                (change)="loadDraft($event.target.files)"
+                (change)="handleFileInput($event)"
               />
               <button
                 type="button"
                 class="button dark big load-draft"
                 id="buttonLoad"
                 data-title="If you have previously saved a draft form you can resume your work by loading that file into the system by clicking here."
-                (click)="openFileBrowser()"
+                (click)="openFileDialogBox()"
               >
                 <span [translate]="'menu.loadDraft'">Load draft</span></button
               ><br />

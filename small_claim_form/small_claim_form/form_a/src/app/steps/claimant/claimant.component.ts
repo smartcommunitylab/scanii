@@ -42,14 +42,14 @@ export class ClaimantComponent implements OnInit {
       "claimants"
     ) as UntypedFormArray;
 
-    // this.claimantService.claimants.controls[0].patchValue({
-    //   firstName: "John",
-    //   surname: "Doe",
-    //   street: "123 Main Street",
-    //   postalCode: "12345",
-    //   city: "New York",
-    //   country: "IT",
-    // });
+    this.claimantService.claimants.controls[0].patchValue({
+      firstName: "John",
+      surname: "Doe",
+      street: "123 Main Street",
+      postalCode: "12345",
+      city: "New York",
+      country: "IT",
+    });
 
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.claimantService.europeanCountries =

@@ -1,12 +1,7 @@
-<div class="modal-header py-4">
-  <h2 class="modal-title ps-3" [translate]="'preview.title'">Preview</h2>
-  <a
-    class="close js-close-modal hide-text"
-    tabindex="1"
-    (click)="cancel()"
-    style="top: 2rem"
-    >Close</a
-  >
+<div class="modal-header p-4">
+  <h2 class="modal-title" [translate]="'preview.title'">Preview</h2>
+  <button hidden></button>
+  <button type="button" class="btn-close" (click)="cancel()"></button>
 </div>
 
 <div class="modal-body px-5" id="content">
@@ -1489,9 +1484,7 @@
                 class="ps-3 pdf-radio-button-inner-fields pdf-no-indentation"
               >
                 <div class="pdf-div-field">
-                  <div
-                    class="fw-bold justify margin-bottom pdf-value"
-                  >
+                  <div class="fw-bold justify margin-bottom pdf-value">
                     {{ claimingInterestOnCost.from.fromEvent }}
                   </div>
                 </div>
@@ -1917,7 +1910,9 @@
     </div>
   </div>
 
-  <h3 class="pdf-primary-title" [translate]="'certificate.title'">7.3. Certificate</h3>
+  <h3 class="pdf-primary-title" [translate]="'certificate.title'">
+    7.3. Certificate
+  </h3>
   <div class="ps-3">
     <h4
       class="pdf-secondary-title"
@@ -1965,15 +1960,21 @@
     </h4>
   </div>
 
-  <h3 class="pdf-primary-title" [translate]="'dateAndSignature.title'">7.4. Date and signature</h3>
+  <h3 class="pdf-primary-title" [translate]="'dateAndSignature.title'">
+    7.4. Date and signature
+  </h3>
   <div class="ps-3">
     <h4 class="pdf-line-field pdf-tertiary-field">
-      <span class="colon pdf-label" [translate]="'dateAndSignature.city'">Done at</span>
+      <span class="colon pdf-label" [translate]="'dateAndSignature.city'"
+        >Done at</span
+      >
       <span class="fw-bold pdf-value">{{ formA.dateAndSignature.city }}</span>
     </h4>
 
     <h4 class="pdf-line-field pdf-tertiary-field">
-      <span class="colon pdf-label" [translate]="'dateAndSignature.date'">Date</span>
+      <span class="colon pdf-label" [translate]="'dateAndSignature.date'"
+        >Date</span
+      >
       <span class="fw-bold pdf-value">{{ formA.dateAndSignature.date }}</span>
     </h4>
 
@@ -1983,19 +1984,25 @@
     </h4> -->
   </div>
 
-  <h3 class="pdf-primary-title" [translate]="'court.title'">8. Court/tribunal</h3>
+  <h3 class="pdf-primary-title" [translate]="'court.title'">
+    8. Court/tribunal
+  </h3>
   <div class="ps-3">
     <h4 class="pdf-secondary-title" [translate]="'preview.courtQuestion'">
       On what ground do you consider the court/tribunal to have jurisdiction?
     </h4>
     <div class="ps-3">
       <h5 class="pdf-line-field">
-        <span class="colon pdf-label" [translate]="'court.country'">8.1. Country</span>
+        <span class="colon pdf-label" [translate]="'court.country'"
+          >8.1. Country</span
+        >
         <span class="fw-bold pdf-value">{{ court.countryName }}</span>
       </h5>
 
       <h5 class="pdf-line-field">
-        <span class="colon pdf-label" [translate]="'court.name'">8.2. Name</span>
+        <span class="colon pdf-label" [translate]="'court.name'"
+          >8.2. Name</span
+        >
         <span class="fw-bold pdf-value">{{ court.name }}</span>
       </h5>
 
@@ -2014,7 +2021,9 @@
       </h5>
 
       <h5 class="pdf-line-field">
-        <span class="colon pdf-label" [translate]="'court.city'">8.5. City</span>
+        <span class="colon pdf-label" [translate]="'court.city'"
+          >8.5. City</span
+        >
         <span class="fw-bold pdf-value">{{ court.city }}</span>
       </h5>
     </div>

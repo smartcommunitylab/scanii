@@ -239,8 +239,16 @@ export class ClaimantService {
     return this.representativeOptionLabel + " " + number;
   }
 
-  getClaimants(): (Claimant | RepresentativeCitizen | RepresentativeOrganisation)[] {
-    const claimants: (Claimant | RepresentativeCitizen | RepresentativeOrganisation)[] = [];
+  getClaimants(): (
+    | Claimant
+    | RepresentativeCitizen
+    | RepresentativeOrganisation
+  )[] {
+    const claimants: (
+      | Claimant
+      | RepresentativeCitizen
+      | RepresentativeOrganisation
+    )[] = [];
     const representativeIds: number[] = [];
     for (let i = 0; i < this.editForm.value.claimants.length; i++) {
       const claimant = this.editForm.value.claimants[i];
@@ -289,7 +297,9 @@ export class ClaimantService {
     return claimants;
   }
 
-  private getRepresentative(representative: any): RepresentativeCitizen | RepresentativeOrganisation {
+  private getRepresentative(
+    representative: any
+  ): RepresentativeCitizen | RepresentativeOrganisation {
     const address = this.getAddress(representative);
     const contacts = this.getContacts(representative);
     if (representative.organisation !== "")
@@ -380,37 +390,46 @@ export class ClaimantService {
   setClaimantForm(
     claimants: any[],
     addInformation: boolean = true
-  ): Promise<void> {
-    return new Promise<void>((resolve) => {
+  ): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
       this.resetAll();
+      
       this.translateService
         .get(["europeanCountries", "worldCountries"])
         .subscribe((res) => {
           this.europeanCountries = res.europeanCountries;
           this.worldCountries = res.worldCountries;
+          let foundErrors = false;
 
           for (let i = 0; i < claimants.length; i++) {
             const claimant = claimants[i];
 
-            if (!claimant.isRepresentative) {
-              this.claimants.push(this.createFormGroup("claimant"));
-              this.editForm
-                .get("claimants")
-                .get(i.toString())
-                .patchValue(claimant);
-            } else {
-              this.claimants.push(this.createFormGroup("representative"));
-              this.addRepresentative(i);
-              this.editForm
-                .get("claimants")
-                .get(i.toString())
-                .patchValue(claimant);
+            try {
+              if (!claimant.isRepresentative) {
+                this.claimants.push(this.createFormGroup("claimant"));
+                this.editForm
+                  .get("claimants")
+                  .get(i.toString())
+                  .setValue(claimant);
+              } else {
+                this.claimants.push(this.createFormGroup("representative"));
+                this.addRepresentative(i);
+                this.editForm
+                  .get("claimants")
+                  .get(i.toString())
+                  .setValue(claimant);
+              }
+            } catch (error) {
+              foundErrors = true;
+              reject(error);
             }
           }
 
-          this.handleStableEvent(claimants, addInformation).then(() => {
-            resolve();
-          });
+          if (!foundErrors) {
+            this.handleStableEvent(claimants, addInformation).then(() => {
+              resolve(null);
+            });
+          }
         });
     });
   }

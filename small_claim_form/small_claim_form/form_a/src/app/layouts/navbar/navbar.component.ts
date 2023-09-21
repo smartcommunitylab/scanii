@@ -30,6 +30,8 @@ import {
 import { TranslateConfigService } from "src/app/shared/services/translate-config.service";
 import { ToastService } from "src/app/shared/services/toast.service";
 import { FormA } from "src/app/core/common/form-A.model";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { UploadResultModalComponent } from "src/app/shared/components/upload-result-modal/upload-result-modal.component";
 
 @Component({
   selector: "app-navbar",
@@ -40,6 +42,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   triggerTabList: any;
   changeStepSubscription: Subscription;
   file?: File;
+  previousData: { form_A: FormA } = { form_A: null };
 
   constructor(
     private eventManager: EventManagerService,
@@ -54,7 +57,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     private courtService: CourtService,
     private temporaryStorageService: TemporaryStorageService,
     private translateConfigService: TranslateConfigService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
@@ -386,62 +390,82 @@ export class NavbarComponent implements OnInit, OnDestroy {
     return parseInt(element.getAttribute("data-step"));
   }
 
-  openFileBrowser() {
-    document.getElementById("loadDraft").click();
+  openFileDialogBox() {
+    const inputElement = document.getElementById(
+      "loadDraft"
+    ) as HTMLInputElement;
+
+    //reset the input element's value to allow selecting the same file again
+    inputElement.value = "";
+    //trigger the click event on the input element with id "loadDraft"
+    inputElement.click();
   }
 
-  loadDraft(file: File): void {
-    this.file = file[0];
+  handleFileInput(event: Event): void {
+    this.previousData.form_A = this.navbarService.getFormA();
 
+    const target = event.target as HTMLInputElement;
+    if (target.files && target.files.length > 0) {
+      this.file = target.files[0];
+      this.processFileContent();
+    }
+  }
+
+  processFileContent(): void {
     const reader = new FileReader();
 
     reader.onload = () => {
-      const fileContent = reader.result as string;
-      const jsonData = JSON.parse(fileContent);
-      this.setFormA(jsonData.form_A);
+      try {
+        const fileContent = reader.result as string;
+        const jsonData = JSON.parse(fileContent);
+        this.setFormA(jsonData.form_A, true);
+      } catch (error) {
+        console.error("Error parsing JSON file.\n\n" + error);
+
+        this.openUploadResultModal(false);
+      }
+    };
+
+    reader.onerror = () => {
+      console.error("Failed to read file.\n" + reader.error);
+
+      reader.abort();
+      this.openUploadResultModal(false);
     };
 
     if (this.file) reader.readAsText(this.file);
   }
 
-  private setFormA(data: FormA) {
-    this.claimantService
-      .setClaimantForm(data.claimants)
-      .then(() => {
-        return this.defendantService.setDefendantForm(data.defendants);
-      })
-      .then(() => {
-        return this.jurisdictionService.setJurisdictionForm(data.jurisdiction);
-      })
-      .then(() => {
-        return this.stepFourService.setStepFourForms(
-          data.crossborderNature,
-          data.bankDetails
-        );
-      })
-      .then(() => {
-        return this.claimService.setClaimForm(data.claim);
-      })
-      .then(() => {
-        return this.claimDetailsService.setClaimDetailsForm(data.claimDetails);
-      })
-      .then(() => {
-        return this.stepSevenService.setStepSevenForms(
-          data.oralHearing,
-          data.documentAndCommunication,
-          data.certificate,
-          data.dateAndSignature
-        );
-      })
-      .then(() => {
-        return this.courtService.setCourtForm(data.court);
-      })
-      .then(() => {
-        this.moveToFirstStep();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  private async setFormA(data: FormA, openUploadResultModal: boolean) {
+    try {
+      await this.claimantService.setClaimantForm(data.claimants);
+      await this.defendantService.setDefendantForm(data.defendants);
+      await this.jurisdictionService.setJurisdictionForm(data.jurisdiction);
+      await this.stepFourService.setStepFourForms(
+        data.crossborderNature,
+        data.bankDetails
+      );
+      await this.claimService.setClaimForm(data.claim);
+      await this.claimDetailsService.setClaimDetailsForm(data.claimDetails);
+      await this.stepSevenService.setStepSevenForms(
+        data.oralHearing,
+        data.documentAndCommunication,
+        data.certificate,
+        data.dateAndSignature
+      );
+      await this.courtService.setCourtForm(data.court);
+
+      if (openUploadResultModal) {
+        this.openUploadResultModal(true);
+      }
+      this.moveToFirstStep();
+    } catch (error) {
+      console.error("Error while populating form A.\n\n" + error);
+
+      // reset the form to the previous state
+      this.setFormA(this.previousData.form_A, false);
+      this.openUploadResultModal(false);
+    }
   }
 
   private moveToFirstStep() {
@@ -456,5 +480,21 @@ export class NavbarComponent implements OnInit, OnDestroy {
       left: 0,
       behavior: "auto",
     });
+  }
+
+  private openUploadResultModal(fileUploadedSuccessfully: boolean) {
+    const uploadingModal = this.modalService.open(UploadResultModalComponent, {
+      size: "lg",
+      backdrop: "static",
+      centered: true,
+    });
+
+    uploadingModal.componentInstance.fileUploadedSuccessfully =
+      fileUploadedSuccessfully;
+
+    uploadingModal.result.then(
+      () => {},
+      () => {}
+    );
   }
 }

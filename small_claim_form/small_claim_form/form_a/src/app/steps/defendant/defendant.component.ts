@@ -34,14 +34,14 @@ export class DefendantComponent implements OnInit {
       'defendants'
     ) as UntypedFormArray;
 
-    // this.defendantService.defendants.controls[0].patchValue({
-    //   firstName: 'John',
-    //   surname: 'Doe',
-    //   street: '123 Main Street',
-    //   postalCode: '12345',
-    //   city: 'New York',
-    //   country: 'IT',
-    // });
+    this.defendantService.defendants.controls[0].patchValue({
+      firstName: 'John',
+      surname: 'Doe',
+      street: '123 Main Street',
+      postalCode: '12345',
+      city: 'New York',
+      country: 'IT',
+    });
 
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.defendantService.europeanCountries = event.translations.europeanCountries;

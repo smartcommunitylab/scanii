@@ -143,13 +143,27 @@ export class StepSevenService {
     documentAndCommunication: any,
     certificate: any,
     dateAndSignature: any
-  ): Promise<void> {
-    this.resetAll();
-    this.oralHearingForm.patchValue(oralHearing);
-    this.documentAndCommunicationForm.patchValue(documentAndCommunication);
-    this.certificateForm.patchValue(certificate);
-    this.dateAndSignatureForm.patchValue(dateAndSignature);
-    return this.handleStableEvent(oralHearing);
+  ): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      this.resetAll();
+      let foundErrors = false;
+
+      try {
+        this.oralHearingForm.setValue(oralHearing);
+        this.documentAndCommunicationForm.setValue(documentAndCommunication);
+        this.certificateForm.setValue(certificate);
+        this.dateAndSignatureForm.setValue(dateAndSignature);
+      } catch (error) {
+        reject(error);
+        foundErrors = true;
+      }
+
+      if (!foundErrors) {
+        this.handleStableEvent(oralHearing).then(() => {
+          resolve(null);
+        });
+      }
+    });
   }
 
   private handleStableEvent(oralHearing: any): Promise<void> {

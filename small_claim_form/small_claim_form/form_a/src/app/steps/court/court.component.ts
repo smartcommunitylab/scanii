@@ -46,11 +46,11 @@ export class CourtComponent implements OnInit {
       this.setFindCourtCountry();
     });
     
-    // this.courtService.editForm.patchValue({
-    //   country: "IT",
-    //   name: "County Court Business Centre",
-    //   street: "St Katharine’s House",
-    // });
+    this.courtService.editForm.patchValue({
+      country: "IT",
+      name: "County Court Business Centre",
+      street: "St Katharine’s House",
+    });
   }
 
   toggleFindCourt() {

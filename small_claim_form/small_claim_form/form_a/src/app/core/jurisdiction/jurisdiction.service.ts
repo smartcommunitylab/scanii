@@ -1,11 +1,15 @@
-import { Injectable, NgZone } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import { PromiseContent } from '../common/promise-content.model';
-import { Subscription } from 'rxjs';
-import { otherCheckboxId } from 'src/app/shared/constants/jurisdiction.constants';
+import { Injectable, NgZone } from "@angular/core";
+import {
+  UntypedFormBuilder,
+  UntypedFormGroup,
+  Validators,
+} from "@angular/forms";
+import { PromiseContent } from "../common/promise-content.model";
+import { Subscription } from "rxjs";
+import { otherCheckboxId } from "src/app/shared/constants/jurisdiction.constants";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class JurisdictionService {
   requiredValidator = Validators.required;
@@ -20,7 +24,7 @@ export class JurisdictionService {
       placeImmovableProperty: [false],
       choiceCourtTribunal: [false],
       otherCheckbox: [false],
-      otherText: [''],
+      otherText: [""],
     },
     { validator: this.checkboxValidator }
   );
@@ -28,7 +32,9 @@ export class JurisdictionService {
 
   constructor(private fb: UntypedFormBuilder, private zone: NgZone) {}
 
-  checkboxValidator(formGroup: UntypedFormGroup): { [key: string]: boolean } | null {
+  checkboxValidator(
+    formGroup: UntypedFormGroup
+  ): { [key: string]: boolean } | null {
     const setFormControlValidity = (
       formGroup: UntypedFormGroup,
       formControlName: string,
@@ -44,7 +50,7 @@ export class JurisdictionService {
     const formControls = formGroup.controls;
 
     const checkboxFormControls = Object.keys(formControls).filter(
-      (key) => key !== 'otherText'
+      (key) => key !== "otherText"
     );
 
     const atLeastOneCheckboxSelected = checkboxFormControls.some(
@@ -62,33 +68,47 @@ export class JurisdictionService {
     return new Promise((resolve) => {
       let isValid = false;
       if (this.editForm.invalid) {
-        if (this.editForm.get('otherCheckbox').value)
+        if (this.editForm.get("otherCheckbox").value)
           this.markOtherTextAsDirty();
         else this.markCheckboxesAsDirty();
         isValid = false;
       } else {
         isValid = true;
       }
-      resolve(new PromiseContent('step3', isValid));
+      resolve(new PromiseContent("step3", isValid));
     });
   }
 
   markCheckboxesAsDirty() {
     Object.keys(this.editForm.controls)
-      .filter((key) => key !== 'otherText')
+      .filter((key) => key !== "otherText")
       .forEach((key) => {
         this.editForm.get(key).markAsDirty({ onlySelf: true });
       });
   }
 
   markOtherTextAsDirty() {
-    this.editForm.get('otherText').markAsDirty({ onlySelf: true });
+    this.editForm.get("otherText").markAsDirty({ onlySelf: true });
   }
 
-  setJurisdictionForm(jurisdiction: any): Promise<void> {
-    this.resetAll();
-    this.editForm.patchValue(jurisdiction);
-    return this.handleStableEvent();
+  setJurisdictionForm(jurisdiction: any): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      this.resetAll();
+      let foundErrors = false;
+
+      try {
+        this.editForm.setValue(jurisdiction);
+      } catch (error) {
+        foundErrors = true;
+        reject(error);
+      }
+
+      if (!foundErrors) {
+        this.handleStableEvent().then(() => {
+          resolve(null);
+        });
+      }
+    });
   }
 
   private handleStableEvent(): Promise<void> {
@@ -109,7 +129,7 @@ export class JurisdictionService {
 
   private triggerClickEvent(id: string) {
     const inputElement = document.getElementById(id) as HTMLInputElement;
-    const event = new Event('click');
+    const event = new Event("click");
     inputElement.dispatchEvent(event);
   }
 }

@@ -42,34 +42,34 @@ export class StepOneComponent implements OnInit {
       "defendants"
     ) as UntypedFormArray;
 
-    // this.stepOneService.form.patchValue({
-    //   caseNumber: "123456789",
-    //   date: "01/01/2021",
-    //   court: {
-    //     courtCountry: "2",
-    //     name: "Tribunale di Roma",
-    //     street: "123 Main Street",
-    //     cityPostalCode: "12345 New York",
-    //   },
-    // });
+    this.stepOneService.form.patchValue({
+      caseNumber: "123456789",
+      date: "01/01/2021",
+      court: {
+        courtCountry: "2",
+        name: "Tribunale di Roma",
+        street: "123 Main Street",
+        cityPostalCode: "12345 New York",
+      },
+    });
 
-    // this.stepOneService.claimants.controls[0].patchValue({
-    //   firstName: "John",
-    //   surname: "Doe",
-    //   street: "123 Main Street",
-    //   postalCode: "12345",
-    //   city: "New York",
-    //   country: "2",
-    // });
+    this.stepOneService.claimants.controls[0].patchValue({
+      firstName: "John",
+      surname: "Doe",
+      street: "123 Main Street",
+      postalCode: "12345",
+      city: "New York",
+      country: "2",
+    });
 
-    // this.stepOneService.defendants.controls[0].patchValue({
-    //   firstName: "John",
-    //   surname: "Doe",
-    //   street: "123 Main Street",
-    //   postalCode: "12345",
-    //   city: "New York",
-    //   country: "2",
-    // });
+    this.stepOneService.defendants.controls[0].patchValue({
+      firstName: "John",
+      surname: "Doe",
+      street: "123 Main Street",
+      postalCode: "12345",
+      city: "New York",
+      country: "2",
+    });
 
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.initDatepicker(event.lang);

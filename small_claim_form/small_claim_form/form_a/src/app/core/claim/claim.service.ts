@@ -466,14 +466,29 @@ export class ClaimService {
     return undefined;
   }
 
-  setClaimForm(claim: any): Promise<void> {
-    this.resetAll();
-    if (claim.claimForMoneyExpansion.claimForMoneyCurrencyHistoricalCheckbox)
-      this.areIncludedClaimForMoneyHistoricalCurrencies = true;
-    if (claim.otherClaimExpansion.otherClaimCurrencyHistoricalCheckbox)
-      this.areIncludedOtherClaimHistoricalCurrencies = true;
-    this.editForm.patchValue(claim);
-    return this.handleStableEvent(claim);
+  setClaimForm(claim: any): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      this.resetAll();
+      let foundErrors = false;
+
+      if (claim.claimForMoneyExpansion.claimForMoneyCurrencyHistoricalCheckbox)
+        this.areIncludedClaimForMoneyHistoricalCurrencies = true;
+      if (claim.otherClaimExpansion.otherClaimCurrencyHistoricalCheckbox)
+        this.areIncludedOtherClaimHistoricalCurrencies = true;
+
+      try {
+        this.editForm.setValue(claim);
+      } catch (error) {
+        foundErrors = true;
+        reject(error);
+      }
+
+      if (!foundErrors) {
+        this.handleStableEvent(claim).then(() => {
+          resolve(null);
+        });
+      }
+    });
   }
 
   private handleStableEvent(claim: any): Promise<void> {

@@ -84,10 +84,24 @@ export class ClaimDetailsService {
     }
   }
 
-  setClaimDetailsForm(claimDetails: any): Promise<void> {
-    this.resetAll();
-    this.editForm.patchValue(claimDetails);
-    return this.handleStableEvent(claimDetails);
+  setClaimDetailsForm(claimDetails: any): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      this.resetAll();
+      let foundErrors = false;
+
+      try {
+        this.editForm.setValue(claimDetails);
+      } catch (error) {
+        reject(error);
+        foundErrors = true;
+      }
+
+      if (!foundErrors) {
+        this.handleStableEvent(claimDetails).then(() => {
+          resolve(null);
+        });
+      }
+    });
   }
 
   private handleStableEvent(claimDetails: any): Promise<void> {
