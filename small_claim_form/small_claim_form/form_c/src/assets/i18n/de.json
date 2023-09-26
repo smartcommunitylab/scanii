@@ -92,7 +92,7 @@
     "title": "Vorschau"
   },
   "uploading": {
-    "success": "Sie haben erfolgreich ein Formular hochgeladen zum Verfahren <strong>Formulare „Geringfügige Forderungen“</strong>.",
+    "success": "<strong>Ein Formular für das Verfahren für „geringfügige Forderungen“</strong> wurde erfolgreich hochgeladen.",
     "error": "Beim Laden des Formulars ist ein <strong>Fehler</strong> aufgetreten."
   }
 }

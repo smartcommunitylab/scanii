@@ -11,13 +11,10 @@
           "link": [],
           "words": [
             {
-              "position": "36-8",
+              "position": "37-8",
               "text": "claimant",
               "definition": "Person initiating a law suit.",
-              "synonyms": [
-                "applicant",
-                "plaintiff"
-              ],
+              "synonyms": ["Applicant", "Plaintiff"],
               "links": []
             }
           ]
@@ -34,13 +31,11 @@
           "link": [],
           "words": [
             {
-              "position": "285-12",
+              "position": "286-12",
               "text": "legal person",
-              "definition": "a human or non-human entity (organization, institution) that is treated as a person for limited legal purposes.",
+              "definition": "A human or non-human entity (organization, institution) that is treated as a person for limited legal purposes.",
               "synonyms": [],
-              "links": [
-                "https://www.law.cornell.edu/wex/legal_person"
-              ]
+              "links": ["https://www.law.cornell.edu/wex/legal_person"]
             }
           ]
         }
@@ -65,30 +60,20 @@
           "type": "DESCRIPTION",
           "text": "In this field you should identify the defendant and, if known, his representative. Please note that it is not mandatory for the defendant to be represented by a lawyer or another legal professional. It may not be sufficient in some countries to give only a P.O. Box as the address and therefore you should include the street name and number with a postcode. Failure to do so may result in the document not being served.",
           "simplifiedText": "Identify the defendant in this field. If they have a representative, include their name too. Make sure to provide an address with street name and number plus postcode - not just a P.O. Box - or the document may not be served correctly.",
-          "link": [
-            {
-              "url": "string",
-              "name": "string",
-              "description": "string"
-            }
-          ],
+          "link": [],
           "words": [
             {
-              "position": "38-9",
+              "position": "39-9",
               "text": "defendant",
               "definition": "Person against whom the small claim is initiated.",
-              "synonyms": [
-                "offender"
-              ],
+              "synonyms": ["Offender"],
               "links": []
             },
             {
-              "position": "67-14",
+              "position": "68-14",
               "text": "representative",
               "definition": "Person appointed to juridically act in name and on behalf of a company or another entity.",
-              "synonyms": [
-                "lawyer"
-              ],
+              "synonyms": ["Lawyer"],
               "links": []
             }
           ]
@@ -99,38 +84,30 @@
       "id": "http://scanii.org/domain/defendant.personalIdNumber",
       "infoElements": [
         {
-          "type": "DESCRIPTION",
+          "type": "INFORMATION",
           "text": "If you know a personal identification number given to a defendant by authorities of a Member State it would be helpful to provide it. Alternatively or additionally it would be helpful to provide a number of the defendant's passport or identification document, if you have them. If the defendant is a legal person or any entity having legal capacity, it would be helpful to provide a relevant registration number for the defendant if you know it.",
           "simplifiedText": "If you know the defendant's personal identification number, passport number or any other registration numbers, please provide them.",
           "link": [],
           "words": [
-		  {
+            {
               "position": "57-9",
               "text": "defendant",
               "definition": "Person against whom the small claim is initiated.",
-              "synonyms": [
-                "offender"
-              ],
+              "synonyms": ["Offender"],
               "links": []
             },
             {
-              "position": "300-12",
+              "position": "301-12",
               "text": "legal person",
-              "definition": "a human or non-human entity (organization, institution) that is treated as a person for limited legal purposes.",
-              "synonyms": [
-                ""
-              ],
-              "links": [
-                "https://www.law.cornell.edu/wex/legal_person"
-              ]
+              "definition": "A human or non-human entity (organization, institution) that is treated as a person for limited legal purposes.",
+              "synonyms": [],
+              "links": ["https://www.law.cornell.edu/wex/legal_person"]
             },
             {
-              "position": "334-14",
+              "position": "335-14",
               "text": "legal capacity",
               "definition": "The capability and power under law of a person to occupy a particular status or relationship with another or to engage in a particular undertaking or transaction.",
-              "synonyms": [
-                ""
-              ],
+              "synonyms": [],
               "links": [
                 "https://www.merriam-webster.com/dictionary/legal%20capacity"
               ]
@@ -143,7 +120,7 @@
       "id": "http://scanii.org/domain/defendant.otherDetails",
       "infoElements": [
         {
-          "type": "DESCRIPTION",
+          "type": "INFORMATION",
           "text": "This field may contain further information that helps to identify the person, for example the date of birth, occupation or position in the company. If there is more than one defendant, please use additional sheets.",
           "simplifiedText": "This field may contain info to help identify the person, like date of birth, job or position in a company. If there is more than one defendant, use extra sheets.",
           "link": [],
@@ -160,72 +137,48 @@
           "simplifiedText": "You must submit your application to the court/tribunal that has the authority to handle it. This is based on rules from a European law called Regulation (EU) No 1215/2012. You can find more information about these rules on the European Judicial Atlas website.",
           "link": [
             {
+              "type": "LEGAL_LINK",
+              "url": "https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2012:351:0001:0032:en:PDF",
+              "name": "Regulation (EU) No 1215/2012 of the European Parliament and of the Council",
+              "text": "Regulation (EU) No 1215/2012 of the European Parliament and of the Council",
+              "description": "Regulation on jurisdiction and the recognition and enforcement of judgments in civil and commercial matters."
+            },
+            {
+              "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_jurisdiction-85-en.do",
               "name": "Which country's court is responsible?",
+              "text": "the website of the European Judicial Atlas",
               "description": "This resource will help the user to find the competent court in practice."
             }
           ],
           "words": [
             {
-              "position": "25-6",
+              "position": "26-6",
               "text": "lodge",
               "definition": "To present a document in a trial / to a court.",
-              "synonyms": [
-                "submit"
-              ],
+              "synonyms": ["Submit"],
               "links": []
             },
             {
-              "position": "65-12",
+              "position": "66-12",
               "text": "jurisdiction",
               "definition": "Scope of competence within which a court is granted the power to decide upon a specific issue or case.",
-              "synonyms": [
-                "extent of competence"
-              ],
+              "synonyms": ["Extent of competence"],
               "links": []
             },
             {
-              "position": "124-12",
+              "position": "125-12",
               "text": "jurisdiction",
               "definition": "Scope of competence within which a court is granted the power to decide upon a specific issue or case.",
-              "synonyms": [
-                "extent of competence"
-              ],
+              "synonyms": ["Extent of competence"],
               "links": []
             },
             {
-              "position": "355-12",
+              "position": "356-12",
               "text": "jurisdiction",
               "definition": "Scope of competence within which a court is granted the power to decide upon a specific issue or case.",
-              "synonyms": [
-                ""
-              ],
+              "synonyms": ["Extent of competence"],
               "links": []
-            }
-          ]
-        },
-        {
-          "type": "LEGAL_REFERENCE",
-          "link": [
-            {
-              "url": "https://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2012:351:0001:0032:en:PDF",
-              "name": "Regulation (EU) No 1215/2012 of the European Parliament and of the Council",
-              "description": "Regulation on jurisdiction and the recognition and enforcement of judgments in civil and commercial matters."
-            },
-            {
-              "url": "https://e-justice.europa.eu/content_brussels_i_regulation_recast-350-en.do",
-              "name": "Brussels I regulation recast.",
-              "description": "Rules of jurisdiction according to Brussels I regulation recast."
-            }
-          ]
-        },
-        {
-          "type": "EXTERNAL_REFERENCE",
-          "link": [
-            {
-              "url": "https://e-justice.europa.eu/content_european_judicial_atlas_in_civil_matters-321-en.do",
-              "name": "European Judicial Atlas",
-              "description": "Practical information concerning judicial cooperation in civil matters"
             }
           ]
         }
@@ -244,10 +197,8 @@
               "position": "",
               "text": "cross-border case",
               "definition": "Legal case in which at least one of the parties is domiciled or habitually resident in a Member State other than the Member State of the court seised.",
-              "synonyms": [
-                ],
-              "links": [
-              ]
+              "synonyms": [],
+              "links": []
             }
           ]
         }
@@ -258,22 +209,18 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Bank details (optional) In field 4.2.1. you may inform the court/tribunal by which means you intend to pay the application fee. Please note that not all methods are necessarily available at the court/tribunal to which you are sending your application. You should verify which methods of payment will be accepted by the court/tribunal. You can do this by checking the information given by the Member state concerned and published on the website of the European Judicial atlas in civil and commercial matters, available on the European e-Justice Portal https://e-justice.europa.eu/content_small_claims-354-en.do or by contacting the court/tribunal concerned. By the same means you can discover more information about the amount of the court fee that you will need to pay. If you choose to pay by credit card or to allow the court/tribunal to collect the fee from your bank account, you should give the necessary credit card or bank account details in the Appendix to this form. The Appendix will be for the information of the court/tribunal only and will not be forwarded to the defendant. In field 4.2.2. you are given the possibility of indicating by which means you wish to receive payment from the defendant, for example if the defendant wishes to pay immediately even before the judgment is given. If you wish to be paid by bank transfer, please give the necessary bank details.",
-          "simplifiedText": "You can provide your bank details (optional) in the Appendix to this form. This information will be used by the court/tribunal only and not shared with the defendant. You should check which payment methods are accepted by the court/tribunal you're sending your application to, as well as how much you need to pay for a court fee. To do this, visit https://e-justice.europa.eu/content_small_claims-354-en.do or contact the court/tribunal directly. If you want to receive payment from the defendant, give your bank details if paying by bank transfer is an option.",
+          "text": "In field 4.2.1. you may inform the court/tribunal by which means you intend to pay the application fee. Please note that not all methods are necessarily available at the court/tribunal to which you are sending your application. You should verify which methods of payment will be accepted by the court/tribunal. You can do this by checking the information given by the Member state concerned and published on the website of the European Judicial atlas in civil and commercial matters, available on the European e-Justice Portal or by contacting the court/tribunal concerned. By the same means you can discover more information about the amount of the court fee that you will need to pay. If you choose to pay by credit card or to allow the court/tribunal to collect the fee from your bank account, you should give the necessary credit card or bank account details in the Appendix to this form. The Appendix will be for the information of the court/tribunal only and will not be forwarded to the defendant. In field 4.2.2. you are given the possibility of indicating by which means you wish to receive payment from the defendant, for example if the defendant wishes to pay immediately even before the judgment is given. If you wish to be paid by bank transfer, please give the necessary bank details.",
+          "simplifiedText": "You can provide your bank details (optional) in the Appendix to this form. This information will be used by the court/tribunal only and not shared with the defendant. You should check which payment methods are accepted by the court/tribunal you're sending your application to, as well as how much you need to pay for a court fee. To do this, visit the European e-Justice Portal or contact the court/tribunal directly. If you want to receive payment from the defendant, give your bank details if paying by bank transfer is an option.",
           "link": [
             {
+              "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_small_claims-354-en.do",
-              "name": "",
+              "name": "European e-Justice Portal",
+              "text": "European e-Justice Portal",
               "description": ""
-            },
-            {
-              "url": "this_form/id:appendix",
-              "name": "Appendix",
-              "description": "Section where to provide credit card or bank account information."
             }
           ],
-          "words": [
-          ]
+          "words": []
         }
       ]
     },
@@ -282,26 +229,18 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Claim. Scope: Please note that the European Small Claims Procedure has a limited scope. No claims of a value higher than EUR 5000 or which are listed in Article 2 of Regulation (EC) No 861/2007 of the European Parliament and of the Council establishing a European Small Claims Procedure can be dealt with under this procedure. If your claim does not relate to an action within the scope of that Regulation in accordance with Article 2, proceedings will continue before the courts/tribunals with jurisdiction in accordance with the rules of ordinary civil procedure. If you do not wish to continue proceedings in that event, you should withdraw your application. Monetary or other claim: You should indicate whether you are claiming money and/or something else (non monetary claim), for example, delivery of goods, and then fill in respectively either 5.1. and/or 5.2.",
+          "text": "Please note that the European Small Claims Procedure has a limited scope. No claims of a value higher than EUR 5000 or which are listed in Article 2 of Regulation (EC) No 861/2007 of the European Parliament and of the Council establishing a European Small Claims Procedure can be dealt with under this procedure. If your claim does not relate to an action within the scope of that Regulation in accordance with Article 2, proceedings will continue before the courts/tribunals with jurisdiction in accordance with the rules of ordinary civil procedure. If you do not wish to continue proceedings in that event, you should withdraw your application. Monetary or other claim: You should indicate whether you are claiming money and/or something else (non monetary claim), for example, delivery of goods, and then fill in respectively either 5.1. and/or 5.2.",
           "simplifiedText": "The European Small Claims Procedure is limited to claims of a value up to EUR 5000. Certain types of claims listed in Article 2 of Regulation (EC) No 861/2007 cannot be dealt with under this procedure. If your claim does not fit within the scope, it will need to be handled by the courts or tribunals according to ordinary civil procedure rules. You should indicate if you are claiming money and/or something else (non-monetary claim).",
           "link": [
             {
-              "url": "",
-              "name": "",
-              "description": ""
+              "type": "LEGAL_LINK",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32007R0861",
+              "name": "Regulation (EC) No 861/2007",
+              "text": "Regulation (EC) No 861/2007 of the European Parliament and of the Council",
+              "description": "Regulation establishing the European Small Claims Procedure."
             }
           ],
           "words": []
-        },
-        {
-          "type": "LEGAL_REFERENCE",
-          "link": [
-            {
-              "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32007R0861",
-              "name": "Regulation (EC) No 861/2007 of the European Parliament and of the Council",
-              "description": "Regulation establishing the European Small Claims Procedure."
-            }
-          ]
         }
       ]
     },
@@ -310,18 +249,18 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "If you wish to claim the costs of the proceedings (e.g. translation costs, lawyers' fees, costs relating to the service of documents etc.), then you should indicate this in 7.3. Please note that rules regarding the costs which courts/tribunals can award vary between different Member States. Details of categories of costs in the Member States can be found on the European e-Justice Portal https://e-justice.europa.eu/content_costs_of_proceedings-37-en.do.",
-          "simplifiedText": "If you want to be reimbursed for expenses related to the case (like translation fees, lawyer costs or delivering documents), check box 7.3. Rules about how much courts/tribunals can give back vary in different countries. To find out more, visit the European e-Justice Portal: https://e-justice.europa.eu/content_costs_of_proceedings-37-en.do",
+          "text": "If you wish to claim the costs of the proceedings (e.g. translation costs, lawyers' fees, costs relating to the service of documents etc.), then you should indicate this in 5.3. Please note that rules regarding the costs which courts/tribunals can award vary between different Member States. Details of categories of costs in the Member States can be found on the European e-Justice Portal.",
+          "simplifiedText": "If you want to be reimbursed for expenses related to the case (like translation fees, lawyer costs or delivering documents), check box 5.3. Rules about how much courts/tribunals can give back vary in different countries. To find out more, visit the European e-Justice Portal.",
           "link": [
             {
+              "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_costs_of_proceedings-37-en.do",
               "name": "Costs of legal actions.",
+              "text": "European e-Justice Portal",
               "description": "Information on costs of proceedings in Member States."
             }
           ],
-          "words": [
-            
-          ]
+          "words": []
         }
       ]
     },
@@ -332,28 +271,16 @@
           "type": "DESCRIPTION",
           "text": "If you wish to claim any contractual interest, for example on a loan, you should indicate the rate and from what date it runs. The court/tribunal may award statutory interest on your claim, if you are successful. If you wish to claim interest, please indicate this and the date from which the interest should run. If necessary, please use additional pages to describe your claim e.g. if you claim several payments and the interest is claimed from different date on each of the payments.",
           "simplifiedText": "If you are claiming interest on a loan, please indicate the rate and when it should start. The court/tribunal may also award statutory interest if your claim is successful. If you need to explain more about your claim (e.g. multiple payments with different dates for each), use extra pages to do so.",
-          "link": [
-            {
-              "url": "",
-              "name": "",
-              "description": ""
-            }
-          ],
+          "link": [],
           "words": [
-		  {
+            {
               "position": "157-18",
               "text": "statutory interest",
               "definition": "A statutory interest refers to the interest rate that is set by law or statute, often used to calculate the interest payable on overdue debts or court-awarded damages.",
-              "synonyms": [
-                "",
-                ""
-              ],
-              "links": [
-                "",
-                ""
-              ]
+              "synonyms": [],
+              "links": []
             }
-		  ]
+          ]
         }
       ]
     },
@@ -364,31 +291,19 @@
           "type": "DESCRIPTION",
           "text": "If your claim is not for money, please fill in section 5.2 and indicate the estimated value of your claim there. In the case of a non-monetary claim, you should indicate whether you have a secondary claim for compensation if it is not possible to satisfy the original claim.",
           "simplifiedText": "If you're not claiming money, fill in section 5.2 and estimate the value of your claim. If it's not possible to satisfy your original claim, indicate if you want compensation for it.",
-          "link": [
-            {
-              "url": "",
-              "name": "",
-              "description": ""
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
     },
     {
-      "id": "http://scanii.org/domain/claim.dateAndSignature",
+      "id": "http://scanii.org/domain/dateAndSignature",
       "infoElements": [
         {
           "type": "DESCRIPTION",
           "text": "Please make sure that you write your name clearly and sign and date your application at the end.",
           "simplifiedText": "Make sure to clearly write your name, sign, and date your application at the end.",
-          "link": [
-            {
-              "url": "",
-              "name": "",
-              "description": ""
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -398,15 +313,9 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Details of claim In 6.1. you should describe briefly the substance of your claim. In 6.2. you should describe any relevant supporting evidence. This could, for example, be written evidence (e.g. contracts, receipts, etc.) or oral or written statements from witnesses. For each piece of evidence, please indicate which aspect of your claim it is intended to support. If space is insufficient, you can add additional sheets.",
-          "simplifiedText": "In Section 6, please provide details of your claim. Include a brief description and any evidence that supports it (e.g. contracts, receipts, statements from witnesses). For each piece of evidence, explain how it relates to your claim. If you need more space than provided in the form, add extra sheets.",
-          "link": [
-            {
-              "url": "string",
-              "name": "string",
-              "description": "string"
-            }
-          ],
+          "text": "In 6.1. you should describe briefly the substance of your claim. In 6.2. you should describe any relevant supporting evidence. This could, for example, be written evidence (e.g. contracts, receipts, etc.) or oral or written statements from witnesses. For each piece of evidence, please indicate which aspect of your claim it is intended to support. If space is insufficient, you can add additional sheets.",
+          "simplifiedText": "In Section 6., please provide details of your claim. Include a brief description and any evidence that supports it (e.g. contracts, receipts, statements from witnesses). For each piece of evidence, explain how it relates to your claim. If you need more space than provided in the form, add extra sheets.",
+          "link": [],
           "words": []
         }
       ]
@@ -416,42 +325,40 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Please note that the European Small Claims Procedure is a written procedure. However the court may decide to have an oral hearing if it considers that it is not possible to give the judgment on the basis of written evidence. You can request, in this form or at a later stage, that an oral hearing be held. The court may refuse your request if it considers, in the light of the circumstances of the case, that an oral hearing is not necessary for the fair conduct of the proceedings. The oral hearing should be carried out through appropriate distance communication means, like videoconference or teleconference, provided that they are available to the court. If the person to be heard is domiciled in a Member State other than that of the court seised, a hearing by distance communication technology shall be arranged by making use of the procedures provided for in Council Regulation (EC) No 1206/2001 (https://e-justice.europa.eu/content_taking_of_evidence-76-en.do). However the court may decide that the persons summoned for the hearing must be physically present. You can indicate your preferences to the court, bearing in mind, that if you requested to be physically present at the hearing, the recovery of any costs incurred with regard to this presence is subject to the rules of Article 16 of Regulation (EC) No 861/2007 establishing a European Small Claims Procedure. This Article stipulates that the court shall not award to the successful party costs that were unnecessarily incurred or are disproportionate to the claim.",
+          "text": "Please note that the European Small Claims Procedure is a written procedure. However the court may decide to have an oral hearing if it considers that it is not possible to give the judgment on the basis of written evidence. You can request, in this form or at a later stage, that an oral hearing be held. The court may refuse your request if it considers, in the light of the circumstances of the case, that an oral hearing is not necessary for the fair conduct of the proceedings. The oral hearing should be carried out through appropriate distance communication means, like videoconference or teleconference, provided that they are available to the court. If the person to be heard is domiciled in a Member State other than that of the court seised, a hearing by distance communication technology shall be arranged by making use of the procedures provided for in Council Regulation (EC) No 1206/2001. However the court may decide that the persons summoned for the hearing must be physically present. You can indicate your preferences to the court, bearing in mind, that if you requested to be physically present at the hearing, the recovery of any costs incurred with regard to this presence is subject to the rules of Article 16 of Regulation (EC) No 861/2007 establishing a European Small Claims Procedure. This Article stipulates that the court shall not award to the successful party costs that were unnecessarily incurred or are disproportionate to the claim.",
           "simplifiedText": "The European Small Claims Procedure is a written procedure. You can request an oral hearing, but the court may refuse if it's not necessary for the fair conduct of proceedings. If the person to be heard is in another Member State, distance communication technology (e.g. videoconference or teleconference) will be used unless the court decides that they must be physically present at the hearing. Costs incurred with regard to physical presence are subject to rules on proportionality and necessity.",
           "link": [
             {
+              "type": "LEGAL_LINK",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=celex%3A32001R1206",
+              "name": "Regulation (EC) No 1206/2001",
+              "text": "Council Regulation (EC) No 1206/2001",
+              "description": "Council Regulation on cooperation between the courts of the Member States in the taking of evidence in civil or commercial matters."
+            },
+            {
+              "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_taking_of_evidence-76-en.do",
-              "name": "Taking of evidence",
+              "name": "Taking of evidence.",
+              "text": "procedures",
               "description": "Information on how to collect and present evidence to the court in order to prove your claim."
+            },
+            {
+              "type": "LEGAL_LINK",
+              "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32007R0861",
+              "name": "Regulation (EC) No 861/2007",
+              "text": "Regulation (EC) No 861/2007",
+              "description": "Regulation of the European Parliament and of the Council establishing a European Small Claims Procedure"
             }
           ],
           "words": [
             {
-              "position": "745-6",
+              "position": "746-6",
               "text": "seised",
               "definition": "In the legal context it means that an entity, usually a court, has decided that it will consider a legal matter or issue falling within its jurisdiction.",
-              "synonyms": [
-                "",
-                ""
-              ],
+              "synonyms": [],
               "links": [
                 "https://www.ipglossary.com/glossary/seised-seized-of-a-matter/"
               ]
-            }
-          ]
-        },
-        {
-          "type": "LEGAL_REFERENCE",
-          "link": [
-            {
-              "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=celex%3A32001R1206",
-              "name": "Council Regulation (EC) No 1206/2001",
-              "description": "Council Regulation on cooperation between the courts of the Member States in the taking of evidence in civil or commercial matters."
-            },
-            {
-              "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32007R0861",
-              "name": "Council Regulation (EC) No 861/2007",
-              "description": "Regulation of the European Parliament and of the Council establishing a European Small Claims Procedure"
             }
           ]
         }
@@ -462,13 +369,15 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Service of documents and communication with the court Procedural documents, like your application, the response from the defendant, any counterclaim and the judgment may be served upon the parties by post or by electronic means, if such means are technically available to the court and admissible in accordance with the procedural law of the Member State in which the procedure is conducted. If the documents are to be served in a Member State other than the one in which the procedure is conducted, the procedural rules of the Member State where service is effected have to be observed as well. Electronic means could be used also for other written communications (e.g. a request to attend a court hearing). Electronic means can be used only if the addressee expressly consents in advance to their use or if he/she is legally obliged to accept electronic service and/or other written communication from the court in accordance with the procedural rules of the Member State in which the addressee is domiciled. To see if electronic means of service and/or communication are available and admissible in the relevant Member States check the information on the European e-justice portal at https://e-justice.europa.eu/content_small_claims-354-en.do?clang=en",
-          "simplifiedText": "You can serve documents and communicate with the court in different ways. You can send them by post or electronically, if allowed by the law of the country where you are making your claim. If you need to serve documents in another country, then that country's laws must also be followed. Electronic communication may also be used for other written communications (e.g., a request to attend a court hearing). This is only possible if the person receiving it agrees beforehand or is legally required to accept electronic service from the court according to their own country's laws. To find out more about using electronic means of service and/or communication, visit https://e-justice.europa.eu/content_small_claims-354-en.do?clang=en",
+          "text": "Service of documents and communication with the court Procedural documents, like your application, the response from the defendant, any counterclaim and the judgment may be served upon the parties by post or by electronic means, if such means are technically available to the court and admissible in accordance with the procedural law of the Member State in which the procedure is conducted. If the documents are to be served in a Member State other than the one in which the procedure is conducted, the procedural rules of the Member State where service is effected have to be observed as well. Electronic means could be used also for other written communications (e.g. a request to attend a court hearing). Electronic means can be used only if the addressee expressly consents in advance to their use or if he/she is legally obliged to accept electronic service and/or other written communication from the court in accordance with the procedural rules of the Member State in which the addressee is domiciled. To see if electronic means of service and/or communication are available and admissible in the relevant Member States check the information on the European e-Justice Portal.",
+          "simplifiedText": "You can serve documents and communicate with the court in different ways. You can send them by post or electronically, if allowed by the law of the country where you are making your claim. If you need to serve documents in another country, then that country's laws must also be followed. Electronic communication may also be used for other written communications (e.g., a request to attend a court hearing). This is only possible if the person receiving it agrees beforehand or is legally required to accept electronic service from the court according to their own country's laws. To find out more about using electronic means of service and/or communication, visit the European e-Justice Portal.",
           "link": [
             {
+              "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_small_claims-354-en.do?clang=en",
-              "name": "European e-justice Portal",
-              "description": "European e-justice Portal"
+              "name": "European e-Justice Portal",
+              "text": "European e-Justice Portal",
+              "description": ""
             }
           ],
           "words": []
@@ -492,26 +401,24 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Court/tribunal. In this field you should identify the court/tribunal before which you are making your claim. When deciding which court/tribunal to choose, you need to consider the grounds for the court’s/tribunal’s jurisdiction. A non exhaustive list of possible grounds of jurisdiction is included in section 4.",
-          "simplifiedText": "Choose the court or tribunal where you are making your claim. Consider what grounds of jurisdiction apply to that court or tribunal. See section 4 for a list of possible grounds.",
+          "text": "In this field you should identify the court/tribunal before which you are making your claim. When deciding which court/tribunal to choose, you need to consider the grounds for the court’s/tribunal’s jurisdiction. A non exhaustive list of possible grounds of jurisdiction is included in section 3. You may wish to use the dedicated search facility, available on the European e-Justice Portal to find the details (address, telephone number etc.) of the court with jurisdiction",
+          "simplifiedText": "Choose the court or tribunal where you are making your claim. Consider what grounds of jurisdiction apply to that court or tribunal. See section 3. for a list of possible grounds.",
           "link": [
             {
-              "url": "https://e-justice.europa.eu/content_small_claims-354-en.do",
-              "name": "Finding competent Courts/Authorities",
+              "type": "SERVICE_LINK",
+              "url": "https://e-justice.europa.eu/content_small_claims-354-en.do#tocHeader2",
+              "name": "Finding competent Courts/Authorities.",
+              "text": "dedicated search facility",
               "description": "The search tool will help you to identify court(s)/authority(ies) competent for a specific European legal instrument."
             }
           ],
           "words": [
             {
-              "position": "196-31",
+              "position": "181-31",
               "text": "court’s/tribunal’s jurisdiction",
               "definition": "Scope of competence within which a court is granted the power to decide upon a specific issue or case.",
-              "synonyms": [
-                "extent of competence"
-              ],
-              "links": [
-                "https://www.law.cornell.edu/wex/jurisdiction"
-              ]
+              "synonyms": ["Extent of competence"],
+              "links": ["https://www.law.cornell.edu/wex/jurisdiction"]
             }
           ]
         },

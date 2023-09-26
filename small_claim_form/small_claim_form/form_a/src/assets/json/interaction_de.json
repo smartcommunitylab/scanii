@@ -17,15 +17,7 @@
               "description": ""
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": ["", "", ""],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -52,15 +44,7 @@
               "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": ["", "", ""],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -80,20 +64,12 @@
               "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
     {
-      "id": "http://scanii.org/domain/claim.CostOfProceeding",
+      "id": "http://scanii.org/domain/claim.claimCostOfProceeding",
       "infoElements": [
         {
           "type": "DESCRIPTION",
@@ -101,22 +77,14 @@
           "simplifiedText": "Falls Sie Erstattung von Verfahrenskosten fordern (z. B. Übersetzungs-, Anwalts- oder Zustellungskosten), tragen Sie dies bitte unter Nummer 5.3. ein. Beachten Sie, dass die Kostenregeln je nach Mitgliedstaat variieren können. Einzelheiten zu den Kostenkategorien in den einzelnen Mitgliedstaaten finden Sie unter https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do.",
           "link": [
             {
-              "type": "DESCRIPTION_LINK",
+              "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do?init=true",
               "name": "Verfahrenskosten in den einzelnen Mitgliedstaaten.",
               "text": "Info über die Verfahrenskosten in den einzelnen Mitgliedstaaten.",
               "description": "Info über die Verfahrenskosten in den einzelnen Mitgliedstaaten."
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": ["", "", ""],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -136,15 +104,7 @@
               "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -164,15 +124,7 @@
               "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -190,15 +142,7 @@
               "description": ""
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -216,22 +160,7 @@
               "description": ""
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            },
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -249,15 +178,7 @@
               "description": ""
             }
           ],
-          "words": [
-            {
-              "position": "",
-              "text": "",
-              "definition": "",
-              "synonyms": [],
-              "links": [""]
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -275,15 +196,7 @@
               "description": ""
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -292,7 +205,7 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "In diesem Feld ist das Gericht anzugeben, bei dem Sie Ihre Klage einreichen. Bei der Auswahl des Gerichts ist auf die Zuständigkeit des Gerichts zu achten. In Abschnitt 4 finden Sie eine nicht abschließende Aufzählung von Kriterien, auf die sich die gerichtliche Zuständigkeit gründen kann. Die Kontaktdaten des zuständigen Gerichts können Sie mithilfe der entsprechenden Suchfunktion des Europäischen Justizportals ermitteln: https://e-justice.europa.eu/content_small_claims-354-de.do",
+          "text": "In diesem Feld ist das Gericht anzugeben, bei dem Sie Ihre Klage einreichen. Bei der Auswahl des Gerichts ist auf die Zuständigkeit des Gerichts zu achten. In Abschnitt 3. finden Sie eine nicht abschließende Aufzählung von Kriterien, auf die sich die gerichtliche Zuständigkeit gründen kann. Die Kontaktdaten des zuständigen Gerichts können Sie mithilfe der entsprechenden Suchfunktion des Europäischen Justizportals ermitteln: https://e-justice.europa.eu/content_small_claims-354-de.do",
           "simplifiedText": "Geben Sie bitte das Gericht an, bei dem Sie Ihre Klage einreichen wollen. Achten Sie darauf, dass das Gericht zuständig ist. Um herauszufinden, welches Gericht zuständig ist, können Sie die Suchfunktion des Europäischen Justizportals aufrufen: https://e-justice.europa.eu/content_small_claims-354-de.do.",
           "link": [
             {
@@ -303,22 +216,7 @@
               "description": "Die Suchfunktion ermöglicht es, die zuständigen Gerichte/Behörden in jedem Land für geringfügige Forderungen zu finden."
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            },
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -336,15 +234,7 @@
               "description": ""
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -380,15 +270,7 @@
               "description": ""
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -406,15 +288,7 @@
               "description": ""
             }
           ],
-          "words": [
-            {
-              "position": "",
-              "text": "",
-              "definition": "",
-              "synonyms": [],
-              "links": [""]
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -452,22 +326,7 @@
               "description": "Die Suchfunktion ermöglicht es, die zuständigen Gerichte/Behörden in jedem Land für geringfügige Forderungen zu finden."
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            },
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -494,22 +353,7 @@
               "description": "Landesspezifische Informationen und Online-Formulare gemäß der Verordnung (EU) Nr. 1215/2012."
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            },
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
@@ -529,7 +373,7 @@
               "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
             },
             {
-              "type": "HOW_TO_LINK",
+              "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_taking_of_evidence-76-de.do?init=true",
               "name": "Beweisaufnahme",
               "text": "Beweisaufnahme",
@@ -543,15 +387,7 @@
               "description": "Text der Europäischen Verordnung über die Zusammenarbeit zwischen den Gerichten der Mitgliedstaaten auf dem Gebiet der Beweisaufnahme in Zivil- oder Handelssachen."
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": [],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     }

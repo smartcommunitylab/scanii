@@ -923,7 +923,13 @@
                   synms += uncapitalizeFirstLetter(word.synonyms[i]) + ".";
                 else synms += uncapitalizeFirstLetter(word.synonyms[i]) + ", ";
               }
-              text = text + " Sinonimi: " + synms;
+
+              text =
+                text +
+                " <span data-i18n-key='menu.synonyms'>" +
+                translations.menu.synonyms +
+                "</span>: " +
+                synms;
 
               const id = convertToCamelCase(word.text);
               let li = document.getElementById(id);
