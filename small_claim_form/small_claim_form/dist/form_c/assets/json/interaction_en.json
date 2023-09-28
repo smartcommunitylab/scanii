@@ -3,15 +3,61 @@
   "concepts": [
     {
       "id": "http://scanii.org/domain/guidelines",
-      "infoElements": []
+      "infoElements": [
+        {
+          "type": "DESCRIPTION",
+          "text": "A claim as set out in the attached claim form has been submitted against you using the European Small Claims Procedure. You can answer by filling in Part II of this form and returning it to the court/tribunal, or in any other appropriate way, within 30 days after the claim form has been served on you together with the answer form. Please note that if you do not answer within 30 days, the court/tribunal shall give a judgment. Please make sure that you write your name clearly and sign and date the answer form at the end. You should also read the guidelines included in the claim form; these may help you to prepare your response.<br><br> Assistance in filling in the form: you may benefit from assistance in filling in this form. To find out how to obtain such assistance, you may refer to the information provided by the Member States and published on the website of the European Judicial Atlas in civil and commercial matters, available at the <span class=\"first-link\">European e-Justice Portal</span>. Please note that this assistance does not include legal aid, for which appropriate application must be made under national law; nor does it include a legal assessment of your case.<br><br> Language: you should reply to the claim in the language of the court/tribunal which has sent you this form. Please note that the form is available in all official languages of the institutions of the European Union on the <span class=\"second-link\">European e-Justice Portal</span>. This may help you in filling in the form in the required language.<br><br> Oral hearing: please note that the European Small Claims Procedure is a written procedure. However the court may decide to have an oral hearing if it considers that it is not possible to give the judgment on the basis of written evidence. You can request, in this form or at a later stage, that an oral hearing be held. The court may refuse your request if it considers, in the light of the circumstances of the case, that an oral hearing is not necessary for the fair conduct of the proceedings. The oral hearing should be carried out through appropriate distance communication means, like videoconference or teleconference, provided that they are available to the court. If the person to be heard is domiciled in a Member State other than that of the court seised, a hearing by distance communication technology shall be arranged by making use of the procedures provided for in Council Regulation (EC) No 1206/2001. However the court may decide that the persons summoned for the hearing must be physically present. You can indicate your preferences to the court, bearing in mind, that if you requested to be physically present at the hearing, the recovery of any costs incurred with regard to this presence is subject to the rules of Article 16 of Regulation (EC) No 861/2007 establishing a European Small Claims Procedure. This Article stipulates that the court shall not award to the successful party costs that were unnecessarily incurred or are disproportionate to the claim.<br><br> Supporting documents: you can indicate possible means of evidence, and add, where appropriate, supporting documents.<br><br> Counterclaim: if you want to make a claim against the claimant (counterclaim), you should fill in and attach a separate Form A which you can find on the internet on the <span class=\"second-link\">European e-Justice Portal</span> or obtain from the court/tribunal which sent you this form. Please note that for the purposes of the counterclaim you are considered to be the claimant.<br><br> Correcting your details: you can also correct or supplement information about yourself (e.g. contact details, representative etc.) in section 6 ‘Other information’.<br><br> Service of documents and communication with the court: procedural documents, like your response and the judgment may be served upon the parties by post or by electronic means, if such means are technically available to the court and admissible in accordance with the procedural law of the Member State in which the procedure is conducted. If the documents are to be served in a Member State other than the one in which the procedure is conducted, the procedural rules of the Member State where service is to be effected have to be observed as well. Electronic means could be used also for other written communications (e.g. a request to attend a court hearing). Electronic means can be used only if the addressee expressly consents in advance to their use or if he/she is legally obliged to accept electronic service and/or other written communication from the court in accordance with the procedural rules of the Member State in which the addressee is domiciled. To see if electronic means of service and/or communication are available and admissible in the relevant Member States check the information on the <span class=\"first-link\">European e-Justice Portal</span>. <br><br> Extra space: if space is insufficient, you can add additional sheets.",
+          "simplifiedText": "You have been asked to respond to a legal claim against you. You must fill in Part II of the attached form and send it back within 30 days, making sure that it is signed and dated before you do so.<br><br> Assistance is available in filling out the form - see information on the European e-Justice Portal for details.<br><br> The response should be in the language specified by the court/tribunal which sent you this form, and details about other forms of service are available at that same portal.<br><br> If an oral hearing might help make a fair decision, you can ask for one (which may involve using video or phone technology).<br><br> Supporting documents can also be added as evidence if needed, and there's an extra form for a counterclaim if applicable.<br><br> Lastly, make sure any contact or representative details are up-to-date in section 6 ‘Other Information’ before submitting your answer.",
+          "link": [
+            {
+              "type": "SERVICE_LINK",
+              "url": "https://e-justice.europa.eu/content_small_claims-354-en.do",
+              "text": "<span class=\"first-link\">European e-Justice Portal</span>",
+              "name": "",
+              "description": ""
+            },
+            {
+              "type": "SERVICE_LINK",
+              "url": "https://e-justice.europa.eu/content_small_claims_forms-177-en.do",
+              "text": "<span class=\"second-link\">European e-Justice Portal</span>",
+              "name": "",
+              "description": ""
+            },
+            {
+              "type": "SERVICE_LINK",
+              "url": "https://e-justice.europa.eu/content_taking_of_evidence-76-en.do",
+              "text": "Council Regulation (EC) No 1206/2001",
+              "name": "",
+              "description": ""
+            }
+          ],
+          "words": []
+        }
+      ]
     },
     {
-      "id": "http://scanii.org/domain/courtPart",
-      "infoElements": []
+      "id": "http://scanii.org/domain/defendantPart.oralHearing",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "Please note that the European Small Claims Procedure is a written procedure. However, you can ask for an oral hearing to be held. Please be aware that having regard to the circumstances of the case, the court/tribunal can refuse this request.",
+          "simplifiedText": "You can ask the court/tribunal to have an oral hearing for your case. However, depending on the situation, they may refuse this request.",
+          "link": [],
+          "words": []
+        }
+      ]
     },
     {
-      "id": "http://scanii.org/domain/bankDetails/defendantPart",
-      "infoElements": []
+      "id": "http://scanii.org/domain/defendantPart.counterClaim",
+      "infoElements": [
+        {
+          "type": "INFORMATION",
+          "text": "If you want to make a claim against the claimant (counterclaim), you should fill in and attach a separate Form A. Please note that for the purposes of the counterclaim you are considered to be the claimant.",
+          "simplifiedText": "To make a counterclaim, fill out and attach Form A in your claim. You'll be treated as the claimant with this counterclaim.",
+          "link": [],
+          "words": []
+        }
+      ]
     }
   ]
 }

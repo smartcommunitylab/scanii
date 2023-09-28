@@ -49,7 +49,8 @@
     "warningToast": "<strong>Attenzione</strong>, ricorda che stai visualizzando delle <strong>informazioni semplificate</strong>",
     "errorToast": "<strong>Errore di compilazione.</strong> Si prega di controllare la sezione",
     "originalText": "Testo originale",
-    "simplifiedText": "Testo semplificato"
+    "simplifiedText": "Testo semplificato",
+    "details": "Dettagli"
   },
   "footer": {
     "reportAProblem": "Segnala un problema tecnico o di contenuto o lascia un commento su questa pagina",

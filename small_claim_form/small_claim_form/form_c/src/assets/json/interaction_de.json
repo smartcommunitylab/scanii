@@ -31,55 +31,31 @@
               "description": ""
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": ["", "", ""],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
     {
-      "id": "http://scanii.org/domain/bankDetails/defendantPart.oralHearing",
+      "id": "http://scanii.org/domain/defendantPart.oralHearing",
       "infoElements": [
         {
           "type": "INFORMATION",
           "text": "Mündliche Verhandlung: beachten Sie bitte, dass es sich bei dem europäischen Verfahren für geringfügige Forderungen um ein schriftliches Verfahren handelt. Sie können jedoch in diesem Formblatt oder zu einem späteren Zeitpunkt die Durchführung einer mündlichen Verhandlung beantragen. Das Gericht kann eine mündliche Verhandlung anordnen, wenn es diese zur Gewährleistung eines fairen Verfahrens für notwendig erachtet, oder sie unter Berücksichtigung aller Umstände der Rechtssache ablehnen.",
           "simplifiedText": "",
           "link": [],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": ["", "", ""],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
     {
-      "id": "http://scanii.org/domain/bankDetails/defendantPart.counterClaim",
+      "id": "http://scanii.org/domain/defendantPart.counterClaim",
       "infoElements": [
         {
           "type": "INFORMATION",
           "text": "Widerklage: falls Sie eine Klage gegen den Kläger erheben möchten (Widerklage), so sollten Sie ein ausgefülltes Formblatt A beifügen. Bitte beachten Sie, dass Sie für die Zwecke der Widerklage als Kläger angesehen werden.",
           "simplifiedText": "",
           "link": [],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": ["", "", ""],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     }

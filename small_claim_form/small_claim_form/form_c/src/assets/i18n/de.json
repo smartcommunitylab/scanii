@@ -35,7 +35,8 @@
     "warningToast": "Bitte beachten, dass Sie gerade die <strong>vereinfachte Version des Textes</strong> sehen",
     "errorToast": "<strong>Kompilierungsfehler.</strong> Bitte überprüfen Sie den Abschnitt",
     "originalText": "Originaltext",
-    "simplifiedText": "Vereinfachter Text"
+    "simplifiedText": "Vereinfachter Text",
+    "details": "Einzelheiten"
   },
   "footer": {
     "reportAProblem": "Technische / inhaltliche Probleme melden oder Rückmeldungen zu dieser Seite geben",

@@ -46,22 +46,22 @@
 
       let version = "original";
       let currentLang;
-      let currentStep = 1;
+      let currentStep = 0;
       let interaction = null;
       let translations = null;
       let simplificatinBoxTooltipStyle;
       let isWarningStepVisible = false;
 
-      // this.initializeLanguage();
-      // window.addEventListener("message", this.listener.bind(this), false);
+      this.initializeLanguage();
+      window.addEventListener("message", this.listener.bind(this), false);
 
-      // document.addEventListener("DOMContentLoaded", () => {
-      //   document;
-      //   initializeForm();
-      //   setInterval(function () {
-      //     $("[data-bs-toggle='tooltip']").tooltip();
-      //   }, 1000);
-      // });
+      document.addEventListener("DOMContentLoaded", () => {
+        document;
+        initializeForm();
+        setInterval(function () {
+          $("[data-bs-toggle='tooltip']").tooltip();
+        }, 1000);
+      });
 
       function listener(event) {
         if (event.origin === EXTERNAL_URI) {
@@ -204,9 +204,11 @@
             span.setAttribute("style", "display: contents;");
             span.setAttribute("data-i18n-key", "menu.noPDFs");
             const div = document.getElementById("legal_information");
-            const text = translations.menu.noPDFs;
-            span.innerText = text;
-            div.append(span);
+            if (div) {
+              const text = translations.menu.noPDFs;
+              span.innerText = text;
+              div.append(span);
+            }
           }
         }
 
@@ -240,9 +242,11 @@
             span.setAttribute("style", "display: contents;");
             span.setAttribute("data-i18n-key", "menu.noSynonyms");
             const div = document.getElementById("synonyms_info");
-            const text = translations.menu.noSynonyms;
-            span.innerText = text;
-            div.append(span);
+            if (div) {
+              const text = translations.menu.noSynonyms;
+              span.innerText = text;
+              div.append(span);
+            }
           }
         }
 
@@ -386,12 +390,16 @@
 
       function pdfShow(pdfId) {
         divLink = document.getElementById(pdfId);
-        divLink.classList.add("pop-outin");
+        if (divLink) {
+          divLink.classList.add("pop-outin");
+        }
       }
 
       function pdfHide(pdfId) {
         divLink = document.getElementById(pdfId);
-        divLink.classList.remove("pop-outin");
+        if (divLink) {
+          divLink.classList.remove("pop-outin");
+        }
       }
 
       function processBlock(block) {
@@ -410,42 +418,43 @@
 
       function processLegalInfo(blockId, concept, infoElement) {
         divLegal = document.getElementById("legal_information");
+        if (divLegal) {
+          console.log("blockId=" + blockId);
 
-        console.log("blockId=" + blockId);
+          infoElement.link.forEach((link) => {
+            if (
+              typeof link !== "undefined" &&
+              link !== null &&
+              link.url !== "" &&
+              link.type === "LEGAL_LINK"
+            ) {
+              let div = document.getElementById(link.url);
 
-        infoElement.link.forEach((link) => {
-          if (
-            typeof link !== "undefined" &&
-            link !== null &&
-            link.url !== "" &&
-            link.type === "LEGAL_LINK"
-          ) {
-            let div = document.getElementById(link.url);
-
-            if (typeof div != "undefined" && div !== null) {
-              let attributeValue = div.getAttribute("scanii_pdf_step");
-              div.setAttribute(
-                "scanii_pdf_step",
-                attributeValue + "," + blockId
-              );
-            } else {
-              div = document.createElement("div");
-              div.setAttribute("scanii_pdf_step", blockId);
-              div.setAttribute("id", link.url);
-              div.className = "list-item";
-              a = document.createElement("a");
-              a.href = link.url;
-              a.setAttribute("target", "_blank");
-              a.text = link.name;
-              a.setAttribute("data-bs-toggle", "tooltip");
-              a.setAttribute("data-bs-placement", "top");
-              a.setAttribute("data-bs-custom-class", "tooltip pdf-tooltip");
-              a.setAttribute("data-bs-title", link.description);
-              div.append(a);
-              divLegal.append(div);
+              if (typeof div != "undefined" && div !== null) {
+                let attributeValue = div.getAttribute("scanii_pdf_step");
+                div.setAttribute(
+                  "scanii_pdf_step",
+                  attributeValue + "," + blockId
+                );
+              } else {
+                div = document.createElement("div");
+                div.setAttribute("scanii_pdf_step", blockId);
+                div.setAttribute("id", link.url);
+                div.className = "list-item";
+                a = document.createElement("a");
+                a.href = link.url;
+                a.setAttribute("target", "_blank");
+                a.text = link.name;
+                a.setAttribute("data-bs-toggle", "tooltip");
+                a.setAttribute("data-bs-placement", "top");
+                a.setAttribute("data-bs-custom-class", "tooltip pdf-tooltip");
+                a.setAttribute("data-bs-title", link.description);
+                div.append(a);
+                divLegal.append(div);
+              }
             }
-          }
-        });
+          });
+        }
       }
 
       function processConcept(blockId, concept) {
@@ -501,84 +510,91 @@
         let pos = 0;
 
         const parentElement = document.getElementById("synonyms_info");
-        const ul = parentElement.querySelector("ul");
+        if (parentElement) {
+          const ul = parentElement.querySelector("ul");
 
-        infoElement.words.forEach((word) => {
-          keyPos = word.position.substr(0, word.position.indexOf("-"));
-          keyLen = word.position.substr(word.position.indexOf("-") + 1);
-          keyPos = keyPos - 1;
-          key = description.substr(keyPos, keyLen);
-          preKey = description.substr(pos, parseInt(keyPos) - parseInt(pos));
+          infoElement.words.forEach((word) => {
+            keyPos = word.position.substr(0, word.position.indexOf("-"));
+            keyLen = word.position.substr(word.position.indexOf("-") + 1);
+            keyPos = keyPos - 1;
+            key = description.substr(keyPos, keyLen);
+            preText = document.createElement("span");
+            preText.innerHTML = description.substr(
+              pos,
+              parseInt(keyPos) - parseInt(pos)
+            );
 
-          pos = parseInt(keyPos) + parseInt(keyLen);
-          list.push(document.createTextNode(preKey));
-          keyTextNode = document.createTextNode(key);
+            pos = parseInt(keyPos) + parseInt(keyLen);
+            list.push(preText);
+            keyTextNode = document.createTextNode(key);
 
-          span = document.createElement("span");
-          span.setAttribute("style", "background-color: #B7CCF4;");
-          text = word.definition;
-          if (
-            typeof word.synonyms != "undefined" &&
-            word.synonyms &&
-            word.synonyms.length > 0
-          ) {
-            synmsList = "<ul>";
-            for (let i = 0; i < word.synonyms.length; i++) {
-              synmsList += "<li>" + word.synonyms[i] + "</li>";
+            span = document.createElement("span");
+            span.setAttribute("style", "background-color: #B7CCF4;");
+            text = word.definition;
+            if (
+              typeof word.synonyms != "undefined" &&
+              word.synonyms &&
+              word.synonyms.length > 0
+            ) {
+              synmsList = "<ul>";
+              for (let i = 0; i < word.synonyms.length; i++) {
+                synmsList += "<li>" + word.synonyms[i] + "</li>";
+              }
+              synmsList += "</ul>";
+
+              synms = "";
+              for (let i = 0; i < word.synonyms.length; i++) {
+                if (i == word.synonyms.length - 1)
+                  synms += uncapitalizeFirstLetter(word.synonyms[i]) + ".";
+                else synms += uncapitalizeFirstLetter(word.synonyms[i]) + ", ";
+              }
+              text =
+                text +
+                " <span data-i18n-key='menu.synonyms'>" +
+                translations.menu.synonyms +
+                "</span>: " +
+                synms;
+
+              const id = convertToCamelCase(word.text);
+              let li = document.getElementById(id);
+
+              if (typeof li != "undefined" && li !== null) {
+                let attributeValue = li.getAttribute("scanii_synonyms_step");
+                li.setAttribute(
+                  "scanii_synonyms_step",
+                  attributeValue + "," + blockId
+                );
+              } else {
+                li = document.createElement("li");
+                li.setAttribute("scanii_synonyms_step", blockId);
+                li.setAttribute("id", id);
+                li.setAttribute("data-bs-toggle", "tooltip");
+                li.setAttribute("data-bs-placement", "top");
+                li.setAttribute("data-bs-html", "true");
+                li.setAttribute(
+                  "data-bs-custom-class",
+                  "tooltip synonym-tooltip"
+                );
+                li.setAttribute("data-bs-title", synmsList);
+                li.innerText = capitalizeFirstLetter(word.text);
+                ul.append(li);
+              }
             }
-            synmsList += "</ul>";
+            span.setAttribute("data-bs-toggle", "tooltip");
+            span.setAttribute("data-bs-placement", "top");
+            span.setAttribute("data-bs-html", "true");
+            span.setAttribute("data-bs-custom-class", "tooltip word-tooltip");
+            span.setAttribute("data-bs-title", text);
 
-            synms = "";
-            for (let i = 0; i < word.synonyms.length; i++) {
-              if (i == word.synonyms.length - 1)
-                synms += uncapitalizeFirstLetter(word.synonyms[i]) + ".";
-              else synms += uncapitalizeFirstLetter(word.synonyms[i]) + ", ";
-            }
-            text =
-              text +
-              " <span data-i18n-key='menu.synonyms'>" +
-              translations.menu.synonyms +
-              "</span>: " +
-              synms;
+            span.append(keyTextNode);
 
-            const id = convertToCamelCase(word.text);
-            let li = document.getElementById(id);
+            list.push(span);
+          });
+        }
 
-            if (typeof li != "undefined" && li !== null) {
-              let attributeValue = li.getAttribute("scanii_synonyms_step");
-              li.setAttribute(
-                "scanii_synonyms_step",
-                attributeValue + "," + blockId
-              );
-            } else {
-              li = document.createElement("li");
-              li.setAttribute("scanii_synonyms_step", blockId);
-              li.setAttribute("id", id);
-              li.setAttribute("data-bs-toggle", "tooltip");
-              li.setAttribute("data-bs-placement", "top");
-              li.setAttribute("data-bs-html", "true");
-              li.setAttribute(
-                "data-bs-custom-class",
-                "tooltip synonym-tooltip"
-              );
-              li.setAttribute("data-bs-title", synmsList);
-              li.innerText = capitalizeFirstLetter(word.text);
-              ul.append(li);
-            }
-          }
-          span.setAttribute("data-bs-toggle", "tooltip");
-          span.setAttribute("data-bs-placement", "top");
-          span.setAttribute("data-bs-html", "true");
-          span.setAttribute("data-bs-custom-class", "tooltip word-tooltip");
-          span.setAttribute("data-bs-title", text);
-
-          span.append(keyTextNode);
-
-          list.push(span);
-        });
-
-        value = document.createTextNode(description.substr(pos));
-        list.push(value);
+        text = document.createElement("span");
+        text.innerHTML = description.substr(pos);
+        list.push(text);
 
         descriptionDiv = document.createElement("div");
         descriptionDiv.setAttribute("original", "");
@@ -664,7 +680,7 @@
         //add simplyfied text
         divSimp = document.createElement("div");
         divSimp.setAttribute("simplyfied", "");
-        divSimp.innerText = infoElement.simplifiedText;
+        divSimp.innerHTML = infoElement.simplifiedText;
         divSimp.style.display = "none";
 
         // add simplification box
@@ -720,7 +736,10 @@
         accordionBtn.style =
           "background-color: #F9E79F; color: black; font-size:15px;";
 
-        accordionBtn.innerText = "Dettagli";
+        accordionBtn.innerHTML =
+          "<span data-i18n-key='menu.details'>" +
+          translations.menu.details +
+          "</span>";
         accordionBtn.setAttribute("onClick", "closeAccordion(event)");
         accordionItm.append(accordionBtn);
         accordionItm.append(accordionCnt);
@@ -728,7 +747,7 @@
         accordionDiv.style = "background-color: #F9E79F ;";
 
         infoElement.link.forEach((link) => {
-          if (link.type == "HOW_TO_LINK" || link.type == "DESCRITPION_LINK") {
+          if (link.type == "HOW_TO_LINK" || link.type == "DESCRIPTION_LINK") {
             a = document.createElement("a");
             a.href = link.url;
             a.setAttribute("target", "_blank");
@@ -878,79 +897,92 @@
         let pos = 0;
 
         const parentElement = document.getElementById("synonyms_info");
-        const ul = parentElement.querySelector("ul");
+        if (parentElement) {
+          const ul = parentElement.querySelector("ul");
 
-        infoElement.words.forEach((word) => {
-          keyPos = word.position.substr(0, word.position.indexOf("-"));
-          keyLen = word.position.substr(word.position.indexOf("-") + 1);
-          keyPos = keyPos - 1;
-          key = description.substr(keyPos, keyLen);
-          preKey = description.substr(pos, parseInt(keyPos) - parseInt(pos));
+          infoElement.words.forEach((word) => {
+            keyPos = word.position.substr(0, word.position.indexOf("-"));
+            keyLen = word.position.substr(word.position.indexOf("-") + 1);
+            keyPos = keyPos - 1;
+            key = description.substr(keyPos, keyLen);
+            preText = document.createElement("span");
+            preText.innerHTML = description.substr(
+              pos,
+              parseInt(keyPos) - parseInt(pos)
+            );
 
-          pos = parseInt(keyPos) + parseInt(keyLen);
-          list.push(document.createTextNode(preKey));
-          keyTextNode = document.createTextNode(key);
+            pos = parseInt(keyPos) + parseInt(keyLen);
+            list.push(preText);
+            keyTextNode = document.createTextNode(key);
 
-          span = document.createElement("span");
-          span.setAttribute("style", "background-color: #B7CCF4;");
-          text = word.definition;
-          if (
-            typeof word.synonyms != "undefined" &&
-            word.synonyms &&
-            word.synonyms.length > 0
-          ) {
-            synmsList = "<ul>";
-            for (let i = 0; i < word.synonyms.length; i++) {
-              synmsList += "<li>" + word.synonyms[i] + "</li>";
+            span = document.createElement("span");
+            span.setAttribute("style", "background-color: #B7CCF4;");
+            text = word.definition;
+            if (
+              typeof word.synonyms != "undefined" &&
+              word.synonyms &&
+              word.synonyms.length > 0
+            ) {
+              synmsList = "<ul>";
+              for (let i = 0; i < word.synonyms.length; i++) {
+                synmsList += "<li>" + word.synonyms[i] + "</li>";
+              }
+              synmsList += "</ul>";
+
+              synms = "";
+              for (let i = 0; i < word.synonyms.length; i++) {
+                if (i == word.synonyms.length - 1)
+                  synms += uncapitalizeFirstLetter(word.synonyms[i]) + ".";
+                else synms += uncapitalizeFirstLetter(word.synonyms[i]) + ", ";
+              }
+
+              text =
+                text +
+                " <span data-i18n-key='menu.synonyms'>" +
+                translations.menu.synonyms +
+                "</span>: " +
+                synms;
+
+              const id = convertToCamelCase(word.text);
+              let li = document.getElementById(id);
+
+              if (typeof li != "undefined" && li !== null) {
+                let attributeValue = li.getAttribute("scanii_synonyms_step");
+                li.setAttribute(
+                  "scanii_synonyms_step",
+                  attributeValue + "," + blockId
+                );
+              } else {
+                li = document.createElement("li");
+                li.setAttribute("scanii_synonyms_step", blockId);
+                li.setAttribute("id", id);
+                li.setAttribute("data-bs-toggle", "tooltip");
+                li.setAttribute("data-bs-placement", "top");
+                li.setAttribute("data-bs-html", "true");
+                li.setAttribute(
+                  "data-bs-custom-class",
+                  "tooltip synonym-tooltip"
+                );
+                li.setAttribute("data-bs-title", synmsList);
+                li.innerText = capitalizeFirstLetter(word.text);
+                ul.append(li);
+              }
             }
-            synmsList += "</ul>";
+            span.setAttribute("data-bs-toggle", "tooltip");
+            span.setAttribute("data-bs-placement", "top");
+            span.setAttribute("data-bs-html", "true");
+            span.setAttribute("data-bs-custom-class", "tooltip word-tooltip");
+            span.setAttribute("data-bs-title", text);
 
-            synms = "";
-            for (let i = 0; i < word.synonyms.length; i++) {
-              if (i == word.synonyms.length - 1)
-                synms += uncapitalizeFirstLetter(word.synonyms[i]) + ".";
-              else synms += uncapitalizeFirstLetter(word.synonyms[i]) + ", ";
-            }
-            text = text + " Sinonimi: " + synms;
+            span.append(keyTextNode);
 
-            const id = convertToCamelCase(word.text);
-            let li = document.getElementById(id);
+            list.push(span);
+          });
+        }
 
-            if (typeof li != "undefined" && li !== null) {
-              let attributeValue = li.getAttribute("scanii_synonyms_step");
-              li.setAttribute(
-                "scanii_synonyms_step",
-                attributeValue + "," + blockId
-              );
-            } else {
-              li = document.createElement("li");
-              li.setAttribute("scanii_synonyms_step", blockId);
-              li.setAttribute("id", id);
-              li.setAttribute("data-bs-toggle", "tooltip");
-              li.setAttribute("data-bs-placement", "top");
-              li.setAttribute("data-bs-html", "true");
-              li.setAttribute(
-                "data-bs-custom-class",
-                "tooltip synonym-tooltip"
-              );
-              li.setAttribute("data-bs-title", synmsList);
-              li.innerText = capitalizeFirstLetter(word.text);
-              ul.append(li);
-            }
-          }
-          span.setAttribute("data-bs-toggle", "tooltip");
-          span.setAttribute("data-bs-placement", "top");
-          span.setAttribute("data-bs-html", "true");
-          span.setAttribute("data-bs-custom-class", "tooltip word-tooltip");
-          span.setAttribute("data-bs-title", text);
-
-          span.append(keyTextNode);
-
-          list.push(span);
-        });
-
-        value = document.createTextNode(description.substr(pos));
-        list.push(value);
+        text = document.createElement("span");
+        text.innerHTML = description.substr(pos);
+        list.push(text);
 
         descriptionDiv = document.createElement("div");
         descriptionDiv.setAttribute("original", "");
@@ -1036,7 +1068,7 @@
         //add simplyfied text
         divSimp = document.createElement("div");
         divSimp.setAttribute("simplyfied", "");
-        divSimp.innerText = infoElement.simplifiedText;
+        divSimp.innerHTML = infoElement.simplifiedText;
         divSimp.style.display = "none";
 
         // add simplification box
@@ -1092,7 +1124,10 @@
         accordionBtn.style =
           "background-color: #F9E79F; color: black; font-size:15px;";
 
-        accordionBtn.innerText = "Dettagli";
+        accordionBtn.innerHTML =
+          "<span data-i18n-key='menu.details'>" +
+          translations.menu.details +
+          "</span>";
         accordionBtn.setAttribute("onClick", "closeAccordion(event)");
         accordionItm.append(accordionBtn);
         accordionItm.append(accordionCnt);
@@ -1100,7 +1135,7 @@
         accordionDiv.style = "background-color: #F9E79F ;";
 
         infoElement.link.forEach((link) => {
-          if (link.type == "HOW_TO_LINK" || link.type == "DESCRITPION_LINK") {
+          if (link.type == "HOW_TO_LINK" || link.type == "DESCRIPTION_LINK") {
             a = document.createElement("a");
             a.href = link.url;
             a.setAttribute("target", "_blank");

@@ -26,7 +26,7 @@
           "id": "step1_2",
           "type": "BLOCK",
           "xpath": "//*[@id='step1_2']",
-          "concept": "http://scanii.org/domain/bankDetails/defendantPart",
+          "concept": "http://scanii.org/domain/defendantPart",
           "dependencies": ["step1_1"]
         }
       ],

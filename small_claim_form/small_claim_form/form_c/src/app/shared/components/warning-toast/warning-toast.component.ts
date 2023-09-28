@@ -5,4 +5,8 @@ import { Component } from "@angular/core";
   templateUrl: "./warning-toast.component.html",
   styleUrls: ["./warning-toast.component.scss"],
 })
-export class WarningToastComponent {}
+export class WarningToastComponent {
+  constructor() {}
+
+  ngOnInit(): void {}
+}

@@ -36,9 +36,9 @@
     "loadSaveDraftExplanation": "Sie können ein Formular während der Bearbeitung als Entwurf speichern und es später erneut laden, um es zu vervollständigen.",
     "loadDraft": "Entwurf laden",
     "saveDraft": "Entwurf herunterladen",
-    "warningToast": "<strong>Achtung</strong>: Denken Sie daran, dass Sie <strong>vereinfachte Informationen</strong> sehen",
+    "warningToast": "Bitte beachten, dass Sie gerade die <strong>vereinfachte Version des Textes</strong> sehen",
     "errorToast": "<strong>Kompilierungsfehler.</strong> Bitte überprüfen Sie den Abschnitt",
-    "originalText": "Original Text",
+    "originalText": "Originaltext",
     "simplifiedText": "Vereinfachter Text"
   },
   "footer": {
@@ -415,7 +415,7 @@
     "sign": "Unterschrift und/oder Stempel:"
   },
   "uploading": {
-    "success": "Sie haben erfolgreich ein Formular hochgeladen zum Verfahren <strong>Formulare „Geringfügige Forderungen“</strong>.",
+    "success": "<strong>Ein Formular für das Verfahren für „geringfügige Forderungen“</strong> wurde erfolgreich hochgeladen.",
     "error": "Beim Laden des Formulars ist ein <strong>Fehler</strong> aufgetreten."
   }
 }

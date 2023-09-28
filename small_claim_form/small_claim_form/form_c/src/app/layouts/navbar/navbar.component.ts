@@ -107,6 +107,8 @@ export class NavbarComponent {
                 this.scrollToTop();
                 a.setAttribute("tabindex", "-1");
 
+                window["showInfo"](currentStepNumber);
+
                 array.forEach((item: PromiseContent) => {
                   this.navbarService.addRemoveGreenTick(
                     item.stepId,
@@ -129,6 +131,11 @@ export class NavbarComponent {
                 this.navbarService.currentStepId = invalidStep!.stepId;
 
                 this.scrollToTop();
+
+                const invalidStepNumber = this.getStepNumber(
+                  invalidStep.stepId
+                );
+                window["showInfo"](invalidStepNumber);
 
                 const invalidStepIndex = array.findIndex(
                   (item: PromiseContent) => item.stepId === invalidStep!.stepId
@@ -168,6 +175,8 @@ export class NavbarComponent {
               tabTrigger.show();
               this.scrollToTop();
               a.setAttribute("tabindex", "-1");
+
+              window["showInfo"](currentStepNumber);
             });
           }
         }
@@ -302,6 +311,7 @@ export class NavbarComponent {
     destinationTab?.classList.add("active");
 
     this.scrollToTop();
+    window["showInfo"](this.getStepNumber(movement.destinationStepId));
 
     // add validation icon
     if (movement.direction === "NEXT") {

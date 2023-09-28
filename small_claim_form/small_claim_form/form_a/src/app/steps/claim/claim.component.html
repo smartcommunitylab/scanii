@@ -1,6 +1,5 @@
 <div id="step5" class="step-width">
   <h3 [translate]="'claim.title'">5. Oggetto della controversia</h3>
-  <label style="font-size: 16px"> </label>
   <div concept="http://scanii.org/domain/claim" class="justify"></div>
   <div class="form-row full-width">
     <div class="description">
@@ -1045,6 +1044,7 @@
               </div>
             </div>
           </div>
+          
           <div
             class="sub-concept"
             concept="http://scanii.org/domain/claim.otherClaim"
@@ -2132,10 +2132,15 @@
               </div>
             </div>
           </div>
+          
           <div
             class="sub-concept"
             concept="http://scanii.org/domain/claim.claimCostOfProceeding"
             class="justify"
+          ></div>
+          <div
+            class="js-toggle-trigger"
+            style="width: 93%; display: inline-block"
           ></div>
 
           <div class="form-row full-width bold">
@@ -2333,6 +2338,7 @@
               </div>
             </div>
           </div>
+          
           <div
             class="sub-concept"
             concept="http://scanii.org/domain/claim.claimInterests"
@@ -3851,8 +3857,7 @@
                       *ngIf="
                         claimService.editForm
                           .get('claimingInterestOnCostExpansion')
-                          .get('claimingInterestOnCostFrom')?.errors
-                          ?.required
+                          .get('claimingInterestOnCostFrom')?.errors?.required
                       "
                     >
                       <span
@@ -4002,8 +4007,7 @@
                       *ngIf="
                         claimService.editForm
                           .get('claimingInterestOnCostExpansion')
-                          .get('claimingInterestOnCostFrom')?.errors
-                          ?.required
+                          .get('claimingInterestOnCostFrom')?.errors?.required
                       "
                     >
                       <span
@@ -4122,8 +4126,7 @@
                       *ngIf="
                         claimService.editForm
                           .get('claimingInterestOnCostExpansion')
-                          .get('claimingInterestOnCostTo')?.errors
-                          ?.required
+                          .get('claimingInterestOnCostTo')?.errors?.required
                       "
                     >
                       <span
@@ -4307,8 +4310,7 @@
                       *ngIf="
                         claimService.editForm
                           .get('claimingInterestOnCostExpansion')
-                          .get('claimingInterestOnCostTo')?.errors
-                          ?.required
+                          .get('claimingInterestOnCostTo')?.errors?.required
                       "
                     >
                       <span

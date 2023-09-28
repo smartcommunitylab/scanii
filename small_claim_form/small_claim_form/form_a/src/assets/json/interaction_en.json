@@ -253,7 +253,7 @@
           "simplifiedText": "If you want to be reimbursed for expenses related to the case (like translation fees, lawyer costs or delivering documents), check box 5.3. Rules about how much courts/tribunals can give back vary in different countries. To find out more, visit the European e-Justice Portal.",
           "link": [
             {
-              "type": "SERVICE_LINK",
+              "type": "DESCRIPTION_LINK",
               "url": "https://e-justice.europa.eu/content_costs_of_proceedings-37-en.do",
               "name": "Costs of legal actions.",
               "text": "European e-Justice Portal",
@@ -336,7 +336,7 @@
               "description": "Council Regulation on cooperation between the courts of the Member States in the taking of evidence in civil or commercial matters."
             },
             {
-              "type": "SERVICE_LINK",
+              "type": "HOW_TO_LINK",
               "url": "https://e-justice.europa.eu/content_taking_of_evidence-76-en.do",
               "name": "Taking of evidence.",
               "text": "procedures",

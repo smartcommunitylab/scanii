@@ -77,7 +77,7 @@
           "simplifiedText": "Falls Sie Erstattung von Verfahrenskosten fordern (z. B. Übersetzungs-, Anwalts- oder Zustellungskosten), tragen Sie dies bitte unter Nummer 5.3. ein. Beachten Sie, dass die Kostenregeln je nach Mitgliedstaat variieren können. Einzelheiten zu den Kostenkategorien in den einzelnen Mitgliedstaaten finden Sie unter https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do.",
           "link": [
             {
-              "type": "SERVICE_LINK",
+              "type": "DESCRIPTION_LINK",
               "url": "https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do?init=true",
               "name": "Verfahrenskosten in den einzelnen Mitgliedstaaten.",
               "text": "Info über die Verfahrenskosten in den einzelnen Mitgliedstaaten.",
@@ -373,7 +373,7 @@
               "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
             },
             {
-              "type": "SERVICE_LINK",
+              "type": "HOW_TO_LINK",
               "url": "https://e-justice.europa.eu/content_taking_of_evidence-76-de.do?init=true",
               "name": "Beweisaufnahme",
               "text": "Beweisaufnahme",

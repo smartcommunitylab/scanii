@@ -31,55 +31,31 @@
               "description": ""
             }
           ],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": ["", "", ""],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
     {
-      "id": "http://scanii.org/domain/bankDetails/defendantPart.oralHearing",
+      "id": "http://scanii.org/domain/defendantPart.oralHearing",
       "infoElements": [
         {
           "type": "INFORMATION",
           "text": "Udienza: il procedimento europeo per le controversie di modesta entità è un procedimento scritto. È tuttavia possibile richiedere un’udienza. Considerate le circostanze della causa l’organo giurisdizionale può tuttavia respingere tale richiesta.",
           "simplifiedText": "",
           "link": [],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": ["", "", ""],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     },
     {
-      "id": "http://scanii.org/domain/bankDetails/defendantPart.counterClaim",
+      "id": "http://scanii.org/domain/defendantPart.counterClaim",
       "infoElements": [
         {
           "type": "INFORMATION",
           "text": "Domanda riconvenzionale: ove il convenuto decida di introdurre una domanda riconvenzionale, compilare e allegare un modulo A separato. Si noti che, ai fini della domanda riconvenzionale, il convenuto è considerato attore.",
           "simplifiedText": "",
           "link": [],
-          "words": [
-            {
-              "text": "",
-              "position": "",
-              "definition": "",
-              "synonyms": ["", "", ""],
-              "links": []
-            }
-          ]
+          "words": []
         }
       ]
     }

@@ -81,7 +81,7 @@
           "link": [
             {
               "type": "LEGAL_LINK",
-              "url": "https://eur-lex.europa.eu/legal-content/IT/ALL/?uri=CELEX:32007R0861",
+              "url": "https://eur-lex.europa.eu/legal-content/IT/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
               "name": "Regolamento Europeo n. 861/2007",
               "text": "regolamento (CE) n. 861/2007 del Parlamento europeo e del Consiglio",
               "description": "Regolamento europeo che istituisce il procedimento europeo per le controversie di modesta entità."
@@ -108,7 +108,7 @@
           "simplifiedText": "La richiesta di pagamento delle spese processuali (traduzione, onorari avvocati, notificazione/comunicazione atti etc.) deve essere formulata compilando la sottosezione 5.3. Le norme relative alle spese variano da Stato a Stato. Per info dettagliate, visitare il portale europeo della giustizia elettronica.",
           "link": [
             {
-              "type": "SERVICE_LINK",
+              "type": "DESCRIPTION_LINK",
               "url": "https://e-justice.europa.eu/content_costs_of_proceedings-37-it.do?init=true",
               "name": "Costi dei processi in vari stati Membri.",
               "text": "portale europeo della giustizia elettronica",
@@ -457,7 +457,7 @@
               "description": "Testo del Regolamento Europeo sulla cooperazione fra le autorità giudiziarie degli Stati membri nel settore dell'assunzione delle prove in materia civile o commerciale."
             },
             {
-              "type": "SERVICE_LINK",
+              "type": "HOW_TO_LINK",
               "url": "https://e-justice.europa.eu/content_taking_of_evidence-76-it.do?init=true",
               "name": "Assunzione delle prove.",
               "text": "procedure",

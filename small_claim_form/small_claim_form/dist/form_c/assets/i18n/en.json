@@ -34,7 +34,8 @@
     "warningToast": "<strong>Careful</strong>, remember that you are viewing <strong>simplified information</strong>",
     "errorToast": "<strong>Compilation error.</strong> Please review the section",
     "originalText": "Original text",
-    "simplifiedText": "Simplified text"
+    "simplifiedText": "Simplified text",
+    "details": "Details"
   },
   "footer": {
     "reportAProblem": "Report a technical / content problem or give feedback on this page",

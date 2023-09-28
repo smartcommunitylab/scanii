@@ -544,6 +544,7 @@
                   synms += uncapitalizeFirstLetter(word.synonyms[i]) + ".";
                 else synms += uncapitalizeFirstLetter(word.synonyms[i]) + ", ";
               }
+
               text =
                 text +
                 " <span data-i18n-key='menu.synonyms'>" +
@@ -731,7 +732,10 @@
         accordionBtn.style =
           "background-color: #F9E79F; color: black; font-size:15px;";
 
-        accordionBtn.innerText = "Dettagli";
+        accordionBtn.innerHTML =
+          "<span data-i18n-key='menu.details'>" +
+          translations.menu.details +
+          "</span>";
         accordionBtn.setAttribute("onClick", "closeAccordion(event)");
         accordionItm.append(accordionBtn);
         accordionItm.append(accordionCnt);
@@ -739,7 +743,7 @@
         accordionDiv.style = "background-color: #F9E79F ;";
 
         infoElement.link.forEach((link) => {
-          if (link.type == "HOW_TO_LINK" || link.type == "DESCRITPION_LINK") {
+          if (link.type == "HOW_TO_LINK" || link.type == "DESCRIPTION_LINK") {
             a = document.createElement("a");
             a.href = link.url;
             a.setAttribute("target", "_blank");
@@ -1111,7 +1115,10 @@
         accordionBtn.style =
           "background-color: #F9E79F; color: black; font-size:15px;";
 
-        accordionBtn.innerText = "Dettagli";
+        accordionBtn.innerHTML =
+          "<span data-i18n-key='menu.details'>" +
+          translations.menu.details +
+          "</span>";
         accordionBtn.setAttribute("onClick", "closeAccordion(event)");
         accordionItm.append(accordionBtn);
         accordionItm.append(accordionCnt);
@@ -1119,7 +1126,7 @@
         accordionDiv.style = "background-color: #F9E79F ;";
 
         infoElement.link.forEach((link) => {
-          if (link.type == "HOW_TO_LINK" || link.type == "DESCRITPION_LINK") {
+          if (link.type == "HOW_TO_LINK" || link.type == "DESCRIPTION_LINK") {
             a = document.createElement("a");
             a.href = link.url;
             a.setAttribute("target", "_blank");
