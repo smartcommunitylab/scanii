@@ -98,7 +98,7 @@
       let currentLang;
       let mustProceed;
       initializeLanguage();
-      window.addEventListener("message", listener, false);
+      // window.addEventListener("message", listener, false);
 
       function listener(event) {
         if (event.origin === INTERNAL_URI) {
@@ -107,8 +107,8 @@
       }
 
       function send(message) {
-        const frame = document.getElementById("iframe");
-        frame.contentWindow.postMessage(message, INTERNAL_URI);
+        // const frame = document.getElementById("iframe");
+        // frame.contentWindow.postMessage(message, INTERNAL_URI);
       }
 
       function initializeLanguage() {

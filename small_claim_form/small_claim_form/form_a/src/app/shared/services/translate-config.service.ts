@@ -11,14 +11,14 @@ export class TranslateConfigService {
     this.currentLang = localStorage.getItem("lang");
   }
 
-  getDefaultLanguage() {
-    if (this.currentLang) {
-      this.translate.setDefaultLang(this.currentLang);
-    } else {
+  setDefaultLanguage() {
+    if (!this.currentLang || typeof this.currentLang !== "string") {
       this.currentLang = "en";
       localStorage.setItem("lang", this.currentLang);
-      this.translate.setDefaultLang(this.currentLang);
     }
+    
+    this.translate.setDefaultLang(this.currentLang);
+    this.translate.use(this.currentLang);
     return this.currentLang;
   }
 

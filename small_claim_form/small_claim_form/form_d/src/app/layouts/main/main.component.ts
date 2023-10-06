@@ -1,25 +1,37 @@
-import { Component } from '@angular/core';
-import { EXTERNAL_URI } from 'src/app/app.constants';
-import { TranslateConfigService } from 'src/app/shared/services/translate-config.service';
+import { Component, OnInit } from "@angular/core";
+import { EXTERNAL_URI } from "src/app/app.constants";
+import { TranslateConfigService } from "src/app/shared/services/translate-config.service";
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  selector: "app-main",
+  templateUrl: "./main.component.html",
+  styleUrls: ["./main.component.scss"],
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
   constructor(private translateConfigService: TranslateConfigService) {
-    const currentLang = this.translateConfigService.getDefaultLanguage();
-    this.translateConfigService.setLanguage(currentLang);
+    this.translateConfigService.setDefaultLanguage();
 
-    window.addEventListener('message', this.listener.bind(this), false);
+    //window.addEventListener('message', this.messageListener.bind(this), false);
   }
 
-  private listener(event: MessageEvent) {
-    if (event.origin === EXTERNAL_URI) {
-      this.translateConfigService.setLanguage(event.data);
+  ngOnInit() {
+    if (window.addEventListener) {
+      window.addEventListener("storage", this.storageListener, false);
     }
   }
+
+  private storageListener() {
+    const lang = localStorage.getItem("lang");
+    if (lang || typeof lang === "string")
+      this.translateConfigService.setLanguage(lang);
+    else this.translateConfigService.setDefaultLanguage();
+  }
+
+  // private messageListener(event: MessageEvent) {
+  //   if (event.origin === EXTERNAL_URI) {
+  //     this.translateConfigService.setLanguage(event.data);
+  //   }
+  // }
 
   send() {
     // TODO
