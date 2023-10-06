@@ -33,7 +33,10 @@
       let isWarningStepVisible = false;
 
       this.initializeLanguage();
-      window.addEventListener("message", this.listener.bind(this), false);
+      if (window.addEventListener) {
+        //window.addEventListener("message", this.messageListener.bind(this), false);
+        window.addEventListener("storage", this.storageListener, false);
+      }
 
       document.addEventListener("DOMContentLoaded", () => {
         document;
@@ -43,14 +46,26 @@
         }, 1000);
       });
 
-      function listener(event) {
-        if (event.origin === EXTERNAL_URI) {
-          currentLang = event.data;
-          resetForm();
-          initializeForm().then(() => {
-            translatePage();
-          });
-        }
+      // function messageListener(event) {
+      //   if (event.origin === EXTERNAL_URI) {
+      //     currentLang = event.data;
+      //     resetForm();
+      //     initializeForm().then(() => {
+      //       translatePage();
+      //     });
+      //   }
+      // }
+
+      function storageListener() {
+        const lang = localStorage.getItem("lang");
+
+        if (!lang || typeof lang !== "string") this.initializeLanguage();
+        else currentLang = lang;
+
+        resetForm();
+        initializeForm().then(() => {
+          translatePage();
+        });
       }
 
       function initializeForm() {
@@ -99,7 +114,7 @@
 
       function initializeLanguage() {
         currentLang = localStorage.getItem("lang");
-        if (!currentLang) {
+        if (!currentLang || typeof this.currentLang !== "string") {
           currentLang = "en";
           localStorage.setItem("lang", currentLang);
         }
@@ -1187,5 +1202,5 @@
       }
     </script>
     <app-main></app-main>
-  <script src="/small_claim_form/dist/form_a/runtime.b1d2bf6e7917f304.js" type="module"></script><script src="/small_claim_form/dist/form_a/polyfills.4a7ed440dad8e3c5.js" type="module"></script><script src="/small_claim_form/dist/form_a/scripts.ae934356ffd25f29.js" defer></script><script src="/small_claim_form/dist/form_a/main.733f17c730ab8aa9.js" type="module"></script></body>
+  <script src="/small_claim_form/dist/form_a/runtime.b1d2bf6e7917f304.js" type="module"></script><script src="/small_claim_form/dist/form_a/polyfills.4a7ed440dad8e3c5.js" type="module"></script><script src="/small_claim_form/dist/form_a/scripts.ae934356ffd25f29.js" defer></script><script src="/small_claim_form/dist/form_a/main.25b9d0d6ccc5c403.js" type="module"></script></body>
 </html>
