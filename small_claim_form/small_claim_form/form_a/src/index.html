@@ -55,7 +55,7 @@
       this.initializeLanguage();
       if (window.addEventListener) {
         //window.addEventListener("message", this.messageListener.bind(this), false);
-        window.addEventListener("storage", this.storageListener, false);
+        window.addEventListener("storage", this.storageListener.bind(this), false);
       }
 
       document.addEventListener("DOMContentLoaded", () => {

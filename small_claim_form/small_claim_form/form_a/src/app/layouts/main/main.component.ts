@@ -16,7 +16,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     if (window.addEventListener) {
-      window.addEventListener("storage", this.storageListener, false);
+      window.addEventListener("storage", this.storageListener.bind(this), false);
     }
   }
 

@@ -35,7 +35,7 @@
       this.initializeLanguage();
       if (window.addEventListener) {
         //window.addEventListener("message", this.messageListener.bind(this), false);
-        window.addEventListener("storage", this.storageListener, false);
+        window.addEventListener("storage", this.storageListener.bind(this), false);
       }
 
       document.addEventListener("DOMContentLoaded", () => {
@@ -1202,5 +1202,5 @@
       }
     </script>
     <app-main></app-main>
-  <script src="/small_claim_form/dist/form_a/runtime.b1d2bf6e7917f304.js" type="module"></script><script src="/small_claim_form/dist/form_a/polyfills.4a7ed440dad8e3c5.js" type="module"></script><script src="/small_claim_form/dist/form_a/scripts.ae934356ffd25f29.js" defer></script><script src="/small_claim_form/dist/form_a/main.25b9d0d6ccc5c403.js" type="module"></script></body>
+  <script src="/small_claim_form/dist/form_a/runtime.b1d2bf6e7917f304.js" type="module"></script><script src="/small_claim_form/dist/form_a/polyfills.4a7ed440dad8e3c5.js" type="module"></script><script src="/small_claim_form/dist/form_a/scripts.ae934356ffd25f29.js" defer></script><script src="/small_claim_form/dist/form_a/main.856324b823fb5330.js" type="module"></script></body>
 </html>
