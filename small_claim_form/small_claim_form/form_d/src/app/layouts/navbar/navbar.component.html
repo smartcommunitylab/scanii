@@ -83,7 +83,12 @@
   </div>
 </div>
 
-<div class="toast-container position-fixed end-0 p-3">
+<div
+  class="toast-container position-fixed end-0 p-3"
+  [ngClass]="{
+    'bottom-0': !isScreenSizeMdOrGreater
+  }"
+>
   <app-warning-toast></app-warning-toast>
   <app-error-toast></app-error-toast>
 </div>

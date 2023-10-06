@@ -78,7 +78,7 @@
     "proceedingsCostClaimSpecification": "Wenn ja, machen Sie bitte präzise Angaben zur Art der Kosten und - wenn möglich - zur Höhe der Forderung bzw. der bisher entstandenen Kosten",
     "counterclaim": "Widerklage: falls Sie eine Klage gegen den Kläger erheben möchten (Widerklage), so sollten Sie ein ausgefülltes Formblatt A beifügen. Bitte beachten Sie, dass Sie für die Zwecke der Widerklage als Kläger angesehen werden.",
     "counterclaimRequest": "6. Wollen Sie eine Widerklage erheben?",
-    "counterclaimInfo": "Wenn ja, fügen Sie bitte ein ausgefülltes getrenntes <a href=\"\">Formblatt A</a> bei.",
+    "counterclaimInfo": "Wenn ja, fügen Sie bitte ein ausgefülltes getrenntes <a href=\"{{ url }}\">Formblatt A</a> bei.",
     "electronicJudgmentAgreement": "7.1. Stimmen Sie dem Einsatz elektronischer Mittel für die Zustellung des Urteils zu?",
     "electronicCommunicationAgreement": "7.2 Stimmen Sie dem Einsatz elektronischer Mittel für die Übermittlung anderer schriftlicher Mitteilungen als des Urteils zu?",
     "otherInformation": "8. Sonstige Angaben",

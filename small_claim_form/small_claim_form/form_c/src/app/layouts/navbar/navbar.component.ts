@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, HostListener } from "@angular/core";
 import * as enquire from "enquire.js";
 import * as $ from "jquery";
 import "jquery-sticky";
@@ -22,6 +22,7 @@ export class NavbarComponent {
   triggerTabList: any;
   changeStepSubscription: Subscription | undefined;
   file?: File;
+  isScreenSizeMdOrGreater: boolean;
 
   constructor(
     private eventManager: EventManagerService,
@@ -32,6 +33,8 @@ export class NavbarComponent {
   ) {}
 
   ngOnInit(): void {
+    this.isScreenSizeMdOrGreater = window.innerWidth >= 768;
+
     document.addEventListener("click", () => {
       const stickySidebar = document.querySelector(".sticky-sidebar");
       if (stickySidebar) {
@@ -186,6 +189,11 @@ export class NavbarComponent {
     //this.setClaimant();
   }
 
+  @HostListener("window:resize", ["$event"])
+  onResize(event: any): void {
+    this.isScreenSizeMdOrGreater = window.innerWidth >= 768;
+  }
+
   setClaimant() {
     // const temporaryStorage: TemporaryStorageFacet =
     //   this.temporaryStorageService.forKey("claimant");
@@ -221,7 +229,7 @@ export class NavbarComponent {
         match: function () {
           $stickyStuff.sticky({
             topSpacing: 182.78,
-            bottomSpacing: $("footer").height()! + 25,
+            bottomSpacing: $("footer").height() + 25,
           });
         },
         unmatch: function () {
@@ -239,13 +247,13 @@ export class NavbarComponent {
       enquire.register("(max-width:47.999rem)", {
         match: function () {
           $(window).on("scroll", function (e) {
-            var scrollPos = $(window).scrollTop()!;
-            var sidebartop = $stickySidebar.offset()!.top;
-            var bottomSpacing = $("footer").height()! + 25;
+            var scrollPos = $(window).scrollTop();
+            var sidebartop = $stickySidebar.offset().top;
+            var bottomSpacing = $("footer").height() + 25;
             var scrollBottom =
-              $(document).height()! -
-              $(window).height()! -
-              $(window).scrollTop()!;
+              $(document).height() -
+              $(window).height() -
+              $(window).scrollTop();
 
             if (scrollPos > sidebartop && !$SBisSticky) {
               $SBisSticky = true;
@@ -363,7 +371,7 @@ export class NavbarComponent {
 
   private getStepNumber(stepId: string): number {
     const element = document.getElementById(stepId + "-menu");
-    return parseInt(element?.getAttribute("data-step")!);
+    return parseInt(element?.getAttribute("data-step"));
   }
 
   openFileBrowser() {

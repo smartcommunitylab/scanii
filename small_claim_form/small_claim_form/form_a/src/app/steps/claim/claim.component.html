@@ -16,8 +16,8 @@
               </label>
               <div
                 *ngIf="
-                  claimService.editForm.get('claimForMoney')!.invalid &&
-                  claimService.editForm.get('claimForMoney')!.dirty
+                  claimService.editForm.get('claimForMoney').invalid &&
+                  claimService.editForm.get('claimForMoney').dirty
                 "
               >
                 <div
@@ -169,10 +169,10 @@
                       invalid:
                         claimService.editForm
                           .get('claimForMoneyExpansion')
-                          .get('principalAmount')!.invalid &&
+                          .get('principalAmount').invalid &&
                         claimService.editForm
                           .get('claimForMoneyExpansion')
-                          .get('principalAmount')!.dirty
+                          .get('principalAmount').dirty
                     }"
                   >
                     <div class="input-content nopaddingTop">
@@ -193,10 +193,10 @@
                     *ngIf="
                       claimService.editForm
                         .get('claimForMoneyExpansion')
-                        .get('principalAmount')!.invalid &&
+                        .get('principalAmount').invalid &&
                       claimService.editForm
                         .get('claimForMoneyExpansion')
-                        .get('principalAmount')!.dirty
+                        .get('principalAmount').dirty
                     "
                   >
                     <div
@@ -257,10 +257,10 @@
                       invalid:
                         claimService.editForm
                           .get('claimForMoneyExpansion')
-                          .get('claimForMoneyCurrency')!.invalid &&
+                          .get('claimForMoneyCurrency').invalid &&
                         claimService.editForm
                           .get('claimForMoneyExpansion')
-                          .get('claimForMoneyCurrency')!.dirty
+                          .get('claimForMoneyCurrency').dirty
                     }"
                   >
                     <div class="input-content nopaddingTop">
@@ -319,10 +319,10 @@
                     *ngIf="
                       claimService.editForm
                         .get('claimForMoneyExpansion')
-                        .get('claimForMoneyCurrency')!.invalid &&
+                        .get('claimForMoneyCurrency').invalid &&
                       claimService.editForm
                         .get('claimForMoneyExpansion')
-                        .get('claimForMoneyCurrency')!.dirty
+                        .get('claimForMoneyCurrency').dirty
                     "
                   >
                     <div
@@ -367,10 +367,10 @@
                         invalid:
                           claimService.editForm
                             .get('claimForMoneyExpansion')
-                            .get('claimForMoneyCurrencyOther')!.invalid &&
+                            .get('claimForMoneyCurrencyOther').invalid &&
                           claimService.editForm
                             .get('claimForMoneyExpansion')
-                            .get('claimForMoneyCurrencyOther')!.dirty
+                            .get('claimForMoneyCurrencyOther').dirty
                       }"
                       [hidden]="
                         claimService.areIncludedClaimForMoneyHistoricalCurrencies
@@ -587,10 +587,10 @@
                       *ngIf="
                         claimService.editForm
                           .get('claimForMoneyExpansion')
-                          .get('claimForMoneyCurrencyOther')!.invalid &&
+                          .get('claimForMoneyCurrencyOther').invalid &&
                         claimService.editForm
                           .get('claimForMoneyExpansion')
-                          .get('claimForMoneyCurrencyOther')!.dirty
+                          .get('claimForMoneyCurrencyOther').dirty
                       "
                     >
                       <div
@@ -617,10 +617,10 @@
                         invalid:
                           claimService.editForm
                             .get('claimForMoneyExpansion')
-                            .get('claimForMoneyCurrencyHistorical')!.invalid &&
+                            .get('claimForMoneyCurrencyHistorical').invalid &&
                           claimService.editForm
                             .get('claimForMoneyExpansion')
-                            .get('claimForMoneyCurrencyHistorical')!.dirty
+                            .get('claimForMoneyCurrencyHistorical').dirty
                       }"
                       [hidden]="
                         !claimService.areIncludedClaimForMoneyHistoricalCurrencies
@@ -959,10 +959,10 @@
                       *ngIf="
                         claimService.editForm
                           .get('claimForMoneyExpansion')
-                          .get('claimForMoneyCurrencyHistorical')!.invalid &&
+                          .get('claimForMoneyCurrencyHistorical').invalid &&
                         claimService.editForm
                           .get('claimForMoneyExpansion')
-                          .get('claimForMoneyCurrencyHistorical')!.dirty
+                          .get('claimForMoneyCurrencyHistorical').dirty
                       "
                     >
                       <div
@@ -1023,8 +1023,8 @@
               </label>
               <div
                 *ngIf="
-                  claimService.editForm.get('otherClaim')!.invalid &&
-                  claimService.editForm.get('otherClaim')!.dirty
+                  claimService.editForm.get('otherClaim').invalid &&
+                  claimService.editForm.get('otherClaim').dirty
                 "
               >
                 <div
@@ -1183,10 +1183,10 @@
                       invalid:
                         claimService.editForm
                           .get('otherClaimExpansion')
-                          .get('claimDescription')!.invalid &&
+                          .get('claimDescription').invalid &&
                         claimService.editForm
                           .get('otherClaimExpansion')
-                          .get('claimDescription')!.dirty
+                          .get('claimDescription').dirty
                     }"
                   >
                     <div class="input-content nopaddingTop">
@@ -1206,10 +1206,10 @@
                     *ngIf="
                       claimService.editForm
                         .get('otherClaimExpansion')
-                        .get('claimDescription')!.invalid &&
+                        .get('claimDescription').invalid &&
                       claimService.editForm
                         .get('otherClaimExpansion')
-                        .get('claimDescription')!.dirty
+                        .get('claimDescription').dirty
                     "
                   >
                     <div
@@ -1253,10 +1253,10 @@
                       invalid:
                         claimService.editForm
                           .get('otherClaimExpansion')
-                          .get('claimValue')!.invalid &&
+                          .get('claimValue').invalid &&
                         claimService.editForm
                           .get('otherClaimExpansion')
-                          .get('claimValue')!.dirty
+                          .get('claimValue').dirty
                     }"
                   >
                     <div class="input-content nopaddingTop">
@@ -1277,10 +1277,10 @@
                     *ngIf="
                       claimService.editForm
                         .get('otherClaimExpansion')
-                        .get('claimValue')!.invalid &&
+                        .get('claimValue').invalid &&
                       claimService.editForm
                         .get('otherClaimExpansion')
-                        .get('claimValue')!.dirty
+                        .get('claimValue').dirty
                     "
                   >
                     <div
@@ -1341,10 +1341,10 @@
                       invalid:
                         claimService.editForm
                           .get('otherClaimExpansion')
-                          .get('otherClaimCurrency')!.invalid &&
+                          .get('otherClaimCurrency').invalid &&
                         claimService.editForm
                           .get('otherClaimExpansion')
-                          .get('otherClaimCurrency')!.dirty
+                          .get('otherClaimCurrency').dirty
                     }"
                   >
                     <div class="input-content nopaddingTop">
@@ -1403,10 +1403,10 @@
                     *ngIf="
                       claimService.editForm
                         .get('otherClaimExpansion')
-                        .get('otherClaimCurrency')!.invalid &&
+                        .get('otherClaimCurrency').invalid &&
                       claimService.editForm
                         .get('otherClaimExpansion')
-                        .get('otherClaimCurrency')!.dirty
+                        .get('otherClaimCurrency').dirty
                     "
                   >
                     <div
@@ -1449,10 +1449,10 @@
                         invalid:
                           claimService.editForm
                             .get('otherClaimExpansion')
-                            .get('otherClaimCurrencyOther')!.invalid &&
+                            .get('otherClaimCurrencyOther').invalid &&
                           claimService.editForm
                             .get('otherClaimExpansion')
-                            .get('otherClaimCurrencyOther')!.dirty
+                            .get('otherClaimCurrencyOther').dirty
                       }"
                       [hidden]="
                         claimService.areIncludedOtherClaimHistoricalCurrencies
@@ -1669,10 +1669,10 @@
                       *ngIf="
                         claimService.editForm
                           .get('otherClaimExpansion')
-                          .get('otherClaimCurrencyOther')!.invalid &&
+                          .get('otherClaimCurrencyOther').invalid &&
                         claimService.editForm
                           .get('otherClaimExpansion')
-                          .get('otherClaimCurrencyOther')!.dirty
+                          .get('otherClaimCurrencyOther').dirty
                       "
                     >
                       <div
@@ -1699,10 +1699,10 @@
                         invalid:
                           claimService.editForm
                             .get('otherClaimExpansion')
-                            .get('otherClaimCurrencyHistorical')!.invalid &&
+                            .get('otherClaimCurrencyHistorical').invalid &&
                           claimService.editForm
                             .get('otherClaimExpansion')
-                            .get('otherClaimCurrencyHistorical')!.dirty
+                            .get('otherClaimCurrencyHistorical').dirty
                       }"
                       [hidden]="
                         !claimService.areIncludedOtherClaimHistoricalCurrencies
@@ -2041,10 +2041,10 @@
                       *ngIf="
                         claimService.editForm
                           .get('otherClaimExpansion')
-                          .get('otherClaimCurrencyHistorical')!.invalid &&
+                          .get('otherClaimCurrencyHistorical').invalid &&
                         claimService.editForm
                           .get('otherClaimExpansion')
-                          .get('otherClaimCurrencyHistorical')!.dirty
+                          .get('otherClaimCurrencyHistorical').dirty
                       "
                     >
                       <div
@@ -2109,9 +2109,9 @@
               </label>
               <div
                 *ngIf="
-                  claimService.editForm.get('claimingCostProceedings')!
+                  claimService.editForm.get('claimingCostProceedings')
                     .invalid &&
-                  claimService.editForm.get('claimingCostProceedings')!.dirty
+                  claimService.editForm.get('claimingCostProceedings').dirty
                 "
               >
                 <div
@@ -2252,10 +2252,10 @@
                       invalid:
                         claimService.editForm
                           .get('claimingCostProceedingsExpansion')
-                          .get('costsDetails')!.invalid &&
+                          .get('costsDetails').invalid &&
                         claimService.editForm
                           .get('claimingCostProceedingsExpansion')
-                          .get('costsDetails')!.dirty
+                          .get('costsDetails').dirty
                     }"
                   >
                     <div class="input-content nopaddingTop">
@@ -2274,10 +2274,10 @@
                     *ngIf="
                       claimService.editForm
                         .get('claimingCostProceedingsExpansion')
-                        .get('costsDetails')!.invalid &&
+                        .get('costsDetails').invalid &&
                       claimService.editForm
                         .get('claimingCostProceedingsExpansion')
-                        .get('costsDetails')!.dirty
+                        .get('costsDetails').dirty
                     "
                   >
                     <div
@@ -2316,8 +2316,8 @@
               </label>
               <div
                 *ngIf="
-                  claimService.editForm.get('claimingInterest')!.invalid &&
-                  claimService.editForm.get('claimingInterest')!.dirty
+                  claimService.editForm.get('claimingInterest').invalid &&
+                  claimService.editForm.get('claimingInterest').dirty
                 "
               >
                 <div
@@ -2462,10 +2462,10 @@
                       *ngIf="
                         claimService.editForm
                           .get('claimingInterestExpansion')
-                          .get('claimingInterestOption')!.invalid &&
+                          .get('claimingInterestOption').invalid &&
                         claimService.editForm
                           .get('claimingInterestExpansion')
-                          .get('claimingInterestOption')!.dirty
+                          .get('claimingInterestOption').dirty
                       "
                     >
                       <div
@@ -2782,12 +2782,12 @@
                                 claimService.editForm
                                   .get('claimingInterestExpansion')
                                   .get('contractualInterest')
-                                  .get('contractualInterestFromDate')!
+                                  .get('contractualInterestFromDate')
                                   .invalid &&
                                 claimService.editForm
                                   .get('claimingInterestExpansion')
                                   .get('contractualInterest')
-                                  .get('contractualInterestFromDate')!.dirty
+                                  .get('contractualInterestFromDate').dirty
                             }"
                           >
                             <div class="input-content nopaddingTop">
@@ -2810,11 +2810,11 @@
                               claimService.editForm
                                 .get('claimingInterestExpansion')
                                 .get('contractualInterest')
-                                .get('contractualInterestFromDate')!.invalid &&
+                                .get('contractualInterestFromDate').invalid &&
                                 claimService.editForm
                                   .get('claimingInterestExpansion')
                                   .get('contractualInterest')
-                                  .get('contractualInterestFromDate')!.dirty;
+                                  .get('contractualInterestFromDate').dirty;
                               else noError
                             "
                           >
@@ -2894,11 +2894,11 @@
                             claimService.editForm
                               .get('claimingInterestExpansion')
                               .get('contractualInterest')
-                              .get('contractualInterestTo')!.invalid &&
+                              .get('contractualInterestTo').invalid &&
                             claimService.editForm
                               .get('claimingInterestExpansion')
                               .get('contractualInterest')
-                              .get('contractualInterestTo')!.dirty
+                              .get('contractualInterestTo').dirty
                           "
                         >
                           <div
@@ -2944,16 +2944,16 @@
                                   (claimService.editForm
                                     .get('claimingInterestExpansion')
                                     .get('contractualInterest')
-                                    .get('contractualInterestToDate')!
+                                    .get('contractualInterestToDate')
                                     .invalid &&
                                   claimService.editForm
                                     .get('claimingInterestExpansion')
                                     .get('contractualInterest')
-                                    .get('contractualInterestToDate')!.dirty) ||
+                                    .get('contractualInterestToDate').dirty) ||
                                     (claimService.editForm
                                     .get('claimingInterestExpansion')
                                     .get('contractualInterest')
-                                    .get('contractualInterestToDate')!.dirty &&
+                                    .get('contractualInterestToDate').dirty &&
                                 claimService.editForm
                                 .get('claimingInterestExpansion')
                                 .get('contractualInterest')
@@ -2981,11 +2981,11 @@
                                 claimService.editForm
                                   .get('claimingInterestExpansion')
                                   .get('contractualInterest')
-                                  .get('contractualInterestToDate')!.invalid &&
+                                  .get('contractualInterestToDate').invalid &&
                                   claimService.editForm
                                     .get('claimingInterestExpansion')
                                     .get('contractualInterest')
-                                    .get('contractualInterestToDate')!.dirty;
+                                    .get('contractualInterestToDate').dirty;
                                 else noError
                               "
                             >
@@ -3013,7 +3013,7 @@
                             claimService.editForm
                             .get('claimingInterestExpansion')
                             .get('contractualInterest')
-                            .get('contractualInterestToDate')!.dirty &&
+                            .get('contractualInterestToDate').dirty &&
                               claimService.editForm
                               .get('claimingInterestExpansion')
                               .get('contractualInterest')
@@ -3090,11 +3090,11 @@
                             claimService.editForm
                               .get('claimingInterestExpansion')
                               .get('contractualInterest')
-                              .get('contractualInterestTo')!.invalid &&
+                              .get('contractualInterestTo').invalid &&
                             claimService.editForm
                               .get('claimingInterestExpansion')
                               .get('contractualInterest')
-                              .get('contractualInterestTo')!.dirty
+                              .get('contractualInterestTo').dirty
                           "
                         >
                           <div
@@ -3170,11 +3170,11 @@
                             claimService.editForm
                               .get('claimingInterestExpansion')
                               .get('contractualInterest')
-                              .get('contractualInterestTo')!.invalid &&
+                              .get('contractualInterestTo').invalid &&
                             claimService.editForm
                               .get('claimingInterestExpansion')
                               .get('contractualInterest')
-                              .get('contractualInterestTo')!.dirty
+                              .get('contractualInterestTo').dirty
                           "
                         >
                           <div
@@ -3232,11 +3232,11 @@
                               claimService.editForm
                                 .get('claimingInterestExpansion')
                                 .get('statutoryInterest')
-                                .get('statutoryInterestFromDate')!.invalid &&
+                                .get('statutoryInterestFromDate').invalid &&
                               claimService.editForm
                                 .get('claimingInterestExpansion')
                                 .get('statutoryInterest')
-                                .get('statutoryInterestFromDate')!.dirty
+                                .get('statutoryInterestFromDate').dirty
                           }"
                         >
                           <div class="input-content nopaddingTop">
@@ -3259,11 +3259,11 @@
                             claimService.editForm
                               .get('claimingInterestExpansion')
                               .get('statutoryInterest')
-                              .get('statutoryInterestFromDate')!.invalid &&
+                              .get('statutoryInterestFromDate').invalid &&
                               claimService.editForm
                                 .get('claimingInterestExpansion')
                                 .get('statutoryInterest')
-                                .get('statutoryInterestFromDate')!.dirty;
+                                .get('statutoryInterestFromDate').dirty;
                             else noError
                           "
                         >
@@ -3343,11 +3343,11 @@
                           claimService.editForm
                             .get('claimingInterestExpansion')
                             .get('statutoryInterest')
-                            .get('statutoryInterestTo')!.invalid &&
+                            .get('statutoryInterestTo').invalid &&
                           claimService.editForm
                             .get('claimingInterestExpansion')
                             .get('statutoryInterest')
-                            .get('statutoryInterestTo')!.dirty
+                            .get('statutoryInterestTo').dirty
                         "
                       >
                         <div
@@ -3393,14 +3393,14 @@
                                 (claimService.editForm
                                   .get('claimingInterestExpansion')
                                   .get('statutoryInterest')
-                                  .get('statutoryInterestToDate')!.invalid &&
+                                  .get('statutoryInterestToDate').invalid &&
                                 claimService.editForm
                                   .get('claimingInterestExpansion')
                                   .get('statutoryInterest')
-                                  .get('statutoryInterestToDate')!.dirty) || (claimService.editForm
+                                  .get('statutoryInterestToDate').dirty) || (claimService.editForm
                                   .get('claimingInterestExpansion')
                                   .get('statutoryInterest')
-                                  .get('statutoryInterestToDate')!.dirty &&
+                                  .get('statutoryInterestToDate').dirty &&
                               claimService.editForm
                               .get('claimingInterestExpansion')
                               .get('statutoryInterest')
@@ -3428,11 +3428,11 @@
                               claimService.editForm
                                 .get('claimingInterestExpansion')
                                 .get('statutoryInterest')
-                                .get('statutoryInterestToDate')!.invalid &&
+                                .get('statutoryInterestToDate').invalid &&
                                 claimService.editForm
                                   .get('claimingInterestExpansion')
                                   .get('statutoryInterest')
-                                  .get('statutoryInterestToDate')!.dirty;
+                                  .get('statutoryInterestToDate').dirty;
                               else noError
                             "
                           >
@@ -3460,7 +3460,7 @@
                             claimService.editForm
                             .get('claimingInterestExpansion')
                             .get('statutoryInterest')
-                            .get('statutoryInterestToDate')!.dirty &&
+                            .get('statutoryInterestToDate').dirty &&
                               claimService.editForm
                               .get('claimingInterestExpansion')
                               .get('statutoryInterest')
@@ -3538,11 +3538,11 @@
                         claimService.editForm
                           .get('claimingInterestExpansion')
                           .get('statutoryInterest')
-                          .get('statutoryInterestTo')!.invalid &&
+                          .get('statutoryInterestTo').invalid &&
                         claimService.editForm
                           .get('claimingInterestExpansion')
                           .get('statutoryInterest')
-                          .get('statutoryInterestTo')!.dirty
+                          .get('statutoryInterestTo').dirty
                       "
                     >
                       <div
@@ -3616,11 +3616,11 @@
                         claimService.editForm
                           .get('claimingInterestExpansion')
                           .get('statutoryInterest')
-                          .get('statutoryInterestTo')!.invalid &&
+                          .get('statutoryInterestTo').invalid &&
                         claimService.editForm
                           .get('claimingInterestExpansion')
                           .get('statutoryInterest')
-                          .get('statutoryInterestTo')!.dirty
+                          .get('statutoryInterestTo').dirty
                       "
                     >
                       <div
@@ -3661,9 +3661,9 @@
               </label>
               <div
                 *ngIf="
-                  claimService.editForm.get('claimingInterestOnCost')!
+                  claimService.editForm.get('claimingInterestOnCost')
                     .invalid &&
-                  claimService.editForm.get('claimingInterestOnCost')!.dirty
+                  claimService.editForm.get('claimingInterestOnCost').dirty
                 "
               >
                 <div
@@ -3847,10 +3847,10 @@
                     *ngIf="
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostFrom')!.invalid &&
+                        .get('claimingInterestOnCostFrom').invalid &&
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostFrom')!.dirty
+                        .get('claimingInterestOnCostFrom').dirty
                     "
                   >
                     <div
@@ -3894,10 +3894,10 @@
                           invalid:
                             claimService.editForm
                               .get('claimingInterestOnCostExpansion')
-                              .get('claimingInterestOnCostFromDate')!.invalid &&
+                              .get('claimingInterestOnCostFromDate').invalid &&
                             claimService.editForm
                               .get('claimingInterestOnCostExpansion')
-                              .get('claimingInterestOnCostFromDate')!.dirty
+                              .get('claimingInterestOnCostFromDate').dirty
                         }"
                       >
                         <div class="input-content nopaddingTop">
@@ -3919,10 +3919,10 @@
                         *ngIf="
                           claimService.editForm
                             .get('claimingInterestOnCostExpansion')
-                            .get('claimingInterestOnCostFromDate')!.invalid &&
+                            .get('claimingInterestOnCostFromDate').invalid &&
                             claimService.editForm
                               .get('claimingInterestOnCostExpansion')
-                              .get('claimingInterestOnCostFromDate')!.dirty;
+                              .get('claimingInterestOnCostFromDate').dirty;
                           else noError
                         "
                       >
@@ -3997,10 +3997,10 @@
                     *ngIf="
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostFrom')!.invalid &&
+                        .get('claimingInterestOnCostFrom').invalid &&
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostFrom')!.dirty
+                        .get('claimingInterestOnCostFrom').dirty
                     "
                   >
                     <div
@@ -4116,10 +4116,10 @@
                     *ngIf="
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostTo')!.invalid &&
+                        .get('claimingInterestOnCostTo').invalid &&
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostTo')!.dirty
+                        .get('claimingInterestOnCostTo').dirty
                     "
                   >
                     <div
@@ -4164,12 +4164,12 @@
                             invalid:
                               (claimService.editForm
                                 .get('claimingInterestOnCostExpansion')
-                                .get('claimingInterestOnCostToDate')!.invalid &&
+                                .get('claimingInterestOnCostToDate').invalid &&
                               claimService.editForm
                                 .get('claimingInterestOnCostExpansion')
-                                .get('claimingInterestOnCostToDate')!.dirty) || (claimService.editForm
+                                .get('claimingInterestOnCostToDate').dirty) || (claimService.editForm
                                 .get('claimingInterestOnCostExpansion')
-                                .get('claimingInterestOnCostToDate')!.dirty &&
+                                .get('claimingInterestOnCostToDate').dirty &&
                               claimService.editForm
                                 .get('claimingInterestOnCostExpansion')
                                 ?.errors
@@ -4195,10 +4195,10 @@
                           *ngIf="
                             claimService.editForm
                               .get('claimingInterestOnCostExpansion')
-                              .get('claimingInterestOnCostToDate')!.invalid &&
+                              .get('claimingInterestOnCostToDate').invalid &&
                               claimService.editForm
                                 .get('claimingInterestOnCostExpansion')
-                                .get('claimingInterestOnCostToDate')!.dirty;
+                                .get('claimingInterestOnCostToDate').dirty;
                             else noError
                           "
                         >
@@ -4224,7 +4224,7 @@
                           *ngIf="
                             claimService.editForm
                                 .get('claimingInterestOnCostExpansion')
-                                .get('claimingInterestOnCostToDate')!.dirty &&
+                                .get('claimingInterestOnCostToDate').dirty &&
                               claimService.editForm
                                 .get('claimingInterestOnCostExpansion')
                                 ?.errors
@@ -4300,10 +4300,10 @@
                     *ngIf="
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostTo')!.invalid &&
+                        .get('claimingInterestOnCostTo').invalid &&
                       claimService.editForm
                         .get('claimingInterestOnCostExpansion')
-                        .get('claimingInterestOnCostTo')!.dirty
+                        .get('claimingInterestOnCostTo').dirty
                     "
                   >
                     <div

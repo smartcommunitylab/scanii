@@ -24,7 +24,7 @@
         <div
           formArrayName="claimants"
           *ngFor="
-            let formGroup of claimantService.editForm.get('claimants')![
+            let formGroup of claimantService.editForm.get('claimants')[
               'controls'
             ]!;
             let i = index
@@ -94,10 +94,10 @@
                               *ngIf="
                                 claimantService.claimants
                                   .at(i)
-                                  .get('organisation')!.invalid &&
+                                  .get('organisation').invalid &&
                                 claimantService.claimants
                                   .at(i)
-                                  .get('organisation')!.dirty
+                                  .get('organisation').dirty
                               "
                             >
                               <span
@@ -149,10 +149,10 @@
                                   invalid:
                                     claimantService.claimants
                                       .at(i)
-                                      .get('organisation')!.invalid &&
+                                      .get('organisation').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('organisation')!.dirty
+                                      .get('organisation').dirty
                                 }"
                               >
                                 <div class="input-content">
@@ -211,10 +211,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('surname')!.invalid &&
+                                        .get('surname').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('surname')!.dirty
+                                        .get('surname').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -278,10 +278,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('firstName')!.invalid &&
+                                        .get('firstName').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('firstName')!.dirty
+                                        .get('firstName').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -422,10 +422,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('street')!.invalid &&
+                                        .get('street').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('street')!.dirty
+                                        .get('street').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -455,10 +455,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('street')!.invalid &&
+                                      .get('street').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('street')!.dirty
+                                      .get('street').dirty
                                   "
                                 >
                                   <div
@@ -519,10 +519,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('postalCode')!.invalid &&
+                                        .get('postalCode').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('postalCode')!.dirty
+                                        .get('postalCode').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -552,10 +552,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('postalCode')!.invalid &&
+                                      .get('postalCode').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('postalCode')!.dirty
+                                      .get('postalCode').dirty
                                   "
                                 >
                                   <div
@@ -614,10 +614,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('city')!.invalid &&
+                                        .get('city').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('city')!.dirty
+                                        .get('city').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -645,9 +645,9 @@
                                 </div>
                                 <div
                                   *ngIf="
-                                    claimantService.claimants.at(i).get('city')!
+                                    claimantService.claimants.at(i).get('city')
                                       .invalid &&
-                                    claimantService.claimants.at(i).get('city')!
+                                    claimantService.claimants.at(i).get('city')
                                       .dirty
                                   "
                                 >
@@ -709,10 +709,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('country')!.invalid &&
+                                        .get('country').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('country')!.dirty
+                                        .get('country').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -797,10 +797,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('country')!.invalid &&
+                                      .get('country').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('country')!.dirty
+                                      .get('country').dirty
                                   "
                                 >
                                   <div
@@ -871,10 +871,10 @@
                                         invalid:
                                           claimantService.claimants
                                             .at(i)
-                                            .get('countryOther')!.invalid &&
+                                            .get('countryOther').invalid &&
                                           claimantService.claimants
                                             .at(i)
-                                            .get('countryOther')!.dirty
+                                            .get('countryOther').dirty
                                       }"
                                     >
                                       <div class="input-content">
@@ -1280,10 +1280,10 @@
                                       *ngIf="
                                         claimantService.claimants
                                           .at(i)
-                                          .get('countryOther')!.invalid &&
+                                          .get('countryOther').invalid &&
                                         claimantService.claimants
                                           .at(i)
-                                          .get('countryOther')!.dirty
+                                          .get('countryOther').dirty
                                       "
                                     >
                                       <div
@@ -1360,10 +1360,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('phoneNumber')!.invalid &&
+                                        .get('phoneNumber').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('phoneNumber')!.dirty
+                                        .get('phoneNumber').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -1392,10 +1392,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('phoneNumber')!.invalid &&
+                                      .get('phoneNumber').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('phoneNumber')!.dirty
+                                      .get('phoneNumber').dirty
                                   "
                                 >
                                   <div
@@ -1459,10 +1459,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('email')!.invalid &&
+                                        .get('email').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('email')!.dirty
+                                        .get('email').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -1492,10 +1492,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('email')!.invalid &&
+                                      .get('email').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('email')!.dirty
+                                      .get('email').dirty
                                   "
                                 >
                                   <div
@@ -1559,10 +1559,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('representative')!.invalid &&
+                                        .get('representative').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('representative')!.dirty
+                                        .get('representative').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -1616,10 +1616,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('representative')!.invalid &&
+                                      .get('representative').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('representative')!.dirty
+                                      .get('representative').dirty
                                   "
                                 >
                                   <div
@@ -1794,10 +1794,10 @@
                               *ngIf="
                                 claimantService.claimants
                                   .at(i)
-                                  .get('organisation')!.invalid &&
+                                  .get('organisation').invalid &&
                                 claimantService.claimants
                                   .at(i)
-                                  .get('organisation')!.dirty
+                                  .get('organisation').dirty
                               "
                             >
                               <span
@@ -1855,10 +1855,10 @@
                                   invalid:
                                     claimantService.claimants
                                       .at(i)
-                                      .get('organisation')!.invalid &&
+                                      .get('organisation').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('organisation')!.dirty
+                                      .get('organisation').dirty
                                 }"
                               >
                                 <div class="input-content">
@@ -1897,10 +1897,10 @@
                                 *ngIf="
                                   claimantService.claimants
                                     .at(i)
-                                    .get('organisation')!.invalid &&
+                                    .get('organisation').invalid &&
                                   claimantService.claimants
                                     .at(i)
-                                    .get('organisation')!.dirty
+                                    .get('organisation').dirty
                                 "
                               >
                                 <span
@@ -1958,10 +1958,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('surname')!.invalid &&
+                                        .get('surname').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('surname')!.dirty
+                                        .get('surname').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -2003,10 +2003,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('surname')!.invalid &&
+                                      .get('surname').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('surname')!.dirty
+                                      .get('surname').dirty
                                   "
                                 >
                                   <span
@@ -2064,10 +2064,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('firstName')!.invalid &&
+                                        .get('firstName').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('firstName')!.dirty
+                                        .get('firstName').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -2109,10 +2109,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('firstName')!.invalid &&
+                                      .get('firstName').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('firstName')!.dirty
+                                      .get('firstName').dirty
                                   "
                                 >
                                   <span
@@ -2251,10 +2251,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('street')!.invalid &&
+                                        .get('street').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('street')!.dirty
+                                        .get('street').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -2287,10 +2287,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('street')!.invalid &&
+                                      .get('street').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('street')!.dirty
+                                      .get('street').dirty
                                   "
                                 >
                                   <div
@@ -2356,10 +2356,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('postalCode')!.invalid &&
+                                        .get('postalCode').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('postalCode')!.dirty
+                                        .get('postalCode').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -2389,10 +2389,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('postalCode')!.invalid &&
+                                      .get('postalCode').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('postalCode')!.dirty
+                                      .get('postalCode').dirty
                                   "
                                 >
                                   <div
@@ -2456,10 +2456,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('city')!.invalid &&
+                                        .get('city').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('city')!.dirty
+                                        .get('city').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -2487,9 +2487,9 @@
                                 </div>
                                 <div
                                   *ngIf="
-                                    claimantService.claimants.at(i).get('city')!
+                                    claimantService.claimants.at(i).get('city')
                                       .invalid &&
-                                    claimantService.claimants.at(i).get('city')!
+                                    claimantService.claimants.at(i).get('city')
                                       .dirty
                                   "
                                 >
@@ -2556,10 +2556,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('country')!.invalid &&
+                                        .get('country').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('country')!.dirty
+                                        .get('country').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -2644,10 +2644,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('country')!.invalid &&
+                                      .get('country').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('country')!.dirty
+                                      .get('country').dirty
                                   "
                                 >
                                   <div
@@ -2723,10 +2723,10 @@
                                         invalid:
                                           claimantService.claimants
                                             .at(i)
-                                            .get('countryOther')!.invalid &&
+                                            .get('countryOther').invalid &&
                                           claimantService.claimants
                                             .at(i)
-                                            .get('countryOther')!.dirty
+                                            .get('countryOther').dirty
                                       }"
                                     >
                                       <div class="input-content">
@@ -3133,10 +3133,10 @@
                                       *ngIf="
                                         claimantService.claimants
                                           .at(i)
-                                          .get('countryOther')!.invalid &&
+                                          .get('countryOther').invalid &&
                                         claimantService.claimants
                                           .at(i)
-                                          .get('countryOther')!.dirty
+                                          .get('countryOther').dirty
                                       "
                                     >
                                       <div
@@ -3215,10 +3215,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('phoneNumber')!.invalid &&
+                                        .get('phoneNumber').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('phoneNumber')!.dirty
+                                        .get('phoneNumber').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -3249,10 +3249,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('phoneNumber')!.invalid &&
+                                      .get('phoneNumber').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('phoneNumber')!.dirty
+                                      .get('phoneNumber').dirty
                                   "
                                 >
                                   <div
@@ -3314,10 +3314,10 @@
                                     invalid:
                                       claimantService.claimants
                                         .at(i)
-                                        .get('email')!.invalid &&
+                                        .get('email').invalid &&
                                       claimantService.claimants
                                         .at(i)
-                                        .get('email')!.dirty
+                                        .get('email').dirty
                                   }"
                                 >
                                   <div class="input-content">
@@ -3347,10 +3347,10 @@
                                   *ngIf="
                                     claimantService.claimants
                                       .at(i)
-                                      .get('email')!.invalid &&
+                                      .get('email').invalid &&
                                     claimantService.claimants
                                       .at(i)
-                                      .get('email')!.dirty
+                                      .get('email').dirty
                                   "
                                 >
                                   <div

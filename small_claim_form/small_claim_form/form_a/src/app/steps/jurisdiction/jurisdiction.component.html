@@ -22,8 +22,8 @@
             </label>
             <div
               *ngIf="
-                jurisdictionService.editForm.get('defendantDomicile')!.invalid &&
-                jurisdictionService.editForm.get('defendantDomicile')!.dirty
+                jurisdictionService.editForm.get('defendantDomicile').invalid &&
+                jurisdictionService.editForm.get('defendantDomicile').dirty
               "
             >
               <span
@@ -282,9 +282,9 @@
                     id="input-wrapper_dynformSCA4OtherText"
                     [ngClass]="{
                       invalid:
-                        jurisdictionService.editForm.get('otherText')!
+                        jurisdictionService.editForm.get('otherText')
                           .invalid &&
-                        jurisdictionService.editForm.get('otherText')!.dirty
+                        jurisdictionService.editForm.get('otherText').dirty
                     }"
                   >
                     <div class="input-content nopaddingTop">
@@ -302,8 +302,8 @@
                   </div>
                   <div
                     *ngIf="
-                      jurisdictionService.editForm.get('otherText')!.invalid &&
-                      jurisdictionService.editForm.get('otherText')!.dirty
+                      jurisdictionService.editForm.get('otherText').invalid &&
+                      jurisdictionService.editForm.get('otherText').dirty
                     "
                   >
                     <div

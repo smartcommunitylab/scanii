@@ -77,7 +77,7 @@
     "proceedingsCostClaimSpecification": "In caso affermativo precisare quali spese, indicando possibilmente l’importo richiesto o le spese finora sostenute",
     "counterclaim": "Domanda riconvenzionale: ove il convenuto decida di introdurre una domanda riconvenzionale, compilare e allegare un modulo A separato. Si noti che, ai fini della domanda riconvenzionale, il convenuto è considerato attore.",
     "counterclaimRequest": "6. Desidera introdurre una domanda riconvenzionale?",
-    "counterclaimInfo": "In caso affermativo, compilare e allegare un <a href=\"\">modulo A</a> separato.",
+    "counterclaimInfo": "In caso affermativo, compilare e allegare un <a href=\"{{ url }}\">modulo A</a> separato.",
     "electronicJudgmentAgreement": "7.1. Si acconsente all’uso di mezzi elettronici per la notifica o la comunicazione della sentenza?",
     "electronicCommunicationAgreement": "7.2 Si acconsente all’uso di mezzi elettronici per ricevere comunicazioni scritte diverse dalla sentenza?",
     "otherInformation": "8. Altre informazioni",

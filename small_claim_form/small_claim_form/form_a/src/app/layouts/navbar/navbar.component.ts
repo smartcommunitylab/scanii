@@ -2,6 +2,7 @@ import { NavbarService } from "../../core/navbar/navbar.service";
 import {
   AfterViewInit,
   Component,
+  HostListener,
   OnChanges,
   OnDestroy,
   OnInit,
@@ -43,6 +44,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   changeStepSubscription: Subscription;
   file?: File;
   previousData: { form_A: FormA } = { form_A: null };
+  isScreenSizeMdOrGreater: boolean;
 
   constructor(
     private eventManager: EventManagerService,
@@ -62,6 +64,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.isScreenSizeMdOrGreater = window.innerWidth >= 768;
+
     document.addEventListener("click", () => {
       const stickySidebar = document.querySelector(".sticky-sidebar");
       if (stickySidebar) {
@@ -215,6 +219,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
     // uncomment to allow state maintenance
     //this.setClaimant();
+  }
+
+  @HostListener("window:resize", ["$event"])
+  onResize(event: any): void {
+    this.isScreenSizeMdOrGreater = window.innerWidth >= 768;
   }
 
   setClaimant() {

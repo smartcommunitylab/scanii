@@ -12,6 +12,7 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { PreviewModalComponent } from "src/app/shared/components/preview-modal/preview-modal.component";
 import { AbstractControl, FormGroup, UntypedFormGroup } from "@angular/forms";
 import { ToastService } from "src/app/shared/services/toast.service";
+import { FORM_A_URL } from "src/app/app.constants";
 declare const $: any;
 datepickerFactory($);
 
@@ -22,6 +23,8 @@ datepickerFactory($);
   providers: [DatePipe],
 })
 export class StepOneComponent implements OnInit {
+  formAUrl: string;
+
   constructor(
     public stepOneService: StepOneService,
     private renderer: Renderer2,
@@ -34,12 +37,14 @@ export class StepOneComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.formAUrl = FORM_A_URL;
+
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      // const currentDate = this.datePipe.transform(new Date(), "dd/MM/yyyy");
-      // this.stepOneService.form
-      //   .get("secondPart")
-      //   .get("date")
-      //   .setValue(currentDate);
+      const currentDate = this.datePipe.transform(new Date(), "dd/MM/yyyy");
+      this.stepOneService.form
+        .get("secondPart")
+        .get("date")
+        .setValue(currentDate);
       this.initDatepicker(event.lang);
     });
   }
@@ -359,7 +364,7 @@ export class StepOneComponent implements OnInit {
         behavior: "auto",
       });
       this.toastService.showErrorToast();
-      this.navbarService.addRemoveGreenTick("step1", false)
+      this.navbarService.addRemoveGreenTick("step1", false);
     }
   }
 }

@@ -77,7 +77,7 @@
     "proceedingsCostClaimSpecification": "If yes, please specify which costs and if possible, indicate the amount claimed or incurred so far",
     "counterclaim": "Counterclaim: if you want to make a claim against the claimant (counterclaim), you should fill in and attach a separate Form A. Please note that for the purposes of the counterclaim you are considered to be the claimant.",
     "counterclaimRequest": "6. Do you want to make a counterclaim?",
-    "counterclaimInfo": "If yes, please fill in and attach a separate <a href=\"\">Form A</a>",
+    "counterclaimInfo": "If yes, please fill in and attach a separate <a href=\"{{ url }}\">Form A</a>",
     "electronicJudgmentAgreement": "7.1. Do you agree to the use of electronic means for service of the judgment?",
     "electronicCommunicationAgreement": "7.2 Do you agree to the use of electronic means to receive written communications other than the judgment?",
     "otherInformation": "8. Other information",

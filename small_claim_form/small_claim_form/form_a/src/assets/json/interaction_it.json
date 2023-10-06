@@ -427,7 +427,7 @@
               "text": "organo giurisdizionale",
               "position": "39-22",
               "definition": "In questo caso ci si riferisce al tribunale. In generale un organo giurisdizionale è un'autorità dello stato responsabile dell'interpretazione e della applicazione delle leggi.",
-              "synonyms": [],
+              "synonyms": ["Tribunale", "Autorità giudiziaria", "Magistratura"],
               "links": []
             },
             {
@@ -476,7 +476,7 @@
               "text": "organo giurisdizionale",
               "position": "119-22",
               "definition": "In questo caso ci si riferisce al tribunale. In generale un organo giurisdizionale è un'autorità dello stato responsabile dell'interpretazione e della applicazione delle leggi.",
-              "synonyms": [],
+              "synonyms": ["Tribunale", "Autorità giudiziaria", "Magistratura"],
               "links": []
             }
           ]

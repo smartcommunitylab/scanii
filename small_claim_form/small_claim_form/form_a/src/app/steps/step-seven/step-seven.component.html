@@ -24,10 +24,10 @@
                     *ngIf="
                       stepSevenService.oralHearingForm.get(
                         'oralHearingRequest'
-                      )!.invalid &&
+                      ).invalid &&
                       stepSevenService.oralHearingForm.get(
                         'oralHearingRequest'
-                      )!.dirty
+                      ).dirty
                     "
                   >
                     <div
@@ -158,10 +158,10 @@
                         invalid:
                           stepSevenService.oralHearingForm.get(
                             'oralHearingRequestReasons'
-                          )!.invalid &&
+                          ).invalid &&
                           stepSevenService.oralHearingForm.get(
                             'oralHearingRequestReasons'
-                          )!.dirty
+                          ).dirty
                       }"
                     >
                       <div class="input-content nopaddingTop">
@@ -181,10 +181,10 @@
                       *ngIf="
                         stepSevenService.oralHearingForm.get(
                           'oralHearingRequestReasons'
-                        )!.invalid &&
+                        ).invalid &&
                         stepSevenService.oralHearingForm.get(
                           'oralHearingRequestReasons'
-                        )!.dirty
+                        ).dirty
                       "
                     >
                       <div
@@ -227,10 +227,10 @@
                     *ngIf="
                       stepSevenService.oralHearingForm.get(
                         'oralHearingPresence'
-                      )!.invalid &&
+                      ).invalid &&
                       stepSevenService.oralHearingForm.get(
                         'oralHearingPresence'
-                      )!.dirty
+                      ).dirty
                     "
                   >
                     <div
@@ -359,10 +359,10 @@
                         invalid:
                           stepSevenService.oralHearingForm.get(
                             'oralHearingPresenceReasons'
-                          )!.invalid &&
+                          ).invalid &&
                           stepSevenService.oralHearingForm.get(
                             'oralHearingPresenceReasons'
-                          )!.dirty
+                          ).dirty
                       }"
                     >
                       <div class="input-content nopaddingTop">
@@ -382,10 +382,10 @@
                       *ngIf="
                         stepSevenService.oralHearingForm.get(
                           'oralHearingPresenceReasons'
-                        )!.invalid &&
+                        ).invalid &&
                         stepSevenService.oralHearingForm.get(
                           'oralHearingPresenceReasons'
-                        )!.dirty
+                        ).dirty
                       "
                     >
                       <div
@@ -453,10 +453,10 @@
                     *ngIf="
                       stepSevenService.documentAndCommunicationForm.get(
                         'electronicCommunicationWithCourtTribunal'
-                      )!.invalid &&
+                      ).invalid &&
                       stepSevenService.documentAndCommunicationForm.get(
                         'electronicCommunicationWithCourtTribunal'
-                      )!.dirty
+                      ).dirty
                     "
                   >
                     <div
@@ -574,10 +574,10 @@
                     *ngIf="
                       stepSevenService.documentAndCommunicationForm.get(
                         'electronicCommunicationOther'
-                      )!.invalid &&
+                      ).invalid &&
                       stepSevenService.documentAndCommunicationForm.get(
                         'electronicCommunicationOther'
-                      )!.dirty
+                      ).dirty
                     "
                   >
                     <div
@@ -696,9 +696,9 @@
               </label>
               <div
                 *ngIf="
-                  stepSevenService.certificateForm.get('certificateRequest')!
+                  stepSevenService.certificateForm.get('certificateRequest')
                     .invalid &&
-                  stepSevenService.certificateForm.get('certificateRequest')!
+                  stepSevenService.certificateForm.get('certificateRequest')
                     .dirty
                 "
               >
@@ -931,9 +931,9 @@
                 id="input-wrapper_dynformSCA8DateSignatureDone"
                 [ngClass]="{
                   invalid:
-                    stepSevenService.dateAndSignatureForm.get('city')!
+                    stepSevenService.dateAndSignatureForm.get('city')
                       .invalid &&
-                    stepSevenService.dateAndSignatureForm.get('city')!.dirty
+                    stepSevenService.dateAndSignatureForm.get('city').dirty
                 }"
               >
                 <div class="input-content nopaddingTop">
@@ -952,8 +952,8 @@
 
               <div
                 *ngIf="
-                  stepSevenService.dateAndSignatureForm.get('city')!.invalid &&
-                  stepSevenService.dateAndSignatureForm.get('city')!.dirty
+                  stepSevenService.dateAndSignatureForm.get('city').invalid &&
+                  stepSevenService.dateAndSignatureForm.get('city').dirty
                 "
               >
                 <div
@@ -992,9 +992,9 @@
                 id="input-wrapper_dynformSCA8DateSignatureDate"
                 [ngClass]="{
                   invalid:
-                    stepSevenService.dateAndSignatureForm.get('date')!
+                    stepSevenService.dateAndSignatureForm.get('date')
                       .invalid &&
-                    stepSevenService.dateAndSignatureForm.get('date')!.dirty
+                    stepSevenService.dateAndSignatureForm.get('date').dirty
                 }"
               >
                 <div class="input-content nopaddingTop no_validate">
@@ -1014,8 +1014,8 @@
 
               <div
                 *ngIf="
-                  stepSevenService.dateAndSignatureForm.get('date')!.invalid &&
-                  stepSevenService.dateAndSignatureForm.get('date')!.dirty
+                  stepSevenService.dateAndSignatureForm.get('date').invalid &&
+                  stepSevenService.dateAndSignatureForm.get('date').dirty
                 "
               >
                 <div
@@ -1056,9 +1056,9 @@
                 id="input-wrapper_dynformSCA8DateSignatureName"
                 [ngClass]="{
                   invalid:
-                    stepSevenService.dateAndSignatureForm.get('sign')!
+                    stepSevenService.dateAndSignatureForm.get('sign')
                       .invalid &&
-                    stepSevenService.dateAndSignatureForm.get('sign')!.dirty
+                    stepSevenService.dateAndSignatureForm.get('sign').dirty
                 }"
               >
                 <div class="input-content nopaddingTop">
@@ -1077,8 +1077,8 @@
 
               <div
                 *ngIf="
-                  stepSevenService.dateAndSignatureForm.get('sign')!.invalid &&
-                  stepSevenService.dateAndSignatureForm.get('sign')!.dirty
+                  stepSevenService.dateAndSignatureForm.get('sign').invalid &&
+                  stepSevenService.dateAndSignatureForm.get('sign').dirty
                 "
               >
                 <div

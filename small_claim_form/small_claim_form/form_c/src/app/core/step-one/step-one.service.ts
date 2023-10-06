@@ -67,8 +67,8 @@ export class StepOneService {
     electronicJudgmentAgreement: [""],
     electronicCommunicationAgreement: [""],
     otherInformation: [""],
-    doneAt: [""],
-    date: [""],
+    doneAt: ["", [Validators.required]],
+    date: ["", [Validators.required]],
     nameSignature: [""],
   });
 

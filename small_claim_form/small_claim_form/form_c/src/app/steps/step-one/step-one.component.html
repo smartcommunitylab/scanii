@@ -420,11 +420,11 @@
                       stepOneService.form
                         .get('secondPart')
                         .get('negativePartialApproval')
-                        .get('outsideScope')!.invalid &&
+                        .get('outsideScope').invalid &&
                       stepOneService.form
                         .get('secondPart')
                         .get('negativePartialApproval')
-                        .get('outsideScope')!.dirty
+                        .get('outsideScope').dirty
                     "
                   >
                     <div
@@ -628,11 +628,11 @@
                       stepOneService.form
                         .get('secondPart')
                         .get('negativePartialApproval')
-                        .get('other')!.invalid &&
+                        .get('other').invalid &&
                       stepOneService.form
                         .get('secondPart')
                         .get('negativePartialApproval')
-                        .get('other')!.dirty
+                        .get('other').dirty
                     "
                   >
                     <div
@@ -852,11 +852,11 @@
                           stepOneService.form
                             .get('secondPart')
                             .get('negativePartialApproval')
-                            .get('writtenEvidence')!.invalid &&
+                            .get('writtenEvidence').invalid &&
                           stepOneService.form
                             .get('secondPart')
                             .get('negativePartialApproval')
-                            .get('writtenEvidence')!.dirty
+                            .get('writtenEvidence').dirty
                         "
                       >
                         <div
@@ -1060,11 +1060,11 @@
                           stepOneService.form
                             .get('secondPart')
                             .get('negativePartialApproval')
-                            .get('witnesses')!.invalid &&
+                            .get('witnesses').invalid &&
                           stepOneService.form
                             .get('secondPart')
                             .get('negativePartialApproval')
-                            .get('witnesses')!.dirty
+                            .get('witnesses').dirty
                         "
                       >
                         <div
@@ -1270,11 +1270,11 @@
                           stepOneService.form
                             .get('secondPart')
                             .get('negativePartialApproval')
-                            .get('otherEvidence')!.invalid &&
+                            .get('otherEvidence').invalid &&
                           stepOneService.form
                             .get('secondPart')
                             .get('negativePartialApproval')
-                            .get('otherEvidence')!.dirty
+                            .get('otherEvidence').dirty
                         "
                       >
                         <div
@@ -1503,8 +1503,7 @@
                           $event,
                           ['dynformsSCC1P2WantOralHearing_div'],
                           ['yes'],
-                          'oralHearingReasons',
-                          ['oralHearingReasons']
+                          'oralHearingReasons'
                         )
                       "
                     />
@@ -1545,8 +1544,7 @@
                           $event,
                           ['dynformsSCC1P2WantOralHearing_div'],
                           ['yes'],
-                          'oralHearingReasons',
-                          ['oralHearingReasons']
+                          'oralHearingReasons'
                         )
                       "
                     />
@@ -1582,13 +1580,23 @@
 
                     <span
                       class="asterisk"
-                      id="requiredStar_blank_dynformsSCC1P2WantOralHearingIndicateReason"
-                    ></span>
+                      id="requiredStar_required_dynformsSCC1P2WantOralHearingIndicateReason"
+                      >*</span
+                    >
                   </label>
 
                   <div
                     class="input-wrapper regular"
                     id="input-wrapper_dynformsSCC1P2WantOralHearingIndicateReason"
+                    [ngClass]="{
+                      invalid:
+                        stepOneService.form
+                          .get('secondPart')
+                          .get('oralHearingReasons')?.invalid &&
+                        stepOneService.form
+                          .get('secondPart')
+                          .get('oralHearingReasons')?.dirty
+                    }"
                   >
                     <div class="input-content nopaddingTop">
                       <textarea
@@ -1601,12 +1609,29 @@
                     </div>
                   </div>
 
-                  <span
-                    id="validation_error_text_dynformsSCC1P2WantOralHearingIndicateReason"
-                    class="error"
-                    style="position: relative; top: 0px"
+                  <div
+                    *ngIf="
+                      stepOneService.form
+                        .get('secondPart')
+                        .get('oralHearingReasons')?.invalid &&
+                      stepOneService.form
+                        .get('secondPart')
+                        .get('oralHearingReasons')?.dirty
+                    "
                   >
-                  </span>
+                    <div
+                      *ngIf="stepOneService.form.get('secondPart').get('oralHearingReasons')?.errors?.['required']"
+                    >
+                      <span
+                        id="validation_error_text_dynformsSCC1P2WantOralHearingIndicateReason"
+                        class="error"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                      >
+                        Field is required
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1643,8 +1668,7 @@
                           $event,
                           ['dynformsSCC1P2HoldOralHearing_div'],
                           ['yes'],
-                          'oralHearingPhysicallyPresenceReasons',
-                          ['oralHearingPhysicallyPresenceReasons']
+                          'oralHearingPhysicallyPresenceReasons'
                         )
                       "
                     />
@@ -1686,8 +1710,7 @@
                           $event,
                           ['dynformsSCC1P2HoldOralHearing_div'],
                           ['yes'],
-                          'oralHearingPhysicallyPresenceReasons',
-                          ['oralHearingPhysicallyPresenceReasons']
+                          'oralHearingPhysicallyPresenceReasons'
                         )
                       "
                     />
@@ -1723,13 +1746,24 @@
 
                     <span
                       class="asterisk"
-                      id="requiredStar_blank_dynformsSCC1P2HoldOralHearingIndicateReason"
-                    ></span>
+                      id="requiredStar_required_dynformsSCC1P2HoldOralHearingIndicateReason"
+                      >*</span
+                    >
                   </label>
 
                   <div
                     class="input-wrapper regular"
                     id="input-wrapper_dynformsSCC1P2HoldOralHearingIndicateReason"
+                    [ngClass]="{
+                      invalid:
+                        stepOneService.form
+                          .get('secondPart')
+                          .get('oralHearingPhysicallyPresenceReasons')
+                          ?.invalid &&
+                        stepOneService.form
+                          .get('secondPart')
+                          .get('oralHearingPhysicallyPresenceReasons')?.dirty
+                    }"
                   >
                     <div class="input-content nopaddingTop">
                       <textarea
@@ -1742,12 +1776,29 @@
                     </div>
                   </div>
 
-                  <span
-                    id="validation_error_text_dynformsSCC1P2HoldOralHearingIndicateReason"
-                    class="error"
-                    style="position: relative; top: 0px"
+                  <div
+                    *ngIf="
+                      stepOneService.form
+                        .get('secondPart')
+                        .get('oralHearingPhysicallyPresenceReasons')?.invalid &&
+                      stepOneService.form
+                        .get('secondPart')
+                        .get('oralHearingPhysicallyPresenceReasons')?.dirty
+                    "
                   >
-                  </span>
+                    <div
+                      *ngIf="stepOneService.form.get('secondPart').get('oralHearingPhysicallyPresenceReasons')?.errors?.['required']"
+                    >
+                      <span
+                        id="validation_error_text_dynformsSCC1P2HoldOralHearingIndicateReason"
+                        class="error"
+                        style="position: relative; top: 0px"
+                        [translate]="'errors.required'"
+                      >
+                        Field is required
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2021,7 +2072,11 @@
 
           <div id="dynformsSCC1P2MakeCounterclaim_div" class="df_collapsed">
             <label class="df_text_info_12">
-              <span [innerHTML]="'stepOne.counterclaimInfo' | translate">
+              <span
+                [innerHTML]="
+                  'stepOne.counterclaimInfo' | translate : { url: formAUrl }
+                "
+              >
                 If yes, please fill in and attach a separate Form A</span
               ></label
             >
@@ -2260,13 +2315,19 @@
 
                 <span
                   class="asterisk"
-                  id="requiredStar_blank_dynformsSCC1P2DoneAt"
-                ></span>
+                  id="requiredStar_required_dynformsSCC1P2DoneAt"
+                  >*</span
+                >
               </label>
 
               <div
                 class="input-wrapper regular"
                 id="input-wrapper_dynformsSCC1P2DoneAt"
+                [ngClass]="{
+                  invalid:
+                    stepOneService.secondPart.get('doneAt').invalid &&
+                    stepOneService.secondPart.get('doneAt').dirty
+                }"
               >
                 <div class="input-content nopaddingTop">
                   <input
@@ -2282,12 +2343,28 @@
                 </div>
               </div>
 
-              <span
-                id="validation_error_text_dynformsSCC1P2DoneAt"
-                class="error"
-                style="position: relative; top: 0px"
+              <div
+                *ngIf="
+                  stepOneService.secondPart.get('doneAt').invalid &&
+                  stepOneService.secondPart.get('doneAt').dirty
+                "
               >
-              </span>
+                <div
+                  *ngIf="
+                  stepOneService.secondPart.get('doneAt')?.errors
+                  ?.['required']
+                  "
+                >
+                  <span
+                    id="validation_error_text_dynformsSCC1P2DoneAt"
+                    class="error"
+                    style="position: relative; top: 0px"
+                    [translate]="'errors.required'"
+                  >
+                    Field is required
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -2299,13 +2376,19 @@
 
                   <span
                     class="asterisk"
-                    id="requiredStar_blank_dynformsSCC1P2Date"
-                  ></span>
+                    id="requiredStar_required_dynformsSCC1P2Date"
+                    >*</span
+                  >
                 </label>
 
                 <div
                   class="input-wrapper regular"
                   id="input-wrapper_dynformsSCC1P2Date"
+                  [ngClass]="{
+                    invalid:
+                      stepOneService.secondPart.get('date').invalid &&
+                      stepOneService.secondPart.get('date').dirty
+                  }"
                 >
                   <div class="input-content nopaddingTop">
                     <input
@@ -2321,12 +2404,28 @@
                   </div>
                 </div>
 
-                <span
-                  id="validation_error_text_dynformsSCC1P2Date"
-                  class="error"
-                  style="position: relative; top: 0px"
+                <div
+                  *ngIf="
+                    stepOneService.secondPart.get('date').invalid &&
+                    stepOneService.secondPart.get('date').dirty
+                  "
                 >
-                </span>
+                  <div
+                    *ngIf="
+                  stepOneService.secondPart.get('date')?.errors
+                  ?.['required']
+                  "
+                  >
+                    <span
+                      id="validation_error_text_dynformsSCC1P2Date"
+                      class="error"
+                      style="position: relative; top: 0px"
+                      [translate]="'errors.required'"
+                    >
+                      Field is required
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

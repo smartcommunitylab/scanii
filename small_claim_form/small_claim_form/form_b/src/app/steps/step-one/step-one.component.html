@@ -19,8 +19,8 @@
               id="input-wrapper_dynformSCB1CaseNumber"
               [ngClass]="{
                 invalid:
-                  stepOneService.form.get('caseNumber')!.invalid &&
-                  stepOneService.form.get('caseNumber')!.dirty
+                  stepOneService.form.get('caseNumber').invalid &&
+                  stepOneService.form.get('caseNumber').dirty
               }"
             >
               <div class="input-content nopaddingTop">
@@ -39,8 +39,8 @@
 
             <div
               *ngIf="
-                stepOneService.form.get('caseNumber')!.invalid &&
-                stepOneService.form.get('caseNumber')!.dirty
+                stepOneService.form.get('caseNumber').invalid &&
+                stepOneService.form.get('caseNumber').dirty
               "
             >
               <div
@@ -79,8 +79,8 @@
                 id="input-wrapper_dynformSCB1ReceivedByTheCourtTribunalOnDate"
                 [ngClass]="{
                   invalid:
-                    stepOneService.form.get('date')!.invalid &&
-                    stepOneService.form.get('date')!.dirty
+                    stepOneService.form.get('date').invalid &&
+                    stepOneService.form.get('date').dirty
                 }"
               >
                 <div class="input-content nopaddingTop">
@@ -99,8 +99,8 @@
 
               <div
                 *ngIf="
-                  stepOneService.form.get('date')!.invalid &&
-                  stepOneService.form.get('date')!.dirty
+                  stepOneService.form.get('date').invalid &&
+                  stepOneService.form.get('date').dirty
                 "
               >
                 <div
@@ -156,9 +156,9 @@
                     id="input-wrapper_dynformSCB1CountryCourt"
                     [ngClass]="{
                       invalid:
-                        stepOneService.form.get('court')!.get('courtCountry')!
+                        stepOneService.form.get('court').get('courtCountry')
                           .invalid &&
-                        stepOneService.form.get('court')!.get('courtCountry')!
+                        stepOneService.form.get('court').get('courtCountry')
                           .dirty
                     }"
                   >
@@ -204,9 +204,9 @@
 
                   <div
                     *ngIf="
-                      stepOneService.form.get('court')!.get('courtCountry')!
+                      stepOneService.form.get('court').get('courtCountry')
                         .invalid &&
-                      stepOneService.form.get('court')!.get('courtCountry')!
+                      stepOneService.form.get('court').get('courtCountry')
                         .dirty
                     "
                   >
@@ -251,10 +251,10 @@
                         invalid:
                           (stepOneService.form
                             .get('court')
-                            ?.get('courtCountryOther'))!.invalid &&
+                            ?.get('courtCountryOther')).invalid &&
                           (stepOneService.form
                             .get('court')
-                            ?.get('courtCountryOther'))!.dirty
+                            ?.get('courtCountryOther')).dirty
                       }"
                     >
                       <div class="input-content nopaddingTop">
@@ -275,10 +275,10 @@
                       *ngIf="
                         (stepOneService.form
                           .get('court')
-                          ?.get('courtCountryOther'))!.invalid &&
+                          ?.get('courtCountryOther')).invalid &&
                         (stepOneService.form
                           .get('court')
-                          ?.get('courtCountryOther'))!.dirty
+                          ?.get('courtCountryOther')).dirty
                       "
                     >
                       <div
@@ -315,9 +315,9 @@
                     id="input-wrapper_dynformSCB1Name"
                     [ngClass]="{
                       invalid:
-                        stepOneService.form.get('court')!.get('name')!
+                        stepOneService.form.get('court').get('name')
                           .invalid &&
-                        stepOneService.form.get('court')!.get('name')!.dirty
+                        stepOneService.form.get('court').get('name').dirty
                     }"
                   >
                     <div class="input-content nopaddingTop">
@@ -335,8 +335,8 @@
 
                   <div
                     *ngIf="
-                      stepOneService.form.get('court')!.get('name')!.invalid &&
-                      stepOneService.form.get('court')!.get('name')!.dirty
+                      stepOneService.form.get('court').get('name').invalid &&
+                      stepOneService.form.get('court').get('name').dirty
                     "
                   >
                     <div
@@ -377,9 +377,9 @@
                     id="input-wrapper_dynformSCB1StreetAndNumberPoBox"
                     [ngClass]="{
                       invalid:
-                        stepOneService.form.get('court')!.get('street')!
+                        stepOneService.form.get('court').get('street')
                           .invalid &&
-                        stepOneService.form.get('court')!.get('street')!.dirty
+                        stepOneService.form.get('court').get('street').dirty
                     }"
                   >
                     <div class="input-content nopaddingTop">
@@ -398,9 +398,9 @@
 
                   <div
                     *ngIf="
-                      stepOneService.form.get('court')!.get('street')!
+                      stepOneService.form.get('court').get('street')
                         .invalid &&
-                      stepOneService.form.get('court')!.get('street')!.dirty
+                      stepOneService.form.get('court').get('street').dirty
                     "
                   >
                     <div
@@ -440,9 +440,9 @@
                     id="input-wrapper_dynformSCB1CityAndPostalCode"
                     [ngClass]="{
                       invalid:
-                        stepOneService.form.get('court')!.get('cityPostalCode')!
+                        stepOneService.form.get('court').get('cityPostalCode')
                           .invalid &&
-                        stepOneService.form.get('court')!.get('cityPostalCode')!
+                        stepOneService.form.get('court').get('cityPostalCode')
                           .dirty
                     }"
                   >
@@ -462,9 +462,9 @@
 
                   <div
                     *ngIf="
-                      stepOneService.form.get('court')!.get('cityPostalCode')!
+                      stepOneService.form.get('court').get('cityPostalCode')
                         .invalid &&
-                      stepOneService.form.get('court')!.get('cityPostalCode')!
+                      stepOneService.form.get('court').get('cityPostalCode')
                         .dirty
                     "
                   >
@@ -500,7 +500,7 @@
           <div
             formArrayName="claimants"
             *ngFor="
-              let formGroup of stepOneService.form.get('claimants')![
+              let formGroup of stepOneService.form.get('claimants')[
                 'controls'
               ]!;
               let i = index
@@ -550,7 +550,7 @@
                                 *ngIf="
                               stepOneService.claimants
                               .at(i)
-                              .get('organisation')!.dirty &&
+                              .get('organisation').dirty &&
                               stepOneService.claimants
                               .at(i).errors?.['organisationSurnameFirstNameError']
                               "
@@ -601,7 +601,7 @@
                                   invalid:
                                     stepOneService.claimants
                                       .at(i)
-                                      .get('organisation')!.dirty &&
+                                      .get('organisation').dirty &&
                                       stepOneService.claimants
                                       .at(i).errors?.['organisationSurnameFirstNameError']
                                 }"
@@ -664,7 +664,7 @@
                                     invalid:
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('surname')!.dirty &&
+                                        .get('surname').dirty &&
                                         stepOneService.claimants
                                         .at(i).errors?.['organisationSurnameFirstNameError']
                                   }"
@@ -730,7 +730,7 @@
                                     invalid:
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('firstName')!.dirty&&
+                                        .get('firstName').dirty&&
                                         stepOneService.claimants
                                         .at(i).errors?.['organisationSurnameFirstNameError']
                                   }"
@@ -875,10 +875,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('street')!.invalid &&
+                                          .get('street').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('street')!.dirty
+                                          .get('street').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -908,10 +908,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('street')!.invalid &&
+                                        .get('street').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('street')!.dirty
+                                        .get('street').dirty
                                     "
                                   >
                                     <div
@@ -973,10 +973,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('postalCode')!.invalid &&
+                                          .get('postalCode').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('postalCode')!.dirty
+                                          .get('postalCode').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -1006,10 +1006,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('postalCode')!.invalid &&
+                                        .get('postalCode').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('postalCode')!.dirty
+                                        .get('postalCode').dirty
                                     "
                                   >
                                     <div
@@ -1070,10 +1070,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('city')!.invalid &&
+                                          .get('city').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('city')!.dirty
+                                          .get('city').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -1103,10 +1103,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('city')!.invalid &&
+                                        .get('city').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('city')!.dirty
+                                        .get('city').dirty
                                     "
                                   >
                                     <div
@@ -1168,10 +1168,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('country')!.invalid &&
+                                          .get('country').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('country')!.dirty
+                                          .get('country').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -1228,10 +1228,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('country')!.invalid &&
+                                        .get('country').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('country')!.dirty
+                                        .get('country').dirty
                                     "
                                   >
                                     <div
@@ -1302,10 +1302,10 @@
                                           invalid:
                                             stepOneService.claimants
                                               .at(i)
-                                              .get('countryOther')!.invalid &&
+                                              .get('countryOther').invalid &&
                                             stepOneService.claimants
                                               .at(i)
-                                              .get('countryOther')!.dirty
+                                              .get('countryOther').dirty
                                         }"
                                       >
                                         <div class="input-content">
@@ -1352,10 +1352,10 @@
                                         *ngIf="
                                           stepOneService.claimants
                                             .at(i)
-                                            .get('countryOther')!.invalid &&
+                                            .get('countryOther').invalid &&
                                           stepOneService.claimants
                                             .at(i)
-                                            .get('countryOther')!.dirty
+                                            .get('countryOther').dirty
                                         "
                                       >
                                         <div
@@ -1435,10 +1435,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('phoneNumber')!.invalid &&
+                                          .get('phoneNumber').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('phoneNumber')!.dirty
+                                          .get('phoneNumber').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -1467,10 +1467,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('phoneNumber')!.invalid &&
+                                        .get('phoneNumber').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('phoneNumber')!.dirty
+                                        .get('phoneNumber').dirty
                                     "
                                   >
                                     <div
@@ -1534,10 +1534,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('email')!.invalid &&
+                                          .get('email').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('email')!.dirty
+                                          .get('email').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -1567,10 +1567,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('email')!.invalid &&
+                                        .get('email').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('email')!.dirty
+                                        .get('email').dirty
                                     "
                                   >
                                     <div
@@ -1637,10 +1637,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('representative')!.invalid &&
+                                          .get('representative').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('representative')!.dirty
+                                          .get('representative').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -1694,10 +1694,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('representative')!.invalid &&
+                                        .get('representative').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('representative')!.dirty
+                                        .get('representative').dirty
                                     "
                                   >
                                     <div
@@ -2068,7 +2068,7 @@
                                 *ngIf="
                               stepOneService.claimants
                               .at(i)
-                              .get('organisation')!.dirty &&
+                              .get('organisation').dirty &&
                               stepOneService.claimants
                               .at(i).errors?.['organisationSurnameFirstNameError']
               "
@@ -2124,7 +2124,7 @@
                                   invalid:
                                     stepOneService.claimants
                                       .at(i)
-                                      .get('organisation')!.dirty &&
+                                      .get('organisation').dirty &&
                                       stepOneService.claimants
                                       .at(i).errors?.['organisationSurnameFirstNameError']
                                 }"
@@ -2201,7 +2201,7 @@
                                     invalid:
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('surname')!.dirty &&
+                                        .get('surname').dirty &&
                                         stepOneService.claimants
                                         .at(i).errors?.['organisationSurnameFirstNameError']
                                   }"
@@ -2279,7 +2279,7 @@
                                     invalid:
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('firstName')!.dirty &&
+                                        .get('firstName').dirty &&
                                         stepOneService.claimants
                                         .at(i).errors?.['organisationSurnameFirstNameError']
                                   }"
@@ -2438,10 +2438,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('street')!.invalid &&
+                                          .get('street').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('street')!.dirty
+                                          .get('street').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -2477,10 +2477,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('street')!.invalid &&
+                                        .get('street').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('street')!.dirty
+                                        .get('street').dirty
                                     "
                                   >
                                     <div
@@ -2546,10 +2546,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('postalCode')!.invalid &&
+                                          .get('postalCode').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('postalCode')!.dirty
+                                          .get('postalCode').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -2579,10 +2579,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('postalCode')!.invalid &&
+                                        .get('postalCode').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('postalCode')!.dirty
+                                        .get('postalCode').dirty
                                     "
                                   >
                                     <div
@@ -2646,10 +2646,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('city')!.invalid &&
+                                          .get('city').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('city')!.dirty
+                                          .get('city').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -2679,10 +2679,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('city')!.invalid &&
+                                        .get('city').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('city')!.dirty
+                                        .get('city').dirty
                                     "
                                   >
                                     <div
@@ -2748,10 +2748,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('country')!.invalid &&
+                                          .get('country').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('country')!.dirty
+                                          .get('country').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -2808,10 +2808,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('country')!.invalid &&
+                                        .get('country').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('country')!.dirty
+                                        .get('country').dirty
                                     "
                                   >
                                     <div
@@ -2884,10 +2884,10 @@
                                           invalid:
                                             stepOneService.claimants
                                               .at(i)
-                                              .get('countryOther')!.invalid &&
+                                              .get('countryOther').invalid &&
                                             stepOneService.claimants
                                               .at(i)
-                                              .get('countryOther')!.dirty
+                                              .get('countryOther').dirty
                                         }"
                                       >
                                         <div class="input-content">
@@ -2935,10 +2935,10 @@
                                         *ngIf="
                                           stepOneService.claimants
                                             .at(i)
-                                            .get('countryOther')!.invalid &&
+                                            .get('countryOther').invalid &&
                                           stepOneService.claimants
                                             .at(i)
-                                            .get('countryOther')!.dirty
+                                            .get('countryOther').dirty
                                         "
                                       >
                                         <div
@@ -3017,10 +3017,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('phoneNumber')!.invalid &&
+                                          .get('phoneNumber').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('phoneNumber')!.dirty
+                                          .get('phoneNumber').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -3051,10 +3051,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('phoneNumber')!.invalid &&
+                                        .get('phoneNumber').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('phoneNumber')!.dirty
+                                        .get('phoneNumber').dirty
                                     "
                                   >
                                     <div
@@ -3120,10 +3120,10 @@
                                       invalid:
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('email')!.invalid &&
+                                          .get('email').invalid &&
                                         stepOneService.claimants
                                           .at(i)
-                                          .get('email')!.dirty
+                                          .get('email').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -3153,10 +3153,10 @@
                                     *ngIf="
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('email')!.invalid &&
+                                        .get('email').invalid &&
                                       stepOneService.claimants
                                         .at(i)
-                                        .get('email')!.dirty
+                                        .get('email').dirty
                                     "
                                   >
                                     <div
@@ -3232,7 +3232,7 @@
           <div
             formArrayName="defendants"
             *ngFor="
-              let formGroup of stepOneService.form.get('defendants')![
+              let formGroup of stepOneService.form.get('defendants')[
                 'controls'
               ]!;
               let i = index
@@ -3282,7 +3282,7 @@
                                 *ngIf="
                               stepOneService.defendants
                               .at(i)
-                              .get('organisation')!.dirty &&
+                              .get('organisation').dirty &&
                               stepOneService.defendants
                               .at(i).errors?.['organisationSurnameFirstNameError']
                               "
@@ -3339,7 +3339,7 @@
                                   invalid:
                                   stepOneService.defendants
                                   .at(i)
-                                  .get('organisation')!.dirty &&
+                                  .get('organisation').dirty &&
                                   stepOneService.defendants
                                   .at(i).errors?.['organisationSurnameFirstNameError']
                                 }"
@@ -3402,7 +3402,7 @@
                                     invalid:
                                     stepOneService.defendants
                                     .at(i)
-                                    .get('surname')!.dirty &&
+                                    .get('surname').dirty &&
                                     stepOneService.defendants
                                     .at(i).errors?.['organisationSurnameFirstNameError']
                                   }"
@@ -3468,7 +3468,7 @@
                                     invalid:
                                     stepOneService.defendants
                                     .at(i)
-                                    .get('firstName')!.dirty &&
+                                    .get('firstName').dirty &&
                                     stepOneService.defendants
                                     .at(i).errors?.['organisationSurnameFirstNameError']
                                   }"
@@ -3614,10 +3614,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('street')!.invalid &&
+                                          .get('street').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('street')!.dirty
+                                          .get('street').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -3647,10 +3647,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('street')!.invalid &&
+                                        .get('street').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('street')!.dirty
+                                        .get('street').dirty
                                     "
                                   >
                                     <div
@@ -3714,10 +3714,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('postalCode')!.invalid &&
+                                          .get('postalCode').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('postalCode')!.dirty
+                                          .get('postalCode').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -3747,10 +3747,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('postalCode')!.invalid &&
+                                        .get('postalCode').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('postalCode')!.dirty
+                                        .get('postalCode').dirty
                                     "
                                   >
                                     <div
@@ -3811,10 +3811,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('city')!.invalid &&
+                                          .get('city').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('city')!.dirty
+                                          .get('city').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -3844,10 +3844,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('city')!.invalid &&
+                                        .get('city').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('city')!.dirty
+                                        .get('city').dirty
                                     "
                                   >
                                     <div
@@ -3909,10 +3909,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('country')!.invalid &&
+                                          .get('country').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('country')!.dirty
+                                          .get('country').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -3969,10 +3969,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('country')!.invalid &&
+                                        .get('country').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('country')!.dirty
+                                        .get('country').dirty
                                     "
                                   >
                                     <div
@@ -4045,10 +4045,10 @@
                                           invalid:
                                             stepOneService.defendants
                                               .at(i)
-                                              .get('countryOther')!.invalid &&
+                                              .get('countryOther').invalid &&
                                             stepOneService.defendants
                                               .at(i)
-                                              .get('countryOther')!.dirty
+                                              .get('countryOther').dirty
                                         }"
                                       >
                                         <div class="input-content">
@@ -4095,10 +4095,10 @@
                                         *ngIf="
                                           stepOneService.defendants
                                             .at(i)
-                                            .get('countryOther')!.invalid &&
+                                            .get('countryOther').invalid &&
                                           stepOneService.defendants
                                             .at(i)
-                                            .get('countryOther')!.dirty
+                                            .get('countryOther').dirty
                                         "
                                       >
                                         <div
@@ -4178,10 +4178,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('phoneNumber')!.invalid &&
+                                          .get('phoneNumber').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('phoneNumber')!.dirty
+                                          .get('phoneNumber').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -4210,10 +4210,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('phoneNumber')!.invalid &&
+                                        .get('phoneNumber').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('phoneNumber')!.dirty
+                                        .get('phoneNumber').dirty
                                     "
                                   >
                                     <div
@@ -4275,10 +4275,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('email')!.invalid &&
+                                          .get('email').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('email')!.dirty
+                                          .get('email').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -4309,10 +4309,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('email')!.invalid &&
+                                        .get('email').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('email')!.dirty
+                                        .get('email').dirty
                                     "
                                   >
                                     <div
@@ -4380,10 +4380,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('representative')!.invalid &&
+                                          .get('representative').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('representative')!.dirty
+                                          .get('representative').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -4437,10 +4437,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('representative')!.invalid &&
+                                        .get('representative').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('representative')!.dirty
+                                        .get('representative').dirty
                                     "
                                   >
                                     <div
@@ -4813,7 +4813,7 @@
                                 *ngIf="
                               stepOneService.defendants
                               .at(i)
-                              .get('organisation')!.dirty &&
+                              .get('organisation').dirty &&
                               stepOneService.defendants
                               .at(i).errors?.['organisationSurnameFirstNameError']
                               "
@@ -4873,7 +4873,7 @@
                                   invalid:
                                   stepOneService.defendants
                                   .at(i)
-                                  .get('organisation')!.dirty &&
+                                  .get('organisation').dirty &&
                                   stepOneService.defendants
                                   .at(i).errors?.['organisationSurnameFirstNameError']
                                 }"
@@ -4950,7 +4950,7 @@
                                     invalid:
                                     stepOneService.defendants
                                     .at(i)
-                                    .get('organisation')!.dirty &&
+                                    .get('organisation').dirty &&
                                     stepOneService.defendants
                                     .at(i).errors?.['organisationSurnameFirstNameError']
                                   }"
@@ -5028,7 +5028,7 @@
                                     invalid:
                                     stepOneService.defendants
                                     .at(i)
-                                    .get('organisation')!.dirty &&
+                                    .get('organisation').dirty &&
                                     stepOneService.defendants
                                     .at(i).errors?.['organisationSurnameFirstNameError']
                                   }"
@@ -5187,10 +5187,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('street')!.invalid &&
+                                          .get('street').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('street')!.dirty
+                                          .get('street').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -5226,10 +5226,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('street')!.invalid &&
+                                        .get('street').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('street')!.dirty
+                                        .get('street').dirty
                                     "
                                   >
                                     <div
@@ -5295,10 +5295,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('postalCode')!.invalid &&
+                                          .get('postalCode').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('postalCode')!.dirty
+                                          .get('postalCode').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -5328,10 +5328,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('postalCode')!.invalid &&
+                                        .get('postalCode').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('postalCode')!.dirty
+                                        .get('postalCode').dirty
                                     "
                                   >
                                     <div
@@ -5395,10 +5395,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('city')!.invalid &&
+                                          .get('city').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('city')!.dirty
+                                          .get('city').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -5428,10 +5428,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('city')!.invalid &&
+                                        .get('city').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('city')!.dirty
+                                        .get('city').dirty
                                     "
                                   >
                                     <div
@@ -5497,10 +5497,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('country')!.invalid &&
+                                          .get('country').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('country')!.dirty
+                                          .get('country').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -5557,10 +5557,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('country')!.invalid &&
+                                        .get('country').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('country')!.dirty
+                                        .get('country').dirty
                                     "
                                   >
                                     <div
@@ -5637,10 +5637,10 @@
                                           invalid:
                                             stepOneService.defendants
                                               .at(i)
-                                              .get('countryOther')!.invalid &&
+                                              .get('countryOther').invalid &&
                                             stepOneService.defendants
                                               .at(i)
-                                              .get('countryOther')!.dirty
+                                              .get('countryOther').dirty
                                         }"
                                       >
                                         <div class="input-content">
@@ -5688,10 +5688,10 @@
                                         *ngIf="
                                           stepOneService.defendants
                                             .at(i)
-                                            .get('countryOther')!.invalid &&
+                                            .get('countryOther').invalid &&
                                           stepOneService.defendants
                                             .at(i)
-                                            .get('countryOther')!.dirty
+                                            .get('countryOther').dirty
                                         "
                                       >
                                         <div
@@ -5770,10 +5770,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('phoneNumber')!.invalid &&
+                                          .get('phoneNumber').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('phoneNumber')!.dirty
+                                          .get('phoneNumber').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -5804,10 +5804,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('phoneNumber')!.invalid &&
+                                        .get('phoneNumber').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('phoneNumber')!.dirty
+                                        .get('phoneNumber').dirty
                                     "
                                   >
                                     <div
@@ -5873,10 +5873,10 @@
                                       invalid:
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('email')!.invalid &&
+                                          .get('email').invalid &&
                                         stepOneService.defendants
                                           .at(i)
-                                          .get('email')!.dirty
+                                          .get('email').dirty
                                     }"
                                   >
                                     <div class="input-content">
@@ -5907,10 +5907,10 @@
                                     *ngIf="
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('email')!.invalid &&
+                                        .get('email').invalid &&
                                       stepOneService.defendants
                                         .at(i)
-                                        .get('email')!.dirty
+                                        .get('email').dirty
                                     "
                                   >
                                     <div
