@@ -310,6 +310,7 @@
     "claimantRepresentativeLabel": "Claimant's representative",
     "addAnotherClaimant": "Add another claimant",
     "addAnotherClaimantText": "If you'd like to add another party and/or representative, please click on the item that corresponds to the associated parties and/or their representatives.",
+    "claimantDetails": "Claimant's details&nbsp",
     "claimantOrganisation": "2.1. Corporate name of company or organisation",
     "surname": "Surname",
     "firstName": "First name",
@@ -324,6 +325,7 @@
     "claimantRepresentative": "2.8. Claimant’s representative, if any, and contact details",
     "addRepresentative": "Add new representative",
     "claimantOther": "2.9. Other details",
+    "representativeClaimantDetails": "Details of the claimant's representative&nbsp",
     "representativeOrganisation": "Corporate name of company or organisation",
     "representativeSurname": "Surname",
     "representativeFirstName": "First name",
@@ -342,6 +344,7 @@
     "defendantRepresentativeLabel": "Defendant's representative",
     "addAnotherDefendant": "Add another defendant",
     "addAnotherDefendantText": "If you'd like to add another party and/or representative, please click on the item that corresponds to the associated parties and/or their representatives.",
+    "defendantDetails": "Defendant's details&nbsp",
     "defendantOrganisation": "3.1. Corporate name of company or organisation",
     "defendantIdentificationCode": "3.2. Personal identification number or passport number/registration number",
     "defendantStreet": "3.3. Street and number/PO box",
@@ -350,7 +353,8 @@
     "defendantPhoneNumber": "3.6. Telephone",
     "defendantEmail": "3.7. E-mail",
     "defendantRepresentative": "3.8. Defendant’s representative, if any, and contact details",
-    "defendantOther": "3.9. Other details"
+    "defendantOther": "3.9. Other details",
+    "representativeDefendantDetails": "Details of the defendant's representative&nbsp"
   },
   "stepTwo": {
     "judgmentOrCourtSettlement": "Judgement or court settlement",

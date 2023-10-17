@@ -320,6 +320,7 @@
     "claimantRepresentativeLabel": "Vertreter des Klägers",
     "addAnotherClaimant": "Kläger hinzufügen",
     "addAnotherClaimantText": "Wenn sie eine weitere Partei und/oder einen weiteren Vertreter hinzufügen möchten, klicken Sie bitte auf die Angabe, die die jeweilige Partei und/oder ihre Vertreter beschreibt.",
+    "claimantDetails": "Angaben zum Kläger&nbsp",
     "claimantOrganisation": "2.1. Name der Firma oder Organisation",
     "surname": "Name",
     "firstName": "Vorname",
@@ -334,6 +335,7 @@
     "claimantRepresentative": "2.8. Ggf. Vertreter des Klägers und Kontaktadresse",
     "addRepresentative": "Neuen Vertreter hinzufügen",
     "claimantOther": "2.9. Sonstige Angaben",
+    "representativeClaimantDetails": "Angaben zum Vertreter des Klägers&nbsp",
     "representativeOrganisation": "Name der Firma oder Organisation",
     "representativeSurname": "Name",
     "representativeFirstName": "Vorname",
@@ -352,6 +354,7 @@
     "defendantRepresentativeLabel": "Vertreter des Beklagten",
     "addAnotherDefendant": "Einen weiteren Beklagten hinzufügen",
     "addAnotherDefendantText": "Wenn sie eine weitere Partei und/oder einen weiteren Vertreter hinzufügen möchten, klicken Sie bitte auf die Angabe, die die jeweilige Partei und/oder ihre Vertreter beschreibt.",
+    "defendantDetails": "Angaben zum Beklagten&nbsp",
     "defendantOrganisation": "3.1. Name der Firma oder Organisation",
     "defendantIdentificationCode": "3.2. Persönliche Identifikationsnummer oder Passnummer / Registrierungsnummer",
     "defendantStreet": "3.3. Straße und Hausnummer / Postfach",
@@ -360,7 +363,8 @@
     "defendantPhoneNumber": "3.6. Telefon",
     "defendantEmail": "3.7. E-Mail",
     "defendantRepresentative": "3.8. Ggf. Vertreter des Beklagten und Kontaktadresse",
-    "defendantOther": "3.9. Sonstige Angaben"
+    "defendantOther": "3.9. Sonstige Angaben",
+    "representativeDefendantDetails": "Angaben zum Vertreter des Beklagten&nbsp"
   },
   "stepTwo": {
     "judgmentOrCourtSettlement": "Entscheidung oder Gerichtlicher Vergleich",

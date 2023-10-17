@@ -17,9 +17,9 @@ declare const $: any;
 datepickerFactory($);
 
 @Component({
-  selector: 'app-step-two',
-  templateUrl: './step-two.component.html',
-  styleUrls: ['./step-two.component.scss'],
+  selector: "app-step-two",
+  templateUrl: "./step-two.component.html",
+  styleUrls: ["./step-two.component.scss"],
   providers: [DatePipe],
 })
 export class StepTwoComponent implements OnInit {
@@ -37,7 +37,24 @@ export class StepTwoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.formAUrl = FORM_A_URL;
+    // this.stepTwoService.firstPart.patchValue({
+    //   claimant: "John Doe",
+    //   defendant: "Jane Doe",
+    //   court: "Court of Magistrates (Malta)",
+    //   claim: "Money",
+    //   caseNumber: "123456789",
+    // });
+
+    // this.stepTwoService.secondPart.patchValue({
+    //   claimApproval: "yes",
+    //   oralHearingRequest: "no",
+    //   oralHearingPhysicallyPresence: "no",
+    //   proceedingsCostClaim: "no",
+    //   counterclaim: "no",
+    //   electronicJudgmentAgreement: "no",
+    //   electronicCommunicationAgreement: "no",
+    //   doneAt: "Valletta",
+    // });
 
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       const currentDate = this.datePipe.transform(new Date(), "dd/MM/yyyy");
@@ -47,6 +64,8 @@ export class StepTwoComponent implements OnInit {
         .setValue(currentDate);
       this.initDatepicker(event.lang);
     });
+    
+    this.formAUrl = FORM_A_URL;
   }
 
   showHideDiv(

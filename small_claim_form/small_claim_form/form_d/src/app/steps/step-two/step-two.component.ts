@@ -196,7 +196,10 @@ export class StepTwoComponent implements OnInit {
           !this.stepTwoService.judgmentRadioButton;
 
         if (this.stepTwoService.judgmentRadioButton) {
-          this.addRequiredValidatorToFormElement(formGroup, excludedFormControls);
+          this.addRequiredValidatorToFormElement(
+            formGroup,
+            excludedFormControls
+          );
 
           //expand div
           this.removeDfCollpasedClass(radioButtonObj.divIdToExpand);
@@ -211,7 +214,10 @@ export class StepTwoComponent implements OnInit {
           !this.stepTwoService.settlementRadioButton;
 
         if (this.stepTwoService.settlementRadioButton) {
-          this.addRequiredValidatorToFormElement(formGroup, excludedFormControls);
+          this.addRequiredValidatorToFormElement(
+            formGroup,
+            excludedFormControls
+          );
 
           //expand div
           this.removeDfCollpasedClass(radioButtonObj.divIdToExpand);
