@@ -15,9 +15,9 @@ import {
   TranslateModule,
 } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-import { StepOneComponent } from "./steps/step-one/step-one.component";
 import { CustomModule } from "./shared/custom.module";
-import { StepZeroComponent } from "./steps/step-zero/step-zero.component";
+import { StepOneComponent } from "./steps/step-one/step-one.component";
+import { StepTwoComponent } from "./steps/step-two/step-two.component";
 
 export function HttpLoaderFactory(
   http: HttpClient,
@@ -45,7 +45,7 @@ export class CustomMissingTranslationHandler
     FooterComponent,
     NavbarComponent,
     StepOneComponent,
-    StepZeroComponent,
+    StepTwoComponent,
   ],
   imports: [
     BrowserModule,

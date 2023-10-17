@@ -1,30 +1,30 @@
 import { Injectable } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { PromiseContent } from "../common/promise-content.model";
-import { StepOneService } from "../step-one/step-one.service";
+import { StepTwoService } from "../step-two/step-two.service";
 import exportFromJSON from "export-from-json";
 import { FormC } from "../common/form-C.model";
-import { StepZeroService } from "../step-zero/step-zero.service";
+import { StepOneService } from "../step-one/step-one.service";
 
 @Injectable({
   providedIn: "root",
 })
 export class NavbarService {
-  previousStepId = "step0";
-  currentStepId = "step0";
+  previousStepId = "step1";
+  currentStepId = "step1";
 
   constructor(
-    private stepZeroService: StepZeroService,
     private stepOneService: StepOneService,
+    private stepTwoService: StepTwoService,
     private translateService: TranslateService
   ) {}
 
   isStepValid(stepId: string): Promise<PromiseContent> | null {
     switch (stepId) {
-      case "step0":
-        return this.stepZeroService.isStepZeroValid();
       case "step1":
-        return this.stepOneService.isStepOneFormValid();
+        return this.stepOneService.isStepOneValid();
+      case "step2":
+        return this.stepTwoService.isStepTwoFormValid();
       default:
         return null;
     }
@@ -51,7 +51,7 @@ export class NavbarService {
 
   getFormC(): FormC {
     const formC = new FormC(
-      this.stepOneService.form.value
+      this.stepTwoService.form.value
     );
     return formC;
   }

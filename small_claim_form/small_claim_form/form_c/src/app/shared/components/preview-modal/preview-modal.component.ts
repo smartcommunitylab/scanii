@@ -13,7 +13,7 @@ pdfMake.vfs = pdfFonts.pdfMake.vfs;
   styleUrls: ["./preview-modal.component.scss"],
 })
 export class PreviewModalComponent implements OnInit {
-  stepOne: any;
+  stepTwo: any;
   showSpinner = false;
   documentDefinition = {
     content: [],
@@ -57,7 +57,7 @@ export class PreviewModalComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.stepOne = this.navbarService.getFormC().stepOne;
+    this.stepTwo = this.navbarService.getFormC().stepTwo;
 
     pdfMake.fonts = {
       FontAwesome: {

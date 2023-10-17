@@ -85,8 +85,7 @@
                     *ngIf="
                       stepOneService.form.get('court').get('courtCountry')
                         .invalid &&
-                      stepOneService.form.get('court').get('courtCountry')
-                        .dirty
+                      stepOneService.form.get('court').get('courtCountry').dirty
                     "
                   >
                     <div
@@ -194,8 +193,7 @@
                     id="input-wrapper_dynformSCD1Name"
                     [ngClass]="{
                       invalid:
-                        stepOneService.form.get('court').get('name')
-                          .invalid &&
+                        stepOneService.form.get('court').get('name').invalid &&
                         stepOneService.form.get('court').get('name').dirty
                     }"
                   >
@@ -277,8 +275,7 @@
 
                   <div
                     *ngIf="
-                      stepOneService.form.get('court').get('street')
-                        .invalid &&
+                      stepOneService.form.get('court').get('street').invalid &&
                       stepOneService.form.get('court').get('street').dirty
                     "
                   >
@@ -422,6 +419,29 @@
                       <div class="grid">
                         <div class="grid_item two-thirds">
                           <div [attr.id]="'parties[' + i + '].claimant_div'">
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label style="margin-bottom: 0px">
+                                  <span
+                                    [innerHTML]="
+                                      'stepOne.claimantDetails' | translate
+                                    "
+                                  >
+                                    The claimant’s details
+                                  </span>
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_required_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantTitle'
+                                    "
+                                    >*</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+
                             <span class="marginleft20px">
                               <div
                                 class="pb-3"
@@ -980,12 +1000,10 @@
                                   </div>
                                   <div
                                     *ngIf="
-                                      stepOneService.claimants
-                                        .at(i)
-                                        .get('city').invalid &&
-                                      stepOneService.claimants
-                                        .at(i)
-                                        .get('city').dirty
+                                      stepOneService.claimants.at(i).get('city')
+                                        .invalid &&
+                                      stepOneService.claimants.at(i).get('city')
+                                        .dirty
                                     "
                                   >
                                     <div
@@ -1940,6 +1958,30 @@
                               'parties[' + i + '].claimantRepresentative_div'
                             "
                           >
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label style="margin-bottom: 0px">
+                                  <span
+                                    [innerHTML]="
+                                      'stepOne.representativeClaimantDetails'
+                                        | translate
+                                    "
+                                  >
+                                    The representative claimant’s details
+                                  </span>
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_required_parties[' +
+                                      i +
+                                      '].dynformSCA2ClaimantRepresentativeTitle'
+                                    "
+                                    >*</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+
                             <div class="marginleft20px">
                               <div
                                 class="pb-3"
@@ -2556,12 +2598,10 @@
                                   </div>
                                   <div
                                     *ngIf="
-                                      stepOneService.claimants
-                                        .at(i)
-                                        .get('city').invalid &&
-                                      stepOneService.claimants
-                                        .at(i)
-                                        .get('city').dirty
+                                      stepOneService.claimants.at(i).get('city')
+                                        .invalid &&
+                                      stepOneService.claimants.at(i).get('city')
+                                        .dirty
                                     "
                                   >
                                     <div
@@ -3154,6 +3194,29 @@
                       <div class="grid">
                         <div class="grid_item two-thirds">
                           <div [attr.id]="'parties[' + i + '].defendant_div'">
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label style="margin-bottom: 0px">
+                                  <span
+                                    [innerHTML]="
+                                      'stepOne.defendantDetails' | translate
+                                    "
+                                  >
+                                    The defendant’s details
+                                  </span>
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_required_parties[' +
+                                      i +
+                                      '].dynformSCA2DefendantTitle'
+                                    "
+                                    >*</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+
                             <span class="marginleft20px">
                               <div
                                 class="pb-3"
@@ -4685,6 +4748,30 @@
                               'parties[' + i + '].defendantRepresentative_div'
                             "
                           >
+                            <div class="form-row full-width bold">
+                              <div>
+                                <label style="margin-bottom: 0px">
+                                  <span
+                                    [innerHTML]="
+                                      'stepOne.representativeDefendantDetails'
+                                        | translate
+                                    "
+                                  >
+                                    The representative defendant’s details
+                                  </span>
+                                  <span
+                                    class="asterisk"
+                                    [attr.id]="
+                                      'requiredStar_required_parties[' +
+                                      i +
+                                      '].dynformSCA2DefendantRepresentativeTitle'
+                                    "
+                                    >*</span
+                                  >
+                                </label>
+                              </div>
+                            </div>
+
                             <div class="marginleft20px">
                               <div
                                 class="pb-3"

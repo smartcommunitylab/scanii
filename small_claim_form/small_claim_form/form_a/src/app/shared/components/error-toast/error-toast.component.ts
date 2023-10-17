@@ -23,6 +23,8 @@ export class ErrorToastComponent implements OnInit {
   }
 
   isWarningToastVisible() {
-    return window["getIsWarningStepVisible"]();
+    return window["getIsWarningStepVisible"]
+      ? window["getIsWarningStepVisible"]()
+      : false;
   }
 }

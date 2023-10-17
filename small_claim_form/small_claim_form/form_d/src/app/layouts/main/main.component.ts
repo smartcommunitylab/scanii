@@ -10,13 +10,15 @@ import { TranslateConfigService } from "src/app/shared/services/translate-config
 export class MainComponent implements OnInit {
   constructor(private translateConfigService: TranslateConfigService) {
     this.translateConfigService.setDefaultLanguage();
-
-    //window.addEventListener('message', this.messageListener.bind(this), false);
   }
 
   ngOnInit() {
     if (window.addEventListener) {
-      window.addEventListener("storage", this.storageListener.bind(this), false);
+      window.addEventListener(
+        "storage",
+        this.storageListener.bind(this),
+        false
+      );
     }
   }
 
@@ -25,16 +27,5 @@ export class MainComponent implements OnInit {
     if (lang || typeof lang === "string")
       this.translateConfigService.setLanguage(lang);
     else this.translateConfigService.setDefaultLanguage();
-  }
-
-  // private messageListener(event: MessageEvent) {
-  //   if (event.origin === EXTERNAL_URI) {
-  //     this.translateConfigService.setLanguage(event.data);
-  //   }
-  // }
-
-  send() {
-    // TODO
-    //window.parent.postMessage('', EXTERNAL_URI);
   }
 }

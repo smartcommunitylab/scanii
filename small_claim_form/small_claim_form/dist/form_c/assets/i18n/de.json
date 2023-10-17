@@ -23,8 +23,8 @@
     "completeVersion": "Wechseln zur vereinfachten Version",
     "simplifiedVersion": "Wechseln zur Vollversion",
     "formSteps": "Kompilierungsstufen",
-    "step0": "Leitlinien",
-    "step1": "Schritt 1",
+    "step1": "Leitlinien",
+    "step2": "Schritt 1",
     "usefulPDFs": "Nützliche PDFs",
     "noPDFs": "Es gibt keine nützlichen PDFs für den Abschnitt",
     "synonyms": "Synonyme",
@@ -47,10 +47,10 @@
     "contact": "Kontakt",
     "sitemap": "Wegweiser"
   },
-  "stepZero": {
+  "stepOne": {
     "title": "Wichtiger Hinweis und leitlinien für den Beklagten"
   },
-  "stepOne": {
+  "stepTwo": {
     "firstPartTitle": "Teil I (vom Gericht auszufüllen)",
     "claimant": "Name des Antragsteller",
     "defendant": "Name des Beklagten",

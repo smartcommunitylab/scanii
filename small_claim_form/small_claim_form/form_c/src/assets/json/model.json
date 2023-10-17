@@ -4,30 +4,30 @@
   "simplification": "http://scanii.org/simplification/smallclaimform",
   "blocks": [
     {
-      "id": "step0",
+      "id": "step1",
       "type": "BLOCK",
-      "xpath": "//*[@id='step0']",
+      "xpath": "//*[@id='step1']",
       "concept": "http://scanii.org/domain/guidelines",
       "dependencies": []
     },
     {
-      "id": "step1",
+      "id": "step2",
       "type": "BLOCK",
-      "xpath": "//*[@id='step1']",
+      "xpath": "//*[@id='step2']",
       "blocks": [
         {
-          "id": "step1_1",
+          "id": "step2_1",
           "type": "BLOCK",
-          "xpath": "//*[@id='step1_1']",
+          "xpath": "//*[@id='step2_1']",
           "concept": "http://scanii.org/domain/courtPart",
           "dependencies": []
         },
         {
-          "id": "step1_2",
+          "id": "step2_2",
           "type": "BLOCK",
-          "xpath": "//*[@id='step1_2']",
+          "xpath": "//*[@id='step2_2']",
           "concept": "http://scanii.org/domain/defendantPart",
-          "dependencies": ["step1_1"]
+          "dependencies": ["step2_1"]
         }
       ],
       "dependencies": []

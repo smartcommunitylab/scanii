@@ -22,8 +22,8 @@
     "completeVersion": "Passa alla versione semplificata",
     "simplifiedVersion": "Passa alla versione completa",
     "formSteps": "Fasi di compilazione",
-    "step0": "Istruzioni",
-    "step1": "Fase 1",
+    "step1": "Istruzioni",
+    "step2": "Fase 1",
     "usefulPDFs": "PDF utili",
     "noPDFs": "Non sono presenti PDF utili per la sezione",
     "synonyms": "Sinonimi",
@@ -46,10 +46,10 @@
     "contact": "Contatti",
     "sitemap": "Mappa del sito"
   },
-  "stepZero": {
+  "stepOne": {
     "title": "Informazioni importanti e istruzioni per il convenuto"
   },
-  "stepOne": {
+  "stepTwo": {
     "firstPartTitle": "Parte I (da compilarsi a cura dell’organo giurisdizionale)",
     "claimant": "Nome del ricorrente",
     "defendant": "Nome del convenuto",

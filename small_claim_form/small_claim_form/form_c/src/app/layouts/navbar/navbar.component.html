@@ -97,25 +97,25 @@
           >Form Steps</span
         >
         <ul class="step-menu nav" id="step-menu">
-          <li class="active" id="step0-menu" data-step="0">
-            <a tabindex="-1" class="nav-link active" data-bs-target="#step0">
-              <div class="step-num">0.</div>
-              <span class="truncate">
-                <span class="index"></span>
-                <span class="step-title">
-                  <p>{{ "menu.step0" | translate }}</p>
-                </span>
-              </span>
-              <div class="validation-icon"></div>
-            </a>
-          </li>
-          <li class="incomplete" id="step1-menu" data-step="1">
-            <a tabindex="-1" class="nav-link" data-bs-target="#step1">
+          <li class="active" id="step1-menu" data-step="1">
+            <a tabindex="-1" class="nav-link active" data-bs-target="#step1">
               <div class="step-num">1.</div>
               <span class="truncate">
                 <span class="index"></span>
                 <span class="step-title">
                   <p>{{ "menu.step1" | translate }}</p>
+                </span>
+              </span>
+              <div class="validation-icon"></div>
+            </a>
+          </li>
+          <li class="incomplete" id="step2-menu" data-step="2">
+            <a tabindex="-1" class="nav-link" data-bs-target="#step2">
+              <div class="step-num">2.</div>
+              <span class="truncate">
+                <span class="index"></span>
+                <span class="step-title">
+                  <p>{{ "menu.step2" | translate }}</p>
                 </span>
               </span>
               <div class="validation-icon"></div>
@@ -187,11 +187,11 @@
           <fieldset>
             <div class="advanced-forms-step" style="display: block">
               <div class="tab-content">
-                <div class="tab-pane active" id="step0">
-                  <app-step-zero></app-step-zero>
-                </div>
-                <div class="tab-pane" id="step1">
+                <div class="tab-pane active" id="step1">
                   <app-step-one></app-step-one>
+                </div>
+                <div class="tab-pane" id="step2">
+                  <app-step-two></app-step-two>
                 </div>
               </div>
             </div>

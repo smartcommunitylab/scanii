@@ -1,18 +1,18 @@
 export class FormC {
-  private _stepOne: any;
+  private _stepTwo: any;
 
-  constructor(stepOne: any) {
-    this._stepOne = stepOne;
+  constructor(stepTwo: any) {
+    this._stepTwo = stepTwo;
   }
 
-  get stepOne(): any {
-    return this._stepOne;
+  get stepTwo(): any {
+    return this._stepTwo;
   }
 
   toJSON() {
-    const { _stepOne } = this;
+    const { _stepTwo } = this;
     return {
-      stepOne: _stepOne,
+      stepTwo: _stepTwo,
     };
   }
 }

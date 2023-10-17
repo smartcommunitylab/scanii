@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { Toast } from "bootstrap";
-import { ToastService } from '../../services/toast.service';
+import { ToastService } from "../../services/toast.service";
 
 @Component({
-  selector: 'app-error-toast',
-  templateUrl: './error-toast.component.html',
-  styleUrls: ['./error-toast.component.scss']
+  selector: "app-error-toast",
+  templateUrl: "./error-toast.component.html",
+  styleUrls: ["./error-toast.component.scss"],
 })
 export class ErrorToastComponent implements OnInit {
   constructor(private toastService: ToastService) {}
@@ -21,8 +21,4 @@ export class ErrorToastComponent implements OnInit {
     const toastElement = document.getElementById("error_toast") as HTMLElement;
     this.toastService.errorToast = new Toast(toastElement);
   }
-
-  // isWarningToastVisible() {
-  //   return window["getIsWarningStepVisible"]();
-  // }
 }

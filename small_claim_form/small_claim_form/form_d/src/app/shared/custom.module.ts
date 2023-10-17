@@ -6,7 +6,6 @@ import { TranslateModule } from "@ngx-translate/core";
 import { PreviewModalComponent } from './components/preview-modal/preview-modal.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ErrorToastComponent } from './components/error-toast/error-toast.component';
-import { WarningToastComponent } from './components/warning-toast/warning-toast.component';
 
 @NgModule({
   imports: [
@@ -20,8 +19,7 @@ import { WarningToastComponent } from './components/warning-toast/warning-toast.
     PreviewModalComponent,
     SpinnerComponent,
     ErrorToastComponent,
-    WarningToastComponent
   ],
-  exports: [ErrorToastComponent, WarningToastComponent, SpinnerComponent],
+  exports: [ErrorToastComponent, SpinnerComponent],
 })
 export class CustomModule {}

@@ -136,7 +136,7 @@ export class StepTwoComponent implements OnInit {
     event: any,
     divIdToExpand: string,
     extendibleInternalDivIds: string[],
-    formControls: string[]
+    excludedFormControls?: string[]
   ) {
     const value = event.target.value;
 
@@ -168,13 +168,13 @@ export class StepTwoComponent implements OnInit {
     ) {
       this.manageJudgmentSettlementOptions(
         this.stepTwoService.previousSelectedRadioButton,
-        formControls
+        excludedFormControls
       );
     }
 
     this.manageJudgmentSettlementOptions(
       this.stepTwoService.currentSelectedRadioButton,
-      formControls
+      excludedFormControls
     );
 
     this.stepTwoService.areJudgmentSettlementRadioButtonsUnchecked =
@@ -183,7 +183,7 @@ export class StepTwoComponent implements OnInit {
 
   manageJudgmentSettlementOptions(
     radioButtonObj: any,
-    formControls: string[]
+    excludedFormControls?: string[]
   ): void {
     //the name of the form control equals the value of the radio button
     const formGroup = this.stepTwoService.form.get(
@@ -196,7 +196,7 @@ export class StepTwoComponent implements OnInit {
           !this.stepTwoService.judgmentRadioButton;
 
         if (this.stepTwoService.judgmentRadioButton) {
-          this.addRequiredValidatorToFormElement(formGroup, formControls);
+          this.addRequiredValidatorToFormElement(formGroup, excludedFormControls);
 
           //expand div
           this.removeDfCollpasedClass(radioButtonObj.divIdToExpand);
@@ -211,7 +211,7 @@ export class StepTwoComponent implements OnInit {
           !this.stepTwoService.settlementRadioButton;
 
         if (this.stepTwoService.settlementRadioButton) {
-          this.addRequiredValidatorToFormElement(formGroup, formControls);
+          this.addRequiredValidatorToFormElement(formGroup, excludedFormControls);
 
           //expand div
           this.removeDfCollpasedClass(radioButtonObj.divIdToExpand);
@@ -286,13 +286,14 @@ export class StepTwoComponent implements OnInit {
 
   private addRequiredValidatorToFormElement(
     formElement: UntypedFormGroup,
-    formControls?: string[]
+    excludedFormControls?: string[]
   ) {
     for (const formControlName in formElement.controls) {
-      //if the formControls array is not specified, the required validator is added to all the form controls. Otherwise, it is added only to the form controls specified in the array
+      //if the excludedFormControls array is not specified, the required validator is added to all the form controls. Otherwise, it is added only to the form controls not specified in the array
       if (
-        !formControls ||
-        (formControls && formControls.includes(formControlName))
+        !excludedFormControls ||
+        (excludedFormControls &&
+          !excludedFormControls.includes(formControlName))
       ) {
         const formControl = formElement.get(formControlName);
         this.addRequiredValidatorToFormControl(formControl);

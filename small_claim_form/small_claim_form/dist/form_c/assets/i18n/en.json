@@ -22,8 +22,8 @@
     "completeVersion": "Switch to simplified version",
     "simplifiedVersion": "Switch to complete version",
     "formSteps": "Form steps",
-    "step0": "Guidelines",
-    "step1": "Step 1",
+    "step1": "Guidelines",
+    "step2": "Step 1",
     "usefulPDFs": "Useful PDFs",
     "noPDFs": "There are no useful PDFs for this step",
     "synonyms": "Synonyms",
@@ -46,10 +46,10 @@
     "contact": "Contact",
     "sitemap": "Sitemap"
   },
-  "stepZero": {
+  "stepOne": {
     "title": "Important information and guidelines for the defendant"
   },
-  "stepOne": {
+  "stepTwo": {
     "firstPartTitle": "Part I (to be filled in by the court/tribunal)",
     "claimant": "Name of claimant",
     "defendant": "Name of defendant",

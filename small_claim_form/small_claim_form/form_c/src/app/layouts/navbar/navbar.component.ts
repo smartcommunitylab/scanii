@@ -5,13 +5,13 @@ import "jquery-sticky";
 import { Subscription } from "rxjs";
 import { Movement } from "src/app/core/common/movement.model";
 import { NavbarService } from "src/app/core/navbar/navbar.service";
-import { StepOneService } from "src/app/core/step-one/step-one.service";
 import { EventManagerService } from "src/app/shared/services/event-manager.service";
 import { TranslateConfigService } from "src/app/shared/services/translate-config.service";
 import * as bootstrap from "bootstrap";
 import { PromiseContent } from "src/app/core/common/promise-content.model";
 import { FormC } from "src/app/core/common/form-C.model";
 import { ToastService } from "src/app/shared/services/toast.service";
+import { StepTwoService } from "src/app/core/step-two/step-two.service";
 
 @Component({
   selector: "app-navbar",
@@ -27,7 +27,7 @@ export class NavbarComponent {
   constructor(
     private eventManager: EventManagerService,
     public navbarService: NavbarService,
-    private stepOneService: StepOneService,
+    private stepTwoService: StepTwoService,
     private translateConfigService: TranslateConfigService,
     private toastService: ToastService
   ) {}
@@ -391,8 +391,8 @@ export class NavbarComponent {
   }
 
   private setFormC(data: FormC) {
-    this.stepOneService
-      .setStepOneForm(data.stepOne)
+    this.stepTwoService
+      .setStepTwoForm(data.stepTwo)
       .then(() => {
         this.moveToFirstStep();
       })

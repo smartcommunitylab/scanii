@@ -1,8 +1,12 @@
-export const stepOneShowHideFields = {
+export const stepTwoShowHideFields = {
   negativePartialApproval: {
     triggeringFormControlName: "claimApproval",
-    triggeringValues: ["yes", "no", "partial"],
-    triggeringFieldIds: ["dynforms_Yes_First_Capital", "dynforms_No_First_Capital", "dynforms_Partially"],
+    triggeringValues: ["no", "partial"],
+    triggeringFieldIds: [
+      "dynforms_Yes_First_Capital",
+      "dynforms_No_First_Capital",
+      "dynforms_Partially",
+    ],
   },
   outsideScopeText: {
     triggeringFormControlName: "outsideScope",
@@ -43,10 +47,5 @@ export const stepOneShowHideFields = {
     triggeringFormControlName: "proceedingsCostClaim",
     triggeringValue: "yes",
     triggeringFieldId: "yesCostsClaiming",
-  },
-  counterclaim: {
-    triggeringFormControlName: "counterclaim",
-    triggeringValue: "yes",
-    triggeringFieldId: "yesMakeCounterclaim",
   },
 };
