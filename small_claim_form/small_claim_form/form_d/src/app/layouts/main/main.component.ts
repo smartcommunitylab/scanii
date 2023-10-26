@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { EXTERNAL_URI } from "src/app/app.constants";
 import { TranslateConfigService } from "src/app/shared/services/translate-config.service";
 
 @Component({

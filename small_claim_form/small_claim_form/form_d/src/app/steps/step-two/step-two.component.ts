@@ -9,7 +9,7 @@ import { Direction } from "src/app/shared/constants/direction.constants";
 import { EventManagerService } from "src/app/shared/services/event-manager.service";
 import { DatePipe } from "@angular/common";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { PreviewModalComponent } from "src/app/shared/components/preview-modal/preview-modal.component";
+import { PreviewModalComponent } from "src/app/preview/preview-modal/preview-modal.component";
 import { ToastService } from "src/app/shared/services/toast.service";
 import { FormGroup, UntypedFormGroup } from "@angular/forms";
 declare const $: any;

@@ -85,18 +85,27 @@ export class StepTwoService {
     }
   }
 
-  setStepTwoForm(stepTwo: any): Promise<void> {
-    return new Promise<void>((resolve) => {
+  setStepTwoForm(stepTwo: any): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
       this.resetAll();
+      let foundErrors = false;
 
       //a maximum of three languages can be selected. So, if the length of the array is greater than 3, the last elements are removed
       if (stepTwo.languages.length > 3) {
         stepTwo.languages = stepTwo.languages.slice(0, 3);
       }
 
-      this.form.patchValue(stepTwo);
-      this.setLanguagesSelect();
-      resolve();
+      try {
+        this.form.setValue(stepTwo);
+        this.setLanguagesSelect();
+      } catch (error) {
+        foundErrors = true;
+        reject(error);
+      }
+
+      if (!foundErrors) {
+        resolve(null);
+      }
     });
   }
 

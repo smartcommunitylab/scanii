@@ -44,9 +44,6 @@
     ></script>
 
     <script>
-      EXTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
-      INTERNAL_URI = "https://yellow-coast-0c9cc7403.2.azurestaticapps.net";
-
       const translations = {
         it: {
           search: "Ricerca",
@@ -101,18 +98,6 @@
       let currentLang;
       let mustProceed;
       initializeLanguage();
-      // window.addEventListener("message", listener, false);
-
-      function listener(event) {
-        if (event.origin === INTERNAL_URI) {
-          // TODO
-        }
-      }
-
-      function send(message) {
-        // const frame = document.getElementById("iframe");
-        // frame.contentWindow.postMessage(message, INTERNAL_URI);
-      }
 
       function initializeLanguage() {
         currentLang = localStorage.getItem("lang");
@@ -176,8 +161,6 @@
           localStorage.setItem("lang", currentLang);
 
           translatePage();
-
-          send(event.target.getAttribute("lang"));
         }
 
         mustProceed = true;

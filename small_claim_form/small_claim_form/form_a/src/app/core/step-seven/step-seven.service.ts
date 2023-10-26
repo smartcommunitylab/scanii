@@ -154,8 +154,8 @@ export class StepSevenService {
         this.certificateForm.setValue(certificate);
         this.dateAndSignatureForm.setValue(dateAndSignature);
       } catch (error) {
-        reject(error);
         foundErrors = true;
+        reject(error);
       }
 
       if (!foundErrors) {

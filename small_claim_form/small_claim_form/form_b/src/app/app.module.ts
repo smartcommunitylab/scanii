@@ -18,6 +18,7 @@ import {
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { StepOneComponent } from "./steps/step-one/step-one.component";
 import { StepTwoComponent } from "./steps/step-two/step-two.component";
+import { PreviewModalComponent } from "./preview/preview-modal/preview-modal.component";
 
 export function HttpLoaderFactory(
   http: HttpClient,
@@ -46,6 +47,7 @@ export class CustomMissingTranslationHandler
     NavbarComponent,
     StepOneComponent,
     StepTwoComponent,
+    PreviewModalComponent,
   ],
   imports: [
     BrowserModule,

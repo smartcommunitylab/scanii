@@ -12,6 +12,8 @@ import { PromiseContent } from "src/app/core/common/promise-content.model";
 import { FormC } from "src/app/core/common/form-C.model";
 import { ToastService } from "src/app/shared/services/toast.service";
 import { StepTwoService } from "src/app/core/step-two/step-two.service";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { UploadResultModalComponent } from "src/app/shared/components/upload-result-modal/upload-result-modal.component";
 
 @Component({
   selector: "app-navbar",
@@ -22,6 +24,7 @@ export class NavbarComponent {
   triggerTabList: any;
   changeStepSubscription: Subscription | undefined;
   file?: File;
+  previousData: { form_C: FormC } = { form_C: null };
   isScreenSizeMdOrGreater: boolean;
 
   constructor(
@@ -29,7 +32,8 @@ export class NavbarComponent {
     public navbarService: NavbarService,
     private stepTwoService: StepTwoService,
     private translateConfigService: TranslateConfigService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
@@ -251,9 +255,7 @@ export class NavbarComponent {
             var sidebartop = $stickySidebar.offset().top;
             var bottomSpacing = $("footer").height() + 25;
             var scrollBottom =
-              $(document).height() -
-              $(window).height() -
-              $(window).scrollTop();
+              $(document).height() - $(window).height() - $(window).scrollTop();
 
             if (scrollPos > sidebartop && !$SBisSticky) {
               $SBisSticky = true;
@@ -374,31 +376,67 @@ export class NavbarComponent {
     return parseInt(element?.getAttribute("data-step"));
   }
 
-  openFileBrowser() {
-    document.getElementById("loadDraft").click();
+  openFileDialogBox() {
+    const inputElement = document.getElementById(
+      "loadDraft"
+    ) as HTMLInputElement;
+
+    //reset the input element's value to allow selecting the same file again
+    inputElement.value = "";
+    //trigger the click event on the input element with id "loadDraft"
+    inputElement.click();
   }
 
-  loadDraft(event: any): void {
-    const file = event.target.files;
-    this.file = file[0];
+  handleFileInput(event: Event): void {
+    this.previousData.form_C = this.navbarService.getFormC();
+
+    const target = event.target as HTMLInputElement;
+    if (target.files && target.files.length > 0) {
+      this.file = target.files[0];
+      this.processFileContent();
+    }
+  }
+
+  processFileContent(): void {
     const reader = new FileReader();
+
     reader.onload = () => {
-      const fileContent = reader.result as string;
-      const jsonData = JSON.parse(fileContent);
-      this.setFormC(jsonData.form_C);
+      try {
+        const fileContent = reader.result as string;
+        const jsonData = JSON.parse(fileContent);
+        this.setFormC(jsonData.form_C, true);
+      } catch (error) {
+        console.error("Error parsing JSON file.\n\n" + error);
+
+        this.openUploadResultModal(false);
+      }
     };
+
+    reader.onerror = () => {
+      console.error("Failed to read file.\n" + reader.error);
+
+      reader.abort();
+      this.openUploadResultModal(false);
+    };
+
     if (this.file) reader.readAsText(this.file);
   }
 
-  private setFormC(data: FormC) {
-    this.stepTwoService
-      .setStepTwoForm(data.stepTwo)
-      .then(() => {
-        this.moveToFirstStep();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  private async setFormC(data: FormC, openUploadResultModal: boolean) {
+    try {
+      await this.stepTwoService.setStepTwoForm(data.stepTwo);
+
+      if (openUploadResultModal) {
+        this.openUploadResultModal(true);
+      }
+      this.moveToFirstStep();
+    } catch (error) {
+      console.error("Error while populating form C.\n\n" + error);
+
+      // reset the form to the previous state
+      this.setFormC(this.previousData.form_C, false);
+      this.openUploadResultModal(false);
+    }
   }
 
   private moveToFirstStep() {
@@ -413,5 +451,21 @@ export class NavbarComponent {
       left: 0,
       behavior: "auto",
     });
+  }
+
+  private openUploadResultModal(fileUploadedSuccessfully: boolean) {
+    const uploadingModal = this.modalService.open(UploadResultModalComponent, {
+      size: "lg",
+      backdrop: "static",
+      centered: true,
+    });
+
+    uploadingModal.componentInstance.fileUploadedSuccessfully =
+      fileUploadedSuccessfully;
+
+    uploadingModal.result.then(
+      () => {},
+      () => {}
+    );
   }
 }

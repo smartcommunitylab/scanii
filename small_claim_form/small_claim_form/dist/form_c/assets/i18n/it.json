@@ -7,7 +7,8 @@
     "downloadJSON": "Scarica JSON",
     "downloadPDF": "Scarica PDF",
     "submit": "Invia",
-    "preview": "Anteprima"
+    "preview": "Anteprima",
+    "close": "Chiudi"
   },
   "errors": {
     "required": "Campo obbligatorio"
@@ -90,5 +91,10 @@
   },
   "preview": {
     "title": "Anteprima"
+  },
+  "uploading": {
+    "title": "Esito del caricamento",
+    "success": "È stato caricato con successo un modulo per la procedura <strong>Moduli relativi alle controversie di modesta entità</strong>.",
+    "error": "Si è verificato un <strong>errore</strong> durante il caricamento del modulo."
   }
 }

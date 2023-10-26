@@ -1032,6 +1032,7 @@
     "checkCredentials": "Please check your credentials and try again"
   },
   "uploading": {
+    "title": "Loading result",
     "success": "You have successfully loaded a form concerning procedure <strong>Small claims forms</strong>.",
     "error": "An <strong>error</strong> occurred while loading the form."
   }

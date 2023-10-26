@@ -6,14 +6,14 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Unter Nummer 4.2.1. können Sie dem Gericht mitteilen, wie Sie die Gerichtsgebühr entrichten wollen. Beachten Sie bitte, dass dem Gericht, bei dem Sie Ihre Klage einreichen, nicht unbedingt alle Zahlungssysteme zur Verfügung stehen. Vergewissern Sie sich, welche Zahlungsmethoden das Gericht akzeptiert. Dies können Sie den von dem betreffenden Mitgliedstaat bereitgestellten und auf der Website des Europäischen Gerichtsatlas für Zivilsachen veröffentlichten Informationen entnehmen, die über das Europäische Justizportal unter https://e-justice.europa.eu/content_small_claims-354-de.do abrufbar sind, oder Sie können sich an das betreffende Gericht wenden. Auf diese Weise erfahren Sie auch Näheres zur Höhe der Gerichtsgebühr. Falls Sie per Kreditkarte zahlen oder dem Gericht erlauben wollen, die Gebühr von Ihrem Bankkonto einzuziehen, tragen Sie bitte die notwendigen Angaben zu Ihrer Kreditkarte oder Ihrem Bankkonto in die Anlage zu diesem Formblatt ein. Die Anlage dient ausschließlich der Unterrichtung des Gerichts und wird nicht an den Beklagten weitergeleitet. Unter Nummer 4.2.2. können Sie angeben, wie der Beklagte zahlen soll, beispielsweise wenn er sofort zahlen möchte, bevor ein Urteil ergeht. Falls Sie eine Überweisung wünschen, geben Sie bitte die entsprechende Bankverbindung an.",
+          "text": "Unter Nummer 4.2.1. können Sie dem Gericht mitteilen, wie Sie die Gerichtsgebühr entrichten wollen. Beachten Sie bitte, dass dem Gericht, bei dem Sie Ihre Klage einreichen, nicht unbedingt alle Zahlungssysteme zur Verfügung stehen. Vergewissern Sie sich, welche Zahlungsmethoden das Gericht akzeptiert. Dies können Sie den von dem betreffenden Mitgliedstaat bereitgestellten und auf der Website des Europäischen Gerichtsatlas für Zivilsachen veröffentlichten Informationen entnehmen, die über das Europäische Justizportal abrufbar sind, oder Sie können sich an das betreffende Gericht wenden. Auf diese Weise erfahren Sie auch Näheres zur Höhe der Gerichtsgebühr. Falls Sie per Kreditkarte zahlen oder dem Gericht erlauben wollen, die Gebühr von Ihrem Bankkonto einzuziehen, tragen Sie bitte die notwendigen Angaben zu Ihrer Kreditkarte oder Ihrem Bankkonto in die Anlage zu diesem Formblatt ein. Die Anlage dient ausschließlich der Unterrichtung des Gerichts und wird nicht an den Beklagten weitergeleitet. Unter Nummer 4.2.2. können Sie angeben, wie der Beklagte zahlen soll, beispielsweise wenn er sofort zahlen möchte, bevor ein Urteil ergeht. Falls Sie eine Überweisung wünschen, geben Sie bitte die entsprechende Bankverbindung an.",
           "simplifiedText": "Bitte tragen Sie unter Nummer 4.2.1. auf dem Formular den gewünschten Zahlungsmodus ein. Einige Gerichte können Kreditkarten oder Lastschriftverfahren akzeptieren. Wenn ja, können Sie Angaben zu Ihrer Kreditkarte oder Bankverbindung in die Anlage aufnehmen. Nummer 4.2.2. gibt an, wie der Beklagte bezahlen soll, etwa nach Einreichung Ihrer Klage oder per Banküberweisung (geben Sie hierfür die Bankverbindung an). Informationen zur Höhe der Gerichtsgebühr finden Sie auf der Website des Europäischen Justizportals.",
           "link": [
             {
               "type": "SERVICE_LINK",
               "url": "https://e-justice.europa.eu/content_small_claims-354-de.do?init=true",
-              "text": "Europäisches Justizportal",
-              "name": "Landesspezifische Informationen und Online-Formulare",
+              "text": "Europäische Justizportal",
+              "name": "Europäische Justizportal.",
               "description": ""
             }
           ],
@@ -28,22 +28,7 @@
           "type": "DESCRIPTION",
           "text": "Ein in einem Mitgliedstaat im Rahmen des europäischen Verfahrens für geringfügige Forderungen erlassenes Urteil kann in einem anderen Mitgliedstaat anerkannt und vollstreckt werden. Haben Sie die Absicht, die Anerkennung und Vollstreckung in einem anderen Mitgliedstaat als dem des Gerichts zu beantragen, so können Sie in diesem Formblatt das Gericht darum ersuchen, nach Erlass eines Urteils zu Ihren Gunsten eine Bestätigung dieses Urteils auszustellen. Auf Antrag kann das Gericht Ihnen die Bestätigung unter Verwendung der über das Europäische Justizportal abrufbaren dynamischen Formulare in einer anderen Sprache zur Verfügung stellen. Dies könnte bei einer Vollstreckung des Urteils in einem anderen Mitgliedstaat von Vorteil sein. Beachten Sie bitte, dass das Gericht nicht verpflichtet ist, eine Übersetzung und/oder Transliteration eines in die Freitextfelder der Bestätigung eingetragenen Textes bereitzustellen.",
           "simplifiedText": "Wenn Sie eine Forderung in einem anderen Mitgliedstaat des europäischen Verfahrens geltend machen, erhalten Sie nach Erlass des Urteils von der Gerichtsbarkeit des Erteilungsstaates eine Bestätigung. Das Gericht kann Ihnen bei Bedarf auf Ihren Antrag hin eine Bestätigung in einer anderen Sprache zur Verfügung stellen. Dies ist vorteilhaft, wenn Sie die Anerkennung und Vollstreckung des Urteils in einem anderen Staat vornehmen möchten. Beachten Sie, dass das Gericht nicht verpflichtet ist, Ihnen eine Übersetzung oder Transliteration Ihres im Freitext eingegebenen Textes zu liefern.",
-          "link": [
-            {
-              "type": "LEGAL_LINK",
-              "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02001R1206-20081204&from=DE",
-              "name": "Europäische Verordnung Nr. 1206/2001.",
-              "text": "Europäische Verordnung Nr. 1206/2001 des Rates.",
-              "description": "Text der Europäischen Verordnung über die Zusammenarbeit zwischen den Gerichten der Mitgliedstaaten auf dem Gebiet der Beweisaufnahme in Zivil- oder Handelssachen."
-            },
-            {
-              "type": "LEGAL_LINK",
-              "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
-              "name": "Europäische Verordnung Nr. 861/2007",
-              "text": "Europäische Verordnung Nr. 861/2007",
-              "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -60,7 +45,7 @@
               "type": "LEGAL_LINK",
               "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
               "name": "Europäische Verordnung Nr. 861/2007",
-              "text": "Europäische Verordnung Nr. 861/2007 des Europäischen Parlaments und des Rates.",
+              "text": "Verordnung (EG) Nr. 861/2007 des Europäischen Parlaments und des Rates",
               "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
             }
           ],
@@ -73,14 +58,14 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Falls Sie die Erstattung der Verfahrenskosten fordern (z. B. Übersetzungskosten, Anwaltshonorare, Zustellungskosten usw.), geben Sie dies bitte unter Nummer 5.3. an. Beachten Sie bitte, dass die Vorschriften für die Kostenentscheidung der Gerichte von Mitgliedstaat zu Mitgliedstaat unterschiedlich sind. Einzelheiten zu den Kostenkategorien der einzelnen Mitgliedstaaten sind über das Europäische Justizportal unter https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do zu finden.",
+          "text": "Falls Sie die Erstattung der Verfahrenskosten fordern (z. B. Übersetzungskosten, Anwaltshonorare, Zustellungskosten usw.), geben Sie dies bitte unter Nummer 5.3. an. Beachten Sie bitte, dass die Vorschriften für die Kostenentscheidung der Gerichte von Mitgliedstaat zu Mitgliedstaat unterschiedlich sind. Einzelheiten zu den Kostenkategorien der einzelnen Mitgliedstaaten sind über das Europäische Justizportal zu finden.",
           "simplifiedText": "Falls Sie Erstattung von Verfahrenskosten fordern (z. B. Übersetzungs-, Anwalts- oder Zustellungskosten), tragen Sie dies bitte unter Nummer 5.3. ein. Beachten Sie, dass die Kostenregeln je nach Mitgliedstaat variieren können. Einzelheiten zu den Kostenkategorien in den einzelnen Mitgliedstaaten finden Sie unter https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do.",
           "link": [
             {
               "type": "DESCRIPTION_LINK",
               "url": "https://e-justice.europa.eu/content_costs_of_proceedings-37-de.do?init=true",
               "name": "Verfahrenskosten in den einzelnen Mitgliedstaaten.",
-              "text": "Info über die Verfahrenskosten in den einzelnen Mitgliedstaaten.",
+              "text": "Europäische Justizportal",
               "description": "Info über die Verfahrenskosten in den einzelnen Mitgliedstaaten."
             }
           ],
@@ -95,15 +80,7 @@
           "type": "DESCRIPTION",
           "text": "Falls Sie vertraglich vereinbarte Zinsen geltend machen, z. B. bei einem Darlehen, sollten Sie den Zinssatz und den Beginn der Laufzeit angeben. Das Gericht kann Ihnen gesetzliche Zinsen zusprechen, falls Ihrer Klage stattgegeben wird. Geben Sie bitte an, ob Sie Zinsen fordern und ab welchem Tag die Zinsen laufen sollen. Verwenden Sie bei Bedarf bitte zusätzliche Blätter, um den Gegenstand Ihrer Klage zu beschreiben, z. B. wenn Sie mehrere Zahlungen fordern und die Zinsen für jede dieser Zahlungen ab einem anderen Tag geltend gemacht werden.",
           "simplifiedText": "Falls Sie Geld schuldet bekommen, dann kann das Gericht Ihnen gesetzliche Zinsen geben. Erwähnen Sie daher bitte immer, ob und ab welchem Tag Sie Zinsen wollen. Wenn Sie mehrere Zahlungen einfordern, geben Sie auch das Datum für jede an, ab wann Zinsen berechnet werden sollen. Falls nötig, können Sie weitere Seiten angeben, um den Grund der Klage ausführlicher zu beschreiben.",
-          "link": [
-            {
-              "type": "LEGAL_LINK",
-              "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
-              "name": "Europäische Verordnung Nr. 861/2007",
-              "text": "Europäische Verordnung Nr. 861/2007 des Europäischen Parlaments und des Rates.",
-              "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -115,15 +92,7 @@
           "type": "DESCRIPTION",
           "text": "Falls Ihre Forderung nicht auf die Zahlung eines Geldbetrags gerichtet ist, füllen Sie bitte Nummer 5.2. aus und geben Sie den geschätzten Wert Ihrer Forderung an. In diesem Fall sollten Sie auch angeben, ob Sie für den Fall, dass die ursprüngliche Forderung nicht erfüllt werden kann, hilfsweise einen Anspruch auf Schadensersatz geltend machen.",
           "simplifiedText": "Bitte geben Sie bei Nummer 5.2. den geschätzten Wert Ihrer Forderung an. Wenn Ihre ursprüngliche Forderung nicht erfüllt werden kann, können Sie außerdem einen Anspruch auf Schadensersatz geltend machen.",
-          "link": [
-            {
-              "type": "LEGAL_LINK",
-              "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
-              "name": "Europäische Verordnung Nr. 861/2007",
-              "text": "Europäische Verordnung Nr. 861/2007 des Europäischen Parlaments und des Rates.",
-              "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -135,13 +104,7 @@
           "type": "DESCRIPTION",
           "text": "Sie sollten unter Nummer 6.1. kurz ausführen, womit Sie Ihre Klage begründen. Sie sollten unter Nummer 6.2. die erheblichen Beweismittel beschreiben. Dabei kann es sich beispielsweise um Urkundenbeweise (z. B. Vertrag, Quittung usw.) oder mündliche/schriftliche Zeugenaussagen handeln. Bitte geben Sie für jedes Beweismittel an, welcher Aspekt Ihrer Forderung dadurch jeweils begründet werden soll. Falls der Platz nicht ausreicht, können Sie weitere Blätter hinzufügen.",
           "simplifiedText": "Beschreiben Sie unter Nummer 6.1. und 6.2., warum Sie eine Klage einreichen. Unter 6.1. sollten Sie kurz angeben, was Sie mit Ihrer Klage begründen. Unter 6.2. sollten Sie mögliche Beweise (z.B. Vertrag, Quittung usw., mündliche/schriftliche Zeugenaussagen) aufzählen, die Ihre Forderung unterstützen. Falls mehr Platz erforderlich ist, fügen Sie einfach weitere Blätter hinzu.",
-          "link": [
-            {
-              "url": "",
-              "name": "",
-              "description": ""
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -153,13 +116,7 @@
           "type": "DESCRIPTION",
           "text": "In diesem Feld sind Sie als Kläger und gegebenenfalls Ihr Vertreter anzugeben. Sie sind nicht verpflichtet, sich durch einen Rechtsanwalt oder sonstigen Rechtsbeistand vertreten zu lassen. Da in manchen Ländern ein Postfach als Anschrift möglicherweise nicht ausreicht, sollten Sie auch Straße, Hausnummer und Postleitzahl eintragen. Das Fehlen dieser Angaben kann dazu führen, dass das Schriftstück nicht zugestellt wird.",
           "simplifiedText": "Sie müssen als Kläger angeben, wer Sie sind und wo Sie wohnen. Möglicherweise müssen Sie also auch Ihre Straße, Hausnummer und Postleitzahl angeben.",
-          "link": [
-            {
-              "url": "",
-              "name": "",
-              "description": ""
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -171,13 +128,7 @@
           "type": "INFORMATION",
           "text": "Falls Sie über eine persönliche Identifikationsnummer verfügen, die Ihnen von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Falls Sie keine solche Nummer haben, wäre es zweckdienlich, Ihre Pass- oder Ausweisnummer einzutragen, falls verfügbar. Falls Sie im Namen einer juristischen Person oder eines sonstigen Rechtsträgers handeln, wäre die Angabe einer Registrierungsnummer von Nutzen.",
           "simplifiedText": "Wenn Sie eine persönliche Identifikationsnummer besitzen (z. B. zugewiesen von den Behörden eines Mitgliedstaats), dann geben Sie diese an. Wenn nicht, dann Ihre Pass- oder Ausweisnummer, falls verfügbar. Wenn Sie im Namen einer juristischen Person oder eines anderen Rechtsträgers auftreten, dann geben Sie die Registrierungsnummer an.",
-          "link": [
-            {
-              "url": "",
-              "name": "",
-              "description": ""
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -189,13 +140,7 @@
           "type": "INFORMATION",
           "text": "Unter „Sonstige Angaben“ können Sie weitere Informationen eintragen, die der Identifizierung Ihrer Person dienen, z. B. Geburtsdatum, Beruf oder Stellung im Unternehmen. Bei mehr als einem Kläger verwenden Sie bitte zusätzliche Blätter.",
           "simplifiedText": "Tragen Sie unter \"Sonstige Angaben\" weitere Informationen über sich ein, die für Ihre Identifizierung nützlich sind, wie Geburtsdatum, Beruf und Stellung im Unternehmen. Für mehrere Kläger müssen extra Blätter verwendet werden.",
-          "link": [
-            {
-              "url": "",
-              "name": "",
-              "description": ""
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -205,14 +150,14 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "In diesem Feld ist das Gericht anzugeben, bei dem Sie Ihre Klage einreichen. Bei der Auswahl des Gerichts ist auf die Zuständigkeit des Gerichts zu achten. In Abschnitt 3. finden Sie eine nicht abschließende Aufzählung von Kriterien, auf die sich die gerichtliche Zuständigkeit gründen kann. Die Kontaktdaten des zuständigen Gerichts können Sie mithilfe der entsprechenden Suchfunktion des Europäischen Justizportals ermitteln: https://e-justice.europa.eu/content_small_claims-354-de.do",
-          "simplifiedText": "Geben Sie bitte das Gericht an, bei dem Sie Ihre Klage einreichen wollen. Achten Sie darauf, dass das Gericht zuständig ist. Um herauszufinden, welches Gericht zuständig ist, können Sie die Suchfunktion des Europäischen Justizportals aufrufen: https://e-justice.europa.eu/content_small_claims-354-de.do.",
+          "text": "In diesem Feld ist das Gericht anzugeben, bei dem Sie Ihre Klage einreichen. Bei der Auswahl des Gerichts ist auf die Zuständigkeit des Gerichts zu achten. In Abschnitt 3. finden Sie eine nicht abschließende Aufzählung von Kriterien, auf die sich die gerichtliche Zuständigkeit gründen kann. Die Kontaktdaten des zuständigen Gerichts können Sie mithilfe der entsprechenden Suchfunktion des Europäischen Justizportals ermitteln.",
+          "simplifiedText": "Geben Sie bitte das Gericht an, bei dem Sie Ihre Klage einreichen wollen. Achten Sie darauf, dass das Gericht zuständig ist. Um herauszufinden, welches Gericht zuständig ist, können Sie die Suchfunktion des Europäischen Justizportals aufrufen.",
           "link": [
             {
               "type": "SERVICE_LINK",
-              "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true#tocHeader2",
+              "url": "https://e-justice.europa.eu/content_small_claims-354-de.do#tocHeader2",
               "name": "Suche nach Gerichten und Behörden nach Land.",
-              "text": "Suche nach Gerichten und Behörden nach Land.",
+              "text": "entsprechenden Suchfunktion",
               "description": "Die Suchfunktion ermöglicht es, die zuständigen Gerichte/Behörden in jedem Land für geringfügige Forderungen zu finden."
             }
           ],
@@ -227,13 +172,7 @@
           "type": "DESCRIPTION",
           "text": "Sie können das europäische Verfahren für geringfügige Forderungen nur in Anspruch nehmen, wenn Ihre Rechtssache einen Auslandsbezug aufweist. Dies ist der Fall, wenn mindestens eine der Parteien ihren Wohnsitz oder gewöhnlichen Aufenthalt in einem anderen Mitgliedstaat als dem des Gerichts hat.",
           "simplifiedText": "Sie können das europäische Verfahren für geringfügige Forderungen verwenden, wenn sich eine der Parteien in einem anderen EU-Staat als dem des Gerichts befindet.",
-          "link": [
-            {
-              "url": "",
-              "name": "",
-              "description": ""
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -245,13 +184,7 @@
           "type": "DESCRIPTION",
           "text": "Vergessen Sie bitte nicht, auf der letzten Seite des Formblatts Ihren Namen deutlich lesbar einzutragen und die Klage zu unterzeichnen und zu datieren.",
           "simplifiedText": "Vermerken Sie Ihren Namen deutlich lesbar auf der letzten Seite des Formulars, unterzeichnen und datieren Sie die Klage.",
-          "link": [
-            {
-              "url": "",
-              "name": "",
-              "description": ""
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -263,13 +196,7 @@
           "type": "DESCRIPTION",
           "text": "Geben Sie in diesem Feld bitte den Beklagten und, falls bekannt, seinen Vertreter an. Auch der Beklagte ist nicht verpflichtet, sich durch einen Rechtsanwalt oder sonstigen Rechtsbeistand vertreten zu lassen. Da in manchen Ländern ein Postfach als Anschrift möglicherweise nicht ausreicht, sollten Sie auch Straße, Hausnummer und Postleitzahl eintragen. Das Fehlen dieser Angaben kann dazu führen, dass das Schriftstück nicht zugestellt wird.",
           "simplifiedText": "Bitte die Anschrift des Beklagten, eventuell die persönliche Identifikations- oder Ausweisnummer sowie ggf. eine Registrierungsnummer eingeben. Der Beklagte muss nicht durch einen Rechtsbeistand vertreten werden, aber bitte Straße, Hausnummer und Postleitzahl angeben.",
-          "link": [
-            {
-              "url": "",
-              "name": "",
-              "description": ""
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -281,13 +208,7 @@
           "type": "INFORMATION",
           "text": "Falls Ihnen eine persönliche Identifikationsnummer bekannt ist, die dem Beklagten von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Alternativ oder zusätzlich wäre es zweckdienlich, die Pass- oder Ausweisnummer des Beklagten einzutragen, falls verfügbar. Falls es sich bei dem Beklagten um eine juristische Person oder einen sonstigen Rechtsträger handelt, wäre die Angabe einer Registrierungsnummer des Beklagten von Nutzen, falls Sie diese kennen.",
           "simplifiedText": "Falls Ihnen eine persönliche Identifikationsnummer bekannt ist, die dem Beklagten von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Alternativ oder zusätzlich wäre es zweckdienlich, die Pass- oder Ausweisnummer des Beklagten einzutragen, falls verfügbar. Falls es sich bei dem Beklagten um eine juristische Person oder einen sonstigen Rechtsträger handelt, wäre die Angabe einer Registrierungsnummer des Beklagten von Nutzen, falls Sie diese kennen.",
-          "link": [
-            {
-              "url": "",
-              "name": "",
-              "description": ""
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -299,13 +220,7 @@
           "type": "DESCRIPTION",
           "text": "Unter „Sonstige Angaben“ können Sie weitere Informationen eintragen, die der Identifizierung der Person dienen, z. B. Geburtsdatum, Beruf oder Stellung im Unternehmen. Bei mehr als einem Beklagten verwenden Sie bitte zusätzliche Blätter.",
           "simplifiedText": "Unter \"Sonstige Angaben\" geben Sie bitte weitere Informationen zur Identifizierung der Person ein, z.B. das Geburtsdatum, den Beruf oder die Stellung im Unternehmen. Falls mehrere Beklagte vorhanden sind, dann benutzen Sie bitte zusätzliche Blätter.",
-          "link": [
-            {
-              "url": "",
-              "name": "",
-              "description": ""
-            }
-          ],
+          "link": [],
           "words": []
         }
       ]
@@ -315,15 +230,15 @@
       "infoElements": [
         {
           "type": "INFORMATION",
-          "text": "Verfahrensschriftstücke wie Ihre Klage, die Erwiderung des Beklagten, eine etwaige Widerklage und das Urteil können den Parteien per Post oder auf elektronischem Wege zugestellt werden, wenn das Gericht über entsprechende technische Mittel verfügt und dies nach dem Verfahrensrecht des Mitgliedstaats, in dem das Verfahren durchgeführt wird, zulässig ist. Falls die Schriftstücke in einem anderen Mitgliedstaat als demjenigen, in dem das Verfahren durchgeführt wird, zugestellt werden sollen, müssen auch die Verfahrensvorschriften des Mitgliedstaats beachtet werden, in dem die Zustellung erfolgt. Auch ndere schriftliche Mitteilungen (z. B. der Antrag auf Teilnahme an einer Gerichtsverhandlung) können auf elektronischem Wege übermittelt werden. Elektronische Mittel dürfen jedoch nur genutzt werden, wenn der Empfänger ihrem Einsatz vorher ausdrücklich zugestimmt hat oder wenn er nach den Verfahrensvorschriften des Mitgliedstaats, in dem er seinen Wohnsitz hat, rechtlich verpflichtet ist, die elektronische Zustellung und/oder andere schriftliche Mitteilungen des Gerichts in elektronischer Form zu akzeptieren. Informationen darüber, ob die elektronische Zustellung und/oder elektronische Kommunikationsmittel in den betreffenden Mitgliedstaaten verfügbar und zulässig sind, können Sie über das Europäische Justizportal abrufen unter: https://e-justice.europa.eu/content_small_claims-354-de.do?clang=de",
-          "simplifiedText": "Verfahrensschriftstücke und andere schriftliche Mitteilungen können auf elektronischem Wege zugestellt werden, solange das in dem betreffenden Mitgliedstaat erlaubt ist. In einem anderen Mitgliedstaat müssen die dortige Verfahrensvorschriften beachtet werden. Dazu muss der Empfänger der elektronischen Zustellung zustimmen oder rechtlich verpflichtet sein, die elektronische Zustellung zu akzeptieren. Weitere Informationen zur Verfügbarkeit der elektronischen Zustellung gibt es auf dem Europäischen Justizportal unter https://e-justice.europa.eu/content_small_claims-354-de.do?clang=de.",
+          "text": "Verfahrensschriftstücke wie Ihre Klage, die Erwiderung des Beklagten, eine etwaige Widerklage und das Urteil können den Parteien per Post oder auf elektronischem Wege zugestellt werden, wenn das Gericht über entsprechende technische Mittel verfügt und dies nach dem Verfahrensrecht des Mitgliedstaats, in dem das Verfahren durchgeführt wird, zulässig ist. Falls die Schriftstücke in einem anderen Mitgliedstaat als demjenigen, in dem das Verfahren durchgeführt wird, zugestellt werden sollen, müssen auch die Verfahrensvorschriften des Mitgliedstaats beachtet werden, in dem die Zustellung erfolgt. Auch ndere schriftliche Mitteilungen (z. B. der Antrag auf Teilnahme an einer Gerichtsverhandlung) können auf elektronischem Wege übermittelt werden. Elektronische Mittel dürfen jedoch nur genutzt werden, wenn der Empfänger ihrem Einsatz vorher ausdrücklich zugestimmt hat oder wenn er nach den Verfahrensvorschriften des Mitgliedstaats, in dem er seinen Wohnsitz hat, rechtlich verpflichtet ist, die elektronische Zustellung und/oder andere schriftliche Mitteilungen des Gerichts in elektronischer Form zu akzeptieren. Informationen darüber, ob die elektronische Zustellung und/oder elektronische Kommunikationsmittel in den betreffenden Mitgliedstaaten verfügbar und zulässig sind, können Sie über das Europäische Justizportal abrufen unter.",
+          "simplifiedText": "Verfahrensschriftstücke und andere schriftliche Mitteilungen können auf elektronischem Wege zugestellt werden, solange das in dem betreffenden Mitgliedstaat erlaubt ist. In einem anderen Mitgliedstaat müssen die dortige Verfahrensvorschriften beachtet werden. Dazu muss der Empfänger der elektronischen Zustellung zustimmen oder rechtlich verpflichtet sein, die elektronische Zustellung zu akzeptieren. Weitere Informationen zur Verfügbarkeit der elektronischen Zustellung gibt es auf dem Europäischen Justizportal.",
           "link": [
             {
               "type": "SERVICE_LINK",
-              "url": "https://e-justice.europa.eu/content_small_claims-354-it.do?init=true#tocHeader2",
-              "name": "Suche nach Gerichten und Behörden nach Land.",
-              "text": "Suche nach Gerichten und Behörden nach Land.",
-              "description": "Die Suchfunktion ermöglicht es, die zuständigen Gerichte/Behörden in jedem Land für geringfügige Forderungen zu finden."
+              "url": "https://e-justice.europa.eu/content_small_claims-354-de.do?clang=de",
+              "name": "Europäische Justizportal.",
+              "text": "Europäische Justizportal",
+              "description": ""
             }
           ],
           "words": []
@@ -335,8 +250,8 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Die Klage ist bei dem Gericht einzureichen, das für ihre Bearbeitung zuständig ist. Das Gericht muss nach den Vorschriften der Verordnung (EU) Nr. 1215/2012 des Europäischen Parlaments und des Rates zuständig sein. Dieser Abschnitt enthält eine nicht abschließende Aufzählung von Kriterien, auf die sich die gerichtliche Zuständigkeit gründen kann. Informationen über die Zuständigkeitsvorschriften finden Sie auf der Website des Europäischen Gerichtsatlas unter https://e-justice.europa.eu/content_brussels_i_regulation_recast-350-de.do. Sie können auch das Glossar unter http://ec.europa.eu/civiljustice/glossary/glossary_de.htm zurate ziehen, in dem einige der hier verwendeten Rechtsbegriffe erklärt werden.",
-          "simplifiedText": "Um eine Klage einzureichen, muss man sich an das Gericht wenden, das für die Bearbeitung zuständig ist. Auf der Website des Europäischen Gerichtsatlas unter https://e-justice.europa.eu/content_brussels_i_regulation_recast-350-de.do und dem Glossar unter http://ec.europa.eu/civiljustice/glossary/glossary_de.htm gibt es Informationen über die Kriterien, nach denen man die Zuständigkeit eines Gerichtes ermitteln kann.",
+          "text": "Die Klage ist bei dem Gericht einzureichen, das für ihre Bearbeitung zuständig ist. Das Gericht muss nach den Vorschriften der Verordnung (EU) Nr. 1215/2012 des Europäischen Parlaments und des Rates zuständig sein. Dieser Abschnitt enthält eine nicht abschließende Aufzählung von Kriterien, auf die sich die gerichtliche Zuständigkeit gründen kann. Informationen über die Zuständigkeitsvorschriften finden Sie auf der Website des Europäischen Gerichtsatlas. Sie können auch das Glossar unter http://ec.europa.eu/civiljustice/glossary/glossary_de.htm zurate ziehen, in dem einige der hier verwendeten Rechtsbegriffe erklärt werden.",
+          "simplifiedText": "Um eine Klage einzureichen, muss man sich an das Gericht wenden, das für die Bearbeitung zuständig ist. Auf der Website des Europäischen Gerichtsatlas und dem Glossar unter http://ec.europa.eu/civiljustice/glossary/glossary_de.htm gibt es Informationen über die Kriterien, nach denen man die Zuständigkeit eines Gerichtes ermitteln kann.",
           "link": [
             {
               "type": "LEGAL_LINK",
@@ -347,10 +262,17 @@
             },
             {
               "type": "SERVICE_LINK",
-              "url": "https://e-justice.europa.eu/content_brussels_i_regulation_recast-350-de.do?init=true",
-              "name": "Brüssel I-Verordnung",
-              "text": "Weitere Informationen zu den Zuständigkeitsregeln",
-              "description": "Landesspezifische Informationen und Online-Formulare gemäß der Verordnung (EU) Nr. 1215/2012."
+              "url": "https://e-justice.europa.eu/content_jurisdiction-85-de.do",
+              "name": "In welchem Mitgliedstaat befindet sich das zuständige Gericht?",
+              "text": "Website des Europäischen Gerichtsatlas",
+              "description": ""
+            },
+            {
+              "type": "SERVICE_LINK",
+              "url": "http://ec.europa.eu/civiljustice/glossary/glossary_de.htm",
+              "text": "Glossar",
+              "name": "",
+              "description": ""
             }
           ],
           "words": []
@@ -362,28 +284,28 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Beachten Sie bitte, dass das europäische Verfahren für geringfügige Forderungen ein schriftliches Verfahren ist. Das Gericht kann jedoch beschließen, eine mündliche Verhandlung anzuberaumen, wenn eine Entscheidung auf der Grundlage der schriftlichen Beweismittel seines Erachtens nicht möglich ist. Sie können auf diesem Formblatt oder zu einem späteren Zeitpunkt eine mündliche Verhandlung beantragen. Das Gericht kann Ihren Antrag ablehnen, wenn es der Auffassung ist, dass unter Berücksichtigung der Umstände des Falles ein faires Verfahren auch ohne mündliche Verhandlung sichergestellt werden kann. Die mündliche Verhandlung sollte mit geeigneten Fernkommunikationsmitteln wie Video- oder Telekonferenz durchgeführt werden, sofern das Gericht über diese Mittel verfügt. Falls die zu hörende Person ihren Wohnsitz in einem anderen Mitgliedstaat als dem des angerufenen Gerichts hat, wird eine Anhörung per Fernkommunikationstechnologie nach den in der Verordnung (EG) Nr. 1206/2001 des Rates vorgesehenen Verfahren organisiert. (https://e-justice.europa.eu/content_taking_of_evidence-76-de.do) Das Gericht kann jedoch beschließen, dass die zur Verhandlung geladenen Personen persönlich erscheinen müssen. Sie können dem Gericht mitteilen, was Sie bevorzugen, sollten dabei aber Folgendes berücksichtigen: Wenn Sie beantragen, persönlich an der Verhandlung teilzunehmen, gilt für die Erstattung der durch Ihre Anwesenheit entstehenden Kosten Artikel 16 der Verordnung (EG) Nr. 861/2007 zur Einführung eines europäischen Verfahrens für geringfügige Forderungen. Danach spricht das Gericht der obsiegenden Partei keine Erstattung für Kosten zu, die nicht notwendig waren oder in keinem Verhältnis zu der Klage stehen.",
+          "text": "Beachten Sie bitte, dass das europäische Verfahren für geringfügige Forderungen ein schriftliches Verfahren ist. Das Gericht kann jedoch beschließen, eine mündliche Verhandlung anzuberaumen, wenn eine Entscheidung auf der Grundlage der schriftlichen Beweismittel seines Erachtens nicht möglich ist. Sie können auf diesem Formblatt oder zu einem späteren Zeitpunkt eine mündliche Verhandlung beantragen. Das Gericht kann Ihren Antrag ablehnen, wenn es der Auffassung ist, dass unter Berücksichtigung der Umstände des Falles ein faires Verfahren auch ohne mündliche Verhandlung sichergestellt werden kann. Die mündliche Verhandlung sollte mit geeigneten Fernkommunikationsmitteln wie Video- oder Telekonferenz durchgeführt werden, sofern das Gericht über diese Mittel verfügt. Falls die zu hörende Person ihren Wohnsitz in einem anderen Mitgliedstaat als dem des angerufenen Gerichts hat, wird eine Anhörung per Fernkommunikationstechnologie nach den in der Verordnung (EG) Nr. 1206/2001 des Rates vorgesehenen Verfahren organisiert. Das Gericht kann jedoch beschließen, dass die zur Verhandlung geladenen Personen persönlich erscheinen müssen. Sie können dem Gericht mitteilen, was Sie bevorzugen, sollten dabei aber Folgendes berücksichtigen: Wenn Sie beantragen, persönlich an der Verhandlung teilzunehmen, gilt für die Erstattung der durch Ihre Anwesenheit entstehenden Kosten Artikel 16 der Verordnung (EG) Nr. 861/2007 zur Einführung eines europäischen Verfahrens für geringfügige Forderungen. Danach spricht das Gericht der obsiegenden Partei keine Erstattung für Kosten zu, die nicht notwendig waren oder in keinem Verhältnis zu der Klage stehen.",
           "simplifiedText": "Beim europäischen Verfahren für geringfügige Forderungen wird im Allgemeinen eine schriftliche Verhandlung durchgeführt. Das Gericht kann aber auch eine mündliche Verhandlung anordnen, wenn es der Meinung ist, dass eine Entscheidung ohne eine mündliche Anhörung nicht möglich ist. Sie können dies beantragen, müssen dann aber damit rechnen, dass das Gericht Ihren Antrag ablehnen kann. Es ist möglich, dass die mündliche Verhandlung über Video- oder Telekonferenz stattfindet. Wenn Sie persönlich erscheinen möchten, müssen Sie beachten, dass Ihnen eventuell nicht alle anfallenden Kosten erstattet werden.",
           "link": [
             {
               "type": "LEGAL_LINK",
               "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02007R0861-20170114&from=MT",
               "name": "Europäische Verordnung Nr. 861/2007",
-              "text": "Europäische Verordnung Nr. 861/2007",
+              "text": "Verordnung (EG) Nr. 861/2007",
               "description": "Text der Europäischen Verordnung zur Einführung eines europäischen Verfahrens für geringfügige Forderungen."
             },
             {
               "type": "HOW_TO_LINK",
               "url": "https://e-justice.europa.eu/content_taking_of_evidence-76-de.do?init=true",
-              "name": "Beweisaufnahme",
-              "text": "Beweisaufnahme",
+              "name": "Beweisaufnahme.",
+              "text": "Verfahren",
               "description": "Informationen darüber, wie man Beweise aufnimmt und dem Richter vorlegt."
             },
             {
               "type": "LEGAL_LINK",
               "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:02001R1206-20081204&from=DE",
               "name": "Europäische Verordnung Nr. 1206/2001.",
-              "text": "Europäische Verordnung Nr. 1206/2001 des Rates.",
+              "text": "Verordnung (EG) Nr. 1206/2001 des Rates",
               "description": "Text der Europäischen Verordnung über die Zusammenarbeit zwischen den Gerichten der Mitgliedstaaten auf dem Gebiet der Beweisaufnahme in Zivil- oder Handelssachen."
             }
           ],

@@ -1043,6 +1043,7 @@
     "checkCredentials": "Si prega di controllare le credenziali e riprovare"
   },
   "uploading": {
+    "title": "Esito del caricamento",
     "success": "È stato caricato con successo un modulo per la procedura <strong>Moduli relativi alle controversie di modesta entità</strong>.",
     "error": "Si è verificato un <strong>errore</strong> durante il caricamento del modulo."
   }

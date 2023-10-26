@@ -152,10 +152,24 @@ export class StepTwoService {
     }
   }
 
-  setStepTwoForm(stepTwo: any): Promise<void> {
-    this.resetAll();
-    this.form.patchValue(stepTwo);
-    return this.handleStableEvent(stepTwo);
+  setStepTwoForm(stepTwo: any): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      this.resetAll();
+      let foundErrors = false;
+
+      try {
+        this.form.setValue(stepTwo);
+      } catch (error) {
+        foundErrors = true;
+        reject(error);
+      }
+
+      if (!foundErrors) {
+        this.handleStableEvent(stepTwo).then(() => {
+          resolve(null);
+        });
+      }
+    });
   }
 
   private handleStableEvent(stepTwo: any): Promise<void> {
@@ -178,9 +192,13 @@ export class StepTwoService {
               return element === value;
             });
 
-            this.triggerClickEvent(
-              stepTwoShowHideFields[key]["triggeringFieldIds"][index]
-            );
+            if (index !== -1) {
+              this.triggerClickEvent(
+                stepTwoShowHideFields[key]["triggeringFieldIds"][index]
+              );
+            } else {
+              this.triggerClickEvent("dynforms_Yes_First_Capital");
+            }
           } else {
             if (value === stepTwoShowHideFields[key]["triggeringValue"]) {
               this.triggerChangeEvent(

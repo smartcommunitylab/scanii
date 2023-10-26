@@ -103,7 +103,7 @@ function resetForm() {
 
 function initializeLanguage() {
   currentLang = localStorage.getItem("lang");
-  if (!currentLang || typeof this.currentLang !== "string") {
+  if (!currentLang || typeof currentLang !== "string") {
     currentLang = "en";
     localStorage.setItem("lang", currentLang);
   }

@@ -373,8 +373,16 @@ export class StepOneService {
     return new StepOne(court, claimants, defendants);
   }
 
-  getClaimants(): (Claimant | RepresentativeCitizen | RepresentativeOrganisation)[] {
-    const claimants: (Claimant | RepresentativeCitizen | RepresentativeOrganisation)[] = [];
+  getClaimants(): (
+    | Claimant
+    | RepresentativeCitizen
+    | RepresentativeOrganisation
+  )[] {
+    const claimants: (
+      | Claimant
+      | RepresentativeCitizen
+      | RepresentativeOrganisation
+    )[] = [];
     const representativeIds: number[] = [];
     for (let i = 0; i < this.form.value.claimants.length; i++) {
       const claimant = this.form.value.claimants[i];
@@ -423,7 +431,9 @@ export class StepOneService {
     return claimants;
   }
 
-  private getRepresentative(representative: any): RepresentativeCitizen | RepresentativeOrganisation {
+  private getRepresentative(
+    representative: any
+  ): RepresentativeCitizen | RepresentativeOrganisation {
     const address = this.getAddress(representative);
     const contacts = this.getContacts(representative);
     if (representative.organisation !== "")
@@ -511,30 +521,42 @@ export class StepOneService {
     return new Contacts(obj.phoneNumber, obj.email);
   }
 
-  setStepOneForm(stepOne: any): Promise<void> {
-    return new Promise<void>((resolve) => {
+  setStepOneForm(stepOne: any): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
       this.resetAll();
+
       this.translateService
         .get(["europeanCountries", "worldCountries"])
         .subscribe((res) => {
           this.europeanCountries = res.europeanCountries;
           this.worldCountries = res.worldCountries;
+          let foundErrors = false;
 
-          this.form.get("court").patchValue(stepOne.court);
+          try {
+            this.form.get("court").setValue(stepOne.court);
+          } catch (error) {
+            foundErrors = true;
+            reject(error);
+          }
 
           //claimants
           for (let i = 0; i < stepOne.claimants.length; i++) {
             const claimant = stepOne.claimants[i];
 
-            if (!claimant.isRepresentative) {
-              this.claimants.push(this.createClaimantFormGroup("claimant"));
-              this.form.get("claimants").get(i.toString()).patchValue(claimant);
-            } else {
-              this.claimants.push(
-                this.createClaimantFormGroup("representative")
-              );
-              this.addClaimantRepresentative(i);
-              this.form.get("claimants").get(i.toString()).patchValue(claimant);
+            try {
+              if (!claimant.isRepresentative) {
+                this.claimants.push(this.createClaimantFormGroup("claimant"));
+                this.form.get("claimants").get(i.toString()).setValue(claimant);
+              } else {
+                this.claimants.push(
+                  this.createClaimantFormGroup("representative")
+                );
+                this.addClaimantRepresentative(i);
+                this.form.get("claimants").get(i.toString()).setValue(claimant);
+              }
+            } catch (error) {
+              foundErrors = true;
+              reject(error);
             }
           }
 
@@ -542,27 +564,36 @@ export class StepOneService {
           for (let i = 0; i < stepOne.defendants.length; i++) {
             const defendant = stepOne.defendants[i];
 
-            if (!defendant.isRepresentative) {
-              this.defendants.push(this.createDefendantFormGroup("defendant"));
-              this.form
-                .get("defendants")
-                .get(i.toString())
-                .patchValue(defendant);
-            } else {
-              this.defendants.push(
-                this.createDefendantFormGroup("representative")
-              );
-              this.addDefendantRepresentative(i);
-              this.form
-                .get("defendants")
-                .get(i.toString())
-                .patchValue(defendant);
+            try {
+              if (!defendant.isRepresentative) {
+                this.defendants.push(
+                  this.createDefendantFormGroup("defendant")
+                );
+                this.form
+                  .get("defendants")
+                  .get(i.toString())
+                  .setValue(defendant);
+              } else {
+                this.defendants.push(
+                  this.createDefendantFormGroup("representative")
+                );
+                this.addDefendantRepresentative(i);
+                this.form
+                  .get("defendants")
+                  .get(i.toString())
+                  .setValue(defendant);
+              }
+            } catch (error) {
+              foundErrors = true;
+              reject(error);
             }
           }
 
-          this.handleStableEvent(stepOne).then(() => {
-            resolve();
-          });
+          if (!foundErrors) {
+            this.handleStableEvent(stepOne).then(() => {
+              resolve(null);
+            });
+          }
         });
     });
   }
@@ -721,8 +752,16 @@ export class StepOneService {
     return this.defendantRepresentativeOptionLabel + " " + number;
   }
 
-  getDefendants(): (Defendant | RepresentativeCitizen | RepresentativeOrganisation)[] {
-    const defendants: (Defendant | RepresentativeCitizen | RepresentativeOrganisation)[] = [];
+  getDefendants(): (
+    | Defendant
+    | RepresentativeCitizen
+    | RepresentativeOrganisation
+  )[] {
+    const defendants: (
+      | Defendant
+      | RepresentativeCitizen
+      | RepresentativeOrganisation
+    )[] = [];
     const representativeIds: number[] = [];
     for (let i = 0; i < this.form.value.defendants.length; i++) {
       const defendant = this.form.value.defendants[i];

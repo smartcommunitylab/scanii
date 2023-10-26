@@ -7,7 +7,8 @@
     "downloadJSON": "Download JSON",
     "downloadPDF": "Download PDF",
     "submit": "Submit",
-    "preview": "Preview"
+    "preview": "Preview",
+    "close": "Close"
   },
   "errors": {
     "required": "Field required"
@@ -90,5 +91,10 @@
   },
   "preview": {
     "title": "Preview"
+  },
+  "uploading": {
+    "title": "Loading result",
+    "success": "You have successfully loaded a form concerning procedure <strong>Small claims forms</strong>.",
+    "error": "An <strong>error</strong> occurred while loading the form."
   }
 }

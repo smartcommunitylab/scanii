@@ -32,6 +32,8 @@ import { AngularIbanModule } from "angular-iban";
 import { CustomModule } from "./shared/custom.module";
 import { NgxWebstorageModule } from "ngx-webstorage";
 import { AuthInterceptor } from "./blocks/interceptor/auth.interceptor";
+import { PreviewModalComponent } from "./preview/preview-modal/preview-modal.component";
+import { LoginModalComponent } from "./preview/login-modal/login-modal.component";
 
 export function HttpLoaderFactory(
   http: HttpClient,
@@ -66,6 +68,8 @@ export class CustomMissingTranslationHandler
     ClaimDetailsComponent,
     StepSevenComponent,
     CourtComponent,
+    PreviewModalComponent,
+    LoginModalComponent,
   ],
   imports: [
     BrowserModule,

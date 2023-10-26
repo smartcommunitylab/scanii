@@ -3,7 +3,6 @@ export const stepTwoShowHideFields = {
     triggeringFormControlName: "claimApproval",
     triggeringValues: ["no", "partial"],
     triggeringFieldIds: [
-      "dynforms_Yes_First_Capital",
       "dynforms_No_First_Capital",
       "dynforms_Partially",
     ],
