@@ -17,7 +17,16 @@
               "description": ""
             }
           ],
-          "words": []
+          "words": [
+            {
+              "position": "67-14",
+              "text": "Gerichtsgebühr",
+              "definition": "Gerichtsgebühren und gerichtliche Auslagen, die in einem gerichtlichen Verfahren anfallen.",
+              "synonyms": [],
+              "links": []
+            }
+
+          ]
         }
       ]
     },
@@ -81,7 +90,22 @@
           "text": "Falls Sie vertraglich vereinbarte Zinsen geltend machen, z. B. bei einem Darlehen, sollten Sie den Zinssatz und den Beginn der Laufzeit angeben. Das Gericht kann Ihnen gesetzliche Zinsen zusprechen, falls Ihrer Klage stattgegeben wird. Geben Sie bitte an, ob Sie Zinsen fordern und ab welchem Tag die Zinsen laufen sollen. Verwenden Sie bei Bedarf bitte zusätzliche Blätter, um den Gegenstand Ihrer Klage zu beschreiben, z. B. wenn Sie mehrere Zahlungen fordern und die Zinsen für jede dieser Zahlungen ab einem anderen Tag geltend gemacht werden.",
           "simplifiedText": "Falls Sie Geld schuldet bekommen, dann kann das Gericht Ihnen gesetzliche Zinsen geben. Erwähnen Sie daher bitte immer, ob und ab welchem Tag Sie Zinsen wollen. Wenn Sie mehrere Zahlungen einfordern, geben Sie auch das Datum für jede an, ab wann Zinsen berechnet werden sollen. Falls nötig, können Sie weitere Seiten angeben, um den Grund der Klage ausführlicher zu beschreiben.",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "position": "11-30",
+              "text": "vertraglich vereinbarte Zinsen",
+              "definition": "Interessen, die zwischen den Parteien in einem Vertrag vereinbart wurden.",
+              "synonyms": [],
+              "links": []
+            },
+            {
+              "position": "169-18",
+              "text": "gesetzliche Zinsen",
+              "definition": "Ein gesetzlicher Zinssatz ist ein gesetzlich festgelegter Zinssatz, der häufig zur Berechnung der Zinsen für überfällige Schulden oder gerichtlich zugesprochenen Schadenersatz verwendet wird.",
+              "synonyms": [],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -93,7 +117,15 @@
           "text": "Falls Ihre Forderung nicht auf die Zahlung eines Geldbetrags gerichtet ist, füllen Sie bitte Nummer 5.2. aus und geben Sie den geschätzten Wert Ihrer Forderung an. In diesem Fall sollten Sie auch angeben, ob Sie für den Fall, dass die ursprüngliche Forderung nicht erfüllt werden kann, hilfsweise einen Anspruch auf Schadensersatz geltend machen.",
           "simplifiedText": "Bitte geben Sie bei Nummer 5.2. den geschätzten Wert Ihrer Forderung an. Wenn Ihre ursprüngliche Forderung nicht erfüllt werden kann, können Sie außerdem einen Anspruch auf Schadensersatz geltend machen.",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "position": "",
+              "text": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -105,7 +137,15 @@
           "text": "Sie sollten unter Nummer 6.1. kurz ausführen, womit Sie Ihre Klage begründen. Sie sollten unter Nummer 6.2. die erheblichen Beweismittel beschreiben. Dabei kann es sich beispielsweise um Urkundenbeweise (z. B. Vertrag, Quittung usw.) oder mündliche/schriftliche Zeugenaussagen handeln. Bitte geben Sie für jedes Beweismittel an, welcher Aspekt Ihrer Forderung dadurch jeweils begründet werden soll. Falls der Platz nicht ausreicht, können Sie weitere Blätter hinzufügen.",
           "simplifiedText": "Beschreiben Sie unter Nummer 6.1. und 6.2., warum Sie eine Klage einreichen. Unter 6.1. sollten Sie kurz angeben, was Sie mit Ihrer Klage begründen. Unter 6.2. sollten Sie mögliche Beweise (z.B. Vertrag, Quittung usw., mündliche/schriftliche Zeugenaussagen) aufzählen, die Ihre Forderung unterstützen. Falls mehr Platz erforderlich ist, fügen Sie einfach weitere Blätter hinzu.",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "position": "",
+              "text": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -117,7 +157,15 @@
           "text": "In diesem Feld sind Sie als Kläger und gegebenenfalls Ihr Vertreter anzugeben. Sie sind nicht verpflichtet, sich durch einen Rechtsanwalt oder sonstigen Rechtsbeistand vertreten zu lassen. Da in manchen Ländern ein Postfach als Anschrift möglicherweise nicht ausreicht, sollten Sie auch Straße, Hausnummer und Postleitzahl eintragen. Das Fehlen dieser Angaben kann dazu führen, dass das Schriftstück nicht zugestellt wird.",
           "simplifiedText": "Sie müssen als Kläger angeben, wer Sie sind und wo Sie wohnen. Möglicherweise müssen Sie also auch Ihre Straße, Hausnummer und Postleitzahl angeben.",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "position": "29-6",
+              "text": "Kläger",
+              "definition": "Partei, die eine Klage einleitet.",
+              "synonyms": ["Klagende Partei"],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -129,7 +177,15 @@
           "text": "Falls Sie über eine persönliche Identifikationsnummer verfügen, die Ihnen von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Falls Sie keine solche Nummer haben, wäre es zweckdienlich, Ihre Pass- oder Ausweisnummer einzutragen, falls verfügbar. Falls Sie im Namen einer juristischen Person oder eines sonstigen Rechtsträgers handeln, wäre die Angabe einer Registrierungsnummer von Nutzen.",
           "simplifiedText": "Wenn Sie eine persönliche Identifikationsnummer besitzen (z. B. zugewiesen von den Behörden eines Mitgliedstaats), dann geben Sie diese an. Wenn nicht, dann Ihre Pass- oder Ausweisnummer, falls verfügbar. Wenn Sie im Namen einer juristischen Person oder eines anderen Rechtsträgers auftreten, dann geben Sie die Registrierungsnummer an.",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "position": "311-19",
+              "text": "juristische Person",
+              "definition": "Rechtlich geregelte Organisation (wie z. B. Unternehmen, Vereine, Stiftungen), der die geltende Rechtsordnung eine eigene allgemeine Rechtsfähigkeit zuerkennt.",
+              "synonyms": [],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -161,7 +217,15 @@
               "description": "Die Suchfunktion ermöglicht es, die zuständigen Gerichte/Behörden in jedem Land für geringfügige Forderungen zu finden."
             }
           ],
-          "words": []
+          "words": [
+            {
+              "position": "252-26",
+              "text": "gerichtliche Zuständigkeit",
+              "definition": "Zuständigkeitsbereich, in dem einem Gericht die Befugnis eingeräumt wird, über eine bestimmte Frage oder einen bestimmten Fall zu entscheiden.",
+              "synonyms": [],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -173,7 +237,15 @@
           "text": "Sie können das europäische Verfahren für geringfügige Forderungen nur in Anspruch nehmen, wenn Ihre Rechtssache einen Auslandsbezug aufweist. Dies ist der Fall, wenn mindestens eine der Parteien ihren Wohnsitz oder gewöhnlichen Aufenthalt in einem anderen Mitgliedstaat als dem des Gerichts hat.",
           "simplifiedText": "Sie können das europäische Verfahren für geringfügige Forderungen verwenden, wenn sich eine der Parteien in einem anderen EU-Staat als dem des Gerichts befindet.",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "position": "119-13",
+              "text": "Auslandsbezug",
+              "definition": "Rechtssache, bei der mindestens eine der Parteien ihren Wohnsitz oder gewöhnlichen Aufenthalt in einem anderen Mitgliedstaat als dem Mitgliedstaat des angerufenen Gerichts hat.",
+              "synonyms": ["Auslandsberührung"],
+              "links": ["https://de.wikipedia.org/wiki/Auslandsber%C3%BChrung"]
+            }
+          ]
         }
       ]
     },
@@ -197,7 +269,22 @@
           "text": "Geben Sie in diesem Feld bitte den Beklagten und, falls bekannt, seinen Vertreter an. Auch der Beklagte ist nicht verpflichtet, sich durch einen Rechtsanwalt oder sonstigen Rechtsbeistand vertreten zu lassen. Da in manchen Ländern ein Postfach als Anschrift möglicherweise nicht ausreicht, sollten Sie auch Straße, Hausnummer und Postleitzahl eintragen. Das Fehlen dieser Angaben kann dazu führen, dass das Schriftstück nicht zugestellt wird.",
           "simplifiedText": "Bitte die Anschrift des Beklagten, eventuell die persönliche Identifikations- oder Ausweisnummer sowie ggf. eine Registrierungsnummer eingeben. Der Beklagte muss nicht durch einen Rechtsbeistand vertreten werden, aber bitte Straße, Hausnummer und Postleitzahl angeben.",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "position": "36-9",
+              "text": "Beklagter",
+              "definition": "Person, Institution, Unternehmen oder Ähnliches, gegen das jemand einen Antrag an ein Gericht stellt, über einen Rechtsstreit zu entscheiden.",
+              "synonyms": ["Angeklagter"],
+              "links": ["https://de.wiktionary.org/wiki/Beklagter"]
+            },
+            {
+              "position": "73-9",
+              "text": "Vertreter",
+              "definition": "Vertreter der Partei vor Gericht, der die jeweiligen Zustellungen in Empfang nimmt oder Anträge einreicht.",
+              "synonyms": ["Anwalt", "Prozessbevollmächtigter"],
+              "links": ["https://iate.europa.eu/search/standard"]
+            }
+          ]
         }
       ]
     },
@@ -209,7 +296,22 @@
           "text": "Falls Ihnen eine persönliche Identifikationsnummer bekannt ist, die dem Beklagten von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Alternativ oder zusätzlich wäre es zweckdienlich, die Pass- oder Ausweisnummer des Beklagten einzutragen, falls verfügbar. Falls es sich bei dem Beklagten um eine juristische Person oder einen sonstigen Rechtsträger handelt, wäre die Angabe einer Registrierungsnummer des Beklagten von Nutzen, falls Sie diese kennen.",
           "simplifiedText": "Falls Ihnen eine persönliche Identifikationsnummer bekannt ist, die dem Beklagten von den Behörden eines Mitgliedstaats zugewiesen wurde, wäre es nützlich, diese anzugeben. Alternativ oder zusätzlich wäre es zweckdienlich, die Pass- oder Ausweisnummer des Beklagten einzutragen, falls verfügbar. Falls es sich bei dem Beklagten um eine juristische Person oder einen sonstigen Rechtsträger handelt, wäre die Angabe einer Registrierungsnummer des Beklagten von Nutzen, falls Sie diese kennen.",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "position": "73-9",
+              "text": "Beklagter",
+              "definition": "Person, Institution, Unternehmen oder Ähnliches, gegen das jemand einen Antrag an ein Gericht stellt, über einen Rechtsstreit zu entscheiden.",
+              "synonyms": ["Angeklagter"],
+              "links": ["https://de.wiktionary.org/wiki/Beklagter"]
+            },
+            {
+              "position": "337-18",
+              "text": "juristische Person",
+              "definition": "Rechtlich geregelte Organisation (wie z. B. Unternehmen, Vereine, Stiftungen), der die geltende Rechtsordnung eine eigene allgemeine Rechtsfähigkeit zuerkennt.",
+              "synonyms": [],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -221,7 +323,15 @@
           "text": "Unter „Sonstige Angaben“ können Sie weitere Informationen eintragen, die der Identifizierung der Person dienen, z. B. Geburtsdatum, Beruf oder Stellung im Unternehmen. Bei mehr als einem Beklagten verwenden Sie bitte zusätzliche Blätter.",
           "simplifiedText": "Unter \"Sonstige Angaben\" geben Sie bitte weitere Informationen zur Identifizierung der Person ein, z.B. das Geburtsdatum, den Beruf oder die Stellung im Unternehmen. Falls mehrere Beklagte vorhanden sind, dann benutzen Sie bitte zusätzliche Blätter.",
           "link": [],
-          "words": []
+          "words": [
+            {
+              "position": "",
+              "text": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -241,7 +351,15 @@
               "description": ""
             }
           ],
-          "words": []
+          "words": [
+            {
+              "position": "",
+              "text": "",
+              "definition": "",
+              "synonyms": [],
+              "links": []
+            }
+          ]
         }
       ]
     },
@@ -250,8 +368,8 @@
       "infoElements": [
         {
           "type": "DESCRIPTION",
-          "text": "Die Klage ist bei dem Gericht einzureichen, das für ihre Bearbeitung zuständig ist. Das Gericht muss nach den Vorschriften der Verordnung (EU) Nr. 1215/2012 des Europäischen Parlaments und des Rates zuständig sein. Dieser Abschnitt enthält eine nicht abschließende Aufzählung von Kriterien, auf die sich die gerichtliche Zuständigkeit gründen kann. Informationen über die Zuständigkeitsvorschriften finden Sie auf der Website des Europäischen Gerichtsatlas. Sie können auch das Glossar unter http://ec.europa.eu/civiljustice/glossary/glossary_de.htm zurate ziehen, in dem einige der hier verwendeten Rechtsbegriffe erklärt werden.",
-          "simplifiedText": "Um eine Klage einzureichen, muss man sich an das Gericht wenden, das für die Bearbeitung zuständig ist. Auf der Website des Europäischen Gerichtsatlas und dem Glossar unter http://ec.europa.eu/civiljustice/glossary/glossary_de.htm gibt es Informationen über die Kriterien, nach denen man die Zuständigkeit eines Gerichtes ermitteln kann.",
+          "text": "Die Klage ist bei dem Gericht einzureichen, das für ihre Bearbeitung zuständig ist. Das Gericht muss nach den Vorschriften der Verordnung (EU) Nr. 1215/2012 des Europäischen Parlaments und des Rates zuständig sein. Dieser Abschnitt enthält eine nicht abschließende Aufzählung von Kriterien, auf die sich die gerichtliche Zuständigkeit gründen kann.",
+          "simplifiedText": "Um eine Klage einzureichen, muss man sich an das Gericht wenden, das für die Bearbeitung zuständig ist.",
           "link": [
             {
               "type": "LEGAL_LINK",
@@ -266,16 +384,17 @@
               "name": "In welchem Mitgliedstaat befindet sich das zuständige Gericht?",
               "text": "Website des Europäischen Gerichtsatlas",
               "description": ""
-            },
-            {
-              "type": "SERVICE_LINK",
-              "url": "http://ec.europa.eu/civiljustice/glossary/glossary_de.htm",
-              "text": "Glossar",
-              "name": "",
-              "description": ""
             }
           ],
-          "words": []
+          "words": [
+            {
+              "position": "31-12",
+              "text": "einreichen",
+              "definition": "Bei einer Behörde vorlegen, einem Amt zur Bearbeitung vorbringen",
+              "synonyms": [],
+              "links": ["https://de.wiktionary.org/wiki/einreichen"]
+            }
+          ]
         }
       ]
     },
@@ -309,7 +428,15 @@
               "description": "Text der Europäischen Verordnung über die Zusammenarbeit zwischen den Gerichten der Mitgliedstaaten auf dem Gebiet der Beweisaufnahme in Zivil- oder Handelssachen."
             }
           ],
-          "words": []
+          "words": [
+            {
+              "position": "862-11",
+              "text": "Anrufung des Gerichts",
+              "definition": "Im juristischen Kontext bedeutet es, dass eine Instanz, in der Regel ein Gericht, beschlossen hat, sich mit einer Rechtsfrage oder einem Problem zu befassen, das in seine Zuständigkeit fällt.",
+              "synonyms": [],
+              "links": []
+            }
+          ]
         }
       ]
     }
